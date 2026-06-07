@@ -1,0 +1,15 @@
+.DS_Store
+node_modules/
+.netlify/
+.playwright-cli/
+output/
+netlify-dist/
+
+# Large local scrape archives retained on this machine.
+data/serenity-tweets.json
+data/serenity-fxtwitter-archive.json
+data/serenity-distillation.json
+data/serenity-research.json
+
+# Keep the lightweight public dataset for GitHub/Netlify builds.
+!data/serenity-public.json

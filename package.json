@@ -1,0 +1,8 @@
+{
+  "scripts": {
+    "build": "node scripts/build-public-site.js",
+    "start": "node server.js",
+    "scrape:serenity": "node scripts/scrape-serenity.js"
+  },
+  "dependencies": {}
+}

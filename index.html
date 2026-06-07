@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Serenity 美股投研工作台</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23fff3f9'/%3E%3Cpath d='M32 6l5.7 17.3L56 20.4 41.9 32 56 43.6l-18.3-2.9L32 58l-5.7-17.3L8 43.6 22.1 32 8 20.4l18.3 2.9L32 6z' fill='%23ef2f8f'/%3E%3C/svg%3E" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Serenity 首页">
+        <span class="brand-mark">✦</span>
+        <span>
+          <strong>SERENITY</strong>
+          <small>AI SUPPLY-CHAIN RESEARCH</small>
+        </span>
+      </a>
+      <nav aria-label="页面导航">
+        <a href="#watchlist">喊单名单</a>
+        <a href="#analysis">股票分析</a>
+        <a href="#method">思考模型</a>
+      </nav>
+      <a class="source-link" href="https://x.com/aleabitoreddit" target="_blank" rel="noreferrer">查看公开 X</a>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <img src="./assets/serenity-ai-strategist.png" alt="" aria-hidden="true" />
+        <div class="hero-copy">
+          <p class="eyebrow">免费应用 · 公开资料蒸馏 · 非投资建议</p>
+          <h1>用 Serenity 的方式看一支美股</h1>
+          <p class="hero-subtitle">
+            只保留两个核心动作：查看她喊过/高频研究过的美股市值列表；输入任意 ticker，按供应链瓶颈、客户证据、TAM 重估和资本结构风险生成一份投研报告。
+          </p>
+          <form id="heroAnalysisForm" class="ticker-form">
+            <input id="heroTickerInput" autocomplete="off" placeholder="输入 Ticker，例如 AAOI / MRVL / NBIS" />
+            <button type="submit">生成报告</button>
+          </form>
+          <div id="heroStats" class="hero-stats" aria-label="数据覆盖"></div>
+        </div>
+      </section>
+
+      <section class="simple-grid">
+        <section id="watchlist" class="panel stock-panel">
+          <div class="panel-head">
+            <div>
+              <span>Serenity Mentioned US Stocks</span>
+              <h2>美股喊单 / 高频研究市值列表</h2>
+            </div>
+            <div class="list-tools">
+              <input id="stockSearch" type="search" placeholder="筛选 ticker / 主题" />
+              <select id="themeFilter" aria-label="主题筛选">
+                <option value="all">全部主题</option>
+                <option value="cpo-silicon-photonics">CPO / 光子链</option>
+                <option value="neocloud">NeoCloud</option>
+                <option value="memory-rotation">Memory</option>
+                <option value="ai-infrastructure">AI 基建</option>
+                <option value="capital-structure-veto">稀释风险</option>
+              </select>
+            </div>
+          </div>
+          <p id="listStatus" class="muted-line">正在加载真实行情与市值...</p>
+          <div id="stockList" class="stock-list"></div>
+        </section>
+
+        <aside id="method" class="panel method-panel">
+          <div class="panel-head">
+            <div>
+              <span>Thinking Model</span>
+              <h2>Serenity 思考模型</h2>
+            </div>
+          </div>
+          <div id="methodList" class="method-list"></div>
+        </aside>
+      </section>
+
+      <section id="analysis" class="analysis-shell">
+        <div class="panel analysis-panel">
+          <div class="panel-head">
+            <div>
+              <span>Single Stock Report</span>
+              <h2>输入股票，生成 Serenity 风格投研报告</h2>
+            </div>
+          </div>
+          <form id="analysisForm" class="analysis-form">
+            <input id="tickerInput" autocomplete="off" placeholder="Ticker，例如 AAOI" />
+            <button type="submit">分析这支股票</button>
+          </form>
+          <div id="quickTickers" class="quick-tickers"></div>
+          <article id="reportOutput" class="report-output"></article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <span>数据来自公开 X 镜像、SerenitySaid、Semiconstocks、Twiscan、Instalker 与真实行情接口；页面仅做研究框架整理。</span>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
