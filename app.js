@@ -258,18 +258,22 @@ const state = {
   distillation: null,
   quotes: new Map(),
   renderedStocks: [],
+  activeSymbol: "AAOI",
+  latestReportText: "",
 };
 
 const stockList = document.querySelector("#stockList");
 const listStatus = document.querySelector("#listStatus");
 const stockSearch = document.querySelector("#stockSearch");
 const themeFilter = document.querySelector("#themeFilter");
+const sortMode = document.querySelector("#sortMode");
 const methodList = document.querySelector("#methodList");
 const heroStats = document.querySelector("#heroStats");
 const heroAnalysisForm = document.querySelector("#heroAnalysisForm");
 const heroTickerInput = document.querySelector("#heroTickerInput");
 const analysisForm = document.querySelector("#analysisForm");
 const tickerInput = document.querySelector("#tickerInput");
+const tickerSuggestions = document.querySelector("#tickerSuggestions");
 const quickTickers = document.querySelector("#quickTickers");
 const reportOutput = document.querySelector("#reportOutput");
 
@@ -406,6 +410,166 @@ function pricePosition(quote = {}) {
   return "价格处在 52 周区间中段，更适合等催化或客户证据更新。";
 }
 
+function playbookFor(stock) {
+  const playbooks = {
+    "cpo-silicon-photonics": {
+      lens: "先确认 AI 集群带宽瓶颈，再看光模块、激光器、硅光、测试与制造谁在量产路径上不可替代。",
+      focus: "核心不是“光通信上涨”，而是 800G/1.6T/CPO 从实验室走向量产时，哪家公司能把客户验证转成订单。",
+      catalysts: ["1.6T 或 CPO 客户认证进入量产", "hyperscaler capex 继续上修", "激光/材料/测试产能被锁定", "财报电话会出现订单与良率细节"],
+      checks: ["客户是否从样品验证进入批量采购", "毛利率是否能证明瓶颈价值", "产能扩张是否领先需求而不是被动追单", "同业价格战是否压缩技术溢价"],
+    },
+    "substrate-materials": {
+      lens: "从光互连上游材料入手，判断 InP/砷化镓等衬底是否成为下游器件扩产的实际限制。",
+      focus: "材料链的赔率来自冷门与稀缺，但必须用订单、产能和客户导入去证明不是纯题材。",
+      catalysts: ["核心客户披露上游材料需求", "子公司上市或融资路径清晰", "产能利用率提升", "材料价格或交付周期变紧"],
+      checks: ["衬底是否真在客户 BOM 里", "产能扩张是否有资金保障", "客户集中度是否过高", "周期回落时库存是否会反噬"],
+    },
+    neocloud: {
+      lens: "把公司拆成电力、数据中心、GPU/ASIC 算力、云合同与融资能力五块，先看合同质量，再看资产重估。",
+      focus: "NeoCloud 的故事只有在高利用率、低资金成本和长期客户合同同时成立时，才配得上高市值。",
+      catalysts: ["新增长期云合同", "数据中心通电或交付里程碑", "GPU 利用率披露改善", "融资成本下降或资产证券化路径清楚"],
+      checks: ["客户是否可验证且合同期限足够长", "折旧和电力成本是否吃掉利润", "capex 是否需要持续稀释", "收入确认是否跟交付节奏匹配"],
+    },
+    "memory-rotation": {
+      lens: "用 HBM、DRAM 价格、供给纪律和 AI 服务器 BOM 占比判断周期是否仍在扩张。",
+      focus: "记忆体不是早期冷门链路，重点要看价格上行是否还能覆盖估值与周期尾部风险。",
+      catalysts: ["HBM 价格或产能持续紧张", "云厂商训练/推理需求上修", "同业维持供给纪律", "库存天数继续下降"],
+      checks: ["周期顶部是否开始被定价", "传统 DRAM/NAND 是否拖累毛利", "资本开支是否过早扩张", "客户是否开始压价"],
+    },
+    "ai-infrastructure": {
+      lens: "把大市值龙头当需求锚点：它们证明 AI capex 存在，但最高赔率通常外溢到更小的供应链瓶颈。",
+      focus: "在大盘 AI 标的上，Serenity 框架更强调确定性、估值拥挤和供应链外溢，而不是单纯追 beta。",
+      catalysts: ["AI capex 指引继续上修", "ASIC/网络/互连收入增速超预期", "客户集中风险下降", "供应链小节点被主流资金重新定价"],
+      checks: ["估值是否已经充分反映 AI 增长", "增长是否被毛利和竞争吞噬", "资本开支回报周期是否拉长", "上游小票是否出现更优赔率"],
+    },
+    "capital-structure-veto": {
+      lens: "先做一票否决：即使方向正确，只要 ATM、可转债、债务或持续融资会稀释股东，故事就必须降级。",
+      focus: "这类标的不是不能研究，而是需要先证明资本结构不会吞掉业务 beta。",
+      catalysts: ["撤销或放缓 ATM", "长期债务再融资成本下降", "云合同足以覆盖 capex", "管理层明确降低稀释路径"],
+      checks: ["是否持续发行股票", "资产折旧速度是否过快", "债务期限是否短于现金流兑现", "矿转云是否只是叙事切换"],
+    },
+    general: {
+      lens: "先确认这家公司是否有明确终端需求、可验证客户、可扩张 TAM 和合理资本结构。",
+      focus: "若无法落在供应链瓶颈、需求锚点或资本结构改善上，就只能作为观察标的。",
+      catalysts: ["业务数据连续改善", "客户或订单披露超预期", "估值回到合理区间", "管理层给出更清晰的资本配置"],
+      checks: ["收入增长是否可持续", "利润率是否改善", "估值是否已经透支", "是否存在监管或融资风险"],
+    },
+  };
+  return playbooks[stock.theme] || playbooks.general;
+}
+
+function scoreBreakdown(stock, quote = {}, metric = {}) {
+  const mentions = Number(metric.mentions || 0);
+  const bull = Number(metric.bull || 0);
+  const bear = Number(metric.bear || 0);
+  const neutral = Number(metric.neutral || 0);
+  const total = Math.max(1, bull + bear + neutral);
+  const marketCap = Number(quote.marketCap) || stock.fallbackMarketCap || 0;
+  const mentionScore = clamp((mentions / 650) * 100, 18, 100);
+  const sentimentScore = clamp(((bull - bear * 1.4) / total) * 100 + 58, 15, 100);
+  const capScore = marketCap < 3e9 ? 94 : marketCap < 20e9 ? 82 : marketCap < 80e9 ? 68 : marketCap < 400e9 ? 55 : 38;
+  const riskPenalty = (stock.riskFlag ? 22 : 0) + clamp((bear / total) * 60, 0, 18);
+  const themeDemand = stock.theme === "ai-infrastructure" ? 91 : stock.theme === "cpo-silicon-photonics" ? 88 : stock.theme === "neocloud" ? 80 : 68;
+  const chokepoint =
+    stock.theme === "cpo-silicon-photonics" || stock.theme === "substrate-materials"
+      ? 93
+      : stock.theme === "capital-structure-veto"
+        ? 38
+        : stock.theme === "neocloud"
+          ? 72
+          : 58;
+
+  return [
+    { label: "终端需求", score: Math.round(clamp(themeDemand * 0.7 + mentionScore * 0.3, 20, 98)), note: "AI capex、云厂商需求或产业周期是否真实存在" },
+    { label: "瓶颈位置", score: Math.round(chokepoint), note: "公司是否处在客户必须采购、短期难替代的供应链节点" },
+    { label: "客户证据", score: Math.round(clamp(mentionScore * 0.55 + sentimentScore * 0.45, 18, 95)), note: "公开样本、订单、验证、管理层措辞能否互相印证" },
+    { label: "市值赔率", score: Math.round(capScore), note: "市值越小且证据越早，重估弹性越大；大盘股更偏锚点" },
+    { label: "风险控制", score: Math.round(clamp(86 - riskPenalty + (stock.riskFlag ? -10 : 0), 12, 92)), note: "融资、债务、客户集中、周期尾部和估值拥挤的综合约束" },
+  ];
+}
+
+function scenarioSet(score, stock, quote, space) {
+  const price = formatPrice(quote);
+  const baseUpside = Math.max(5, Math.round(space.upside * 0.36));
+  return [
+    {
+      label: "Bull Case",
+      tag: "证据加速",
+      range: `+${space.upside}%`,
+      body: `客户验证进入量产、行业 capex 继续上修，市场开始按“瓶颈资产”而不是普通周期股定价。当前 ${price} 仅作为起点，核心变量是订单密度。`,
+    },
+    {
+      label: "Base Case",
+      tag: "等待确认",
+      range: `+${baseUpside}%`,
+      body: `${stock.themeLabel} thesis 维持，但还需要财报、客户或产能数据继续确认。适合放入观察池，等价格和证据同时改善。`,
+    },
+    {
+      label: "Bear Case",
+      tag: "反证触发",
+      range: `-${space.downside}%`,
+      body: `客户导入推迟、订单强度低于预期，或融资/债务压力上升。若 Serenity 的资本结构否决被触发，故事优先降级。`,
+    },
+  ];
+}
+
+function plainReportText(stock, quote, score, space, playbook, breakdown, scenarios, evidence, metric) {
+  const lines = [
+    `${stock.symbol} · ${stock.name}`,
+    `Serenity 分：${score} · ${conclusionFor(score, stock)}`,
+    `价格：${formatPrice(quote)} · 当日涨跌：${formatPercent(quote.changePercent)} · 市值：${formatMarketCap(Number(quote.marketCap) || stock.fallbackMarketCap)}`,
+    `提及结构：${compact.format(metric.mentions || 0)} 次提及，多 ${metric.bull || 0} / 空 ${metric.bear || 0} / 中性 ${metric.neutral || 0}`,
+    "",
+    "执行摘要：",
+    `1. ${stock.thesis}`,
+    `2. ${playbook.focus}`,
+    `3. 模型给出的验证上行空间约 ${space.upside}%，反证或资本结构恶化时下行风险约 ${space.downside}%。`,
+    "",
+    "评分拆解：",
+    ...breakdown.map((item) => `${item.label} ${item.score}/100：${item.note}`),
+    "",
+    "情景推演：",
+    ...scenarios.map((item) => `${item.label} ${item.range}：${item.body}`),
+    "",
+    "后续跟踪：",
+    ...playbook.catalysts.map((item, index) => `${index + 1}. ${item}`),
+    "",
+    "反证清单：",
+    `1. ${stock.risk}`,
+    ...playbook.checks.map((item, index) => `${index + 2}. ${item}`),
+  ];
+  if (evidence.length) {
+    lines.push("", "公开样本：", ...evidence.map((item) => `- ${dateLabel(item.date)} ${item.title || item.body || item.url || "Serenity 公开样本"}`));
+  }
+  lines.push("", "仅作公开资料整理，不构成投资建议。");
+  return lines.join("\n");
+}
+
+async function copyText(value) {
+  if (navigator.clipboard?.writeText) {
+    try {
+      await navigator.clipboard.writeText(value);
+      return true;
+    } catch {
+      // Fall through to the textarea fallback for local HTTP or restricted browsers.
+    }
+  }
+
+  const textarea = document.createElement("textarea");
+  textarea.value = value;
+  textarea.setAttribute("readonly", "");
+  textarea.style.position = "fixed";
+  textarea.style.left = "-9999px";
+  textarea.style.top = "0";
+  document.body.appendChild(textarea);
+  textarea.select();
+  try {
+    return document.execCommand("copy");
+  } finally {
+    textarea.remove();
+  }
+}
+
 function enrichStock(stock) {
   const quote = quoteForStock(stock);
   const metric = metricForStock(stock) || {};
@@ -424,10 +588,10 @@ function renderHeroStats() {
   const profileTweets = state.tweets?.fxTwitterProfile?.tweets || 0;
   const usCount = calledStocks.length;
   heroStats.innerHTML = `
-    <span><b>${compact.format(parsed)}</b>公开索引</span>
-    <span><b>${compact.format(comments)}</b>评论样本</span>
+    <span><b>${compact.format(parsed)}</b>公开样本索引</span>
+    <span><b>${compact.format(comments)}</b>评论与转述样本</span>
     <span><b>${compact.format(profileTweets)}</b>X 公开口径</span>
-    <span><b>${usCount}</b>美股名单</span>
+    <span><b>${usCount}</b>覆盖美股/OTC</span>
   `;
 }
 
@@ -449,12 +613,20 @@ function renderMethodList() {
 
 function renderQuickTickers() {
   const symbols = ["AAOI", "AXTI", "MRVL", "NBIS", "IREN", "AEHR", "SIVEF", "NVDA"];
-  quickTickers.innerHTML = symbols.map((symbol) => `<button type="button" data-symbol="${symbol}">${symbol}</button>`).join("");
+  quickTickers.innerHTML = `
+    <span class="quick-label">常用研究模板</span>
+    ${symbols.map((symbol) => `<button type="button" data-symbol="${symbol}">${symbol}</button>`).join("")}
+  `;
+}
+
+function renderTickerSuggestions() {
+  tickerSuggestions.innerHTML = calledStocks.map((stock) => `<option value="${escapeHtml(stock.symbol)}">${escapeHtml(stock.name)}</option>`).join("");
 }
 
 function renderStockList() {
   const query = normalizeSymbol(stockSearch.value);
   const theme = themeFilter.value;
+  const sort = sortMode.value;
   const stocks = calledStocks
     .map(enrichStock)
     .filter((stock) => {
@@ -463,18 +635,24 @@ function renderStockList() {
       const themeOk = theme === "all" || stock.theme === theme;
       return queryOk && themeOk;
     })
-    .sort((a, b) => b.marketCap - a.marketCap);
+    .sort((a, b) => {
+      if (sort === "marketCap") return b.marketCap - a.marketCap;
+      if (sort === "mentions") return Number(b.metric.mentions || 0) - Number(a.metric.mentions || 0);
+      if (sort === "change") return Number(b.quote.changePercent || -999) - Number(a.quote.changePercent || -999);
+      return b.score - a.score || b.marketCap - a.marketCap;
+    });
 
   state.renderedStocks = stocks;
   const liveCaps = stocks.filter((stock) => Number(stock.quote.marketCap)).length;
-  listStatus.textContent = `${stocks.length} 支美股/OTC 标的 · ${liveCaps} 支市值来自实时公开接口，其余使用参考市值兜底 · 点击任意一行生成报告`;
+  listStatus.textContent = `${stocks.length} 支覆盖标的 · ${liveCaps} 支市值来自公开行情接口 · 点击任意一行即可生成完整单股 memo`;
   stockList.innerHTML = stocks
     .map((stock) => {
       const quote = stock.quote || {};
       const changeClass = Number(quote.changePercent) >= 0 ? "up" : "down";
       const metric = stock.metric || {};
+      const selected = normalizeSymbol(stock.symbol) === normalizeSymbol(state.activeSymbol) ? " selected" : "";
       return `
-        <button class="stock-row" type="button" data-symbol="${escapeHtml(stock.symbol)}">
+        <button class="stock-row${selected}" type="button" data-symbol="${escapeHtml(stock.symbol)}">
           <span class="stock-id">
             <strong>${escapeHtml(stock.symbol)}</strong>
             <small>${escapeHtml(stock.name)}</small>
@@ -537,12 +715,22 @@ function buildReport(stock, quote) {
   const metric = metricForStock(stock) || {};
   const score = scoreStock(enriched, quote);
   const space = upsideSpace(score, enriched);
-  const evidence = getCalledEvidence(stock, 4);
+  const evidence = getCalledEvidence(stock, 5);
   const capSource = Number(quote.marketCap) ? "公开接口" : enriched.marketCap ? "参考市值" : "待补源";
   const target = Number(quote.oneYearTarget);
   const targetText = Number.isFinite(target) && Number.isFinite(Number(quote.price)) ? `${formatPercent(((target - Number(quote.price)) / Number(quote.price)) * 100)} 卖方目标差` : "不依赖卖方目标";
   const position = pricePosition(quote);
   const sentimentLine = `${compact.format(metric.mentions || 0)} 次提及 · 多 ${metric.bull || 0} / 空 ${metric.bear || 0} / 中性 ${metric.neutral || 0}`;
+  const playbook = playbookFor(stock);
+  const breakdown = scoreBreakdown(enriched, quote, metric);
+  const scenarios = scenarioSet(score, stock, quote, space);
+  const topDrivers = breakdown
+    .slice()
+    .sort((a, b) => b.score - a.score)
+    .slice(0, 2)
+    .map((item) => item.label)
+    .join("、");
+  state.latestReportText = plainReportText(stock, quote, score, space, playbook, breakdown, scenarios, evidence, metric);
 
   reportOutput.innerHTML = `
     <header class="report-head">
@@ -552,32 +740,72 @@ function buildReport(stock, quote) {
       </div>
       <div class="report-score"><b>${score}</b><small>Serenity 分</small></div>
     </header>
+    <div class="report-action-row">
+      <span>基于公开资料、行情数据与 Serenity 蒸馏框架生成</span>
+      <button class="secondary copy-report" type="button" data-copy-report>复制研报摘要</button>
+    </div>
     <div class="report-grid">
       <div class="report-metric"><span>当前价格</span><strong>${formatPrice(quote)}</strong></div>
       <div class="report-metric"><span>当日涨跌</span><strong class="${Number(quote.changePercent) >= 0 ? "up" : "down"}">${formatPercent(quote.changePercent)}</strong></div>
       <div class="report-metric"><span>市值</span><strong>${formatMarketCap(enriched.marketCap)}</strong><span>${capSource}</span></div>
       <div class="report-metric"><span>提及结构</span><strong>${escapeHtml(sentimentLine)}</strong></div>
     </div>
+    <section class="report-summary">
+      <h3>执行摘要</h3>
+      <p><b>核心 thesis：</b>${escapeHtml(stock.thesis)}</p>
+      <p><b>研究视角：</b>${escapeHtml(playbook.focus)}</p>
+      <p><b>当前结论：</b>${escapeHtml(conclusionFor(score, stock))}。模型主要由 ${escapeHtml(topDrivers)} 支撑；上行需要客户证据继续增强，下行通常来自反证或资本结构恶化。</p>
+    </section>
     <section class="report-section">
       <h3>Serenity 会先怎么想</h3>
-      <p>${escapeHtml(stock.thesis)}</p>
-      <ul>
-        <li>先画终端需求：AI 集群、ASIC、CPO、NeoCloud 或其他终端为什么必须发生。</li>
-        <li>再拆供应链：这家公司是否处在材料、激光、封装、测试、制造、电力里不可绕开的节点。</li>
-        <li>最后看赔率：市值是否还小、机构是否还没完全进场、有没有稀释或债务一票否决。</li>
-      </ul>
+      <p>${escapeHtml(playbook.lens)}</p>
+      <div class="score-breakdown">
+        ${breakdown
+          .map(
+            (item) => `
+              <div class="score-line">
+                <div>
+                  <strong>${escapeHtml(item.label)}</strong>
+                  <small>${escapeHtml(item.note)}</small>
+                </div>
+                <b>${item.score}</b>
+                <span class="score-track"><i style="width: ${item.score}%"></i></span>
+              </div>
+            `
+          )
+          .join("")}
+      </div>
     </section>
     <section class="report-section">
       <h3>当前价格与涨跌空间</h3>
       <p>按当前价格 ${formatPrice(quote)} 和市值 ${formatMarketCap(enriched.marketCap)} 粗略看，模型给出的上行验证空间约 ${space.upside}%；若 thesis 被证伪或资本结构恶化，下行风险约 ${space.downside}%。${position ? ` ${position}` : ""} ${targetText}。</p>
-      <p>这不是机械目标价，而是 Serenity 式赔率判断：小市值瓶颈 + 客户证据 + TAM 扩张同时成立，空间才会打开；只靠题材或大跌，不算买点。</p>
+      <p>这不是机械目标价，而是 Serenity 式赔率判断：小市值瓶颈 + 客户证据 + TAM 扩张同时成立，空间才会打开；只靠题材、只靠大跌或只靠情绪，不构成买点。</p>
+      <div class="scenario-grid">
+        ${scenarios
+          .map(
+            (item) => `
+              <article class="scenario-card">
+                <span>${escapeHtml(item.tag)}</span>
+                <strong>${escapeHtml(item.label)} <b>${escapeHtml(item.range)}</b></strong>
+                <p>${escapeHtml(item.body)}</p>
+              </article>
+            `
+          )
+          .join("")}
+      </div>
     </section>
     <section class="report-section">
-      <h3>反证清单</h3>
+      <h3>后续跟踪清单</h3>
+      <div class="check-grid">
+        ${playbook.catalysts.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
+      </div>
+    </section>
+    <section class="report-section">
+      <h3>反证与尽调问题</h3>
       <ul>
         <li>${escapeHtml(stock.risk)}</li>
+        ${playbook.checks.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
         <li>如果客户导入、量产时间、订单强度或管理层措辞变弱，先降低赔率假设。</li>
-        <li>如果出现 ATM、可转债、大额融资或债务压力，资本结构优先于故事本身。</li>
       </ul>
     </section>
     <section class="report-section">
@@ -589,7 +817,8 @@ function buildReport(stock, quote) {
                 .map(
                   (item) => `
                     <a href="${escapeHtml(item.url || "#")}" target="_blank" rel="noreferrer">
-                      ${escapeHtml((item.title || item.body || "Serenity 公开样本").slice(0, 220))}
+                      <strong>${escapeHtml((item.title || "Serenity 公开样本").slice(0, 140))}</strong>
+                      <span>${escapeHtml((item.body || item.title || "公开样本待补正文").slice(0, 220))}</span>
                       <small>${dateLabel(item.date)} · ${escapeHtml(item.theme || "general")} · materiality ${item.materiality || "--"}</small>
                     </a>
                   `
@@ -599,6 +828,7 @@ function buildReport(stock, quote) {
         }
       </div>
     </section>
+    <p class="report-note">提示：本报告用于把公开观点整理成研究框架，不能替代财报、公告、订单验证和个人风险评估。</p>
   `;
 }
 
@@ -607,12 +837,16 @@ async function analyzeSymbol(symbol, options = {}) {
   if (!normalized) return;
   tickerInput.value = normalized;
   heroTickerInput.value = normalized;
+  state.activeSymbol = normalized;
+  renderStockList();
   reportOutput.innerHTML = `<div class="empty-report">正在读取 ${escapeHtml(normalized)} 的价格、市值和 Serenity 样本...</div>`;
   const stock = findStock(normalized) || fallbackStock(normalized);
   const quoteSymbol = stock.symbol || normalized;
   const quote = await ensureQuote(quoteSymbol);
   state.quotes.set(stock.symbol, quote);
+  state.activeSymbol = stock.symbol;
   buildReport(stock, quote);
+  renderStockList();
   if (options.scroll !== false) document.querySelector("#analysis")?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
@@ -627,6 +861,7 @@ async function loadQuotes() {
 
 async function init() {
   reportOutput.innerHTML = `<div class="empty-report">输入 ticker 或点击左侧名单，生成一份 Serenity 风格投研报告。</div>`;
+  renderTickerSuggestions();
   renderQuickTickers();
   const publicData = await fetchJson("./data/serenity-public.json");
   state.research = { profile: publicData.profile || {} };
@@ -650,6 +885,7 @@ async function init() {
 
 stockSearch.addEventListener("input", renderStockList);
 themeFilter.addEventListener("change", renderStockList);
+sortMode.addEventListener("change", renderStockList);
 
 stockList.addEventListener("click", (event) => {
   const row = event.target.closest("[data-symbol]");
@@ -659,6 +895,23 @@ stockList.addEventListener("click", (event) => {
 quickTickers.addEventListener("click", (event) => {
   const button = event.target.closest("[data-symbol]");
   if (button) analyzeSymbol(button.dataset.symbol);
+});
+
+reportOutput.addEventListener("click", async (event) => {
+  const button = event.target.closest("[data-copy-report]");
+  if (!button || !state.latestReportText) return;
+  const copied = await copyText(state.latestReportText);
+  if (copied) {
+    button.textContent = "已复制";
+    setTimeout(() => {
+      button.textContent = "复制研报摘要";
+    }, 1400);
+  } else {
+    button.textContent = "复制失败";
+    setTimeout(() => {
+      button.textContent = "复制研报摘要";
+    }, 1400);
+  }
 });
 
 analysisForm.addEventListener("submit", (event) => {
