@@ -267,6 +267,7 @@ const listStatus = document.querySelector("#listStatus");
 const stockSearch = document.querySelector("#stockSearch");
 const themeFilter = document.querySelector("#themeFilter");
 const sortMode = document.querySelector("#sortMode");
+const opportunityList = document.querySelector("#opportunityList");
 const methodList = document.querySelector("#methodList");
 const heroStats = document.querySelector("#heroStats");
 const heroAnalysisForm = document.querySelector("#heroAnalysisForm");
@@ -410,6 +411,20 @@ function pricePosition(quote = {}) {
   return "价格处在 52 周区间中段，更适合等催化或客户证据更新。";
 }
 
+function priceRangePercent(quote = {}) {
+  const price = Number(quote.price);
+  const high = Number(quote.fiftyTwoWeekHigh);
+  const low = Number(quote.fiftyTwoWeekLow);
+  if (![price, high, low].every(Number.isFinite) || high <= low) return null;
+  return clamp(((price - low) / (high - low)) * 100, 0, 100);
+}
+
+function compactReason(value = "", limit = 92) {
+  const text = String(value || "").replace(/\s+/g, " ").trim();
+  if (!text) return "";
+  return text.length > limit ? `${text.slice(0, limit - 1)}…` : text;
+}
+
 function playbookFor(stock) {
   const playbooks = {
     "cpo-silicon-photonics": {
@@ -488,6 +503,94 @@ function scoreBreakdown(stock, quote = {}, metric = {}) {
   ];
 }
 
+function decisionFor(stock, quote = quoteForStock(stock)) {
+  const metric = metricForStock(stock) || {};
+  const evidence = getCalledEvidence(stock, 5);
+  const baseScore = scoreStock(stock, quote);
+  const breakdown = scoreBreakdown(stock, quote, metric);
+  const marketCap = Number(quote.marketCap) || stock.fallbackMarketCap || 0;
+  const rangePct = priceRangePercent(quote);
+  const playbook = playbookFor(stock);
+  const isCore = !stock.isUniversal;
+  const highMateriality = evidence.filter((item) => Number(item.materiality || 0) >= 70).length;
+  let fit = baseScore;
+
+  fit += isCore ? 7 : -18;
+  fit += Math.min(8, evidence.length * 2 + highMateriality * 2);
+  if (marketCap > 400e9) fit -= 8;
+  if (marketCap > 1e12) fit -= 7;
+  if (rangePct !== null && rangePct > 86) fit -= 6;
+  if (rangePct !== null && rangePct < 38 && baseScore >= 62) fit += 4;
+  if (stock.riskFlag || stock.theme === "capital-structure-veto") fit -= 20;
+  fit = Math.round(clamp(fit, 5, 96));
+
+  let actionLabel = "暂不优先";
+  let actionClass = "avoid";
+  let stance = "先放低优先级";
+  if (stock.riskFlag || stock.theme === "capital-structure-veto") {
+    actionLabel = "先查资本结构";
+    actionClass = "avoid";
+    stance = "方向可以看，但融资和稀释优先一票否决";
+  } else if (fit >= 82) {
+    actionLabel = "重点深挖";
+    actionClass = "pursue";
+    stance = "像 Serenity 会优先研究的高赔率标的";
+  } else if (fit >= 68) {
+    actionLabel = "观察等证据";
+    actionClass = "watch";
+    stance = "thesis 有吸引力，但还缺价格或证据共振";
+  } else if (fit >= 52) {
+    actionLabel = "补证据再看";
+    actionClass = "verify";
+    stance = isCore ? "有样本但赔率一般，先补关键证据" : "通用初筛可看，但不像 Serenity 典型高赔率票";
+  }
+
+  const capReason =
+    marketCap < 5e9
+      ? "市值仍小，若证据成立，重估弹性更像 Serenity 偏好的赔率结构。"
+      : marketCap < 80e9
+        ? "市值中等，赔率取决于客户证据是否继续增强。"
+        : "市值已经较大，更像需求锚点或大盘 beta，未必是最高赔率节点。";
+  const priceReason =
+    rangePct === null
+      ? "暂缺完整 52 周区间，价格位置需要继续核查。"
+      : rangePct > 86
+        ? "价格接近 52 周高位，先看估值拥挤和反证。"
+        : rangePct < 38
+          ? "价格离高位较远，若 thesis 未坏，更适合做证据复核。"
+          : "价格在 52 周区间中段，适合等待催化或客户证据更新。";
+  const coverageReason = isCore
+    ? `核心覆盖标的，已有 ${evidence.length} 条 Serenity 公开样本可交叉验证。`
+    : "非核心喊单标的，只能按 Serenity 框架做通用初筛。";
+
+  const reasons = [coverageReason, compactReason(stock.thesis), capReason, priceReason].filter(Boolean).slice(0, 4);
+  const blockers = [
+    compactReason(stock.risk),
+    !isCore ? "缺少 Serenity 原始喊单样本，不能证明她本人已经建立高确信度。" : "",
+    evidence.length < 2 ? "公开样本偏少，需要补 X 原文、财报电话会或客户证据。" : "",
+    rangePct !== null && rangePct > 86 ? "价格已高，若没有新增订单或业绩上修，赔率会被压缩。" : "",
+  ].filter(Boolean).slice(0, 4);
+  const nextActions = (stock.isUniversal
+    ? ["打开最近一季财报和电话会，确认收入增速与利润率是否同步改善", "对比同行估值和增速，判断它是龙头溢价还是拥挤交易", "检查最新新闻是否改变客户、监管、订单或资本结构"]
+    : playbook.catalysts).slice(0, 4);
+  const oneLine = `${stance}。${isCore ? "先看 Serenity 样本是否和当前价格共振。" : "先判断它是否真的符合“终端需求 + 瓶颈位置 + 赔率”的三件事。"}`;
+
+  return {
+    fit,
+    actionLabel,
+    actionClass,
+    stance,
+    oneLine,
+    reasons,
+    blockers,
+    nextActions,
+    evidenceCount: evidence.length,
+    baseScore,
+    rangePct,
+    topDriver: breakdown.slice().sort((a, b) => b.score - a.score)[0]?.label || "框架匹配",
+  };
+}
+
 function scenarioSet(score, stock, quote, space) {
   const price = formatPrice(quote);
   const baseUpside = Math.max(5, Math.round(space.upside * 0.36));
@@ -515,14 +618,23 @@ function scenarioSet(score, stock, quote, space) {
 
 function plainReportText(stock, quote, score, space, playbook, breakdown, scenarios, evidence, metric, extras = {}) {
   const profile = profileForQuote(quote);
+  const decision = extras.decision || decisionFor(stock, quote);
   const lines = [
     `${stock.symbol} · ${stock.name}`,
+    `研究动作：${decision.actionLabel} · Serenity 匹配度：${decision.fit}/100`,
+    `一句话结论：${decision.oneLine}`,
     `Serenity 分：${score} · ${conclusionFor(score, stock)}`,
     `价格：${formatPrice(quote)} · 当日涨跌：${formatPercent(quote.changePercent)} · 市值：${formatMarketCap(Number(quote.marketCap) || stock.fallbackMarketCap)}`,
     profile.sector || profile.industry ? `行业：${[profile.sector, profile.industry].filter(Boolean).join(" / ")}` : "",
     stock.isUniversal
       ? "覆盖状态：通用美股初筛，不代表 Serenity 已公开喊单。"
       : `提及结构：${compact.format(metric.mentions || 0)} 次提及，多 ${metric.bull || 0} / 空 ${metric.bear || 0} / 中性 ${metric.neutral || 0}`,
+    "",
+    "为什么：",
+    ...decision.reasons.map((item, index) => `${index + 1}. ${item}`),
+    "",
+    "下一步动作：",
+    ...decision.nextActions.map((item, index) => `${index + 1}. ${item}`),
     "",
     "执行摘要：",
     `1. ${stock.thesis}`,
@@ -665,6 +777,7 @@ function renderStockList() {
       const quote = stock.quote || {};
       const changeClass = Number(quote.changePercent) >= 0 ? "up" : "down";
       const metric = stock.metric || {};
+      const decision = decisionFor(stock, quote);
       const selected = normalizeSymbol(stock.symbol) === normalizeSymbol(state.activeSymbol) ? " selected" : "";
       return `
         <button class="stock-row${selected}" type="button" data-symbol="${escapeHtml(stock.symbol)}">
@@ -687,9 +800,43 @@ function renderStockList() {
             <small>${formatPercent(quote.changePercent)}</small>
           </span>
           <span class="metric">
-            <small>模型分 / 提及</small>
-            <b>${stock.score}</b>
-            <small>${compact.format(metric.mentions || 0)} mentions</small>
+            <small>动作 / 匹配度</small>
+            <b>${escapeHtml(decision.actionLabel)}</b>
+            <small>${decision.fit}/100 · ${compact.format(metric.mentions || 0)} mentions</small>
+          </span>
+        </button>
+      `;
+    })
+    .join("");
+}
+
+function renderOpportunityList() {
+  const stocks = calledStocks
+    .map(enrichStock)
+    .map((stock) => ({ stock, decision: decisionFor(stock, stock.quote) }))
+    .sort((a, b) => b.decision.fit - a.decision.fit || b.stock.score - a.stock.score)
+    .slice(0, 6);
+
+  opportunityList.innerHTML = stocks
+    .map(({ stock, decision }, index) => {
+      const quote = stock.quote || {};
+      const changeClass = Number(quote.changePercent) >= 0 ? "up" : "down";
+      return `
+        <button class="opportunity-card ${escapeHtml(decision.actionClass)}" type="button" data-symbol="${escapeHtml(stock.symbol)}">
+          <span class="opportunity-rank">${String(index + 1).padStart(2, "0")}</span>
+          <span class="opportunity-main">
+            <strong>${escapeHtml(stock.symbol)} · ${escapeHtml(stock.name)}</strong>
+            <small>${escapeHtml(decision.oneLine)}</small>
+          </span>
+          <span class="opportunity-fit">
+            <b>${decision.fit}</b>
+            <small>匹配度</small>
+          </span>
+          <span class="decision-pill ${escapeHtml(decision.actionClass)}">${escapeHtml(decision.actionLabel)}</span>
+          <span class="opportunity-meta">
+            <small>${escapeHtml(stock.themeLabel)}</small>
+            <b>${formatMarketCap(stock.marketCap)}</b>
+            <i class="${changeClass}">${formatPercent(quote.changePercent)}</i>
           </span>
         </button>
       `;
@@ -838,6 +985,7 @@ function buildReport(stock, quote) {
   const news = (quote.news || []).slice(0, 5);
   const coverageLine = stock.isUniversal ? "通用美股初筛 · 非 Serenity 核心喊单" : sentimentLine;
   const coverageSentence = stock.isUniversal ? "这支股票不在当前 Serenity 核心覆盖名单里，因此结论更偏通用研究框架，需要用户自行补 SEC、财报电话会和公司公告。" : "这支股票有 Serenity 公开样本可供交叉验证，但仍需要继续核查财报和公告。";
+  const decision = decisionFor(enriched, quote);
   const playbook = playbookFor(stock);
   const breakdown = scoreBreakdown(enriched, quote, metric);
   const scenarios = scenarioSet(score, stock, quote, space);
@@ -852,6 +1000,7 @@ function buildReport(stock, quote) {
     financialRows: financialData,
     peers,
     news,
+    decision,
   });
 
   reportOutput.innerHTML = `
@@ -866,6 +1015,28 @@ function buildReport(stock, quote) {
       <span>${stock.isUniversal ? "基于公开行情、财务、新闻与 Serenity 框架生成通用初筛" : "基于公开资料、行情数据与 Serenity 蒸馏框架生成"}</span>
       <button class="secondary copy-report" type="button" data-copy-report>复制研报摘要</button>
     </div>
+    <section class="decision-card ${escapeHtml(decision.actionClass)}">
+      <div class="decision-score">
+        <span>Serenity 匹配度</span>
+        <strong>${decision.fit}</strong>
+        <small>/100</small>
+      </div>
+      <div class="decision-content">
+        <div class="decision-title-row">
+          <span class="decision-pill ${escapeHtml(decision.actionClass)}">${escapeHtml(decision.actionLabel)}</span>
+          <small>${escapeHtml(stock.isUniversal ? "通用初筛" : `${decision.evidenceCount} 条公开样本`)}</small>
+        </div>
+        <h3>${escapeHtml(decision.stance)}</h3>
+        <p>${escapeHtml(decision.oneLine)}</p>
+        <div class="decision-reasons">
+          ${decision.reasons.slice(0, 3).map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
+        </div>
+      </div>
+      <div class="decision-next">
+        <strong>下一步</strong>
+        ${decision.nextActions.slice(0, 3).map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
+      </div>
+    </section>
     <div class="report-grid">
       <div class="report-metric"><span>当前价格</span><strong>${formatPrice(quote)}</strong></div>
       <div class="report-metric"><span>当日涨跌</span><strong class="${Number(quote.changePercent) >= 0 ? "up" : "down"}">${formatPercent(quote.changePercent)}</strong></div>
@@ -1053,6 +1224,7 @@ async function init() {
   renderMethodList();
   await loadQuotes();
   renderStockList();
+  renderOpportunityList();
   await analyzeSymbol("AAOI", { scroll: false });
 }
 
@@ -1061,6 +1233,11 @@ themeFilter.addEventListener("change", renderStockList);
 sortMode.addEventListener("change", renderStockList);
 
 stockList.addEventListener("click", (event) => {
+  const row = event.target.closest("[data-symbol]");
+  if (row) analyzeSymbol(row.dataset.symbol);
+});
+
+opportunityList.addEventListener("click", (event) => {
   const row = event.target.closest("[data-symbol]");
   if (row) analyzeSymbol(row.dataset.symbol);
 });

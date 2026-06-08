@@ -17,6 +17,7 @@
         </span>
       </a>
       <nav aria-label="页面导航">
+        <a href="#opportunities">机会榜</a>
         <a href="#watchlist">覆盖名单</a>
         <a href="#analysis">单股研报</a>
         <a href="#method">研究框架</a>
@@ -44,6 +45,17 @@
             <span><b>3</b> 生成单股 memo</span>
           </div>
         </div>
+      </section>
+
+      <section id="opportunities" class="panel opportunity-panel">
+        <div class="panel-head">
+          <div>
+            <span>Decision Board</span>
+            <h2>Serenity 机会榜</h2>
+          </div>
+          <p class="muted-line">按 Serenity 匹配度、公开样本、瓶颈位置和资本结构风险排序，优先告诉你“该先研究谁”。</p>
+        </div>
+        <div id="opportunityList" class="opportunity-list"></div>
       </section>
 
       <section class="simple-grid">
@@ -91,7 +103,7 @@
           <div class="panel-head">
             <div>
               <span>Research Memo Generator</span>
-              <h2>单股 Serenity 框架研报</h2>
+              <h2>输入股票，先看结论</h2>
             </div>
           </div>
           <form id="analysisForm" class="analysis-form">
