@@ -11,6 +11,7 @@ https://serenity-stock-research.netlify.app
 - Serenity 喊过或高频研究过的美股/OTC 标的列表
 - 真实价格、涨跌和公开市值数据
 - 输入 ticker 后生成 Serenity 风格投研报告
+- 新手盈利模式：买前评分、仓位/止损计算、模拟盘复盘
 - 网页端实时监控 Serenity 新推文，并在 30 秒后生成可交易标的排序研究包
 - 5 分钟复盘报告：回看首轮价格反应、主题扩散和反证信号
 - PWA / Service Worker 通知通道、监控健康面板和自选 watchlist

@@ -286,6 +286,9 @@ const state = {
   notificationEnabled: false,
   soundEnabled: false,
   watchlist: [],
+  beginnerProfile: null,
+  paperTrades: [],
+  activeReport: null,
   soundUnlocked: false,
   swReady: false,
   swControlled: false,
@@ -303,6 +306,8 @@ const WEB_CRYPTO_SYMBOLS = new Set(["BTC", "ETH", "SOL", "DOGE", "XRP"]);
 const PUSH_NOTIFY_KEY = "serenityWebPushNotify";
 const PUSH_SOUND_KEY = "serenityWebPushSound";
 const PUSH_WATCHLIST_KEY = "serenityWebPushWatchlist";
+const BEGINNER_PROFILE_KEY = "serenityBeginnerProfile";
+const BEGINNER_PAPER_TRADES_KEY = "serenityPaperTrades";
 const WATCH_THEME_TOKENS = {
   CPO: "cpo-silicon-photonics",
   PHOTONICS: "cpo-silicon-photonics",
@@ -422,6 +427,54 @@ function storageSet(key, value) {
   } catch {
     // Local storage can be unavailable in restricted browser contexts.
   }
+}
+
+function moneyValue(value) {
+  const num = Number(value);
+  return Number.isFinite(num) && num > 0 ? num : 0;
+}
+
+function formatMoney(value) {
+  const num = Number(value);
+  if (!Number.isFinite(num) || num <= 0) return "--";
+  return usd.format(num);
+}
+
+function defaultBeginnerProfile() {
+  return {
+    accountSize: 10_000,
+    riskPercent: 1,
+    maxPositionPercent: 8,
+  };
+}
+
+function normalizeBeginnerProfile(profile = {}) {
+  const defaults = defaultBeginnerProfile();
+  return {
+    accountSize: clamp(moneyValue(profile.accountSize || defaults.accountSize), 500, 10_000_000),
+    riskPercent: clamp(Number(profile.riskPercent || defaults.riskPercent), 0.25, 5),
+    maxPositionPercent: clamp(Number(profile.maxPositionPercent || defaults.maxPositionPercent), 1, 25),
+  };
+}
+
+function initBeginnerProfile() {
+  state.beginnerProfile = normalizeBeginnerProfile(storageGet(BEGINNER_PROFILE_KEY, defaultBeginnerProfile()));
+  const trades = storageGet(BEGINNER_PAPER_TRADES_KEY, []);
+  state.paperTrades = Array.isArray(trades)
+    ? trades
+        .filter((trade) => trade && trade.symbol && Number.isFinite(Number(trade.entryPrice)))
+        .slice(0, 40)
+    : [];
+}
+
+function saveBeginnerProfile(profile = state.beginnerProfile) {
+  state.beginnerProfile = normalizeBeginnerProfile(profile);
+  storageSet(BEGINNER_PROFILE_KEY, state.beginnerProfile);
+}
+
+function savePaperTrades() {
+  state.paperTrades = state.paperTrades.slice(0, 40);
+  storageSet(BEGINNER_PAPER_TRADES_KEY, state.paperTrades);
 }
 
 function normalizeWatchToken(value = "") {
@@ -768,6 +821,208 @@ function decisionFor(stock, quote = quoteForStock(stock)) {
   };
 }
 
+function beginnerTradeAssessment(stock, quote = {}, decision = decisionFor(stock, quote), space = upsideSpace(decision.baseScore || 60, stock)) {
+  const price = Number(quote.price);
+  const changePercent = Number(quote.changePercent);
+  const marketCap = Number(quote.marketCap) || stock.fallbackMarketCap || 0;
+  const rangePct = decision.rangePct ?? priceRangePercent(quote);
+  const evidenceCount = Number(decision.evidenceCount || 0);
+  const reasons = [];
+  let score = Number(decision.fit || 50);
+
+  if (stock.riskFlag || stock.theme === "capital-structure-veto") {
+    score -= 34;
+    reasons.push("触发资本结构或稀释风险，新手先不做真钱交易。");
+  }
+  if (stock.isUniversal) {
+    score -= 14;
+    reasons.push("不是 Serenity 核心公开喊单，只能按通用框架先筛。");
+  }
+  if (evidenceCount < 2 && !stock.isUniversal) {
+    score -= 8;
+    reasons.push("公开样本偏少，需要补原文和财报证据。");
+  }
+  if (Number.isFinite(changePercent) && changePercent > 18) {
+    score -= 30;
+    reasons.push("当日涨幅过大，属于典型新手追高风险。");
+  } else if (Number.isFinite(changePercent) && changePercent > 8) {
+    score -= 16;
+    reasons.push("短线已经明显反应，先等回踩或第二波确认。");
+  }
+  if (Number.isFinite(changePercent) && changePercent < -14) {
+    score -= 14;
+    reasons.push("价格快速下跌，先排除财报、融资或消息反证。");
+  }
+  if (Number.isFinite(rangePct) && rangePct > 88) {
+    score -= 16;
+    reasons.push("接近 52 周高位，赔率容易被情绪透支。");
+  } else if (Number.isFinite(rangePct) && rangePct < 38 && !stock.riskFlag) {
+    score += 5;
+    reasons.push("价格离高位较远，适合做证据复核而不是盲追。");
+  }
+  if (marketCap > 400e9) {
+    score -= 5;
+    reasons.push("市值已经较大，更像锚点，不一定适合小白追赔率。");
+  }
+  if (marketCap > 0 && marketCap < 5e9 && !stock.riskFlag) {
+    score += 4;
+    reasons.push("小市值有赔率，但必须用小仓位控制波动。");
+  }
+  if (!Number.isFinite(price) || price <= 0) {
+    score -= 20;
+    reasons.push("缺少可用价格，不能计算仓位和止损。");
+  }
+
+  score = Math.round(clamp(score, 1, 100));
+  const hotPrice = Number.isFinite(changePercent) && changePercent > 12;
+  const highRange = Number.isFinite(rangePct) && rangePct > 86;
+  let verdict = "observe";
+  if (stock.riskFlag || stock.theme === "capital-structure-veto" || score < 42 || (hotPrice && highRange)) {
+    verdict = "blocked";
+  } else if (score >= 76 && !hotPrice && !highRange) {
+    verdict = "ready";
+  } else if (score >= 58) {
+    verdict = "wait";
+  }
+
+  const copy = {
+    ready: {
+      label: "可小仓试错",
+      className: "ready",
+      summary: "只允许按风险预算小仓位执行，不能满仓或追涨加仓。",
+      allowed: true,
+      pullbackPercent: 3,
+      stopPercent: clamp(Math.min(Number(space.downside || 28) * 0.32, 12), 6, 12),
+    },
+    wait: {
+      label: "等回调确认",
+      className: "wait",
+      summary: "当前不急着买，等价格回踩、放量续强或新增证据后再计算入场。",
+      allowed: false,
+      pullbackPercent: Number.isFinite(changePercent) && changePercent > 8 ? 6 : 4,
+      stopPercent: 7,
+    },
+    observe: {
+      label: "只观察",
+      className: "observe",
+      summary: "可以加入模拟盘观察，但不建议新手用真钱开仓。",
+      allowed: false,
+      pullbackPercent: 5,
+      stopPercent: 6,
+    },
+    blocked: {
+      label: "禁止追高",
+      className: "blocked",
+      summary: "风险或价格结构不适合小白交易，先等反证解除。",
+      allowed: false,
+      pullbackPercent: 8,
+      stopPercent: 0,
+    },
+  }[verdict];
+
+  const buyRules = [
+    `买前结论必须保持在“${copy.label}”或更好，且不能因为推文情绪临时放大仓位。`,
+    hotPrice ? "当日大涨后不直接追，至少等回踩或收盘后复盘。" : "入场前确认不是单根冲高，成交量和同主题标的要同步。",
+    stock.isUniversal ? "补最近财报、公司公告和同行估值，确认它真的符合 Serenity 框架。" : "回看 Serenity 原文，确认喊单语义不是调侃、反证或风险提醒。",
+  ];
+  const invalidations = [
+    "跌破止损价或 thesis 被财报/公告证伪，先退出而不是补仓。",
+    "出现融资、ATM、债务压力或客户延迟，直接降级。",
+    "同主题龙头没有同步，或成交量无法延续，不做追涨加仓。",
+  ];
+
+  return {
+    verdict,
+    score,
+    label: copy.label,
+    className: copy.className,
+    summary: copy.summary,
+    allowed: copy.allowed,
+    pullbackPercent: copy.pullbackPercent,
+    stopPercent: copy.stopPercent,
+    reasons: reasons.length ? reasons.slice(0, 4) : decision.reasons.slice(0, 3),
+    buyRules,
+    invalidations,
+  };
+}
+
+function beginnerPositionPlan(quote = {}, profile = state.beginnerProfile || defaultBeginnerProfile(), assessment = {}, space = {}) {
+  const normalizedProfile = normalizeBeginnerProfile(profile);
+  const price = Number(quote.price);
+  const riskBudget = normalizedProfile.accountSize * (normalizedProfile.riskPercent / 100);
+  const maxPositionBudget = normalizedProfile.accountSize * (normalizedProfile.maxPositionPercent / 100);
+  const allowRealTrade = Boolean(assessment.allowed && Number.isFinite(price) && price > 0);
+  const stopPercent = allowRealTrade ? Number(assessment.stopPercent || 8) : Number(assessment.stopPercent || 0);
+  const stopPrice = allowRealTrade ? price * (1 - stopPercent / 100) : null;
+  const riskPerShare = allowRealTrade ? Math.max(0.01, price - stopPrice) : null;
+  const riskSizedShares = allowRealTrade ? riskBudget / riskPerShare : 0;
+  const capSizedShares = allowRealTrade ? maxPositionBudget / price : 0;
+  const fractionalShares = Math.max(0, Math.min(riskSizedShares, capSizedShares));
+  const wholeShares = Math.floor(fractionalShares);
+  const positionCost = allowRealTrade ? fractionalShares * price : 0;
+  const wholeShareCost = allowRealTrade ? wholeShares * price : 0;
+  const riskUsed = allowRealTrade ? fractionalShares * riskPerShare : 0;
+  const targetOnePct = clamp(Number(space.upside || 20) * 0.24, 6, 32);
+  const targetTwoPct = clamp(Number(space.upside || 40) * 0.55, 12, 78);
+  const watchEntry = Number.isFinite(price) && price > 0 ? price * (1 - Number(assessment.pullbackPercent || 4) / 100) : null;
+
+  return {
+    allowRealTrade,
+    riskBudget,
+    maxPositionBudget,
+    stopPercent,
+    stopPrice,
+    riskPerShare,
+    fractionalShares,
+    wholeShares,
+    positionCost,
+    wholeShareCost,
+    riskUsed,
+    targetOne: Number.isFinite(price) ? price * (1 + targetOnePct / 100) : null,
+    targetTwo: Number.isFinite(price) ? price * (1 + targetTwoPct / 100) : null,
+    watchEntry,
+    accountSize: normalizedProfile.accountSize,
+    riskPercent: normalizedProfile.riskPercent,
+    maxPositionPercent: normalizedProfile.maxPositionPercent,
+  };
+}
+
+function paperTradeReturn(trade = {}) {
+  const quote = state.quotes.get(normalizeSymbol(trade.symbol)) || {};
+  const currentPrice = Number(quote.price);
+  const entryPrice = Number(trade.entryPrice);
+  if (!Number.isFinite(currentPrice) || !Number.isFinite(entryPrice) || entryPrice <= 0) return null;
+  return ((currentPrice - entryPrice) / entryPrice) * 100;
+}
+
+function addPaperTrade(stock, quote = {}, assessment = {}, plan = {}) {
+  const price = Number(quote.price);
+  if (!Number.isFinite(price) || price <= 0) return false;
+  const symbol = normalizeSymbol(stock.symbol);
+  state.paperTrades = state.paperTrades.filter((trade) => normalizeSymbol(trade.symbol) !== symbol);
+  state.paperTrades.unshift({
+    id: `${symbol}-${Date.now()}`,
+    symbol,
+    name: stock.name,
+    entryPrice: price,
+    stopPrice: plan.stopPrice || plan.watchEntry || null,
+    targetOne: plan.targetOne || null,
+    targetTwo: plan.targetTwo || null,
+    plannedCost: plan.positionCost || 0,
+    shares: plan.fractionalShares || 0,
+    verdict: assessment.label,
+    createdAt: Date.now(),
+    thesis: compactReason(stock.thesis, 120),
+  });
+  savePaperTrades();
+  return true;
+}
+
+function deletePaperTrade(id) {
+  state.paperTrades = state.paperTrades.filter((trade) => trade.id !== id);
+  savePaperTrades();
+}
+
 function scenarioSet(score, stock, quote, space) {
   const price = formatPrice(quote);
   const baseUpside = Math.max(5, Math.round(space.upside * 0.36));
@@ -802,6 +1057,12 @@ function plainReportText(stock, quote, score, space, playbook, breakdown, scenar
     `一句话结论：${decision.oneLine}`,
     `Serenity 分：${score} · ${conclusionFor(score, stock)}`,
     `价格：${formatPrice(quote)} · 当日涨跌：${formatPercent(quote.changePercent)} · 市值：${formatMarketCap(Number(quote.marketCap) || stock.fallbackMarketCap)}`,
+    extras.beginner
+      ? `新手买前判定：${extras.beginner.label} · ${extras.beginner.score}/100 · ${extras.beginner.summary}`
+      : "",
+    extras.positionPlan
+      ? `仓位纪律：单笔风险 ${formatMoney(extras.positionPlan.riskBudget)} · 仓位上限 ${formatMoney(extras.positionPlan.maxPositionBudget)} · 止损 ${extras.positionPlan.stopPrice ? formatMoney(extras.positionPlan.stopPrice) : "暂不入场"}`
+      : "",
     profile.sector || profile.industry ? `行业：${[profile.sector, profile.industry].filter(Boolean).join(" / ")}` : "",
     stock.isUniversal
       ? "覆盖状态：通用美股初筛，不代表 Serenity 已公开喊单。"
@@ -1877,6 +2138,115 @@ function peerCandidates(stock, quote = {}) {
   return symbols.slice(0, 5);
 }
 
+function formatShares(value) {
+  const shares = Number(value);
+  if (!Number.isFinite(shares) || shares <= 0) return "0";
+  if (shares >= 10) return shares.toFixed(0);
+  return shares.toFixed(2);
+}
+
+function renderPaperTrades(activeSymbol = "") {
+  if (!state.paperTrades.length) {
+    return `<div class="paper-empty">暂无模拟记录。先把高质量标的加入模拟盘，观察 1D / 7D / 30D 后再考虑真钱。</div>`;
+  }
+  const active = normalizeSymbol(activeSymbol);
+  return `
+    <div class="paper-trade-list">
+      ${state.paperTrades
+        .slice(0, 6)
+        .map((trade) => {
+          const returnPercent = paperTradeReturn(trade);
+          const currentClass = Number(returnPercent) >= 0 ? "up" : "down";
+          const isActive = normalizeSymbol(trade.symbol) === active;
+          return `
+            <article class="paper-trade-row ${isActive ? "active" : ""}">
+              <div>
+                <strong>${escapeHtml(trade.symbol)} ${isActive ? "· 当前研报" : ""}</strong>
+                <small>${escapeHtml(dateLabel(trade.createdAt))} · ${escapeHtml(trade.verdict || "模拟观察")}</small>
+              </div>
+              <span><small>入场</small><b>${formatMoney(trade.entryPrice)}</b></span>
+              <span><small>止损/观察线</small><b>${trade.stopPrice ? formatMoney(trade.stopPrice) : "--"}</b></span>
+              <span><small>至今</small><b class="${currentClass}">${returnPercent === null ? "--" : formatPercent(returnPercent)}</b></span>
+              <button class="secondary" type="button" data-paper-delete="${escapeHtml(trade.id)}">删除</button>
+            </article>
+          `;
+        })
+        .join("")}
+    </div>
+  `;
+}
+
+function renderBeginnerMode(stock, quote, assessment, plan) {
+  const profile = state.beginnerProfile || defaultBeginnerProfile();
+  const realTradeCopy = plan.allowRealTrade
+    ? `按当前风险设置，最大真钱试错约 ${formatMoney(plan.positionCost)}，约 ${formatShares(plan.fractionalShares)} 股；整股账户可先看 ${plan.wholeShares} 股。`
+    : `当前判定不建议真钱开仓。可设置提醒或加入模拟盘，等待 ${plan.watchEntry ? formatMoney(plan.watchEntry) : "更好的价格"} 附近重新评分。`;
+  return `
+    <section id="beginner-guard" class="beginner-guard ${escapeHtml(assessment.className)}">
+      <div class="beginner-head">
+        <div>
+          <span>新手盈利模式</span>
+          <h3>${escapeHtml(assessment.label)}</h3>
+          <p>${escapeHtml(assessment.summary)}</p>
+        </div>
+        <div class="beginner-score">
+          <b>${assessment.score}</b>
+          <small>买前分</small>
+        </div>
+      </div>
+      <div class="beginner-grid">
+        <article>
+          <strong>买入前判定</strong>
+          ${assessment.reasons.map((item) => `<p>${escapeHtml(item)}</p>`).join("")}
+        </article>
+        <article>
+          <strong>仓位 / 止损</strong>
+          <p>${escapeHtml(realTradeCopy)}</p>
+          <div class="risk-metrics">
+            <span><small>单笔风险</small><b>${formatMoney(plan.riskBudget)}</b></span>
+            <span><small>仓位上限</small><b>${formatMoney(plan.maxPositionBudget)}</b></span>
+            <span><small>止损价</small><b>${plan.stopPrice ? formatMoney(plan.stopPrice) : "--"}</b></span>
+            <span><small>第一目标</small><b>${plan.targetOne ? formatMoney(plan.targetOne) : "--"}</b></span>
+          </div>
+        </article>
+        <article>
+          <strong>账户设置</strong>
+          <label>账户金额
+            <input type="number" min="500" step="100" data-beginner-field="accountSize" value="${profile.accountSize}" />
+          </label>
+          <label>单笔最大亏损 %
+            <input type="number" min="0.25" max="5" step="0.25" data-beginner-field="riskPercent" value="${profile.riskPercent}" />
+          </label>
+          <label>单票仓位上限 %
+            <input type="number" min="1" max="25" step="0.5" data-beginner-field="maxPositionPercent" value="${profile.maxPositionPercent}" />
+          </label>
+        </article>
+      </div>
+      <div class="beginner-plan">
+        <div>
+          <strong>执行条件</strong>
+          ${assessment.buyRules.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
+        </div>
+        <div>
+          <strong>退出条件</strong>
+          ${assessment.invalidations.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
+        </div>
+      </div>
+      <div class="beginner-actions">
+        <button type="button" data-paper-trade="${escapeHtml(stock.symbol)}">加入模拟盘</button>
+        <small>${plan.allowRealTrade ? "模拟盘会记录当前入场价、止损线和目标价，用来复盘纪律。" : "当前只建议模拟，不建议新手直接下单。"}</small>
+      </div>
+      <div class="paper-trades-panel">
+        <div class="paper-title">
+          <strong>模拟盘复盘</strong>
+          <small>${state.paperTrades.length} 条记录 · 先验证策略，再考虑真钱</small>
+        </div>
+        ${renderPaperTrades(stock.symbol)}
+      </div>
+    </section>
+  `;
+}
+
 function formatNewsDate(value) {
   if (!value) return "";
   return dateLabel(value);
@@ -1904,18 +2274,23 @@ function buildReport(stock, quote) {
   const playbook = playbookFor(stock);
   const breakdown = scoreBreakdown(enriched, quote, metric);
   const scenarios = scenarioSet(score, stock, quote, space);
+  const beginner = beginnerTradeAssessment(enriched, quote, decision, space);
+  const positionPlan = beginnerPositionPlan(quote, state.beginnerProfile, beginner, space);
   const topDrivers = breakdown
     .slice()
     .sort((a, b) => b.score - a.score)
     .slice(0, 2)
     .map((item) => item.label)
     .join("、");
+  state.activeReport = { stock: enriched, quote };
   state.latestReportText = plainReportText(stock, quote, score, space, playbook, breakdown, scenarios, evidence, metric, {
     marketRows: marketData,
     financialRows: financialData,
     peers,
     news,
     decision,
+    beginner,
+    positionPlan,
   });
 
   reportOutput.innerHTML = `
@@ -1952,6 +2327,7 @@ function buildReport(stock, quote) {
         ${decision.nextActions.slice(0, 3).map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
       </div>
     </section>
+    ${renderBeginnerMode(enriched, quote, beginner, positionPlan)}
     <div class="report-grid">
       <div class="report-metric"><span>当前价格</span><strong>${formatPrice(quote)}</strong></div>
       <div class="report-metric"><span>当日涨跌</span><strong class="${Number(quote.changePercent) >= 0 ? "up" : "down"}">${formatPercent(quote.changePercent)}</strong></div>
@@ -2120,6 +2496,7 @@ async function loadQuotes() {
 
 async function init() {
   initPushPreferences();
+  initBeginnerProfile();
   initServiceWorker().then(renderLiveMonitor);
   reportOutput.innerHTML = `<div class="empty-report">输入 ticker 或点击左侧名单，生成一份 Serenity 风格投研报告。</div>`;
   renderTickerSuggestions();
@@ -2234,6 +2611,25 @@ reportOutput.addEventListener("click", async (event) => {
     analyzeSymbol(symbolButton.dataset.symbol);
     return;
   }
+  const paperButton = event.target.closest("[data-paper-trade]");
+  if (paperButton && state.activeReport) {
+    const { stock, quote } = state.activeReport;
+    const score = scoreStock(stock, quote);
+    const space = upsideSpace(score, stock);
+    const decision = decisionFor(stock, quote);
+    const assessment = beginnerTradeAssessment(stock, quote, decision, space);
+    const plan = beginnerPositionPlan(quote, state.beginnerProfile, assessment, space);
+    if (addPaperTrade(stock, quote, assessment, plan)) {
+      buildReport(stock, quote);
+    }
+    return;
+  }
+  const deleteButton = event.target.closest("[data-paper-delete]");
+  if (deleteButton) {
+    deletePaperTrade(deleteButton.dataset.paperDelete);
+    if (state.activeReport) buildReport(state.activeReport.stock, state.activeReport.quote);
+    return;
+  }
   const button = event.target.closest("[data-copy-report]");
   if (!button || !state.latestReportText) return;
   const copied = await copyText(state.latestReportText);
@@ -2248,6 +2644,16 @@ reportOutput.addEventListener("click", async (event) => {
       button.textContent = "复制研报摘要";
     }, 1400);
   }
+});
+
+reportOutput.addEventListener("change", (event) => {
+  const input = event.target.closest("[data-beginner-field]");
+  if (!input) return;
+  saveBeginnerProfile({
+    ...state.beginnerProfile,
+    [input.dataset.beginnerField]: Number(input.value),
+  });
+  if (state.activeReport) buildReport(state.activeReport.stock, state.activeReport.quote);
 });
 
 analysisForm.addEventListener("submit", (event) => {
