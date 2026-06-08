@@ -12,6 +12,7 @@ https://serenity-stock-research.netlify.app
 - 真实价格、涨跌和公开市值数据
 - 输入 ticker 后生成 Serenity 风格投研报告
 - 新手盈利模式：买前评分、仓位/止损计算、模拟盘复盘
+- 买点等待系统：回踩、突破、止损提醒与每日新手交易日报
 - 网页端实时监控 Serenity 新推文，并在 30 秒后生成可交易标的排序研究包
 - 5 分钟复盘报告：回看首轮价格反应、主题扩散和反证信号
 - PWA / Service Worker 通知通道、监控健康面板和自选 watchlist

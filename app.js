@@ -288,7 +288,10 @@ const state = {
   watchlist: [],
   beginnerProfile: null,
   paperTrades: [],
+  priceAlerts: [],
   activeReport: null,
+  lastPriceAlertQuoteAt: 0,
+  lastPriceAlertTriggeredAt: null,
   soundUnlocked: false,
   swReady: false,
   swControlled: false,
@@ -308,6 +311,8 @@ const PUSH_SOUND_KEY = "serenityWebPushSound";
 const PUSH_WATCHLIST_KEY = "serenityWebPushWatchlist";
 const BEGINNER_PROFILE_KEY = "serenityBeginnerProfile";
 const BEGINNER_PAPER_TRADES_KEY = "serenityPaperTrades";
+const BEGINNER_PRICE_ALERTS_KEY = "serenityPriceAlerts";
+const PRICE_ALERT_QUOTE_MS = 30_000;
 const WATCH_THEME_TOKENS = {
   CPO: "cpo-silicon-photonics",
   PHOTONICS: "cpo-silicon-photonics",
@@ -347,6 +352,8 @@ const monitorStatus = document.querySelector("#monitorStatus");
 const webPushBanner = document.querySelector("#webPushBanner");
 const webPushControls = document.querySelector("#webPushControls");
 const monitorHealth = document.querySelector("#monitorHealth");
+const dailyTradeReport = document.querySelector("#dailyTradeReport");
+const priceAlertPanel = document.querySelector("#priceAlertPanel");
 const liveTweetList = document.querySelector("#liveTweetList");
 const trackStatus = document.querySelector("#trackStatus");
 const trackRecordList = document.querySelector("#trackRecordList");
@@ -465,6 +472,12 @@ function initBeginnerProfile() {
         .filter((trade) => trade && trade.symbol && Number.isFinite(Number(trade.entryPrice)))
         .slice(0, 40)
     : [];
+  const alerts = storageGet(BEGINNER_PRICE_ALERTS_KEY, []);
+  state.priceAlerts = Array.isArray(alerts)
+    ? alerts
+        .filter((alert) => alert && alert.symbol && Number.isFinite(Number(alert.targetPrice)) && alert.direction)
+        .slice(0, 60)
+    : [];
 }
 
 function saveBeginnerProfile(profile = state.beginnerProfile) {
@@ -475,6 +488,11 @@ function saveBeginnerProfile(profile = state.beginnerProfile) {
 function savePaperTrades() {
   state.paperTrades = state.paperTrades.slice(0, 40);
   storageSet(BEGINNER_PAPER_TRADES_KEY, state.paperTrades);
+}
+
+function savePriceAlerts() {
+  state.priceAlerts = state.priceAlerts.slice(0, 60);
+  storageSet(BEGINNER_PRICE_ALERTS_KEY, state.priceAlerts);
 }
 
 function normalizeWatchToken(value = "") {
@@ -1021,6 +1039,129 @@ function addPaperTrade(stock, quote = {}, assessment = {}, plan = {}) {
 function deletePaperTrade(id) {
   state.paperTrades = state.paperTrades.filter((trade) => trade.id !== id);
   savePaperTrades();
+}
+
+function priceAlertLabel(kind = "") {
+  return (
+    {
+      pullback: "等回踩",
+      breakout: "突破确认",
+      stop: "止损/观察线",
+    }[kind] || "价格提醒"
+  );
+}
+
+function suggestedPriceAlert(stock, quote = {}, plan = {}, kind = "pullback") {
+  const price = Number(quote.price);
+  if (!Number.isFinite(price) || price <= 0) return null;
+  if (kind === "breakout") {
+    return {
+      kind,
+      direction: "above",
+      targetPrice: price * 1.04,
+      note: "突破当前价上方约 4% 且放量后，再重新看买前评分。",
+    };
+  }
+  if (kind === "stop") {
+    const targetPrice = Number(plan.stopPrice) || price * 0.93;
+    return {
+      kind,
+      direction: "below",
+      targetPrice,
+      note: "跌破止损或观察线后，先复盘 thesis，不做情绪补仓。",
+    };
+  }
+  return {
+    kind: "pullback",
+    direction: "below",
+    targetPrice: Number(plan.watchEntry) || price * 0.96,
+    note: "等回踩到更舒服的位置，再检查成交量、同主题扩散和反证。",
+  };
+}
+
+function addPriceAlert(stock, quote = {}, plan = {}, kind = "pullback") {
+  const suggestion = suggestedPriceAlert(stock, quote, plan, kind);
+  if (!suggestion) return false;
+  const symbol = normalizeSymbol(stock.symbol || quote.symbol || quote.requestedSymbol);
+  const id = `${symbol}-${suggestion.kind}`;
+  const existing = state.priceAlerts.find((alert) => alert.id === id);
+  const nextAlert = {
+    id,
+    symbol,
+    name: stock.name || symbol,
+    kind: suggestion.kind,
+    direction: suggestion.direction,
+    targetPrice: Number(suggestion.targetPrice),
+    note: suggestion.note,
+    sourcePrice: Number(quote.price),
+    createdAt: Date.now(),
+    triggeredAt: null,
+  };
+  if (existing) Object.assign(existing, nextAlert);
+  else state.priceAlerts.unshift(nextAlert);
+  savePriceAlerts();
+  checkPriceAlerts();
+  return true;
+}
+
+function deletePriceAlert(id) {
+  state.priceAlerts = state.priceAlerts.filter((alert) => alert.id !== id);
+  savePriceAlerts();
+}
+
+function priceAlertEvaluation(alert = {}) {
+  const quote = state.quotes.get(normalizeSymbol(alert.symbol)) || {};
+  const currentPrice = Number(quote.price);
+  const targetPrice = Number(alert.targetPrice);
+  const hasPrice = Number.isFinite(currentPrice) && currentPrice > 0 && Number.isFinite(targetPrice) && targetPrice > 0;
+  const isTriggered =
+    Boolean(alert.triggeredAt) ||
+    (hasPrice && alert.direction === "above" && currentPrice >= targetPrice) ||
+    (hasPrice && alert.direction === "below" && currentPrice <= targetPrice);
+  const distancePercent = hasPrice ? ((currentPrice - targetPrice) / targetPrice) * 100 : null;
+  return { quote, currentPrice, targetPrice, hasPrice, isTriggered, distancePercent };
+}
+
+function checkPriceAlerts() {
+  let changed = false;
+  for (const alert of state.priceAlerts) {
+    if (alert.triggeredAt) continue;
+    const evaluation = priceAlertEvaluation(alert);
+    if (!evaluation.isTriggered) continue;
+    alert.triggeredAt = Date.now();
+    state.lastPriceAlertTriggeredAt = Date.now();
+    changed = true;
+  }
+  if (changed) savePriceAlerts();
+  return changed;
+}
+
+async function refreshPriceAlertQuotes(force = false) {
+  const activeAlerts = state.priceAlerts.filter((alert) => !alert.triggeredAt);
+  if (!activeAlerts.length) return false;
+  if (!force && Date.now() - state.lastPriceAlertQuoteAt < PRICE_ALERT_QUOTE_MS) return false;
+  state.lastPriceAlertQuoteAt = Date.now();
+  const quotes = await fetchQuotesForSymbols(activeAlerts.map((alert) => alert.symbol));
+  for (const [symbol, quote] of quotes.entries()) state.quotes.set(symbol, quote);
+  return checkPriceAlerts();
+}
+
+function renderInlinePriceAlerts(symbol = "") {
+  const normalized = normalizeSymbol(symbol);
+  const alerts = state.priceAlerts.filter((alert) => normalizeSymbol(alert.symbol) === normalized);
+  if (!alerts.length) return `<small>还没有为 ${escapeHtml(normalized)} 设置买点提醒。</small>`;
+  return alerts
+    .map((alert) => {
+      const evaluation = priceAlertEvaluation(alert);
+      const status = evaluation.isTriggered ? "已触发" : alert.direction === "above" ? "等待突破" : "等待回踩";
+      return `
+        <span class="${evaluation.isTriggered ? "triggered" : ""}">
+          <b>${escapeHtml(priceAlertLabel(alert.kind))}</b>
+          <small>${escapeHtml(status)} · ${formatMoney(alert.targetPrice)}${evaluation.hasPrice ? ` · 当前 ${formatMoney(evaluation.currentPrice)}` : ""}</small>
+        </span>
+      `;
+    })
+    .join("");
 }
 
 function scenarioSet(score, stock, quote, space) {
@@ -1777,6 +1918,110 @@ function renderMonitorHealth() {
   `;
 }
 
+function livePackRows() {
+  return Array.from(state.liveResearchPacks.values())
+    .flatMap((pack) => (pack.rows || []).map((row) => ({ ...row, pack })))
+    .filter((row) => row.symbol);
+}
+
+function renderDailyTradeReport() {
+  if (!dailyTradeReport) return;
+  const rows = livePackRows();
+  const topRows = rows.slice().sort((a, b) => Number(b.score || 0) - Number(a.score || 0)).slice(0, 4);
+  const blockedRows = rows
+    .filter((row) => Number(row.quote?.changePercent) > 8 || /风险|观察|补证据/.test(row.action || ""))
+    .slice(0, 4);
+  const tradableSymbols = [...new Set(state.liveItems.flatMap((item) => liveTradableSymbols(item)).map(normalizeSymbol).filter(Boolean))].slice(0, 10);
+  const activeAlerts = state.priceAlerts.filter((alert) => !alert.triggeredAt).length;
+  const triggeredAlerts = state.priceAlerts.filter((alert) => alert.triggeredAt).length;
+  const paperActive = state.paperTrades.length;
+  dailyTradeReport.innerHTML = `
+    <section class="daily-card">
+      <div class="daily-head">
+        <div>
+          <span>Daily Beginner Brief</span>
+          <strong>每日新手交易日报</strong>
+        </div>
+        <small>${dateLabel(Date.now())} · 页面实时生成</small>
+      </div>
+      <div class="daily-metrics">
+        <span><b>${state.liveItems.length}</b><small>最新信号</small></span>
+        <span><b>${tradableSymbols.length}</b><small>可识别股票</small></span>
+        <span><b>${state.livePending.size + state.liveReviewPending.size}</b><small>待研判/复盘</small></span>
+        <span><b>${activeAlerts}</b><small>活跃提醒</small></span>
+        <span><b>${triggeredAlerts}</b><small>已触发提醒</small></span>
+        <span><b>${paperActive}</b><small>模拟盘记录</small></span>
+      </div>
+      <div class="daily-columns">
+        <article>
+          <strong>优先研究</strong>
+          ${
+            topRows.length
+              ? topRows.map((row) => `<button class="secondary" type="button" data-symbol="${escapeHtml(row.symbol)}">${escapeHtml(row.symbol)} · ${escapeHtml(row.action)} · ${row.score}/100</button>`).join("")
+              : `<p>等待 30 秒研究包生成后，这里会给出排序。</p>`
+          }
+        </article>
+        <article>
+          <strong>禁止追高 / 先等</strong>
+          ${
+            blockedRows.length
+              ? blockedRows.map((row) => `<span>${escapeHtml(row.symbol)} · ${formatPercent(row.quote?.changePercent)} · ${escapeHtml(row.action)}</span>`).join("")
+              : `<p>暂无明显追高拦截，仍需按买前评分执行。</p>`
+          }
+        </article>
+        <article>
+          <strong>今日纪律</strong>
+          <span>只买评分通过且有止损价的交易。</span>
+          <span>不能因为推文热度放大仓位。</span>
+          <span>未触发买点前，优先放进提醒或模拟盘。</span>
+        </article>
+      </div>
+    </section>
+  `;
+}
+
+function renderPriceAlertPanel() {
+  if (!priceAlertPanel) return;
+  checkPriceAlerts();
+  const alerts = state.priceAlerts.slice(0, 8);
+  priceAlertPanel.innerHTML = `
+    <section class="alert-center">
+      <div class="alert-center-head">
+        <div>
+          <span>Buy Point Alerts</span>
+          <strong>买点等待系统</strong>
+        </div>
+        <small>${state.priceAlerts.length ? `${state.priceAlerts.length} 条提醒` : "暂无提醒"}</small>
+      </div>
+      ${
+        alerts.length
+          ? `<div class="alert-list">
+              ${alerts
+                .map((alert) => {
+                  const evaluation = priceAlertEvaluation(alert);
+                  const status = evaluation.isTriggered ? "已触发" : alert.direction === "above" ? "等待突破" : "等待回踩";
+                  return `
+                    <article class="alert-row ${evaluation.isTriggered ? "triggered" : ""}">
+                      <button class="secondary" type="button" data-symbol="${escapeHtml(alert.symbol)}">${escapeHtml(alert.symbol)}</button>
+                      <div>
+                        <strong>${escapeHtml(priceAlertLabel(alert.kind))}</strong>
+                        <small>${escapeHtml(alert.note || "")}</small>
+                      </div>
+                      <span><small>目标</small><b>${formatMoney(alert.targetPrice)}</b></span>
+                      <span><small>当前</small><b>${evaluation.hasPrice ? formatMoney(evaluation.currentPrice) : "--"}</b></span>
+                      <em>${escapeHtml(status)}</em>
+                      <button class="secondary" type="button" data-alert-delete="${escapeHtml(alert.id)}">删除</button>
+                    </article>
+                  `;
+                })
+                .join("")}
+            </div>`
+          : `<p class="alert-empty">在单股研报的“小白模式”里点击“等回踩提醒 / 突破确认 / 止损提醒”，这里会集中显示。</p>`
+      }
+    </section>
+  `;
+}
+
 function renderWebPushControls() {
   const notifyClass = state.notificationEnabled && notificationPermission() === "granted" ? "active" : "";
   const soundClass = state.soundEnabled ? "active" : "";
@@ -1951,6 +2196,8 @@ function renderLiveMonitor() {
   renderWebPushBanner();
   renderWebPushControls();
   renderMonitorHealth();
+  renderDailyTradeReport();
+  renderPriceAlertPanel();
   monitorStatus.textContent = latestLive
     ? `${base} · 网页推送 ${Math.round(WEB_PUSH_POLL_MS / 1000)} 秒轮询 · 接口最新 ${dateTimeLabel(latestLive.date)}${newCount ? ` · ${newCount} 条新推文待入库` : ""}`
     : `${base} · 正在等待实时接口`;
@@ -2005,6 +2252,7 @@ async function loadLiveMonitor() {
     state.liveItems = data.items || [];
     state.liveLastItemCount = state.liveItems.length;
     syncLivePushItems(state.liveItems);
+    await refreshPriceAlertQuotes().catch(() => false);
     renderLiveMonitor();
   } catch (error) {
     state.liveLatencyMs = performance.now() - startedAt;
@@ -2235,6 +2483,18 @@ function renderBeginnerMode(stock, quote, assessment, plan) {
       <div class="beginner-actions">
         <button type="button" data-paper-trade="${escapeHtml(stock.symbol)}">加入模拟盘</button>
         <small>${plan.allowRealTrade ? "模拟盘会记录当前入场价、止损线和目标价，用来复盘纪律。" : "当前只建议模拟，不建议新手直接下单。"}</small>
+      </div>
+      <div class="buy-alert-builder">
+        <div>
+          <strong>价格提醒</strong>
+          <small>把“不能追高”变成具体等待价位。</small>
+        </div>
+        <button class="secondary" type="button" data-price-alert="pullback">等回踩提醒</button>
+        <button class="secondary" type="button" data-price-alert="breakout">突破确认提醒</button>
+        <button class="secondary" type="button" data-price-alert="stop">止损提醒</button>
+      </div>
+      <div class="inline-alerts">
+        ${renderInlinePriceAlerts(stock.symbol)}
       </div>
       <div class="paper-trades-panel">
         <div class="paper-title">
@@ -2523,6 +2783,8 @@ async function init() {
   loadLiveMonitor();
   setInterval(loadLiveMonitor, WEB_PUSH_POLL_MS);
   await loadQuotes();
+  await refreshPriceAlertQuotes(true).catch(() => false);
+  checkPriceAlerts();
   renderStockList();
   renderOpportunityList();
   await analyzeSymbol("AAOI", { scroll: false });
@@ -2546,6 +2808,25 @@ opportunityList.addEventListener("click", (event) => {
 liveTweetList.addEventListener("click", (event) => {
   const button = event.target.closest("[data-symbol]");
   if (button) analyzeSymbol(button.dataset.symbol);
+});
+
+dailyTradeReport.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-symbol]");
+  if (button) analyzeSymbol(button.dataset.symbol);
+});
+
+priceAlertPanel.addEventListener("click", (event) => {
+  const symbolButton = event.target.closest("[data-symbol]");
+  if (symbolButton) {
+    analyzeSymbol(symbolButton.dataset.symbol);
+    return;
+  }
+  const deleteButton = event.target.closest("[data-alert-delete]");
+  if (deleteButton) {
+    deletePriceAlert(deleteButton.dataset.alertDelete);
+    if (state.activeReport) buildReport(state.activeReport.stock, state.activeReport.quote);
+    renderLiveMonitor();
+  }
 });
 
 webPushControls.addEventListener("click", async (event) => {
@@ -2609,6 +2890,20 @@ reportOutput.addEventListener("click", async (event) => {
   const symbolButton = event.target.closest("[data-symbol]");
   if (symbolButton) {
     analyzeSymbol(symbolButton.dataset.symbol);
+    return;
+  }
+  const priceAlertButton = event.target.closest("[data-price-alert]");
+  if (priceAlertButton && state.activeReport) {
+    const { stock, quote } = state.activeReport;
+    const score = scoreStock(stock, quote);
+    const space = upsideSpace(score, stock);
+    const decision = decisionFor(stock, quote);
+    const assessment = beginnerTradeAssessment(stock, quote, decision, space);
+    const plan = beginnerPositionPlan(quote, state.beginnerProfile, assessment, space);
+    if (addPriceAlert(stock, quote, plan, priceAlertButton.dataset.priceAlert)) {
+      buildReport(stock, quote);
+      renderLiveMonitor();
+    }
     return;
   }
   const paperButton = event.target.closest("[data-paper-trade]");
