@@ -2,7 +2,10 @@
   "scripts": {
     "build": "node scripts/build-public-site.js",
     "start": "node server.js",
-    "scrape:serenity": "node scripts/scrape-serenity.js"
+    "scrape:serenity": "node scripts/scrape-serenity.js",
+    "monitor:telegram": "node scripts/telegram-serenity-monitor.js",
+    "monitor:telegram:once": "node scripts/telegram-serenity-monitor.js --once",
+    "monitor:telegram:test": "node scripts/telegram-serenity-monitor.js --test"
   },
   "dependencies": {}
 }

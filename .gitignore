@@ -10,6 +10,7 @@ data/serenity-tweets.json
 data/serenity-fxtwitter-archive.json
 data/serenity-distillation.json
 data/serenity-research.json
+data/telegram-monitor-state.json
 
 # Keep the lightweight public dataset for GitHub/Netlify builds.
 !data/serenity-public.json
