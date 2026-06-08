@@ -271,8 +271,14 @@ const state = {
   lastLiveFetchAt: null,
   lastLiveNewAt: null,
   lastLiveNewId: "",
+  lastMatchedAlertAt: null,
+  lastMatchedAlertId: "",
   lastLiveError: "",
   liveLoading: false,
+  notificationEnabled: false,
+  soundEnabled: false,
+  watchlist: [],
+  soundUnlocked: false,
 };
 
 const pageParams = new URLSearchParams(window.location.search);
@@ -280,6 +286,37 @@ const WEB_PUSH_POLL_MS = clamp(Number(pageParams.get("pushPoll") || 1000), 1000,
 const WEB_PUSH_DELAY_MS = clamp(Number(pageParams.get("pushDelay") || 30_000), 1000, 30_000);
 const LIVE_API_PATH = "/api/serenity-live";
 const WEB_CRYPTO_SYMBOLS = new Set(["BTC", "ETH", "SOL", "DOGE", "XRP"]);
+const PUSH_NOTIFY_KEY = "serenityWebPushNotify";
+const PUSH_SOUND_KEY = "serenityWebPushSound";
+const PUSH_WATCHLIST_KEY = "serenityWebPushWatchlist";
+const WATCH_THEME_TOKENS = {
+  CPO: "cpo-silicon-photonics",
+  PHOTONICS: "cpo-silicon-photonics",
+  OPTICAL: "cpo-silicon-photonics",
+  LASER: "cpo-silicon-photonics",
+  "硅光": "cpo-silicon-photonics",
+  "光子": "cpo-silicon-photonics",
+  "光模块": "cpo-silicon-photonics",
+  NEOCLOUD: "neocloud",
+  CLOUD: "neocloud",
+  DATACENTER: "neocloud",
+  "算力": "neocloud",
+  "数据中心": "neocloud",
+  AI: "ai-infrastructure",
+  ASIC: "ai-infrastructure",
+  GPU: "ai-infrastructure",
+  INFRA: "ai-infrastructure",
+  "AI基建": "ai-infrastructure",
+  HBM: "memory-rotation",
+  MEMORY: "memory-rotation",
+  DRAM: "memory-rotation",
+  "存储": "memory-rotation",
+  RISK: "capital-structure-veto",
+  DILUTION: "capital-structure-veto",
+  ATM: "capital-structure-veto",
+  DEBT: "capital-structure-veto",
+  "稀释": "capital-structure-veto",
+};
 
 const stockList = document.querySelector("#stockList");
 const listStatus = document.querySelector("#listStatus");
@@ -289,6 +326,7 @@ const sortMode = document.querySelector("#sortMode");
 const opportunityList = document.querySelector("#opportunityList");
 const monitorStatus = document.querySelector("#monitorStatus");
 const webPushBanner = document.querySelector("#webPushBanner");
+const webPushControls = document.querySelector("#webPushControls");
 const liveTweetList = document.querySelector("#liveTweetList");
 const trackStatus = document.querySelector("#trackStatus");
 const trackRecordList = document.querySelector("#trackRecordList");
@@ -352,6 +390,60 @@ function dateLabel(value) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return "";
   return date.toLocaleDateString("zh-CN", { year: "numeric", month: "2-digit", day: "2-digit" });
+}
+
+function storageGet(key, fallback) {
+  try {
+    const value = localStorage.getItem(key);
+    return value === null ? fallback : JSON.parse(value);
+  } catch {
+    return fallback;
+  }
+}
+
+function storageSet(key, value) {
+  try {
+    localStorage.setItem(key, JSON.stringify(value));
+  } catch {
+    // Local storage can be unavailable in restricted browser contexts.
+  }
+}
+
+function normalizeWatchToken(value = "") {
+  return String(value || "")
+    .trim()
+    .replace(/^[#$]+/, "")
+    .replace(/\s+/g, "")
+    .toUpperCase();
+}
+
+function parseWatchTokens(value = "") {
+  return [...new Set(String(value || "").split(/[\s,，、/|]+/).map(normalizeWatchToken).filter(Boolean))];
+}
+
+function notificationPermission() {
+  if (!("Notification" in window)) return "unsupported";
+  return Notification.permission;
+}
+
+function notificationLabel() {
+  const permission = notificationPermission();
+  if (permission === "unsupported") return "通知不可用";
+  if (permission === "granted" && state.notificationEnabled) return "通知已开";
+  if (permission === "denied") return "通知被拒";
+  return "开启通知";
+}
+
+function watchlistSummary() {
+  return state.watchlist.length ? state.watchlist.join(" / ") : "全部推文";
+}
+
+function initPushPreferences() {
+  state.notificationEnabled = Boolean(storageGet(PUSH_NOTIFY_KEY, false)) && notificationPermission() === "granted";
+  state.soundEnabled = Boolean(storageGet(PUSH_SOUND_KEY, false));
+  state.watchlist = storageGet(PUSH_WATCHLIST_KEY, []);
+  if (!Array.isArray(state.watchlist)) state.watchlist = [];
+  state.watchlist = [...new Set(state.watchlist.map(normalizeWatchToken).filter(Boolean))].slice(0, 24);
 }
 
 function metricForStock(stock) {
@@ -982,6 +1074,89 @@ function liveTradableSymbols(item = {}) {
   return [...new Set((item.symbols || []).map(normalizeSymbol).filter(isWebTradableSymbol))].slice(0, 12);
 }
 
+function liveSymbolTokens(item = {}) {
+  const symbols = new Set();
+  for (const symbol of (item.symbols || []).map(normalizeSymbol).filter(Boolean)) {
+    symbols.add(symbol);
+    const stock = findStock(symbol);
+    if (stock) {
+      symbols.add(normalizeSymbol(stock.symbol));
+      for (const alias of stock.aliases || []) symbols.add(normalizeSymbol(alias));
+    }
+  }
+  return symbols;
+}
+
+function liveWatchMatch(item = {}) {
+  if (!state.watchlist.length) return { matched: true, reason: "全部推文" };
+  const symbols = liveSymbolTokens(item);
+  const text = `${item.title || ""} ${item.body || ""}`.toUpperCase();
+  const theme = item.theme || "general";
+  const themeText = `${theme} ${liveThemeLabel(theme)}`.toUpperCase();
+
+  for (const token of state.watchlist) {
+    const tokenTheme = WATCH_THEME_TOKENS[token];
+    if (symbols.has(token)) return { matched: true, reason: `$${token}` };
+    if (tokenTheme && tokenTheme === theme) return { matched: true, reason: liveThemeLabel(theme) };
+    if (themeText.includes(token)) return { matched: true, reason: liveThemeLabel(theme) };
+    if (token.length >= 3 && text.includes(`$${token}`)) return { matched: true, reason: `$${token}` };
+  }
+  return { matched: false, reason: "" };
+}
+
+async function unlockPushSound() {
+  if (!state.pushAudioContext) {
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) return false;
+    state.pushAudioContext = new AudioContextClass();
+  }
+  if (state.pushAudioContext.state === "suspended") await state.pushAudioContext.resume();
+  state.soundUnlocked = state.pushAudioContext.state === "running";
+  return state.soundUnlocked;
+}
+
+function playPushSound() {
+  if (!state.soundEnabled || !state.soundUnlocked || !state.pushAudioContext) return;
+  const audio = state.pushAudioContext;
+  const oscillator = audio.createOscillator();
+  const gain = audio.createGain();
+  oscillator.type = "sine";
+  oscillator.frequency.setValueAtTime(880, audio.currentTime);
+  oscillator.frequency.exponentialRampToValueAtTime(1320, audio.currentTime + 0.13);
+  gain.gain.setValueAtTime(0.0001, audio.currentTime);
+  gain.gain.exponentialRampToValueAtTime(0.09, audio.currentTime + 0.02);
+  gain.gain.exponentialRampToValueAtTime(0.0001, audio.currentTime + 0.22);
+  oscillator.connect(gain).connect(audio.destination);
+  oscillator.start();
+  oscillator.stop(audio.currentTime + 0.24);
+}
+
+function sendBrowserNotification(item = {}, match = {}) {
+  if (!state.notificationEnabled || notificationPermission() !== "granted") return;
+  const symbols = liveTradableSymbols(item);
+  const title = symbols.length ? `Serenity 新推文 · ${symbols.map((symbol) => `$${symbol}`).join(" ")}` : "Serenity 新推文";
+  const notification = new Notification(title, {
+    body: `${match.reason || liveThemeLabel(item.theme)} · ${shortTitle(item.title || item.body, 170)}`,
+    tag: `serenity-${liveItemKey(item)}`,
+    renotify: true,
+    icon: "/assets/serenity-ai-strategist.png",
+  });
+  notification.onclick = () => {
+    window.focus();
+    document.querySelector("#monitor")?.scrollIntoView({ behavior: "smooth", block: "start" });
+    notification.close();
+  };
+}
+
+function alertLiveItem(item = {}) {
+  const match = liveWatchMatch(item);
+  if (!match.matched) return;
+  state.lastMatchedAlertAt = Date.now();
+  state.lastMatchedAlertId = liveItemKey(item);
+  playPushSound();
+  sendBrowserNotification(item, match);
+}
+
 function liveThemeLabel(theme = "") {
   return (
     {
@@ -1109,6 +1284,7 @@ function syncLivePushItems(items = []) {
     state.liveSeenIds.add(key);
     state.lastLiveNewAt = Date.now();
     state.lastLiveNewId = key;
+    alertLiveItem(item);
     scheduleLiveResearchPack(item, WEB_PUSH_DELAY_MS);
   }
 }
@@ -1128,8 +1304,80 @@ function renderWebPushBanner() {
       <span><b>${pending}</b>待生成</span>
       <span><b>${packCount}</b>研究包</span>
       <span><b>${state.lastLiveNewAt ? agoLabel(state.lastLiveNewAt) : "等待"}</b>最新推送</span>
+      <span><b>${state.lastMatchedAlertAt ? agoLabel(state.lastMatchedAlertAt) : "等待"}</b>命中提醒</span>
     </div>
   `;
+}
+
+function renderWebPushControls() {
+  const notifyClass = state.notificationEnabled && notificationPermission() === "granted" ? "active" : "";
+  const soundClass = state.soundEnabled ? "active" : "";
+  webPushControls.innerHTML = `
+    <div class="push-control-actions">
+      <button class="secondary ${notifyClass}" type="button" data-push-notify>${escapeHtml(notificationLabel())}</button>
+      <button class="secondary ${soundClass}" type="button" data-push-sound>声音${state.soundEnabled ? "已开" : "关闭"}</button>
+      <span>监听：${escapeHtml(watchlistSummary())}</span>
+    </div>
+    <form class="push-watch-form">
+      <input name="watch" autocomplete="off" placeholder="SIVE, AAOI, CPO, neocloud" />
+      <button type="submit">添加监听</button>
+      <button class="secondary" type="button" data-watch-clear>${state.watchlist.length ? "清空" : "全部提醒"}</button>
+    </form>
+    <div class="push-preset-row">
+      <button class="secondary" type="button" data-watch-preset="SIVE,AAOI,AXTI,LITE,MRVL,AEHR,CPO">CPO 链</button>
+      <button class="secondary" type="button" data-watch-preset="NBIS,IREN,CIFR,CRWV,NEOCLOUD">NeoCloud</button>
+      <button class="secondary" type="button" data-watch-preset="NVDA,AMD,AVGO,MSFT,AMZN,AI">AI 基建</button>
+      ${
+        state.watchlist.length
+          ? state.watchlist.map((token) => `<button class="watch-chip" type="button" data-watch-remove="${escapeHtml(token)}">${escapeHtml(token)} ×</button>`).join("")
+          : `<small>未设置 watchlist 时，所有新推文都会触发提醒。</small>`
+      }
+    </div>
+  `;
+}
+
+function saveWatchlist(tokens) {
+  state.watchlist = [...new Set((tokens || []).map(normalizeWatchToken).filter(Boolean))].slice(0, 24);
+  storageSet(PUSH_WATCHLIST_KEY, state.watchlist);
+  renderLiveMonitor();
+}
+
+function addWatchTokens(tokens) {
+  saveWatchlist([...state.watchlist, ...(tokens || [])]);
+}
+
+async function toggleNotifications() {
+  if (notificationPermission() === "unsupported") {
+    state.notificationEnabled = false;
+    storageSet(PUSH_NOTIFY_KEY, false);
+    renderWebPushControls();
+    return;
+  }
+  if (notificationPermission() === "granted") {
+    state.notificationEnabled = !state.notificationEnabled;
+    storageSet(PUSH_NOTIFY_KEY, state.notificationEnabled);
+    renderWebPushControls();
+    return;
+  }
+  if (notificationPermission() === "default") {
+    const permission = await Notification.requestPermission();
+    state.notificationEnabled = permission === "granted";
+    storageSet(PUSH_NOTIFY_KEY, state.notificationEnabled);
+    renderWebPushControls();
+  }
+}
+
+async function toggleSound() {
+  if (!state.soundEnabled) {
+    const unlocked = await unlockPushSound();
+    state.soundEnabled = unlocked;
+    storageSet(PUSH_SOUND_KEY, state.soundEnabled);
+    if (unlocked) playPushSound();
+  } else {
+    state.soundEnabled = false;
+    storageSet(PUSH_SOUND_KEY, false);
+  }
+  renderWebPushControls();
 }
 
 function renderLiveResearchPack(pack) {
@@ -1182,6 +1430,7 @@ function renderLiveMonitor() {
   const newCount = state.liveItems.filter(liveItemIsNew).length;
   const base = latestStatic?.date ? `静态蒸馏至 ${dateLabel(latestStatic.date)}` : "等待静态蒸馏快照";
   renderWebPushBanner();
+  renderWebPushControls();
   monitorStatus.textContent = latestLive
     ? `${base} · 网页推送 ${Math.round(WEB_PUSH_POLL_MS / 1000)} 秒轮询 · 接口最新 ${dateTimeLabel(latestLive.date)}${newCount ? ` · ${newCount} 条新推文待入库` : ""}`
     : `${base} · 正在等待实时接口`;
@@ -1191,13 +1440,14 @@ function renderLiveMonitor() {
       const key = liveItemKey(item);
       const isNew = liveItemIsNew(item);
       const isPushed = key === state.lastLiveNewId || state.livePending.has(key) || state.liveResearchPacks.has(key);
+      const watchMatch = liveWatchMatch(item);
       const pack = state.liveResearchPacks.get(key);
       const pending = state.livePending.has(key);
       const symbols = (item.symbols || []).slice(0, 6);
       return `
         <article class="live-tweet-card ${isNew || isPushed ? "new" : ""}">
           <div class="live-head">
-            <strong>${isPushed ? "网页推送" : isNew ? "新推文" : "已入库"}</strong>
+            <strong>${state.watchlist.length && watchMatch.matched ? "命中监听" : isPushed ? "网页推送" : isNew ? "新推文" : "已入库"}</strong>
             <span>${dateTimeLabel(item.date)} · ${escapeHtml(item.sentiment || "neutral")} · ${escapeHtml(liveThemeLabel(item.theme || "general"))}</span>
           </div>
           <p>${escapeHtml(shortTitle(item.title || item.body || "Serenity live tweet", 190))}</p>
@@ -1597,6 +1847,7 @@ async function loadQuotes() {
 }
 
 async function init() {
+  initPushPreferences();
   reportOutput.innerHTML = `<div class="empty-report">输入 ticker 或点击左侧名单，生成一份 Serenity 风格投研报告。</div>`;
   renderTickerSuggestions();
   renderQuickTickers();
@@ -1645,6 +1896,47 @@ opportunityList.addEventListener("click", (event) => {
 liveTweetList.addEventListener("click", (event) => {
   const button = event.target.closest("[data-symbol]");
   if (button) analyzeSymbol(button.dataset.symbol);
+});
+
+webPushControls.addEventListener("click", async (event) => {
+  const notifyButton = event.target.closest("[data-push-notify]");
+  if (notifyButton) {
+    await toggleNotifications();
+    return;
+  }
+
+  const soundButton = event.target.closest("[data-push-sound]");
+  if (soundButton) {
+    await toggleSound();
+    return;
+  }
+
+  const presetButton = event.target.closest("[data-watch-preset]");
+  if (presetButton) {
+    addWatchTokens(parseWatchTokens(presetButton.dataset.watchPreset));
+    return;
+  }
+
+  const removeButton = event.target.closest("[data-watch-remove]");
+  if (removeButton) {
+    saveWatchlist(state.watchlist.filter((token) => token !== normalizeWatchToken(removeButton.dataset.watchRemove)));
+    return;
+  }
+
+  const clearButton = event.target.closest("[data-watch-clear]");
+  if (clearButton) {
+    saveWatchlist([]);
+  }
+});
+
+webPushControls.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const input = event.target.querySelector("input[name='watch']");
+  const tokens = parseWatchTokens(input?.value || "");
+  if (tokens.length) {
+    addWatchTokens(tokens);
+    input.value = "";
+  }
 });
 
 trackRecordList.addEventListener("click", (event) => {
