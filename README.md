@@ -12,12 +12,16 @@ https://serenity-stock-research.netlify.app
 - 真实价格、涨跌和公开市值数据
 - 输入 ticker 后生成 Serenity 风格投研报告
 - 网页端实时监控 Serenity 新推文，并在 30 秒后生成可交易标的排序研究包
+- 5 分钟复盘报告：回看首轮价格反应、主题扩散和反证信号
+- PWA / Service Worker 通知通道、监控健康面板和自选 watchlist
 - Telegram 监控脚本，可同步发送即时提醒和 30 秒研究包
 - 供应链瓶颈、客户证据、TAM 重估、资本结构风险框架
 
 ## 实时监控
 
 网页端默认 1 秒轮询 `/api/serenity-live`，新推文出现后会在“实时监控”区域推送，并在 30 秒后展示研究包。
+
+页面打开或最小化时可以通过浏览器通知和声音提醒命中 watchlist。完全关闭浏览器后的服务器 Push 已预留 Service Worker 入口，后续需要 VAPID 推送服务配合。
 
 Telegram 监控配置见：
 

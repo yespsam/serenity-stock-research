@@ -266,24 +266,38 @@ const state = {
   liveItems: [],
   liveSeenIds: new Set(),
   livePending: new Set(),
+  liveReviewPending: new Set(),
   liveResearchPacks: new Map(),
+  liveReviewPacks: new Map(),
   webPushInitialized: false,
   lastLiveFetchAt: null,
+  lastLiveSuccessAt: null,
   lastLiveNewAt: null,
   lastLiveNewId: "",
   lastMatchedAlertAt: null,
   lastMatchedAlertId: "",
   lastLiveError: "",
   liveLoading: false,
+  liveFetchCount: 0,
+  liveFailureCount: 0,
+  liveConsecutiveFailures: 0,
+  liveLatencyMs: null,
+  liveLastItemCount: 0,
   notificationEnabled: false,
   soundEnabled: false,
   watchlist: [],
   soundUnlocked: false,
+  swReady: false,
+  swControlled: false,
+  swRegistration: null,
+  pwaInstallPrompt: null,
+  pwaInstalled: window.matchMedia?.("(display-mode: standalone)")?.matches || navigator.standalone === true,
 };
 
 const pageParams = new URLSearchParams(window.location.search);
 const WEB_PUSH_POLL_MS = clamp(Number(pageParams.get("pushPoll") || 1000), 1000, 60_000);
 const WEB_PUSH_DELAY_MS = clamp(Number(pageParams.get("pushDelay") || 30_000), 1000, 30_000);
+const WEB_REVIEW_DELAY_MS = clamp(Number(pageParams.get("reviewDelay") || 300_000), 1000, 300_000);
 const LIVE_API_PATH = "/api/serenity-live";
 const WEB_CRYPTO_SYMBOLS = new Set(["BTC", "ETH", "SOL", "DOGE", "XRP"]);
 const PUSH_NOTIFY_KEY = "serenityWebPushNotify";
@@ -327,6 +341,7 @@ const opportunityList = document.querySelector("#opportunityList");
 const monitorStatus = document.querySelector("#monitorStatus");
 const webPushBanner = document.querySelector("#webPushBanner");
 const webPushControls = document.querySelector("#webPushControls");
+const monitorHealth = document.querySelector("#monitorHealth");
 const liveTweetList = document.querySelector("#liveTweetList");
 const trackStatus = document.querySelector("#trackStatus");
 const trackRecordList = document.querySelector("#trackRecordList");
@@ -443,6 +458,12 @@ function soundLabel() {
   return `声音${state.soundEnabled ? "已开" : "关闭"}`;
 }
 
+function pwaLabel() {
+  if (state.pwaInstalled) return "PWA 模式";
+  if (state.pwaInstallPrompt) return "安装应用";
+  return state.swReady ? "PWA 就绪" : "PWA 准备中";
+}
+
 function watchlistSummary() {
   return state.watchlist.length ? state.watchlist.join(" / ") : "全部推文";
 }
@@ -453,6 +474,37 @@ function initPushPreferences() {
   state.watchlist = storageGet(PUSH_WATCHLIST_KEY, []);
   if (!Array.isArray(state.watchlist)) state.watchlist = [];
   state.watchlist = [...new Set(state.watchlist.map(normalizeWatchToken).filter(Boolean))].slice(0, 24);
+}
+
+async function initServiceWorker() {
+  if (!("serviceWorker" in navigator)) return;
+  try {
+    const registration = await navigator.serviceWorker.register("/sw.js");
+    state.swRegistration = registration;
+    state.swReady = true;
+    state.swControlled = Boolean(navigator.serviceWorker.controller);
+    navigator.serviceWorker.addEventListener("controllerchange", () => {
+      state.swControlled = true;
+      renderLiveMonitor();
+    });
+  } catch (error) {
+    state.swReady = false;
+    state.lastLiveError = `Service Worker 注册失败：${error.message}`;
+  }
+}
+
+function healthTone() {
+  if (state.liveConsecutiveFailures >= 3) return "down";
+  if (state.lastLiveError || state.liveConsecutiveFailures > 0) return "warn";
+  if (state.liveLatencyMs && state.liveLatencyMs > 6000) return "warn";
+  return "ok";
+}
+
+function healthLabel() {
+  const tone = healthTone();
+  if (tone === "down") return "监控异常";
+  if (tone === "warn") return "监控降级";
+  return "监控正常";
 }
 
 function metricForStock(stock) {
@@ -1144,17 +1196,40 @@ function sendBrowserNotification(item = {}, match = {}) {
   if (!state.notificationEnabled || notificationPermission() !== "granted") return;
   const symbols = liveTradableSymbols(item);
   const title = symbols.length ? `Serenity 新推文 · ${symbols.map((symbol) => `$${symbol}`).join(" ")}` : "Serenity 新推文";
-  const notification = new Notification(title, {
+  const payload = {
+    type: "SERENITY_NOTIFY",
+    title,
     body: `${match.reason || liveThemeLabel(item.theme)} · ${shortTitle(item.title || item.body, 170)}`,
     tag: `serenity-${liveItemKey(item)}`,
-    renotify: true,
-    icon: "/assets/serenity-ai-strategist.png",
-  });
-  notification.onclick = () => {
-    window.focus();
-    document.querySelector("#monitor")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    notification.close();
+    url: item.url || "/#monitor",
   };
+  const showFallbackNotification = () => {
+    const notification = new Notification(title, {
+      body: payload.body,
+      tag: payload.tag,
+      renotify: true,
+      icon: "/assets/serenity-icon.svg",
+    });
+    notification.onclick = () => {
+      window.focus();
+      document.querySelector("#monitor")?.scrollIntoView({ behavior: "smooth", block: "start" });
+      notification.close();
+    };
+  };
+  if (state.swRegistration?.active) {
+    state.swRegistration.active.postMessage(payload);
+    return;
+  }
+  if (!navigator.serviceWorker?.ready) {
+    showFallbackNotification();
+    return;
+  }
+  navigator.serviceWorker.ready
+    .then((registration) => {
+      if (registration.active) registration.active.postMessage(payload);
+      else showFallbackNotification();
+    })
+    .catch(showFallbackNotification);
 }
 
 function alertLiveItem(item = {}) {
@@ -1194,6 +1269,102 @@ function liveThemeMechanism(theme = "") {
 function actionForLive(item = {}, decision = {}, stock = {}) {
   if (item.sentiment === "bear" || stock.riskFlag || stock.theme === "capital-structure-veto") return "先查风险";
   return decision.actionLabel || "补证据再看";
+}
+
+async function fetchQuotesForSymbols(symbols = []) {
+  const normalized = [...new Set(symbols.map(normalizeSymbol).filter(Boolean))].slice(0, 12);
+  if (!normalized.length) return new Map();
+  const data = await fetchJson(`/api/quotes?symbols=${encodeURIComponent(normalized.join(","))}&t=${Date.now()}`);
+  const map = new Map();
+  for (const quote of data.quotes || []) {
+    const requested = normalizeSymbol(quote.requestedSymbol || quote.symbol);
+    if (requested) map.set(requested, quote);
+    if (quote.symbol) map.set(normalizeSymbol(quote.symbol), quote);
+  }
+  return map;
+}
+
+function pctMove(currentPrice, entryPrice) {
+  const current = Number(currentPrice);
+  const entry = Number(entryPrice);
+  if (!Number.isFinite(current) || !Number.isFinite(entry) || entry === 0) return null;
+  return ((current - entry) / entry) * 100;
+}
+
+function reviewConclusion(rows = []) {
+  if (!rows.length) return "暂无可交易标的可复盘。";
+  const winners = rows.filter((row) => Number(row.movePercent) > 0).length;
+  const losers = rows.filter((row) => Number(row.movePercent) < 0).length;
+  const top = rows[0];
+  if (winners >= Math.max(1, losers + 1)) return `初步扩散偏正：${top.symbol} 仍排第一，继续看成交和同主题扩散。`;
+  if (losers > winners) return `初步反应偏弱：${top.symbol} 仍需等量价确认，避免只因喊单追高。`;
+  return `初步反应中性：${top.symbol} 维持观察，等待第二波资金确认。`;
+}
+
+async function buildLiveReviewPack(item = {}, pack = {}) {
+  const symbols = (pack.rows || []).map((row) => row.symbol);
+  const quotes = await fetchQuotesForSymbols(symbols);
+  const rows = (pack.rows || []).map((row) => {
+    const quote = quotes.get(normalizeSymbol(row.symbol)) || row.quote || {};
+    const movePercent = pctMove(quote.price, row.quote?.price);
+    const intradayChange = Number(quote.changePercent);
+    const action =
+      Number.isFinite(movePercent) && movePercent > 1.8
+        ? "资金确认"
+        : Number.isFinite(movePercent) && movePercent < -1.8
+          ? "反应偏弱"
+          : "继续观察";
+    return {
+      ...row,
+      quote,
+      movePercent,
+      intradayChange,
+      action,
+    };
+  });
+  rows.sort((a, b) => {
+    const move = (Number(b.movePercent) || -999) - (Number(a.movePercent) || -999);
+    if (move) return move;
+    return b.score - a.score;
+  });
+  return {
+    id: liveItemKey(item),
+    builtAt: Date.now(),
+    rows,
+    conclusion: reviewConclusion(rows),
+    checks: [
+      "量价是否延续，而不是只出现瞬时冲高",
+      "同主题标的是否扩散，龙头或供应链锚点是否同步",
+      "原文是否有资本结构、融资、做空或风险语义",
+    ],
+  };
+}
+
+function scheduleLiveReviewPack(item = {}, pack = {}, delay = WEB_REVIEW_DELAY_MS) {
+  const key = liveItemKey(item);
+  if (!key || state.liveReviewPending.has(key) || state.liveReviewPacks.has(key)) return;
+  state.liveReviewPending.add(key);
+  renderLiveMonitor();
+  setTimeout(() => {
+    buildLiveReviewPack(item, pack)
+      .then((review) => {
+        state.liveReviewPacks.set(key, review);
+        state.liveReviewPending.delete(key);
+        renderLiveMonitor();
+      })
+      .catch((error) => {
+        state.liveReviewPacks.set(key, {
+          id: key,
+          builtAt: Date.now(),
+          error: error.message,
+          rows: [],
+          conclusion: "复盘生成失败，稍后刷新重试。",
+          checks: [],
+        });
+        state.liveReviewPending.delete(key);
+        renderLiveMonitor();
+      });
+  }, delay);
 }
 
 async function buildLiveResearchPack(item = {}) {
@@ -1262,6 +1433,7 @@ function scheduleLiveResearchPack(item = {}, delay = WEB_PUSH_DELAY_MS) {
       .then((pack) => {
         state.liveResearchPacks.set(key, pack);
         state.livePending.delete(key);
+        scheduleLiveReviewPack(item, pack);
         renderLiveMonitor();
       })
       .catch((error) => {
@@ -1301,6 +1473,8 @@ function syncLivePushItems(items = []) {
 function renderWebPushBanner() {
   const pending = state.livePending.size;
   const packCount = state.liveResearchPacks.size;
+  const reviewPending = state.liveReviewPending.size;
+  const reviewCount = state.liveReviewPacks.size;
   const lastFetch = agoLabel(state.lastLiveFetchAt);
   const status = state.lastLiveError ? "接口降级" : "推送开启";
   webPushBanner.innerHTML = `
@@ -1312,9 +1486,33 @@ function renderWebPushBanner() {
     <div class="push-live-metrics">
       <span><b>${pending}</b>待生成</span>
       <span><b>${packCount}</b>研究包</span>
+      <span><b>${reviewPending}</b>待复盘</span>
+      <span><b>${reviewCount}</b>复盘</span>
       <span><b>${state.lastLiveNewAt ? agoLabel(state.lastLiveNewAt) : "等待"}</b>最新推送</span>
       <span><b>${state.lastMatchedAlertAt ? agoLabel(state.lastMatchedAlertAt) : "等待"}</b>命中提醒</span>
     </div>
+  `;
+}
+
+function renderMonitorHealth() {
+  const tone = healthTone();
+  const notification = notificationPermission();
+  const pwaState = state.swReady ? (state.swControlled ? "PWA 已接管" : "PWA 待接管") : "PWA 未启用";
+  monitorHealth.innerHTML = `
+    <div class="health-head ${tone}">
+      <span></span>
+      <strong>${escapeHtml(healthLabel())}</strong>
+      <small>${state.lastLiveError ? escapeHtml(state.lastLiveError) : "接口、通知和复盘队列状态"}</small>
+    </div>
+    <div class="health-grid">
+      <span><b>${state.liveLatencyMs === null ? "--" : `${Math.round(state.liveLatencyMs)}ms`}</b><small>接口延迟</small></span>
+      <span><b>${state.liveLastItemCount}</b><small>最新条数</small></span>
+      <span><b>${state.liveFetchCount}</b><small>轮询次数</small></span>
+      <span><b>${state.liveFailureCount}</b><small>失败次数</small></span>
+      <span><b>${escapeHtml(notification)}</b><small>通知权限</small></span>
+      <span><b>${escapeHtml(pwaState)}</b><small>后台通道</small></span>
+    </div>
+    <p>说明：当前版本支持页面打开或最小化时的实时提醒；完全关闭浏览器后的服务器 Push 已预留 Service Worker 入口，需要后续增加 VAPID 推送服务。</p>
   `;
 }
 
@@ -1324,6 +1522,7 @@ function renderWebPushControls() {
   const soundDisabled = audioAvailable() ? "" : "disabled";
   webPushControls.innerHTML = `
     <div class="push-control-actions">
+      <button class="secondary ${state.pwaInstalled ? "active" : ""}" type="button" data-pwa-install ${state.pwaInstallPrompt || state.pwaInstalled ? "" : "disabled"}>${escapeHtml(pwaLabel())}</button>
       <button class="secondary ${notifyClass}" type="button" data-push-notify>${escapeHtml(notificationLabel())}</button>
       <button class="secondary ${soundClass}" type="button" data-push-sound ${soundDisabled}>${escapeHtml(soundLabel())}</button>
       <span>监听：${escapeHtml(watchlistSummary())}</span>
@@ -1390,6 +1589,16 @@ async function toggleSound() {
   renderWebPushControls();
 }
 
+async function installPwa() {
+  if (!state.pwaInstallPrompt) return;
+  const promptEvent = state.pwaInstallPrompt;
+  state.pwaInstallPrompt = null;
+  promptEvent.prompt();
+  const choice = await promptEvent.userChoice.catch(() => null);
+  state.pwaInstalled = choice?.outcome === "accepted" || state.pwaInstalled;
+  renderLiveMonitor();
+}
+
 function renderLiveResearchPack(pack) {
   if (!pack) return "";
   if (pack.error) {
@@ -1434,6 +1643,45 @@ function renderLiveResearchPack(pack) {
   `;
 }
 
+function renderLiveReviewPack(review, pending = false) {
+  if (pending) {
+    return `<section class="live-review-pack pending"><strong>${Math.round(WEB_REVIEW_DELAY_MS / 1000)} 秒复盘生成中</strong><p>正在等待第二轮行情，用于判断价格反应和主题扩散。</p></section>`;
+  }
+  if (!review) return "";
+  if (review.error) {
+    return `<section class="live-review-pack error"><strong>复盘生成失败</strong><p>${escapeHtml(review.error)}</p></section>`;
+  }
+  const rows = (review.rows || []).slice(0, 5);
+  return `
+    <section class="live-review-pack">
+      <div class="live-pack-head">
+        <strong>5 分钟复盘</strong>
+        <span>${escapeHtml(dateTimeLabel(review.builtAt))}</span>
+      </div>
+      <p>${escapeHtml(review.conclusion)}</p>
+      ${
+        rows.length
+          ? `<div class="live-review-list">
+              ${rows
+                .map(
+                  (row) => `
+                    <span>
+                      <b>${escapeHtml(row.symbol)}</b>
+                      <small>${escapeHtml(row.action)} · 相对研究包 ${row.movePercent === null ? "--" : formatPercent(row.movePercent)} · 当日 ${formatPercent(row.intradayChange)}</small>
+                    </span>
+                  `
+                )
+                .join("")}
+            </div>`
+          : ""
+      }
+      <div class="live-review-checks">
+        ${(review.checks || []).map((item) => `<small>${escapeHtml(item)}</small>`).join("")}
+      </div>
+    </section>
+  `;
+}
+
 function renderLiveMonitor() {
   const latestStatic = state.monitor?.latestCaptured;
   const latestLive = state.liveItems[0];
@@ -1441,6 +1689,7 @@ function renderLiveMonitor() {
   const base = latestStatic?.date ? `静态蒸馏至 ${dateLabel(latestStatic.date)}` : "等待静态蒸馏快照";
   renderWebPushBanner();
   renderWebPushControls();
+  renderMonitorHealth();
   monitorStatus.textContent = latestLive
     ? `${base} · 网页推送 ${Math.round(WEB_PUSH_POLL_MS / 1000)} 秒轮询 · 接口最新 ${dateTimeLabel(latestLive.date)}${newCount ? ` · ${newCount} 条新推文待入库` : ""}`
     : `${base} · 正在等待实时接口`;
@@ -1453,6 +1702,8 @@ function renderLiveMonitor() {
       const watchMatch = liveWatchMatch(item);
       const pack = state.liveResearchPacks.get(key);
       const pending = state.livePending.has(key);
+      const review = state.liveReviewPacks.get(key);
+      const reviewPending = state.liveReviewPending.has(key);
       const symbols = (item.symbols || []).slice(0, 6);
       return `
         <article class="live-tweet-card ${isNew || isPushed ? "new" : ""}">
@@ -1470,6 +1721,7 @@ function renderLiveMonitor() {
           </div>
           ${pending ? `<div class="live-pack-pending"><span></span><b>${Math.round(WEB_PUSH_DELAY_MS / 1000)} 秒研究包生成中</b><small>正在等待行情、市值和 Serenity 框架回填</small></div>` : ""}
           ${renderLiveResearchPack(pack)}
+          ${renderLiveReviewPack(review, reviewPending)}
           ${item.url ? `<a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">打开 X 原文</a>` : ""}
         </article>
       `;
@@ -1480,14 +1732,24 @@ function renderLiveMonitor() {
 async function loadLiveMonitor() {
   if (state.liveLoading) return;
   state.liveLoading = true;
+  const startedAt = performance.now();
   try {
     const data = await fetchJson(`${LIVE_API_PATH}?fresh=1&t=${Date.now()}`);
+    state.liveLatencyMs = performance.now() - startedAt;
+    state.liveFetchCount += 1;
+    state.liveConsecutiveFailures = 0;
     state.lastLiveFetchAt = data.capturedAt || Date.now();
+    state.lastLiveSuccessAt = Date.now();
     state.lastLiveError = data.error || "";
     state.liveItems = data.items || [];
+    state.liveLastItemCount = state.liveItems.length;
     syncLivePushItems(state.liveItems);
     renderLiveMonitor();
   } catch (error) {
+    state.liveLatencyMs = performance.now() - startedAt;
+    state.liveFetchCount += 1;
+    state.liveFailureCount += 1;
+    state.liveConsecutiveFailures += 1;
     state.lastLiveError = error.message;
     state.lastLiveFetchAt = Date.now();
     monitorStatus.textContent = `实时监控暂不可用：${error.message}`;
@@ -1858,6 +2120,7 @@ async function loadQuotes() {
 
 async function init() {
   initPushPreferences();
+  initServiceWorker().then(renderLiveMonitor);
   reportOutput.innerHTML = `<div class="empty-report">输入 ticker 或点击左侧名单，生成一份 Serenity 风格投研报告。</div>`;
   renderTickerSuggestions();
   renderQuickTickers();
@@ -1909,6 +2172,12 @@ liveTweetList.addEventListener("click", (event) => {
 });
 
 webPushControls.addEventListener("click", async (event) => {
+  const installButton = event.target.closest("[data-pwa-install]");
+  if (installButton) {
+    await installPwa();
+    return;
+  }
+
   const notifyButton = event.target.closest("[data-push-notify]");
   if (notifyButton) {
     await toggleNotifications();
@@ -1989,6 +2258,18 @@ analysisForm.addEventListener("submit", (event) => {
 heroAnalysisForm.addEventListener("submit", (event) => {
   event.preventDefault();
   analyzeSymbol(heroTickerInput.value);
+});
+
+window.addEventListener("beforeinstallprompt", (event) => {
+  event.preventDefault();
+  state.pwaInstallPrompt = event;
+  renderLiveMonitor();
+});
+
+window.addEventListener("appinstalled", () => {
+  state.pwaInstalled = true;
+  state.pwaInstallPrompt = null;
+  renderLiveMonitor();
 });
 
 init().catch((error) => {

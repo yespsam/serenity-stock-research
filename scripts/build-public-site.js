@@ -171,10 +171,11 @@ function buildPublicData() {
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.mkdirSync(path.join(OUT, "data"), { recursive: true });
 
-for (const file of ["index.html", "styles.css", "app.js"]) {
+for (const file of ["index.html", "styles.css", "app.js", "manifest.webmanifest", "sw.js"]) {
   copyFile(file, path.join(OUT, file));
 }
 copyFile("assets/serenity-ai-strategist.png", path.join(OUT, "assets/serenity-ai-strategist.png"));
+copyFile("assets/serenity-icon.svg", path.join(OUT, "assets/serenity-icon.svg"));
 
 const publicData = buildPublicData();
 fs.writeFileSync(path.join(ROOT, "data/serenity-public.json"), `${JSON.stringify(publicData, null, 2)}\n`);
