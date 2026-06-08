@@ -564,7 +564,7 @@ h2 {
 
 .report-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 10px;
   margin-bottom: 18px;
 }
@@ -620,6 +620,66 @@ h2 {
 .report-section ul {
   margin: 0;
   padding-left: 20px;
+}
+
+.data-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.data-card {
+  min-height: 160px;
+  padding: 14px;
+  border: 1px solid rgba(226, 187, 211, 0.58);
+  border-radius: 16px;
+  background: rgba(255, 247, 251, 0.78);
+}
+
+.data-card > strong {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.data-card span {
+  display: grid;
+  grid-template-columns: 82px 1fr;
+  gap: 10px;
+  padding: 7px 0;
+  border-top: 1px solid rgba(226, 187, 211, 0.42);
+}
+
+.data-card span:first-of-type {
+  border-top: 0;
+}
+
+.data-card b {
+  color: #4b4055;
+  font-size: 12px;
+}
+
+.data-card small {
+  color: #6f6478;
+  font-size: 12px;
+  font-weight: 820;
+  line-height: 1.45;
+}
+
+.data-card p {
+  margin: 0;
+  color: #6f6478;
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.peer-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.peer-tags button {
+  width: auto;
 }
 
 .score-breakdown {
@@ -901,7 +961,8 @@ h2 {
   .report-head,
   .report-grid,
   .scenario-grid,
-  .check-grid {
+  .check-grid,
+  .data-card-grid {
     grid-template-columns: 1fr;
   }
 

@@ -293,6 +293,21 @@ function parseMarketNumber(value) {
   return Number.isFinite(parsed) ? parsed : null;
 }
 
+function parseFinancialNumber(value) {
+  if (typeof value === "number") return Number.isFinite(value) ? value : null;
+  if (!value || value === "--" || value === "N/A") return null;
+  const text = String(value).replace(/[$,%+,]/g, "").trim();
+  const isNegative = /^-/.test(text) || /^\(.*\)$/.test(text);
+  const parsed = Number(text.replace(/[()]/g, ""));
+  if (!Number.isFinite(parsed)) return null;
+  return isNegative ? -Math.abs(parsed) : parsed;
+}
+
+function percentChange(latest, previous) {
+  if (!Number.isFinite(latest) || !Number.isFinite(previous) || previous === 0) return null;
+  return ((latest - previous) / Math.abs(previous)) * 100;
+}
+
 function parseNasdaqRange(value = "") {
   const matches = String(value || "").match(/[\d,.]+/g) || [];
   const numbers = matches.map(parseMarketNumber).filter((item) => Number.isFinite(item));
@@ -319,6 +334,116 @@ async function getNasdaqSummary(symbol) {
     industry: summary.Industry?.value || "",
     exchange: summary.Exchange?.value || "",
     ...range,
+  };
+}
+
+async function getYahooSearch(symbol) {
+  const normalized = normalizeMarketSymbol(symbol);
+  const params = new URLSearchParams({
+    q: normalized,
+    quotesCount: "8",
+    newsCount: "6",
+    enableFuzzyQuery: "false",
+    quotesQueryId: "tss_match_phrase_query",
+  });
+  const raw = await fetchJson(`https://query1.finance.yahoo.com/v1/finance/search?${params.toString()}`, { ua: YAHOO_UA });
+  const quotes = (raw.quotes || []).filter((quote) => String(quote.quoteType || "").toUpperCase() === "EQUITY");
+  const best =
+    quotes.find((quote) => normalizeMarketSymbol(quote.symbol) === normalized) ||
+    quotes.find((quote) => normalizeMarketSymbol(quote.symbol).startsWith(normalized)) ||
+    quotes[0] ||
+    {};
+  return {
+    quote: best.symbol
+      ? {
+          symbol: best.symbol,
+          longName: best.longname || best.shortname || "",
+          shortName: best.shortname || best.longname || "",
+          exchange: best.exchDisp || best.exchange || "",
+          sector: best.sectorDisp || best.sector || "",
+          industry: best.industryDisp || best.industry || "",
+          quoteType: best.typeDisp || best.quoteType || "",
+        }
+      : {},
+    news: (raw.news || [])
+      .filter((item) => item.title && item.link)
+      .slice(0, 5)
+      .map((item) => ({
+        title: item.title,
+        publisher: item.publisher || "",
+        url: item.link,
+        date: item.providerPublishTime ? item.providerPublishTime * 1000 : null,
+        relatedTickers: item.relatedTickers || [],
+      })),
+  };
+}
+
+async function getNasdaqInfo(symbol) {
+  if (!/^[A-Z]+$/i.test(symbol)) return {};
+  const safeSymbol = encodeURIComponent(symbol.toUpperCase());
+  const raw = await fetchJson(`https://api.nasdaq.com/api/quote/${safeSymbol}/info?assetclass=stocks`);
+  const data = raw?.data || {};
+  return {
+    companyName: data.companyName || "",
+    stockType: data.stockType || "",
+    exchange: data.exchange || "",
+    isNasdaqListed: Boolean(data.isNasdaqListed),
+    isNasdaq100: Boolean(data.isNasdaq100),
+    marketStatus: data.marketStatus || "",
+    primaryVolume: parseMarketNumber(data.primaryData?.volume),
+  };
+}
+
+function financialMetric(table = {}, matcher) {
+  const row = (table.rows || []).find((item) => matcher.test(item.value1 || ""));
+  const headers = table.headers || {};
+  if (!row) return null;
+  const latest = parseFinancialNumber(row.value2);
+  const previous = parseFinancialNumber(row.value3);
+  return {
+    label: row.value1,
+    period: headers.value2 || "",
+    previousPeriod: headers.value3 || "",
+    raw: row.value2 || "",
+    previousRaw: row.value3 || "",
+    value: latest,
+    previous,
+    yoy: percentChange(latest, previous),
+  };
+}
+
+async function getNasdaqFinancials(symbol) {
+  if (!/^[A-Z]+$/i.test(symbol)) return {};
+  const safeSymbol = encodeURIComponent(symbol.toUpperCase());
+  const raw = await fetchJson(`https://api.nasdaq.com/api/company/${safeSymbol}/financials?frequency=1`);
+  const income = raw?.data?.incomeStatementTable || {};
+  const revenue = financialMetric(income, /^Total Revenue$/i);
+  const grossProfit = financialMetric(income, /^Gross Profit$/i);
+  const operatingIncome = financialMetric(income, /^Operating Income$/i);
+  const netIncome = financialMetric(income, /^(Net Income|Income After Taxes)$/i);
+  return {
+    period: income.headers?.value2 || "",
+    previousPeriod: income.headers?.value3 || "",
+    revenue,
+    grossProfit,
+    operatingIncome,
+    netIncome,
+    grossMargin: revenue?.value && Number.isFinite(grossProfit?.value) ? (grossProfit.value / revenue.value) * 100 : null,
+    operatingMargin: revenue?.value && Number.isFinite(operatingIncome?.value) ? (operatingIncome.value / revenue.value) * 100 : null,
+    netMargin: revenue?.value && Number.isFinite(netIncome?.value) ? (netIncome.value / revenue.value) * 100 : null,
+  };
+}
+
+async function getNasdaqShortInterest(symbol) {
+  if (!/^[A-Z]+$/i.test(symbol)) return {};
+  const safeSymbol = encodeURIComponent(symbol.toUpperCase());
+  const raw = await fetchJson(`https://api.nasdaq.com/api/quote/${safeSymbol}/short-interest?assetclass=stocks`);
+  const latest = raw?.data?.shortInterestTable?.rows?.[0] || {};
+  return {
+    settlementDate: latest.settlementDate || "",
+    interest: parseMarketNumber(latest.interest),
+    avgDailyShareVolume: parseMarketNumber(latest.avgDailyShareVolume),
+    daysToCover: Number(latest.daysToCover) || null,
   };
 }
 
@@ -538,6 +663,7 @@ async function mapWithConcurrency(items, limit, mapper) {
 }
 
 async function handleQuotes(reqUrl, res) {
+  const detailed = reqUrl.searchParams.get("detail") === "1";
   const symbols = (reqUrl.searchParams.get("symbols") || "NVDA,AAOI,AXTI,SIVE.ST,MRVL")
     .split(",")
     .map((symbol) => symbol.trim())
@@ -557,6 +683,31 @@ async function handleQuotes(reqUrl, res) {
         } catch {
           summary = {};
         }
+        let details = {};
+        if (detailed) {
+          const detailSymbol = resolveStaticMarketSymbol(data.symbol || symbol);
+          const [search, info, financials, shortInterest] = await Promise.all([
+            getYahooSearch(detailSymbol).catch(() => ({})),
+            getNasdaqInfo(detailSymbol).catch(() => ({})),
+            getNasdaqFinancials(detailSymbol).catch(() => ({})),
+            getNasdaqShortInterest(detailSymbol).catch(() => ({})),
+          ]);
+          details = {
+            profile: {
+              companyName: info.companyName || search.quote?.longName || search.quote?.shortName || "",
+              stockType: info.stockType || search.quote?.quoteType || "",
+              sector: summary.sector || search.quote?.sector || "",
+              industry: summary.industry || search.quote?.industry || "",
+              exchange: summary.exchange || info.exchange || search.quote?.exchange || "",
+              isNasdaqListed: info.isNasdaqListed,
+              isNasdaq100: info.isNasdaq100,
+              marketStatus: info.marketStatus || "",
+            },
+            financials,
+            shortInterest,
+            news: search.news || [],
+          };
+        }
         return {
           symbol: data.symbol,
           requestedSymbol: symbol,
@@ -567,6 +718,7 @@ async function handleQuotes(reqUrl, res) {
           updatedAt: data.updatedAt,
           provider: data.provider,
           ...summary,
+          ...details,
         };
       } catch (error) {
         return { requestedSymbol: symbol, error: error.message };
