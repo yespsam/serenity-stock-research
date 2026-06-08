@@ -434,6 +434,15 @@ function notificationLabel() {
   return "开启通知";
 }
 
+function audioAvailable() {
+  return Boolean(window.AudioContext || window.webkitAudioContext);
+}
+
+function soundLabel() {
+  if (!audioAvailable()) return "声音不可用";
+  return `声音${state.soundEnabled ? "已开" : "关闭"}`;
+}
+
 function watchlistSummary() {
   return state.watchlist.length ? state.watchlist.join(" / ") : "全部推文";
 }
@@ -1312,10 +1321,11 @@ function renderWebPushBanner() {
 function renderWebPushControls() {
   const notifyClass = state.notificationEnabled && notificationPermission() === "granted" ? "active" : "";
   const soundClass = state.soundEnabled ? "active" : "";
+  const soundDisabled = audioAvailable() ? "" : "disabled";
   webPushControls.innerHTML = `
     <div class="push-control-actions">
       <button class="secondary ${notifyClass}" type="button" data-push-notify>${escapeHtml(notificationLabel())}</button>
-      <button class="secondary ${soundClass}" type="button" data-push-sound>声音${state.soundEnabled ? "已开" : "关闭"}</button>
+      <button class="secondary ${soundClass}" type="button" data-push-sound ${soundDisabled}>${escapeHtml(soundLabel())}</button>
       <span>监听：${escapeHtml(watchlistSummary())}</span>
     </div>
     <form class="push-watch-form">

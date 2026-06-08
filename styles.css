@@ -540,6 +540,11 @@ button.secondary,
   background: var(--pink);
 }
 
+.push-control-actions button:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
+}
+
 .push-control-actions span {
   min-height: 34px;
   display: inline-flex;
