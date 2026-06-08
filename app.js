@@ -264,7 +264,22 @@ const state = {
   performance: new Map(),
   monitor: null,
   liveItems: [],
+  liveSeenIds: new Set(),
+  livePending: new Set(),
+  liveResearchPacks: new Map(),
+  webPushInitialized: false,
+  lastLiveFetchAt: null,
+  lastLiveNewAt: null,
+  lastLiveNewId: "",
+  lastLiveError: "",
+  liveLoading: false,
 };
+
+const pageParams = new URLSearchParams(window.location.search);
+const WEB_PUSH_POLL_MS = clamp(Number(pageParams.get("pushPoll") || 1000), 1000, 60_000);
+const WEB_PUSH_DELAY_MS = clamp(Number(pageParams.get("pushDelay") || 30_000), 1000, 30_000);
+const LIVE_API_PATH = "/api/serenity-live";
+const WEB_CRYPTO_SYMBOLS = new Set(["BTC", "ETH", "SOL", "DOGE", "XRP"]);
 
 const stockList = document.querySelector("#stockList");
 const listStatus = document.querySelector("#listStatus");
@@ -273,6 +288,7 @@ const themeFilter = document.querySelector("#themeFilter");
 const sortMode = document.querySelector("#sortMode");
 const opportunityList = document.querySelector("#opportunityList");
 const monitorStatus = document.querySelector("#monitorStatus");
+const webPushBanner = document.querySelector("#webPushBanner");
 const liveTweetList = document.querySelector("#liveTweetList");
 const trackStatus = document.querySelector("#trackStatus");
 const trackRecordList = document.querySelector("#trackRecordList");
@@ -927,24 +943,262 @@ function liveItemIsNew(item = {}) {
   return Number.isFinite(liveDate) && Number.isFinite(staticDate) && liveDate > staticDate;
 }
 
+function liveItemKey(item = {}) {
+  return String(item.id || `${item.date || ""}:${item.title || item.body || ""}`);
+}
+
+function dateTimeLabel(value) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return "";
+  return date.toLocaleString("zh-CN", {
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+}
+
+function agoLabel(value) {
+  if (!value) return "等待同步";
+  const time = Number(value);
+  if (!Number.isFinite(time)) return "等待同步";
+  const seconds = Math.max(0, Math.round((Date.now() - time) / 1000));
+  if (seconds < 60) return `${seconds} 秒前`;
+  const minutes = Math.round(seconds / 60);
+  if (minutes < 60) return `${minutes} 分钟前`;
+  return `${Math.round(minutes / 60)} 小时前`;
+}
+
+function isWebTradableSymbol(symbol = "") {
+  const normalized = normalizeSymbol(symbol);
+  if (!normalized || WEB_CRYPTO_SYMBOLS.has(normalized)) return false;
+  if (/^\d/.test(normalized)) return false;
+  if (/[.](TW|HK|SS|SZ|KS|T|L|PA|DE|ST)$/i.test(normalized)) return false;
+  return /^[A-Z][A-Z0-9.]{1,8}$/.test(normalized);
+}
+
+function liveTradableSymbols(item = {}) {
+  return [...new Set((item.symbols || []).map(normalizeSymbol).filter(isWebTradableSymbol))].slice(0, 12);
+}
+
+function liveThemeLabel(theme = "") {
+  return (
+    {
+      "capital-structure-veto": "资本结构风险",
+      "cpo-silicon-photonics": "CPO / 硅光 / 光互连",
+      "substrate-materials": "InP / 衬底材料",
+      neocloud: "AI 数据中心 / NeoCloud",
+      "memory-rotation": "HBM / 存储周期",
+      "ai-infrastructure": "AI 基建",
+      general: "一般事件",
+    }[theme] || theme || "一般事件"
+  );
+}
+
+function liveThemeMechanism(theme = "") {
+  if (theme === "cpo-silicon-photonics" || theme === "substrate-materials") {
+    return "资金通常从 AI capex 主线外溢到光互连瓶颈，小市值上游、客户认证和量产路径最敏感。";
+  }
+  if (theme === "neocloud") return "先看合同质量、电力资产、GPU 利用率和融资路径，低稀释的长期客户合同才是核心。";
+  if (theme === "ai-infrastructure") return "大市值 AI 标的是需求锚点，真正的赔率通常沿 ASIC、网络、服务器和光互连供应链外溢。";
+  if (theme === "memory-rotation") return "资金关注 HBM/DRAM 紧缺和价格周期，但追高时需要额外核查供给纪律。";
+  if (theme === "capital-structure-veto") return "这类信息优先当作风险过滤器处理，ATM、可转债、债务和融资会压低可买性。";
+  return "先确认 Serenity 是否在强化已有主线，再看成交量、公告证据和同主题扩散。";
+}
+
+function actionForLive(item = {}, decision = {}, stock = {}) {
+  if (item.sentiment === "bear" || stock.riskFlag || stock.theme === "capital-structure-veto") return "先查风险";
+  return decision.actionLabel || "补证据再看";
+}
+
+async function buildLiveResearchPack(item = {}) {
+  const symbols = liveTradableSymbols(item);
+  const rows = [];
+
+  for (const symbol of symbols) {
+    let stock = findStock(symbol) || fallbackStock(symbol);
+    const quote = await ensureQuote(stock.symbol || symbol);
+    stock = hydrateUniversalStock(stock, quote);
+    const enriched = {
+      ...stock,
+      quote,
+      marketCap: Number(quote.marketCap) || stock.fallbackMarketCap || 0,
+    };
+    const metric = metricForStock(enriched) || {};
+    const decision = decisionFor(enriched, quote);
+    const themeMatch = item.theme && item.theme !== "general" && (enriched.theme === item.theme || metric.dominantTheme === item.theme) ? 6 : 0;
+    const sentimentAdjust = item.sentiment === "bull" ? 5 : item.sentiment === "bear" ? -18 : 0;
+    const marketCap = Number(quote.marketCap) || enriched.fallbackMarketCap || 0;
+    const capAdjust = marketCap && marketCap < 20e9 ? 4 : marketCap > 400e9 ? -5 : 0;
+    const score = Math.round(clamp(decision.fit + themeMatch + sentimentAdjust + capAdjust, 1, 100));
+    rows.push({
+      symbol: enriched.symbol,
+      name: enriched.name,
+      action: actionForLive(item, decision, enriched),
+      score,
+      quote,
+      marketCap,
+      theme: enriched.theme,
+      reason: [
+        compactReason(enriched.thesis, 86),
+        metric.mentions ? `历史提及 ${compact.format(metric.mentions)} 次` : "缺少历史样本",
+        item.sentiment === "bear" ? "原文偏风险语义，自动降级" : "",
+      ]
+        .filter(Boolean)
+        .join("；"),
+    });
+  }
+
+  rows.sort((a, b) => b.score - a.score || b.marketCap - a.marketCap);
+  const top = rows[0];
+  const frameTheme = item.theme === "general" && top?.theme ? top.theme : item.theme || "general";
+  return {
+    id: liveItemKey(item),
+    builtAt: Date.now(),
+    symbols,
+    rows,
+    frame: {
+      conclusion: top ? `${top.action}：优先核查 ${top.symbol}，其余按分数递减观察。` : "观察：未识别到可直接交易的美股 ticker。",
+      theme: liveThemeLabel(frameTheme),
+      logic: liveThemeMechanism(frameTheme),
+      confirmation: "原文语义偏多、标的可交易、量价确认，且无新增融资、财报或监管反向信息。",
+      invalidation: "若原文是风险提示、价格已急拉但成交不足、公告证据无法对应，或同主题龙头没有同步确认，就先降级。",
+    },
+  };
+}
+
+function scheduleLiveResearchPack(item = {}, delay = WEB_PUSH_DELAY_MS) {
+  const key = liveItemKey(item);
+  if (!key || state.livePending.has(key) || state.liveResearchPacks.has(key)) return;
+  state.livePending.add(key);
+  renderLiveMonitor();
+  setTimeout(() => {
+    buildLiveResearchPack(item)
+      .then((pack) => {
+        state.liveResearchPacks.set(key, pack);
+        state.livePending.delete(key);
+        renderLiveMonitor();
+      })
+      .catch((error) => {
+        state.liveResearchPacks.set(key, {
+          id: key,
+          builtAt: Date.now(),
+          error: error.message,
+          rows: [],
+          frame: { conclusion: "研究包生成失败，稍后刷新重试。", theme: item.theme || "general", logic: "" },
+        });
+        state.livePending.delete(key);
+        renderLiveMonitor();
+      });
+  }, delay);
+}
+
+function syncLivePushItems(items = []) {
+  const validItems = items.filter((item) => liveItemKey(item));
+  if (!state.webPushInitialized) {
+    for (const item of validItems) state.liveSeenIds.add(liveItemKey(item));
+    state.webPushInitialized = true;
+    if (validItems[0]) scheduleLiveResearchPack(validItems[0], WEB_PUSH_DELAY_MS);
+    return;
+  }
+
+  const newItems = validItems.filter((item) => !state.liveSeenIds.has(liveItemKey(item))).reverse();
+  for (const item of newItems) {
+    const key = liveItemKey(item);
+    state.liveSeenIds.add(key);
+    state.lastLiveNewAt = Date.now();
+    state.lastLiveNewId = key;
+    scheduleLiveResearchPack(item, WEB_PUSH_DELAY_MS);
+  }
+}
+
+function renderWebPushBanner() {
+  const pending = state.livePending.size;
+  const packCount = state.liveResearchPacks.size;
+  const lastFetch = agoLabel(state.lastLiveFetchAt);
+  const status = state.lastLiveError ? "接口降级" : "推送开启";
+  webPushBanner.innerHTML = `
+    <div class="push-live-indicator">
+      <span class="pulse-dot" aria-hidden="true"></span>
+      <strong>${escapeHtml(status)}</strong>
+      <small>${Math.round(WEB_PUSH_POLL_MS / 1000)} 秒轮询 · ${Math.round(WEB_PUSH_DELAY_MS / 1000)} 秒研究包 · 上次同步 ${escapeHtml(lastFetch)}</small>
+    </div>
+    <div class="push-live-metrics">
+      <span><b>${pending}</b>待生成</span>
+      <span><b>${packCount}</b>研究包</span>
+      <span><b>${state.lastLiveNewAt ? agoLabel(state.lastLiveNewAt) : "等待"}</b>最新推送</span>
+    </div>
+  `;
+}
+
+function renderLiveResearchPack(pack) {
+  if (!pack) return "";
+  if (pack.error) {
+    return `<section class="live-research-pack error"><strong>研究包生成失败</strong><p>${escapeHtml(pack.error)}</p></section>`;
+  }
+  const rows = (pack.rows || []).slice(0, 6);
+  return `
+    <section class="live-research-pack">
+      <div class="live-pack-head">
+        <strong>30 秒研究包</strong>
+        <span>${escapeHtml(dateTimeLabel(pack.builtAt))}</span>
+      </div>
+      <div class="live-frame">
+        <b>${escapeHtml(pack.frame.conclusion)}</b>
+        <span>主线：${escapeHtml(pack.frame.theme)}</span>
+        <p>${escapeHtml(pack.frame.logic)}</p>
+        <small>确认：${escapeHtml(pack.frame.confirmation)}</small>
+        <small>失效：${escapeHtml(pack.frame.invalidation)}</small>
+      </div>
+      ${
+        rows.length
+          ? `<div class="live-rank-list">
+              ${rows
+                .map(
+                  (row, index) => `
+                    <button type="button" data-symbol="${escapeHtml(row.symbol)}" class="live-rank-row">
+                      <span>${index + 1}</span>
+                      <strong>${escapeHtml(row.symbol)}</strong>
+                      <small>${escapeHtml(row.action)} · ${row.score}/100</small>
+                      <b>${formatPrice(row.quote)}</b>
+                      <i class="${Number(row.quote.changePercent) >= 0 ? "up" : "down"}">${formatPercent(row.quote.changePercent)}</i>
+                      <em>${formatMarketCap(row.marketCap)}</em>
+                    </button>
+                    <p>${escapeHtml(row.reason)}</p>
+                  `
+                )
+                .join("")}
+            </div>`
+          : `<p class="live-empty-pack">这条推文没有识别到可直接交易的美股 ticker。</p>`
+      }
+    </section>
+  `;
+}
+
 function renderLiveMonitor() {
   const latestStatic = state.monitor?.latestCaptured;
   const latestLive = state.liveItems[0];
   const newCount = state.liveItems.filter(liveItemIsNew).length;
   const base = latestStatic?.date ? `静态蒸馏至 ${dateLabel(latestStatic.date)}` : "等待静态蒸馏快照";
+  renderWebPushBanner();
   monitorStatus.textContent = latestLive
-    ? `${base} · 实时接口最新 ${dateLabel(latestLive.date)}${newCount ? ` · ${newCount} 条新推文待入库` : ""}`
+    ? `${base} · 网页推送 ${Math.round(WEB_PUSH_POLL_MS / 1000)} 秒轮询 · 接口最新 ${dateTimeLabel(latestLive.date)}${newCount ? ` · ${newCount} 条新推文待入库` : ""}`
     : `${base} · 正在等待实时接口`;
   liveTweetList.innerHTML = (state.liveItems.length ? state.liveItems : latestStatic ? [latestStatic] : [])
     .slice(0, 6)
     .map((item) => {
+      const key = liveItemKey(item);
       const isNew = liveItemIsNew(item);
+      const isPushed = key === state.lastLiveNewId || state.livePending.has(key) || state.liveResearchPacks.has(key);
+      const pack = state.liveResearchPacks.get(key);
+      const pending = state.livePending.has(key);
       const symbols = (item.symbols || []).slice(0, 6);
       return `
-        <article class="live-tweet-card ${isNew ? "new" : ""}">
+        <article class="live-tweet-card ${isNew || isPushed ? "new" : ""}">
           <div class="live-head">
-            <strong>${isNew ? "新推文" : "已入库"}</strong>
-            <span>${dateLabel(item.date)} · ${escapeHtml(item.theme || "general")}</span>
+            <strong>${isPushed ? "网页推送" : isNew ? "新推文" : "已入库"}</strong>
+            <span>${dateTimeLabel(item.date)} · ${escapeHtml(item.sentiment || "neutral")} · ${escapeHtml(liveThemeLabel(item.theme || "general"))}</span>
           </div>
           <p>${escapeHtml(shortTitle(item.title || item.body || "Serenity live tweet", 190))}</p>
           <div class="live-symbols">
@@ -954,6 +1208,8 @@ function renderLiveMonitor() {
                 : `<small>暂无可识别 ticker</small>`
             }
           </div>
+          ${pending ? `<div class="live-pack-pending"><span></span><b>${Math.round(WEB_PUSH_DELAY_MS / 1000)} 秒研究包生成中</b><small>正在等待行情、市值和 Serenity 框架回填</small></div>` : ""}
+          ${renderLiveResearchPack(pack)}
           ${item.url ? `<a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">打开 X 原文</a>` : ""}
         </article>
       `;
@@ -962,13 +1218,22 @@ function renderLiveMonitor() {
 }
 
 async function loadLiveMonitor() {
+  if (state.liveLoading) return;
+  state.liveLoading = true;
   try {
-    const data = await fetchJson("/api/serenity-live");
+    const data = await fetchJson(`${LIVE_API_PATH}?fresh=1&t=${Date.now()}`);
+    state.lastLiveFetchAt = data.capturedAt || Date.now();
+    state.lastLiveError = data.error || "";
     state.liveItems = data.items || [];
+    syncLivePushItems(state.liveItems);
     renderLiveMonitor();
   } catch (error) {
+    state.lastLiveError = error.message;
+    state.lastLiveFetchAt = Date.now();
     monitorStatus.textContent = `实时监控暂不可用：${error.message}`;
     renderLiveMonitor();
+  } finally {
+    state.liveLoading = false;
   }
 }
 
@@ -1354,13 +1619,13 @@ async function init() {
   renderMethodList();
   renderTrackRecordList();
   renderLiveMonitor();
+  loadLiveMonitor();
+  setInterval(loadLiveMonitor, WEB_PUSH_POLL_MS);
   await loadQuotes();
   renderStockList();
   renderOpportunityList();
   await analyzeSymbol("AAOI", { scroll: false });
   loadPerformance();
-  loadLiveMonitor();
-  setInterval(loadLiveMonitor, Number(state.monitor?.pollIntervalSeconds || 60) * 1000);
 }
 
 stockSearch.addEventListener("input", renderStockList);

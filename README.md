@@ -11,7 +11,19 @@ https://serenity-stock-research.netlify.app
 - Serenity 喊过或高频研究过的美股/OTC 标的列表
 - 真实价格、涨跌和公开市值数据
 - 输入 ticker 后生成 Serenity 风格投研报告
+- 网页端实时监控 Serenity 新推文，并在 30 秒后生成可交易标的排序研究包
+- Telegram 监控脚本，可同步发送即时提醒和 30 秒研究包
 - 供应链瓶颈、客户证据、TAM 重估、资本结构风险框架
+
+## 实时监控
+
+网页端默认 1 秒轮询 `/api/serenity-live`，新推文出现后会在“实时监控”区域推送，并在 30 秒后展示研究包。
+
+Telegram 监控配置见：
+
+```text
+docs/telegram-monitor.md
+```
 
 ## 本地运行
 

@@ -112,7 +112,7 @@ function buildMonitorSnapshot(tweets = {}) {
     latestCaptured: latest ? compactItem(latest) : null,
     profileTweets: tweets.fxTwitterProfile?.tweets || 0,
     source: "FxTwitter / SerenitySaid / public mirrors",
-    pollIntervalSeconds: 60,
+    pollIntervalSeconds: 1,
   };
 }
 

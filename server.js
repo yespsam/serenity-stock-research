@@ -53,8 +53,9 @@ function send(res, status, body, type = "application/json; charset=utf-8") {
 async function fetchJson(url, options = {}) {
   const ua = options.ua || MARKET_UA;
   const accept = options.accept || "application/json,text/plain,*/*";
+  const cacheMs = options.cacheMs ?? CACHE_MS;
   const hit = cache.get(url);
-  if (hit && Date.now() - hit.time < CACHE_MS) return hit.data;
+  if (cacheMs > 0 && hit && Date.now() - hit.time < cacheMs) return hit.data;
 
   const { stdout } = await execFileAsync(
     "curl",
@@ -62,7 +63,7 @@ async function fetchJson(url, options = {}) {
     { maxBuffer: 8 * 1024 * 1024 }
   );
   const data = JSON.parse(stdout);
-  cache.set(url, { data, time: Date.now() });
+  if (cacheMs > 0) cache.set(url, { data, time: Date.now() });
   return data;
 }
 
@@ -752,9 +753,10 @@ function normalizeLiveStatus(status = {}) {
   };
 }
 
-async function handleSerenityLive(_reqUrl, res) {
+async function handleSerenityLive(reqUrl, res) {
   try {
-    const raw = await fetchJson("https://api.fxtwitter.com/2/profile/aleabitoreddit/statuses", { ua: YAHOO_UA });
+    const fresh = reqUrl.searchParams.get("fresh") === "1";
+    const raw = await fetchJson("https://api.fxtwitter.com/2/profile/aleabitoreddit/statuses", { ua: YAHOO_UA, cacheMs: fresh ? 1000 : CACHE_MS });
     const items = (raw.results || [])
       .filter((item) => item.type === "status")
       .map(normalizeLiveStatus)
