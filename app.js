@@ -260,6 +260,10 @@ const state = {
   renderedStocks: [],
   activeSymbol: "AAOI",
   latestReportText: "",
+  history: [],
+  performance: new Map(),
+  monitor: null,
+  liveItems: [],
 };
 
 const stockList = document.querySelector("#stockList");
@@ -268,6 +272,10 @@ const stockSearch = document.querySelector("#stockSearch");
 const themeFilter = document.querySelector("#themeFilter");
 const sortMode = document.querySelector("#sortMode");
 const opportunityList = document.querySelector("#opportunityList");
+const monitorStatus = document.querySelector("#monitorStatus");
+const liveTweetList = document.querySelector("#liveTweetList");
+const trackStatus = document.querySelector("#trackStatus");
+const trackRecordList = document.querySelector("#trackRecordList");
 const methodList = document.querySelector("#methodList");
 const heroStats = document.querySelector("#heroStats");
 const heroAnalysisForm = document.querySelector("#heroAnalysisForm");
@@ -844,6 +852,126 @@ function renderOpportunityList() {
     .join("");
 }
 
+function historyKey(record = {}) {
+  return `${record.symbol}:${record.id}`;
+}
+
+function shortTitle(value = "", limit = 150) {
+  const text = String(value || "").replace(/\s+/g, " ").trim();
+  return text.length > limit ? `${text.slice(0, limit - 1)}...` : text;
+}
+
+function horizonLabel(result = {}, days) {
+  const horizon = (result.horizons || []).find((item) => item.days === days);
+  if (!horizon?.available) return "待验证";
+  return formatPercent(horizon.returnPercent);
+}
+
+function renderTrackRecordList() {
+  const records = state.history.slice(0, 12);
+  const completed = records.filter((record) => state.performance.has(historyKey(record))).length;
+  trackStatus.textContent = records.length
+    ? `${records.length} 条高信号历史样本 · ${completed ? `${completed} 条已回填价格表现` : "正在请求历史价格"}`
+    : "暂无可验证历史样本";
+  trackRecordList.innerHTML = records
+    .map((record) => {
+      const result = state.performance.get(historyKey(record)) || {};
+      const currentClass = Number(result.currentReturnPercent) >= 0 ? "up" : "down";
+      const drawdownClass = Number(result.maxDrawdownPercent) < -25 ? "down" : "";
+      return `
+        <article class="track-card">
+          <div class="track-head">
+            <button type="button" data-symbol="${escapeHtml(record.symbol)}">${escapeHtml(record.symbol)}</button>
+            <span>${dateLabel(record.date)}</span>
+          </div>
+          <p>${escapeHtml(shortTitle(record.title || record.body || "Serenity historical sample"))}</p>
+          <div class="track-metrics">
+            <span><small>入场参考</small><b>${result.entryPrice ? formatPrice({ price: result.entryPrice, currency: "USD" }) : "--"}</b></span>
+            <span><small>至今</small><b class="${currentClass}">${Number.isFinite(result.currentReturnPercent) ? formatPercent(result.currentReturnPercent) : "--"}</b></span>
+            <span><small>最大回撤</small><b class="${drawdownClass}">${Number.isFinite(result.maxDrawdownPercent) ? formatPercent(result.maxDrawdownPercent) : "--"}</b></span>
+          </div>
+          <div class="horizon-strip">
+            <span>7D <b class="${Number(result.horizons?.find((item) => item.days === 7)?.returnPercent) >= 0 ? "up" : "down"}">${horizonLabel(result, 7)}</b></span>
+            <span>30D <b class="${Number(result.horizons?.find((item) => item.days === 30)?.returnPercent) >= 0 ? "up" : "down"}">${horizonLabel(result, 30)}</b></span>
+            <span>90D <b class="${Number(result.horizons?.find((item) => item.days === 90)?.returnPercent) >= 0 ? "up" : "down"}">${horizonLabel(result, 90)}</b></span>
+          </div>
+          ${record.url ? `<a href="${escapeHtml(record.url)}" target="_blank" rel="noreferrer">查看原始样本</a>` : ""}
+        </article>
+      `;
+    })
+    .join("");
+}
+
+async function loadPerformance() {
+  const records = state.history.slice(0, 12).map((record) => ({
+    id: record.id,
+    symbol: record.symbol,
+    date: record.date,
+    title: record.title,
+  }));
+  if (!records.length) return;
+  try {
+    const data = await fetchJson(`/api/performance?records=${encodeURIComponent(JSON.stringify(records))}`);
+    for (const result of data.results || []) {
+      state.performance.set(historyKey(result), result);
+    }
+    renderTrackRecordList();
+  } catch (error) {
+    trackStatus.textContent = `历史表现加载失败：${error.message}`;
+  }
+}
+
+function liveItemIsNew(item = {}) {
+  const staticDate = Date.parse(state.monitor?.latestCaptured?.date || 0);
+  const liveDate = Date.parse(item.date || 0);
+  return Number.isFinite(liveDate) && Number.isFinite(staticDate) && liveDate > staticDate;
+}
+
+function renderLiveMonitor() {
+  const latestStatic = state.monitor?.latestCaptured;
+  const latestLive = state.liveItems[0];
+  const newCount = state.liveItems.filter(liveItemIsNew).length;
+  const base = latestStatic?.date ? `静态蒸馏至 ${dateLabel(latestStatic.date)}` : "等待静态蒸馏快照";
+  monitorStatus.textContent = latestLive
+    ? `${base} · 实时接口最新 ${dateLabel(latestLive.date)}${newCount ? ` · ${newCount} 条新推文待入库` : ""}`
+    : `${base} · 正在等待实时接口`;
+  liveTweetList.innerHTML = (state.liveItems.length ? state.liveItems : latestStatic ? [latestStatic] : [])
+    .slice(0, 6)
+    .map((item) => {
+      const isNew = liveItemIsNew(item);
+      const symbols = (item.symbols || []).slice(0, 6);
+      return `
+        <article class="live-tweet-card ${isNew ? "new" : ""}">
+          <div class="live-head">
+            <strong>${isNew ? "新推文" : "已入库"}</strong>
+            <span>${dateLabel(item.date)} · ${escapeHtml(item.theme || "general")}</span>
+          </div>
+          <p>${escapeHtml(shortTitle(item.title || item.body || "Serenity live tweet", 190))}</p>
+          <div class="live-symbols">
+            ${
+              symbols.length
+                ? symbols.map((symbol) => `<button class="secondary" type="button" data-symbol="${escapeHtml(symbol)}">${escapeHtml(symbol)}</button>`).join("")
+                : `<small>暂无可识别 ticker</small>`
+            }
+          </div>
+          ${item.url ? `<a href="${escapeHtml(item.url)}" target="_blank" rel="noreferrer">打开 X 原文</a>` : ""}
+        </article>
+      `;
+    })
+    .join("");
+}
+
+async function loadLiveMonitor() {
+  try {
+    const data = await fetchJson("/api/serenity-live");
+    state.liveItems = data.items || [];
+    renderLiveMonitor();
+  } catch (error) {
+    monitorStatus.textContent = `实时监控暂不可用：${error.message}`;
+    renderLiveMonitor();
+  }
+}
+
 function findStock(symbol) {
   const normalized = normalizeSymbol(symbol);
   return calledStocks.find((stock) => [stock.symbol, ...(stock.aliases || [])].map(normalizeSymbol).includes(normalized));
@@ -1220,12 +1348,19 @@ async function init() {
     rules: publicData.rules || [],
     symbols: publicData.symbols || [],
   };
+  state.history = publicData.history || [];
+  state.monitor = publicData.monitor || null;
   renderHeroStats();
   renderMethodList();
+  renderTrackRecordList();
+  renderLiveMonitor();
   await loadQuotes();
   renderStockList();
   renderOpportunityList();
   await analyzeSymbol("AAOI", { scroll: false });
+  loadPerformance();
+  loadLiveMonitor();
+  setInterval(loadLiveMonitor, Number(state.monitor?.pollIntervalSeconds || 60) * 1000);
 }
 
 stockSearch.addEventListener("input", renderStockList);
@@ -1240,6 +1375,16 @@ stockList.addEventListener("click", (event) => {
 opportunityList.addEventListener("click", (event) => {
   const row = event.target.closest("[data-symbol]");
   if (row) analyzeSymbol(row.dataset.symbol);
+});
+
+liveTweetList.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-symbol]");
+  if (button) analyzeSymbol(button.dataset.symbol);
+});
+
+trackRecordList.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-symbol]");
+  if (button) analyzeSymbol(button.dataset.symbol);
 });
 
 quickTickers.addEventListener("click", (event) => {

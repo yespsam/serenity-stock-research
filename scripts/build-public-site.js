@@ -54,6 +54,68 @@ function compactItem(item) {
   };
 }
 
+function validDate(value) {
+  const time = Date.parse(value);
+  if (!Number.isFinite(time)) return false;
+  return time >= Date.parse("2024-01-01") && time <= Date.now() + 86_400_000;
+}
+
+function historyCandidate(item, symbol) {
+  return {
+    id: item.id || item.url || `${symbol}-${item.date}`,
+    symbol,
+    date: item.date,
+    title: item.title || "",
+    body: item.body || "",
+    sentiment: item.sentiment || "neutral",
+    theme: item.theme || "general",
+    materiality: item.materiality || 0,
+    url: item.url || "",
+  };
+}
+
+function buildHistoryCandidates(items = []) {
+  const candidates = [];
+  for (const group of aliasGroups) {
+    const canonical = group[0];
+    const aliases = new Set(group.map((symbol) => symbol.toUpperCase()));
+    const hits = items
+      .filter((item) => validDate(item.date))
+      .filter((item) => (item.symbols || []).some((symbol) => aliases.has(String(symbol).toUpperCase())))
+      .filter((item) => item.sentiment !== "bear")
+      .sort((a, b) => {
+        const materiality = Number(b.materiality || 0) - Number(a.materiality || 0);
+        if (materiality) return materiality;
+        return Date.parse(a.date || 0) - Date.parse(b.date || 0);
+      });
+    const early = hits
+      .slice()
+      .filter((item) => Number(item.materiality || 0) >= 55)
+      .sort((a, b) => Date.parse(a.date || 0) - Date.parse(b.date || 0))[0];
+    const strong = hits[0];
+    for (const item of [early, strong].filter(Boolean)) {
+      const key = `${canonical}:${item.id || item.url || item.date}`;
+      if (!candidates.some((entry) => `${entry.symbol}:${entry.id}` === key)) candidates.push(historyCandidate(item, canonical));
+    }
+  }
+  return candidates
+    .sort((a, b) => Number(b.materiality || 0) - Number(a.materiality || 0) || Date.parse(a.date || 0) - Date.parse(b.date || 0))
+    .slice(0, 18);
+}
+
+function buildMonitorSnapshot(tweets = {}) {
+  const latest = (tweets.items || [])
+    .filter((item) => validDate(item.date))
+    .sort((a, b) => Date.parse(b.date || 0) - Date.parse(a.date || 0))[0];
+  return {
+    staticUpdatedAt: tweets.scrapedAt || "",
+    latestCaptured: latest ? compactItem(latest) : null,
+    profileTweets: tweets.fxTwitterProfile?.tweets || 0,
+    source: "FxTwitter / SerenitySaid / public mirrors",
+    pollIntervalSeconds: 60,
+  };
+}
+
 function buildPublicData() {
   const existingPublic = path.join(ROOT, "data/serenity-public.json");
   const requiredRaw = ["data/serenity-research.json", "data/serenity-tweets.json", "data/serenity-distillation.json"].every((file) =>
@@ -84,6 +146,9 @@ function buildPublicData() {
       parsedItems: distillation.parsedItems || tweets.items?.length || 0,
       commentCount: distillation.commentCount || tweets.commentCount || 0,
       profileTweets: tweets.fxTwitterProfile?.tweets || 0,
+      latestItemDate: (tweets.items || [])
+        .filter((item) => validDate(item.date))
+        .sort((a, b) => Date.parse(b.date || 0) - Date.parse(a.date || 0))[0]?.date || "",
     },
     rules: (distillation.rules || []).slice(0, 9),
     symbols: (distillation.symbols || []).slice(0, 220).map((item) => ({
@@ -98,6 +163,8 @@ function buildPublicData() {
       sentimentScore: item.sentimentScore || 0,
     })),
     items: [...picked.values()],
+    history: buildHistoryCandidates(tweets.items || []),
+    monitor: buildMonitorSnapshot(tweets),
   };
 }
 

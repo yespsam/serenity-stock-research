@@ -729,6 +729,143 @@ async function handleQuotes(reqUrl, res) {
   send(res, 200, JSON.stringify({ provider: "Yahoo Finance", updatedAt: Date.now(), quotes }));
 }
 
+function normalizeLiveStatus(status = {}) {
+  const text = status.text || status.raw_text?.text || "";
+  const facetSymbols = (status.raw_text?.facets || [])
+    .filter((facet) => facet.type === "symbol" && facet.original)
+    .map((facet) => String(facet.original).replace(/^\$/, "").toUpperCase());
+  return {
+    id: String(status.id || ""),
+    date: status.created_at ? new Date(status.created_at).toISOString() : "",
+    title: text.replace(/\s+/g, " ").trim().slice(0, 180),
+    body: text,
+    symbols: unique([...facetSymbols, ...extractSymbolsFromText(text).map((symbol) => symbol.toUpperCase())]),
+    sentiment: inferImportSentiment(text),
+    theme: classifyImportTheme(text),
+    url: status.url || (status.id ? `https://x.com/aleabitoreddit/status/${status.id}` : ""),
+    engagement: {
+      likes: metricNumber(status.likes),
+      retweets: metricNumber(status.retweets ?? status.reposts),
+      replies: metricNumber(status.replies),
+      views: metricNumber(status.views),
+    },
+  };
+}
+
+async function handleSerenityLive(_reqUrl, res) {
+  try {
+    const raw = await fetchJson("https://api.fxtwitter.com/2/profile/aleabitoreddit/statuses", { ua: YAHOO_UA });
+    const items = (raw.results || [])
+      .filter((item) => item.type === "status")
+      .map(normalizeLiveStatus)
+      .filter((item) => item.id && item.body)
+      .slice(0, 8);
+    send(
+      res,
+      200,
+      JSON.stringify({
+        provider: "FxTwitter public profile statuses",
+        capturedAt: Date.now(),
+        profile: raw.results?.[0]?.author || null,
+        items,
+      })
+    );
+  } catch (error) {
+    send(res, 200, JSON.stringify({ provider: "FxTwitter public profile statuses", capturedAt: Date.now(), error: error.message, items: [] }));
+  }
+}
+
+function parsePerformanceRecords(value = "") {
+  try {
+    const records = JSON.parse(value || "[]");
+    return Array.isArray(records)
+      ? records
+          .map((item) => ({
+            id: String(item.id || `${item.symbol}:${item.date}`),
+            symbol: normalizeMarketSymbol(item.symbol),
+            date: item.date,
+            title: String(item.title || ""),
+          }))
+          .filter((item) => item.symbol && Number.isFinite(Date.parse(item.date)))
+          .slice(0, 18)
+      : [];
+  } catch {
+    return [];
+  }
+}
+
+function nearestClose(candles = [], targetMs) {
+  return candles.find((bar) => bar.time >= targetMs && Number.isFinite(bar.close)) || null;
+}
+
+function returnPercent(price, entry) {
+  if (!Number.isFinite(price) || !Number.isFinite(entry) || entry <= 0) return null;
+  return ((price - entry) / entry) * 100;
+}
+
+async function historicalCandlesFor(symbol, startMs) {
+  const marketSymbol = resolveStaticMarketSymbol(symbol);
+  const period1 = Math.floor((startMs - 3 * 86_400_000) / 1000);
+  const period2 = Math.floor((Date.now() + 2 * 86_400_000) / 1000);
+  const safeSymbol = encodeURIComponent(marketSymbol);
+  const raw = await fetchJson(
+    `https://query1.finance.yahoo.com/v8/finance/chart/${safeSymbol}?period1=${period1}&period2=${period2}&interval=1d&events=history`,
+    { ua: YAHOO_UA }
+  );
+  const result = raw?.chart?.result?.[0];
+  const timestamps = result?.timestamp || [];
+  const quote = result?.indicators?.quote?.[0] || {};
+  const candles = timestamps
+    .map((time, index) => ({
+      time: time * 1000,
+      close: Number(quote.close?.[index]),
+      low: Number(quote.low?.[index]),
+    }))
+    .filter((bar) => Number.isFinite(bar.time) && Number.isFinite(bar.close));
+  return { marketSymbol, candles };
+}
+
+async function performanceForRecord(record = {}) {
+  const startMs = Date.parse(record.date);
+  const { marketSymbol, candles } = await historicalCandlesFor(record.symbol, startMs);
+  const entry = nearestClose(candles, startMs);
+  if (!entry) throw new Error("entry price unavailable");
+  const horizons = [7, 30, 90].map((days) => {
+    const bar = nearestClose(candles, startMs + days * 86_400_000);
+    return {
+      days,
+      price: bar?.close ?? null,
+      returnPercent: bar ? returnPercent(bar.close, entry.close) : null,
+      available: Boolean(bar),
+    };
+  });
+  const available = candles.filter((bar) => bar.time >= entry.time);
+  const minClose = Math.min(...available.map((bar) => bar.close).filter(Number.isFinite));
+  const latest = available.at(-1);
+  return {
+    ...record,
+    marketSymbol,
+    entryPrice: entry.close,
+    entryDate: new Date(entry.time).toISOString(),
+    currentPrice: latest?.close ?? null,
+    currentReturnPercent: latest ? returnPercent(latest.close, entry.close) : null,
+    maxDrawdownPercent: Number.isFinite(minClose) ? returnPercent(minClose, entry.close) : null,
+    horizons,
+  };
+}
+
+async function handlePerformance(reqUrl, res) {
+  const records = parsePerformanceRecords(reqUrl.searchParams.get("records") || "[]");
+  const results = await mapWithConcurrency(records, 5, async (record) => {
+    try {
+      return await performanceForRecord(record);
+    } catch (error) {
+      return { ...record, error: error.message };
+    }
+  });
+  send(res, 200, JSON.stringify({ provider: "Yahoo Finance historical chart", updatedAt: Date.now(), results }));
+}
+
 function readJsonFile(fileName) {
   return JSON.parse(fs.readFileSync(path.join(ROOT, "data", fileName), "utf8"));
 }
@@ -2515,6 +2652,16 @@ const server = http.createServer(async (req, res) => {
 
     if (reqUrl.pathname === "/api/quotes") {
       await handleQuotes(reqUrl, res);
+      return;
+    }
+
+    if (reqUrl.pathname === "/api/serenity-live") {
+      await handleSerenityLive(reqUrl, res);
+      return;
+    }
+
+    if (reqUrl.pathname === "/api/performance") {
+      await handlePerformance(reqUrl, res);
       return;
     }
 
