@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ef2f8f" />
+    <title>Serenity 美股供应链投研终端</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23fff3f9'/%3E%3Cpath d='M32 6l5.7 17.3L56 20.4 41.9 32 56 43.6l-18.3-2.9L32 58l-5.7-17.3L8 43.6 22.1 32 8 20.4l18.3 2.9L32 6z' fill='%23ef2f8f'/%3E%3C/svg%3E" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Serenity 首页">
+        <span class="brand-mark">✦</span>
+        <span>
+          <strong>SERENITY</strong>
+          <small>PUBLIC EQUITY RESEARCH</small>
+        </span>
+      </a>
+      <nav aria-label="页面导航">
+        <a href="#opportunities">机会榜</a>
+        <a href="#monitor">实时监控</a>
+        <a href="#track-record">历史战绩</a>
+        <a href="#watchlist">覆盖名单</a>
+        <a href="#analysis">单股研报</a>
+        <a href="#method">研究框架</a>
+      </nav>
+      <a class="source-link" href="https://x.com/aleabitoreddit" target="_blank" rel="noreferrer">查看公开 X</a>
+    </header>
+
+    <main id="home">
+      <section class="hero">
+        <img src="./assets/serenity-ai-strategist.png" alt="" aria-hidden="true" />
+        <div class="hero-copy">
+          <p class="eyebrow">免费研究工具 · 公开资料蒸馏 · 非投资建议</p>
+          <h1>Serenity 美股供应链投研终端</h1>
+          <p class="hero-subtitle">
+            将 Serenity 的公开观点压缩成一套可复用的研究流程：先定位终端需求，再拆供应链瓶颈，最后用市值赔率、客户证据与资本结构风险校验单股质量。
+          </p>
+          <form id="heroAnalysisForm" class="ticker-form">
+            <input id="heroTickerInput" autocomplete="off" list="tickerSuggestions" placeholder="输入任意美股 Ticker，例如 PLTR / TSLA / AAOI" />
+            <button type="submit">生成投研报告</button>
+          </form>
+          <div id="heroStats" class="hero-stats" aria-label="数据覆盖"></div>
+          <div class="workflow-strip" aria-label="使用流程">
+            <span><b>1</b> 选标的</span>
+            <span><b>2</b> 看市值与赔率</span>
+            <span><b>3</b> 生成单股 memo</span>
+          </div>
+        </div>
+      </section>
+
+      <section id="opportunities" class="panel opportunity-panel">
+        <div class="panel-head">
+          <div>
+            <span>Decision Board</span>
+            <h2>Serenity 机会榜</h2>
+          </div>
+          <p class="muted-line">按 Serenity 匹配度、公开样本、瓶颈位置和资本结构风险排序，优先告诉你“该先研究谁”。</p>
+        </div>
+        <div id="opportunityList" class="opportunity-list"></div>
+      </section>
+
+      <section id="monitor" class="monitor-grid">
+        <section class="panel monitor-panel">
+          <div class="panel-head">
+            <div>
+              <span>Live Monitor</span>
+              <h2>Serenity 实时推文监控</h2>
+            </div>
+            <p id="monitorStatus" class="muted-line">正在连接公开推文接口...</p>
+          </div>
+          <div id="webPushBanner" class="web-push-banner" aria-live="polite"></div>
+          <div id="webPushControls" class="web-push-controls"></div>
+          <div id="monitorHealth" class="monitor-health"></div>
+          <div id="dailyTradeReport" class="daily-trade-report"></div>
+          <div id="priceAlertPanel" class="price-alert-panel"></div>
+          <div id="liveTweetList" class="live-tweet-list"></div>
+        </section>
+
+        <section id="track-record" class="panel track-panel">
+          <div class="panel-head">
+            <div>
+              <span>Track Record</span>
+              <h2>历史喊单验证</h2>
+            </div>
+            <p id="trackStatus" class="muted-line">正在计算历史样本表现...</p>
+          </div>
+          <div id="trackRecordList" class="track-record-list"></div>
+        </section>
+      </section>
+
+      <section class="simple-grid">
+        <section id="watchlist" class="panel stock-panel">
+          <div class="panel-head">
+            <div>
+              <span>Coverage Monitor</span>
+              <h2>Serenity 覆盖标的市值监控</h2>
+            </div>
+            <div class="list-tools">
+              <input id="stockSearch" type="search" placeholder="搜索 ticker、公司或产业链关键词" />
+              <select id="themeFilter" aria-label="主题筛选">
+                <option value="all">全部主题</option>
+                <option value="cpo-silicon-photonics">CPO / 光子链</option>
+                <option value="neocloud">NeoCloud</option>
+                <option value="memory-rotation">Memory</option>
+                <option value="ai-infrastructure">AI 基建</option>
+                <option value="capital-structure-veto">稀释风险</option>
+              </select>
+              <select id="sortMode" aria-label="排序方式">
+                <option value="model">按模型分排序</option>
+                <option value="marketCap">按市值排序</option>
+                <option value="mentions">按提及热度排序</option>
+                <option value="change">按当日涨跌排序</option>
+              </select>
+            </div>
+          </div>
+          <p id="listStatus" class="muted-line">正在加载真实行情与市值...</p>
+          <div id="stockList" class="stock-list"></div>
+        </section>
+
+        <aside id="method" class="panel method-panel">
+          <div class="panel-head">
+            <div>
+              <span>Research Framework</span>
+              <h2>Serenity 研究框架</h2>
+            </div>
+          </div>
+          <div id="methodList" class="method-list"></div>
+        </aside>
+      </section>
+
+      <section id="analysis" class="analysis-shell">
+        <div class="panel analysis-panel">
+          <div class="panel-head">
+            <div>
+              <span>Research Memo Generator</span>
+              <h2>输入股票，先看结论</h2>
+            </div>
+          </div>
+          <form id="analysisForm" class="analysis-form">
+            <input id="tickerInput" autocomplete="off" list="tickerSuggestions" placeholder="输入任意美股 ticker，例如 PLTR" />
+            <button type="submit">生成研报</button>
+          </form>
+          <div id="quickTickers" class="quick-tickers"></div>
+          <article id="reportOutput" class="report-output"></article>
+        </div>
+      </section>
+    </main>
+
+    <datalist id="tickerSuggestions"></datalist>
+
+    <footer class="footer">
+      <span>数据来自公开 X 镜像、SerenitySaid、Semiconstocks、Twiscan、Instalker 与公开行情接口；本页仅用于研究框架整理，不构成投资建议或收益承诺。</span>
+    </footer>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
