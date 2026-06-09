@@ -5,7 +5,7 @@ function json(data, status = 200) {
     status,
     headers: {
       "content-type": "application/json; charset=utf-8",
-      "cache-control": "no-store, max-age=0",
+      "cache-control": "public, max-age=15, s-maxage=30, stale-while-revalidate=120",
     },
   });
 }

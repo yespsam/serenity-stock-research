@@ -8,7 +8,11 @@ const { URL } = require("node:url");
 
 const PORT = Number(process.env.PORT || 4180);
 const ROOT = __dirname;
-const CACHE_MS = 30_000;
+const CACHE_MS = 120_000;
+const LIVE_CACHE_MS = 30_000;
+const QUOTE_CACHE_MS = 120_000;
+const DETAIL_QUOTE_CACHE_MS = 900_000;
+const PERFORMANCE_CACHE_MS = 21_600_000;
 const RESEARCH_REFRESH_TIMEOUT_MS = 240_000;
 const BACKFILL_REFRESH_TIMEOUT_MS = 360_000;
 const AUTO_BACKFILL_TIMEOUT_MS = 900_000;
@@ -42,10 +46,10 @@ const MIME = {
   ".svg": "image/svg+xml",
 };
 
-function send(res, status, body, type = "application/json; charset=utf-8") {
+function send(res, status, body, type = "application/json; charset=utf-8", cacheControl = status === 200 ? "no-store" : "no-cache") {
   res.writeHead(status, {
     "Content-Type": type,
-    "Cache-Control": status === 200 ? "no-store" : "no-cache",
+    "Cache-Control": cacheControl,
   });
   res.end(body);
 }
@@ -118,10 +122,10 @@ async function discoverYahooSymbol(symbol = "") {
   }
 }
 
-async function tryYahooStack(symbol, range, interval, requestedSymbol, providerPrefix = "") {
+async function tryYahooStack(symbol, range, interval, requestedSymbol, providerPrefix = "", options = {}) {
   let lastError;
   try {
-    const data = await getYahooCandlesWithFallback(symbol, range, interval);
+    const data = await getYahooCandlesWithFallback(symbol, range, interval, options);
     return {
       ...data,
       requestedSymbol,
@@ -132,7 +136,7 @@ async function tryYahooStack(symbol, range, interval, requestedSymbol, providerP
   }
 
   try {
-    const data = await getSparkSeries(symbol, range, interval);
+    const data = await getSparkSeries(symbol, range, interval, options);
     return {
       ...data,
       requestedSymbol,
@@ -202,7 +206,7 @@ function normalizeCandles(raw, symbol, sourceUrl) {
   };
 }
 
-async function getYahooCandles(symbol, range = "1d", interval = "5m") {
+async function getYahooCandles(symbol, range = "1d", interval = "5m", options = {}) {
   const safeSymbol = encodeURIComponent(symbol.toUpperCase());
   const safeRange = encodeURIComponent(range);
   const safeInterval = encodeURIComponent(interval);
@@ -214,7 +218,7 @@ async function getYahooCandles(symbol, range = "1d", interval = "5m") {
   let lastError;
   for (const url of urls) {
     try {
-      const raw = await fetchJson(url, { ua: YAHOO_UA });
+      const raw = await fetchJson(url, { ua: YAHOO_UA, cacheMs: options.cacheMs });
       return normalizeCandles(raw, symbol, url);
     } catch (error) {
       lastError = error;
@@ -223,7 +227,7 @@ async function getYahooCandles(symbol, range = "1d", interval = "5m") {
   throw lastError || new Error("yahoo chart unavailable");
 }
 
-async function getYahooCandlesWithFallback(symbol, range = "1d", interval = "5m") {
+async function getYahooCandlesWithFallback(symbol, range = "1d", interval = "5m", options = {}) {
   const attempts = [{ range, interval }];
   if (range === "1d" && interval !== "1d") attempts.push({ range: "5d", interval: "1d" });
   if (interval !== "1d") attempts.push({ range: "1mo", interval: "1d" });
@@ -231,7 +235,7 @@ async function getYahooCandlesWithFallback(symbol, range = "1d", interval = "5m"
   let lastError;
   for (const attempt of attempts) {
     try {
-      const data = await getYahooCandles(symbol, attempt.range, attempt.interval);
+      const data = await getYahooCandles(symbol, attempt.range, attempt.interval, options);
       if (attempt.range !== range || attempt.interval !== interval) {
         return {
           ...data,
@@ -248,14 +252,14 @@ async function getYahooCandlesWithFallback(symbol, range = "1d", interval = "5m"
   throw lastError || new Error("yahoo chart unavailable");
 }
 
-async function getCandles(symbol, range = "1d", interval = "5m") {
+async function getCandles(symbol, range = "1d", interval = "5m", options = {}) {
   const requestedSymbol = String(symbol || "").trim();
   const marketSymbol = resolveStaticMarketSymbol(requestedSymbol);
   const isUsSymbol = /^[A-Z]+$/i.test(marketSymbol);
   let lastError;
 
   try {
-    return await tryYahooStack(marketSymbol, range, interval, requestedSymbol, marketSymbol !== normalizeMarketSymbol(requestedSymbol) ? "映射" : "");
+    return await tryYahooStack(marketSymbol, range, interval, requestedSymbol, marketSymbol !== normalizeMarketSymbol(requestedSymbol) ? "映射" : "", options);
   } catch (error) {
     lastError = error;
   }
@@ -272,7 +276,7 @@ async function getCandles(symbol, range = "1d", interval = "5m") {
   const discoveredSymbol = await discoverYahooSymbol(requestedSymbol);
   if (discoveredSymbol && discoveredSymbol !== marketSymbol) {
     try {
-      return await tryYahooStack(discoveredSymbol, range, interval, requestedSymbol, "自动映射");
+      return await tryYahooStack(discoveredSymbol, range, interval, requestedSymbol, "自动映射", options);
     } catch (error) {
       lastError = error;
     }
@@ -548,7 +552,7 @@ function normalizeSpark(raw, symbol, sourceUrl, range, interval) {
   };
 }
 
-async function getSparkSeries(symbol, range, interval) {
+async function getSparkSeries(symbol, range, interval, options = {}) {
   const safeSymbol = encodeURIComponent(symbol.toUpperCase());
   const safeRange = encodeURIComponent(range);
   const safeInterval = encodeURIComponent(interval);
@@ -560,7 +564,7 @@ async function getSparkSeries(symbol, range, interval) {
   let lastError;
   for (const url of urls) {
     try {
-      const raw = await fetchJson(url, { ua: YAHOO_UA });
+      const raw = await fetchJson(url, { ua: YAHOO_UA, cacheMs: options.cacheMs });
       return normalizeSpark(raw, symbol, url, range, interval);
     } catch (error) {
       lastError = error;
@@ -676,7 +680,7 @@ async function handleQuotes(reqUrl, res) {
     6,
     async (symbol) => {
       try {
-        const data = await getCandles(symbol, "1d", "5m");
+        const data = await getCandles(symbol, "1d", "5m", { cacheMs: detailed ? DETAIL_QUOTE_CACHE_MS : QUOTE_CACHE_MS });
         let summary = {};
         try {
           const summarySymbol = resolveStaticMarketSymbol(data.symbol || symbol);
@@ -727,7 +731,10 @@ async function handleQuotes(reqUrl, res) {
     }
   );
 
-  send(res, 200, JSON.stringify({ provider: "Yahoo Finance", updatedAt: Date.now(), quotes }));
+  const cacheControl = detailed
+    ? "public, max-age=300, s-maxage=900, stale-while-revalidate=3600"
+    : "public, max-age=60, s-maxage=120, stale-while-revalidate=600";
+  send(res, 200, JSON.stringify({ provider: "Yahoo Finance", updatedAt: Date.now(), quotes }), "application/json; charset=utf-8", cacheControl);
 }
 
 function normalizeLiveStatus(status = {}) {
@@ -755,8 +762,7 @@ function normalizeLiveStatus(status = {}) {
 
 async function handleSerenityLive(reqUrl, res) {
   try {
-    const fresh = reqUrl.searchParams.get("fresh") === "1";
-    const raw = await fetchJson("https://api.fxtwitter.com/2/profile/aleabitoreddit/statuses", { ua: YAHOO_UA, cacheMs: fresh ? 1000 : CACHE_MS });
+    const raw = await fetchJson("https://api.fxtwitter.com/2/profile/aleabitoreddit/statuses", { ua: YAHOO_UA, cacheMs: LIVE_CACHE_MS });
     const items = (raw.results || [])
       .filter((item) => item.type === "status")
       .map(normalizeLiveStatus)
@@ -770,10 +776,18 @@ async function handleSerenityLive(reqUrl, res) {
         capturedAt: Date.now(),
         profile: raw.results?.[0]?.author || null,
         items,
-      })
+      }),
+      "application/json; charset=utf-8",
+      "public, max-age=15, s-maxage=30, stale-while-revalidate=120"
     );
   } catch (error) {
-    send(res, 200, JSON.stringify({ provider: "FxTwitter public profile statuses", capturedAt: Date.now(), error: error.message, items: [] }));
+    send(
+      res,
+      200,
+      JSON.stringify({ provider: "FxTwitter public profile statuses", capturedAt: Date.now(), error: error.message, items: [] }),
+      "application/json; charset=utf-8",
+      "public, max-age=15, s-maxage=30, stale-while-revalidate=120"
+    );
   }
 }
 
@@ -865,7 +879,13 @@ async function handlePerformance(reqUrl, res) {
       return { ...record, error: error.message };
     }
   });
-  send(res, 200, JSON.stringify({ provider: "Yahoo Finance historical chart", updatedAt: Date.now(), results }));
+  send(
+    res,
+    200,
+    JSON.stringify({ provider: "Yahoo Finance historical chart", updatedAt: Date.now(), results }),
+    "application/json; charset=utf-8",
+    "public, max-age=3600, s-maxage=21600, stale-while-revalidate=86400"
+  );
 }
 
 function readJsonFile(fileName) {

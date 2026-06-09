@@ -8,7 +8,7 @@ function json(data, status = 200) {
     status,
     headers: {
       "content-type": "application/json; charset=utf-8",
-      "cache-control": "public, max-age=300",
+      "cache-control": "public, max-age=3600, s-maxage=21600, stale-while-revalidate=86400",
     },
   });
 }

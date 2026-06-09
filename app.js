@@ -290,6 +290,7 @@ const state = {
   paperTrades: [],
   priceAlerts: [],
   activeReport: null,
+  quoteFetchedAt: new Map(),
   lastPriceAlertQuoteAt: 0,
   lastPriceAlertTriggeredAt: null,
   soundUnlocked: false,
@@ -301,12 +302,14 @@ const state = {
 };
 
 const pageParams = new URLSearchParams(window.location.search);
-const WEB_PUSH_POLL_MS = clamp(Number(pageParams.get("pushPoll") || 1000), 1000, 60_000);
+const WEB_PUSH_POLL_MS = clamp(Number(pageParams.get("pushPoll") || 30_000), 10_000, 120_000);
 const WEB_PUSH_DELAY_MS = clamp(Number(pageParams.get("pushDelay") || 30_000), 1000, 30_000);
 const WEB_REVIEW_DELAY_MS = clamp(Number(pageParams.get("reviewDelay") || 300_000), 1000, 300_000);
 const LIVE_API_PATH = "/api/serenity-live";
 const IS_GITHUB_PAGES_STATIC = window.location.hostname.endsWith("github.io");
 const WEB_CRYPTO_SYMBOLS = new Set(["BTC", "ETH", "SOL", "DOGE", "XRP"]);
+const QUOTE_CACHE_MS = 60_000;
+const DETAIL_QUOTE_CACHE_MS = 10 * 60_000;
 const PUSH_NOTIFY_KEY = "serenityWebPushNotify";
 const PUSH_SOUND_KEY = "serenityWebPushSound";
 const PUSH_WATCHLIST_KEY = "serenityWebPushWatchlist";
@@ -1677,12 +1680,32 @@ function actionForLive(item = {}, decision = {}, stock = {}) {
 async function fetchQuotesForSymbols(symbols = []) {
   const normalized = [...new Set(symbols.map(normalizeSymbol).filter(Boolean))].slice(0, 12);
   if (!normalized.length) return new Map();
-  const data = await fetchJson(`/api/quotes?symbols=${encodeURIComponent(normalized.join(","))}&t=${Date.now()}`);
   const map = new Map();
+  const missing = [];
+  for (const symbol of normalized) {
+    const cached = state.quotes.get(symbol);
+    const fetchedAt = state.quoteFetchedAt.get(symbol) || 0;
+    if (cached && Date.now() - fetchedAt < QUOTE_CACHE_MS) {
+      map.set(symbol, cached);
+    } else {
+      missing.push(symbol);
+    }
+  }
+  if (!missing.length) return map;
+  const data = await fetchJson(`/api/quotes?symbols=${encodeURIComponent(missing.join(","))}`);
   for (const quote of data.quotes || []) {
     const requested = normalizeSymbol(quote.requestedSymbol || quote.symbol);
-    if (requested) map.set(requested, quote);
-    if (quote.symbol) map.set(normalizeSymbol(quote.symbol), quote);
+    const actual = normalizeSymbol(quote.symbol);
+    if (requested) {
+      state.quotes.set(requested, quote);
+      state.quoteFetchedAt.set(requested, Date.now());
+      map.set(requested, quote);
+    }
+    if (actual) {
+      state.quotes.set(actual, quote);
+      state.quoteFetchedAt.set(actual, Date.now());
+      map.set(actual, quote);
+    }
   }
   return map;
 }
@@ -2249,7 +2272,7 @@ async function loadLiveMonitor() {
   state.liveLoading = true;
   const startedAt = performance.now();
   try {
-    const data = await fetchJson(`${LIVE_API_PATH}?fresh=1&t=${Date.now()}`);
+    const data = await fetchJson(LIVE_API_PATH);
     state.liveLatencyMs = performance.now() - startedAt;
     state.liveFetchCount += 1;
     state.liveConsecutiveFailures = 0;
@@ -2325,12 +2348,18 @@ function hydrateUniversalStock(stock, quote = {}) {
 async function ensureQuote(symbol, options = {}) {
   const normalized = normalizeSymbol(symbol);
   const cached = state.quotes.get(normalized);
-  if (cached && (!options.detail || cached.profile || cached.news || cached.financials)) return cached;
+  const fetchedAt = state.quoteFetchedAt.get(normalized) || 0;
+  const cacheMs = options.detail ? DETAIL_QUOTE_CACHE_MS : QUOTE_CACHE_MS;
+  if (cached && Date.now() - fetchedAt < cacheMs && (!options.detail || cached.profile || cached.news || cached.financials)) return cached;
   const detail = options.detail ? "&detail=1" : "";
   const data = await fetchJson(`/api/quotes?symbols=${encodeURIComponent(normalized)}${detail}`);
   const quote = data.quotes?.[0] || { requestedSymbol: normalized };
   state.quotes.set(normalized, quote);
-  if (quote.symbol) state.quotes.set(normalizeSymbol(quote.symbol), quote);
+  state.quoteFetchedAt.set(normalized, Date.now());
+  if (quote.symbol) {
+    state.quotes.set(normalizeSymbol(quote.symbol), quote);
+    state.quoteFetchedAt.set(normalizeSymbol(quote.symbol), Date.now());
+  }
   return quote;
 }
 
@@ -2758,6 +2787,11 @@ async function loadQuotes() {
   for (const quote of data.quotes || []) {
     const requested = normalizeSymbol(quote.requestedSymbol || quote.symbol);
     state.quotes.set(requested, quote);
+    state.quoteFetchedAt.set(requested, Date.now());
+    if (quote.symbol) {
+      state.quotes.set(normalizeSymbol(quote.symbol), quote);
+      state.quoteFetchedAt.set(normalizeSymbol(quote.symbol), Date.now());
+    }
   }
 }
 

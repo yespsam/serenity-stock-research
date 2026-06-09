@@ -3,12 +3,12 @@ const MARKET_SYMBOL_ALIASES = {
   "SIVE.ST": "SIVEF",
 };
 
-function json(data, status = 200) {
+function json(data, status = 200, cacheControl = "public, max-age=60, s-maxage=120, stale-while-revalidate=600") {
   return new Response(JSON.stringify(data), {
     status,
     headers: {
       "content-type": "application/json; charset=utf-8",
-      "cache-control": "public, max-age=30",
+      "cache-control": cacheControl,
     },
   });
 }
@@ -284,7 +284,10 @@ export default async (req) => {
     })
   );
 
-  return json({ provider: "Yahoo Finance / Nasdaq", updatedAt: Date.now(), quotes });
+  const cacheControl = detailed
+    ? "public, max-age=300, s-maxage=900, stale-while-revalidate=3600"
+    : "public, max-age=60, s-maxage=120, stale-while-revalidate=600";
+  return json({ provider: "Yahoo Finance / Nasdaq", updatedAt: Date.now(), quotes }, 200, cacheControl);
 };
 
 export const config = {
