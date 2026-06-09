@@ -2224,7 +2224,9 @@ function renderLiveMonitor() {
   renderPriceAlertPanel();
   monitorStatus.textContent = latestLive
     ? `${base} · 网页推送 ${Math.round(WEB_PUSH_POLL_MS / 1000)} 秒轮询 · 接口最新 ${dateTimeLabel(latestLive.date)}${newCount ? ` · ${newCount} 条新推文待入库` : ""}`
-    : `${base} · 正在等待实时接口`;
+    : IS_GITHUB_PAGES_STATIC
+      ? `${base} · 静态备用站 · 实时接口暂停`
+      : `${base} · 正在等待实时接口`;
   liveTweetList.innerHTML = (state.liveItems.length ? state.liveItems : latestStatic ? [latestStatic] : [])
     .slice(0, 6)
     .map((item) => {
