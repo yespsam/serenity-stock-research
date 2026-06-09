@@ -252,6 +252,60 @@ function formatPct(value) {
   return `${num >= 0 ? "+" : ""}${num.toFixed(2)}%`;
 }
 
+function priceRangePct(quote = {}) {
+  const price = Number(quote.price);
+  const high = Number(quote.fiftyTwoWeekHigh);
+  const low = Number(quote.fiftyTwoWeekLow);
+  if (![price, high, low].every(Number.isFinite) || high <= low) return null;
+  return Math.max(0, Math.min(100, ((price - low) / (high - low)) * 100));
+}
+
+function priceBandText(quote = {}) {
+  const pct = priceRangePct(quote);
+  if (pct === null) return "52 周位置待补";
+  const rounded = Math.round(pct);
+  if (pct >= 88) return `52 周高位附近 ${rounded}%，禁止情绪追高`;
+  if (pct >= 68) return `价格偏高 ${rounded}%，等回踩或放量续强`;
+  if (pct <= 35) return `低位复核区 ${rounded}%，重点排除 thesis 破坏`;
+  return `区间中段 ${rounded}%，等催化和同主题扩散`;
+}
+
+function entryPlanText(quote = {}, score = 50, status = {}, riskPenalty = 0) {
+  const price = Number(quote.price);
+  if (!Number.isFinite(price) || price <= 0) return "缺少实时价格，暂不生成入场区间";
+  const change = Number(quote.changePercent);
+  const hot = Number.isFinite(change) && change > 8;
+  const high = (priceRangePct(quote) || 0) >= 82;
+  if (status.sentiment === "bear" || riskPenalty > 0) return "原文或主题偏风险，先查公告/融资/财报，不做追单";
+  if (score >= 78 && !hot && !high) return `可小仓试错，回踩 ${formatMoney(price * 0.96, quote.currency)} 更舒服，止损先看 ${formatMoney(price * 0.92, quote.currency)}`;
+  if (hot || high) return `先不追，等 ${formatMoney(price * 0.94, quote.currency)} 附近回踩或收盘后重新评分`;
+  return `先观察，突破 ${formatMoney(price * 1.04, quote.currency)} 且放量后再复核`;
+}
+
+function confirmationText(item = {}, status = {}) {
+  const quote = item.quote || {};
+  const rawVolume = Number(quote.primaryVolume) || Number(quote.shareVolume);
+  const rawAverage = Number(quote.averageVolume);
+  const volume = Number.isFinite(rawVolume) && rawVolume > 0 ? rawVolume : null;
+  const average = Number.isFinite(rawAverage) && rawAverage > 0 ? rawAverage : null;
+  const volumeLine =
+    Number.isFinite(volume) && Number.isFinite(average) && average > 0
+      ? `当日量/均量 ${(volume / average).toFixed(1)}x`
+      : "量能待盘中确认";
+  const theme = themeLabel(item.theme);
+  return `${theme} · ${volumeLine} · 同主题龙头和供应链需同步`;
+}
+
+function riskText(item = {}, status = {}, riskPenalty = 0) {
+  const quote = item.quote || {};
+  const risks = [];
+  if (riskPenalty) risks.push("资本结构/风险词触发");
+  if ((priceRangePct(quote) || 0) >= 88) risks.push("价格接近一年高位");
+  if (!item.metric?.mentions) risks.push("历史样本少");
+  if (status.sentiment === "bear") risks.push("原文偏风险语义");
+  return risks.length ? risks.join("；") : "追高、流动性、公告反证和消息延迟";
+}
+
 function rankCandidate({ symbol, quote = {}, publicData, status }) {
   const metric = metricForSymbol(publicData, symbol);
   const dominantTheme = metric.dominantTheme || status.theme || "general";
@@ -296,6 +350,10 @@ function rankCandidate({ symbol, quote = {}, publicData, status }) {
     quote,
     metric,
     theme: dominantTheme,
+    entryPlan: entryPlanText(quote, score, status, riskPenalty),
+    confirmation: confirmationText({ quote, theme: dominantTheme }, status),
+    risk: riskText({ quote, metric }, status, riskPenalty),
+    dataLine: `${formatCap(quote.marketCap)} · ${priceBandText(quote)} · ${mentions ? `历史提及 ${mentions} 次` : "历史提及待补"}`,
   };
 }
 
@@ -391,7 +449,11 @@ function buildRankingMessage(status, ranked) {
       `<b>${index + 1}. $${html(item.symbol)} · ${html(item.action)} · ${item.score}/100</b>`,
       `${html(short(name, 68))}`,
       `价格 ${html(formatMoney(quote.price, quote.currency))} · 涨跌 ${html(formatPct(quote.changePercent))} · 市值 ${html(formatCap(quote.marketCap))}`,
-      `理由：${html(short(item.reason, 160))}`,
+      `买点：${html(short(item.entryPlan, 180))}`,
+      `确认：${html(short(item.confirmation, 160))}`,
+      `风险：${html(short(item.risk, 150))}`,
+      `数据：${html(short(item.dataLine, 150))}`,
+      `理由：${html(short(item.reason, 150))}`,
     ].join("\n");
   });
   return [
