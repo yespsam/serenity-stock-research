@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-09T14:09:32.215Z",
+  "generatedAt": "2026-06-09T15:14:14.138Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6590,
-    "commentCount": 50934,
+    "parsedItems": 6592,
+    "commentCount": 50963,
     "profileTweets": 7123,
-    "latestItemDate": "2026-06-09T13:54:06.000Z"
+    "latestItemDate": "2026-06-09T14:57:11.000Z"
   },
   "rules": [
     {
@@ -63,14 +63,14 @@
   "symbols": [
     {
       "symbol": "SIVE",
-      "mentions": 812,
+      "mentions": 813,
       "bull": 270,
       "bear": 4,
-      "neutral": 538,
+      "neutral": 539,
       "materiality": 79,
       "latest": "2026-06-01T10:32:06.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 6386
+      "sentimentScore": 6389
     },
     {
       "symbol": "NBIS",
@@ -85,36 +85,36 @@
     },
     {
       "symbol": "LITE",
-      "mentions": 547,
+      "mentions": 548,
       "bull": 188,
       "bear": 2,
-      "neutral": 357,
+      "neutral": 358,
       "materiality": 85,
       "latest": "2026-06-01T10:32:06.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4416
+      "sentimentScore": 4419
     },
     {
       "symbol": "NVDA",
-      "mentions": 493,
+      "mentions": 494,
       "bull": 184,
       "bear": 9,
-      "neutral": 300,
+      "neutral": 301,
       "materiality": 82,
       "latest": "2026-06-01T10:32:06.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4018
+      "sentimentScore": 4021
     },
     {
       "symbol": "AAOI",
-      "mentions": 519,
+      "mentions": 520,
       "bull": 176,
       "bear": 8,
-      "neutral": 335,
+      "neutral": 336,
       "materiality": 81,
       "latest": "2026-06-01T10:32:06.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4006
+      "sentimentScore": 4009
     },
     {
       "symbol": "AXTI",
@@ -673,7 +673,7 @@
       "bear": 3,
       "neutral": 30,
       "materiality": 85,
-      "latest": "2026-05-12T05:47:56.000Z",
+      "latest": "2026-05-12T05:48:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 511
     },
@@ -1003,7 +1003,7 @@
       "bear": 0,
       "neutral": 22,
       "materiality": 91,
-      "latest": "2026-05-12T05:47:56.000Z",
+      "latest": "2026-05-12T05:48:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 300
     },
@@ -1234,7 +1234,7 @@
       "bear": 0,
       "neutral": 12,
       "materiality": 88,
-      "latest": "2026-05-12T05:47:56.000Z",
+      "latest": "2026-05-12T05:48:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 237
     },
@@ -1883,7 +1883,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 100,
-      "latest": "2026-05-12T05:47:56.000Z",
+      "latest": "2026-05-12T05:48:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 132
     },
@@ -2720,7 +2720,7 @@
     },
     {
       "id": "2054076086452162675",
-      "date": "2026-05-12T05:47:56.000Z",
+      "date": "2026-05-12T05:48:46.000Z",
       "title": "Random CPO related names I like: - $SIVE - Foci (3363) - $TSEM - Browave (3163) - PCL (4977) - $AXTI - Msscorps (6830) - $IQE - Shunsin (6451) - Furukawa Electric (5801) - $MTSI -…",
       "body": "Random CPO related names I like:\n\n- $SIVE\n- Foci (3363)\n- $TSEM\n- Browave (3163)\n- PCL (4977)\n- $AXTI\n- Msscorps (6830)\n- $IQE\n- Shunsin (6451)\n- Furukawa Electric (5801)\n- $MTSI\n- Nextronics (8417)\n- $LITE\n- $COHR\n- FitTech (6706)\n- $GFS\n- $ASX\n- LandMark (3081)\n- $SOI\n\nDisclosure: I own most, not all though.",
       "symbols": [
@@ -4026,19 +4026,21 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-09T14:08:38.602Z",
+    "staticUpdatedAt": "2026-06-09T15:09:41.151Z",
     "latestCaptured": {
-      "id": "2064345296226890026",
-      "date": "2026-06-09T13:54:06.000Z",
-      "title": "$EWY 32% IV into 58% IV expansion trade. ",
-      "body": "$EWY 32% IV into 58% IV expansion trade.\n\nInto underlying SK Hynix / Samsung increase way ITM.\n\nWas such a goated call? (~383% return)\n\nHad way too many great ideas this year… \n\nStill super proud of predicting South Korea index volatility increase due to memory concentration",
+      "id": "2064361170270933269",
+      "date": "2026-06-09T14:57:11.000Z",
+      "title": "I don’t quite think photonics from $AAOI to $LITE or $SIVE are disappearing anytime soon… Just extremely volatile. ",
+      "body": "I don’t quite think photonics from $AAOI to $LITE or $SIVE are disappearing anytime soon…\n\nJust extremely volatile.\n\nAnyway, curious what other people are buying today?",
       "symbols": [
-        "EWY"
+        "AAOI",
+        "LITE",
+        "SIVE"
       ],
-      "theme": "memory-rotation",
-      "materiality": 61,
+      "theme": "cpo-silicon-photonics",
+      "materiality": 71,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2064345296226890026"
+      "url": "https://x.com/aleabitoreddit/status/2064361170270933269"
     },
     "profileTweets": 7123,
     "source": "FxTwitter / SerenitySaid / public mirrors",
