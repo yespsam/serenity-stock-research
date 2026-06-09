@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-09T08:01:44.673Z",
+  "generatedAt": "2026-06-09T09:01:36.747Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6577,
+    "parsedItems": 6578,
     "commentCount": 50934,
     "profileTweets": 7123,
-    "latestItemDate": "2026-06-09T07:49:28.000Z"
+    "latestItemDate": "2026-06-09T08:37:12.000Z"
   },
   "rules": [
     {
@@ -129,14 +129,14 @@
     },
     {
       "symbol": "IREN",
-      "mentions": 486,
-      "bull": 136,
+      "mentions": 487,
+      "bull": 137,
       "bear": 24,
       "neutral": 326,
       "materiality": 79,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 2885
+      "sentimentScore": 2903
     },
     {
       "symbol": "COHR",
@@ -805,7 +805,7 @@
       "bear": 1,
       "neutral": 31,
       "materiality": 77,
-      "latest": "2026-04-29T08:12:23.000Z",
+      "latest": "2026-04-29T07:11:19.000Z",
       "dominantTheme": "general",
       "sentimentScore": 415
     },
@@ -937,7 +937,7 @@
       "bear": 0,
       "neutral": 21,
       "materiality": 83,
-      "latest": "2026-04-30T01:54:14.000Z",
+      "latest": "2026-04-30T01:00:27.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 317
     },
@@ -1025,7 +1025,7 @@
       "bear": 0,
       "neutral": 11,
       "materiality": 87,
-      "latest": "2026-04-28T22:46:45.000Z",
+      "latest": "2026-04-28T22:25:25.000Z",
       "dominantTheme": "general",
       "sentimentScore": 285
     },
@@ -2136,7 +2136,7 @@
       "bear": 0,
       "neutral": 3,
       "materiality": 89,
-      "latest": "2026-04-28T07:54:05.000Z",
+      "latest": "2026-04-28T07:45:54.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 117
     },
@@ -2367,7 +2367,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 100,
-      "latest": "2026-05-27T14:46:09.000Z",
+      "latest": "2026-05-27T14:41:38.000Z",
       "dominantTheme": "robotics-physical-ai",
       "sentimentScore": 90
     },
@@ -3225,7 +3225,7 @@
     },
     {
       "id": "2049592634398875731",
-      "date": "2026-04-29T20:53:59.000Z",
+      "date": "2026-04-29T20:52:18.000Z",
       "title": "Hyperscaler AI capex still drives upstream semiconductor supply chains higher",
       "body": "I've monitored the situation for you.\n\nTLDR on hyperscaler capex spend (signal aside from $TSM). \n\nFrom $MSFT, $AMZN, $META earnings: \n\nUpstream semi supply chains go brrr.\n\n$META: 2026 FY capex $115-$135B\nRevised Q1 ER: $125B-$145B capex raised. \n\n-> Higher component prices (price hikes)\n-> Aggressive AI infra spending\n-> Custom Model Training\n\n$MSFT: was actually $31.9B vs ($35.29B) but due to supply chain bottlenecks, rather than lack of resources. \n\nStill waiting for confirmation around $AMZN but their original capex projection was ~$200B from Jassy's note earlier this year.\n\nSo you can sleep easy, all the semi supply chain names still likely to keep going brr next quarter, since there's so much capex funneled into them.  \n\nThen you get the new fed chair who is gung-ho all in on AI + rate cuts, with Jerome keeping stuff chill in the back (which markets probably like)",
       "symbols": [
@@ -4026,23 +4026,19 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-09T08:00:39.946Z",
+    "staticUpdatedAt": "2026-06-09T09:00:40.490Z",
     "latestCaptured": {
-      "id": "2064253530353873052",
-      "date": "2026-06-09T07:49:28.000Z",
-      "title": "Many work against the interest of retail investors. ",
-      "body": "Many work against the interest of retail investors. \n\nEspecially as JP Morgan / US institutions are trying to buy up the float.\n\nYou have a company funded with CHIPS Act, in major hyperscaler supply chains from $NVDA to others, powering Ayar for CPO, $JBL for pluggables. And now the reference laser for $GFS. \n\nWith closest ramp with $AEVA / $POET likely coming next. And following that likely US NASDAQ Listing. \n\nSivers is one of the most compelling photonics companies, and pretty sure all the deals established that already.",
+      "id": "2064265545529307560",
+      "date": "2026-06-09T08:37:12.000Z",
+      "title": "Given my recent popularity, might be a good time to put out a PSA. ",
+      "body": "Given my recent popularity, might be a good time to put out a PSA. \n\nEarly followers have known this from the start:\n\n1. I don't do any paid promotions, paid marketing, or accept outside gifts. \n\nBut I appreciate all the recent outreach from companies!\n\nIf you see or engage with something online related to any type of payment, it's fabricated for engagement or a scammer. \n\nThe reason I don't want to is because I'm just posting on X for fun, and when money is involved it turns into a job (which I don't want it to feel like).\n\nAlso, well off personally so I've never felt influenced by anyone outside.\n\n2. The only \"paid\" thing I have is $1 subscriptions. That's all. \n\nFrom the very start, I've never taken a single penny outside of X subscriptions/creator sharing. Which is why I say in my bio: \n\n\"I only use X, beware of imposters.\" \n\nAnyone approaching you to share an external community or app is a scammer or imposter. \n\nIt's just very frustrating that people still fall for these impersonators. \n\n3. I'm just one person posting my thoughts online. \n\n-> Not some institution or Illuminati team. \n\nQuality of research is \"high\" because I have a technical background. And I genuinely do this as a hobby researching supply chain ideas. \n\nThere's not some \"hidden\" motive like a paid research group from Asia, it's just fun lol. \n\n4. I will always disclose positions if I have them or if I don't. Very open and transparent about it. \n\nWith Chinese equities I'm just posting research in hope it benefits people find conviction in critical companies in global supply chains. \n\nI don't have any positions / any financial incentives (so I can be impartial),  and haven't privately discussed with anyone about ideas I post beforehand. \n\nMaybe it happens in Asia, but in the US it's highly illegal to be running groups or getting paid to post about companies. \n\nI'm just posting my ideas for free without outside influence, in case others like the idea. \n\nIt probably seems odd, but I'm doing this as a hobby and for fulfillment of helping others. \n\n5. I'm staying anonymous so I can just freely post my ideas online. \n\nReason being is after I first posted negative things about $IREN, I would have a lot of personal IRL threats and harassment from dozens of accounts for me to stop.\n\nDon't want any personal safety or people around me to be at risk for just publishing free research online. \n\nAnyway, goal is to help out retail investors with free information synthesis; rather than just selling that directly to institutions. \n\nI'm sure this positive sum model might anger people along the way (who have expensive paywalls, or financial incentives) that might feel threatened by information democratization. \n\nBut genuinely just sharing day-to-day thoughts for free.\n\nVery surprised by recent popularity but it helps me distribute compelling ideas to more people. \n\nAnd grateful Elon / X gave me an opportunity through X.",
       "symbols": [
-        "NVDA",
-        "JBL",
-        "GFS",
-        "AEVA",
-        "POET"
+        "IREN"
       ],
-      "theme": "cpo-silicon-photonics",
-      "materiality": 81,
-      "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2064253530353873052"
+      "theme": "general",
+      "materiality": 77,
+      "sentiment": "bull",
+      "url": "https://x.com/aleabitoreddit/status/2064265545529307560"
     },
     "profileTweets": 7123,
     "source": "FxTwitter / SerenitySaid / public mirrors",
