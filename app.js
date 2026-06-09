@@ -305,6 +305,7 @@ const WEB_PUSH_POLL_MS = clamp(Number(pageParams.get("pushPoll") || 1000), 1000,
 const WEB_PUSH_DELAY_MS = clamp(Number(pageParams.get("pushDelay") || 30_000), 1000, 30_000);
 const WEB_REVIEW_DELAY_MS = clamp(Number(pageParams.get("reviewDelay") || 300_000), 1000, 300_000);
 const LIVE_API_PATH = "/api/serenity-live";
+const IS_GITHUB_PAGES_STATIC = window.location.hostname.endsWith("github.io");
 const WEB_CRYPTO_SYMBOLS = new Set(["BTC", "ETH", "SOL", "DOGE", "XRP"]);
 const PUSH_NOTIFY_KEY = "serenityWebPushNotify";
 const PUSH_SOUND_KEY = "serenityWebPushSound";
@@ -550,7 +551,7 @@ function initPushPreferences() {
 async function initServiceWorker() {
   if (!("serviceWorker" in navigator)) return;
   try {
-    const registration = await navigator.serviceWorker.register("/sw.js");
+    const registration = await navigator.serviceWorker.register(new URL("./sw.js", window.location.href));
     state.swRegistration = registration;
     state.swReady = true;
     state.swControlled = Boolean(navigator.serviceWorker.controller);
@@ -2239,6 +2240,12 @@ function renderLiveMonitor() {
 
 async function loadLiveMonitor() {
   if (state.liveLoading) return;
+  if (IS_GITHUB_PAGES_STATIC) {
+    state.lastLiveError = "GitHub Pages 静态备用站暂不运行实时接口";
+    monitorStatus.textContent = "静态备用站已恢复访问 · 实时监控接口暂停";
+    renderLiveMonitor();
+    return;
+  }
   state.liveLoading = true;
   const startedAt = performance.now();
   try {

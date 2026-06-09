@@ -1,12 +1,14 @@
 const CACHE_NAME = "serenity-shell-v4";
+const BASE_PATH = new URL(self.registration.scope).pathname.replace(/\/$/, "");
+const shellPath = (path) => `${BASE_PATH}${path}`;
 const SHELL_ASSETS = [
-  "/",
-  "/index.html",
-  "/styles.css",
-  "/app.js",
-  "/manifest.webmanifest",
-  "/assets/serenity-icon.svg",
-  "/assets/serenity-ai-strategist.png",
+  shellPath("/"),
+  shellPath("/index.html"),
+  shellPath("/styles.css"),
+  shellPath("/app.js"),
+  shellPath("/manifest.webmanifest"),
+  shellPath("/assets/serenity-icon.svg"),
+  shellPath("/assets/serenity-ai-strategist.png"),
 ];
 
 self.addEventListener("install", (event) => {
@@ -34,7 +36,7 @@ self.addEventListener("fetch", (event) => {
         caches.open(CACHE_NAME).then((cache) => cache.put(event.request, clone));
         return response;
       })
-      .catch(() => caches.match(event.request).then((cached) => cached || caches.match("/index.html")))
+      .catch(() => caches.match(event.request).then((cached) => cached || caches.match(shellPath("/index.html"))))
   );
 });
 
@@ -46,9 +48,9 @@ self.addEventListener("message", (event) => {
       body: data.body || "",
       tag: data.tag || "serenity-live",
       renotify: true,
-      icon: "/assets/serenity-icon.svg",
-      badge: "/assets/serenity-icon.svg",
-      data: { url: data.url || "/#monitor" },
+      icon: shellPath("/assets/serenity-icon.svg"),
+      badge: shellPath("/assets/serenity-icon.svg"),
+      data: { url: data.url || shellPath("/#monitor") },
     })
   );
 });
@@ -65,16 +67,16 @@ self.addEventListener("push", (event) => {
       body: payload.body || "",
       tag: payload.tag || "serenity-live",
       renotify: true,
-      icon: "/assets/serenity-icon.svg",
-      badge: "/assets/serenity-icon.svg",
-      data: { url: payload.url || "/#monitor" },
+      icon: shellPath("/assets/serenity-icon.svg"),
+      badge: shellPath("/assets/serenity-icon.svg"),
+      data: { url: payload.url || shellPath("/#monitor") },
     })
   );
 });
 
 self.addEventListener("notificationclick", (event) => {
   event.notification.close();
-  const targetUrl = new URL(event.notification.data?.url || "/#monitor", self.location.origin).href;
+  const targetUrl = new URL(event.notification.data?.url || shellPath("/#monitor"), self.location.origin).href;
   event.waitUntil(
     self.clients.matchAll({ type: "window", includeUncontrolled: true }).then((clients) => {
       const existing = clients.find((client) => client.url.startsWith(self.location.origin));
