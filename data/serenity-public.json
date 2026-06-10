@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-10T04:28:25.748Z",
+  "generatedAt": "2026-06-10T14:15:29.659Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -10,8 +10,8 @@
   "stats": {
     "parsedItems": 6598,
     "commentCount": 50964,
-    "profileTweets": 7123,
-    "latestItemDate": "2026-06-10T03:43:40.000Z"
+    "profileTweets": 7201,
+    "latestItemDate": "2026-06-10T13:44:57.000Z"
   },
   "rules": [
     {
@@ -4026,21 +4026,23 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-10T04:27:24.420Z",
+    "staticUpdatedAt": "2026-06-10T14:14:52.926Z",
     "latestCaptured": {
-      "id": "2064554061253451815",
-      "date": "2026-06-10T03:43:40.000Z",
-      "title": "$NVDA Networking Senior Vice President refuting recent analyst reports on delays: - “ the most exciting stuff is co-packaged optics.” - There is no delay in H2 CPO product deliver…",
-      "body": "$NVDA Networking Senior Vice President refuting recent analyst reports on delays:\n\n- “ the most exciting stuff is co-packaged optics.”\n- There is no delay in H2 CPO product delivery schedule. \n- CPO switch will enter mass production and begin ramping up customer deliveries as planned in the second half of 2026\n\nThis was a media article, original interview source credit should have been credited to Tae Kim / Computex. \n\nSomething fun to note too was this quote “Gilad was VERY enthusiastic about the CPO ramp from Nvidia.” \n\nBoth near term and long term.\n\nYeah… I’m extremely bullish on CPO alongside Nvidia.",
+      "id": "2064705380933074945",
+      "date": "2026-06-10T13:44:57.000Z",
+      "title": "Glad optical players from $LITE to $AAOI and $SIVE are slightly recovering as they should. The initial selloff was just stupid.",
+      "body": "Glad optical players from $LITE to $AAOI and $SIVE are slightly recovering as they should.\n\nThe initial selloff was just stupid.",
       "symbols": [
-        "NVDA"
+        "LITE",
+        "AAOI",
+        "SIVE"
       ],
       "theme": "cpo-silicon-photonics",
-      "materiality": 87,
-      "sentiment": "bull",
-      "url": "https://x.com/aleabitoreddit/status/2064554061253451815"
+      "materiality": 0,
+      "sentiment": "bear",
+      "url": "https://x.com/aleabitoreddit/status/2064705380933074945"
     },
-    "profileTweets": 7123,
+    "profileTweets": 7201,
     "source": "FxTwitter / SerenitySaid / public mirrors",
     "pollIntervalSeconds": 1
   }
