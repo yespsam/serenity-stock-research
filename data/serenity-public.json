@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-10T02:27:29.026Z",
+  "generatedAt": "2026-06-10T04:28:25.748Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6595,
+    "parsedItems": 6598,
     "commentCount": 50964,
     "profileTweets": 7123,
-    "latestItemDate": "2026-06-10T01:50:08.000Z"
+    "latestItemDate": "2026-06-10T03:43:40.000Z"
   },
   "rules": [
     {
@@ -96,14 +96,14 @@
     },
     {
       "symbol": "NVDA",
-      "mentions": 495,
-      "bull": 185,
+      "mentions": 497,
+      "bull": 186,
       "bear": 9,
-      "neutral": 301,
+      "neutral": 302,
       "materiality": 82,
       "latest": "2026-06-01T10:32:06.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4039
+      "sentimentScore": 4060
     },
     {
       "symbol": "AAOI",
@@ -228,14 +228,14 @@
     },
     {
       "symbol": "MU",
-      "mentions": 201,
+      "mentions": 202,
       "bull": 81,
       "bear": 2,
-      "neutral": 118,
-      "materiality": 80,
+      "neutral": 119,
+      "materiality": 79,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 1774
+      "sentimentScore": 1777
     },
     {
       "symbol": "TSM",
@@ -365,7 +365,7 @@
       "bear": 0,
       "neutral": 108,
       "materiality": 79,
-      "latest": "2026-05-30T07:34:50.000Z",
+      "latest": "2026-05-30T06:52:25.000Z",
       "dominantTheme": "general",
       "sentimentScore": 1344
     },
@@ -475,7 +475,7 @@
       "bear": 2,
       "neutral": 65,
       "materiality": 73,
-      "latest": "2026-04-26T17:11:50.000Z",
+      "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 899
     },
@@ -596,7 +596,7 @@
       "bear": 0,
       "neutral": 46,
       "materiality": 81,
-      "latest": "2026-05-29T13:58:02.000Z",
+      "latest": "2026-05-29T13:57:15.000Z",
       "dominantTheme": "general",
       "sentimentScore": 664
     },
@@ -673,7 +673,7 @@
       "bear": 3,
       "neutral": 30,
       "materiality": 85,
-      "latest": "2026-05-12T05:48:46.000Z",
+      "latest": "2026-05-12T05:47:56.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 511
     },
@@ -695,7 +695,7 @@
       "bear": 1,
       "neutral": 41,
       "materiality": 76,
-      "latest": "2026-04-26T17:11:50.000Z",
+      "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "general",
       "sentimentScore": 513
     },
@@ -783,7 +783,7 @@
       "bear": 0,
       "neutral": 36,
       "materiality": 80,
-      "latest": "2026-05-11T15:22:18.000Z",
+      "latest": "2026-05-11T15:20:48.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 432
     },
@@ -794,7 +794,7 @@
       "bear": 1,
       "neutral": 37,
       "materiality": 73,
-      "latest": "2026-05-29T13:58:02.000Z",
+      "latest": "2026-05-29T13:57:15.000Z",
       "dominantTheme": "general",
       "sentimentScore": 431
     },
@@ -860,7 +860,7 @@
       "bear": 0,
       "neutral": 22,
       "materiality": 83,
-      "latest": "2026-05-29T08:17:29.000Z",
+      "latest": "2026-05-29T08:13:34.000Z",
       "dominantTheme": "general",
       "sentimentScore": 372
     },
@@ -948,7 +948,7 @@
       "bear": 0,
       "neutral": 7,
       "materiality": 90,
-      "latest": "2026-04-26T17:11:50.000Z",
+      "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 309
     },
@@ -1003,7 +1003,7 @@
       "bear": 0,
       "neutral": 22,
       "materiality": 91,
-      "latest": "2026-05-12T05:48:46.000Z",
+      "latest": "2026-05-12T05:47:56.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 300
     },
@@ -1014,7 +1014,7 @@
       "bear": 0,
       "neutral": 21,
       "materiality": 79,
-      "latest": "2026-04-26T17:11:50.000Z",
+      "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "power-architecture",
       "sentimentScore": 297
     },
@@ -1091,7 +1091,7 @@
       "bear": 1,
       "neutral": 19,
       "materiality": 85,
-      "latest": "2026-04-26T17:11:50.000Z",
+      "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 271
     },
@@ -1146,7 +1146,7 @@
       "bear": 0,
       "neutral": 13,
       "materiality": 87,
-      "latest": "2026-05-26T12:30:34.000Z",
+      "latest": "2026-05-26T11:57:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 255
     },
@@ -1234,7 +1234,7 @@
       "bear": 0,
       "neutral": 12,
       "materiality": 88,
-      "latest": "2026-05-12T05:48:46.000Z",
+      "latest": "2026-05-12T05:47:56.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 237
     },
@@ -1256,7 +1256,7 @@
       "bear": 0,
       "neutral": 16,
       "materiality": 83,
-      "latest": "2026-05-29T13:58:02.000Z",
+      "latest": "2026-05-29T13:57:15.000Z",
       "dominantTheme": "general",
       "sentimentScore": 237
     },
@@ -1311,7 +1311,7 @@
       "bear": 0,
       "neutral": 6,
       "materiality": 92,
-      "latest": "2026-04-26T17:11:50.000Z",
+      "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 219
     },
@@ -1366,7 +1366,7 @@
       "bear": 1,
       "neutral": 3,
       "materiality": 82,
-      "latest": "2026-04-25T21:45:34.000Z",
+      "latest": "2026-04-25T21:42:54.000Z",
       "dominantTheme": "general",
       "sentimentScore": 221
     },
@@ -1388,7 +1388,7 @@
       "bear": 1,
       "neutral": 2,
       "materiality": 100,
-      "latest": "2026-05-26T12:30:34.000Z",
+      "latest": "2026-05-26T11:57:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 200
     },
@@ -1751,7 +1751,7 @@
       "bear": 0,
       "neutral": 9,
       "materiality": 82,
-      "latest": "2026-04-26T17:11:50.000Z",
+      "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "general",
       "sentimentScore": 171
     },
@@ -1872,7 +1872,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 99,
-      "latest": "2026-05-30T07:34:50.000Z",
+      "latest": "2026-05-30T06:52:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 133
     },
@@ -1883,7 +1883,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 100,
-      "latest": "2026-05-12T05:48:46.000Z",
+      "latest": "2026-05-12T05:47:56.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 132
     },
@@ -1905,7 +1905,7 @@
       "bear": 0,
       "neutral": 12,
       "materiality": 85,
-      "latest": "2026-04-26T17:11:50.000Z",
+      "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "power-architecture",
       "sentimentScore": 146
     },
@@ -1960,7 +1960,7 @@
       "bear": 0,
       "neutral": 1,
       "materiality": 93,
-      "latest": "2026-04-26T17:11:50.000Z",
+      "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 133
     },
@@ -1982,7 +1982,7 @@
       "bear": 0,
       "neutral": 16,
       "materiality": 83,
-      "latest": "2026-05-29T13:58:02.000Z",
+      "latest": "2026-05-29T13:57:15.000Z",
       "dominantTheme": "general",
       "sentimentScore": 138
     },
@@ -2037,7 +2037,7 @@
       "bear": 0,
       "neutral": 5,
       "materiality": 92,
-      "latest": "2026-04-26T17:11:50.000Z",
+      "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "robotics-physical-ai",
       "sentimentScore": 123
     },
@@ -2048,7 +2048,7 @@
       "bear": 0,
       "neutral": 2,
       "materiality": 100,
-      "latest": "2026-05-26T12:30:34.000Z",
+      "latest": "2026-05-26T11:57:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 114
     },
@@ -2213,7 +2213,7 @@
       "bear": 0,
       "neutral": 4,
       "materiality": 92,
-      "latest": "2026-04-26T17:11:50.000Z",
+      "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 106
     },
@@ -2624,7 +2624,7 @@
     },
     {
       "id": "2060615296357196178",
-      "date": "2026-05-30T07:34:50.000Z",
+      "date": "2026-05-30T06:52:25.000Z",
       "title": "> markets went from doubting $SIVE customers ($150m MC) Turns out it’s likely companies eg. ",
       "body": "> markets went from doubting $SIVE customers ($150m MC)\n\nTurns out it’s likely companies eg. $JBL, Ayar, $AAPL, Defense Primes, $MRVL celestial. \n\n> to doubting their execution ($600m mc)\n\nTurns out you skip the capex if you go with Win Semi\n\n> to doubting what share they get vs competitors like $LITE ($1.2B mc)\n\nTurns out it’s likely sole source for companies like $JBL and primary suppliers for Ayar.\n\n> to doubting their revenue opportunities ($2B MC)\n\nTurns out they got 77% pipeline growth in just a few months  \n\n> to doubting their partners like Win Semi’s ability to scale (we are here)\n\nAnyone who thinks Win Semi… one of the worlds most important foundries for $AVGO, $LITE, SpaceX supply chains… \n\ncan’t scale capability by 2028 is a stupid bear.\n\nWe’re at the point where US retail investors acquired the float off Swedish investors.\n\nBut I’m expecting US institutions to find a way to shake out US retail like they did with $NBIS or $RKLB before the next supercycle.",
       "symbols": [
@@ -2720,7 +2720,7 @@
     },
     {
       "id": "2054076086452162675",
-      "date": "2026-05-12T05:48:46.000Z",
+      "date": "2026-05-12T05:47:56.000Z",
       "title": "Random CPO related names I like: - $SIVE - Foci (3363) - $TSEM - Browave (3163) - PCL (4977) - $AXTI - Msscorps (6830) - $IQE - Shunsin (6451) - Furukawa Electric (5801) - $MTSI -…",
       "body": "Random CPO related names I like:\n\n- $SIVE\n- Foci (3363)\n- $TSEM\n- Browave (3163)\n- PCL (4977)\n- $AXTI\n- Msscorps (6830)\n- $IQE\n- Shunsin (6451)\n- Furukawa Electric (5801)\n- $MTSI\n- Nextronics (8417)\n- $LITE\n- $COHR\n- FitTech (6706)\n- $GFS\n- $ASX\n- LandMark (3081)\n- $SOI\n\nDisclosure: I own most, not all though.",
       "symbols": [
@@ -2996,7 +2996,7 @@
     },
     {
       "id": "2059242587354169403",
-      "date": "2026-05-26T12:30:34.000Z",
+      "date": "2026-05-26T11:57:46.000Z",
       "title": "Sivers is the standout small-cap CPO laser chokepoint ahead of confirmation",
       "body": "$SIVE is the most compelling CPO exposure stock to me. \n\nDespite the volatility.\n\nYou probably won’t find something like this again until the next architectural shift in photonics years later.\n\nOut of the core laser suppliers, they’re all tens of billions?\n\n$AAOI = $15B\nFurukawa = $26B\n$MTSI = $29B\nSumitomo = $59B\n$COHR = $73B\n$LITE = $74B\n\nThen there’s $SIVE as one of the core CPO laser chokepoints at $2.3B MC.\n\nEarnings are usually confirmation of all the little volume ramp hints like Jabil fireside transcripts for 1.6T LRO.\n\nAnd most returns are typically made before, not after official confirmation is just a rule of thumb.",
       "symbols": [
@@ -3064,7 +3064,7 @@
     },
     {
       "id": "2048449289152778686",
-      "date": "2026-04-26T17:11:50.000Z",
+      "date": "2026-04-26T17:09:03.000Z",
       "title": "AI infrastructure bottlenecks favor a concentrated basket of semiconductor equipment, foundry, optical interconnect, and grid-power suppliers",
       "body": "TLDR of recent news + bottlenecks that go brr:\n\n1. CPU bottleneck - $INTC CEO said AI inference pushed CPU Ratio From 1:8 to 1:1. \n\nCPUs go brr ( $AMD, Intel, $ARM) -> $AMAT / $TSM / $KLAC, etc. go brr.\n\n2. PGME / PGMEA shortage. DuPont, Shiny Chemical, Daxin, San Fu, $DOW and others go brr? \n\nPhotoresist bottleneck go brr? \n\n3. Microcontroller potential bottleneck + price hikes (Arterytek/Arterychip) was weighing price hikes on AI capacity squeezes.  \n\nMCU companies potentially go brr?\n\n4. President invoked the \"Defense Production Act\" this week, it included: \n\n-Transformers \n- transmission components \n- advanced conductors \n- power electronics \n- substations \n- high-voltage circuit breakers \n-  protective relays, capacitor banks\n - electrical core steel\n\nAs \"severe shortages\". Stuff like $AMSC, $PLPC, $POWL, $VICR, $ATKR, $HPS.A go brr. \n\n5. $GOOGL ramps new TPU servers. Google splits AI chips into training and inference TPUs.\n\nTaiwan happy. Mediatek and others go brr? \n\n6. Samsung, Kingston lift SSD prices by over 10%. \n\nSSD prices keep going brrr?  \n\n7. T-glass fiberglass shortages keep getting worse? Nittobo and others keep going brrr?\n\n8. Bromine, essential for etching circuits and flame retardancy, has surged to $12,000 per metric ton.\n\nICL Group in Israel apparently controls 40% of the global supply?\n\nNot as familiar with this but questionable brrr?\n\n9. \"Epitaxy manufacturer LandMark Optoelectronics reporting output still far below customer needs\".\n\nUhh $IQE and others go brr? \n\n10. \"AI data centers hit interconnect limits, boosting optical module demand\". \"the bottleneck is no longer computing power alone, but how that power is connected.\"\n\nPhotonics from $AAOI, $LITE, $COHR, Innolight and others keep going brr? next gen from $SIVE, $POET, $MRVL, Win Semi and others go brr?\n\nBasically AI semi supply chains go brr because there's widespread shortages everywhere due to AI hyperscaler demand.",
       "symbols": [
@@ -3543,25 +3543,28 @@
       "url": "https://x.com/aleabitoreddit/status/2063571485739106593"
     },
     {
-      "id": "1992188194821988700",
-      "date": "2026-05-06T17:53:18.000Z",
-      "title": "Serenity X 回复样本 1992188194821988700",
-      "body": "I did, rated $DGXX D tier. Originally put it in U like $CLSK, but forgot to edit them out when I looked into them further. \n\nCorrect me if I'm wrong but $DGXX $65m revenue is unsecured, there's no anchor tenant like $CIFR is to $GOOGL or $CORZ is to $CRWV. \n\nThere's also more execution risk on pivot, just due to the fact it's a microcap company + little history in HPC. They've already diluted with a $100M ATM, so there's less dilution now at least compared to $SLNH, which will need to dilute heavily in the future. But it's more speculative along the lines of $WLAC (WLAC has fluidstack partnership so potential of $GOOGL backstop) that was added in.\n\nThey also have $92M in liquid assets with no bad debt, which is absolutely huge given their marketcap size (but like others, that will be spent on the buildout), but execution risk is priced in to the Tier. \n\nDoesn't mean it's a bad stock, I own $WLAC because of high potential upside too and put it in D tier. Just wanted to distinguish between the nuances between companies in the sector (contract visibility + execution).",
+      "id": "2051348607966875919",
+      "date": "2026-05-04T17:09:55.000Z",
+      "title": "Glad to see $NBIS finally return 100%+ since my original thesis post back at ~$87. ",
+      "body": "Glad to see $NBIS finally return 100%+ since my original thesis post back at ~$87.\n\nI covered Nebius a ton late last year and at the start of this year. \n\nFocusing on sum of parts from Avride to Clickhouse to how their balance sheet help them scale up their AI Cloud.\n\nWas a little disappointed with timing, in terms of the massive drop in Dec/Jan.\n\nBut glad to see the company keep on delivering as Nebius is my favorite Neocloud in the entire sector.\n\nI think we’re witnessing the rise of the next hyperscaler.",
       "symbols": [
-        "DGXX",
-        "CLSK",
-        "CIFR",
-        "GOOGL",
-        "CORZ",
+        "NBIS",
         "CRWV",
-        "SLNH",
+        "NVDA",
+        "SOI",
+        "SIVE",
+        "IQE",
+        "NB",
         "WLAC",
-        "WYFI"
+        "BRUN",
+        "IREN",
+        "ASTS",
+        "CRCL"
       ],
-      "theme": "capital-structure-veto",
+      "theme": "ai-infrastructure",
       "materiality": 100,
       "sentiment": "bull",
-      "url": "https://x.com/aleabitoreddit/status/1992188194821988700"
+      "url": "https://x.com/aleabitoreddit/status/2051348607966875919"
     },
     {
       "id": "2051028253130006901",
@@ -3892,7 +3895,7 @@
     {
       "id": "2048449289152778686",
       "symbol": "MRVL",
-      "date": "2026-04-26T17:11:50.000Z",
+      "date": "2026-04-26T17:09:03.000Z",
       "title": "AI infrastructure bottlenecks favor a concentrated basket of semiconductor equipment, foundry, optical interconnect, and grid-power suppliers",
       "body": "TLDR of recent news + bottlenecks that go brr:\n\n1. CPU bottleneck - $INTC CEO said AI inference pushed CPU Ratio From 1:8 to 1:1. \n\nCPUs go brr ( $AMD, Intel, $ARM) -> $AMAT / $TSM / $KLAC, etc. go brr.\n\n2. PGME / PGMEA shortage. DuPont, Shiny Chemical, Daxin, San Fu, $DOW and others go brr? \n\nPhotoresist bottleneck go brr? \n\n3. Microcontroller potential bottleneck + price hikes (Arterytek/Arterychip) was weighing price hikes on AI capacity squeezes.  \n\nMCU companies potentially go brr?\n\n4. President invoked the \"Defense Production Act\" this week, it included: \n\n-Transformers \n- transmission components \n- advanced conductors \n- power electronics \n- substations \n- high-voltage circuit breakers \n-  protective relays, capacitor banks\n - electrical core steel\n\nAs \"severe shortages\". Stuff like $AMSC, $PLPC, $POWL, $VICR, $ATKR, $HPS.A go brr. \n\n5. $GOOGL ramps new TPU servers. Google splits AI chips into training and inference TPUs.\n\nTaiwan happy. Mediatek and others go brr? \n\n6. Samsung, Kingston lift SSD prices by over 10%. \n\nSSD prices keep going brrr?  \n\n7. T-glass fiberglass shortages keep getting worse? Nittobo and others keep going brrr?\n\n8. Bromine, essential for etching circuits and flame retardancy, has surged to $12,000 per metric ton.\n\nICL Group in Israel apparently controls 40% of the global supply?\n\nNot as familiar with this but questionable brrr?\n\n9. \"Epitaxy manufacturer LandMark Optoelectronics reporting output still far below customer needs\".\n\nUhh $IQE and others go brr? \n\n10. \"AI data centers hit interconnect limits, boosting optical module demand\". \"the bottleneck is no longer computing power alone, but how that power is connected.\"\n\nPhotonics from $AAOI, $LITE, $COHR, Innolight and others keep going brr? next gen from $SIVE, $POET, $MRVL, Win Semi and others go brr?\n\nBasically AI semi supply chains go brr because there's widespread shortages everywhere due to AI hyperscaler demand.",
       "sentiment": "bull",
@@ -3903,7 +3906,7 @@
     {
       "id": "2048449289152778686",
       "symbol": "NBIS",
-      "date": "2026-04-26T17:11:50.000Z",
+      "date": "2026-04-26T17:09:03.000Z",
       "title": "AI infrastructure bottlenecks favor a concentrated basket of semiconductor equipment, foundry, optical interconnect, and grid-power suppliers",
       "body": "TLDR of recent news + bottlenecks that go brr:\n\n1. CPU bottleneck - $INTC CEO said AI inference pushed CPU Ratio From 1:8 to 1:1. \n\nCPUs go brr ( $AMD, Intel, $ARM) -> $AMAT / $TSM / $KLAC, etc. go brr.\n\n2. PGME / PGMEA shortage. DuPont, Shiny Chemical, Daxin, San Fu, $DOW and others go brr? \n\nPhotoresist bottleneck go brr? \n\n3. Microcontroller potential bottleneck + price hikes (Arterytek/Arterychip) was weighing price hikes on AI capacity squeezes.  \n\nMCU companies potentially go brr?\n\n4. President invoked the \"Defense Production Act\" this week, it included: \n\n-Transformers \n- transmission components \n- advanced conductors \n- power electronics \n- substations \n- high-voltage circuit breakers \n-  protective relays, capacitor banks\n - electrical core steel\n\nAs \"severe shortages\". Stuff like $AMSC, $PLPC, $POWL, $VICR, $ATKR, $HPS.A go brr. \n\n5. $GOOGL ramps new TPU servers. Google splits AI chips into training and inference TPUs.\n\nTaiwan happy. Mediatek and others go brr? \n\n6. Samsung, Kingston lift SSD prices by over 10%. \n\nSSD prices keep going brrr?  \n\n7. T-glass fiberglass shortages keep getting worse? Nittobo and others keep going brrr?\n\n8. Bromine, essential for etching circuits and flame retardancy, has surged to $12,000 per metric ton.\n\nICL Group in Israel apparently controls 40% of the global supply?\n\nNot as familiar with this but questionable brrr?\n\n9. \"Epitaxy manufacturer LandMark Optoelectronics reporting output still far below customer needs\".\n\nUhh $IQE and others go brr? \n\n10. \"AI data centers hit interconnect limits, boosting optical module demand\". \"the bottleneck is no longer computing power alone, but how that power is connected.\"\n\nPhotonics from $AAOI, $LITE, $COHR, Innolight and others keep going brr? next gen from $SIVE, $POET, $MRVL, Win Semi and others go brr?\n\nBasically AI semi supply chains go brr because there's widespread shortages everywhere due to AI hyperscaler demand.",
       "sentiment": "bull",
@@ -3914,7 +3917,7 @@
     {
       "id": "2048449289152778686",
       "symbol": "COHR",
-      "date": "2026-04-26T17:11:50.000Z",
+      "date": "2026-04-26T17:09:03.000Z",
       "title": "AI infrastructure bottlenecks favor a concentrated basket of semiconductor equipment, foundry, optical interconnect, and grid-power suppliers",
       "body": "TLDR of recent news + bottlenecks that go brr:\n\n1. CPU bottleneck - $INTC CEO said AI inference pushed CPU Ratio From 1:8 to 1:1. \n\nCPUs go brr ( $AMD, Intel, $ARM) -> $AMAT / $TSM / $KLAC, etc. go brr.\n\n2. PGME / PGMEA shortage. DuPont, Shiny Chemical, Daxin, San Fu, $DOW and others go brr? \n\nPhotoresist bottleneck go brr? \n\n3. Microcontroller potential bottleneck + price hikes (Arterytek/Arterychip) was weighing price hikes on AI capacity squeezes.  \n\nMCU companies potentially go brr?\n\n4. President invoked the \"Defense Production Act\" this week, it included: \n\n-Transformers \n- transmission components \n- advanced conductors \n- power electronics \n- substations \n- high-voltage circuit breakers \n-  protective relays, capacitor banks\n - electrical core steel\n\nAs \"severe shortages\". Stuff like $AMSC, $PLPC, $POWL, $VICR, $ATKR, $HPS.A go brr. \n\n5. $GOOGL ramps new TPU servers. Google splits AI chips into training and inference TPUs.\n\nTaiwan happy. Mediatek and others go brr? \n\n6. Samsung, Kingston lift SSD prices by over 10%. \n\nSSD prices keep going brrr?  \n\n7. T-glass fiberglass shortages keep getting worse? Nittobo and others keep going brrr?\n\n8. Bromine, essential for etching circuits and flame retardancy, has surged to $12,000 per metric ton.\n\nICL Group in Israel apparently controls 40% of the global supply?\n\nNot as familiar with this but questionable brrr?\n\n9. \"Epitaxy manufacturer LandMark Optoelectronics reporting output still far below customer needs\".\n\nUhh $IQE and others go brr? \n\n10. \"AI data centers hit interconnect limits, boosting optical module demand\". \"the bottleneck is no longer computing power alone, but how that power is connected.\"\n\nPhotonics from $AAOI, $LITE, $COHR, Innolight and others keep going brr? next gen from $SIVE, $POET, $MRVL, Win Semi and others go brr?\n\nBasically AI semi supply chains go brr because there's widespread shortages everywhere due to AI hyperscaler demand.",
       "sentiment": "bull",
@@ -3925,7 +3928,7 @@
     {
       "id": "2048449289152778686",
       "symbol": "NVDA",
-      "date": "2026-04-26T17:11:50.000Z",
+      "date": "2026-04-26T17:09:03.000Z",
       "title": "AI infrastructure bottlenecks favor a concentrated basket of semiconductor equipment, foundry, optical interconnect, and grid-power suppliers",
       "body": "TLDR of recent news + bottlenecks that go brr:\n\n1. CPU bottleneck - $INTC CEO said AI inference pushed CPU Ratio From 1:8 to 1:1. \n\nCPUs go brr ( $AMD, Intel, $ARM) -> $AMAT / $TSM / $KLAC, etc. go brr.\n\n2. PGME / PGMEA shortage. DuPont, Shiny Chemical, Daxin, San Fu, $DOW and others go brr? \n\nPhotoresist bottleneck go brr? \n\n3. Microcontroller potential bottleneck + price hikes (Arterytek/Arterychip) was weighing price hikes on AI capacity squeezes.  \n\nMCU companies potentially go brr?\n\n4. President invoked the \"Defense Production Act\" this week, it included: \n\n-Transformers \n- transmission components \n- advanced conductors \n- power electronics \n- substations \n- high-voltage circuit breakers \n-  protective relays, capacitor banks\n - electrical core steel\n\nAs \"severe shortages\". Stuff like $AMSC, $PLPC, $POWL, $VICR, $ATKR, $HPS.A go brr. \n\n5. $GOOGL ramps new TPU servers. Google splits AI chips into training and inference TPUs.\n\nTaiwan happy. Mediatek and others go brr? \n\n6. Samsung, Kingston lift SSD prices by over 10%. \n\nSSD prices keep going brrr?  \n\n7. T-glass fiberglass shortages keep getting worse? Nittobo and others keep going brrr?\n\n8. Bromine, essential for etching circuits and flame retardancy, has surged to $12,000 per metric ton.\n\nICL Group in Israel apparently controls 40% of the global supply?\n\nNot as familiar with this but questionable brrr?\n\n9. \"Epitaxy manufacturer LandMark Optoelectronics reporting output still far below customer needs\".\n\nUhh $IQE and others go brr? \n\n10. \"AI data centers hit interconnect limits, boosting optical module demand\". \"the bottleneck is no longer computing power alone, but how that power is connected.\"\n\nPhotonics from $AAOI, $LITE, $COHR, Innolight and others keep going brr? next gen from $SIVE, $POET, $MRVL, Win Semi and others go brr?\n\nBasically AI semi supply chains go brr because there's widespread shortages everywhere due to AI hyperscaler demand.",
       "sentiment": "bull",
@@ -3936,7 +3939,7 @@
     {
       "id": "2048449289152778686",
       "symbol": "MSFT",
-      "date": "2026-04-26T17:11:50.000Z",
+      "date": "2026-04-26T17:09:03.000Z",
       "title": "AI infrastructure bottlenecks favor a concentrated basket of semiconductor equipment, foundry, optical interconnect, and grid-power suppliers",
       "body": "TLDR of recent news + bottlenecks that go brr:\n\n1. CPU bottleneck - $INTC CEO said AI inference pushed CPU Ratio From 1:8 to 1:1. \n\nCPUs go brr ( $AMD, Intel, $ARM) -> $AMAT / $TSM / $KLAC, etc. go brr.\n\n2. PGME / PGMEA shortage. DuPont, Shiny Chemical, Daxin, San Fu, $DOW and others go brr? \n\nPhotoresist bottleneck go brr? \n\n3. Microcontroller potential bottleneck + price hikes (Arterytek/Arterychip) was weighing price hikes on AI capacity squeezes.  \n\nMCU companies potentially go brr?\n\n4. President invoked the \"Defense Production Act\" this week, it included: \n\n-Transformers \n- transmission components \n- advanced conductors \n- power electronics \n- substations \n- high-voltage circuit breakers \n-  protective relays, capacitor banks\n - electrical core steel\n\nAs \"severe shortages\". Stuff like $AMSC, $PLPC, $POWL, $VICR, $ATKR, $HPS.A go brr. \n\n5. $GOOGL ramps new TPU servers. Google splits AI chips into training and inference TPUs.\n\nTaiwan happy. Mediatek and others go brr? \n\n6. Samsung, Kingston lift SSD prices by over 10%. \n\nSSD prices keep going brrr?  \n\n7. T-glass fiberglass shortages keep getting worse? Nittobo and others keep going brrr?\n\n8. Bromine, essential for etching circuits and flame retardancy, has surged to $12,000 per metric ton.\n\nICL Group in Israel apparently controls 40% of the global supply?\n\nNot as familiar with this but questionable brrr?\n\n9. \"Epitaxy manufacturer LandMark Optoelectronics reporting output still far below customer needs\".\n\nUhh $IQE and others go brr? \n\n10. \"AI data centers hit interconnect limits, boosting optical module demand\". \"the bottleneck is no longer computing power alone, but how that power is connected.\"\n\nPhotonics from $AAOI, $LITE, $COHR, Innolight and others keep going brr? next gen from $SIVE, $POET, $MRVL, Win Semi and others go brr?\n\nBasically AI semi supply chains go brr because there's widespread shortages everywhere due to AI hyperscaler demand.",
       "sentiment": "bull",
@@ -3947,7 +3950,7 @@
     {
       "id": "2048449289152778686",
       "symbol": "MU",
-      "date": "2026-04-26T17:11:50.000Z",
+      "date": "2026-04-26T17:09:03.000Z",
       "title": "AI infrastructure bottlenecks favor a concentrated basket of semiconductor equipment, foundry, optical interconnect, and grid-power suppliers",
       "body": "TLDR of recent news + bottlenecks that go brr:\n\n1. CPU bottleneck - $INTC CEO said AI inference pushed CPU Ratio From 1:8 to 1:1. \n\nCPUs go brr ( $AMD, Intel, $ARM) -> $AMAT / $TSM / $KLAC, etc. go brr.\n\n2. PGME / PGMEA shortage. DuPont, Shiny Chemical, Daxin, San Fu, $DOW and others go brr? \n\nPhotoresist bottleneck go brr? \n\n3. Microcontroller potential bottleneck + price hikes (Arterytek/Arterychip) was weighing price hikes on AI capacity squeezes.  \n\nMCU companies potentially go brr?\n\n4. President invoked the \"Defense Production Act\" this week, it included: \n\n-Transformers \n- transmission components \n- advanced conductors \n- power electronics \n- substations \n- high-voltage circuit breakers \n-  protective relays, capacitor banks\n - electrical core steel\n\nAs \"severe shortages\". Stuff like $AMSC, $PLPC, $POWL, $VICR, $ATKR, $HPS.A go brr. \n\n5. $GOOGL ramps new TPU servers. Google splits AI chips into training and inference TPUs.\n\nTaiwan happy. Mediatek and others go brr? \n\n6. Samsung, Kingston lift SSD prices by over 10%. \n\nSSD prices keep going brrr?  \n\n7. T-glass fiberglass shortages keep getting worse? Nittobo and others keep going brrr?\n\n8. Bromine, essential for etching circuits and flame retardancy, has surged to $12,000 per metric ton.\n\nICL Group in Israel apparently controls 40% of the global supply?\n\nNot as familiar with this but questionable brrr?\n\n9. \"Epitaxy manufacturer LandMark Optoelectronics reporting output still far below customer needs\".\n\nUhh $IQE and others go brr? \n\n10. \"AI data centers hit interconnect limits, boosting optical module demand\". \"the bottleneck is no longer computing power alone, but how that power is connected.\"\n\nPhotonics from $AAOI, $LITE, $COHR, Innolight and others keep going brr? next gen from $SIVE, $POET, $MRVL, Win Semi and others go brr?\n\nBasically AI semi supply chains go brr because there's widespread shortages everywhere due to AI hyperscaler demand.",
       "sentiment": "bull",
@@ -3958,7 +3961,7 @@
     {
       "id": "2048449289152778686",
       "symbol": "TSM",
-      "date": "2026-04-26T17:11:50.000Z",
+      "date": "2026-04-26T17:09:03.000Z",
       "title": "AI infrastructure bottlenecks favor a concentrated basket of semiconductor equipment, foundry, optical interconnect, and grid-power suppliers",
       "body": "TLDR of recent news + bottlenecks that go brr:\n\n1. CPU bottleneck - $INTC CEO said AI inference pushed CPU Ratio From 1:8 to 1:1. \n\nCPUs go brr ( $AMD, Intel, $ARM) -> $AMAT / $TSM / $KLAC, etc. go brr.\n\n2. PGME / PGMEA shortage. DuPont, Shiny Chemical, Daxin, San Fu, $DOW and others go brr? \n\nPhotoresist bottleneck go brr? \n\n3. Microcontroller potential bottleneck + price hikes (Arterytek/Arterychip) was weighing price hikes on AI capacity squeezes.  \n\nMCU companies potentially go brr?\n\n4. President invoked the \"Defense Production Act\" this week, it included: \n\n-Transformers \n- transmission components \n- advanced conductors \n- power electronics \n- substations \n- high-voltage circuit breakers \n-  protective relays, capacitor banks\n - electrical core steel\n\nAs \"severe shortages\". Stuff like $AMSC, $PLPC, $POWL, $VICR, $ATKR, $HPS.A go brr. \n\n5. $GOOGL ramps new TPU servers. Google splits AI chips into training and inference TPUs.\n\nTaiwan happy. Mediatek and others go brr? \n\n6. Samsung, Kingston lift SSD prices by over 10%. \n\nSSD prices keep going brrr?  \n\n7. T-glass fiberglass shortages keep getting worse? Nittobo and others keep going brrr?\n\n8. Bromine, essential for etching circuits and flame retardancy, has surged to $12,000 per metric ton.\n\nICL Group in Israel apparently controls 40% of the global supply?\n\nNot as familiar with this but questionable brrr?\n\n9. \"Epitaxy manufacturer LandMark Optoelectronics reporting output still far below customer needs\".\n\nUhh $IQE and others go brr? \n\n10. \"AI data centers hit interconnect limits, boosting optical module demand\". \"the bottleneck is no longer computing power alone, but how that power is connected.\"\n\nPhotonics from $AAOI, $LITE, $COHR, Innolight and others keep going brr? next gen from $SIVE, $POET, $MRVL, Win Semi and others go brr?\n\nBasically AI semi supply chains go brr because there's widespread shortages everywhere due to AI hyperscaler demand.",
       "sentiment": "bull",
@@ -3969,7 +3972,7 @@
     {
       "id": "2048449289152778686",
       "symbol": "CRWV",
-      "date": "2026-04-26T17:11:50.000Z",
+      "date": "2026-04-26T17:09:03.000Z",
       "title": "AI infrastructure bottlenecks favor a concentrated basket of semiconductor equipment, foundry, optical interconnect, and grid-power suppliers",
       "body": "TLDR of recent news + bottlenecks that go brr:\n\n1. CPU bottleneck - $INTC CEO said AI inference pushed CPU Ratio From 1:8 to 1:1. \n\nCPUs go brr ( $AMD, Intel, $ARM) -> $AMAT / $TSM / $KLAC, etc. go brr.\n\n2. PGME / PGMEA shortage. DuPont, Shiny Chemical, Daxin, San Fu, $DOW and others go brr? \n\nPhotoresist bottleneck go brr? \n\n3. Microcontroller potential bottleneck + price hikes (Arterytek/Arterychip) was weighing price hikes on AI capacity squeezes.  \n\nMCU companies potentially go brr?\n\n4. President invoked the \"Defense Production Act\" this week, it included: \n\n-Transformers \n- transmission components \n- advanced conductors \n- power electronics \n- substations \n- high-voltage circuit breakers \n-  protective relays, capacitor banks\n - electrical core steel\n\nAs \"severe shortages\". Stuff like $AMSC, $PLPC, $POWL, $VICR, $ATKR, $HPS.A go brr. \n\n5. $GOOGL ramps new TPU servers. Google splits AI chips into training and inference TPUs.\n\nTaiwan happy. Mediatek and others go brr? \n\n6. Samsung, Kingston lift SSD prices by over 10%. \n\nSSD prices keep going brrr?  \n\n7. T-glass fiberglass shortages keep getting worse? Nittobo and others keep going brrr?\n\n8. Bromine, essential for etching circuits and flame retardancy, has surged to $12,000 per metric ton.\n\nICL Group in Israel apparently controls 40% of the global supply?\n\nNot as familiar with this but questionable brrr?\n\n9. \"Epitaxy manufacturer LandMark Optoelectronics reporting output still far below customer needs\".\n\nUhh $IQE and others go brr? \n\n10. \"AI data centers hit interconnect limits, boosting optical module demand\". \"the bottleneck is no longer computing power alone, but how that power is connected.\"\n\nPhotonics from $AAOI, $LITE, $COHR, Innolight and others keep going brr? next gen from $SIVE, $POET, $MRVL, Win Semi and others go brr?\n\nBasically AI semi supply chains go brr because there's widespread shortages everywhere due to AI hyperscaler demand.",
       "sentiment": "bull",
@@ -3980,7 +3983,7 @@
     {
       "id": "2048449289152778686",
       "symbol": "AMD",
-      "date": "2026-04-26T17:11:50.000Z",
+      "date": "2026-04-26T17:09:03.000Z",
       "title": "AI infrastructure bottlenecks favor a concentrated basket of semiconductor equipment, foundry, optical interconnect, and grid-power suppliers",
       "body": "TLDR of recent news + bottlenecks that go brr:\n\n1. CPU bottleneck - $INTC CEO said AI inference pushed CPU Ratio From 1:8 to 1:1. \n\nCPUs go brr ( $AMD, Intel, $ARM) -> $AMAT / $TSM / $KLAC, etc. go brr.\n\n2. PGME / PGMEA shortage. DuPont, Shiny Chemical, Daxin, San Fu, $DOW and others go brr? \n\nPhotoresist bottleneck go brr? \n\n3. Microcontroller potential bottleneck + price hikes (Arterytek/Arterychip) was weighing price hikes on AI capacity squeezes.  \n\nMCU companies potentially go brr?\n\n4. President invoked the \"Defense Production Act\" this week, it included: \n\n-Transformers \n- transmission components \n- advanced conductors \n- power electronics \n- substations \n- high-voltage circuit breakers \n-  protective relays, capacitor banks\n - electrical core steel\n\nAs \"severe shortages\". Stuff like $AMSC, $PLPC, $POWL, $VICR, $ATKR, $HPS.A go brr. \n\n5. $GOOGL ramps new TPU servers. Google splits AI chips into training and inference TPUs.\n\nTaiwan happy. Mediatek and others go brr? \n\n6. Samsung, Kingston lift SSD prices by over 10%. \n\nSSD prices keep going brrr?  \n\n7. T-glass fiberglass shortages keep getting worse? Nittobo and others keep going brrr?\n\n8. Bromine, essential for etching circuits and flame retardancy, has surged to $12,000 per metric ton.\n\nICL Group in Israel apparently controls 40% of the global supply?\n\nNot as familiar with this but questionable brrr?\n\n9. \"Epitaxy manufacturer LandMark Optoelectronics reporting output still far below customer needs\".\n\nUhh $IQE and others go brr? \n\n10. \"AI data centers hit interconnect limits, boosting optical module demand\". \"the bottleneck is no longer computing power alone, but how that power is connected.\"\n\nPhotonics from $AAOI, $LITE, $COHR, Innolight and others keep going brr? next gen from $SIVE, $POET, $MRVL, Win Semi and others go brr?\n\nBasically AI semi supply chains go brr because there's widespread shortages everywhere due to AI hyperscaler demand.",
       "sentiment": "bull",
@@ -4023,19 +4026,19 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-10T02:26:08.378Z",
+    "staticUpdatedAt": "2026-06-10T04:27:24.420Z",
     "latestCaptured": {
-      "id": "2064525490921369849",
-      "date": "2026-06-10T01:50:08.000Z",
-      "title": "@NathanJoooo This was in response to that erroneous article. ",
-      "body": "@NathanJoooo This was in response to that erroneous article.\n\nI would trust Foxconn/Lumentum/Nvidia industry projections over an analyst firm that messed up $MU HBM4 so badly and said “no” to all their timelines together",
+      "id": "2064554061253451815",
+      "date": "2026-06-10T03:43:40.000Z",
+      "title": "$NVDA Networking Senior Vice President refuting recent analyst reports on delays: - “ the most exciting stuff is co-packaged optics.” - There is no delay in H2 CPO product deliver…",
+      "body": "$NVDA Networking Senior Vice President refuting recent analyst reports on delays:\n\n- “ the most exciting stuff is co-packaged optics.”\n- There is no delay in H2 CPO product delivery schedule. \n- CPO switch will enter mass production and begin ramping up customer deliveries as planned in the second half of 2026\n\nThis was a media article, original interview source credit should have been credited to Tae Kim / Computex. \n\nSomething fun to note too was this quote “Gilad was VERY enthusiastic about the CPO ramp from Nvidia.” \n\nBoth near term and long term.\n\nYeah… I’m extremely bullish on CPO alongside Nvidia.",
       "symbols": [
-        "MU"
+        "NVDA"
       ],
-      "theme": "memory-rotation",
-      "materiality": 61,
-      "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2064525490921369849"
+      "theme": "cpo-silicon-photonics",
+      "materiality": 87,
+      "sentiment": "bull",
+      "url": "https://x.com/aleabitoreddit/status/2064554061253451815"
     },
     "profileTweets": 7123,
     "source": "FxTwitter / SerenitySaid / public mirrors",
