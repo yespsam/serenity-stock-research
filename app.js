@@ -285,6 +285,7 @@ const state = {
   liveLastItemCount: 0,
   notificationEnabled: false,
   soundEnabled: false,
+  translationEnabled: true,
   watchlist: [],
   beginnerProfile: null,
   paperTrades: [],
@@ -312,6 +313,7 @@ const QUOTE_CACHE_MS = 60_000;
 const DETAIL_QUOTE_CACHE_MS = 10 * 60_000;
 const PUSH_NOTIFY_KEY = "serenityWebPushNotify";
 const PUSH_SOUND_KEY = "serenityWebPushSound";
+const PUSH_TRANSLATION_KEY = "serenityWebPushTranslation";
 const PUSH_WATCHLIST_KEY = "serenityWebPushWatchlist";
 const BEGINNER_PROFILE_KEY = "serenityBeginnerProfile";
 const BEGINNER_PAPER_TRADES_KEY = "serenityPaperTrades";
@@ -533,6 +535,10 @@ function soundLabel() {
   return `声音${state.soundEnabled ? "已开" : "关闭"}`;
 }
 
+function translationLabel() {
+  return `翻译${state.translationEnabled ? "已开" : "关闭"}`;
+}
+
 function pwaLabel() {
   if (state.pwaInstalled) return "PWA 模式";
   if (state.pwaInstallPrompt) return "安装应用";
@@ -546,6 +552,7 @@ function watchlistSummary() {
 function initPushPreferences() {
   state.notificationEnabled = Boolean(storageGet(PUSH_NOTIFY_KEY, false)) && notificationPermission() === "granted";
   state.soundEnabled = Boolean(storageGet(PUSH_SOUND_KEY, false));
+  state.translationEnabled = Boolean(storageGet(PUSH_TRANSLATION_KEY, true));
   state.watchlist = storageGet(PUSH_WATCHLIST_KEY, []);
   if (!Array.isArray(state.watchlist)) state.watchlist = [];
   state.watchlist = [...new Set(state.watchlist.map(normalizeWatchToken).filter(Boolean))].slice(0, 24);
@@ -1444,6 +1451,268 @@ function shortTitle(value = "", limit = 150) {
   return text.length > limit ? `${text.slice(0, limit - 1)}...` : text;
 }
 
+const zhPhraseMap = [
+  ["co-packaged optics", "共封装光学"],
+  ["silicon photonics", "硅光"],
+  ["optical transceiver", "光模块"],
+  ["data center", "数据中心"],
+  ["hyperscaler", "超大规模云厂商"],
+  ["ai capex", "AI 资本开支"],
+  ["capital expenditure", "资本开支"],
+  ["free cash flow", "自由现金流"],
+  ["gross margin", "毛利率"],
+  ["operating margin", "营业利润率"],
+  ["revenue growth", "收入增长"],
+  ["earnings call", "财报电话会"],
+  ["guidance raise", "上调指引"],
+  ["customer concentration", "客户集中"],
+  ["supply chain", "供应链"],
+  ["short interest", "空头持仓"],
+  ["days to cover", "空头回补天数"],
+  ["price target", "目标价"],
+  ["market cap", "市值"],
+  ["52 week high", "52 周高点"],
+  ["52 week low", "52 周低点"],
+  ["after hours", "盘后"],
+  ["pre market", "盘前"],
+  ["breakout", "突破"],
+  ["pullback", "回踩"],
+  ["risk reward", "风险收益比"],
+  ["upside", "上行空间"],
+  ["downside", "下行风险"],
+  ["dilution", "稀释"],
+  ["convertible debt", "可转债"],
+  ["atm offering", "ATM 增发"],
+  ["backlog", "积压订单"],
+  ["bookings", "新增订单"],
+  ["order book", "订单簿"],
+  ["utilization", "利用率"],
+  ["ramp", "爬坡"],
+  ["validation", "客户验证"],
+  ["qualification", "认证"],
+  ["production", "量产"],
+  ["volume production", "批量生产"],
+  ["winner", "赢家"],
+  ["long", "看多"],
+  ["short", "做空"],
+  ["buy", "买入"],
+  ["sell", "卖出"],
+  ["avoid", "回避"],
+  ["hold", "持有"],
+  ["watch", "观察"],
+  ["thesis", "投资逻辑"],
+  ["catalyst", "催化剂"],
+  ["invalidation", "失效条件"],
+  ["confirmation", "确认信号"],
+  ["liquidity", "流动性"],
+  ["volatility", "波动率"],
+  ["valuation", "估值"],
+  ["multiple", "估值倍数"],
+  ["growth", "增长"],
+  ["cycle", "周期"],
+  ["memory", "存储"],
+  ["networking", "网络"],
+  ["laser", "激光器"],
+  ["photonics", "光子"],
+  ["substrate", "衬底"],
+];
+
+const enPhraseMap = [
+  ["共封装光学", "co-packaged optics"],
+  ["硅光", "silicon photonics"],
+  ["光模块", "optical transceiver"],
+  ["数据中心", "data center"],
+  ["超大规模云厂商", "hyperscaler"],
+  ["AI 资本开支", "AI capex"],
+  ["资本开支", "capex"],
+  ["自由现金流", "free cash flow"],
+  ["毛利率", "gross margin"],
+  ["营业利润率", "operating margin"],
+  ["收入增长", "revenue growth"],
+  ["财报电话会", "earnings call"],
+  ["上调指引", "guidance raise"],
+  ["客户集中", "customer concentration"],
+  ["供应链", "supply chain"],
+  ["空头持仓", "short interest"],
+  ["空头回补天数", "days to cover"],
+  ["目标价", "price target"],
+  ["市值", "market cap"],
+  ["52 周高点", "52 week high"],
+  ["52 周低点", "52 week low"],
+  ["盘后", "after hours"],
+  ["盘前", "pre market"],
+  ["突破", "breakout"],
+  ["回踩", "pullback"],
+  ["风险收益比", "risk reward"],
+  ["上行空间", "upside"],
+  ["下行风险", "downside"],
+  ["稀释", "dilution"],
+  ["可转债", "convertible debt"],
+  ["增发", "offering"],
+  ["积压订单", "backlog"],
+  ["新增订单", "bookings"],
+  ["订单簿", "order book"],
+  ["利用率", "utilization"],
+  ["爬坡", "ramp"],
+  ["客户验证", "customer validation"],
+  ["认证", "qualification"],
+  ["量产", "production"],
+  ["批量生产", "volume production"],
+  ["看多", "long"],
+  ["做空", "short"],
+  ["买入", "buy"],
+  ["卖出", "sell"],
+  ["回避", "avoid"],
+  ["持有", "hold"],
+  ["观察", "watch"],
+  ["投资逻辑", "thesis"],
+  ["催化剂", "catalyst"],
+  ["失效条件", "invalidation"],
+  ["确认信号", "confirmation"],
+  ["流动性", "liquidity"],
+  ["波动率", "volatility"],
+  ["估值倍数", "multiple"],
+  ["估值", "valuation"],
+  ["增长", "growth"],
+  ["周期", "cycle"],
+  ["存储", "memory"],
+  ["网络", "networking"],
+  ["激光器", "laser"],
+  ["光子", "photonics"],
+  ["衬底", "substrate"],
+];
+
+function hasCjk(value = "") {
+  return /[\u3400-\u9fff]/.test(value);
+}
+
+function hasLatin(value = "") {
+  return /[A-Za-z]/.test(value);
+}
+
+function replacePhrases(text = "", map = [], options = {}) {
+  let output = String(text || "");
+  for (const [from, to] of map) {
+    const escaped = from.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+    const flags = options.ignoreCase ? "gi" : "g";
+    output = output.replace(new RegExp(escaped, flags), to);
+  }
+  return output;
+}
+
+function translateEnglishToChinese(text = "") {
+  let output = replacePhrases(text, zhPhraseMap, { ignoreCase: true });
+  output = output
+    .replace(/if you want a tldr of today:?/gi, "今天一句话总结：")
+    .replace(/>\s*be\s+(\$?[A-Z][A-Z0-9.]{1,8}),\s*\$?([\d.]+)\s*T\s+company\.\s*Force shift to/gi, "> 假设你是 $1，一家约 $2T 美元公司，强推转向")
+    .replace(/>\s*analyst\s*:/gi, "> 分析师：")
+    .replace(/>\s*market\s*:/gi, "> 市场：")
+    .replace(/>\s*([A-Z][A-Za-z0-9 &.-]+)\s+executives after\s*:/gi, "> 随后 $1 高管：")
+    .replace(/i\s+don.?t\s+think\s+u\s+can\s+do\s+it\s+in\s+time/gi, "我不认为你能按时做到")
+    .replace(/i\s+don.?t\s+think\s+you\s+can\s+do\s+it\s+in\s+time/gi, "我不认为你能按时做到")
+    .replace(/i\s+don.?t\s+trust\s+(.+?),\s*time\s+to\s+sell\s+everything/gi, "我不信任 $1，该卖掉一切")
+    .replace(/i\s+don.?t\s+trust\s+(.+?),\s*time\s+to\s+卖出\s+everything/gi, "我不信任 $1，该卖掉一切")
+    .replace(/bullish\s+on\s+([^,，]+),\s*timelines?\s+accelerating/gi, "看多 $1，时间线正在加速")
+    .replace(/\btldr\b/gi, "简版总结")
+    .replace(/\bu\b/g, "你")
+    .replace(/\b(\w+)\s+beat(s)?\b/gi, "$1 超预期")
+    .replace(/\b(\w+)\s+miss(es)?\b/gi, "$1 不及预期")
+    .replace(/\bupgrade(d)?\b/gi, "上调评级")
+    .replace(/\bdowngrade(d)?\b/gi, "下调评级")
+    .replace(/\bre-rate\b/gi, "重估")
+    .replace(/\bmoat\b/gi, "护城河")
+    .replace(/\btam\b/gi, "TAM 总市场空间")
+    .replace(/\byoy\b/gi, "同比")
+    .replace(/\bqoq\b/gi, "环比")
+    .replace(/\beps\b/gi, "EPS 每股收益")
+    .replace(/\bebitda\b/gi, "EBITDA")
+    .replace(/\bai\b/gi, "AI")
+    .replace(/\bgpu\b/gi, "GPU")
+    .replace(/\basic\b/gi, "ASIC")
+    .replace(/\bhbm\b/gi, "HBM")
+    .replace(/\bcpo\b/gi, "CPO")
+    .replace(/\bcapex\b/gi, "资本开支")
+    .replace(/\bcash flow\b/gi, "现金流")
+    .replace(/\borders?\b/gi, "订单")
+    .replace(/\bcustomers?\b/gi, "客户")
+    .replace(/\bdemand\b/gi, "需求")
+    .replace(/\bsupply\b/gi, "供给")
+    .replace(/\bmargin(s)?\b/gi, "利润率")
+    .replace(/\bdebt\b/gi, "债务")
+    .replace(/\brisk(s)?\b/gi, "风险")
+    .replace(/\bprice\b/gi, "价格")
+    .replace(/\bvolume\b/gi, "成交量")
+    .replace(/\bstock\b/gi, "股票")
+    .replace(/\bmarket\b/gi, "市场")
+    .replace(/\bstrong\b/gi, "强")
+    .replace(/\bweak\b/gi, "弱")
+    .replace(/\bnew\b/gi, "新增")
+    .replace(/\bnext\b/gi, "下一步");
+  return shortTitle(output, 520);
+}
+
+function translateChineseToEnglish(text = "") {
+  let output = replacePhrases(text, enPhraseMap);
+  output = output
+    .replace(/同比/g, "YoY")
+    .replace(/环比/g, "QoQ")
+    .replace(/护城河/g, "moat")
+    .replace(/重估/g, "re-rate")
+    .replace(/订单/g, "orders")
+    .replace(/客户/g, "customers")
+    .replace(/需求/g, "demand")
+    .replace(/供给/g, "supply")
+    .replace(/利润率/g, "margin")
+    .replace(/债务/g, "debt")
+    .replace(/风险/g, "risk")
+    .replace(/价格/g, "price")
+    .replace(/成交量/g, "volume")
+    .replace(/股票/g, "stock")
+    .replace(/市场/g, "market")
+    .replace(/强/g, "strong")
+    .replace(/弱/g, "weak")
+    .replace(/新增/g, "new")
+    .replace(/下一步/g, "next step");
+  return shortTitle(output, 520);
+}
+
+function bilingualTweet(item = {}) {
+  const original = String(item.body || item.title || "Serenity live tweet").replace(/\s+/g, " ").trim();
+  const isChinese = hasCjk(original);
+  const isEnglish = hasLatin(original);
+  const zh = isChinese ? original : translateEnglishToChinese(original);
+  const en = isEnglish && !isChinese ? original : translateChineseToEnglish(original);
+  return {
+    original: shortTitle(original, 420),
+    zh: shortTitle(zh, 420),
+    en: shortTitle(en, 420),
+    sourceLanguage: isChinese && isEnglish ? "中英混合" : isChinese ? "中文" : "English",
+  };
+}
+
+function renderTweetTranslation(item = {}) {
+  if (!state.translationEnabled) return "";
+  const translated = bilingualTweet(item);
+  return `
+    <div class="tweet-translation">
+      <div class="translation-head">
+        <strong>中英对照</strong>
+        <span>${escapeHtml(translated.sourceLanguage)} 原文 · 本地金融词库翻译</span>
+      </div>
+      <div class="translation-grid">
+        <article>
+          <b>中文翻译</b>
+          <p>${escapeHtml(translated.zh)}</p>
+        </article>
+        <article>
+          <b>English Translation</b>
+          <p>${escapeHtml(translated.en)}</p>
+        </article>
+      </div>
+    </div>
+  `;
+}
+
 function horizonLabel(result = {}, days) {
   const horizon = (result.horizons || []).find((item) => item.days === days);
   if (!horizon?.available) return "待验证";
@@ -2103,12 +2372,14 @@ function renderPriceAlertPanel() {
 function renderWebPushControls() {
   const notifyClass = state.notificationEnabled && notificationPermission() === "granted" ? "active" : "";
   const soundClass = state.soundEnabled ? "active" : "";
+  const translationClass = state.translationEnabled ? "active" : "";
   const soundDisabled = audioAvailable() ? "" : "disabled";
   webPushControls.innerHTML = `
     <div class="push-control-actions">
       <button class="secondary ${state.pwaInstalled ? "active" : ""}" type="button" data-pwa-install ${state.pwaInstallPrompt || state.pwaInstalled ? "" : "disabled"}>${escapeHtml(pwaLabel())}</button>
       <button class="secondary ${notifyClass}" type="button" data-push-notify>${escapeHtml(notificationLabel())}</button>
       <button class="secondary ${soundClass}" type="button" data-push-sound ${soundDisabled}>${escapeHtml(soundLabel())}</button>
+      <button class="secondary ${translationClass}" type="button" data-push-translate>${escapeHtml(translationLabel())}</button>
       <span>监听：${escapeHtml(watchlistSummary())}</span>
     </div>
     <form class="push-watch-form">
@@ -2171,6 +2442,12 @@ async function toggleSound() {
     storageSet(PUSH_SOUND_KEY, false);
   }
   renderWebPushControls();
+}
+
+function toggleTranslations() {
+  state.translationEnabled = !state.translationEnabled;
+  storageSet(PUSH_TRANSLATION_KEY, state.translationEnabled);
+  renderLiveMonitor();
 }
 
 async function installPwa() {
@@ -2308,6 +2585,7 @@ function renderLiveMonitor() {
             <span>${dateTimeLabel(item.date)} · ${escapeHtml(item.sentiment || "neutral")} · ${escapeHtml(liveThemeLabel(item.theme || "general"))}</span>
           </div>
           <p>${escapeHtml(shortTitle(item.title || item.body || "Serenity live tweet", 190))}</p>
+          ${renderTweetTranslation(item)}
           <div class="live-symbols">
             ${
               symbols.length
@@ -3164,6 +3442,12 @@ webPushControls.addEventListener("click", async (event) => {
   const soundButton = event.target.closest("[data-push-sound]");
   if (soundButton) {
     await toggleSound();
+    return;
+  }
+
+  const translateButton = event.target.closest("[data-push-translate]");
+  if (translateButton) {
+    toggleTranslations();
     return;
   }
 

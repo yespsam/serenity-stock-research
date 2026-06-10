@@ -887,6 +887,63 @@ button.secondary,
   line-height: 1.65;
 }
 
+.tweet-translation {
+  display: grid;
+  gap: 8px;
+  margin: 10px 0;
+  padding: 11px;
+  border: 1px solid rgba(111, 92, 246, 0.22);
+  border-radius: 14px;
+  background: linear-gradient(135deg, rgba(245, 242, 255, 0.72), rgba(255, 247, 251, 0.78));
+}
+
+.translation-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.translation-head strong {
+  color: var(--purple);
+  font-size: 12px;
+}
+
+.translation-head span {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 820;
+}
+
+.translation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.translation-grid article {
+  min-height: 74px;
+  padding: 9px;
+  border: 1px solid rgba(226, 187, 211, 0.42);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.66);
+}
+
+.translation-grid b {
+  display: block;
+  margin-bottom: 5px;
+  color: #403548;
+  font-size: 12px;
+}
+
+.translation-grid p {
+  margin: 0;
+  color: #62546d;
+  font-size: 12px;
+  font-weight: 760;
+  line-height: 1.62;
+}
+
 .live-pack-pending {
   display: grid;
   grid-template-columns: auto minmax(0, auto) minmax(0, 1fr);
@@ -2557,14 +2614,21 @@ h2 {
 
   .live-pack-pending,
   .live-rank-row,
-  .live-rank-detail {
+  .live-rank-detail,
+  .translation-grid {
     grid-template-columns: 1fr;
   }
 
   .health-head,
   .health-grid,
+  .translation-head,
   .live-review-list span {
     grid-template-columns: 1fr;
+  }
+
+  .translation-head {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .push-control-actions button,
