@@ -1676,11 +1676,94 @@ function translateChineseToEnglish(text = "") {
   return shortTitle(output, 520);
 }
 
+function englishResidueScore(value = "") {
+  const protectedText = String(value || "")
+    .replace(/\$?[A-Z]{2,8}\b/g, "")
+    .replace(/\b(AI|GPU|ASIC|HBM|CPO|DC|TAM|EPS|EBITDA)\b/gi, "");
+  const latin = (protectedText.match(/[A-Za-z]/g) || []).length;
+  const cjk = (protectedText.match(/[\u3400-\u9fff]/g) || []).length;
+  return latin / Math.max(1, latin + cjk);
+}
+
+function sentimentZh(sentiment = "") {
+  if (sentiment === "bull") return "偏多";
+  if (sentiment === "bear") return "偏风险";
+  return "中性";
+}
+
+const chineseCompanyNames = {
+  NVDA: "英伟达",
+  MU: "美光",
+  AMD: "超微",
+  MSFT: "微软",
+  AMZN: "亚马逊",
+  META: "Meta",
+  TSM: "台积电",
+  AVGO: "博通",
+  PLTR: "Palantir",
+  TSLA: "特斯拉",
+};
+
+function stockNamesForSymbols(symbols = []) {
+  return [...new Set(symbols.map(normalizeSymbol).filter(Boolean))]
+    .slice(0, 6)
+    .map((symbol) => {
+      const chineseName = chineseCompanyNames[symbol];
+      return chineseName ? `$${symbol}（${chineseName}）` : `$${symbol}`;
+    });
+}
+
+function inferChineseMeaning(original = "", item = {}) {
+  const text = String(original || "");
+  const lower = text.toLowerCase();
+  const symbols = stockNamesForSymbols(item.symbols || []);
+  const symbolText = symbols.length ? symbols.join("、") : "相关标的";
+  const theme = liveThemeLabel(item.theme || "general");
+  const tone = sentimentZh(item.sentiment || "neutral");
+  const points = [];
+
+  if (/tldr|today/i.test(text)) points.push("这条推文是在做当天事件的简版总结。");
+  if (/nvda|nvidia/i.test(text) && /lumentum/i.test(text) && /cpo/i.test(text)) {
+    points.push("核心意思是：市场一度担心英伟达推动 800V 直流供电和 CPO 的节奏太激进，但英伟达与 Lumentum 高管随后对 CPO 表态积极，并暗示推进时间线正在加速。");
+  } else if (/cpo|co-packaged|optical|photonics|laser|transceiver/i.test(text)) {
+    points.push("核心意思是：资金仍在围绕 CPO、光互连、激光器或光模块主线寻找供应链瓶颈。");
+  } else if (/neocloud|gpu cloud|datacenter|power/i.test(text)) {
+    points.push("核心意思是：推文关注算力云、数据中心、电力资产和融资路径，重点不是概念，而是合同质量与资本开支能否兑现。");
+  } else if (/hbm|memory|dram|nand/i.test(text)) {
+    points.push("核心意思是：推文关注 HBM、DRAM 或存储周期，重点看价格、供给纪律和 AI 服务器需求。");
+  } else if (/dilution|atm|debt|convertible|financing/i.test(text)) {
+    points.push("核心意思是：这更像风险提示，融资、增发、可转债或债务压力可能压低可买性。");
+  } else if (/bullish|long|buy|winner|upside|accelerating/i.test(text)) {
+    points.push("核心意思是：原文偏正面，认为相关方向或标的仍有上行催化。");
+  } else if (/sell|short|avoid|risk|bear|weak/i.test(text)) {
+    points.push("核心意思是：原文偏谨慎，需要先排除风险和反证。");
+  } else {
+    points.push("核心意思是：原文在更新一个与美股交易相关的公开信号，需要结合价格、成交量和公告再判断。");
+  }
+
+  if (/analyst/i.test(text)) points.push("里面提到分析师质疑或市场分歧，说明短期预期并不一致。");
+  if (/market/i.test(text)) points.push("里面提到市场反应，说明价格可能已经受情绪影响。");
+  if (/timeline|accelerat/i.test(text)) points.push("里面提到时间线加快，这是后续催化跟踪点。");
+  if (/sell everything/i.test(text)) points.push("“卖出一切”更像市场恐慌式反应，不应直接等同于基本面被证伪。");
+
+  const action =
+    item.sentiment === "bear" || /dilution|atm|debt|convertible|sell everything|risk/i.test(lower)
+      ? "交易上先降级处理，等公告、财报或管理层口径确认后再看。"
+      : "交易上不要只看推文情绪，需要等量价确认、同主题扩散和公告证据。";
+  return shortTitle(`涉及标的：${symbolText}。主题：${theme}，语义：${tone}。${points.join("")}${action}`, 520);
+}
+
+function forceReadableChinese(original = "", item = {}) {
+  const translated = translateEnglishToChinese(original);
+  if (!translated || englishResidueScore(translated) > 0.28) return inferChineseMeaning(original, item);
+  return translated;
+}
+
 function bilingualTweet(item = {}) {
   const original = String(item.body || item.title || "Serenity live tweet").replace(/\s+/g, " ").trim();
   const isChinese = hasCjk(original);
   const isEnglish = hasLatin(original);
-  const zh = isChinese ? original : translateEnglishToChinese(original);
+  const zh = isChinese ? original : forceReadableChinese(original, item);
   const en = isEnglish && !isChinese ? original : translateChineseToEnglish(original);
   return {
     original: shortTitle(original, 420),
