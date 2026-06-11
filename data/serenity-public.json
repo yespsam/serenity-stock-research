@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-10T16:26:17.736Z",
+  "generatedAt": "2026-06-11T02:36:02.939Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -10,8 +10,8 @@
   "stats": {
     "parsedItems": 6617,
     "commentCount": 50964,
-    "profileTweets": 7205,
-    "latestItemDate": "2026-06-10T16:17:17.000Z"
+    "profileTweets": 7208,
+    "latestItemDate": "2026-06-11T01:38:21.000Z"
   },
   "rules": [
     {
@@ -3992,21 +3992,26 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-10T16:25:21.478Z",
+    "staticUpdatedAt": "2026-06-11T01:38:21.000Z",
     "latestCaptured": {
-      "id": "2064743715755971026",
-      "date": "2026-06-10T16:17:17.000Z",
-      "title": "@pilot_scheme idk, maybe $NVDA downtrend might reverse if Trump stopped threatening Iran every day? ",
-      "body": "@pilot_scheme idk, maybe $NVDA downtrend might reverse if Trump stopped threatening Iran every day? https://t.co/QCIkIkqkwy\n\n中文译文：@pilot_scheme 不知道，如果特朗普不再每天威胁伊朗，$NVDA 的下跌趋势可能会逆转吗？https://t.co/QCIkIkqkwy\n\nAI 解读：推文讨论了英伟达股价下跌趋势可能逆转的条件，暗示与特朗普对伊朗的威胁政策有关。这反映了地缘政治风险对半导体市场情绪的影响。",
+      "id": "2064884912667439129",
+      "date": "2026-06-11T01:38:21.000Z",
+      "title": "Basically this… and it’s how cycles work. Retail was early and completely frontran institutions on next architectural shifts. There was close to 0 US institutional ownership on $SI",
+      "body": "Basically this… and it’s how cycles work.\n\nRetail was early and completely frontran institutions on next architectural shifts.\n\nThere was close to 0 US institutional ownership on $SIVE.\n\nAnd now you see active institutions like JP Morgan, Fidelity Research, and others on the cap table.\n\nHappened last year with $NBIS.\n\n> I called out close to <30% institutional accumulation and said they wanted more shares.\n> institutions bought up majority of the float\n> bunch of negative articles back then, now it’s positive and ATHs.\n\nTwo years before it was $RKLB\n\n> Was long at $16, but institutional analysts kept giving record low PTs and told retail to sell, although it had such a high reusable rocket rate.\n> retail sold, institutional ownership stocked up\n> now it’s ATHs\n\nI expect Foci (3363) to be a bottleneck for both $NVDA and $TSM optical programs and now there’s firms implying you to sell that at $2.5B valuations alongside $HIMX.\n\nSo if you see negative sellside reports or an uncanny wave of negative news, if’s a good signal they need liquidity.\n\nRecently some smaller hedge funds have been so desperate that they’re likely even using bot farms on X that told retail to sell lol… which I’ve uncovered recently.\n\nRegardless, it’s also why I spend a lot of time doing research on individual names so people can build their own conviction in the face of noise. \n\nUnfortunately, it’s just a part of life how the modern liquidity cycles/transfers of US retail -> Institutions work.\n\nThey don’t work in the best interest of retail investors.",
       "symbols": [
-        "NVDA"
+        "SIVE",
+        "NBIS",
+        "RKLB",
+        "NVDA",
+        "TSM",
+        "HIMX"
       ],
-      "theme": "general",
-      "materiality": 61.870403905279026,
-      "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2064743715755971026"
+      "theme": "cpo-silicon-photonics",
+      "materiality": 95,
+      "sentiment": "bear",
+      "url": "https://x.com/aleabitoreddit/status/2064884912667439129"
     },
-    "profileTweets": 7205,
+    "profileTweets": 7208,
     "source": "FxTwitter / SerenitySaid / public mirrors",
     "pollIntervalSeconds": 1
   }
