@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T15:38:21.847Z",
+  "generatedAt": "2026-06-11T16:36:14.752Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6637,
+    "parsedItems": 6640,
     "commentCount": 50965,
     "profileTweets": 7222,
-    "latestItemDate": "2026-06-11T15:10:18.000Z"
+    "latestItemDate": "2026-06-11T16:30:34.000Z"
   },
   "rules": [
     {
@@ -63,14 +63,14 @@
   "symbols": [
     {
       "symbol": "SIVE",
-      "mentions": 818,
+      "mentions": 819,
       "bull": 289,
       "bear": 7,
-      "neutral": 522,
+      "neutral": 523,
       "materiality": 80,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 6614
+      "sentimentScore": 6617
     },
     {
       "symbol": "NBIS",
@@ -96,25 +96,25 @@
     },
     {
       "symbol": "AAOI",
-      "mentions": 525,
+      "mentions": 526,
       "bull": 196,
       "bear": 12,
-      "neutral": 317,
+      "neutral": 318,
       "materiality": 82,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4224
+      "sentimentScore": 4227
     },
     {
       "symbol": "NVDA",
-      "mentions": 509,
+      "mentions": 510,
       "bull": 204,
       "bear": 17,
-      "neutral": 288,
+      "neutral": 289,
       "materiality": 83,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4167
+      "sentimentScore": 4170
     },
     {
       "symbol": "AXTI",
@@ -162,14 +162,14 @@
     },
     {
       "symbol": "SOI",
-      "mentions": 250,
+      "mentions": 251,
       "bull": 96,
       "bear": 2,
-      "neutral": 152,
+      "neutral": 153,
       "materiality": 83,
       "latest": "2026-05-24T02:28:23.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2140
+      "sentimentScore": 2143
     },
     {
       "symbol": "MSFT",
@@ -184,14 +184,14 @@
     },
     {
       "symbol": "IQE",
-      "mentions": 239,
+      "mentions": 240,
       "bull": 88,
       "bear": 1,
-      "neutral": 150,
+      "neutral": 151,
       "materiality": 82,
       "latest": "2026-06-01T14:33:55.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2012
+      "sentimentScore": 2015
     },
     {
       "symbol": "AMZN",
@@ -217,14 +217,14 @@
     },
     {
       "symbol": "MU",
-      "mentions": 204,
+      "mentions": 205,
       "bull": 92,
       "bear": 4,
-      "neutral": 108,
+      "neutral": 109,
       "materiality": 81,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 1899
+      "sentimentScore": 1902
     },
     {
       "symbol": "TSM",
@@ -327,14 +327,14 @@
     },
     {
       "symbol": "INTC",
-      "mentions": 158,
+      "mentions": 159,
       "bull": 71,
       "bear": 1,
-      "neutral": 86,
+      "neutral": 87,
       "materiality": 84,
       "latest": "2026-05-01T06:02:46.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1523
+      "sentimentScore": 1526
     },
     {
       "symbol": "AMD",
@@ -470,14 +470,14 @@
     },
     {
       "symbol": "XFAB",
-      "mentions": 83,
+      "mentions": 84,
       "bull": 45,
       "bear": 2,
-      "neutral": 36,
-      "materiality": 88,
+      "neutral": 37,
+      "materiality": 89,
       "latest": "2026-06-01T14:33:55.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 874
+      "sentimentScore": 877
     },
     {
       "symbol": "FLNC",
@@ -1151,6 +1151,17 @@
       "sentimentScore": 270
     },
     {
+      "symbol": "WOLF",
+      "mentions": 34,
+      "bull": 14,
+      "bear": 2,
+      "neutral": 18,
+      "materiality": 87,
+      "latest": "2026-04-26T17:09:03.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 264
+    },
+    {
       "symbol": "FORM",
       "mentions": 26,
       "bull": 12,
@@ -1160,17 +1171,6 @@
       "latest": "2026-04-29T21:40:20.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 264
-    },
-    {
-      "symbol": "WOLF",
-      "mentions": 33,
-      "bull": 14,
-      "bear": 2,
-      "neutral": 17,
-      "materiality": 86,
-      "latest": "2026-04-26T17:09:03.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 261
     },
     {
       "symbol": "6451.TW",
@@ -4013,21 +4013,26 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-11T15:36:25.990Z",
+    "staticUpdatedAt": "2026-06-11T16:35:14.549Z",
     "latestCaptured": {
-      "id": "2065088136884220158",
-      "date": "2026-06-11T15:05:53.000Z",
-      "title": "At this point I can't tell anymore if markets from $META to $MSFT are correcting because of macro. ",
-      "body": "At this point I can't tell anymore if markets from $META to $MSFT are correcting because of macro.\n\nOr just liquidity pull from $SPCX + index inclusion.\n\nAnd institutions frontrunning Nasdaq 100 and other rebalancing of SpaceX...\n\nAnyone know?",
+      "id": "2065105141238489398",
+      "date": "2026-06-11T16:13:28.000Z",
+      "title": "Markets should be cheering on domestic champions like $AAOI. ",
+      "body": "Markets should be cheering on domestic champions like $AAOI. \n\nSince it's ideal to support critical AI infra from laser fab to production in the US, rather than being a bear.\n\nFeels like everyone just outsources transceivers to Asia like Malaysia or Thailand...\n\nWith $INTC, $IQE, $XFAB, $MU, $WOLF, $SOI, $SIVE, and others... \n\nIf you haven't noticed by now, they're all critical to US supply chains. And every one of them are getting subsidies for securing Western supply chains. \n\nBefore a major trade was to short developing US/Western equities, then hedge with subsidized foreign ones. \n\nAs seen with the energy/solar firms that went bankrupt, this backfired a lot on US AI infrastructure years later with the power grid. \n\nI wanted to help change this mindset, since I believe it's very positive sum to invest in building up critical Western supply chains like photonics today. \n\nEspecially if $AAOI hits their $471m/month projections after reshoring their production to America. \n\nInstead of hoping they fail and calling critical nodes in the supply chains memestocks/bubbles, maybe it's good to change mindsets a bit so we don't see a repeat of the US Solar sector years later. \n\nUS/EU don't just hand out subsidies or CHIPS act grants to anyone.",
       "symbols": [
-        "META",
-        "MSFT",
-        "SPCX"
+        "AAOI",
+        "INTC",
+        "IQE",
+        "XFAB",
+        "MU",
+        "WOLF",
+        "SOI",
+        "SIVE"
       ],
-      "theme": "macro-hedge",
-      "materiality": 71,
+      "theme": "cpo-silicon-photonics",
+      "materiality": 97,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2065088136884220158"
+      "url": "https://x.com/aleabitoreddit/status/2065105141238489398"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
