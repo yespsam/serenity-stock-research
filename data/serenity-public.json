@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T09:36:03.627Z",
+  "generatedAt": "2026-06-11T10:31:27.904Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -10,8 +10,8 @@
   "stats": {
     "parsedItems": 6624,
     "commentCount": 50964,
-    "profileTweets": 7218,
-    "latestItemDate": "2026-06-11T08:46:38.000Z"
+    "profileTweets": 7220,
+    "latestItemDate": "2026-06-11T09:54:56.000Z"
   },
   "rules": [
     {
@@ -3986,21 +3986,24 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-11T09:34:11.737Z",
+    "staticUpdatedAt": "2026-06-11T10:30:55.921Z",
     "latestCaptured": {
-      "id": "2064992691902140603",
-      "date": "2026-06-11T08:46:38.000Z",
-      "title": "Just thought this was interesting: $LPK is an unknown SpaceX supplier. ",
-      "body": "Just thought this was interesting: $LPK is an unknown SpaceX supplier.\n\nYou can find it in SpaceX US import logs.  \n\nIt's fun information discovery ahead of Space'x IPO this week. Though, not sure what the exact contract entails. \n\nDisclosure: I have positions in LPK, NFA, credit to my follower Albert_TheVoid for the DM!\n\nEspecially since everyone seems to be talking about about SpaceX with Velo... \n\nJust a fun, new direct relationship between $LPK and SpaceX if people want to do more digging.",
+      "id": "2065009883133644963",
+      "date": "2026-06-11T09:54:56.000Z",
+      "title": "Why do I keep getting these questions!!! $XFAB is building a Silicon Photonics foundry alternative to $TSEM and $GFS. And has Europe backing it + $NVDA evaluations. It takes time..",
+      "body": "Why do I keep getting these questions!!! \n\n$XFAB is building a Silicon Photonics foundry alternative to $TSEM and $GFS. And has Europe backing it + $NVDA evaluations. \n\nIt takes time... Like October 2026, should finish up development. \n\nThen 2027 production scaled into 2028 (mass production), since they've been working on it since 2023. \n\nEveryone thinks it’s a depressed automaker supplier right now. And thankfully with European names they tend to look at TTM revenue over forward growth. \n\nSo somehow it’s leading EU’s efforts to create a $TSEM silicon photonics foundry + supply chain at ~€1.1B MC? \nThat R&D directors from ASE cite + others as future CPO routes.\n\nI’m might just really early to a lot of things, but of course most of the risk/reward comes from taking a little leap of faith in seeing it commercialized. \n\nOtherwise people can take the de-risked route with Tower directly (which I also wrote a thesis on awhile back and also like).",
       "symbols": [
-        "LPK"
+        "XFAB",
+        "TSEM",
+        "GFS",
+        "NVDA"
       ],
-      "theme": "general",
-      "materiality": 51,
-      "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2064992691902140603"
+      "theme": "cpo-silicon-photonics",
+      "materiality": 0,
+      "sentiment": "bear",
+      "url": "https://x.com/aleabitoreddit/status/2065009883133644963"
     },
-    "profileTweets": 7218,
+    "profileTweets": 7220,
     "source": "FxTwitter / SerenitySaid / public mirrors",
     "pollIntervalSeconds": 1
   }
