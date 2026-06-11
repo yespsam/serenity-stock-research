@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T02:36:02.939Z",
+  "generatedAt": "2026-06-11T03:40:12.741Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6617,
+    "parsedItems": 6618,
     "commentCount": 50964,
-    "profileTweets": 7208,
-    "latestItemDate": "2026-06-11T01:38:21.000Z"
+    "profileTweets": 7209,
+    "latestItemDate": "2026-06-11T03:18:16.000Z"
   },
   "rules": [
     {
@@ -96,12 +96,12 @@
     },
     {
       "symbol": "AAOI",
-      "mentions": 523,
+      "mentions": 524,
       "bull": 196,
       "bear": 12,
-      "neutral": 315,
-      "materiality": 82,
-      "latest": "2026-06-03T23:58:35.000Z",
+      "neutral": 316,
+      "materiality": 90,
+      "latest": "2026-06-11T03:18:16.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 4218
     },
@@ -162,12 +162,12 @@
     },
     {
       "symbol": "SOI",
-      "mentions": 249,
+      "mentions": 250,
       "bull": 96,
       "bear": 2,
-      "neutral": 151,
-      "materiality": 83,
-      "latest": "2026-05-24T02:34:42.000Z",
+      "neutral": 152,
+      "materiality": 90,
+      "latest": "2026-06-11T03:18:16.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 2137
     },
@@ -3992,26 +3992,22 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-11T01:38:21.000Z",
+    "staticUpdatedAt": "2026-06-11T03:18:16.000Z",
     "latestCaptured": {
-      "id": "2064884912667439129",
-      "date": "2026-06-11T01:38:21.000Z",
-      "title": "Basically this… and it’s how cycles work. Retail was early and completely frontran institutions on next architectural shifts. There was close to 0 US institutional ownership on $SI",
-      "body": "Basically this… and it’s how cycles work.\n\nRetail was early and completely frontran institutions on next architectural shifts.\n\nThere was close to 0 US institutional ownership on $SIVE.\n\nAnd now you see active institutions like JP Morgan, Fidelity Research, and others on the cap table.\n\nHappened last year with $NBIS.\n\n> I called out close to <30% institutional accumulation and said they wanted more shares.\n> institutions bought up majority of the float\n> bunch of negative articles back then, now it’s positive and ATHs.\n\nTwo years before it was $RKLB\n\n> Was long at $16, but institutional analysts kept giving record low PTs and told retail to sell, although it had such a high reusable rocket rate.\n> retail sold, institutional ownership stocked up\n> now it’s ATHs\n\nI expect Foci (3363) to be a bottleneck for both $NVDA and $TSM optical programs and now there’s firms implying you to sell that at $2.5B valuations alongside $HIMX.\n\nSo if you see negative sellside reports or an uncanny wave of negative news, if’s a good signal they need liquidity.\n\nRecently some smaller hedge funds have been so desperate that they’re likely even using bot farms on X that told retail to sell lol… which I’ve uncovered recently.\n\nRegardless, it’s also why I spend a lot of time doing research on individual names so people can build their own conviction in the face of noise. \n\nUnfortunately, it’s just a part of life how the modern liquidity cycles/transfers of US retail -> Institutions work.\n\nThey don’t work in the best interest of retail investors.",
+      "id": "2064910057767309551",
+      "date": "2026-06-11T03:18:16.000Z",
+      "title": "这周我自己的投资组合表现令人失望。 目前今年迄今（YTD）仅上涨了 +3,612.10%。 我在获利时会分享，但我也同样会经历大幅回撤！ 比如像 Foci/Shunsin $SOI, $AAOI 以及其他 CPO 相关标的。 如果 Alpha 足够强，不管宏观大环境如何，这些股票都应该继续涨才对… 所以对我来说，这也是一个学习的过程，需要不断微调我自己的思路",
+      "body": "这周我自己的投资组合表现令人失望。\n\n目前今年迄今（YTD）仅上涨了 +3,612.10%。\n\n我在获利时会分享，但我也同样会经历大幅回撤！\n\n比如像 Foci/Shunsin $SOI, $AAOI 以及其他 CPO 相关标的。\n\n如果 Alpha 足够强，不管宏观大环境如何，这些股票都应该继续涨才对…\n\n所以对我来说，这也是一个学习的过程，需要不断微调我自己的思路，以及理解市场是如何对不同主题/供应链的各个环节进行定价的。\n\n我只是边走边分享而已！",
       "symbols": [
-        "SIVE",
-        "NBIS",
-        "RKLB",
-        "NVDA",
-        "TSM",
-        "HIMX"
+        "SOI",
+        "AAOI"
       ],
       "theme": "cpo-silicon-photonics",
-      "materiality": 95,
-      "sentiment": "bear",
-      "url": "https://x.com/aleabitoreddit/status/2064884912667439129"
+      "materiality": 90,
+      "sentiment": "neutral",
+      "url": "https://x.com/aleabitoreddit/status/2064910057767309551"
     },
-    "profileTweets": 7208,
+    "profileTweets": 7209,
     "source": "FxTwitter / SerenitySaid / public mirrors",
     "pollIntervalSeconds": 1
   }
