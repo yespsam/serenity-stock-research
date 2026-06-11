@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T11:31:22.243Z",
+  "generatedAt": "2026-06-11T14:33:38.267Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6632,
+    "parsedItems": 6633,
     "commentCount": 50965,
     "profileTweets": 7222,
-    "latestItemDate": "2026-06-11T10:43:52.000Z"
+    "latestItemDate": "2026-06-11T14:07:42.000Z"
   },
   "rules": [
     {
@@ -266,7 +266,7 @@
       "bear": 4,
       "neutral": 126,
       "materiality": 84,
-      "latest": "2026-05-19T15:08:13.000Z",
+      "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 1679
     },
@@ -277,7 +277,7 @@
       "bear": 1,
       "neutral": 120,
       "materiality": 80,
-      "latest": "2026-04-30T23:01:34.000Z",
+      "latest": "2026-04-30T19:56:56.000Z",
       "dominantTheme": "general",
       "sentimentScore": 1655
     },
@@ -310,7 +310,7 @@
       "bear": 5,
       "neutral": 125,
       "materiality": 82,
-      "latest": "2026-05-19T15:08:13.000Z",
+      "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 1564
     },
@@ -332,7 +332,7 @@
       "bear": 1,
       "neutral": 86,
       "materiality": 84,
-      "latest": "2026-05-01T06:32:13.000Z",
+      "latest": "2026-05-01T06:02:46.000Z",
       "dominantTheme": "general",
       "sentimentScore": 1523
     },
@@ -387,7 +387,7 @@
       "bear": 1,
       "neutral": 95,
       "materiality": 76,
-      "latest": "2026-04-29T21:54:03.000Z",
+      "latest": "2026-04-29T21:40:20.000Z",
       "dominantTheme": "general",
       "sentimentScore": 1404
     },
@@ -431,7 +431,7 @@
       "bear": 0,
       "neutral": 50,
       "materiality": 87,
-      "latest": "2026-05-20T13:06:20.000Z",
+      "latest": "2026-05-20T13:00:30.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 1140
     },
@@ -442,7 +442,7 @@
       "bear": 5,
       "neutral": 115,
       "materiality": 73,
-      "latest": "2026-05-19T15:08:13.000Z",
+      "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "general",
       "sentimentScore": 1045
     },
@@ -453,7 +453,7 @@
       "bear": 3,
       "neutral": 56,
       "materiality": 74,
-      "latest": "2026-04-26T17:11:50.000Z",
+      "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 994
     },
@@ -464,7 +464,7 @@
       "bear": 2,
       "neutral": 80,
       "materiality": 82,
-      "latest": "2026-05-19T15:08:13.000Z",
+      "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 919
     },
@@ -541,7 +541,7 @@
       "bear": 1,
       "neutral": 54,
       "materiality": 71,
-      "latest": "2026-05-12T10:21:12.000Z",
+      "latest": "2026-05-12T10:09:16.000Z",
       "dominantTheme": "general",
       "sentimentScore": 770
     },
@@ -552,7 +552,7 @@
       "bear": 0,
       "neutral": 42,
       "materiality": 81,
-      "latest": "2026-05-29T13:57:15.000Z",
+      "latest": "2026-05-29T13:58:02.000Z",
       "dominantTheme": "general",
       "sentimentScore": 724
     },
@@ -585,7 +585,7 @@
       "bear": 3,
       "neutral": 57,
       "materiality": 84,
-      "latest": "2026-05-01T23:31:04.000Z",
+      "latest": "2026-01-02T12:46:56.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 681
     },
@@ -629,7 +629,7 @@
       "bear": 0,
       "neutral": 18,
       "materiality": 92,
-      "latest": "2026-04-30T08:56:17.000Z",
+      "latest": "2026-04-30T08:27:54.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 615
     },
@@ -651,7 +651,7 @@
       "bear": 2,
       "neutral": 40,
       "materiality": 77,
-      "latest": "2026-05-05T07:55:48.000Z",
+      "latest": "2026-05-05T07:54:32.000Z",
       "dominantTheme": "general",
       "sentimentScore": 598
     },
@@ -673,7 +673,7 @@
       "bear": 1,
       "neutral": 38,
       "materiality": 77,
-      "latest": "2026-04-26T17:11:50.000Z",
+      "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "general",
       "sentimentScore": 558
     },
@@ -684,7 +684,7 @@
       "bear": 3,
       "neutral": 29,
       "materiality": 85,
-      "latest": "2026-05-12T05:48:46.000Z",
+      "latest": "2026-05-12T05:47:56.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 526
     },
@@ -695,7 +695,7 @@
       "bear": 0,
       "neutral": 36,
       "materiality": 74,
-      "latest": "2026-05-01T17:26:32.000Z",
+      "latest": "2026-05-01T17:24:21.000Z",
       "dominantTheme": "power-architecture",
       "sentimentScore": 522
     },
@@ -739,7 +739,7 @@
       "bear": 2,
       "neutral": 24,
       "materiality": 86,
-      "latest": "2026-05-19T15:08:13.000Z",
+      "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 460
     },
@@ -772,7 +772,7 @@
       "bear": 0,
       "neutral": 8,
       "materiality": 93,
-      "latest": "2026-05-06T17:20:50.000Z",
+      "latest": "2026-05-06T16:16:34.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 441
     },
@@ -783,7 +783,7 @@
       "bear": 1,
       "neutral": 32,
       "materiality": 81,
-      "latest": "2026-05-11T15:22:18.000Z",
+      "latest": "2026-05-11T15:20:48.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 452
     },
@@ -794,7 +794,7 @@
       "bear": 1,
       "neutral": 69,
       "materiality": 66,
-      "latest": "2026-05-13T12:08:17.000Z",
+      "latest": "2026-05-13T12:01:06.000Z",
       "dominantTheme": "general",
       "sentimentScore": 455
     },
@@ -805,7 +805,7 @@
       "bear": 0,
       "neutral": 1,
       "materiality": 93,
-      "latest": "2026-05-13T04:13:13.000Z",
+      "latest": "2026-05-13T04:06:41.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 427
     },
@@ -816,7 +816,7 @@
       "bear": 0,
       "neutral": 18,
       "materiality": 96,
-      "latest": "2026-04-29T21:54:03.000Z",
+      "latest": "2026-04-29T21:40:20.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 417
     },
@@ -827,7 +827,7 @@
       "bear": 2,
       "neutral": 27,
       "materiality": 78,
-      "latest": "2026-04-29T08:12:23.000Z",
+      "latest": "2026-04-29T07:11:19.000Z",
       "dominantTheme": "general",
       "sentimentScore": 435
     },
@@ -838,7 +838,7 @@
       "bear": 2,
       "neutral": 36,
       "materiality": 73,
-      "latest": "2026-05-08T16:29:10.000Z",
+      "latest": "2026-05-08T16:14:03.000Z",
       "dominantTheme": "general",
       "sentimentScore": 406
     },
@@ -849,7 +849,7 @@
       "bear": 1,
       "neutral": 27,
       "materiality": 85,
-      "latest": "2026-05-11T20:07:13.000Z",
+      "latest": "2026-05-11T20:02:10.000Z",
       "dominantTheme": "general",
       "sentimentScore": 383
     },
@@ -860,7 +860,7 @@
       "bear": 0,
       "neutral": 28,
       "materiality": 77,
-      "latest": "2026-05-01T23:31:04.000Z",
+      "latest": "2026-01-02T12:46:56.000Z",
       "dominantTheme": "general",
       "sentimentScore": 390
     },
@@ -904,7 +904,7 @@
       "bear": 0,
       "neutral": 10,
       "materiality": 88,
-      "latest": "2026-04-29T21:54:03.000Z",
+      "latest": "2026-04-29T21:40:20.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 358
     },
@@ -937,7 +937,7 @@
       "bear": 1,
       "neutral": 22,
       "materiality": 79,
-      "latest": "2026-05-01T23:31:04.000Z",
+      "latest": "2026-01-02T12:46:56.000Z",
       "dominantTheme": "general",
       "sentimentScore": 350
     },
@@ -959,7 +959,7 @@
       "bear": 0,
       "neutral": 20,
       "materiality": 91,
-      "latest": "2026-05-12T05:48:46.000Z",
+      "latest": "2026-05-12T05:47:56.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 330
     },
@@ -970,7 +970,7 @@
       "bear": 1,
       "neutral": 17,
       "materiality": 83,
-      "latest": "2026-05-13T23:18:31.000Z",
+      "latest": "2026-05-13T22:53:50.000Z",
       "dominantTheme": "robotics-physical-ai",
       "sentimentScore": 335
     },
@@ -981,7 +981,7 @@
       "bear": 0,
       "neutral": 19,
       "materiality": 86,
-      "latest": "2026-05-01T06:32:13.000Z",
+      "latest": "2026-05-01T06:02:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 327
     },
@@ -992,7 +992,7 @@
       "bear": 3,
       "neutral": 18,
       "materiality": 89,
-      "latest": "2026-05-19T15:08:13.000Z",
+      "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "capital-structure-veto",
       "sentimentScore": 318
     },
@@ -1003,7 +1003,7 @@
       "bear": 0,
       "neutral": 7,
       "materiality": 91,
-      "latest": "2026-04-26T17:11:50.000Z",
+      "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 309
     },
@@ -1036,7 +1036,7 @@
       "bear": 0,
       "neutral": 9,
       "materiality": 90,
-      "latest": "2026-04-24T15:56:38.000Z",
+      "latest": "2026-04-24T15:55:06.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 304
     },
@@ -1047,7 +1047,7 @@
       "bear": 4,
       "neutral": 21,
       "materiality": 77,
-      "latest": "2026-05-02T08:40:18.000Z",
+      "latest": "2026-05-02T08:32:58.000Z",
       "dominantTheme": "crypto-rotation",
       "sentimentScore": 317
     },
@@ -1069,7 +1069,7 @@
       "bear": 0,
       "neutral": 10,
       "materiality": 87,
-      "latest": "2026-05-03T20:19:37.000Z",
+      "latest": "2026-05-03T20:18:21.000Z",
       "dominantTheme": "general",
       "sentimentScore": 300
     },
@@ -1080,7 +1080,7 @@
       "bear": 2,
       "neutral": 27,
       "materiality": 78,
-      "latest": "2026-05-01T23:31:04.000Z",
+      "latest": "2026-01-02T12:46:56.000Z",
       "dominantTheme": "crypto-rotation",
       "sentimentScore": 307
     },
@@ -1091,7 +1091,7 @@
       "bear": 0,
       "neutral": 21,
       "materiality": 80,
-      "latest": "2026-04-26T17:11:50.000Z",
+      "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "power-architecture",
       "sentimentScore": 297
     },
@@ -1102,7 +1102,7 @@
       "bear": 0,
       "neutral": 22,
       "materiality": 77,
-      "latest": "2026-05-01T23:31:04.000Z",
+      "latest": "2026-01-02T12:46:56.000Z",
       "dominantTheme": "general",
       "sentimentScore": 300
     },
@@ -1157,7 +1157,7 @@
       "bear": 0,
       "neutral": 14,
       "materiality": 84,
-      "latest": "2026-04-29T21:54:03.000Z",
+      "latest": "2026-04-29T21:40:20.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 264
     },
@@ -1168,7 +1168,7 @@
       "bear": 2,
       "neutral": 17,
       "materiality": 86,
-      "latest": "2026-04-26T17:11:50.000Z",
+      "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 261
     },
@@ -1179,7 +1179,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 99,
-      "latest": "2026-05-13T04:13:13.000Z",
+      "latest": "2026-05-13T04:06:41.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 246
     },
@@ -1190,7 +1190,7 @@
       "bear": 0,
       "neutral": 6,
       "materiality": 90,
-      "latest": "2026-05-06T17:20:50.000Z",
+      "latest": "2026-05-06T16:16:34.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 252
     },
@@ -1201,7 +1201,7 @@
       "bear": 0,
       "neutral": 4,
       "materiality": 93,
-      "latest": "2026-04-26T17:11:50.000Z",
+      "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 249
     },
@@ -1212,7 +1212,7 @@
       "bear": 0,
       "neutral": 21,
       "materiality": 81,
-      "latest": "2026-05-01T23:31:04.000Z",
+      "latest": "2026-01-02T12:46:56.000Z",
       "dominantTheme": "general",
       "sentimentScore": 261
     },
@@ -1223,7 +1223,7 @@
       "bear": 0,
       "neutral": 11,
       "materiality": 89,
-      "latest": "2026-05-12T05:48:46.000Z",
+      "latest": "2026-05-12T05:47:56.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 252
     },
@@ -1234,7 +1234,7 @@
       "bear": 0,
       "neutral": 11,
       "materiality": 87,
-      "latest": "2026-04-29T21:54:03.000Z",
+      "latest": "2026-04-29T21:40:20.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 249
     },
@@ -1256,7 +1256,7 @@
       "bear": 0,
       "neutral": 14,
       "materiality": 86,
-      "latest": "2026-05-14T10:38:48.000Z",
+      "latest": "2026-05-14T10:17:44.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 246
     },
@@ -1267,7 +1267,7 @@
       "bear": 0,
       "neutral": 9,
       "materiality": 88,
-      "latest": "2026-04-25T18:14:19.000Z",
+      "latest": "2026-04-25T16:54:25.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 243
     },
@@ -1278,7 +1278,7 @@
       "bear": 3,
       "neutral": 13,
       "materiality": 87,
-      "latest": "2026-05-08T17:20:48.000Z",
+      "latest": "2026-05-08T17:15:47.000Z",
       "dominantTheme": "robotics-physical-ai",
       "sentimentScore": 243
     },
@@ -1289,7 +1289,7 @@
       "bear": 1,
       "neutral": 11,
       "materiality": 90,
-      "latest": "2026-05-19T15:08:13.000Z",
+      "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 236
     },
@@ -1300,7 +1300,7 @@
       "bear": 0,
       "neutral": 13,
       "materiality": 86,
-      "latest": "2026-05-13T12:08:17.000Z",
+      "latest": "2026-05-13T12:01:06.000Z",
       "dominantTheme": "power-architecture",
       "sentimentScore": 237
     },
@@ -1311,7 +1311,7 @@
       "bear": 0,
       "neutral": 4,
       "materiality": 91,
-      "latest": "2026-05-01T06:32:13.000Z",
+      "latest": "2026-05-01T06:02:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 231
     },
@@ -1322,7 +1322,7 @@
       "bear": 0,
       "neutral": 16,
       "materiality": 83,
-      "latest": "2026-05-29T13:57:15.000Z",
+      "latest": "2026-05-29T13:58:02.000Z",
       "dominantTheme": "general",
       "sentimentScore": 237
     },
@@ -1333,7 +1333,7 @@
       "bear": 1,
       "neutral": 2,
       "materiality": 84,
-      "latest": "2026-05-01T23:31:04.000Z",
+      "latest": "2026-01-02T12:46:56.000Z",
       "dominantTheme": "general",
       "sentimentScore": 236
     },
@@ -1344,7 +1344,7 @@
       "bear": 0,
       "neutral": 9,
       "materiality": 89,
-      "latest": "2026-05-08T16:29:10.000Z",
+      "latest": "2026-05-08T16:14:03.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 229
     },
@@ -1355,7 +1355,7 @@
       "bear": 3,
       "neutral": 16,
       "materiality": 84,
-      "latest": "2026-04-28T19:41:59.000Z",
+      "latest": "2026-04-28T19:39:50.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 234
     },
@@ -1366,7 +1366,7 @@
       "bear": 1,
       "neutral": 10,
       "materiality": 90,
-      "latest": "2026-05-19T15:08:13.000Z",
+      "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "capital-structure-veto",
       "sentimentScore": 224
     },
@@ -1377,7 +1377,7 @@
       "bear": 0,
       "neutral": 8,
       "materiality": 87,
-      "latest": "2026-05-06T17:53:18.000Z",
+      "latest": "2025-11-22T11:07:33.000Z",
       "dominantTheme": "capital-structure-veto",
       "sentimentScore": 224
     },
@@ -1388,7 +1388,7 @@
       "bear": 0,
       "neutral": 19,
       "materiality": 74,
-      "latest": "2026-05-01T23:31:04.000Z",
+      "latest": "2026-01-02T12:46:56.000Z",
       "dominantTheme": "general",
       "sentimentScore": 237
     },
@@ -1399,7 +1399,7 @@
       "bear": 0,
       "neutral": 14,
       "materiality": 86,
-      "latest": "2026-04-28T19:41:59.000Z",
+      "latest": "2026-04-28T19:39:50.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 222
     },
@@ -1410,7 +1410,7 @@
       "bear": 2,
       "neutral": 18,
       "materiality": 81,
-      "latest": "2026-05-01T23:31:04.000Z",
+      "latest": "2026-01-02T12:46:56.000Z",
       "dominantTheme": "general",
       "sentimentScore": 226
     },
@@ -1421,7 +1421,7 @@
       "bear": 0,
       "neutral": 1,
       "materiality": 80,
-      "latest": "2026-05-12T10:21:12.000Z",
+      "latest": "2026-05-12T10:09:16.000Z",
       "dominantTheme": "general",
       "sentimentScore": 225
     },
@@ -1443,7 +1443,7 @@
       "bear": 3,
       "neutral": 9,
       "materiality": 90,
-      "latest": "2026-05-19T02:36:55.000Z",
+      "latest": "2026-05-19T02:11:14.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 213
     },
@@ -1465,7 +1465,7 @@
       "bear": 0,
       "neutral": 16,
       "materiality": 87,
-      "latest": "2026-05-13T04:13:13.000Z",
+      "latest": "2026-05-13T04:06:41.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 210
     },
@@ -1487,7 +1487,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 100,
-      "latest": "2026-05-13T04:13:13.000Z",
+      "latest": "2026-05-13T04:06:41.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 190
     },
@@ -1498,7 +1498,7 @@
       "bear": 3,
       "neutral": 13,
       "materiality": 82,
-      "latest": "2026-05-19T15:08:13.000Z",
+      "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "general",
       "sentimentScore": 207
     },
@@ -1509,7 +1509,7 @@
       "bear": 0,
       "neutral": 12,
       "materiality": 90,
-      "latest": "2026-05-14T10:38:48.000Z",
+      "latest": "2026-05-14T10:17:44.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 198
     },
@@ -1520,7 +1520,7 @@
       "bear": 0,
       "neutral": 25,
       "materiality": 86,
-      "latest": "2026-04-29T10:55:09.000Z",
+      "latest": "2026-04-29T10:37:41.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 201
     },
@@ -1531,7 +1531,7 @@
       "bear": 0,
       "neutral": 5,
       "materiality": 85,
-      "latest": "2026-05-01T06:32:13.000Z",
+      "latest": "2026-05-01T06:02:46.000Z",
       "dominantTheme": "general",
       "sentimentScore": 201
     },
@@ -1542,7 +1542,7 @@
       "bear": 1,
       "neutral": 12,
       "materiality": 87,
-      "latest": "2026-05-03T09:15:46.000Z",
+      "latest": "2026-05-03T05:01:19.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 199
     },
@@ -1575,7 +1575,7 @@
       "bear": 0,
       "neutral": 2,
       "materiality": 96,
-      "latest": "2026-05-07T08:33:28.000Z",
+      "latest": "2026-05-07T07:57:57.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 186
     },
@@ -1586,7 +1586,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 98,
-      "latest": "2026-05-06T17:20:50.000Z",
+      "latest": "2026-05-06T16:16:34.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 184
     },
@@ -1597,7 +1597,7 @@
       "bear": 0,
       "neutral": 13,
       "materiality": 80,
-      "latest": "2026-05-11T20:07:13.000Z",
+      "latest": "2026-05-11T20:02:10.000Z",
       "dominantTheme": "general",
       "sentimentScore": 201
     },
@@ -1619,7 +1619,7 @@
       "bear": 0,
       "neutral": 9,
       "materiality": 86,
-      "latest": "2026-04-26T17:11:50.000Z",
+      "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "power-architecture",
       "sentimentScore": 191
     },
@@ -1630,7 +1630,7 @@
       "bear": 0,
       "neutral": 9,
       "materiality": 83,
-      "latest": "2026-04-29T21:54:03.000Z",
+      "latest": "2026-04-29T21:40:20.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 192
     },
@@ -1663,7 +1663,7 @@
       "bear": 0,
       "neutral": 13,
       "materiality": 83,
-      "latest": "2026-05-06T17:20:50.000Z",
+      "latest": "2026-05-06T16:16:34.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 187
     },
@@ -1674,7 +1674,7 @@
       "bear": 0,
       "neutral": 7,
       "materiality": 87,
-      "latest": "2026-05-01T23:31:04.000Z",
+      "latest": "2026-01-02T12:46:56.000Z",
       "dominantTheme": "general",
       "sentimentScore": 183
     },
@@ -1729,7 +1729,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 100,
-      "latest": "2026-04-30T08:56:17.000Z",
+      "latest": "2026-04-30T08:27:54.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 166
     },
@@ -1740,7 +1740,7 @@
       "bear": 1,
       "neutral": 7,
       "materiality": 85,
-      "latest": "2026-05-13T23:18:31.000Z",
+      "latest": "2026-05-13T22:53:50.000Z",
       "dominantTheme": "robotics-physical-ai",
       "sentimentScore": 179
     },
@@ -1773,7 +1773,7 @@
       "bear": 0,
       "neutral": 8,
       "materiality": 89,
-      "latest": "2026-05-20T13:06:20.000Z",
+      "latest": "2026-05-20T13:00:30.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 171
     },
@@ -1795,7 +1795,7 @@
       "bear": 1,
       "neutral": 3,
       "materiality": 90,
-      "latest": "2026-05-15T08:10:48.000Z",
+      "latest": "2026-05-15T07:04:50.000Z",
       "dominantTheme": "general",
       "sentimentScore": 167
     },
@@ -1817,7 +1817,7 @@
       "bear": 0,
       "neutral": 9,
       "materiality": 82,
-      "latest": "2026-04-26T17:11:50.000Z",
+      "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "general",
       "sentimentScore": 171
     },
@@ -1828,7 +1828,7 @@
       "bear": 0,
       "neutral": 4,
       "materiality": 90,
-      "latest": "2026-05-04T07:21:15.000Z",
+      "latest": "2026-05-04T07:12:36.000Z",
       "dominantTheme": "general",
       "sentimentScore": 159
     },
@@ -1839,7 +1839,7 @@
       "bear": 0,
       "neutral": 3,
       "materiality": 95,
-      "latest": "2026-05-06T17:20:50.000Z",
+      "latest": "2026-05-06T16:16:34.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 153
     },
@@ -1861,7 +1861,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 100,
-      "latest": "2026-05-13T04:13:13.000Z",
+      "latest": "2026-05-13T04:06:41.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 139
     },
@@ -1872,7 +1872,7 @@
       "bear": 0,
       "neutral": 12,
       "materiality": 77,
-      "latest": "2026-06-01T07:27:26.000Z",
+      "latest": "2026-06-01T09:00:51.000Z",
       "dominantTheme": "general",
       "sentimentScore": 162
     },
@@ -1894,7 +1894,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 100,
-      "latest": "2026-05-01T06:32:13.000Z",
+      "latest": "2026-05-01T06:02:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 136
     },
@@ -1905,7 +1905,7 @@
       "bear": 0,
       "neutral": 15,
       "materiality": 83,
-      "latest": "2026-05-29T13:57:15.000Z",
+      "latest": "2026-05-29T13:58:02.000Z",
       "dominantTheme": "general",
       "sentimentScore": 153
     },
@@ -1927,7 +1927,7 @@
       "bear": 3,
       "neutral": 8,
       "materiality": 90,
-      "latest": "2026-05-19T15:08:13.000Z",
+      "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "ai-infrastructure",
       "sentimentScore": 144
     },
@@ -1949,7 +1949,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 100,
-      "latest": "2026-05-12T05:48:46.000Z",
+      "latest": "2026-05-12T05:47:56.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 132
     },
@@ -1971,7 +1971,7 @@
       "bear": 0,
       "neutral": 4,
       "materiality": 93,
-      "latest": "2026-04-26T17:11:50.000Z",
+      "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "robotics-physical-ai",
       "sentimentScore": 138
     },
@@ -1993,7 +1993,7 @@
       "bear": 0,
       "neutral": 1,
       "materiality": 95,
-      "latest": "2026-04-26T17:11:50.000Z",
+      "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 133
     },
@@ -2015,7 +2015,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 100,
-      "latest": "2026-05-07T08:33:28.000Z",
+      "latest": "2026-05-07T07:57:57.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 126
     },
@@ -2026,7 +2026,7 @@
       "bear": 0,
       "neutral": 3,
       "materiality": 89,
-      "latest": "2026-05-08T17:20:48.000Z",
+      "latest": "2026-05-08T17:15:47.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 137
     },
@@ -2037,7 +2037,7 @@
       "bear": 0,
       "neutral": 2,
       "materiality": 91,
-      "latest": "2026-05-06T20:46:38.000Z",
+      "latest": "2026-05-06T20:40:43.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 135
     },
@@ -2059,7 +2059,7 @@
       "bear": 0,
       "neutral": 3,
       "materiality": 86,
-      "latest": "2026-05-02T09:23:34.000Z",
+      "latest": "2026-05-02T09:14:10.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 137
     },
@@ -2070,7 +2070,7 @@
       "bear": 4,
       "neutral": 23,
       "materiality": 82,
-      "latest": "2026-05-19T15:08:13.000Z",
+      "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "capital-structure-veto",
       "sentimentScore": 138
     },
@@ -2103,7 +2103,7 @@
       "bear": 0,
       "neutral": 6,
       "materiality": 91,
-      "latest": "2026-04-25T18:14:19.000Z",
+      "latest": "2026-04-25T16:54:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 126
     },
@@ -2136,7 +2136,7 @@
       "bear": 0,
       "neutral": 7,
       "materiality": 86,
-      "latest": "2026-04-29T21:54:03.000Z",
+      "latest": "2026-04-29T21:40:20.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 129
     },
@@ -2147,7 +2147,7 @@
       "bear": 0,
       "neutral": 3,
       "materiality": 94,
-      "latest": "2026-04-26T17:11:50.000Z",
+      "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 121
     },
@@ -2169,7 +2169,7 @@
       "bear": 1,
       "neutral": 18,
       "materiality": 73,
-      "latest": "2026-05-08T10:39:35.000Z",
+      "latest": "2026-03-13T05:53:16.000Z",
       "dominantTheme": "general",
       "sentimentScore": 140
     },
@@ -2224,7 +2224,7 @@
       "bear": 0,
       "neutral": 14,
       "materiality": 74,
-      "latest": "2026-04-17T19:53:59.000Z",
+      "latest": "2026-04-17T19:52:35.000Z",
       "dominantTheme": "general",
       "sentimentScore": 132
     },
@@ -2246,7 +2246,7 @@
       "bear": 0,
       "neutral": 9,
       "materiality": 82,
-      "latest": "2026-05-01T06:32:13.000Z",
+      "latest": "2026-05-01T06:02:46.000Z",
       "dominantTheme": "general",
       "sentimentScore": 121
     },
@@ -2257,7 +2257,7 @@
       "bear": 0,
       "neutral": 7,
       "materiality": 91,
-      "latest": "2026-04-29T21:54:03.000Z",
+      "latest": "2026-04-29T21:40:20.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 111
     },
@@ -2279,7 +2279,7 @@
       "bear": 0,
       "neutral": 4,
       "materiality": 94,
-      "latest": "2026-05-14T10:38:48.000Z",
+      "latest": "2026-05-14T10:17:44.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 102
     },
@@ -2290,7 +2290,7 @@
       "bear": 0,
       "neutral": 13,
       "materiality": 85,
-      "latest": "2026-04-23T06:10:38.000Z",
+      "latest": "2026-04-23T00:29:10.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 111
     },
@@ -2301,7 +2301,7 @@
       "bear": 0,
       "neutral": 3,
       "materiality": 95,
-      "latest": "2026-04-30T23:01:34.000Z",
+      "latest": "2026-04-30T19:56:56.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 99
     },
@@ -2312,7 +2312,7 @@
       "bear": 0,
       "neutral": 6,
       "materiality": 86,
-      "latest": "2026-05-06T19:23:09.000Z",
+      "latest": "2026-05-06T19:18:52.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 108
     },
@@ -2323,7 +2323,7 @@
       "bear": 0,
       "neutral": 2,
       "materiality": 94,
-      "latest": "2026-04-24T15:56:38.000Z",
+      "latest": "2026-04-24T15:55:06.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 99
     },
@@ -2334,7 +2334,7 @@
       "bear": 0,
       "neutral": 4,
       "materiality": 88,
-      "latest": "2026-05-30T21:19:37.000Z",
+      "latest": "2026-05-30T21:55:45.000Z",
       "dominantTheme": "power-architecture",
       "sentimentScore": 105
     },
@@ -2356,7 +2356,7 @@
       "bear": 0,
       "neutral": 6,
       "materiality": 83,
-      "latest": "2026-04-25T18:14:19.000Z",
+      "latest": "2026-04-25T16:54:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 108
     },
@@ -2367,7 +2367,7 @@
       "bear": 0,
       "neutral": 7,
       "materiality": 79,
-      "latest": "2026-04-26T10:02:31.000Z",
+      "latest": "2026-04-26T07:20:39.000Z",
       "dominantTheme": "general",
       "sentimentScore": 111
     },
@@ -2389,7 +2389,7 @@
       "bear": 0,
       "neutral": 4,
       "materiality": 88,
-      "latest": "2026-05-30T21:35:12.000Z",
+      "latest": "2026-05-30T21:51:58.000Z",
       "dominantTheme": "robotics-physical-ai",
       "sentimentScore": 102
     },
@@ -2422,7 +2422,7 @@
       "bear": 0,
       "neutral": 5,
       "materiality": 85,
-      "latest": "2026-04-19T03:11:03.000Z",
+      "latest": "2026-04-18T18:10:59.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 105
     },
@@ -2477,7 +2477,7 @@
       "bear": 2,
       "neutral": 4,
       "materiality": 91,
-      "latest": "2026-05-06T17:20:50.000Z",
+      "latest": "2026-05-06T16:16:34.000Z",
       "dominantTheme": "robotics-physical-ai",
       "sentimentScore": 94
     }
@@ -2696,7 +2696,7 @@
     },
     {
       "id": "2054412992000012555",
-      "date": "2026-05-13T04:13:13.000Z",
+      "date": "2026-05-13T04:06:41.000Z",
       "title": "Long non-US co-packaged optics beneficiaries ahead of the H2 2026/H2 2027 CPO ramp",
       "body": "People wonder why I'm focusing on non-US markets recently.  \n\nWhy? CPO is my #1 thematic long. \n\nMarkets don't know yet, the sudden paradigm shift in photonics...\n\nI was one of the only to frontrun the current supercycle in 2025 w/ $AAOI @ ~$30, $LITE ~$300s, and $AXTI at ~$13 on X.... \n\nWith the actual receipts and thesis that others can't show. \n\nCPO goes from ~$0. To $91 Billion TAM opportunity.\n\nIn the next 1 1/2 years from GS research. \n\nWhile overall optical market reaches $154B. \n\nMany players that had little exposure to the current photonics cycle at all: \n\n-> In Europe with high-end lasers design like $SIVE or $SOI with substrates. \n-> In Taiwan with Foci (3363), Nextronics (8147), Shunsin (6451) and others for optical components and foundries.  \n-> In Japan with laser mass production, substrates, and chemicals. \n\nAre suddenly the new dominant players for CPO. \n\nAs for US players, there's not much exposure. But the existing ones like $LITE, $COHR still get upside from CPO as that's their new growth vector. \n\nMy contrarian thought process on current players:\n\nIs that most of their valuation is priced in huge legacy pluggable revenue that will inevitably face cannibalization over time, so re-rating potential is less unless someone uses leverage. \n\nA lot of these new purer play CPO names go from 0 to 100 extremely quickly one mass production starts H2 2026 for scale out (as a revenue bridge) into H2 2027 for scale up (massive growth driver). \n\nMarkets usually price things in 8-12 months ahead of time too... \n\nI have high conviction thematically in my supply chain research despite any market volatility leading up until then.",
       "symbols": [
@@ -2720,7 +2720,7 @@
     },
     {
       "id": "2054076086452162675",
-      "date": "2026-05-12T05:48:46.000Z",
+      "date": "2026-05-12T05:47:56.000Z",
       "title": "Random CPO related names I like: - $SIVE - Foci (3363) - $TSEM - Browave (3163) - PCL (4977) - $AXTI - Msscorps (6830) - $IQE - Shunsin (6451) - Furukawa Electric (5801) - $MTSI -…",
       "body": "Random CPO related names I like:\n\n- $SIVE\n- Foci (3363)\n- $TSEM\n- Browave (3163)\n- PCL (4977)\n- $AXTI\n- Msscorps (6830)\n- $IQE\n- Shunsin (6451)\n- Furukawa Electric (5801)\n- $MTSI\n- Nextronics (8417)\n- $LITE\n- $COHR\n- FitTech (6706)\n- $GFS\n- $ASX\n- LandMark (3081)\n- $SOI\n\nDisclosure: I own most, not all though.",
       "symbols": [
@@ -2744,7 +2744,7 @@
     },
     {
       "id": "2052296867653066978",
-      "date": "2026-05-07T08:33:28.000Z",
+      "date": "2026-05-07T07:57:57.000Z",
       "title": "Bullish on Sivers as an underappreciated CPO laser supplier with upside validated by larger photonics comps",
       "body": "I'm still laughing how much Swedish hate their own frontier companies so much. \n\nThat they write hit pieces every day on $SIVE. \n\nThis one was entertaining: Local journalists show up to an empty $SIVE administrative building uninvited.\n\nBecause they can't fathom the CEO is in Silicon Valley or design team is working on US Gov CHIPS act dev in the US. And because there weren't many cars parked outside + CFO wouldn't take questions about secretive hyperscaler deal financials.\n\nThey wrote a random negative hit piece. \n\nBy repeating \"There are several who make lasers like these and Sivers are far from alone\". \n\nSeveral like $LITE, $COHR, $60B+ companies.\n\nand reported earlier that \"CPO is nothing special, it's been around for years.\" \n\nWhile GS projects CPO going from $1B -> $91B TAM over the next two years. \n\nEven put \"Plans\" in quotation marks because they didn't think Sivers is supplying lasers to $JBL 1.6T LRO.\n\nIMO, $SIVE ends up as a $10B+ company next year, especially if they follow what $LITE / $COHR did with downstream IP integration to capture more of CPO module BOM.\n\nJust don't think Swedish people understand hyperscaler supply chains, concept of forward growth, or the fact that employee count doesn't equate to revenue. \n\nTransfer of control from local Swedish -> West is always appreciated, as this was a majority owned local retail company before.",
       "symbols": [
@@ -2768,7 +2768,7 @@
     },
     {
       "id": "2056745774760026410",
-      "date": "2026-05-19T15:08:13.000Z",
+      "date": "2026-05-19T14:36:19.000Z",
       "title": "Long Nebius over Iris Energy on financing quality and Nvidia-capital narrative",
       "body": "$IREN back down -34% from $70 to $46.\n\nI wonder if one of the dumbest communities on X finally learned to read?\n\n$NBIS is objectively the better Neocloud, with actual financing.\n\n-> Nvidia didn’t fund $IREN at all. They got a free purchase agreement to let IREN use their logos and dilute for GPUS.\n\n$NVDA actually gave $NBIS capital.\n\n-> $IREN is facing endless dilution like $BKKT, $ASST, $SLNH as retail wealth transfers capital over from $6,000,000,000 ATMs, on a dwindling “5 GW capacity” moat. \n\n$NBIS actually uses equity appreciating financing structures. \n\nAnd this is reflected in the YTD differences between them both.\n\nI’ve said the same thing last year too. One is up ~100%.\n\nThe other is flat, and even negative depending on entry points. \n\nIREN is literally a marketing company at this point by how they manage to convince retail to wealth transfer over capital.",
       "symbols": [
@@ -2792,7 +2792,7 @@
     },
     {
       "id": "2049604721766494640",
-      "date": "2026-04-29T21:54:03.000Z",
+      "date": "2026-04-29T21:40:20.000Z",
       "title": "Monitoring the situation for you (testing/yields edition): $VIAV and $FORM earnings: Extremely Bullish So what does this mean? ",
       "body": "Monitoring the situation for you (testing/yields edition):\n\n$VIAV and $FORM earnings: Extremely Bullish\n\nSo what does this mean?\n\nNames like  $ONTO / $CAMT go brr. Throw in $TOWA (6315), since there's indication of aggressive memory production ramp.\n\nNames like Msscorps / $KEYS should go brrr. \n\nBroader upstream yields, test, validation, and inspection for both memory + optical ecosystem go heavily BRRR. And it's a leading indicator for $COHR, $FN, $LITE, and others if they're ramping up production. \n\nFor $VIAV:\n-> $406.8M vs. $393M (beat) 42.8% Y/Y growth.\n-> $.27 EPS vs $0.2-$0.24\nGuidance was $427m-$437m, indicating acceleration.\n\nFor $FORM:\n-> $226M, 32% Y/Y, $.56  EPS vs. $.45\n-> margins increased a TON to 49% (which indicates pricing power).\n-> Guidance was $.61 EPS, midpoint ~$240m revenue. \n\n\"Record demand for High Bandwidth Memory (HBM) and stronger \"Foundry & Logic networking applications\"\n\nBasically the smaller yields/test ecosystem in general. BRRR.",
       "symbols": [
@@ -2816,7 +2816,7 @@
     },
     {
       "id": "2047705901486985666",
-      "date": "2026-04-24T15:56:38.000Z",
+      "date": "2026-04-24T15:55:06.000Z",
       "title": "Photonics go brrr. $MXL +76.2% (lol) $AAOI +15.03% $SIVE +12.69% $AEHR +7.07% $SOI +6.19% $LITE +4.96% Hope you didn’t sell and try and chase other bottlenecks anon? ",
       "body": "公开回复区样本：@aleabitoreddit I sold some $AEHR to chase $TRT, up 50% @aleabitoreddit photonics back🫡 @aleabitoreddit 🤩 @aleabitoreddit Is AEHR photonics @aleabitoreddit You have made me a long term #AAOI holder, appreciate it! ",
       "symbols": [
@@ -2840,7 +2840,7 @@
     },
     {
       "id": "2055182601158074769",
-      "date": "2026-05-15T08:10:48.000Z",
+      "date": "2026-05-15T07:04:50.000Z",
       "title": "Just to add to the very positive $SIVE news amid MSCI likely tens of millions of inflow in 2 weeks: $AMZN has a new private placement with AlChip. ",
       "body": "Just to add to the very positive $SIVE news amid MSCI likely tens of millions of inflow in 2 weeks:\n\n$AMZN has a new private placement with AlChip. \n\nProbably implying design wins with future Trainium.\n\nIf you don’t remember… AlChip was Ayar’s lead customer. And $SIVE is the primary laser supplier to Ayar.\n\nSo implications for $SIVE, is enormous piggybacking off of Amazon’s ecosystem growth.",
       "symbols": [
@@ -2864,7 +2864,7 @@
     },
     {
       "id": "2052059960058814800",
-      "date": "2026-05-06T17:20:50.000Z",
+      "date": "2026-05-06T16:16:34.000Z",
       "title": "I think many people are surprised to learn that stocks don’t move in a straight line up. ",
       "body": "I think many people are surprised to learn that stocks don’t move in a straight line up.\n\nToday: \n\nLaser companies from $LITE to $SIVE to $AAOI are down -8.0%, 10.2%, and -4.38%.\n\nTaiwan limit down -10% on CPO names like MSSCorps, Shunsin, and adjacent like Win Semi.\n\n$AXTI and $SOI are down -7% and -10.2%.\n\nAfter $LITE reported earnings. \n\nPretty sure markets missed the heavy nuance that this was extremely bullish for CPO names like $SIVEF or Shunsin from the earnings transcript, but algos sold off everything optical.\n\nThis is still the very beginning of the entire CPO supercycle curve. \n\nBefore any volume ramp.",
       "symbols": [
@@ -2888,7 +2888,7 @@
     },
     {
       "id": "2049767690425016780",
-      "date": "2026-04-30T08:56:17.000Z",
+      "date": "2026-04-30T08:27:54.000Z",
       "title": "Unpriced optical interconnect upside centered on Sivers in the Lightmatter co-packaged optics chain",
       "body": "From the reference... it does look like Lightmatter uses $SIVE lasers?\n\nWhich is brand new information discovery and extremely positive for Sivers. \n\nLightmatter is a massive private leader (~$4.4B  valuation back in 2024), with $TSM, $GFS, $TSEM, $AMKR, and $ASX scaling their optical program.\n\nAnd Lightmatter does require a light source... \n\n$SIVE also happens to be on the $GFS laser source suppliers alongside $LITE, so starting to put the dots together? \n\nEnd users are likely your hyperscalers like $MSFT, $GOOGL (they invested), $META, etc through Lightmatter-GUC and others. \n\nI don't think markets have priced all of this in, since all the supply chain BOM is very confidential + speculative. \n\nBut when CPO and next-gen photonic architectures scale up, volume ramp revenue will appear out of nowhere on the balance sheet.",
       "symbols": [
@@ -2972,7 +2972,7 @@
     },
     {
       "id": "2053928672202268993",
-      "date": "2026-05-11T20:07:13.000Z",
+      "date": "2026-05-11T20:02:10.000Z",
       "title": "Short IREN, long NBIS: Nvidia-backed neocloud financing beats dilution-funded power optionality",
       "body": "As I said before $IREN is basically dogsht compared to $NBIS.\n\n$NVDA didn’t give $IREN funding yet. \n\nSo IREN needs to figure out how to buy enough GPUs to monetize 5GW capacity through their 6B ATM and other means.\n\nIt’s an endless dilution machine just because they secured power.\n\nI call $IREN holders 0 IQ because they just buy in it to get diluted without understanding nuances of financing. \n\nNvidia actually gave $NBIS funds.\n\nWhile Nvidia got a free no-risk purchase agreement for allowing $IREN to use their logo.\n\n$IREN is basically a marketing company at this point, while the other Neoclouds actually allow equity appreciation.",
       "symbols": [
@@ -3041,7 +3041,7 @@
     },
     {
       "id": "2057084047466414107",
-      "date": "2026-05-20T13:06:20.000Z",
+      "date": "2026-05-20T13:00:30.000Z",
       "title": "Long Sivers on an M&A-driven optical IP roll-up into the CPO/photonics stack",
       "body": "If people don’t realize why I’m so interested in $SIVE M&A.\n\nSivers likely customers were:\n\nLightmatter when they were tiny -> became $4B+ company.\n\nLightelligence when they were tiny -> became $10B+ company.\n\nAyar when they were tiny -> now funded by $NVDA, $AMD, and others.\n\nCelestial when they were tiny -> bought by $MRVL and became their growth vector. Probably would be valued $10B+ standalone.\n\nI’m extremely sure Sivers knows what to acquire for optical IP. \n\nThey were just stuck in a catch-22 and lacked the funding to do so originally, despite owning one of the most valuable laser chokepoints.\n\nFuture NASDAQ listing and recent growth unlocked downstream IP acquisition potential now.",
       "symbols": [
@@ -3064,7 +3064,7 @@
     },
     {
       "id": "2048449289152778686",
-      "date": "2026-04-26T17:11:50.000Z",
+      "date": "2026-04-26T17:09:03.000Z",
       "title": "AI infrastructure bottlenecks favor a concentrated basket of semiconductor equipment, foundry, optical interconnect, and grid-power suppliers",
       "body": "TLDR of recent news + bottlenecks that go brr:\n\n1. CPU bottleneck - $INTC CEO said AI inference pushed CPU Ratio From 1:8 to 1:1. \n\nCPUs go brr ( $AMD, Intel, $ARM) -> $AMAT / $TSM / $KLAC, etc. go brr.\n\n2. PGME / PGMEA shortage. DuPont, Shiny Chemical, Daxin, San Fu, $DOW and others go brr? \n\nPhotoresist bottleneck go brr? \n\n3. Microcontroller potential bottleneck + price hikes (Arterytek/Arterychip) was weighing price hikes on AI capacity squeezes.  \n\nMCU companies potentially go brr?\n\n4. President invoked the \"Defense Production Act\" this week, it included: \n\n-Transformers \n- transmission components \n- advanced conductors \n- power electronics \n- substations \n- high-voltage circuit breakers \n-  protective relays, capacitor banks\n - electrical core steel\n\nAs \"severe shortages\". Stuff like $AMSC, $PLPC, $POWL, $VICR, $ATKR, $HPS.A go brr. \n\n5. $GOOGL ramps new TPU servers. Google splits AI chips into training and inference TPUs.\n\nTaiwan happy. Mediatek and others go brr? \n\n6. Samsung, Kingston lift SSD prices by over 10%. \n\nSSD prices keep going brrr?  \n\n7. T-glass fiberglass shortages keep getting worse? Nittobo and others keep going brrr?\n\n8. Bromine, essential for etching circuits and flame retardancy, has surged to $12,000 per metric ton.\n\nICL Group in Israel apparently controls 40% of the global supply?\n\nNot as familiar with this but questionable brrr?\n\n9. \"Epitaxy manufacturer LandMark Optoelectronics reporting output still far below customer needs\".\n\nUhh $IQE and others go brr? \n\n10. \"AI data centers hit interconnect limits, boosting optical module demand\". \"the bottleneck is no longer computing power alone, but how that power is connected.\"\n\nPhotonics from $AAOI, $LITE, $COHR, Innolight and others keep going brr? next gen from $SIVE, $POET, $MRVL, Win Semi and others go brr?\n\nBasically AI semi supply chains go brr because there's widespread shortages everywhere due to AI hyperscaler demand.",
       "symbols": [
@@ -3088,7 +3088,7 @@
     },
     {
       "id": "2048301213943579012",
-      "date": "2026-04-26T10:02:31.000Z",
+      "date": "2026-04-26T07:20:39.000Z",
       "title": "Agreed, and glad DNB, one of Europe's leading banks, went out to defend $SIVE valuations alongside me. ",
       "body": "Agreed, and glad DNB, one of Europe's leading banks, went out to defend $SIVE valuations alongside me.\n\nI still think $SIVE can reach $10B MC in 1 year time as their laser growth scales proportionally to:\n\n- $AAPL Watches\n- $JBL 1.6T Volume\n- $MRVL CPO Volume\n- Ayar Volume\n- $POET Volume\n\nDepending on how their qualification plays out into volume ramp. \n\nAs Sivers supply lasers to all the next generation of 1.6T/CPO players in the space (into ~ $AMD, $NVDA, $AMZN, $MSFT type supply chains). \n\nThese are EXISTING players at a ~990M MC. Not even including TAM expansion or more partnerships coming up.\n\nEspecially now with NASDAQ listing, US institutions are forward looking and price in ~12M ahead of time, compared local European valuations that mainly look at previous 12 months. \n\nBanks usually provide very conservative targets (eg. 3 years for a 10x), but I do see potential for this company to be the next $LITE very soon. \n\nEurope should embrace positive-sum growth of their own companies that supply to hyperscalers.\n\nAs their frontier companies provide back to locals through taxes, economic growth, and job growth.",
       "symbols": [
@@ -3136,7 +3136,7 @@
     },
     {
       "id": "2052278391928500502",
-      "date": "2026-05-07T06:46:47.000Z",
+      "date": "2026-05-07T06:44:32.000Z",
       "title": "$COHR earnings note: Coherent's CEO basically reaffirmed GS research note about CPO being a massive revenue driver: Transcript: “One of the most important long-term growth opportu…",
       "body": "$COHR earnings note:\n\nCoherent's CEO basically reaffirmed GS research note about CPO being a massive revenue driver:\n\nTranscript: “One of the most important long-term growth opportunities for Coherent”\n\nIn terms of timeline implications on $SIVE, $LITE, and other CPO adjacent names, just confirms timelines:\n\n\"Initial scale-out CPO revenue is expected to begin in the second half of calendar 2026, with scale-up CPO revenue following in the second half of calendar 2027\"\n\n\"Coherent is working with multiple other customers and expects CPO solutions to be widely adopted.\" - This also reaffirmed adoption level. \n\nScale-up CPO is the biggest value driver across the board that happens start of H2 next year. We're still in H1 2026 entering H2 2026.\n\nSo this is the ideal time to frontrun CPO names before anything hits the balance sheet. \n\nThis is known as \"alpha\"... pricing in things market fully don't know yet by looking at financials.\n\nMarkets are typically forward looking 8-12 months... So if massive volume ramp happens July 2027 (might get pushed forward again)...\n\nAnd it's May 2026, a lot of that gets priced in between July 2026 and July 2027... between volume agreements H2 2026, and pre-production ramp H1 2027.\n\n2 months before markets price in the largest volume drivers is what I call \"frontrunning\" the next CPO Supercycle.\n\nWe know it's coming. Just a matter of waiting.",
       "symbols": [
@@ -3179,7 +3179,7 @@
     },
     {
       "id": "2061233888454988260",
-      "date": "2026-05-31T23:50:29.000Z",
+      "date": "2026-05-31T23:54:19.000Z",
       "title": "Long ARM as AI server architectures pull CPU demand and ARM-based designs gain share",
       "body": "Can’t believe $ARM went straight from $134 to $354 when I took positions.\n\nThe ~$15B annual revenue coming from these cool name AI CPUs seemed a bit insane at the time.\n\nAt Computex, looks like $NVDA is unveiling new ARM based processors too.\n\nCounterpoint them shows them dominating AI ASIC servers by 2029, projections which is crazy…\n\nGPU:CPU ratios are requiring more and more CPUs.\n\nSeems like they have everything going for them?",
       "symbols": [
@@ -3201,7 +3201,7 @@
     },
     {
       "id": "2057826212257685733",
-      "date": "2026-05-22T14:14:46.000Z",
+      "date": "2026-05-22T14:09:36.000Z",
       "title": "People keep asking: Hey why do have new longs with Taiwan/EU stocks recently like $LPK or Foci? ",
       "body": "People keep asking:\n\nHey why do have new longs with Taiwan/EU stocks recently like $LPK or Foci?\n\nAnd not much with new US ones?\n\nIt's partly because the list of US stocks I've liked from $INTC to $NBIS hasn't changed. \n\nYou can always just let the ones you like grow. https://t.co/ostZWjOAAm https://t.co/1mkk0NG6Ao",
       "symbols": [
@@ -3224,32 +3224,8 @@
       "url": "https://x.com/aleabitoreddit/status/2057826212257685733"
     },
     {
-      "id": "2007071108831338685",
-      "date": "2026-05-01T23:31:04.000Z",
-      "title": "Welcome to 2026. Jan 1st ratings: Strong Buy: $TTD $SMCI $AIRO $INTC $HIMS $AXTI $TSM $NBIS $CIFR Samsung Electronics (KRX: 005930) $HUT $IREN $WULF $GLXY $TSSI $META $ETOR $CRCL …",
-      "body": "Welcome to 2026. Jan 1st ratings:\n\nStrong Buy:\n$TTD\n$SMCI\n$AIRO\n$INTC\n$HIMS\n$AXTI\n$TSM\n$NBIS\n$CIFR\nSamsung Electronics (KRX: 005930)\n$HUT\n$IREN\n$WULF\n$GLXY\n$TSSI\n$META\n$ETOR\n$CRCL\n\nBuy:\n$KRKNF\n$ONDS\n$GEMI\n$NVDA\n$MU\n$AMKR\nSK Hynix\n$SNAP\n$RDDT\n$AAOI\n$COHR\n$FISV\n$FLY\n$DJT\n$LITE\n$AMZN\n$MRVL\n$AVGO\n$OSS\n$BULL\n$ORCL\n$CRDO\n$ALAB\n\nAvoid:\n$RGTI\n$QBTS\n$RGTI\n$BMNR\n$ETH\n$PLTR\n$WMT\n\n_\n\nTLDR thoughts:\n\nTTD - Complete valuation reset dropping 67% YTD, compounded by EOY tax sell-off. Great recovery play going into 2026. \n\nSMCI - Trades like distressed company just because they delayed revenue by 1 quarter for new blackwell specs. Forward revenue is increasing 50% Y/Y, P/S close to .5 now. Great recovery play from tax harvesting. \n\nAIRO - Roughly ~1/6th balance sheet was cash. Everyone seems to be into drones, especially with accelerated gov inevstments. Another IPO name that got sold off. Great recovery play going into 2026 with esp. hot segment. Roughly ~3.8x P/S compared to ONDS trading at 25-30 P/S, but obviously there's quite a lot of other businesses like their education sector which messed up margin calculations quite a bit. \n\nINTC - It's literally become the semi arm of the US government. Hyperscalers will likely be incentived (strongly pressured) to use Intel whatever chance it gets over TSM, Samsung, etc. I would not bet against the US government. \n\nHIMS - Huge selloff going into 2026. Down from $70's. Sales/Traffic is down, but Zava acquisition/growth should add a huge tailwind going into 2026.  Esp. with few hundred mill buybacks, strong recovery play first two monts in. \n\nAXTI - Posted thesis on this earlier. CEO - \"40% of Inp supply chain\", InP will be a huge, huge bottleneck for hyperscaler AI buildout 2026-2027 until there's enough time to engineer around it in 2028. \n\nTSM - I've covered this quote a lot. Increasing margins. Maxed out demand. Just extremely good compounder next few years. \n\nSamsung Electronics - benefits from foundry/memory. just golden egg regarding all the tailwinds helping the buisness. \n\nNBIS - Extremely strong buy, $7-9B ARR, it's literally 5 different companies growing triple digits Y/Y. management quoted 20-30% EBIT margins, it's just a waiting agme. \n\nCIFR, HUT, IREN, WULF, GLXY - Whole datacenter space is extremely sold off after Oracle/OpenAI fears. OpenAI recently raised $40B, another $10B from $AMZN, and more. So a lot of fears regarding capex spend has been de-risked. It's multifaceted too, eg. Bitcoin drop, affects $CIFR balance sheet, $GLXY in crypto space. But generally huge recovery play/ramp for neoclouds sector.\n\nTSSI - Similar to SMCI. deferred revenue = nuke. Should recover after tax harvesting + lot of revenue gets recognized\n \nMETA - Huge algorithmic selloff post earnings due to one-time tax. They also cut capex/opex spend of their reality labs and other departments and this should be a huge tailwind for EPS going into 2026. \n\nETOR - Literally sitting on $1.2B with a $2.8B marketcap and growing double digits Y/Y still. $150M buyback should be a nice tailwind, and tax harvesting from YTD performance should subside. \n\nCRCL - Same as stablecoin thesis should be really solid going into 2026\n\nBuy \n\nKRKNF - Anduril partner+ scale. Probable uplisting in 2026, lot of tailwinds from defense spending. \n\nONDS -pretty explosive revenue growth, new $10m contracts left and right. large cash balance to fund r&d. Pretty high p/s but there's valuation premiums for speculative leaders in the space like rklb.\n\nGEMI - So i typically dont like exchanges, but gemini got nuked from $30+ IPO sub $10. pretty solid recovery play. \n\nNVDA - Huge backlog lol. Everyone knows bull case for nvidia\n\nMU - Memory is hot \n\nSK Hynix - Memory is hot\n\nAMKR - benefits from \"made in america\" chip expansion in  prod.\n\nSNAP - Opex Cut from memory, increase revenue from memory monetization,  $400m from perplixity. $1.5B revenue/quarter. They could literally stop growing revenue complelty if they convert all of that to $1B+ FCF/year, it would re-rate snap completly. \n\nRDDT - This is not going anywhere for the next 10+ years tbh, it's like robinhood of social media, growing extremely fast from new ways to monetize revenue, and just extrmeely profitable. \n\nAAOI - interconnect play for amzn, msft asic scale up. \n\nCOHR - benefits from photonics rollout for next gen asics. \n\nFISV - Nuked a bit too much post ER, strong recovery play esp. post tax-harves.t \n\nFLY - Space is hot from SpaceX IPO. Should do well given tax harvesting is over, and they have medium lift coming up with northrop. \n\nDJT - I never thought i'd put this here lol, but this is just because of their TAE merger. \n\nLITE - Large BOM from Google TPU rollout, attractive valuation. Slight selloff after Google TPU revised est. but it's basically in every single hyperscaler asic deployment.  \n\nAMZN - one of the mag7 that's not overvalued\n\nMRVL - Selloff from analyst misinformation, strong buy going into 2026. Especially with msft maia revenue doubling Marvell's current revenue when it ramps up\n\nAVGO - Like NVDA just strong long, as AI infrastructure deployment ramps up\n\nOSS - I made a post speculating that they're one of andruils' suppliers. but regardless, edge computing will be hot 2026 and its 180m mc presents attracctive upside. \n\nBULL - similar to robinhood where they have a huge userbase, but they just need to figure out monetization \n \nOracle - Sold off a bit too much imo. I put this on avoid months ago but after the from from $330 to $190, it's more attractive again esp. after openai raised another $40B\n\nCRDO -extremely high margin, necessary connectivity for dc rollout\n\nALAB - extremely high margin, necessary connectivity for dc rollout \n\nAvoid:\nThere's a lot of stuff on the \"overvalued list\" like $RKLB that i like but I wouldn't quite say avoid it either aside from these. \n\nRGTI , QBTS, RGTI - Quantum names are still overvalued and likely won't deliver fcf in the next few ytears. \nBMNR, ETH - if you saw my eth post, not exactly bullish since the amount of ETH burn is just single-low double digits every day, which is a joke. \nPLTR - one of the most overvalued ai names\nWMT - How is this 40 p/e? This is Walmart?\n\n__\n(these are based on today's prices)\n\nTLDR: \n\nIPO names like Circle, Etoro, AIRO, Klarna, Figma,  present attractive upsides post drop + tax harvesting going into 2026.\n\nTons of names like SMCI, HIMS that dropped 40% or so past 3 months, are amazing swing/recovery trades post-tax harvest + Jan effect. \n\nLot of the names that doom dropped like FiserV or The Trade Desk present good recovery trades too post-tax harvest.  \n\nMany datacenter stocks like nebius, iren, cifr, wulf, galaxy, are amazing recovery trades too. \n\nLot of other segments like memory, bottlenecks, photonics, and others are just great longs in 2026, despite each hitting ATHs. \n\nThere's still quite a lot of overvalued names from Quantum, to certain Space stocks (eg. planet or rocketlab), specific AI names like Palantir to retail stocks like Walmart that I would probably avoid for the time being until there's a slight correction.\n\nThis was a TLDR just if I'm short term trading-only (not long term) but feel free to ask questions.",
-      "symbols": [
-        "TTD",
-        "SMCI",
-        "AIRO",
-        "INTC",
-        "HIMS",
-        "AXTI",
-        "TSM",
-        "NBIS",
-        "CIFR",
-        "HUT",
-        "IREN",
-        "WULF"
-      ],
-      "theme": "memory-rotation",
-      "materiality": 100,
-      "sentiment": "bull",
-      "url": "https://x.com/aleabitoreddit/status/2007071108831338685"
-    },
-    {
       "id": "2049592634398875731",
-      "date": "2026-04-29T20:53:59.000Z",
+      "date": "2026-04-29T20:52:18.000Z",
       "title": "Hyperscaler AI capex still drives upstream semiconductor supply chains higher",
       "body": "I've monitored the situation for you.\n\nTLDR on hyperscaler capex spend (signal aside from $TSM). \n\nFrom $MSFT, $AMZN, $META earnings: \n\nUpstream semi supply chains go brrr.\n\n$META: 2026 FY capex $115-$135B\nRevised Q1 ER: $125B-$145B capex raised. \n\n-> Higher component prices (price hikes)\n-> Aggressive AI infra spending\n-> Custom Model Training\n\n$MSFT: was actually $31.9B vs ($35.29B) but due to supply chain bottlenecks, rather than lack of resources. \n\nStill waiting for confirmation around $AMZN but their original capex projection was ~$200B from Jassy's note earlier this year.\n\nSo you can sleep easy, all the semi supply chain names still likely to keep going brr next quarter, since there's so much capex funneled into them.  \n\nThen you get the new fed chair who is gung-ho all in on AI + rate cuts, with Jerome keeping stuff chill in the back (which markets probably like)",
       "symbols": [
@@ -3272,8 +3248,32 @@
       "url": "https://x.com/aleabitoreddit/status/2049592634398875731"
     },
     {
+      "id": "2048929438679896317",
+      "date": "2026-04-28T01:48:59.000Z",
+      "title": "“1.6T optical modules are near mass adoption this year” So nothing new but this just confirms timelines for volume production/mass adoption H2 2026. ",
+      "body": "“1.6T optical modules are near mass adoption this year”\n\nSo nothing new but this just confirms timelines for volume production/mass adoption H2 2026. \n\n$AVGO and $MRVL are cited as main beneficiaries in the report but names like $AAOI are probably the most profound beneficiaries (largest 1.6T capacity US projected) for the pure play exposure.\n\n$JBL also set to go brrrr but my guess is H1 2027 with wave2 architectures since their LRO architectures remove the DSP (with $INTC SiPH acquisition IP).\n\nJabil would be a good contrarian long in the broader 1.6T supercycle coming up if this gets broader adoption from $META validation but benefits anyway. \n\nAnd especially $SIVE that powers Jabil 1.6T LRO, that when they scale, it scales laser demand too. \n\nI think everyone focuses on the upstream supply chains nowadays but going long on Broadcom and Marvell doesn’t hurt too.",
+      "symbols": [
+        "AVGO",
+        "MRVL",
+        "AAOI",
+        "JBL",
+        "INTC",
+        "META",
+        "SIVE",
+        "CLS",
+        "SANM",
+        "NVDA",
+        "PATH",
+        "MXL"
+      ],
+      "theme": "cpo-silicon-photonics",
+      "materiality": 100,
+      "sentiment": "bull",
+      "url": "https://x.com/aleabitoreddit/status/2048929438679896317"
+    },
+    {
       "id": "2050093551313469467",
-      "date": "2026-05-01T06:32:13.000Z",
+      "date": "2026-05-01T06:02:46.000Z",
       "title": "High-conviction longs in underfollowed CPO and advanced packaging suppliers",
       "body": "As for 3x brrrs these levels: \n\n1. $SIVE\n2. MSSCORP (6830)\n3. Auros (322310)\n\nAre my best guesses. Here's my thought process: \n\n1. $SIVE: I genuinely do see them being $10B+ next year, they're the literal bleeding edge for CPO lasers alongside $LITE and $COHR.\n\nAt a $1.3B MC... For likely mapping: \n\nPhotonics: $AMD CPO, $MRVL Celestial CPO, $JBL 1.6T, Lightmatter, Ayar, ALChip, GUC, O-Net (ELS), $POET.\n\nFor Space + Defense: Golden Dome via $YSS, $RTX / $ERIC / Bae Systems.\n\nSilicon Photonics: $AAPL (Apple Watches). \n\nThis is just a stupid amount of customers and it's still increasing. \n\nThey can always TAM expansion downstream through IP acquisitions or vertically integrate to speedrun $LITE's $60B MC one day once they get more funding. \n\n2. MSSCORP (6830): CPO monopoly over inspection at ~$1.2B. \n\n100% monopoly over CPO yields, $TSM, $AMAT, $NVDA, $LCRX, $INTC, and others are all likely customers. \n\n\"The company’s goal is to seize a 90 percent share of the CPO inspection market\"\n\nThis basically means 100%, they just don't want antitrust.  If they defend their monopoly and CPO ramps, can easily see this worth ~$5B-$9B from $1.2B\n\n3. Auros (322310): Samsung / SK Hynix supplier at ~$210M for Hybrid Bonding Metrology.\n\nBasically pure play on two products: \n-> HBM4 / HBM4e / HBM5 cycles, that $KLA had a monoply over for IR metrology. \n--->  Getting qualified now likely in Samsung factories, H2 volume ramp est. Sk Hynix likely qualifying too when they upgrade to hybrid bonding.  \n-> Thin-film thickness measurement.  \n---> Getting qualified now, with \"major domestic chipmaker\" (either Samsung/Sk hynix), targets mass supply this year. \n\nThey've been developing for the past decade, only to volume ramp two products from years of qualification H2 this year.\n\nSeems extremely likely to 3x to $630M if they switch to volume ramp, feels like an undiscovered gem in the Korean market? \n\nOf course, not sure how they play out and this is all speculative but high confidence supply chain mapping.\n\nBut off the top of my head these three that I own are the most likely ones at this level.",
       "symbols": [
@@ -3316,7 +3316,7 @@
     },
     {
       "id": "2052784100784922983",
-      "date": "2026-05-08T16:29:10.000Z",
+      "date": "2026-05-08T16:14:03.000Z",
       "title": "Prefer real multi-year supply bottlenecks over meme-like winners; own durable backlog beneficiaries in power and optical components",
       "body": "Nobody can convince me $SNDK isn't a meme stock at this point. But as I've said, bottlenecks with multi-year visibility like $HPS.A or $LITE tend to perform better. Stance cools: still holding but flags the move as 'meme'-like single-year risk and relatively downgrades SNDK versus multi-year-visibility names — a de-prioritization, not a reported sale.",
       "symbols": [
@@ -3340,7 +3340,7 @@
     },
     {
       "id": "2052799637669769363",
-      "date": "2026-05-08T17:20:48.000Z",
+      "date": "2026-05-08T17:15:47.000Z",
       "title": "AAOI still has upside as US optical transceiver capacity gets absorbed by hyperscaler AI demand",
       "body": "I’ve said this before when $AAOI was $6.49B.\n\nNow it’s $11.5B and this is the same story:\n\nBasically this is the Optical version of $INTC, where they’re scaling capacity from laser fab to assembly Made in America. \n\nAnything they make is likely to be bought out by hyperscalers. \n\nCurrent financials don’t really mater if you look at $1.41B quarterly revenue ramp by mid 2027 projections ($471 x 3) vs current MC. \n\nAnd the overarching 9x TAM curve from GS projections.",
       "symbols": [
@@ -3364,7 +3364,7 @@
     },
     {
       "id": "2055200705334395161",
-      "date": "2026-05-15T08:20:54.000Z",
+      "date": "2026-05-15T08:16:46.000Z",
       "title": "Not sure if people realized this but unless a thesis completely breaks, companies like $NBIS can keep growing. ",
       "body": "Not sure if people realized this but unless a thesis completely breaks, companies like $NBIS can keep growing.\n\nJust look at $AMZN or $GOOGL over the past 15 years. \n\nIf people \"trim\" it often triggers taxes. And a lot of corrections are typically less than those taxes paid. \n\nBy the time a \"50% crash happens\", it's probably already compounded hundreds of even thousands of percent. \n\nIf people need to pay expenses, once you hit 7-8-9 figures, you can always borrow against those assets and keep letting them appreciate. \n\nNFA, just personal opinion. You all do you, but it's highly, highly, dependent on the companies you pick.\n\nCan't do this with something trash like $IREN. But I do believe $NBIS is positioned to be the next hyperscaler.",
       "symbols": [
@@ -3388,7 +3388,7 @@
     },
     {
       "id": "2052494142765441301",
-      "date": "2026-05-07T21:02:39.000Z",
+      "date": "2026-05-07T21:01:51.000Z",
       "title": "Short IREN: market overstates the Nvidia tie-up while dilution risk remains central",
       "body": "I still am bearish on $IREN.\n\nAlgorithms/retail probably read $NVDA + $IREN partnership and bought it up. \n\nHowever, if you look at the realtity, it's just looks like brand agreement giving $NVDA risk-free convertible notes. \n\nSo $IREN can continue selling their $6,000,000,000 ATM into retail investors.  \n\nIt's the equivalent of a startup using AWS and saying they have an Amazon partnership so give them $6B.  \n\nThis wasn't Nvidia directly funding $IREN yet, just a risk free option to. \n\nThere's a \"5 GW deployment\" but I'd rather not be the one buying into the dilution to fund it.",
       "symbols": [
@@ -3409,7 +3409,7 @@
     },
     {
       "id": "2049941088165892196",
-      "date": "2026-04-30T23:01:34.000Z",
+      "date": "2026-04-30T19:56:56.000Z",
       "title": "Fun fact: don’t think any large US institution had positions in $SIVE / $SIVEF since it was a majority owned local Swedish retail stock. ",
       "body": "Fun fact: don’t think any large US institution had positions in $SIVE / $SIVEF since it was a majority owned local Swedish retail stock.\n\nThere’s also fund mandates preventing US funds from entering (eg. Nasdaq listing / $1B MC)\n\nThat’s definitely changed now thanks to European media shaking out the local holders, Sivers upcoming NASDAQ listing, and hitting $1B+ MC.\n\nAgain $1.3B is literal spare change for hyperscalers and US institutions. \n\nAnd I have high confidence many would want exposure to CPO, silicon photonics and lasers, since there’s only a few in the entire world like $LITE, $COHR, and $MTSI.\n\nEspecially… a CHIPS Act laser supplier likely in $AMD, $MRVL, $AAPL, Lightmatter, Ayar, AlChip, GUC, O-Net and other supply chains like the Golden Dome.\n\nPart of it is game theory for share accumulation. \n\nSince US/Western retail now owns a large part of the float (off of the Swedish sellers).\n\nAnd US institutions now want exposure.",
       "symbols": [
@@ -3433,7 +3433,7 @@
     },
     {
       "id": "2057720796613873805",
-      "date": "2026-05-22T07:14:51.000Z",
+      "date": "2026-05-22T07:10:43.000Z",
       "title": "$SIVE is literally the kingmaker for CPO: From ~ Lightmatter, Celestial, Ayar, Lightelligence early on. ",
       "body": "$SIVE is literally the kingmaker for CPO:\n\nFrom ~ Lightmatter, Celestial, Ayar, Lightelligence early on. Now the leaders with massive $5-10B+ valuations.\n\nTo the ASIC ecosystems like Marvell, Alchip, GUC.\n\nWith O-Net mass producing ELS with Sivers for CPO.\n\nAnd Jabil mass producing pluggables with Sivers for pluggable optical transceivers. \n\nAll likely surround and are designed around Sivers lasers.\n\nMarkets are only starting to see the precipice of how important this laser company is.",
       "symbols": [
@@ -3457,7 +3457,7 @@
     },
     {
       "id": "2047232354184536273",
-      "date": "2026-04-23T10:15:29.000Z",
+      "date": "2026-04-23T08:33:23.000Z",
       "title": "Long Sivers on US-listing rerating and hyperscaler datacenter ramp",
       "body": "This is actually my favorite $SIVE TA setup.\n\nI name this:\n\n\"Transferring ownership of the company from Swedish locals to American investors/institutions.\" \n\nGood timing right before US Nasdaq listing and hyperscaler 2027 volume ramp. \n\nSpecial thanks to the media over there. https://t.co/eLMqRQ5CSB https://t.co/yvegwLSuBJ",
       "symbols": [
@@ -3479,7 +3479,7 @@
     },
     {
       "id": "2049437962195055060",
-      "date": "2026-04-29T10:55:09.000Z",
+      "date": "2026-04-29T10:37:41.000Z",
       "title": "Long Sivers as an under-owned hyperscaler supply-chain enabler nearing broader institutional eligibility",
       "body": "Fun fact, $SIVE just crossed the $1B MC threshold.\n\nSo a select few US institutions are able to buy it now (fund mandates)\n\nHowever, the vast vast majority still can’t until they get listed on NASDAQ.\n\nJust an FYI:\n\n$1B valuations are spare change for institutional investors in US hyperscaler supply chains if they end up powering $JBL, $AMD, $AAPL, $AMZN, $MSFT and others.\n\nJust look at $LWLG, $1.9B MC off 1 testing agreement with $TSEM.",
       "symbols": [
@@ -3536,29 +3536,32 @@
       "url": "https://x.com/aleabitoreddit/status/2063571485739106593"
     },
     {
-      "id": "1992188194821988700",
-      "date": "2026-05-06T17:53:18.000Z",
-      "title": "Serenity X 回复样本 1992188194821988700",
-      "body": "I did, rated $DGXX D tier. Originally put it in U like $CLSK, but forgot to edit them out when I looked into them further. \n\nCorrect me if I'm wrong but $DGXX $65m revenue is unsecured, there's no anchor tenant like $CIFR is to $GOOGL or $CORZ is to $CRWV. \n\nThere's also more execution risk on pivot, just due to the fact it's a microcap company + little history in HPC. They've already diluted with a $100M ATM, so there's less dilution now at least compared to $SLNH, which will need to dilute heavily in the future. But it's more speculative along the lines of $WLAC (WLAC has fluidstack partnership so potential of $GOOGL backstop) that was added in.\n\nThey also have $92M in liquid assets with no bad debt, which is absolutely huge given their marketcap size (but like others, that will be spent on the buildout), but execution risk is priced in to the Tier. \n\nDoesn't mean it's a bad stock, I own $WLAC because of high potential upside too and put it in D tier. Just wanted to distinguish between the nuances between companies in the sector (contract visibility + execution).",
+      "id": "2051348607966875919",
+      "date": "2026-05-04T17:09:55.000Z",
+      "title": "Glad to see $NBIS finally return 100%+ since my original thesis post back at ~$87. ",
+      "body": "Glad to see $NBIS finally return 100%+ since my original thesis post back at ~$87.\n\nI covered Nebius a ton late last year and at the start of this year. \n\nFocusing on sum of parts from Avride to Clickhouse to how their balance sheet help them scale up their AI Cloud.\n\nWas a little disappointed with timing, in terms of the massive drop in Dec/Jan.\n\nBut glad to see the company keep on delivering as Nebius is my favorite Neocloud in the entire sector.\n\nI think we’re witnessing the rise of the next hyperscaler.",
       "symbols": [
-        "DGXX",
-        "CLSK",
-        "CIFR",
-        "GOOGL",
-        "CORZ",
+        "NBIS",
         "CRWV",
-        "SLNH",
+        "NVDA",
+        "SOI",
+        "SIVE",
+        "IQE",
+        "NB",
         "WLAC",
-        "WYFI"
+        "BRUN",
+        "IREN",
+        "ASTS",
+        "CRCL"
       ],
-      "theme": "capital-structure-veto",
+      "theme": "ai-infrastructure",
       "materiality": 100,
       "sentiment": "bull",
-      "url": "https://x.com/aleabitoreddit/status/1992188194821988700"
+      "url": "https://x.com/aleabitoreddit/status/2051348607966875919"
     },
     {
       "id": "2051028253130006901",
-      "date": "2026-05-03T19:58:26.000Z",
+      "date": "2026-05-03T19:56:56.000Z",
       "title": "Goldman optical interconnect beneficiaries: lasers, EMLs, optical modules, and PCB/CCL suppliers",
       "body": "If you're curious about Goldman's Report:\n\nThey expect \"significant EPS upside\" among:\n\n1. Optical modules and engines\n2. CW lasers and EMLs\n3. PCB/CCL manufacturers\n\nHere's the massive cheat sheet:\n\nLaser / Light Sources (SiPh): Sumitomo, Furukawa (5801), Landmark (3081), YJ Semi, $LITE, $COHR $AVGO, Etern (https://t.co/Rgl8i5e7N4), Everbright Photonics (https://t.co/hrQbVE0QlT), Shijia Photons (https://t.co/HvJVCM7BMm), Applied Optoelectronics (AAOI), Accelink (https://t.co/OjlKPLtkA4), Mitsubishi (6503.T)\n\nLaser / Light Sources (EML): Lumentum (LITE), Coherent (COHR), Broadcom (AVGO), YJ Semi (https://t.co/qWTYoY2y6z), Etern (https://t.co/Rgl8i5e7N4), Sumitomo Electric (5802.T), Everbright Photonics (https://t.co/hrQbVE0QlT), Shijia Photons (https://t.co/HvJVCM7BMm), Source Photonics (Private), Mitsubishi (6503.T), Accelink (https://t.co/OjlKPLtkA4), Furukawa (5801.T)\n\nPassive Optical Components - Couplers / Splitters: FOCI (3363.TWO), Senko (Private), AFR (https://t.co/v8bWvYaSCp), Everprox (https://t.co/PgwoMVPleI), Lumentum (LITE), Coherent (COHR)\n\nPassive Optical Components - Filters: Shijia Photons (https://t.co/HvJVCM7BMm), Sumitomo Electric (5802.T), Lumentum (LITE), Coherent (COHR), Viavi (VIAV), FOCI (3363.TWO)\n\nPassive Optical Components - Attenuators: Everprox (https://t.co/PgwoMVPleI), Accelink (https://t.co/OjlKPLtkA4), FOCI (3363.TWO), Lumentum (LITE)\n\nPassive Optical Components - WDM: AFR (https://t.co/v8bWvYaSCp), Everprox (https://t.co/PgwoMVPleI), Accelink (https://t.co/OjlKPLtkA4), Ciena (CIEN), TFC Optical (https://t.co/fjsjeuQxcq), Lumentum (LITE), FOCI (3363.TWO)",
       "symbols": [
@@ -3603,7 +3606,7 @@
     },
     {
       "id": "2050762148545216899",
-      "date": "2026-05-03T02:25:00.000Z",
+      "date": "2026-05-03T02:19:32.000Z",
       "title": "Bullish on co-packaged optics as the next AI networking architecture supercycle",
       "body": "Just in case you’re wondering why I’m so bullish on CPO.\n\nLike $SIVE (Lasers), Shunsin (Packaging), MSSCorps (Yields), Win Semi / $TSEM (Foundry).\n\n“The CPO market is projected to grow sharply by a 142% CAGR from 2026 to 2030 (excl. ELS)”\n\n“The scale-up CPO segment is projected to surpass scale-out applications before 2030 and become the dominant market.\n\nYou have almost parabolic growth over the next few years. \n\nWith many players like Sivers having no material exposure to previous 800g pluggable optics but are the bleeding edge leaders of CPO as the laser supplier.\n\nThis is one of the best and earliest opportunities of the next optical supercycle for an architecture driven by $NVDA and $AVGO.",
       "symbols": [
@@ -3627,7 +3630,7 @@
     },
     {
       "id": "2047520460884353096",
-      "date": "2026-04-24T03:40:26.000Z",
+      "date": "2026-04-24T03:38:13.000Z",
       "title": "Serenity X 回复样本 2047520460884353096",
       "body": "Just putting out there...\n\nWould have been +15.02% in 2W equal-weighted return.\n\nOn 30 different stocks... mostly medium-large cap. \n\n1. $INTC +29.62%\n2. $MRVL +40.95%\n3. $TSM +4.72%\n4. $COHR +18.9%\n5. $RKLB +26.76%\n6. $DRAM +12.29%\n7. $AVGO +18.32%\n8. $AMZN +9.17%\n9. $ARM +36.6%\n10. $TSEM -1.25%\n11. $IBIT +7.68%\n12. $NBIS +15.22%\n13. $GOOGL +6.41%\n14. $AMKR +32.25%\n15. $HOOD +19.14%\n16. $CRCL +17.58%\n17. $META +4.9%\n18. $LITE -5.28%\n19. $LPTH +20.23%\n20. $FN +11.54%\n21. $JBL +15.45%\n22. $MP +17.48%\n23. $HIMS +42.53%\n24. $SMTC +18.83%\n25. $POWL +9.26%\n26. $VPG +17.44%\n27. $MOG.A -3.96%\n28. $MSFT +11.44%\n29. $CVX -1.47%\n30. $XLU -2.29%\n\nObviously short timeframe, but I expect many of these to keep going up more. \n\nAnd probably would have been higher if you time the drop on specific names, rather than going long all at once. \n\nNot too shabby?",
       "symbols": [
@@ -3695,6 +3698,30 @@
       "url": "https://x.com/aleabitoreddit/status/2029219794025644382"
     },
     {
+      "id": "2027839956765515961",
+      "date": "2026-02-28T20:14:55.000Z",
+      "title": "$AAOI feels like must-have photonics exposure to me. ",
+      "body": "$AAOI feels like must-have photonics exposure to me. \n\nTheir earnings report is genuinely black magic.\n\n$LITE ($50B MC): FY 2026 est. ~$2.91B\n$AAOI ($5.6B MC) H2 2027: $4.35B ARR. \n\nTheir growth projections literally leapfrogged $LITE for 2026. \n\nNot even kidding. \n\nGross margins are ~40% for $AAOI, maybe 45% for $LITE with OCS monopoly. \n\n\"-term objective of gross margins to around 40%,\"\n\nDon't get me wrong, $LITE is an amazing long due to 8-12% BOM of $GOOGL TPU and Google capex spend... \n\nBut $AAOI top line growth for revenue is close to 10X revenue growth from last year's revenue, which is just insane. \n\nAnd if you go off napkin math modeling:\n\n\"By Q2 2027, management forecasts monthly transceiver revenue potential of $378 million\"\n\n~ $4.30B target, 40% margin (in-house), $1.72B gross profit, maybe ~$600m capex/opex:\n\nNet income ~$896M.\n\nForward P/E (on 2027 NI): ~6.4x forward p/e off ~900%-ish Y/Y growth. \n\nAnd if you look at photonics ramp, it's expected to increase exponentially toward 2030. \n\nFrom their management call hyperscalers likely ( $GOOGL, $MSFT, $AMZN ) are buying out all available capacity for transceivers. \n\nReminds me of a early $ALAB or $CRDO where all the hyperscalers are their customers. \n\nAnd if you get to likely price hikes like NAND for $SNDK:\n\n+15% ASP Price Hike: $1.41B net income \n- (4.1x forward p/e)\n+30% ASP Price Hike: $1.92B net income  \n- (3.0x forward p/e)\n\nThis is why I got so excited about $AAOI post-earnings. \n\nNot even including $AAOI \"Made in America\" transceiver supply chains that would give them a premium where $FN, Innolight, Eptolink, and others do theirs abroad.\n\nKinda like $INTC to $TSM or $MU to SK Hynix premiums. \n\nThe ROI for this is just astronomical if they hit their projections and price hikes give them a 3 p/e rate off 800%+ growth in photonics segments. \n\nAgain, these are management projections, execution is the biggest the name of the game.\n\nRegardless, I'm making $AAOI one of my largest photonics positions because this looks like black magic and the beginning of the next $SNDK. \n\nThere's a nonzero chance we might see this at a $50B $LITE valuation one and a half year from now if they can execute on their projections.",
+      "symbols": [
+        "AAOI",
+        "LITE",
+        "GOOGL",
+        "MSFT",
+        "AMZN",
+        "ALAB",
+        "CRDO",
+        "SNDK",
+        "FN",
+        "INTC",
+        "TSM",
+        "MU"
+      ],
+      "theme": "memory-rotation",
+      "materiality": 100,
+      "sentiment": "bull",
+      "url": "https://x.com/aleabitoreddit/status/2027839956765515961"
+    },
+    {
       "id": "2058968617681899915",
       "date": "2026-05-25T17:49:06.000Z",
       "title": "I’m fully convinced the Stock Market secretly revolves around building the Death Star and Battle Droids: $RKLB / $SPCX / $PL = Death Star $LASR / $SIVE = Laser Beams $TSLA / Unitr…",
@@ -3720,7 +3747,7 @@
     },
     {
       "id": "2048083218080121211",
-      "date": "2026-04-25T18:14:19.000Z",
+      "date": "2026-04-25T16:54:25.000Z",
       "title": "AI capex is compressing multi-year upside into months for niche hardware leaders, especially photonics",
       "body": "Two most viral stories on $RDDT:\n\n1. Turning $252K -> $7.7M with $AMD\n2. Turning $167K -> $2.2M with $RKLB. \n\nThese stores are likely true, since it's possible to find these niche leaders to change your life around:\n\nAgain and again across different industries with semis to space.\n\nWhat matters is:\n-> Finding these rare gems / leaders in a niche field.\n-> Having enough concentration, for it to matter. \n-> Having enough conviction to sit through volatility. \n-> Letting the thesis play out (even if it's across multiple years). \n\nYou've already seen me do it multiple times with photonics like $AXTI, $IQE, $SIVE, and others.\n\nBut everything is just speedran from 5 years to months due to AI capex acceleration.",
       "symbols": [
@@ -3762,7 +3789,7 @@
     },
     {
       "id": "2049916817519587600",
-      "date": "2026-04-30T19:06:59.000Z",
+      "date": "2026-04-30T18:20:29.000Z",
       "title": "Sivers as a niche upstream semiconductor beneficiary of U.S. space-defense buildout via York/ALL.SPACE linkage",
       "body": "If you’re curious why $SIVEF is up even more today. \n\n$SIVE, as a CHIPS act recipient:\n\nNow likely powers the Golden Dome.\n\nAs the upstream semi supplier since Sivers’ lead customer ALLSPACE got acquired by $YSS.\n\nYork happens to be a national defense prime contractor with links to the Space Force, Space Development Agency, DoD, and Golden Dome.\n\nSo Sivers, a mini Swedish company, basically got a backdoor to powering the US space buildout.",
       "symbols": [
@@ -3783,13 +3810,37 @@
       "materiality": 100,
       "sentiment": "bull",
       "url": "https://x.com/aleabitoreddit/status/2049916817519587600"
+    },
+    {
+      "id": "2042187668931616964",
+      "date": "2026-04-24T09:44:28.000Z",
+      "title": "Here's a bunch of random 30 US-available random stocks I like today and why: 1. ",
+      "body": "Here's a bunch of random 30 US-available random stocks I like today and why:  \n\n1. $INTC - America's hope for foundry, national security\n2. $MRVL - scales rev from future maia asics and add ons like cpo, they do everything lost count\n3. $TSM - backbone of semis/ai\n4. $COHR - They do everything vertically integrated + captures optical cycle\n5. $RKLB - the final frontier of space will be around 5 years from now and 20 years from now. \n6. $DRAM - memory exposure for samsung/sk hynix\n7. $AVGO - hyperscalers dont like nvidia gpu tax\n8. $AMZN - nobody can compete against the overnight shipping of toilet paper. robotics will lower opex over time\n9. $ARM - AGI CPUs scale revenue quite a bit over the next decade\n10. $TSEM - you're going to need a foundry for light based stuff\n11. $IBIT - bitcoin, we all know by now\n12. $NBIS - i think it's the next AWS. Also they do self-driving cars with uber, own scaling DB companies, data labeling. It's almost like a mini Google. \n13. $GOOGL - youtube is not going away, gemini is great. they're vertically integrated with TPUs and fund buildout with operating income so i like it. \n14. $AMKR - super facilities coming online in late 2027-2028. benefits from made in america\n15. $HOOD - i dont like short term, but long term i'm a fan of Robinhood since they captured retail + have more products like banking, etc that they're scaling up. product innovation is wild.\n16. $CRCL - I happen to really like stablecoins and see them as the future for both payments/holding (depends on clarity act)\n17. $META - people aren't going to stop using instagram or whatsapp, or others anytime soon. \n18. $LITE - $GOOGL TPU exposure decently high part of BOM. As long as Google's AI program keeps running I think $LITE will do well.\n19. $LPTH - Germanium and China export controls will always be an issue so US made engineered alternatives  will always be important\n20. $FN - Someone needs to assemble optical stuff\n21. $JBL - same as above, but added with ip from Intel's SiPh acqusition so might end up like innolight?\n22. $MP - American rare earths program is extremely important, similar to $INTC national security risks\n23. $HIMS - Okay here me out they just acquired a ton of companies, and at $19 they have global DTC channel. short sellers really hate this company, but I think it's actually promising as a contrarian long\n24. $SMTC - LRO/LPO transition\n25. $POWL - US alternative to hammond for switchgear DC type bottleneck\n26. $VPG - Humanoids will be a thing down the road maybe 2027-2028, this makes the sensors. \n27. $MOG.A - Feels like i see them everywhere in robotics, to spacex supply chains\n28. $MSFT - At $375, one day we'll look back and see this as a buying opportunity.\n29. $CVX - oil might crash after war but these oil companies are going to be extremely important, especially when Venezulea is a goldmine.\n30. $XLU - i think rate cuts might be back online, we need power/grid for AI so these names will always be improtant from $CEG to $NEE\n\nJust throwing out other thoughts aside from $AAOI and $AEHR.",
+      "symbols": [
+        "INTC",
+        "MRVL",
+        "TSM",
+        "COHR",
+        "RKLB",
+        "DRAM",
+        "AVGO",
+        "AMZN",
+        "ARM",
+        "TSEM",
+        "IBIT",
+        "NBIS"
+      ],
+      "theme": "robotics-physical-ai",
+      "materiality": 100,
+      "sentiment": "bull",
+      "url": "https://x.com/aleabitoreddit/status/2042187668931616964"
     }
   ],
   "history": [
     {
       "id": "2047705901486985666",
       "symbol": "SIVEF",
-      "date": "2026-04-24T15:56:38.000Z",
+      "date": "2026-04-24T15:55:06.000Z",
       "title": "Photonics go brrr. $MXL +76.2% (lol) $AAOI +15.03% $SIVE +12.69% $AEHR +7.07% $SOI +6.19% $LITE +4.96% Hope you didn’t sell and try and chase other bottlenecks anon? ",
       "body": "公开回复区样本：@aleabitoreddit I sold some $AEHR to chase $TRT, up 50% @aleabitoreddit photonics back🫡 @aleabitoreddit 🤩 @aleabitoreddit Is AEHR photonics @aleabitoreddit You have made me a long term #AAOI holder, appreciate it! ",
       "sentiment": "bull",
@@ -3800,7 +3851,7 @@
     {
       "id": "2047705901486985666",
       "symbol": "AAOI",
-      "date": "2026-04-24T15:56:38.000Z",
+      "date": "2026-04-24T15:55:06.000Z",
       "title": "Photonics go brrr. $MXL +76.2% (lol) $AAOI +15.03% $SIVE +12.69% $AEHR +7.07% $SOI +6.19% $LITE +4.96% Hope you didn’t sell and try and chase other bottlenecks anon? ",
       "body": "公开回复区样本：@aleabitoreddit I sold some $AEHR to chase $TRT, up 50% @aleabitoreddit photonics back🫡 @aleabitoreddit 🤩 @aleabitoreddit Is AEHR photonics @aleabitoreddit You have made me a long term #AAOI holder, appreciate it! ",
       "sentiment": "bull",
@@ -3811,7 +3862,7 @@
     {
       "id": "2047705901486985666",
       "symbol": "AXTI",
-      "date": "2026-04-24T15:56:38.000Z",
+      "date": "2026-04-24T15:55:06.000Z",
       "title": "Photonics go brrr. $MXL +76.2% (lol) $AAOI +15.03% $SIVE +12.69% $AEHR +7.07% $SOI +6.19% $LITE +4.96% Hope you didn’t sell and try and chase other bottlenecks anon? ",
       "body": "公开回复区样本：@aleabitoreddit I sold some $AEHR to chase $TRT, up 50% @aleabitoreddit photonics back🫡 @aleabitoreddit 🤩 @aleabitoreddit Is AEHR photonics @aleabitoreddit You have made me a long term #AAOI holder, appreciate it! ",
       "sentiment": "bull",
@@ -3822,7 +3873,7 @@
     {
       "id": "2047705901486985666",
       "symbol": "LITE",
-      "date": "2026-04-24T15:56:38.000Z",
+      "date": "2026-04-24T15:55:06.000Z",
       "title": "Photonics go brrr. $MXL +76.2% (lol) $AAOI +15.03% $SIVE +12.69% $AEHR +7.07% $SOI +6.19% $LITE +4.96% Hope you didn’t sell and try and chase other bottlenecks anon? ",
       "body": "公开回复区样本：@aleabitoreddit I sold some $AEHR to chase $TRT, up 50% @aleabitoreddit photonics back🫡 @aleabitoreddit 🤩 @aleabitoreddit Is AEHR photonics @aleabitoreddit You have made me a long term #AAOI holder, appreciate it! ",
       "sentiment": "bull",
@@ -3833,7 +3884,7 @@
     {
       "id": "2047705901486985666",
       "symbol": "AEHR",
-      "date": "2026-04-24T15:56:38.000Z",
+      "date": "2026-04-24T15:55:06.000Z",
       "title": "Photonics go brrr. $MXL +76.2% (lol) $AAOI +15.03% $SIVE +12.69% $AEHR +7.07% $SOI +6.19% $LITE +4.96% Hope you didn’t sell and try and chase other bottlenecks anon? ",
       "body": "公开回复区样本：@aleabitoreddit I sold some $AEHR to chase $TRT, up 50% @aleabitoreddit photonics back🫡 @aleabitoreddit 🤩 @aleabitoreddit Is AEHR photonics @aleabitoreddit You have made me a long term #AAOI holder, appreciate it! ",
       "sentiment": "bull",
@@ -3844,7 +3895,7 @@
     {
       "id": "2047705901486985666",
       "symbol": "POET",
-      "date": "2026-04-24T15:56:38.000Z",
+      "date": "2026-04-24T15:55:06.000Z",
       "title": "Photonics go brrr. $MXL +76.2% (lol) $AAOI +15.03% $SIVE +12.69% $AEHR +7.07% $SOI +6.19% $LITE +4.96% Hope you didn’t sell and try and chase other bottlenecks anon? ",
       "body": "公开回复区样本：@aleabitoreddit I sold some $AEHR to chase $TRT, up 50% @aleabitoreddit photonics back🫡 @aleabitoreddit 🤩 @aleabitoreddit Is AEHR photonics @aleabitoreddit You have made me a long term #AAOI holder, appreciate it! ",
       "sentiment": "bull",
@@ -3855,7 +3906,7 @@
     {
       "id": "2048449289152778686",
       "symbol": "MRVL",
-      "date": "2026-04-26T17:11:50.000Z",
+      "date": "2026-04-26T17:09:03.000Z",
       "title": "AI infrastructure bottlenecks favor a concentrated basket of semiconductor equipment, foundry, optical interconnect, and grid-power suppliers",
       "body": "TLDR of recent news + bottlenecks that go brr:\n\n1. CPU bottleneck - $INTC CEO said AI inference pushed CPU Ratio From 1:8 to 1:1. \n\nCPUs go brr ( $AMD, Intel, $ARM) -> $AMAT / $TSM / $KLAC, etc. go brr.\n\n2. PGME / PGMEA shortage. DuPont, Shiny Chemical, Daxin, San Fu, $DOW and others go brr? \n\nPhotoresist bottleneck go brr? \n\n3. Microcontroller potential bottleneck + price hikes (Arterytek/Arterychip) was weighing price hikes on AI capacity squeezes.  \n\nMCU companies potentially go brr?\n\n4. President invoked the \"Defense Production Act\" this week, it included: \n\n-Transformers \n- transmission components \n- advanced conductors \n- power electronics \n- substations \n- high-voltage circuit breakers \n-  protective relays, capacitor banks\n - electrical core steel\n\nAs \"severe shortages\". Stuff like $AMSC, $PLPC, $POWL, $VICR, $ATKR, $HPS.A go brr. \n\n5. $GOOGL ramps new TPU servers. Google splits AI chips into training and inference TPUs.\n\nTaiwan happy. Mediatek and others go brr? \n\n6. Samsung, Kingston lift SSD prices by over 10%. \n\nSSD prices keep going brrr?  \n\n7. T-glass fiberglass shortages keep getting worse? Nittobo and others keep going brrr?\n\n8. Bromine, essential for etching circuits and flame retardancy, has surged to $12,000 per metric ton.\n\nICL Group in Israel apparently controls 40% of the global supply?\n\nNot as familiar with this but questionable brrr?\n\n9. \"Epitaxy manufacturer LandMark Optoelectronics reporting output still far below customer needs\".\n\nUhh $IQE and others go brr? \n\n10. \"AI data centers hit interconnect limits, boosting optical module demand\". \"the bottleneck is no longer computing power alone, but how that power is connected.\"\n\nPhotonics from $AAOI, $LITE, $COHR, Innolight and others keep going brr? next gen from $SIVE, $POET, $MRVL, Win Semi and others go brr?\n\nBasically AI semi supply chains go brr because there's widespread shortages everywhere due to AI hyperscaler demand.",
       "sentiment": "bull",
@@ -3866,7 +3917,7 @@
     {
       "id": "2048449289152778686",
       "symbol": "NBIS",
-      "date": "2026-04-26T17:11:50.000Z",
+      "date": "2026-04-26T17:09:03.000Z",
       "title": "AI infrastructure bottlenecks favor a concentrated basket of semiconductor equipment, foundry, optical interconnect, and grid-power suppliers",
       "body": "TLDR of recent news + bottlenecks that go brr:\n\n1. CPU bottleneck - $INTC CEO said AI inference pushed CPU Ratio From 1:8 to 1:1. \n\nCPUs go brr ( $AMD, Intel, $ARM) -> $AMAT / $TSM / $KLAC, etc. go brr.\n\n2. PGME / PGMEA shortage. DuPont, Shiny Chemical, Daxin, San Fu, $DOW and others go brr? \n\nPhotoresist bottleneck go brr? \n\n3. Microcontroller potential bottleneck + price hikes (Arterytek/Arterychip) was weighing price hikes on AI capacity squeezes.  \n\nMCU companies potentially go brr?\n\n4. President invoked the \"Defense Production Act\" this week, it included: \n\n-Transformers \n- transmission components \n- advanced conductors \n- power electronics \n- substations \n- high-voltage circuit breakers \n-  protective relays, capacitor banks\n - electrical core steel\n\nAs \"severe shortages\". Stuff like $AMSC, $PLPC, $POWL, $VICR, $ATKR, $HPS.A go brr. \n\n5. $GOOGL ramps new TPU servers. Google splits AI chips into training and inference TPUs.\n\nTaiwan happy. Mediatek and others go brr? \n\n6. Samsung, Kingston lift SSD prices by over 10%. \n\nSSD prices keep going brrr?  \n\n7. T-glass fiberglass shortages keep getting worse? Nittobo and others keep going brrr?\n\n8. Bromine, essential for etching circuits and flame retardancy, has surged to $12,000 per metric ton.\n\nICL Group in Israel apparently controls 40% of the global supply?\n\nNot as familiar with this but questionable brrr?\n\n9. \"Epitaxy manufacturer LandMark Optoelectronics reporting output still far below customer needs\".\n\nUhh $IQE and others go brr? \n\n10. \"AI data centers hit interconnect limits, boosting optical module demand\". \"the bottleneck is no longer computing power alone, but how that power is connected.\"\n\nPhotonics from $AAOI, $LITE, $COHR, Innolight and others keep going brr? next gen from $SIVE, $POET, $MRVL, Win Semi and others go brr?\n\nBasically AI semi supply chains go brr because there's widespread shortages everywhere due to AI hyperscaler demand.",
       "sentiment": "bull",
@@ -3877,7 +3928,7 @@
     {
       "id": "2048449289152778686",
       "symbol": "COHR",
-      "date": "2026-04-26T17:11:50.000Z",
+      "date": "2026-04-26T17:09:03.000Z",
       "title": "AI infrastructure bottlenecks favor a concentrated basket of semiconductor equipment, foundry, optical interconnect, and grid-power suppliers",
       "body": "TLDR of recent news + bottlenecks that go brr:\n\n1. CPU bottleneck - $INTC CEO said AI inference pushed CPU Ratio From 1:8 to 1:1. \n\nCPUs go brr ( $AMD, Intel, $ARM) -> $AMAT / $TSM / $KLAC, etc. go brr.\n\n2. PGME / PGMEA shortage. DuPont, Shiny Chemical, Daxin, San Fu, $DOW and others go brr? \n\nPhotoresist bottleneck go brr? \n\n3. Microcontroller potential bottleneck + price hikes (Arterytek/Arterychip) was weighing price hikes on AI capacity squeezes.  \n\nMCU companies potentially go brr?\n\n4. President invoked the \"Defense Production Act\" this week, it included: \n\n-Transformers \n- transmission components \n- advanced conductors \n- power electronics \n- substations \n- high-voltage circuit breakers \n-  protective relays, capacitor banks\n - electrical core steel\n\nAs \"severe shortages\". Stuff like $AMSC, $PLPC, $POWL, $VICR, $ATKR, $HPS.A go brr. \n\n5. $GOOGL ramps new TPU servers. Google splits AI chips into training and inference TPUs.\n\nTaiwan happy. Mediatek and others go brr? \n\n6. Samsung, Kingston lift SSD prices by over 10%. \n\nSSD prices keep going brrr?  \n\n7. T-glass fiberglass shortages keep getting worse? Nittobo and others keep going brrr?\n\n8. Bromine, essential for etching circuits and flame retardancy, has surged to $12,000 per metric ton.\n\nICL Group in Israel apparently controls 40% of the global supply?\n\nNot as familiar with this but questionable brrr?\n\n9. \"Epitaxy manufacturer LandMark Optoelectronics reporting output still far below customer needs\".\n\nUhh $IQE and others go brr? \n\n10. \"AI data centers hit interconnect limits, boosting optical module demand\". \"the bottleneck is no longer computing power alone, but how that power is connected.\"\n\nPhotonics from $AAOI, $LITE, $COHR, Innolight and others keep going brr? next gen from $SIVE, $POET, $MRVL, Win Semi and others go brr?\n\nBasically AI semi supply chains go brr because there's widespread shortages everywhere due to AI hyperscaler demand.",
       "sentiment": "bull",
@@ -3888,7 +3939,7 @@
     {
       "id": "2048449289152778686",
       "symbol": "NVDA",
-      "date": "2026-04-26T17:11:50.000Z",
+      "date": "2026-04-26T17:09:03.000Z",
       "title": "AI infrastructure bottlenecks favor a concentrated basket of semiconductor equipment, foundry, optical interconnect, and grid-power suppliers",
       "body": "TLDR of recent news + bottlenecks that go brr:\n\n1. CPU bottleneck - $INTC CEO said AI inference pushed CPU Ratio From 1:8 to 1:1. \n\nCPUs go brr ( $AMD, Intel, $ARM) -> $AMAT / $TSM / $KLAC, etc. go brr.\n\n2. PGME / PGMEA shortage. DuPont, Shiny Chemical, Daxin, San Fu, $DOW and others go brr? \n\nPhotoresist bottleneck go brr? \n\n3. Microcontroller potential bottleneck + price hikes (Arterytek/Arterychip) was weighing price hikes on AI capacity squeezes.  \n\nMCU companies potentially go brr?\n\n4. President invoked the \"Defense Production Act\" this week, it included: \n\n-Transformers \n- transmission components \n- advanced conductors \n- power electronics \n- substations \n- high-voltage circuit breakers \n-  protective relays, capacitor banks\n - electrical core steel\n\nAs \"severe shortages\". Stuff like $AMSC, $PLPC, $POWL, $VICR, $ATKR, $HPS.A go brr. \n\n5. $GOOGL ramps new TPU servers. Google splits AI chips into training and inference TPUs.\n\nTaiwan happy. Mediatek and others go brr? \n\n6. Samsung, Kingston lift SSD prices by over 10%. \n\nSSD prices keep going brrr?  \n\n7. T-glass fiberglass shortages keep getting worse? Nittobo and others keep going brrr?\n\n8. Bromine, essential for etching circuits and flame retardancy, has surged to $12,000 per metric ton.\n\nICL Group in Israel apparently controls 40% of the global supply?\n\nNot as familiar with this but questionable brrr?\n\n9. \"Epitaxy manufacturer LandMark Optoelectronics reporting output still far below customer needs\".\n\nUhh $IQE and others go brr? \n\n10. \"AI data centers hit interconnect limits, boosting optical module demand\". \"the bottleneck is no longer computing power alone, but how that power is connected.\"\n\nPhotonics from $AAOI, $LITE, $COHR, Innolight and others keep going brr? next gen from $SIVE, $POET, $MRVL, Win Semi and others go brr?\n\nBasically AI semi supply chains go brr because there's widespread shortages everywhere due to AI hyperscaler demand.",
       "sentiment": "bull",
@@ -3899,7 +3950,7 @@
     {
       "id": "2048449289152778686",
       "symbol": "MSFT",
-      "date": "2026-04-26T17:11:50.000Z",
+      "date": "2026-04-26T17:09:03.000Z",
       "title": "AI infrastructure bottlenecks favor a concentrated basket of semiconductor equipment, foundry, optical interconnect, and grid-power suppliers",
       "body": "TLDR of recent news + bottlenecks that go brr:\n\n1. CPU bottleneck - $INTC CEO said AI inference pushed CPU Ratio From 1:8 to 1:1. \n\nCPUs go brr ( $AMD, Intel, $ARM) -> $AMAT / $TSM / $KLAC, etc. go brr.\n\n2. PGME / PGMEA shortage. DuPont, Shiny Chemical, Daxin, San Fu, $DOW and others go brr? \n\nPhotoresist bottleneck go brr? \n\n3. Microcontroller potential bottleneck + price hikes (Arterytek/Arterychip) was weighing price hikes on AI capacity squeezes.  \n\nMCU companies potentially go brr?\n\n4. President invoked the \"Defense Production Act\" this week, it included: \n\n-Transformers \n- transmission components \n- advanced conductors \n- power electronics \n- substations \n- high-voltage circuit breakers \n-  protective relays, capacitor banks\n - electrical core steel\n\nAs \"severe shortages\". Stuff like $AMSC, $PLPC, $POWL, $VICR, $ATKR, $HPS.A go brr. \n\n5. $GOOGL ramps new TPU servers. Google splits AI chips into training and inference TPUs.\n\nTaiwan happy. Mediatek and others go brr? \n\n6. Samsung, Kingston lift SSD prices by over 10%. \n\nSSD prices keep going brrr?  \n\n7. T-glass fiberglass shortages keep getting worse? Nittobo and others keep going brrr?\n\n8. Bromine, essential for etching circuits and flame retardancy, has surged to $12,000 per metric ton.\n\nICL Group in Israel apparently controls 40% of the global supply?\n\nNot as familiar with this but questionable brrr?\n\n9. \"Epitaxy manufacturer LandMark Optoelectronics reporting output still far below customer needs\".\n\nUhh $IQE and others go brr? \n\n10. \"AI data centers hit interconnect limits, boosting optical module demand\". \"the bottleneck is no longer computing power alone, but how that power is connected.\"\n\nPhotonics from $AAOI, $LITE, $COHR, Innolight and others keep going brr? next gen from $SIVE, $POET, $MRVL, Win Semi and others go brr?\n\nBasically AI semi supply chains go brr because there's widespread shortages everywhere due to AI hyperscaler demand.",
       "sentiment": "bull",
@@ -3910,7 +3961,7 @@
     {
       "id": "2048449289152778686",
       "symbol": "MU",
-      "date": "2026-04-26T17:11:50.000Z",
+      "date": "2026-04-26T17:09:03.000Z",
       "title": "AI infrastructure bottlenecks favor a concentrated basket of semiconductor equipment, foundry, optical interconnect, and grid-power suppliers",
       "body": "TLDR of recent news + bottlenecks that go brr:\n\n1. CPU bottleneck - $INTC CEO said AI inference pushed CPU Ratio From 1:8 to 1:1. \n\nCPUs go brr ( $AMD, Intel, $ARM) -> $AMAT / $TSM / $KLAC, etc. go brr.\n\n2. PGME / PGMEA shortage. DuPont, Shiny Chemical, Daxin, San Fu, $DOW and others go brr? \n\nPhotoresist bottleneck go brr? \n\n3. Microcontroller potential bottleneck + price hikes (Arterytek/Arterychip) was weighing price hikes on AI capacity squeezes.  \n\nMCU companies potentially go brr?\n\n4. President invoked the \"Defense Production Act\" this week, it included: \n\n-Transformers \n- transmission components \n- advanced conductors \n- power electronics \n- substations \n- high-voltage circuit breakers \n-  protective relays, capacitor banks\n - electrical core steel\n\nAs \"severe shortages\". Stuff like $AMSC, $PLPC, $POWL, $VICR, $ATKR, $HPS.A go brr. \n\n5. $GOOGL ramps new TPU servers. Google splits AI chips into training and inference TPUs.\n\nTaiwan happy. Mediatek and others go brr? \n\n6. Samsung, Kingston lift SSD prices by over 10%. \n\nSSD prices keep going brrr?  \n\n7. T-glass fiberglass shortages keep getting worse? Nittobo and others keep going brrr?\n\n8. Bromine, essential for etching circuits and flame retardancy, has surged to $12,000 per metric ton.\n\nICL Group in Israel apparently controls 40% of the global supply?\n\nNot as familiar with this but questionable brrr?\n\n9. \"Epitaxy manufacturer LandMark Optoelectronics reporting output still far below customer needs\".\n\nUhh $IQE and others go brr? \n\n10. \"AI data centers hit interconnect limits, boosting optical module demand\". \"the bottleneck is no longer computing power alone, but how that power is connected.\"\n\nPhotonics from $AAOI, $LITE, $COHR, Innolight and others keep going brr? next gen from $SIVE, $POET, $MRVL, Win Semi and others go brr?\n\nBasically AI semi supply chains go brr because there's widespread shortages everywhere due to AI hyperscaler demand.",
       "sentiment": "bull",
@@ -3921,7 +3972,7 @@
     {
       "id": "2048449289152778686",
       "symbol": "TSM",
-      "date": "2026-04-26T17:11:50.000Z",
+      "date": "2026-04-26T17:09:03.000Z",
       "title": "AI infrastructure bottlenecks favor a concentrated basket of semiconductor equipment, foundry, optical interconnect, and grid-power suppliers",
       "body": "TLDR of recent news + bottlenecks that go brr:\n\n1. CPU bottleneck - $INTC CEO said AI inference pushed CPU Ratio From 1:8 to 1:1. \n\nCPUs go brr ( $AMD, Intel, $ARM) -> $AMAT / $TSM / $KLAC, etc. go brr.\n\n2. PGME / PGMEA shortage. DuPont, Shiny Chemical, Daxin, San Fu, $DOW and others go brr? \n\nPhotoresist bottleneck go brr? \n\n3. Microcontroller potential bottleneck + price hikes (Arterytek/Arterychip) was weighing price hikes on AI capacity squeezes.  \n\nMCU companies potentially go brr?\n\n4. President invoked the \"Defense Production Act\" this week, it included: \n\n-Transformers \n- transmission components \n- advanced conductors \n- power electronics \n- substations \n- high-voltage circuit breakers \n-  protective relays, capacitor banks\n - electrical core steel\n\nAs \"severe shortages\". Stuff like $AMSC, $PLPC, $POWL, $VICR, $ATKR, $HPS.A go brr. \n\n5. $GOOGL ramps new TPU servers. Google splits AI chips into training and inference TPUs.\n\nTaiwan happy. Mediatek and others go brr? \n\n6. Samsung, Kingston lift SSD prices by over 10%. \n\nSSD prices keep going brrr?  \n\n7. T-glass fiberglass shortages keep getting worse? Nittobo and others keep going brrr?\n\n8. Bromine, essential for etching circuits and flame retardancy, has surged to $12,000 per metric ton.\n\nICL Group in Israel apparently controls 40% of the global supply?\n\nNot as familiar with this but questionable brrr?\n\n9. \"Epitaxy manufacturer LandMark Optoelectronics reporting output still far below customer needs\".\n\nUhh $IQE and others go brr? \n\n10. \"AI data centers hit interconnect limits, boosting optical module demand\". \"the bottleneck is no longer computing power alone, but how that power is connected.\"\n\nPhotonics from $AAOI, $LITE, $COHR, Innolight and others keep going brr? next gen from $SIVE, $POET, $MRVL, Win Semi and others go brr?\n\nBasically AI semi supply chains go brr because there's widespread shortages everywhere due to AI hyperscaler demand.",
       "sentiment": "bull",
@@ -3932,7 +3983,7 @@
     {
       "id": "2048449289152778686",
       "symbol": "CRWV",
-      "date": "2026-04-26T17:11:50.000Z",
+      "date": "2026-04-26T17:09:03.000Z",
       "title": "AI infrastructure bottlenecks favor a concentrated basket of semiconductor equipment, foundry, optical interconnect, and grid-power suppliers",
       "body": "TLDR of recent news + bottlenecks that go brr:\n\n1. CPU bottleneck - $INTC CEO said AI inference pushed CPU Ratio From 1:8 to 1:1. \n\nCPUs go brr ( $AMD, Intel, $ARM) -> $AMAT / $TSM / $KLAC, etc. go brr.\n\n2. PGME / PGMEA shortage. DuPont, Shiny Chemical, Daxin, San Fu, $DOW and others go brr? \n\nPhotoresist bottleneck go brr? \n\n3. Microcontroller potential bottleneck + price hikes (Arterytek/Arterychip) was weighing price hikes on AI capacity squeezes.  \n\nMCU companies potentially go brr?\n\n4. President invoked the \"Defense Production Act\" this week, it included: \n\n-Transformers \n- transmission components \n- advanced conductors \n- power electronics \n- substations \n- high-voltage circuit breakers \n-  protective relays, capacitor banks\n - electrical core steel\n\nAs \"severe shortages\". Stuff like $AMSC, $PLPC, $POWL, $VICR, $ATKR, $HPS.A go brr. \n\n5. $GOOGL ramps new TPU servers. Google splits AI chips into training and inference TPUs.\n\nTaiwan happy. Mediatek and others go brr? \n\n6. Samsung, Kingston lift SSD prices by over 10%. \n\nSSD prices keep going brrr?  \n\n7. T-glass fiberglass shortages keep getting worse? Nittobo and others keep going brrr?\n\n8. Bromine, essential for etching circuits and flame retardancy, has surged to $12,000 per metric ton.\n\nICL Group in Israel apparently controls 40% of the global supply?\n\nNot as familiar with this but questionable brrr?\n\n9. \"Epitaxy manufacturer LandMark Optoelectronics reporting output still far below customer needs\".\n\nUhh $IQE and others go brr? \n\n10. \"AI data centers hit interconnect limits, boosting optical module demand\". \"the bottleneck is no longer computing power alone, but how that power is connected.\"\n\nPhotonics from $AAOI, $LITE, $COHR, Innolight and others keep going brr? next gen from $SIVE, $POET, $MRVL, Win Semi and others go brr?\n\nBasically AI semi supply chains go brr because there's widespread shortages everywhere due to AI hyperscaler demand.",
       "sentiment": "bull",
@@ -3943,7 +3994,7 @@
     {
       "id": "2048449289152778686",
       "symbol": "AMD",
-      "date": "2026-04-26T17:11:50.000Z",
+      "date": "2026-04-26T17:09:03.000Z",
       "title": "AI infrastructure bottlenecks favor a concentrated basket of semiconductor equipment, foundry, optical interconnect, and grid-power suppliers",
       "body": "TLDR of recent news + bottlenecks that go brr:\n\n1. CPU bottleneck - $INTC CEO said AI inference pushed CPU Ratio From 1:8 to 1:1. \n\nCPUs go brr ( $AMD, Intel, $ARM) -> $AMAT / $TSM / $KLAC, etc. go brr.\n\n2. PGME / PGMEA shortage. DuPont, Shiny Chemical, Daxin, San Fu, $DOW and others go brr? \n\nPhotoresist bottleneck go brr? \n\n3. Microcontroller potential bottleneck + price hikes (Arterytek/Arterychip) was weighing price hikes on AI capacity squeezes.  \n\nMCU companies potentially go brr?\n\n4. President invoked the \"Defense Production Act\" this week, it included: \n\n-Transformers \n- transmission components \n- advanced conductors \n- power electronics \n- substations \n- high-voltage circuit breakers \n-  protective relays, capacitor banks\n - electrical core steel\n\nAs \"severe shortages\". Stuff like $AMSC, $PLPC, $POWL, $VICR, $ATKR, $HPS.A go brr. \n\n5. $GOOGL ramps new TPU servers. Google splits AI chips into training and inference TPUs.\n\nTaiwan happy. Mediatek and others go brr? \n\n6. Samsung, Kingston lift SSD prices by over 10%. \n\nSSD prices keep going brrr?  \n\n7. T-glass fiberglass shortages keep getting worse? Nittobo and others keep going brrr?\n\n8. Bromine, essential for etching circuits and flame retardancy, has surged to $12,000 per metric ton.\n\nICL Group in Israel apparently controls 40% of the global supply?\n\nNot as familiar with this but questionable brrr?\n\n9. \"Epitaxy manufacturer LandMark Optoelectronics reporting output still far below customer needs\".\n\nUhh $IQE and others go brr? \n\n10. \"AI data centers hit interconnect limits, boosting optical module demand\". \"the bottleneck is no longer computing power alone, but how that power is connected.\"\n\nPhotonics from $AAOI, $LITE, $COHR, Innolight and others keep going brr? next gen from $SIVE, $POET, $MRVL, Win Semi and others go brr?\n\nBasically AI semi supply chains go brr because there's widespread shortages everywhere due to AI hyperscaler demand.",
       "sentiment": "bull",
@@ -3954,7 +4005,7 @@
     {
       "id": "2049767690425016780",
       "symbol": "META",
-      "date": "2026-04-30T08:56:17.000Z",
+      "date": "2026-04-30T08:27:54.000Z",
       "title": "Unpriced optical interconnect upside centered on Sivers in the Lightmatter co-packaged optics chain",
       "body": "From the reference... it does look like Lightmatter uses $SIVE lasers?\n\nWhich is brand new information discovery and extremely positive for Sivers. \n\nLightmatter is a massive private leader (~$4.4B  valuation back in 2024), with $TSM, $GFS, $TSEM, $AMKR, and $ASX scaling their optical program.\n\nAnd Lightmatter does require a light source... \n\n$SIVE also happens to be on the $GFS laser source suppliers alongside $LITE, so starting to put the dots together? \n\nEnd users are likely your hyperscalers like $MSFT, $GOOGL (they invested), $META, etc through Lightmatter-GUC and others. \n\nI don't think markets have priced all of this in, since all the supply chain BOM is very confidential + speculative. \n\nBut when CPO and next-gen photonic architectures scale up, volume ramp revenue will appear out of nowhere on the balance sheet.",
       "sentiment": "bull",
@@ -3965,7 +4016,7 @@
     {
       "id": "2049941088165892196",
       "symbol": "HOOD",
-      "date": "2026-04-30T23:01:34.000Z",
+      "date": "2026-04-30T19:56:56.000Z",
       "title": "Fun fact: don’t think any large US institution had positions in $SIVE / $SIVEF since it was a majority owned local Swedish retail stock. ",
       "body": "Fun fact: don’t think any large US institution had positions in $SIVE / $SIVEF since it was a majority owned local Swedish retail stock.\n\nThere’s also fund mandates preventing US funds from entering (eg. Nasdaq listing / $1B MC)\n\nThat’s definitely changed now thanks to European media shaking out the local holders, Sivers upcoming NASDAQ listing, and hitting $1B+ MC.\n\nAgain $1.3B is literal spare change for hyperscalers and US institutions. \n\nAnd I have high confidence many would want exposure to CPO, silicon photonics and lasers, since there’s only a few in the entire world like $LITE, $COHR, and $MTSI.\n\nEspecially… a CHIPS Act laser supplier likely in $AMD, $MRVL, $AAPL, Lightmatter, Ayar, AlChip, GUC, O-Net and other supply chains like the Golden Dome.\n\nPart of it is game theory for share accumulation. \n\nSince US/Western retail now owns a large part of the float (off of the Swedish sellers).\n\nAnd US institutions now want exposure.",
       "sentiment": "bull",
@@ -3976,7 +4027,7 @@
     {
       "id": "2050093551313469467",
       "symbol": "JBL",
-      "date": "2026-05-01T06:32:13.000Z",
+      "date": "2026-05-01T06:02:46.000Z",
       "title": "High-conviction longs in underfollowed CPO and advanced packaging suppliers",
       "body": "As for 3x brrrs these levels: \n\n1. $SIVE\n2. MSSCORP (6830)\n3. Auros (322310)\n\nAre my best guesses. Here's my thought process: \n\n1. $SIVE: I genuinely do see them being $10B+ next year, they're the literal bleeding edge for CPO lasers alongside $LITE and $COHR.\n\nAt a $1.3B MC... For likely mapping: \n\nPhotonics: $AMD CPO, $MRVL Celestial CPO, $JBL 1.6T, Lightmatter, Ayar, ALChip, GUC, O-Net (ELS), $POET.\n\nFor Space + Defense: Golden Dome via $YSS, $RTX / $ERIC / Bae Systems.\n\nSilicon Photonics: $AAPL (Apple Watches). \n\nThis is just a stupid amount of customers and it's still increasing. \n\nThey can always TAM expansion downstream through IP acquisitions or vertically integrate to speedrun $LITE's $60B MC one day once they get more funding. \n\n2. MSSCORP (6830): CPO monopoly over inspection at ~$1.2B. \n\n100% monopoly over CPO yields, $TSM, $AMAT, $NVDA, $LCRX, $INTC, and others are all likely customers. \n\n\"The company’s goal is to seize a 90 percent share of the CPO inspection market\"\n\nThis basically means 100%, they just don't want antitrust.  If they defend their monopoly and CPO ramps, can easily see this worth ~$5B-$9B from $1.2B\n\n3. Auros (322310): Samsung / SK Hynix supplier at ~$210M for Hybrid Bonding Metrology.\n\nBasically pure play on two products: \n-> HBM4 / HBM4e / HBM5 cycles, that $KLA had a monoply over for IR metrology. \n--->  Getting qualified now likely in Samsung factories, H2 volume ramp est. Sk Hynix likely qualifying too when they upgrade to hybrid bonding.  \n-> Thin-film thickness measurement.  \n---> Getting qualified now, with \"major domestic chipmaker\" (either Samsung/Sk hynix), targets mass supply this year. \n\nThey've been developing for the past decade, only to volume ramp two products from years of qualification H2 this year.\n\nSeems extremely likely to 3x to $630M if they switch to volume ramp, feels like an undiscovered gem in the Korean market? \n\nOf course, not sure how they play out and this is all speculative but high confidence supply chain mapping.\n\nBut off the top of my head these three that I own are the most likely ones at this level.",
       "sentiment": "bull",
@@ -3986,17 +4037,19 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-11T11:30:21.686Z",
+    "staticUpdatedAt": "2026-06-11T14:32:38.912Z",
     "latestCaptured": {
-      "id": "2065022197597630640",
-      "date": "2026-06-11T10:43:52.000Z",
-      "title": "@soulbiri1 Why thank you. ",
-      "body": "@soulbiri1 Why thank you. Hopefully leading retail down the right path of information democratization.",
-      "symbols": [],
+      "id": "2065073494220849660",
+      "date": "2026-06-11T14:07:42.000Z",
+      "title": "Woah, Frankfurt Bank strategists say: 8% of US current-account deficit could be refinanced in a single day by overseas demand for SpaceX ( $SPCX ) shares. ",
+      "body": "Woah, Frankfurt Bank strategists say:\n\n8% of US current-account deficit could be refinanced in a single day by overseas demand for SpaceX ( $SPCX ) shares.\n\nExcited to see how markets react around a Mega-IPO... \n\nDon't think there's been any historical precedence like this yet?",
+      "symbols": [
+        "SPCX"
+      ],
       "theme": "general",
-      "materiality": 38,
+      "materiality": 51,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2065022197597630640"
+      "url": "https://x.com/aleabitoreddit/status/2065073494220849660"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
