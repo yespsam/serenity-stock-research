@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-11T14:33:38.267Z",
+  "generatedAt": "2026-06-11T15:38:21.847Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6633,
+    "parsedItems": 6637,
     "commentCount": 50965,
     "profileTweets": 7222,
-    "latestItemDate": "2026-06-11T14:07:42.000Z"
+    "latestItemDate": "2026-06-11T15:10:18.000Z"
   },
   "rules": [
     {
@@ -96,14 +96,14 @@
     },
     {
       "symbol": "AAOI",
-      "mentions": 524,
+      "mentions": 525,
       "bull": 196,
       "bear": 12,
-      "neutral": 316,
+      "neutral": 317,
       "materiality": 82,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4221
+      "sentimentScore": 4224
     },
     {
       "symbol": "NVDA",
@@ -173,14 +173,14 @@
     },
     {
       "symbol": "MSFT",
-      "mentions": 290,
+      "mentions": 291,
       "bull": 86,
       "bear": 2,
-      "neutral": 202,
+      "neutral": 203,
       "materiality": 83,
       "latest": "2026-06-01T01:05:01.000Z",
       "dominantTheme": "ai-infrastructure",
-      "sentimentScore": 2115
+      "sentimentScore": 2118
     },
     {
       "symbol": "IQE",
@@ -239,14 +239,14 @@
     },
     {
       "symbol": "META",
-      "mentions": 248,
+      "mentions": 249,
       "bull": 83,
       "bear": 5,
-      "neutral": 160,
+      "neutral": 161,
       "materiality": 80,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1865
+      "sentimentScore": 1868
     },
     {
       "symbol": "SIVEF",
@@ -552,7 +552,7 @@
       "bear": 0,
       "neutral": 42,
       "materiality": 81,
-      "latest": "2026-05-29T13:58:02.000Z",
+      "latest": "2026-05-29T13:57:15.000Z",
       "dominantTheme": "general",
       "sentimentScore": 724
     },
@@ -1014,7 +1014,7 @@
       "bear": 0,
       "neutral": 21,
       "materiality": 83,
-      "latest": "2026-05-17T02:38:42.000Z",
+      "latest": "2026-05-17T01:28:37.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 317
     },
@@ -1135,7 +1135,7 @@
       "bear": 1,
       "neutral": 18,
       "materiality": 75,
-      "latest": "2026-04-24T09:44:28.000Z",
+      "latest": "2026-04-09T10:27:36.000Z",
       "dominantTheme": "macro-hedge",
       "sentimentScore": 284
     },
@@ -1322,7 +1322,7 @@
       "bear": 0,
       "neutral": 16,
       "materiality": 83,
-      "latest": "2026-05-29T13:58:02.000Z",
+      "latest": "2026-05-29T13:57:15.000Z",
       "dominantTheme": "general",
       "sentimentScore": 237
     },
@@ -1872,7 +1872,7 @@
       "bear": 0,
       "neutral": 12,
       "materiality": 77,
-      "latest": "2026-06-01T09:00:51.000Z",
+      "latest": "2026-06-01T07:27:26.000Z",
       "dominantTheme": "general",
       "sentimentScore": 162
     },
@@ -1905,7 +1905,7 @@
       "bear": 0,
       "neutral": 15,
       "materiality": 83,
-      "latest": "2026-05-29T13:58:02.000Z",
+      "latest": "2026-05-29T13:57:15.000Z",
       "dominantTheme": "general",
       "sentimentScore": 153
     },
@@ -2213,7 +2213,7 @@
       "bear": 0,
       "neutral": 3,
       "materiality": 90,
-      "latest": "2026-04-28T07:54:05.000Z",
+      "latest": "2026-04-28T07:45:54.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 117
     },
@@ -2334,7 +2334,7 @@
       "bear": 0,
       "neutral": 4,
       "materiality": 88,
-      "latest": "2026-05-30T21:55:45.000Z",
+      "latest": "2026-05-30T21:19:37.000Z",
       "dominantTheme": "power-architecture",
       "sentimentScore": 105
     },
@@ -2389,7 +2389,7 @@
       "bear": 0,
       "neutral": 4,
       "materiality": 88,
-      "latest": "2026-05-30T21:51:58.000Z",
+      "latest": "2026-05-30T21:35:12.000Z",
       "dominantTheme": "robotics-physical-ai",
       "sentimentScore": 102
     },
@@ -3179,7 +3179,7 @@
     },
     {
       "id": "2061233888454988260",
-      "date": "2026-05-31T23:54:19.000Z",
+      "date": "2026-05-31T23:50:29.000Z",
       "title": "Long ARM as AI server architectures pull CPU demand and ARM-based designs gain share",
       "body": "Can’t believe $ARM went straight from $134 to $354 when I took positions.\n\nThe ~$15B annual revenue coming from these cool name AI CPUs seemed a bit insane at the time.\n\nAt Computex, looks like $NVDA is unveiling new ARM based processors too.\n\nCounterpoint them shows them dominating AI ASIC servers by 2029, projections which is crazy…\n\nGPU:CPU ratios are requiring more and more CPUs.\n\nSeems like they have everything going for them?",
       "symbols": [
@@ -3249,7 +3249,7 @@
     },
     {
       "id": "2048929438679896317",
-      "date": "2026-04-28T01:48:59.000Z",
+      "date": "2026-04-28T00:57:00.000Z",
       "title": "“1.6T optical modules are near mass adoption this year” So nothing new but this just confirms timelines for volume production/mass adoption H2 2026. ",
       "body": "“1.6T optical modules are near mass adoption this year”\n\nSo nothing new but this just confirms timelines for volume production/mass adoption H2 2026. \n\n$AVGO and $MRVL are cited as main beneficiaries in the report but names like $AAOI are probably the most profound beneficiaries (largest 1.6T capacity US projected) for the pure play exposure.\n\n$JBL also set to go brrrr but my guess is H1 2027 with wave2 architectures since their LRO architectures remove the DSP (with $INTC SiPH acquisition IP).\n\nJabil would be a good contrarian long in the broader 1.6T supercycle coming up if this gets broader adoption from $META validation but benefits anyway. \n\nAnd especially $SIVE that powers Jabil 1.6T LRO, that when they scale, it scales laser demand too. \n\nI think everyone focuses on the upstream supply chains nowadays but going long on Broadcom and Marvell doesn’t hurt too.",
       "symbols": [
@@ -3810,30 +3810,6 @@
       "materiality": 100,
       "sentiment": "bull",
       "url": "https://x.com/aleabitoreddit/status/2049916817519587600"
-    },
-    {
-      "id": "2042187668931616964",
-      "date": "2026-04-24T09:44:28.000Z",
-      "title": "Here's a bunch of random 30 US-available random stocks I like today and why: 1. ",
-      "body": "Here's a bunch of random 30 US-available random stocks I like today and why:  \n\n1. $INTC - America's hope for foundry, national security\n2. $MRVL - scales rev from future maia asics and add ons like cpo, they do everything lost count\n3. $TSM - backbone of semis/ai\n4. $COHR - They do everything vertically integrated + captures optical cycle\n5. $RKLB - the final frontier of space will be around 5 years from now and 20 years from now. \n6. $DRAM - memory exposure for samsung/sk hynix\n7. $AVGO - hyperscalers dont like nvidia gpu tax\n8. $AMZN - nobody can compete against the overnight shipping of toilet paper. robotics will lower opex over time\n9. $ARM - AGI CPUs scale revenue quite a bit over the next decade\n10. $TSEM - you're going to need a foundry for light based stuff\n11. $IBIT - bitcoin, we all know by now\n12. $NBIS - i think it's the next AWS. Also they do self-driving cars with uber, own scaling DB companies, data labeling. It's almost like a mini Google. \n13. $GOOGL - youtube is not going away, gemini is great. they're vertically integrated with TPUs and fund buildout with operating income so i like it. \n14. $AMKR - super facilities coming online in late 2027-2028. benefits from made in america\n15. $HOOD - i dont like short term, but long term i'm a fan of Robinhood since they captured retail + have more products like banking, etc that they're scaling up. product innovation is wild.\n16. $CRCL - I happen to really like stablecoins and see them as the future for both payments/holding (depends on clarity act)\n17. $META - people aren't going to stop using instagram or whatsapp, or others anytime soon. \n18. $LITE - $GOOGL TPU exposure decently high part of BOM. As long as Google's AI program keeps running I think $LITE will do well.\n19. $LPTH - Germanium and China export controls will always be an issue so US made engineered alternatives  will always be important\n20. $FN - Someone needs to assemble optical stuff\n21. $JBL - same as above, but added with ip from Intel's SiPh acqusition so might end up like innolight?\n22. $MP - American rare earths program is extremely important, similar to $INTC national security risks\n23. $HIMS - Okay here me out they just acquired a ton of companies, and at $19 they have global DTC channel. short sellers really hate this company, but I think it's actually promising as a contrarian long\n24. $SMTC - LRO/LPO transition\n25. $POWL - US alternative to hammond for switchgear DC type bottleneck\n26. $VPG - Humanoids will be a thing down the road maybe 2027-2028, this makes the sensors. \n27. $MOG.A - Feels like i see them everywhere in robotics, to spacex supply chains\n28. $MSFT - At $375, one day we'll look back and see this as a buying opportunity.\n29. $CVX - oil might crash after war but these oil companies are going to be extremely important, especially when Venezulea is a goldmine.\n30. $XLU - i think rate cuts might be back online, we need power/grid for AI so these names will always be improtant from $CEG to $NEE\n\nJust throwing out other thoughts aside from $AAOI and $AEHR.",
-      "symbols": [
-        "INTC",
-        "MRVL",
-        "TSM",
-        "COHR",
-        "RKLB",
-        "DRAM",
-        "AVGO",
-        "AMZN",
-        "ARM",
-        "TSEM",
-        "IBIT",
-        "NBIS"
-      ],
-      "theme": "robotics-physical-ai",
-      "materiality": 100,
-      "sentiment": "bull",
-      "url": "https://x.com/aleabitoreddit/status/2042187668931616964"
     }
   ],
   "history": [
@@ -4037,19 +4013,21 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-11T14:32:38.912Z",
+    "staticUpdatedAt": "2026-06-11T15:36:25.990Z",
     "latestCaptured": {
-      "id": "2065073494220849660",
-      "date": "2026-06-11T14:07:42.000Z",
-      "title": "Woah, Frankfurt Bank strategists say: 8% of US current-account deficit could be refinanced in a single day by overseas demand for SpaceX ( $SPCX ) shares. ",
-      "body": "Woah, Frankfurt Bank strategists say:\n\n8% of US current-account deficit could be refinanced in a single day by overseas demand for SpaceX ( $SPCX ) shares.\n\nExcited to see how markets react around a Mega-IPO... \n\nDon't think there's been any historical precedence like this yet?",
+      "id": "2065088136884220158",
+      "date": "2026-06-11T15:05:53.000Z",
+      "title": "At this point I can't tell anymore if markets from $META to $MSFT are correcting because of macro. ",
+      "body": "At this point I can't tell anymore if markets from $META to $MSFT are correcting because of macro.\n\nOr just liquidity pull from $SPCX + index inclusion.\n\nAnd institutions frontrunning Nasdaq 100 and other rebalancing of SpaceX...\n\nAnyone know?",
       "symbols": [
+        "META",
+        "MSFT",
         "SPCX"
       ],
-      "theme": "general",
-      "materiality": 51,
+      "theme": "macro-hedge",
+      "materiality": 71,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2065073494220849660"
+      "url": "https://x.com/aleabitoreddit/status/2065088136884220158"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",

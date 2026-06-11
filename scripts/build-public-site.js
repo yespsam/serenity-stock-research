@@ -60,6 +60,13 @@ function validDate(value) {
   return time >= Date.parse("2024-01-01") && time <= Date.now() + 86_400_000;
 }
 
+function isPublicTimelineStatus(item = {}) {
+  if ((item.sourceList || []).includes("fxtwitter-timeline")) return true;
+  return (item.sourceUrls || []).some(
+    (url) => typeof url === "string" && url.includes("/profile/aleabitoreddit/statuses") && !url.includes("with_replies=1")
+  );
+}
+
 function historyCandidate(item, symbol) {
   return {
     id: item.id || item.url || `${symbol}-${item.date}`,
@@ -104,9 +111,10 @@ function buildHistoryCandidates(items = []) {
 }
 
 function buildMonitorSnapshot(tweets = {}) {
-  const latest = (tweets.items || [])
-    .filter((item) => validDate(item.date))
-    .sort((a, b) => Date.parse(b.date || 0) - Date.parse(a.date || 0))[0];
+  const datedItems = (tweets.items || []).filter((item) => validDate(item.date));
+  const latest = (datedItems.some((item) => isPublicTimelineStatus(item)) ? datedItems.filter((item) => isPublicTimelineStatus(item)) : datedItems).sort(
+    (a, b) => Date.parse(b.date || 0) - Date.parse(a.date || 0)
+  )[0];
   return {
     staticUpdatedAt: tweets.scrapedAt || "",
     latestCaptured: latest ? compactItem(latest) : null,
