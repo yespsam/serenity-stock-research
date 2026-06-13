@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-13T12:27:09.138Z",
+  "generatedAt": "2026-06-13T13:31:57.284Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6665,
+    "parsedItems": 6666,
     "commentCount": 50965,
     "profileTweets": 7222,
-    "latestItemDate": "2026-06-13T11:34:04.000Z"
+    "latestItemDate": "2026-06-13T12:53:13.000Z"
   },
   "rules": [
     {
@@ -63,14 +63,14 @@
   "symbols": [
     {
       "symbol": "SIVE",
-      "mentions": 822,
-      "bull": 290,
+      "mentions": 823,
+      "bull": 291,
       "bear": 7,
       "neutral": 525,
       "materiality": 80,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 6641
+      "sentimentScore": 6659
     },
     {
       "symbol": "NBIS",
@@ -118,14 +118,14 @@
     },
     {
       "symbol": "AXTI",
-      "mentions": 566,
-      "bull": 148,
+      "mentions": 567,
+      "bull": 149,
       "bear": 8,
       "neutral": 410,
       "materiality": 75,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 3729
+      "sentimentScore": 3747
     },
     {
       "symbol": "IREN",
@@ -3961,17 +3961,20 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-13T12:25:54.532Z",
+    "staticUpdatedAt": "2026-06-13T13:31:00.340Z",
     "latestCaptured": {
-      "id": "2065758024896037020",
-      "date": "2026-06-13T11:27:47.000Z",
-      "title": "한국 어머니들은 원래 이렇게 사기캐인가요? 어머님이 WF6의 3차 파급 효과(third-order effect)에 따른 공급망 차질을 파악하셨다니 정말 놀랍습니다. ",
-      "body": "한국 어머니들은 원래 이렇게 사기캐인가요?\n어머님이 WF6의 3차 파급 효과(third-order effect)에 따른 공급망 차질을 파악하셨다니 정말 놀랍습니다.\n\n중국의 대(對)일본 텅스텐 수출 통제로 인해,\n전구체 부족 및 원가 상승이 발생하여 글로벌 공급망의 25~35%가 타격을 입게 된다는 사실을 말이죠.\n\n게다가 후성(093370)이 SK하이닉스 같은 메모리 반도체 제조사들에게 얼마나 중요한 기업인지 짚어내시고,\n\n이 공급망에 얽힌 수많은 기업들 중에서도 시가총액 12억 달러(약 1조 6천억 원) 규모의 이 한국 기업을, 해당 병목 현상에 투자할 수 있는 가장 최적의 저평가된 투자처(exposure)로 정확히 발굴해 내시다니요?\n\n진심으로 감탄했습니다.",
-      "symbols": [],
+      "id": "2065779524248510758",
+      "date": "2026-06-13T12:53:13.000Z",
+      "title": "It’s been officially 3 months since I posted my $SIVE long thesis back at 4 SEK. ",
+      "body": "It’s been officially 3 months since I posted my $SIVE long thesis back at 4 SEK.\n\nThis idea is now up ~1900%… \n\nWith many US institutions from JPM to Fidelity only recently entering positions.\n\nProbably my 2nd greatest thesis of all time after $AXTI.\n\nDid you listen anon?",
+      "symbols": [
+        "SIVE",
+        "AXTI"
+      ],
       "theme": "general",
-      "materiality": 46,
-      "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2065758024896037020"
+      "materiality": 66,
+      "sentiment": "bull",
+      "url": "https://x.com/aleabitoreddit/status/2065779524248510758"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
