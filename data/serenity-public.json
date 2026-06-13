@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-13T13:31:57.284Z",
+  "generatedAt": "2026-06-13T23:42:27.980Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6666,
+    "parsedItems": 6669,
     "commentCount": 50965,
     "profileTweets": 7222,
-    "latestItemDate": "2026-06-13T12:53:13.000Z"
+    "latestItemDate": "2026-06-13T22:51:12.000Z"
   },
   "rules": [
     {
@@ -63,14 +63,14 @@
   "symbols": [
     {
       "symbol": "SIVE",
-      "mentions": 823,
-      "bull": 291,
+      "mentions": 826,
+      "bull": 292,
       "bear": 7,
-      "neutral": 525,
+      "neutral": 527,
       "materiality": 80,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 6659
+      "sentimentScore": 6683
     },
     {
       "symbol": "NBIS",
@@ -162,14 +162,14 @@
     },
     {
       "symbol": "SOI",
-      "mentions": 251,
-      "bull": 96,
+      "mentions": 252,
+      "bull": 97,
       "bear": 2,
       "neutral": 153,
       "materiality": 83,
       "latest": "2026-05-24T02:28:23.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2143
+      "sentimentScore": 2161
     },
     {
       "symbol": "MSFT",
@@ -349,14 +349,14 @@
     },
     {
       "symbol": "SNDK",
-      "mentions": 171,
+      "mentions": 172,
       "bull": 66,
       "bear": 2,
-      "neutral": 103,
+      "neutral": 104,
       "materiality": 77,
       "latest": "2026-05-24T02:28:23.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 1459
+      "sentimentScore": 1462
     },
     {
       "symbol": "RKLB",
@@ -2328,6 +2328,17 @@
       "sentimentScore": 99
     },
     {
+      "symbol": "SPCX",
+      "mentions": 14,
+      "bull": 5,
+      "bear": 0,
+      "neutral": 9,
+      "materiality": 76,
+      "latest": "2026-05-25T17:49:06.000Z",
+      "dominantTheme": "general",
+      "sentimentScore": 117
+    },
+    {
       "symbol": "STM",
       "mentions": 9,
       "bull": 5,
@@ -2469,17 +2480,6 @@
       "latest": "2026-05-27T07:29:00.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 100
-    },
-    {
-      "symbol": "MBLY",
-      "mentions": 13,
-      "bull": 7,
-      "bear": 2,
-      "neutral": 4,
-      "materiality": 91,
-      "latest": "2026-05-06T16:16:34.000Z",
-      "dominantTheme": "robotics-physical-ai",
-      "sentimentScore": 94
     }
   ],
   "items": [
@@ -3961,20 +3961,21 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-13T13:31:00.340Z",
+    "staticUpdatedAt": "2026-06-13T23:41:53.826Z",
     "latestCaptured": {
-      "id": "2065779524248510758",
-      "date": "2026-06-13T12:53:13.000Z",
-      "title": "It’s been officially 3 months since I posted my $SIVE long thesis back at 4 SEK. ",
-      "body": "It’s been officially 3 months since I posted my $SIVE long thesis back at 4 SEK.\n\nThis idea is now up ~1900%… \n\nWith many US institutions from JPM to Fidelity only recently entering positions.\n\nProbably my 2nd greatest thesis of all time after $AXTI.\n\nDid you listen anon?",
+      "id": "2065930011023204509",
+      "date": "2026-06-13T22:51:12.000Z",
+      "title": "If I had to stereotype my X experiences with markets: China 🇨🇳: set on cloning me with AI, can only think of trades in short term timeframes from A-shares PTSD. ",
+      "body": "If I had to stereotype my X experiences with markets:\n\nChina 🇨🇳: set on cloning me with AI, can only think of trades in short term timeframes from A-shares PTSD.\n\nAmerica 🇺🇸:  bullish on anything futuristic like $SPCX, don’t care about valuations\n\nEurope 🇪🇺: from $SIVE to $SOI, cares more about water usage than the AI buildout. Somehow can only look at past 12 months. (Belgium is cool so far), looking at you France + Sweden\n\nKorea 🇰🇷: leveraged degens. I’ve never seen a market so volatile. Equivalent of 50x hyperliquid traders but with stock markets.\n\nJapan 🇯🇵: somehow supportive of everything, haven’t seen any Japanese person aggressively bear post and short stocks before.\n\nNot enough data on other places yet like Latin America, but will have some soon enough ig.",
       "symbols": [
+        "SPCX",
         "SIVE",
-        "AXTI"
+        "SOI"
       ],
       "theme": "general",
-      "materiality": 66,
+      "materiality": 87,
       "sentiment": "bull",
-      "url": "https://x.com/aleabitoreddit/status/2065779524248510758"
+      "url": "https://x.com/aleabitoreddit/status/2065930011023204509"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
