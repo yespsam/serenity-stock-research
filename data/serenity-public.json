@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-13T05:21:10.094Z",
+  "generatedAt": "2026-06-13T10:23:49.357Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6660,
+    "parsedItems": 6662,
     "commentCount": 50965,
-    "profileTweets": 7256,
-    "latestItemDate": "2026-06-13T04:20:16.000Z"
+    "profileTweets": 7222,
+    "latestItemDate": "2026-06-13T10:14:06.000Z"
   },
   "rules": [
     {
@@ -123,9 +123,9 @@
       "bear": 8,
       "neutral": 410,
       "materiality": 75,
-      "latest": "2026-06-13T04:20:16.000Z",
+      "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 3726
+      "sentimentScore": 3729
     },
     {
       "symbol": "IREN",
@@ -228,14 +228,14 @@
     },
     {
       "symbol": "TSM",
-      "mentions": 217,
+      "mentions": 218,
       "bull": 86,
       "bear": 2,
-      "neutral": 129,
+      "neutral": 130,
       "materiality": 84,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 1895
+      "sentimentScore": 1898
     },
     {
       "symbol": "META",
@@ -3961,21 +3961,21 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-13T05:20:38.388Z",
+    "staticUpdatedAt": "2026-06-13T10:23:07.126Z",
     "latestCaptured": {
-      "id": "2065650434644304165",
-      "date": "2026-06-13T04:20:16.000Z",
-      "title": "The AI supremacy Wars begins. ",
-      "body": "The AI supremacy Wars begins.\n\nThink a lot of the upstream supply chain bottlenecks caused by each Country export controlling each other (eg. $AXTI)\n\nShould present some interesting opportunities in the near future.\n\nThat being said, Anthropic was getting distilled left and right in Singapore -> China and others.\n\nHot take, but steps like this do help preserve American dominance in AI, keeping the most advanced model at home. \n\nI don’t think Superintelligence should be global access, since we’re starting to get into uncharted territories.",
+      "id": "2065736884752703865",
+      "date": "2026-06-13T10:03:47.000Z",
+      "title": "Okay my fellow Koreans, it's been awhile. ",
+      "body": "Okay my fellow Koreans, it's been awhile. \n\nFoosung (093370, ~$1.2B MC) looks like a massive beneficiary soon. \n\nBasically China export controlled Japan, causing their WF₆ supply chain to go down.\n\nMeaning 25% of the world's supply required for SK Hynix, Samsung, $TSM go bye bye. \n\nIf you remember the Straight of Homuz with Oil, that's a lot. \n\nFoosung's importance just shot through the roof given from some est. they're 10% of the supply chain? \n\nSo that number goes up, massive bottleneck for demand. Then this looks like the best pure play beneficiary outside of China (even if precursors pricing are rough). \n\nDon't have positions, just wanted to publish an idea.",
       "symbols": [
-        "AXTI"
+        "TSM"
       ],
-      "theme": "general",
-      "materiality": 51,
+      "theme": "memory-rotation",
+      "materiality": 61,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2065650434644304165"
+      "url": "https://x.com/aleabitoreddit/status/2065736884752703865"
     },
-    "profileTweets": 7256,
+    "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
     "pollIntervalSeconds": 1
   }
