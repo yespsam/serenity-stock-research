@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-15T14:35:14.440Z",
+  "generatedAt": "2026-06-15T14:36:40.335Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -10,8 +10,8 @@
   "stats": {
     "parsedItems": 6695,
     "commentCount": 50965,
-    "profileTweets": 7222,
-    "latestItemDate": "2026-06-15T13:13:30.000Z"
+    "profileTweets": 7286,
+    "latestItemDate": "2026-06-15T14:02:20.000Z"
   },
   "rules": [
     {
@@ -3981,27 +3981,26 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-15T13:25:31.398Z",
+    "staticUpdatedAt": "2026-06-15T14:36:18.488Z",
     "latestCaptured": {
-      "id": "2066498742942159288",
-      "date": "2026-06-15T12:31:08.000Z",
-      "title": "$SIVE is the next SIVE. Don’t think you’ll find another company. ",
-      "body": "$SIVE is the next SIVE.\n\nDon’t think you’ll find another company.\n\nThat’s qualified and likely primary/sole source with:\n\n- $JBL and other pluggable hyperscaler suppliers \n- Ayar and the $NVDA NVLink CPO ecosystems\n\nWhile being the foundational reference laser for $GFS and pluggable/CPO/NPO deployments.\n\nThat hyperscalers like $AMD and others use, at current valuations.\n\nEven $POET buys $SIVE lasers and Poet is about the same valuation just off having one $50m purchase agreement. \n\nAmount of hyperscaler suppliers for 2027 into 2028 is just ridiculous. \n\nFrom the general meeting today in a few hours, we’ll hopefully see NASDAQ listing timelines confirmed.\n\nSo they can have room for M&A to TAM expansion and to make each laser they sell more valuable.\n\nFollowing what $LITE did to grow into a $75B company.",
+      "id": "2066521694836330618",
+      "date": "2026-06-15T14:02:20.000Z",
+      "title": "I’ve written a thesis on these 3 themes early on: Neoclouds, Photonics, and Memory. Now, it’s fun to sit back and watch all my thesis ideas play out from $AAOI to $EWY to $NBIS. Ev",
+      "body": "I’ve written a thesis on these 3 themes early on:\n\nNeoclouds, Photonics, and Memory.\n\nNow, it’s fun to sit back and watch all my thesis ideas play out from $AAOI to $EWY to $NBIS. \n\nEven got my warnings right too, $IREN is still stagnant due to the $6B of constant selling pressure from the ATM, while $NBIS reaches ATHs.\n\nBut the bagholders still don’t want to admit it.\n\nThink a core part is knowing what theme comes next with markets, then comes picking the winner + heavy concentration in them.\n\nIf you went long on software and chose the ideal stock, you’d probably end up not as happy? \n\nPhotonics is still probably the earliest out of the three.\n\nBut I can see Nebius end up like AWS one day.\n\nAnd $MU / SK Hynix / Samsung potentially end up like a mini $NVDA if memory demand is structural.",
       "symbols": [
-        "SIVE",
-        "JBL",
-        "NVDA",
-        "GFS",
-        "AMD",
-        "POET",
-        "LITE"
+        "AAOI",
+        "EWY",
+        "NBIS",
+        "IREN",
+        "MU",
+        "NVDA"
       ],
-      "theme": "cpo-silicon-photonics",
-      "materiality": 81,
-      "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2066498742942159288"
+      "theme": "capital-structure-veto",
+      "materiality": 0,
+      "sentiment": "bear",
+      "url": "https://x.com/aleabitoreddit/status/2066521694836330618"
     },
-    "profileTweets": 7222,
+    "profileTweets": 7286,
     "source": "FxTwitter / SerenitySaid / public mirrors",
     "pollIntervalSeconds": 1
   }

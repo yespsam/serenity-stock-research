@@ -60,6 +60,11 @@ function validDate(value) {
   return time >= Date.parse("2024-01-01") && time <= Date.now() + 86_400_000;
 }
 
+function parsedTime(value) {
+  const time = Date.parse(value || 0);
+  return Number.isFinite(time) ? time : 0;
+}
+
 function isPublicTimelineStatus(item = {}) {
   if ((item.sourceList || []).includes("fxtwitter-timeline")) return true;
   return (item.sourceUrls || []).some(
@@ -136,6 +141,7 @@ function buildPublicData() {
   const research = readJson("data/serenity-research.json");
   const tweets = readJson("data/serenity-tweets.json");
   const distillation = readJson("data/serenity-distillation.json");
+  const previousPublic = fs.existsSync(existingPublic) ? JSON.parse(fs.readFileSync(existingPublic, "utf8")) : null;
   const picked = new Map();
 
   for (const group of aliasGroups) {
@@ -147,7 +153,7 @@ function buildPublicData() {
     for (const item of hits) picked.set(String(item.id || item.url), compactItem(item));
   }
 
-  return {
+  const publicData = {
     generatedAt: new Date().toISOString(),
     profile: research.profile || {},
     stats: {
@@ -174,6 +180,24 @@ function buildPublicData() {
     history: buildHistoryCandidates(tweets.items || []),
     monitor: buildMonitorSnapshot(tweets),
   };
+
+  const previousLatest = previousPublic?.monitor?.latestCaptured;
+  const nextLatest = publicData.monitor?.latestCaptured;
+  if (parsedTime(previousLatest?.date) > parsedTime(nextLatest?.date)) {
+    publicData.monitor = {
+      ...publicData.monitor,
+      latestCaptured: previousLatest,
+      profileTweets: Math.max(Number(publicData.monitor?.profileTweets || 0), Number(previousPublic?.monitor?.profileTweets || 0)),
+      staticUpdatedAt: previousPublic.monitor?.staticUpdatedAt || publicData.monitor?.staticUpdatedAt || "",
+    };
+    publicData.stats = {
+      ...publicData.stats,
+      latestItemDate: previousLatest.date || publicData.stats.latestItemDate,
+      profileTweets: Math.max(Number(publicData.stats?.profileTweets || 0), Number(previousPublic?.stats?.profileTweets || 0)),
+    };
+  }
+
+  return publicData;
 }
 
 fs.rmSync(OUT, { recursive: true, force: true });
