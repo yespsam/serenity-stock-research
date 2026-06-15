@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-14T16:04:06.124Z",
+  "generatedAt": "2026-06-15T02:15:23.573Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -10,8 +10,8 @@
   "stats": {
     "parsedItems": 6678,
     "commentCount": 50965,
-    "profileTweets": 7268,
-    "latestItemDate": "2026-06-14T15:27:22.000Z"
+    "profileTweets": 7271,
+    "latestItemDate": "2026-06-15T02:02:59.000Z"
   },
   "rules": [
     {
@@ -3981,29 +3981,25 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-14T16:03:38.565Z",
+    "staticUpdatedAt": "2026-06-15T02:15:23.573Z",
     "latestCaptured": {
-      "id": "2066180704661356593",
-      "date": "2026-06-14T15:27:22.000Z",
-      "title": "This is gonna upset a lot of people: But TA is astrology for traders. It's confirmation bias + trading human psychology about entries. Kinda like how people frontran $SPCE from $SP",
-      "body": "This is gonna upset a lot of people: \n\nBut TA is astrology for traders.\n\nIt's confirmation bias + trading human psychology about entries. \n\nKinda like how people frontran $SPCE from $SPCX IPO expecting retail to mess up tickers by trading psychology. \n\n$SIVE didn't go up 1900% because of the golden cross space comet firebreathing dragon candle that someone is trying to sell for $499. \n\nIt's because markets are pricing in future revenue from $JBL, $GFS that got announced. \n\n$AXTI didn't go up 8000% because the golden waterfall candle alert sounded back at $8. \n\nit's because of InP substrate, game theory on ASP hikes, export controls, photonics demand, and others. \n\nIf you want to figure out psychologically what other regards are believing, you use TA. \n\nBut for determining the actual upside... nah\n\nPeople have been drawing $120+ TAs on $IREN for the past idk how many months none of that crap matters when there's a $6B ATM that needs to be bought through first.\n\nIt's by theme (eg. $LITE to $AAOI relations), any news catalysts that affect forward revenue, projections, macro news, earnings, float dynamics, and so on. \n\nThen you can just derive what MC that company should be at. \n\nSo for entry points, sure you can use TA. \n\nFor determining where the stock heads, just throw the tyrannosaurs rex omega-green candle indicator out the window.",
+      "id": "2066340661633372452",
+      "date": "2026-06-15T02:02:59.000Z",
+      "title": "Today, there's a new report that China eased InP substrate exports. Which is expected to relieve mass production bottlenecks in the photonics market (source: Digitimes) My optical ",
+      "body": "Today, there's a new report that China eased InP substrate exports. \n\nWhich is expected to relieve mass production bottlenecks in the photonics market (source: Digitimes)\n\nMy optical positions are very happy to hear this:\n\nFrom $AXTI (substrates), $IQE (epiwafers) to $AAOI (lasers) / $LITE / $SIVE, and others. \n\nTaiwanese optical players like VPEC, Landmark, and others should go brrr as well. \n\nJust to recap: the photonics market, especially for laser companies is moreso \"how much can you make\" rather than how much demand is there. \n\nInP substrates was one of the main bottlenecks affecting upstream capacity.   \n\nSo if you're able to make more = more revenue.",
       "symbols": [
-        "SPCE",
-        "SPCX",
-        "SIVE",
-        "JBL",
-        "GFS",
         "AXTI",
-        "IREN",
+        "IQE",
+        "AAOI",
         "LITE",
-        "AAOI"
+        "SIVE"
       ],
-      "theme": "capital-structure-veto",
+      "theme": "cpo-silicon-photonics",
       "materiality": 60,
-      "sentiment": "bear",
-      "url": "https://x.com/aleabitoreddit/status/2066180704661356593"
+      "sentiment": "neutral",
+      "url": "https://x.com/aleabitoreddit/status/2066340661633372452"
     },
-    "profileTweets": 7268,
+    "profileTweets": 7271,
     "source": "FxTwitter / SerenitySaid / public mirrors",
     "pollIntervalSeconds": 1
   }
