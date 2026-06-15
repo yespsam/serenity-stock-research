@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-15T02:15:23.573Z",
+  "generatedAt": "2026-06-15T04:17:29.315Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -10,8 +10,8 @@
   "stats": {
     "parsedItems": 6678,
     "commentCount": 50965,
-    "profileTweets": 7271,
-    "latestItemDate": "2026-06-15T02:02:59.000Z"
+    "profileTweets": 7277,
+    "latestItemDate": "2026-06-15T03:21:12.000Z"
   },
   "rules": [
     {
@@ -3981,25 +3981,23 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-15T02:15:23.573Z",
+    "staticUpdatedAt": "2026-06-15T04:17:29.315Z",
     "latestCaptured": {
-      "id": "2066340661633372452",
-      "date": "2026-06-15T02:02:59.000Z",
-      "title": "Today, there's a new report that China eased InP substrate exports. Which is expected to relieve mass production bottlenecks in the photonics market (source: Digitimes) My optical ",
-      "body": "Today, there's a new report that China eased InP substrate exports. \n\nWhich is expected to relieve mass production bottlenecks in the photonics market (source: Digitimes)\n\nMy optical positions are very happy to hear this:\n\nFrom $AXTI (substrates), $IQE (epiwafers) to $AAOI (lasers) / $LITE / $SIVE, and others. \n\nTaiwanese optical players like VPEC, Landmark, and others should go brrr as well. \n\nJust to recap: the photonics market, especially for laser companies is moreso \"how much can you make\" rather than how much demand is there. \n\nInP substrates was one of the main bottlenecks affecting upstream capacity.   \n\nSo if you're able to make more = more revenue.",
+      "id": "2066360345774764496",
+      "date": "2026-06-15T03:21:12.000Z",
+      "title": "Yep, very stupid to be a bear. When Trump is doing everything to boost markets before Midterms. On top, your $WOLF power semi basket should go brrr from 800 VDC acceleration. $LITE",
+      "body": "Yep, very stupid to be a bear.\n\nWhen Trump is doing everything to boost markets before Midterms. \n\nOn top, your $WOLF power semi basket should go brrr from 800 VDC acceleration.\n\n$LITE optical basket should go brrr from InP easing.  \n\n$SPCX successful IPO gives more appetite to risk on themes/IPOs (eg. Space sector).  \n\nAnd overall macro go brr from War/Strait peace deals.\n\nIt’s already kind of showing, since 2026 rate hike odds also crashed from 65% -> 35% following the news. Along with crude futures dropping. \n\nI've actually found Europe to be the most price sensitive to Iran tensions, so EU markets would probably be the most bullish overall… \n\n(South Korea/TW was originally with Sk Hynix moving directly in correlation to crude oil futures, but stopped caring after awhile).\n\nBut basically: Murica go brrrr.",
       "symbols": [
-        "AXTI",
-        "IQE",
-        "AAOI",
+        "WOLF",
         "LITE",
-        "SIVE"
+        "SPCX"
       ],
       "theme": "cpo-silicon-photonics",
-      "materiality": 60,
-      "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2066340661633372452"
+      "materiality": 42,
+      "sentiment": "bear",
+      "url": "https://x.com/aleabitoreddit/status/2066360345774764496"
     },
-    "profileTweets": 7271,
+    "profileTweets": 7277,
     "source": "FxTwitter / SerenitySaid / public mirrors",
     "pollIntervalSeconds": 1
   }
