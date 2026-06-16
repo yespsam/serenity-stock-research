@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T11:59:17.686Z",
+  "generatedAt": "2026-06-16T14:04:11.342Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6732,
+    "parsedItems": 6735,
     "commentCount": 51085,
-    "profileTweets": 7306,
-    "latestItemDate": "2026-06-16T11:01:48.000Z"
+    "profileTweets": 7222,
+    "latestItemDate": "2026-06-16T13:00:15.000Z"
   },
   "rules": [
     {
@@ -74,25 +74,25 @@
     },
     {
       "symbol": "NBIS",
-      "mentions": 771,
+      "mentions": 772,
       "bull": 219,
       "bear": 9,
-      "neutral": 543,
+      "neutral": 544,
       "materiality": 77,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 5390
+      "sentimentScore": 5393
     },
     {
       "symbol": "LITE",
-      "mentions": 566,
+      "mentions": 567,
       "bull": 219,
       "bear": 7,
-      "neutral": 340,
+      "neutral": 341,
       "materiality": 85,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4813
+      "sentimentScore": 4816
     },
     {
       "symbol": "AAOI",
@@ -107,14 +107,14 @@
     },
     {
       "symbol": "NVDA",
-      "mentions": 520,
+      "mentions": 521,
       "bull": 212,
       "bear": 17,
-      "neutral": 291,
-      "materiality": 82,
+      "neutral": 292,
+      "materiality": 83,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4320
+      "sentimentScore": 4323
     },
     {
       "symbol": "AXTI",
@@ -173,14 +173,14 @@
     },
     {
       "symbol": "MSFT",
-      "mentions": 291,
+      "mentions": 292,
       "bull": 86,
       "bear": 2,
-      "neutral": 203,
+      "neutral": 204,
       "materiality": 83,
       "latest": "2026-06-01T01:05:01.000Z",
       "dominantTheme": "ai-infrastructure",
-      "sentimentScore": 2118
+      "sentimentScore": 2121
     },
     {
       "symbol": "IQE",
@@ -195,36 +195,36 @@
     },
     {
       "symbol": "AMZN",
-      "mentions": 218,
+      "mentions": 219,
       "bull": 89,
       "bear": 1,
-      "neutral": 128,
+      "neutral": 129,
       "materiality": 86,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1971
+      "sentimentScore": 1974
     },
     {
       "symbol": "GOOGL",
-      "mentions": 283,
+      "mentions": 284,
       "bull": 88,
       "bear": 8,
-      "neutral": 187,
+      "neutral": 188,
       "materiality": 83,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1971
+      "sentimentScore": 1974
     },
     {
       "symbol": "MU",
-      "mentions": 208,
+      "mentions": 209,
       "bull": 96,
       "bear": 4,
-      "neutral": 108,
+      "neutral": 109,
       "materiality": 81,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 1971
+      "sentimentScore": 1974
     },
     {
       "symbol": "TSM",
@@ -239,14 +239,14 @@
     },
     {
       "symbol": "META",
-      "mentions": 250,
+      "mentions": 251,
       "bull": 83,
       "bear": 5,
-      "neutral": 162,
+      "neutral": 163,
       "materiality": 79,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1871
+      "sentimentScore": 1874
     },
     {
       "symbol": "SIVEF",
@@ -305,14 +305,14 @@
     },
     {
       "symbol": "CRWV",
-      "mentions": 202,
+      "mentions": 203,
       "bull": 72,
       "bear": 5,
-      "neutral": 125,
+      "neutral": 126,
       "materiality": 82,
       "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 1564
+      "sentimentScore": 1567
     },
     {
       "symbol": "INTC",
@@ -327,25 +327,25 @@
     },
     {
       "symbol": "AVGO",
-      "mentions": 156,
+      "mentions": 157,
       "bull": 75,
       "bear": 2,
-      "neutral": 79,
+      "neutral": 80,
       "materiality": 87,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1548
+      "sentimentScore": 1551
     },
     {
       "symbol": "AMD",
-      "mentions": 158,
+      "mentions": 159,
       "bull": 73,
       "bear": 1,
-      "neutral": 84,
+      "neutral": 85,
       "materiality": 85,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1547
+      "sentimentScore": 1550
     },
     {
       "symbol": "SNDK",
@@ -459,14 +459,14 @@
     },
     {
       "symbol": "ORCL",
-      "mentions": 122,
+      "mentions": 123,
       "bull": 40,
       "bear": 2,
-      "neutral": 80,
+      "neutral": 81,
       "materiality": 82,
       "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 919
+      "sentimentScore": 922
     },
     {
       "symbol": "XFAB",
@@ -2207,6 +2207,17 @@
       "sentimentScore": 140
     },
     {
+      "symbol": "SPCX",
+      "mentions": 22,
+      "bull": 9,
+      "bear": 3,
+      "neutral": 10,
+      "materiality": 82,
+      "latest": "2026-05-25T17:49:06.000Z",
+      "dominantTheme": "general",
+      "sentimentScore": 129
+    },
+    {
       "symbol": "YSS",
       "mentions": 11,
       "bull": 6,
@@ -2215,17 +2226,6 @@
       "materiality": 84,
       "latest": "2026-05-28T14:15:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 123
-    },
-    {
-      "symbol": "SPCX",
-      "mentions": 20,
-      "bull": 9,
-      "bear": 3,
-      "neutral": 8,
-      "materiality": 84,
-      "latest": "2026-05-25T17:49:06.000Z",
-      "dominantTheme": "general",
       "sentimentScore": 123
     },
     {
@@ -3981,21 +3981,32 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-16T11:57:14.873Z",
+    "staticUpdatedAt": "2026-06-16T14:03:35.580Z",
     "latestCaptured": {
-      "id": "2066838650193949091",
-      "date": "2026-06-16T11:01:48.000Z",
-      "title": "Woah, $SPCX acquired Cursor for $60B. I did not think it was worth that much… Maybe network effect or data for improving models became invaluable? I’m sure Elon has a plan in mind,",
-      "body": "Woah, $SPCX acquired Cursor for $60B.\n\nI did not think it was worth that much…\n\nMaybe network effect or data for improving models became invaluable? \n\nI’m sure Elon has a plan in mind, the Twitter acquisition paid extreme dividends.",
+      "id": "2066868456457416871",
+      "date": "2026-06-16T13:00:15.000Z",
+      "title": "Just some random thoughts, I do think AI is the most disruptive technology in human history. ",
+      "body": "Just some random thoughts, I do think AI is the most disruptive technology in human history. \n\nTo the level of agricultural or industrial revolution.\n\nSince Anthropic, OpenAi, XAI, and others are racing to build superintelligence. \n\nThe amount of economic impact can't be measured if AI helps find cures for cancer or accelerates discovery for Quantum Computing. \n\nOr if AI end up displacing the workforce, which increases profitability for companies. \n\nThe US Gov has every incentive to keep the buildout going too, as the implications from Warfare, Cybersecurity, is also immeasurable if China takes the lead. \n\nSo there's likely to be incentives and subsidies to win, even if there's not enough profit derived LLM training/inference. \n\nAs for sustainability, when you look upstream, $GOOGL is able to fund it majorly with their own cashflow, same with $AMZN, $MSFT. \n\nMore lukewarm on $META. Very iffy about $ORCL. \n\nBut I do see some bubbles forming around debt interest like $CRWV.\n\nMaybe circular valuations that's happening with OpenAI backlog agreements or $NVDA / $AMD agreements with Neoclouds to buy their GPUs.\n\nBut as seen with $MSFT and having OpenAI be a major part of the backlog, it did correct off the information, so \"bubbles\" like that do pop despite the overall markets increasing.\n\nDefinitely don't see a bubble in upstream semiconductors from $LITE to Sk Hynix though since the amount of profit they get from the buildout would likely be insane to make up for capex decreasing. \n\nOpenAI was actually my biggest fear from contagion, eg. $CRWV, $CBRS and others, but they just raised a lot.\n\nSo think it will be fine for another 1 1/2 years of capex, especially if they IPO this year. \n\nI also don't think we'll get massive Fed tightening despite \"predictions\" since this will trigger a contagion since many of these players rely heavily on debt. \n\nAnd although the Fed is independent, don't think Trump would have supported someone who is against his administration goals.  \n\nAs for semiconductor valuations going up every day like $AMD or $MU, there's probably going to be some corrections here and there. Everything going up together is kinda unhealthy. \n\nCan't time the capex peak but just from $AVGO and other projections, it just keeps accelerating exponentially into 2028. \n\nEspecially as everyone is starting to sign multi year agreements as well. \n\nOpenAI contagion / hyperscaler capex decreasing / fed tightening was what I'm looking out for, and no blaring signs of any of those yet. \n\nSo I think the music will keep playing for this year at the bare minimum.",
       "symbols": [
-        "SPCX"
+        "GOOGL",
+        "AMZN",
+        "MSFT",
+        "META",
+        "ORCL",
+        "CRWV",
+        "NVDA",
+        "AMD",
+        "LITE",
+        "CBRS",
+        "MU",
+        "AVGO"
       ],
-      "theme": "general",
-      "materiality": 81,
+      "theme": "memory-rotation",
+      "materiality": 97,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2066838650193949091"
+      "url": "https://x.com/aleabitoreddit/status/2066868456457416871"
     },
-    "profileTweets": 7306,
+    "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
     "pollIntervalSeconds": 1
   }
