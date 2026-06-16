@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-16T02:47:07.198Z",
+  "generatedAt": "2026-06-16T08:53:43.549Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6710,
+    "parsedItems": 6719,
     "commentCount": 51085,
     "profileTweets": 7222,
-    "latestItemDate": "2026-06-16T02:23:29.000Z"
+    "latestItemDate": "2026-06-16T08:05:02.000Z"
   },
   "rules": [
     {
@@ -63,14 +63,14 @@
   "symbols": [
     {
       "symbol": "SIVE",
-      "mentions": 835,
+      "mentions": 839,
       "bull": 297,
       "bear": 9,
-      "neutral": 529,
+      "neutral": 533,
       "materiality": 78,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 6735
+      "sentimentScore": 6747
     },
     {
       "symbol": "NBIS",
@@ -85,47 +85,47 @@
     },
     {
       "symbol": "LITE",
-      "mentions": 561,
+      "mentions": 564,
       "bull": 218,
       "bear": 7,
-      "neutral": 336,
+      "neutral": 339,
       "materiality": 85,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4783
+      "sentimentScore": 4792
     },
     {
       "symbol": "AAOI",
-      "mentions": 534,
+      "mentions": 537,
       "bull": 201,
       "bear": 13,
-      "neutral": 320,
+      "neutral": 323,
       "materiality": 81,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4301
+      "sentimentScore": 4310
     },
     {
       "symbol": "NVDA",
-      "mentions": 517,
+      "mentions": 519,
       "bull": 210,
       "bear": 17,
-      "neutral": 290,
+      "neutral": 292,
       "materiality": 82,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4281
+      "sentimentScore": 4287
     },
     {
       "symbol": "AXTI",
-      "mentions": 569,
+      "mentions": 572,
       "bull": 152,
       "bear": 9,
-      "neutral": 408,
+      "neutral": 411,
       "materiality": 74,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 3774
+      "sentimentScore": 3783
     },
     {
       "symbol": "IREN",
@@ -140,25 +140,25 @@
     },
     {
       "symbol": "COHR",
-      "mentions": 295,
+      "mentions": 296,
       "bull": 133,
       "bear": 3,
-      "neutral": 159,
+      "neutral": 160,
       "materiality": 89,
       "latest": "2026-06-01T14:33:55.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2809
+      "sentimentScore": 2812
     },
     {
       "symbol": "MRVL",
-      "mentions": 303,
+      "mentions": 304,
       "bull": 121,
       "bear": 1,
-      "neutral": 181,
+      "neutral": 182,
       "materiality": 85,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2706
+      "sentimentScore": 2709
     },
     {
       "symbol": "SOI",
@@ -195,14 +195,14 @@
     },
     {
       "symbol": "AMZN",
-      "mentions": 217,
+      "mentions": 218,
       "bull": 89,
       "bear": 1,
-      "neutral": 127,
+      "neutral": 128,
       "materiality": 86,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1968
+      "sentimentScore": 1971
     },
     {
       "symbol": "GOOGL",
@@ -217,14 +217,14 @@
     },
     {
       "symbol": "MU",
-      "mentions": 207,
+      "mentions": 208,
       "bull": 95,
       "bear": 4,
-      "neutral": 108,
-      "materiality": 81,
+      "neutral": 109,
+      "materiality": 80,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 1952
+      "sentimentScore": 1955
     },
     {
       "symbol": "TSM",
@@ -239,14 +239,14 @@
     },
     {
       "symbol": "META",
-      "mentions": 249,
+      "mentions": 250,
       "bull": 83,
       "bear": 5,
-      "neutral": 161,
+      "neutral": 162,
       "materiality": 79,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1868
+      "sentimentScore": 1871
     },
     {
       "symbol": "SIVEF",
@@ -338,25 +338,25 @@
     },
     {
       "symbol": "AMD",
-      "mentions": 156,
+      "mentions": 158,
       "bull": 72,
       "bear": 1,
-      "neutral": 83,
+      "neutral": 85,
       "materiality": 85,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1526
+      "sentimentScore": 1532
     },
     {
       "symbol": "SNDK",
-      "mentions": 173,
+      "mentions": 174,
       "bull": 66,
       "bear": 3,
-      "neutral": 104,
+      "neutral": 105,
       "materiality": 76,
       "latest": "2026-05-24T02:28:23.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 1440
+      "sentimentScore": 1443
     },
     {
       "symbol": "RKLB",
@@ -448,14 +448,14 @@
     },
     {
       "symbol": "EWY",
-      "mentions": 109,
+      "mentions": 111,
       "bull": 50,
       "bear": 3,
-      "neutral": 56,
+      "neutral": 58,
       "materiality": 74,
       "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 1012
+      "sentimentScore": 1018
     },
     {
       "symbol": "ORCL",
@@ -612,6 +612,17 @@
       "sentimentScore": 654
     },
     {
+      "symbol": "MTSI",
+      "mentions": 85,
+      "bull": 29,
+      "bear": 2,
+      "neutral": 54,
+      "materiality": 85,
+      "latest": "2026-05-28T14:15:25.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 644
+    },
+    {
       "symbol": "LPTH",
       "mentions": 61,
       "bull": 32,
@@ -621,17 +632,6 @@
       "latest": "2026-06-01T10:32:06.000Z",
       "dominantTheme": "general",
       "sentimentScore": 638
-    },
-    {
-      "symbol": "MTSI",
-      "mentions": 84,
-      "bull": 29,
-      "bear": 2,
-      "neutral": 53,
-      "materiality": 85,
-      "latest": "2026-05-28T14:15:25.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 641
     },
     {
       "symbol": "AMKR",
@@ -3981,24 +3981,22 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-16T02:46:34.981Z",
+    "staticUpdatedAt": "2026-06-16T08:52:42.523Z",
     "latestCaptured": {
-      "id": "2066707573139763211",
-      "date": "2026-06-16T02:23:29.000Z",
-      "title": "New reports that $AMD is scrambling for CW laser supply. ",
-      "body": "New reports that $AMD is scrambling for CW laser supply. \n\nAnd is negotiating large-scale purchase orders for CW Lasers to ensure its production capacity is not constrained by $NVDA (Trendforce)\n\nObvious CW laser beneficiaries: \n- $SIVE (AMD went to GFS for CPO, Sivers reference laser level)\n- $AAOI (Rosenblatt analyst checks)\n\nLumentum/Coherent are kinda booked out way into 2028 as well. \n\nLumentum is especially constrained for CW capacity already from existing EML contracts (so they probably are buying from Sumitomo/Furukawa and co). \n\nMaybe Macom and Japanese giants still have spare capacity. (disclosure, own aaoi/sivers).\n\nI predicted this last year and said hyperscalers should go more upstream to secure capacity... at laser levels, epiwafer levels, or even inp substrate levels. \n\nTo not get bottlenecked by Nvidia.",
+      "id": "2066791570569916832",
+      "date": "2026-06-16T07:54:44.000Z",
+      "title": "I did say $MU looked like the next $NVDA. ",
+      "body": "I did say $MU looked like the next $NVDA. Now we're at a $1.23T MC.\n\nStarted talking more about Samsung Electronics/Sk Hynix back in 2025. \n\nPut more concentration into the memory theme like $SNDK and others, Jan of this year. \n\nAnd I'm glad my prediction with Micron + memory is playing out well! \n\nHope people had fun with $EWY longs too, those are up a lot.",
       "symbols": [
-        "AMD",
+        "MU",
         "NVDA",
-        "SIVE",
-        "AAOI",
-        "SPCX",
-        "AAOX"
+        "SNDK",
+        "EWY"
       ],
       "theme": "memory-rotation",
-      "materiality": 83,
+      "materiality": 76,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2066707573139763211"
+      "url": "https://x.com/aleabitoreddit/status/2066791570569916832"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
