@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-17T06:18:57.636Z",
+  "generatedAt": "2026-06-17T07:21:05.718Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -3962,17 +3962,15 @@
   "monitor": {
     "staticUpdatedAt": "2026-06-17T06:18:17.063Z",
     "latestCaptured": {
-      "id": "2067117980656533764",
-      "date": "2026-06-17T05:31:46.000Z",
-      "title": "Bernstein is legit the dumbest analyst firm I’ve seen calling for a 50% crash in Kioxia. ",
-      "body": "Bernstein is legit the dumbest analyst firm I’ve seen calling for a 50% crash in Kioxia.\n\nThey gave $INTC a $36 PT back in Jan and now it’s $118.\n\nGood lesson to ignore institutional reports that get published for retail consumption. \n\nThey’re not here to help retail investors.",
-      "symbols": [
-        "INTC"
-      ],
+      "id": "2067135190640845161",
+      "date": "2026-06-17T06:40:09.000Z",
+      "title": "European Media HATES this one trick: The same ideas, just behind $2000 paywalls.",
+      "body": "European Media HATES this one trick:\n\nThe same ideas, just behind $2000 paywalls.",
+      "symbols": [],
       "theme": "general",
-      "materiality": 67,
+      "materiality": 38,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2067117980656533764"
+      "url": "https://x.com/aleabitoreddit/status/2067135190640845161"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",

@@ -35,6 +35,12 @@ function readJson(file) {
   return JSON.parse(fs.readFileSync(path.join(ROOT, file), "utf8"));
 }
 
+function readJsonIfExists(file) {
+  const fullPath = path.join(ROOT, file);
+  if (!fs.existsSync(fullPath)) return null;
+  return JSON.parse(fs.readFileSync(fullPath, "utf8"));
+}
+
 function copyFile(from, to) {
   fs.mkdirSync(path.dirname(to), { recursive: true });
   fs.copyFileSync(path.join(ROOT, from), to);
@@ -70,6 +76,19 @@ function isPublicTimelineStatus(item = {}) {
   return (item.sourceUrls || []).some(
     (url) => typeof url === "string" && url.includes("/profile/aleabitoreddit/statuses") && !url.includes("with_replies=1")
   );
+}
+
+function isLikelyReply(item = {}) {
+  const text = String(item.title || item.body || "").trim();
+  return text.startsWith("@");
+}
+
+function archiveItems(archive = {}) {
+  return [
+    ...(archive.timeline?.items || []),
+    ...(archive.withRepliesTimeline?.items || []),
+    ...(archive.authorSearch?.items || []),
+  ];
 }
 
 function historyCandidate(item, symbol) {
@@ -115,11 +134,17 @@ function buildHistoryCandidates(items = []) {
     .slice(0, 18);
 }
 
-function buildMonitorSnapshot(tweets = {}) {
+function buildMonitorSnapshot(tweets = {}, archive = null) {
   const datedItems = (tweets.items || []).filter((item) => validDate(item.date));
-  const latest = (datedItems.some((item) => isPublicTimelineStatus(item)) ? datedItems.filter((item) => isPublicTimelineStatus(item)) : datedItems).sort(
-    (a, b) => Date.parse(b.date || 0) - Date.parse(a.date || 0)
-  )[0];
+  const latestFromTweets = (
+    datedItems.some((item) => isPublicTimelineStatus(item)) ? datedItems.filter((item) => isPublicTimelineStatus(item)) : datedItems
+  ).sort((a, b) => Date.parse(b.date || 0) - Date.parse(a.date || 0))[0];
+  const latestArchiveFallback = archiveItems(archive)
+    .filter((item) => validDate(item.date))
+    .filter((item) => !isLikelyReply(item))
+    .sort((a, b) => Date.parse(b.date || 0) - Date.parse(a.date || 0))[0];
+  const latest =
+    parsedTime(latestArchiveFallback?.date) > parsedTime(latestFromTweets?.date) ? latestArchiveFallback : latestFromTweets;
   return {
     staticUpdatedAt: tweets.scrapedAt || "",
     latestCaptured: latest ? compactItem(latest) : null,
@@ -141,6 +166,7 @@ function buildPublicData() {
   const research = readJson("data/serenity-research.json");
   const tweets = readJson("data/serenity-tweets.json");
   const distillation = readJson("data/serenity-distillation.json");
+  const fxTwitterArchive = readJsonIfExists("data/serenity-fxtwitter-archive.json");
   const previousPublic = fs.existsSync(existingPublic) ? JSON.parse(fs.readFileSync(existingPublic, "utf8")) : null;
   const picked = new Map();
 
@@ -178,7 +204,7 @@ function buildPublicData() {
     })),
     items: [...picked.values()],
     history: buildHistoryCandidates(tweets.items || []),
-    monitor: buildMonitorSnapshot(tweets),
+    monitor: buildMonitorSnapshot(tweets, fxTwitterArchive),
   };
 
   const previousLatest = previousPublic?.monitor?.latestCaptured;
