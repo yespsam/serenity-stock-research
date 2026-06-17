@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-17T03:17:45.641Z",
+  "generatedAt": "2026-06-17T06:18:57.636Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6739,
+    "parsedItems": 6742,
     "commentCount": 51400,
     "profileTweets": 7222,
-    "latestItemDate": "2026-06-17T03:00:23.000Z"
+    "latestItemDate": "2026-06-17T05:41:42.000Z"
   },
   "rules": [
     {
@@ -327,14 +327,14 @@
     },
     {
       "symbol": "INTC",
-      "mentions": 160,
+      "mentions": 162,
       "bull": 73,
       "bear": 1,
-      "neutral": 86,
+      "neutral": 88,
       "materiality": 82,
       "latest": "2026-05-01T06:02:46.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1558
+      "sentimentScore": 1564
     },
     {
       "symbol": "AMD",
@@ -3960,23 +3960,19 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-17T03:17:01.324Z",
+    "staticUpdatedAt": "2026-06-17T06:18:17.063Z",
     "latestCaptured": {
-      "id": "2067071462360666165",
-      "date": "2026-06-17T02:26:55.000Z",
-      "title": "I’m not sure why many folks are super bearish on my high conviction $AAOI long… Ever since $30, then on the way up to $170. ",
-      "body": "I’m not sure why many folks are super bearish on my high conviction $AAOI long… \n\nEver since $30, then on the way up to $170. (Yes I do think every bear is wrong, we’ll see who’s right).\n\nThey have scarce laser capacity that $AMD and other hyperscalers are looking for.\n\nWhile the entire industry is bottlenecked by $NVDA. \n\nAlong with a US transceiver supply chain for mass production of 800g/1.6T (management - largest in America).\n\nWhile demand far exceeds supply and while assembly gets outsourced to Asia.\n\nThen they’re quoting $471M monthly revenue in H1 entering H2 of 2027. Which is $5.6B ARR, off a $13.5B MC…\n\nWhile a lot of major inflection volume hits even later in 2028.\n\nAs for fluctuations, there might be active $600M ATMs that get tapped into at random times. \n\nAnd random bear posts + macro from time to time that cause more volatility (eg. Analyst notes saying bear on $LITE due to false CPO delay rumors, then that brings down others in the sector).\n\nAlso we’re a year out so timelines are still a little early.\n\nI haven’t seen such fast revenue ramp since $NBIS.",
+      "id": "2067117980656533764",
+      "date": "2026-06-17T05:31:46.000Z",
+      "title": "Bernstein is legit the dumbest analyst firm I’ve seen calling for a 50% crash in Kioxia. ",
+      "body": "Bernstein is legit the dumbest analyst firm I’ve seen calling for a 50% crash in Kioxia.\n\nThey gave $INTC a $36 PT back in Jan and now it’s $118.\n\nGood lesson to ignore institutional reports that get published for retail consumption. \n\nThey’re not here to help retail investors.",
       "symbols": [
-        "AAOI",
-        "AMD",
-        "NVDA",
-        "LITE",
-        "NBIS"
+        "INTC"
       ],
-      "theme": "capital-structure-veto",
-      "materiality": 100,
-      "sentiment": "bear",
-      "url": "https://x.com/aleabitoreddit/status/2067071462360666165"
+      "theme": "general",
+      "materiality": 67,
+      "sentiment": "neutral",
+      "url": "https://x.com/aleabitoreddit/status/2067117980656533764"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
