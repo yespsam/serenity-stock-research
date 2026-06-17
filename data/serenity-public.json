@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-17T15:40:03.558Z",
+  "generatedAt": "2026-06-17T16:37:01.501Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -3962,17 +3962,17 @@
   "monitor": {
     "staticUpdatedAt": "2026-06-17T12:27:44.645Z",
     "latestCaptured": {
-      "id": "2067267047781015579",
-      "date": "2026-06-17T15:24:06.000Z",
-      "title": "$AEHR receives follow up production order from major Silicon Photonics Customer for wafer level burn in systems. ",
-      "body": "$AEHR receives follow up production order from major Silicon Photonics Customer for wafer level burn in systems.\n\nNow up 11.29% today to $116. \n\nOnly 2 months ago it was in the $30's, good times.",
+      "id": "2067272647545930045",
+      "date": "2026-06-17T15:46:21.000Z",
+      "title": "Jim Cramer gave $SPCX his blessing.",
+      "body": "Jim Cramer gave $SPCX his blessing.",
       "symbols": [
-        "AEHR"
+        "SPCX"
       ],
-      "theme": "cpo-silicon-photonics",
-      "materiality": 61,
+      "theme": "general",
+      "materiality": 43,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2067267047781015579"
+      "url": "https://x.com/aleabitoreddit/status/2067272647545930045"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
