@@ -756,11 +756,11 @@ function scoreStock(stock, quote = quoteForStock(stock)) {
 }
 
 function conclusionFor(score, stock) {
-  if (stock.riskFlag || stock.theme === "capital-structure-veto") return "先过资本结构否决，不急着做多";
-  if (score >= 82) return "重点研究，等待价格和证据共振";
-  if (score >= 68) return "有 thesis，可以放进观察池";
-  if (score >= 52) return "作为链路锚点观察，赔率一般";
-  return "不够 Serenity 式，不是优先标的";
+  if (stock.riskFlag || stock.theme === "capital-structure-veto") return "资本结构风险优先，暂不建立多头假设";
+  if (score >= 82) return "高优先级研究，等待价格与证据共振";
+  if (score >= 68) return "纳入观察池，等待增量证据确认";
+  if (score >= 52) return "行业锚点属性更强，赔率一般";
+  return "暂不列为优先研究标的";
 }
 
 function upsideSpace(score, stock) {
@@ -780,9 +780,9 @@ function pricePosition(quote = {}) {
   const low = Number(quote.fiftyTwoWeekLow);
   if (![price, high, low].every(Number.isFinite) || high <= low) return "";
   const pct = clamp(((price - low) / (high - low)) * 100, 0, 100);
-  if (pct > 82) return "价格处在 52 周高位附近，Serenity 框架会更强调反证和估值拥挤。";
-  if (pct < 35) return "价格离 52 周高位较远，若 thesis 没坏，可能更适合继续做证据核查。";
-  return "价格处在 52 周区间中段，更适合等催化或客户证据更新。";
+  if (pct > 82) return "价格接近 52 周高位，估值容错率下降。";
+  if (pct < 35) return "价格处于低位复核区，重点确认 thesis 是否未被破坏。";
+  return "价格位于区间中段，等待催化剂或订单证据确认。";
 }
 
 function priceRangePercent(quote = {}) {
@@ -879,7 +879,7 @@ function scoreBreakdown(stock, quote = {}, metric = {}) {
 
 function decisionFor(stock, quote = quoteForStock(stock)) {
   const metric = metricForStock(stock) || {};
-  const evidence = getCalledEvidence(stock, 5);
+  const evidence = getCalledEvidence(stock, 3);
   const baseScore = scoreStock(stock, quote);
   const breakdown = scoreBreakdown(stock, quote, metric);
   const marketCap = Number(quote.marketCap) || stock.fallbackMarketCap || 0;
@@ -900,54 +900,54 @@ function decisionFor(stock, quote = quoteForStock(stock)) {
 
   let actionLabel = "暂不优先";
   let actionClass = "avoid";
-  let stance = "先放低优先级";
+  let stance = "低优先级观察";
   if (stock.riskFlag || stock.theme === "capital-structure-veto") {
-    actionLabel = "先查资本结构";
+    actionLabel = "资本结构复核";
     actionClass = "avoid";
-    stance = "方向可以看，但融资和稀释优先一票否决";
+    stance = "融资/稀释风险优先处理";
   } else if (fit >= 82) {
-    actionLabel = "重点深挖";
+    actionLabel = "重点覆盖";
     actionClass = "pursue";
-    stance = "像 Serenity 会优先研究的高赔率标的";
+    stance = "高优先级研究标的";
   } else if (fit >= 68) {
-    actionLabel = "观察等证据";
+    actionLabel = "观察确认";
     actionClass = "watch";
-    stance = "thesis 有吸引力，但还缺价格或证据共振";
+    stance = "thesis 成立，等待增量确认";
   } else if (fit >= 52) {
-    actionLabel = "补证据再看";
+    actionLabel = "补证据";
     actionClass = "verify";
-    stance = isCore ? "有样本但赔率一般，先补关键证据" : "通用初筛可看，但不像 Serenity 典型高赔率票";
+    stance = isCore ? "有样本，赔率与催化仍需确认" : "通用初筛，缺少高确信度样本";
   }
 
   const capReason =
     marketCap < 5e9
-      ? "市值仍小，若证据成立，重估弹性更像 Serenity 偏好的赔率结构。"
+      ? "小市值结构，若订单证据兑现，重估弹性较高。"
       : marketCap < 80e9
-        ? "市值中等，赔率取决于客户证据是否继续增强。"
-        : "市值已经较大，更像需求锚点或大盘 beta，未必是最高赔率节点。";
+        ? "中等市值，弹性取决于客户证据和业绩兑现。"
+        : "大市值属性更强，更多承担行业锚点而非高赔率表达。";
   const priceReason =
     rangePct === null
-      ? "暂缺完整 52 周区间，价格位置需要继续核查。"
+      ? "52 周区间缺失，价格位置待补。"
       : rangePct > 86
-        ? "价格接近 52 周高位，先看估值拥挤和反证。"
+        ? "价格接近 52 周高位，估值容错率下降。"
         : rangePct < 38
-          ? "价格离高位较远，若 thesis 未坏，更适合做证据复核。"
-          : "价格在 52 周区间中段，适合等待催化或客户证据更新。";
+          ? "价格处于低位复核区，适合确认基本面是否未被破坏。"
+          : "价格位于区间中段，等待催化或客户证据更新。";
   const coverageReason = isCore
-    ? `核心覆盖标的，已有 ${evidence.length} 条 Serenity 公开样本可交叉验证。`
-    : "非核心喊单标的，只能按 Serenity 框架做通用初筛。";
+    ? `Serenity 样本 ${evidence.length} 条，可用于交叉验证。`
+    : "非核心公开喊单，按通用美股框架初筛。";
 
   const reasons = [coverageReason, compactReason(stock.thesis), capReason, priceReason].filter(Boolean).slice(0, 4);
   const blockers = [
     compactReason(stock.risk),
-    !isCore ? "缺少 Serenity 原始喊单样本，不能证明她本人已经建立高确信度。" : "",
-    evidence.length < 2 ? "公开样本偏少，需要补 X 原文、财报电话会或客户证据。" : "",
-    rangePct !== null && rangePct > 86 ? "价格已高，若没有新增订单或业绩上修，赔率会被压缩。" : "",
+    !isCore ? "缺少 Serenity 原始样本，高确信度不足。" : "",
+    evidence.length < 2 ? "公开样本不足，需补原文、财报电话会或客户证据。" : "",
+    rangePct !== null && rangePct > 86 ? "价格位置偏高，需新增订单或业绩上修支撑。" : "",
   ].filter(Boolean).slice(0, 4);
   const nextActions = (stock.isUniversal
-    ? ["打开最近一季财报和电话会，确认收入增速与利润率是否同步改善", "对比同行估值和增速，判断它是龙头溢价还是拥挤交易", "检查最新新闻是否改变客户、监管、订单或资本结构"]
+    ? ["核查最近一季收入、利润率与现金流", "对比同行估值、增速与利润质量", "确认最新新闻是否改变订单、监管或资本结构"]
     : playbook.catalysts).slice(0, 4);
-  const oneLine = `${stance}。${isCore ? "先看 Serenity 样本是否和当前价格共振。" : "先判断它是否真的符合“终端需求 + 瓶颈位置 + 赔率”的三件事。"}`;
+  const oneLine = isCore ? "核心变量是样本证据、价格位置和订单催化是否共振。" : "核心变量是终端需求、瓶颈位置和估值赔率是否同时成立。";
 
   return {
     fit,
@@ -976,22 +976,22 @@ function beginnerTradeAssessment(stock, quote = {}, decision = decisionFor(stock
 
   if (stock.riskFlag || stock.theme === "capital-structure-veto") {
     score -= 34;
-    reasons.push("触发资本结构或稀释风险，新手先不做真钱交易。");
+    reasons.push("资本结构/稀释风险未解除，暂不建立多头仓位。");
   }
   if (stock.isUniversal) {
     score -= 14;
-    reasons.push("不是 Serenity 核心公开喊单，只能按通用框架先筛。");
+    reasons.push("非 Serenity 核心样本，按通用美股框架降级处理。");
   }
   if (evidenceCount < 2 && !stock.isUniversal) {
     score -= 8;
-    reasons.push("公开样本偏少，需要补原文和财报证据。");
+    reasons.push("公开样本不足，需补原文与财报证据。");
   }
   if (Number.isFinite(changePercent) && changePercent > 18) {
     score -= 30;
-    reasons.push("当日涨幅过大，属于典型新手追高风险。");
+    reasons.push("当日涨幅过大，不建议追价。");
   } else if (Number.isFinite(changePercent) && changePercent > 8) {
     score -= 16;
-    reasons.push("短线已经明显反应，先等回踩或第二波确认。");
+    reasons.push("短线已反映预期，等待回踩或放量确认。");
   }
   if (Number.isFinite(changePercent) && changePercent < -14) {
     score -= 14;
@@ -999,18 +999,18 @@ function beginnerTradeAssessment(stock, quote = {}, decision = decisionFor(stock
   }
   if (Number.isFinite(rangePct) && rangePct > 88) {
     score -= 16;
-    reasons.push("接近 52 周高位，赔率容易被情绪透支。");
+    reasons.push("接近 52 周高位，风险收益比下降。");
   } else if (Number.isFinite(rangePct) && rangePct < 38 && !stock.riskFlag) {
     score += 5;
-    reasons.push("价格离高位较远，适合做证据复核而不是盲追。");
+    reasons.push("处于低位复核区，优先验证 thesis 完整性。");
   }
   if (marketCap > 400e9) {
     score -= 5;
-    reasons.push("市值已经较大，更像锚点，不一定适合小白追赔率。");
+    reasons.push("市值较大，更多体现行业 beta，赔率弹性有限。");
   }
   if (marketCap > 0 && marketCap < 5e9 && !stock.riskFlag) {
     score += 4;
-    reasons.push("小市值有赔率，但必须用小仓位控制波动。");
+    reasons.push("小市值弹性较高，但需严格控制仓位波动。");
   }
   if (!Number.isFinite(price) || price <= 0) {
     score -= 20;
@@ -1031,17 +1031,17 @@ function beginnerTradeAssessment(stock, quote = {}, decision = decisionFor(stock
 
   const copy = {
     ready: {
-      label: "可小仓试错",
+      label: "试探仓",
       className: "ready",
-      summary: "只允许按风险预算小仓位执行，不能满仓或追涨加仓。",
+      summary: "允许按风险预算建立试探仓，不追价加仓。",
       allowed: true,
       pullbackPercent: 3,
       stopPercent: clamp(Math.min(Number(space.downside || 28) * 0.32, 12), 6, 12),
     },
     wait: {
-      label: "等回调确认",
+      label: "等待确认",
       className: "wait",
-      summary: "当前不急着买，等价格回踩、放量续强或新增证据后再计算入场。",
+      summary: "等待回踩、放量续强或新增订单/财报证据。",
       allowed: false,
       pullbackPercent: Number.isFinite(changePercent) && changePercent > 8 ? 6 : 4,
       stopPercent: 7,
@@ -1049,15 +1049,15 @@ function beginnerTradeAssessment(stock, quote = {}, decision = decisionFor(stock
     observe: {
       label: "只观察",
       className: "observe",
-      summary: "可以加入模拟盘观察，但不建议新手用真钱开仓。",
+      summary: "仅纳入观察池，暂不建立实盘仓位。",
       allowed: false,
       pullbackPercent: 5,
       stopPercent: 6,
     },
     blocked: {
-      label: "禁止追高",
+      label: "暂不参与",
       className: "blocked",
-      summary: "风险或价格结构不适合小白交易，先等反证解除。",
+      summary: "风险或价格结构不达标，等待反证解除。",
       allowed: false,
       pullbackPercent: 8,
       stopPercent: 0,
@@ -1065,14 +1065,14 @@ function beginnerTradeAssessment(stock, quote = {}, decision = decisionFor(stock
   }[verdict];
 
   const buyRules = [
-    `买前结论必须保持在“${copy.label}”或更好，且不能因为推文情绪临时放大仓位。`,
-    hotPrice ? "当日大涨后不直接追，至少等回踩或收盘后复盘。" : "入场前确认不是单根冲高，成交量和同主题标的要同步。",
-    stock.isUniversal ? "补最近财报、公司公告和同行估值，确认它真的符合 Serenity 框架。" : "回看 Serenity 原文，确认喊单语义不是调侃、反证或风险提醒。",
+    `执行评级需维持“${copy.label}”或更高。`,
+    hotPrice ? "当日大涨后不追价，等待回踩或收盘确认。" : "入场前确认量价延续，同主题标的同步。",
+    stock.isUniversal ? "补最近财报、公告和同行估值。" : "复核 Serenity 原文语义及反证线索。",
   ];
   const invalidations = [
-    "跌破止损价或 thesis 被财报/公告证伪，先退出而不是补仓。",
-    "出现融资、ATM、债务压力或客户延迟，直接降级。",
-    "同主题龙头没有同步，或成交量无法延续，不做追涨加仓。",
+    "跌破止损或 thesis 被财报/公告证伪。",
+    "出现融资、ATM、债务压力或客户延迟。",
+    "同主题龙头不同步，或成交量无法延续。",
   ];
 
   return {
@@ -1185,7 +1185,7 @@ function suggestedPriceAlert(stock, quote = {}, plan = {}, kind = "pullback") {
       kind,
       direction: "above",
       targetPrice: price * 1.04,
-      note: "突破当前价上方约 4% 且放量后，再重新看买前评分。",
+      note: "突破现价上方约 4% 且放量后，重新评估执行评级。",
     };
   }
   if (kind === "stop") {
@@ -1291,26 +1291,25 @@ function renderInlinePriceAlerts(symbol = "") {
 }
 
 function scenarioSet(score, stock, quote, space) {
-  const price = formatPrice(quote);
   const baseUpside = Math.max(5, Math.round(space.upside * 0.36));
   return [
     {
       label: "Bull Case",
-      tag: "证据加速",
+      tag: "上修",
       range: `+${space.upside}%`,
-      body: `客户验证进入量产、行业 capex 继续上修，市场开始按“瓶颈资产”而不是普通周期股定价。当前 ${price} 仅作为起点，核心变量是订单密度。`,
+      body: "客户验证进入量产，AI capex 继续上修，市场按瓶颈资产重估。",
     },
     {
       label: "Base Case",
-      tag: "等待确认",
+      tag: "基准",
       range: `+${baseUpside}%`,
-      body: `${stock.themeLabel} thesis 维持，但还需要财报、客户或产能数据继续确认。适合放入观察池，等价格和证据同时改善。`,
+      body: `${stock.themeLabel} thesis 维持，等待财报、客户或产能数据确认。`,
     },
     {
       label: "Bear Case",
-      tag: "反证触发",
+      tag: "下修",
       range: `-${space.downside}%`,
-      body: `客户导入推迟、订单强度低于预期，或融资/债务压力上升。若 Serenity 的资本结构否决被触发，故事优先降级。`,
+      body: "客户导入推迟、订单低于预期，或融资/债务压力上升。",
     },
   ];
 }
@@ -1318,70 +1317,63 @@ function scenarioSet(score, stock, quote, space) {
 function plainReportText(stock, quote, score, space, playbook, breakdown, scenarios, evidence, metric, extras = {}) {
   const profile = profileForQuote(quote);
   const decision = extras.decision || decisionFor(stock, quote);
+  const priceSummary = pricePositionSummary(quote);
   const lines = [
     `${stock.symbol} · ${stock.name}`,
-    `研究动作：${decision.actionLabel} · Serenity 匹配度：${decision.fit}/100`,
-    `一句话结论：${decision.oneLine}`,
-    `Serenity 分：${score} · ${conclusionFor(score, stock)}`,
-    `价格：${formatPrice(quote)} · 当日涨跌：${formatPercent(quote.changePercent)} · 市值：${formatMarketCap(Number(quote.marketCap) || stock.fallbackMarketCap)}`,
+    `投资观点：${decision.actionLabel} · 框架匹配 ${decision.fit}/100 · Serenity 分 ${score}`,
+    `结论：${conclusionFor(score, stock)}。${decision.oneLine}`,
+    `市场数据：价格 ${formatPrice(quote)} · 当日 ${formatPercent(quote.changePercent)} · 市值 ${formatMarketCap(Number(quote.marketCap) || stock.fallbackMarketCap)} · ${priceSummary.label}`,
+    `风险收益：验证上行 +${space.upside}% / 反证下行 -${space.downside}%`,
     extras.beginner
-      ? `新手买前判定：${extras.beginner.label} · ${extras.beginner.score}/100 · ${extras.beginner.summary}`
+      ? `执行纪律：${extras.beginner.label} · ${extras.beginner.score}/100 · ${extras.beginner.summary}`
       : "",
     extras.positionPlan
-      ? `仓位纪律：单笔风险 ${formatMoney(extras.positionPlan.riskBudget)} · 仓位上限 ${formatMoney(extras.positionPlan.maxPositionBudget)} · 止损 ${extras.positionPlan.stopPrice ? formatMoney(extras.positionPlan.stopPrice) : "暂不入场"}`
+      ? `风险预算：单笔风险 ${formatMoney(extras.positionPlan.riskBudget)} · 仓位上限 ${formatMoney(extras.positionPlan.maxPositionBudget)} · 止损 ${extras.positionPlan.stopPrice ? formatMoney(extras.positionPlan.stopPrice) : "待定"}`
       : "",
     profile.sector || profile.industry ? `行业：${[profile.sector, profile.industry].filter(Boolean).join(" / ")}` : "",
     stock.isUniversal
-      ? "覆盖状态：通用美股初筛，不代表 Serenity 已公开喊单。"
+      ? "覆盖状态：通用美股初筛，非 Serenity 核心公开样本。"
       : `提及结构：${compact.format(metric.mentions || 0)} 次提及，多 ${metric.bull || 0} / 空 ${metric.bear || 0} / 中性 ${metric.neutral || 0}`,
     "",
-    "为什么：",
-    ...decision.reasons.map((item, index) => `${index + 1}. ${item}`),
+    "核心依据：",
+    ...decision.reasons.slice(0, 3).map((item, index) => `${index + 1}. ${item}`),
     "",
-    "下一步动作：",
-    ...decision.nextActions.map((item, index) => `${index + 1}. ${item}`),
+    "催化剂：",
+    ...decision.nextActions.slice(0, 3).map((item, index) => `${index + 1}. ${item}`),
     "",
-    "执行摘要：",
-    `1. ${stock.thesis}`,
-    `2. ${playbook.focus}`,
-    `3. 模型给出的验证上行空间约 ${space.upside}%，反证或资本结构恶化时下行风险约 ${space.downside}%。`,
-    "",
-    "评分拆解：",
-    ...breakdown.map((item) => `${item.label} ${item.score}/100：${item.note}`),
+    "评分因子：",
+    ...breakdown.slice(0, 5).map((item) => `${item.label} ${item.score}/100`),
   ];
   if (extras.marketRows?.length || extras.financialRows?.length) {
-    lines.push("", "通用数据层：");
-    for (const row of extras.marketRows || []) lines.push(`- ${row.label}：${row.value}`);
-    for (const row of extras.financialRows || []) lines.push(`- ${row.label}：${row.value}`);
+    lines.push("", "关键数据：");
+    for (const row of (extras.marketRows || []).slice(0, 4)) lines.push(`- ${row.label}：${row.value}`);
+    for (const row of (extras.financialRows || []).slice(0, 3)) lines.push(`- ${row.label}：${row.value}`);
   }
   if (extras.peers?.length) lines.push("", `同行候选：${extras.peers.join(" / ")}`);
   if (extras.execution?.length) {
-    lines.push("", "30 秒决策清单：");
+    lines.push("", "执行清单：");
     for (const item of extras.execution) lines.push(`- ${item.label}｜${item.value}：${item.body}`);
   }
   if (extras.dataConfidence) {
-    lines.push("", `数据完整度：${extras.dataConfidence.label} · ${extras.dataConfidence.score}/100`);
-    for (const item of extras.dataConfidence.items || []) lines.push(`- ${item}`);
+      lines.push("", `数据完整度：${extras.dataConfidence.label} · ${extras.dataConfidence.score}/100`);
+    for (const item of (extras.dataConfidence.items || []).slice(0, 4)) lines.push(`- ${item}`);
   }
   lines.push(
     "",
-    "情景推演：",
-    ...scenarios.map((item) => `${item.label} ${item.range}：${item.body}`),
-    "",
     "后续跟踪：",
-    ...playbook.catalysts.map((item, index) => `${index + 1}. ${item}`),
+    ...playbook.catalysts.slice(0, 3).map((item, index) => `${index + 1}. ${item}`),
     "",
     "反证清单：",
     `1. ${stock.risk}`,
-    ...playbook.checks.map((item, index) => `${index + 2}. ${item}`)
+    ...playbook.checks.slice(0, 3).map((item, index) => `${index + 2}. ${item}`)
   );
   if (evidence.length) {
-    lines.push("", "公开样本：", ...evidence.map((item) => `- ${dateLabel(item.date)} ${item.title || item.body || item.url || "Serenity 公开样本"}`));
+    lines.push("", "核心样本：", ...evidence.slice(0, 3).map((item) => `- ${dateLabel(item.date)} ${item.title || item.body || item.url || "Serenity 公开样本"}`));
   }
   if (extras.news?.length) {
-    lines.push("", "最新公开新闻：", ...extras.news.map((item) => `- ${formatNewsDate(item.date)} ${item.publisher || ""} ${item.title}`));
+    lines.push("", "最新公开新闻：", ...extras.news.slice(0, 3).map((item) => `- ${formatNewsDate(item.date)} ${item.publisher || ""} ${item.title}`));
   }
-  lines.push("", "仅作公开资料整理，不构成投资建议。");
+  lines.push("", "公开资料整理，不构成投资建议。");
   return lines.filter((line) => line !== "").join("\n");
 }
 
@@ -2491,8 +2483,8 @@ function renderDailyTradeReport() {
     <section class="daily-card">
       <div class="daily-head">
         <div>
-          <span>Daily Beginner Brief</span>
-          <strong>每日新手交易日报</strong>
+          <span>Daily Trading Brief</span>
+          <strong>每日交易简报</strong>
         </div>
         <small>${dateLabel(Date.now())} · 页面实时生成</small>
       </div>
@@ -2510,22 +2502,22 @@ function renderDailyTradeReport() {
           ${
             topRows.length
               ? topRows.map((row) => `<button class="secondary" type="button" data-symbol="${escapeHtml(row.symbol)}">${escapeHtml(row.symbol)} · ${escapeHtml(row.action)} · ${row.score}/100</button>`).join("")
-              : `<p>等待 30 秒研究包生成后，这里会给出排序。</p>`
+              : `<p>等待研究包生成后更新排序。</p>`
           }
         </article>
         <article>
-          <strong>禁止追高 / 先等</strong>
+          <strong>等待确认</strong>
           ${
             blockedRows.length
               ? blockedRows.map((row) => `<span>${escapeHtml(row.symbol)} · ${formatPercent(row.quote?.changePercent)} · ${escapeHtml(row.action)}</span>`).join("")
-              : `<p>暂无明显追高拦截，仍需按买前评分执行。</p>`
+              : `<p>暂无明显追价风险，仍按执行评级处理。</p>`
           }
         </article>
         <article>
-          <strong>今日纪律</strong>
-          <span>只买评分通过且有止损价的交易。</span>
-          <span>不能因为推文热度放大仓位。</span>
-          <span>未触发买点前，优先放进提醒或模拟盘。</span>
+          <strong>执行纪律</strong>
+          <span>仅处理评级达标且止损明确的标的。</span>
+          <span>不因单条推文放大仓位。</span>
+          <span>未触发价位前，优先设置提醒或模拟观察。</span>
         </article>
       </div>
     </section>
@@ -2568,7 +2560,7 @@ function renderPriceAlertPanel() {
                 })
                 .join("")}
             </div>`
-          : `<p class="alert-empty">在单股研报的“小白模式”里点击“等回踩提醒 / 突破确认 / 止损提醒”，这里会集中显示。</p>`
+          : `<p class="alert-empty">在单股研报中设置回踩、突破或止损提醒后，这里会集中显示。</p>`
       }
     </section>
   `;
@@ -2674,7 +2666,7 @@ function renderLiveResearchPack(pack) {
   return `
     <section class="live-research-pack">
       <div class="live-pack-head">
-        <strong>30 秒研究包</strong>
+        <strong>研究快照</strong>
         <span>${escapeHtml(dateTimeLabel(pack.builtAt))}</span>
       </div>
       <div class="live-frame">
@@ -3077,15 +3069,15 @@ function entryGuideText(quote = {}, assessment = {}, plan = {}) {
   const stop = plan.stopPrice ? formatMoney(plan.stopPrice) : "";
   const target = plan.targetOne ? formatMoney(plan.targetOne) : "";
   if (assessment.allowed) {
-    return `现价 ${current} 只能小仓试错；更舒服的第一买点是 ${watchEntry || "回踩后重新评分"}，止损 ${stop || "按纪律设置"}，第一复盘目标 ${target || "等待模型目标"}.`;
+    return `现价 ${current}；试探仓参考 ${watchEntry || "回踩后重评"}，止损 ${stop || "待设"}，第一目标 ${target || "待定"}。`;
   }
   if (assessment.verdict === "wait") {
-    return `当前先等，不追；回踩到 ${watchEntry || "更低价位"} 或突破后放量确认，再重新生成买前评分。`;
+    return `暂不追价；回踩至 ${watchEntry || "更低区间"} 或突破放量后重评。`;
   }
   if (assessment.verdict === "blocked") {
-    return `当前禁止追高或真钱开仓；只有价格回落、风险词解除、公告证据补强后才重新评估。`;
+    return `暂不参与；等待价格回落、风险解除或公告证据补强。`;
   }
-  return `先加入观察或模拟盘；等价格、成交量和证据同时改善，再考虑小仓试错。`;
+  return `纳入观察池；价格、量能和证据同步改善后重评。`;
 }
 
 function researchChecklist(stock = {}, quote = {}, decision = {}, playbook = {}, evidence = [], metric = {}) {
@@ -3120,14 +3112,14 @@ function executionCards(stock = {}, quote = {}, decision = {}, beginner = {}, pl
   const checklist = researchChecklist(stock, quote, decision, playbook, evidence, metric);
   return [
     {
-      label: "现在能不能买",
+      label: "投资动作",
       value: beginner.label || decision.actionLabel,
       tone: beginner.className || decision.actionClass,
       body: beginner.summary || decision.oneLine,
     },
     {
-      label: "入场计划",
-      value: plan.allowRealTrade ? "小仓试错" : "先等提醒",
+      label: "交易计划",
+      value: plan.allowRealTrade ? "试探仓" : "等待信号",
       tone: plan.allowRealTrade ? "ready" : "wait",
       body: entryGuideText(quote, beginner, plan),
     },
@@ -3138,7 +3130,7 @@ function executionCards(stock = {}, quote = {}, decision = {}, beginner = {}, pl
       body: checklist.confirmation.slice(0, 3).join("；"),
     },
     {
-      label: "立刻降级",
+      label: "降级条件",
       value: stock.riskFlag ? "风险优先" : "反证优先",
       tone: "blocked",
       body: checklist.invalidation.slice(0, 3).join("；"),
@@ -3171,7 +3163,7 @@ function formatShares(value) {
 
 function renderPaperTrades(activeSymbol = "") {
   if (!state.paperTrades.length) {
-    return `<div class="paper-empty">暂无模拟记录。先把高质量标的加入模拟盘，观察 1D / 7D / 30D 后再考虑真钱。</div>`;
+    return `<div class="paper-empty">暂无模拟记录。可先记录观察仓，跟踪 1D / 7D / 30D 表现。</div>`;
   }
   const active = normalizeSymbol(activeSymbol);
   return `
@@ -3203,24 +3195,24 @@ function renderPaperTrades(activeSymbol = "") {
 function renderBeginnerMode(stock, quote, assessment, plan) {
   const profile = state.beginnerProfile || defaultBeginnerProfile();
   const realTradeCopy = plan.allowRealTrade
-    ? `按当前风险设置，最大真钱试错约 ${formatMoney(plan.positionCost)}，约 ${formatShares(plan.fractionalShares)} 股；整股账户可先看 ${plan.wholeShares} 股。`
-    : `当前判定不建议真钱开仓。可设置提醒或加入模拟盘，等待 ${plan.watchEntry ? formatMoney(plan.watchEntry) : "更好的价格"} 附近重新评分。`;
+    ? `建议仓位 ${formatMoney(plan.positionCost)}，约 ${formatShares(plan.fractionalShares)} 股；整股账户参考 ${plan.wholeShares} 股。`
+    : `暂不建仓；关注 ${plan.watchEntry ? formatMoney(plan.watchEntry) : "更优价格"} 附近的再评估机会。`;
   return `
     <section id="beginner-guard" class="beginner-guard ${escapeHtml(assessment.className)}">
       <div class="beginner-head">
         <div>
-          <span>新手盈利模式</span>
+          <span>Risk Budget</span>
           <h3>${escapeHtml(assessment.label)}</h3>
           <p>${escapeHtml(assessment.summary)}</p>
         </div>
         <div class="beginner-score">
           <b>${assessment.score}</b>
-          <small>买前分</small>
+          <small>执行分</small>
         </div>
       </div>
       <div class="beginner-grid">
         <article>
-          <strong>买入前判定</strong>
+          <strong>主要约束</strong>
           ${assessment.reasons.map((item) => `<p>${escapeHtml(item)}</p>`).join("")}
         </article>
         <article>
@@ -3234,7 +3226,7 @@ function renderBeginnerMode(stock, quote, assessment, plan) {
           </div>
         </article>
         <article>
-          <strong>账户设置</strong>
+          <strong>风险参数</strong>
           <label>账户金额
             <input type="number" min="500" step="100" data-beginner-field="accountSize" value="${profile.accountSize}" />
           </label>
@@ -3248,7 +3240,7 @@ function renderBeginnerMode(stock, quote, assessment, plan) {
       </div>
       <div class="beginner-plan">
         <div>
-          <strong>执行条件</strong>
+          <strong>触发条件</strong>
           ${assessment.buyRules.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
         </div>
         <div>
@@ -3257,13 +3249,13 @@ function renderBeginnerMode(stock, quote, assessment, plan) {
         </div>
       </div>
       <div class="beginner-actions">
-        <button type="button" data-paper-trade="${escapeHtml(stock.symbol)}">加入模拟盘</button>
-        <small>${plan.allowRealTrade ? "模拟盘会记录当前入场价、止损线和目标价，用来复盘纪律。" : "当前只建议模拟，不建议新手直接下单。"}</small>
+        <button type="button" data-paper-trade="${escapeHtml(stock.symbol)}">加入模拟观察</button>
+        <small>${plan.allowRealTrade ? "记录入场、止损与目标价，用于事后复盘。" : "当前仅建议观察，不建议建立实盘仓位。"}</small>
       </div>
       <div class="buy-alert-builder">
         <div>
           <strong>价格提醒</strong>
-          <small>把“不能追高”变成具体等待价位。</small>
+          <small>用具体价位约束执行。</small>
         </div>
         <button class="secondary" type="button" data-price-alert="pullback">等回踩提醒</button>
         <button class="secondary" type="button" data-price-alert="breakout">突破确认提醒</button>
@@ -3274,8 +3266,8 @@ function renderBeginnerMode(stock, quote, assessment, plan) {
       </div>
       <div class="paper-trades-panel">
         <div class="paper-title">
-          <strong>模拟盘复盘</strong>
-          <small>${state.paperTrades.length} 条记录 · 先验证策略，再考虑真钱</small>
+          <strong>模拟观察</strong>
+          <small>${state.paperTrades.length} 条记录 · 用于验证执行纪律</small>
         </div>
         ${renderPaperTrades(stock.symbol)}
       </div>
@@ -3303,9 +3295,9 @@ function buildReport(stock, quote) {
   const marketData = marketRows(quote, enriched);
   const financialData = financialRows(quote.financials || {});
   const peers = peerCandidates(stock, quote);
-  const news = (quote.news || []).slice(0, 5);
+  const news = (quote.news || []).slice(0, 3);
   const coverageLine = stock.isUniversal ? "通用美股初筛 · 非 Serenity 核心喊单" : sentimentLine;
-  const coverageSentence = stock.isUniversal ? "这支股票不在当前 Serenity 核心覆盖名单里，因此结论更偏通用研究框架，需要用户自行补 SEC、财报电话会和公司公告。" : "这支股票有 Serenity 公开样本可供交叉验证，但仍需要继续核查财报和公告。";
+  const coverageSentence = stock.isUniversal ? "非 Serenity 核心样本，结论仅作为通用美股初筛。" : `Serenity 样本 ${evidence.length} 条，需与财报、公告及订单证据交叉验证。`;
   const decision = decisionFor(enriched, quote);
   const playbook = playbookFor(stock);
   const breakdown = scoreBreakdown(enriched, quote, metric);
@@ -3321,6 +3313,9 @@ function buildReport(stock, quote) {
     .slice(0, 2)
     .map((item) => item.label)
     .join("、");
+  const pricePositionLine = position ? position.replace(/[。.]$/, "") : "价格位置待补";
+  const riskRewardLine = `验证上行 +${space.upside}% / 反证下行 -${space.downside}%；${pricePositionLine}；${targetText}`;
+  const thesisLine = compactReason(stock.thesis, 128);
   state.activeReport = { stock: enriched, quote };
   state.latestReportText = plainReportText(stock, quote, score, space, playbook, breakdown, scenarios, evidence, metric, {
     marketRows: marketData,
@@ -3343,12 +3338,12 @@ function buildReport(stock, quote) {
       <div class="report-score"><b>${score}</b><small>Serenity 分</small></div>
     </header>
     <div class="report-action-row">
-      <span>${stock.isUniversal ? "基于公开行情、财务、新闻与 Serenity 框架生成通用初筛" : "基于公开资料、行情数据与 Serenity 蒸馏框架生成"}</span>
+      <span>${stock.isUniversal ? "公开行情 / 财务 / 新闻初筛" : "公开样本 / 行情 / 风险收益框架"}</span>
       <button class="secondary copy-report" type="button" data-copy-report>复制研报摘要</button>
     </div>
     <section class="decision-card ${escapeHtml(decision.actionClass)}">
       <div class="decision-score">
-        <span>Serenity 匹配度</span>
+        <span>框架匹配</span>
         <strong>${decision.fit}</strong>
         <small>/100</small>
       </div>
@@ -3364,14 +3359,14 @@ function buildReport(stock, quote) {
         </div>
       </div>
       <div class="decision-next">
-        <strong>下一步</strong>
+        <strong>催化剂</strong>
         ${decision.nextActions.slice(0, 3).map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
       </div>
     </section>
     <section class="execution-panel">
       <div class="section-kicker">
-        <span>30 秒决策清单</span>
-        <strong>先判断能不能动手，再看研究细节</strong>
+        <span>Investment Brief</span>
+        <strong>结论优先，数据验证</strong>
       </div>
       <div class="execution-grid">
         ${execution
@@ -3406,20 +3401,20 @@ function buildReport(stock, quote) {
       <div class="report-metric"><span>覆盖状态</span><strong>${escapeHtml(coverageLine)}</strong></div>
     </div>
     <section class="report-summary">
-      <h3>执行摘要</h3>
-      <p><b>核心 thesis：</b>${escapeHtml(stock.thesis)}</p>
-      <p><b>研究视角：</b>${escapeHtml(playbook.focus)}</p>
-      <p><b>当前结论：</b>${escapeHtml(conclusionFor(score, stock))}。模型主要由 ${escapeHtml(topDrivers)} 支撑；上行需要客户证据继续增强，下行通常来自反证或资本结构恶化。</p>
+      <h3>投资观点</h3>
+      <p><b>结论：</b>${escapeHtml(conclusionFor(score, stock))}。主要支撑因子：${escapeHtml(topDrivers)}。</p>
+      <p><b>核心逻辑：</b>${escapeHtml(thesisLine)}</p>
+      <p><b>风险收益：</b>${escapeHtml(riskRewardLine)}</p>
     </section>
     <section class="report-section">
-      <h3>通用数据层</h3>
+      <h3>关键数据</h3>
       <div class="data-card-grid">
         <article class="data-card">
           <strong>估值与交易</strong>
           ${
             marketData.length
               ? marketData.map((row) => `<span><b>${escapeHtml(row.label)}</b><small>${escapeHtml(row.value)}</small></span>`).join("")
-              : `<p>公开接口暂未返回足够的估值和成交数据。</p>`
+              : `<p>估值与交易数据待补。</p>`
           }
         </article>
         <article class="data-card">
@@ -3427,7 +3422,7 @@ function buildReport(stock, quote) {
           ${
             financialData.length
               ? financialData.map((row) => `<span><b>${escapeHtml(row.label)}</b><small>${escapeHtml(row.value)}</small></span>`).join("")
-              : `<p>暂未取得可用年度财务摘要，建议补 10-K/10-Q 或公司财报。</p>`
+              : `<p>财务摘要待补，需核查 10-K/10-Q 或财报。</p>`
           }
         </article>
         <article class="data-card">
@@ -3439,8 +3434,7 @@ function buildReport(stock, quote) {
       </div>
     </section>
     <section class="report-section">
-      <h3>Serenity 会先怎么想</h3>
-      <p>${escapeHtml(playbook.lens)}</p>
+      <h3>评分因子</h3>
       <div class="score-breakdown">
         ${breakdown
           .map(
@@ -3459,10 +3453,8 @@ function buildReport(stock, quote) {
       </div>
     </section>
     <section class="report-section">
-      <h3>当前价格与涨跌空间</h3>
-      <p>按当前价格 ${formatPrice(quote)} 和市值 ${formatMarketCap(enriched.marketCap)} 粗略看，模型给出的上行验证空间约 ${space.upside}%；若 thesis 被证伪或资本结构恶化，下行风险约 ${space.downside}%。${position ? ` ${position}` : ""} ${targetText}。</p>
-      <p>${escapeHtml(coverageSentence)} 这不是机械目标价，而是 Serenity 式赔率判断：小市值瓶颈 + 客户证据 + TAM 扩张同时成立，空间才会打开；只靠题材、只靠大跌或只靠情绪，不构成买点。</p>
-      <p><b>交易翻译：</b>${escapeHtml(entryGuideText(quote, beginner, positionPlan))} ${escapeHtml(quoteTargetSummary(quote))}</p>
+      <h3>风险收益</h3>
+      <p>${escapeHtml(coverageSentence)} ${escapeHtml(entryGuideText(quote, beginner, positionPlan))} ${escapeHtml(quoteTargetSummary(quote))}</p>
       <div class="scenario-grid">
         ${scenarios
           .map(
@@ -3478,17 +3470,16 @@ function buildReport(stock, quote) {
       </div>
     </section>
     <section class="report-section">
-      <h3>后续跟踪清单</h3>
+      <h3>催化剂</h3>
       <div class="check-grid">
-        ${playbook.catalysts.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
+        ${playbook.catalysts.slice(0, 3).map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
       </div>
     </section>
     <section class="report-section">
-      <h3>反证与尽调问题</h3>
+      <h3>反证条件</h3>
       <ul>
         <li>${escapeHtml(stock.risk)}</li>
-        ${playbook.checks.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
-        <li>如果客户导入、量产时间、订单强度或管理层措辞变弱，先降低赔率假设。</li>
+        ${playbook.checks.slice(0, 3).map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
       </ul>
     </section>
     ${
@@ -3513,7 +3504,7 @@ function buildReport(stock, quote) {
         : ""
     }
     <section class="report-section">
-      <h3>公开样本</h3>
+      <h3>核心样本</h3>
       <div class="evidence-list">
         ${
           evidence.length
@@ -3521,18 +3512,18 @@ function buildReport(stock, quote) {
                 .map(
                   (item) => `
                     <a href="${escapeHtml(item.url || "#")}" target="_blank" rel="noreferrer">
-                      <strong>${escapeHtml((item.title || "Serenity 公开样本").slice(0, 140))}</strong>
-                      <span>${escapeHtml((item.body || item.title || "公开样本待补正文").slice(0, 220))}</span>
+                      <strong>${escapeHtml((item.title || "Serenity 公开样本").slice(0, 110))}</strong>
+                      <span>${escapeHtml((item.body || item.title || "公开样本待补正文").slice(0, 120))}</span>
                       <small>${dateLabel(item.date)} · ${escapeHtml(item.theme || "general")} · materiality ${item.materiality || "--"}</small>
                     </a>
                   `
                 )
                 .join("")
-            : `<p>本地蒸馏库里暂无这支股票的高质量样本，建议先补 X 原文、财报和供应链证据。</p>`
+            : `<p>暂无高质量样本，需补原文、财报和供应链证据。</p>`
         }
       </div>
     </section>
-    <p class="report-note">提示：本报告用于把公开观点整理成研究框架，不能替代财报、公告、订单验证和个人风险评估。</p>
+    <p class="report-note">公开资料整理，不构成投资建议。</p>
   `;
 }
 
