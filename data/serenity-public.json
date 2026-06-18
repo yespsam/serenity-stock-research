@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-17T16:37:01.501Z",
+  "generatedAt": "2026-06-18T01:43:57.457Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6748,
+    "parsedItems": 6757,
     "commentCount": 51400,
     "profileTweets": 7222,
-    "latestItemDate": "2026-06-17T12:01:32.000Z"
+    "latestItemDate": "2026-06-18T01:29:55.000Z"
   },
   "rules": [
     {
@@ -74,14 +74,14 @@
     },
     {
       "symbol": "NBIS",
-      "mentions": 773,
+      "mentions": 774,
       "bull": 219,
       "bear": 10,
-      "neutral": 544,
+      "neutral": 545,
       "materiality": 77,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 5371
+      "sentimentScore": 5374
     },
     {
       "symbol": "LITE",
@@ -129,14 +129,14 @@
     },
     {
       "symbol": "IREN",
-      "mentions": 491,
+      "mentions": 492,
       "bull": 144,
       "bear": 28,
-      "neutral": 319,
+      "neutral": 320,
       "materiality": 78,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 2920
+      "sentimentScore": 2923
     },
     {
       "symbol": "COHR",
@@ -371,14 +371,14 @@
     },
     {
       "symbol": "AEHR",
-      "mentions": 164,
+      "mentions": 165,
       "bull": 61,
       "bear": 0,
-      "neutral": 103,
+      "neutral": 104,
       "materiality": 78,
       "latest": "2026-06-01T01:05:01.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1419
+      "sentimentScore": 1422
     },
     {
       "symbol": "RDDT",
@@ -415,14 +415,14 @@
     },
     {
       "symbol": "JBL",
-      "mentions": 143,
+      "mentions": 144,
       "bull": 59,
       "bear": 2,
-      "neutral": 82,
+      "neutral": 83,
       "materiality": 87,
       "latest": "2026-06-01T20:01:50.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1269
+      "sentimentScore": 1272
     },
     {
       "symbol": "ALRIB",
@@ -470,14 +470,14 @@
     },
     {
       "symbol": "XFAB",
-      "mentions": 87,
+      "mentions": 88,
       "bull": 47,
       "bear": 3,
-      "neutral": 37,
+      "neutral": 38,
       "materiality": 88,
       "latest": "2026-06-01T14:33:55.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 891
+      "sentimentScore": 894
     },
     {
       "symbol": "CRDO",
@@ -701,14 +701,14 @@
     },
     {
       "symbol": "XLU",
-      "mentions": 59,
+      "mentions": 60,
       "bull": 23,
       "bear": 0,
-      "neutral": 36,
+      "neutral": 37,
       "materiality": 72,
       "latest": "2026-05-01T17:24:21.000Z",
       "dominantTheme": "power-architecture",
-      "sentimentScore": 522
+      "sentimentScore": 525
     },
     {
       "symbol": "TRT",
@@ -1531,7 +1531,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 99,
-      "latest": "2026-06-15T22:05:16.000Z",
+      "latest": "2026-06-15T14:02:20.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 186
     },
@@ -1982,7 +1982,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 100,
-      "latest": "2026-06-15T22:05:16.000Z",
+      "latest": "2026-06-15T14:02:20.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 130
     },
@@ -2186,14 +2186,14 @@
     },
     {
       "symbol": "SPCX",
-      "mentions": 22,
+      "mentions": 23,
       "bull": 9,
       "bear": 3,
-      "neutral": 10,
-      "materiality": 83,
+      "neutral": 11,
+      "materiality": 81,
       "latest": "2026-06-16T02:23:29.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 129
+      "sentimentScore": 132
     },
     {
       "symbol": "PYPL",
@@ -3960,19 +3960,17 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-17T12:27:44.645Z",
+    "staticUpdatedAt": "2026-06-18T01:43:29.747Z",
     "latestCaptured": {
-      "id": "2067272647545930045",
-      "date": "2026-06-17T15:46:21.000Z",
-      "title": "Jim Cramer gave $SPCX his blessing.",
-      "body": "Jim Cramer gave $SPCX his blessing.",
-      "symbols": [
-        "SPCX"
-      ],
+      "id": "2067412467404398942",
+      "date": "2026-06-18T01:01:57.000Z",
+      "title": "I agree with Palliser Capital here. ",
+      "body": "I agree with Palliser Capital here.\n\nAs a shareholder, it’s just so stupid how WUS (2316 TW) MC can be ~$1B MC.\n\nWhile they own a 11.26% stake of WUS Kunshan, a $39.3B (¥282B CNY) company…\n\nWhich is worth $4.42B pre-tax. Just sell 1/4th or something?\n\nAnd you get an extra ~$1.1B for PCB growth at the inflection point with AI demand.\n\nWhich is more than your current MC pre-tax, purely in cash. \n\nAnd there’s still $3.3B in assets + markets might revalue your company because of willingness to trim locked up assets.\n\nNobody is asking you to trim everything, but the NAV disconnect is insanity. \n\nWUS TW management should really reconsider.",
+      "symbols": [],
       "theme": "general",
-      "materiality": 43,
+      "materiality": 46,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2067272647545930045"
+      "url": "https://x.com/aleabitoreddit/status/2067412467404398942"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
