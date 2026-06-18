@@ -14,6 +14,489 @@
   --shadow: 0 24px 70px rgba(193, 74, 139, 0.16);
 }
 
+/* Simplified product shell */
+:root {
+  --bg: #f7f8fb;
+  --surface: #fff;
+  --surface-strong: #fff;
+  --ink: #20232a;
+  --muted: #6f7582;
+  --line: #e4e7ee;
+  --pink: #d63384;
+  --pink-soft: #fce7f2;
+  --purple: #5965d8;
+  --shadow: 0 10px 28px rgba(28, 32, 40, 0.06);
+}
+
+body {
+  background: var(--bg);
+}
+
+.topbar {
+  min-height: 58px;
+  gap: 18px;
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom: 1px solid var(--line);
+  backdrop-filter: blur(12px);
+}
+
+.brand-mark {
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  background: #20232a;
+  box-shadow: none;
+  font-size: 14px;
+}
+
+.brand strong {
+  font-size: 18px;
+  letter-spacing: 0;
+}
+
+.brand small {
+  display: none;
+}
+
+.topbar nav {
+  gap: 24px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.source-link {
+  min-height: 34px;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 13px;
+  box-shadow: none;
+}
+
+main {
+  width: min(1180px, calc(100% - 40px));
+}
+
+.hero {
+  min-height: auto;
+  padding: 42px 0 24px;
+  overflow: visible;
+}
+
+.hero > img,
+.hero::after {
+  display: none;
+}
+
+.hero-copy {
+  width: min(760px, 100%);
+}
+
+.eyebrow {
+  min-height: 0;
+  margin-bottom: 12px;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 750;
+}
+
+h1 {
+  max-width: none;
+  margin-bottom: 10px;
+  background: none;
+  color: var(--ink);
+  font-size: clamp(36px, 4.4vw, 56px);
+  line-height: 1.05;
+}
+
+h2 {
+  font-size: clamp(21px, 1.7vw, 26px);
+}
+
+.hero-subtitle {
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.ticker-form {
+  width: min(560px, 100%);
+  margin: 22px 0 16px;
+}
+
+input,
+select,
+button,
+.source-link,
+.panel,
+.opportunity-card,
+.live-tweet-card,
+.track-card,
+.stock-row,
+.method-card,
+.report-output,
+.decision-card,
+.beginner-guard,
+.report-summary,
+.report-metric,
+.execution-card,
+.data-card,
+.scenario-card,
+.check-grid span,
+.evidence-list a,
+.daily-card,
+.alert-center,
+.web-push-banner,
+.web-push-controls,
+.monitor-health,
+.live-research-pack,
+.live-review-pack {
+  border-radius: 8px;
+}
+
+input,
+select {
+  min-height: 42px;
+  background: #fff;
+  border-color: var(--line);
+}
+
+button {
+  min-height: 42px;
+  background: #20232a;
+  box-shadow: none;
+}
+
+button.secondary,
+.quick-tickers button {
+  background: #fff;
+  color: var(--ink);
+  border-color: var(--line);
+}
+
+.hero-stats {
+  gap: 8px;
+}
+
+.hero-stats span {
+  min-width: 112px;
+  padding: 10px 12px;
+  border-color: var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.hero-stats b {
+  font-size: 20px;
+}
+
+.workflow-strip,
+#webPushControls,
+#monitorHealth,
+#dailyTradeReport,
+#priceAlertPanel {
+  display: none;
+}
+
+.panel {
+  border-color: var(--line);
+  background: #fff;
+  box-shadow: var(--shadow);
+  backdrop-filter: none;
+}
+
+.opportunity-panel,
+.monitor-panel,
+.track-panel,
+.stock-panel,
+.method-panel,
+.analysis-panel {
+  padding: 18px;
+}
+
+.panel-head {
+  margin-bottom: 14px;
+}
+
+.panel-head span {
+  margin-bottom: 4px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.muted-line {
+  color: var(--muted);
+  font-weight: 650;
+}
+
+.opportunity-list {
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.opportunity-card {
+  min-height: 0;
+  grid-template-columns: 32px minmax(0, 1fr) auto;
+  grid-template-rows: auto;
+  align-items: center;
+  padding: 12px;
+  border-color: var(--line);
+  background: #fff;
+}
+
+.opportunity-card.pursue,
+.opportunity-card.avoid,
+.live-tweet-card.new,
+.stock-row.selected,
+.decision-card,
+.decision-card.pursue,
+.decision-card.avoid,
+.beginner-guard,
+.beginner-guard.blocked,
+.report-summary,
+.live-review-pack {
+  background: #fff;
+}
+
+.opportunity-rank {
+  grid-row: auto;
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: #f1f3f7;
+  color: var(--ink);
+}
+
+.opportunity-main small,
+.stock-thesis small,
+.method-card p,
+.live-tweet-card p,
+.track-card p,
+.report-summary p,
+.report-section p,
+.report-section li {
+  color: var(--muted);
+}
+
+.opportunity-fit b {
+  color: var(--ink);
+  font-size: 22px;
+}
+
+.opportunity-meta {
+  display: none;
+}
+
+.monitor-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.65fr);
+}
+
+.web-push-banner {
+  padding: 10px 0 2px;
+  border: 0;
+  background: transparent;
+}
+
+.push-live-metrics span {
+  min-height: 26px;
+  border-color: var(--line);
+  background: #fff;
+}
+
+.live-tweet-list,
+.track-record-list,
+.stock-list,
+.method-list {
+  gap: 8px;
+}
+
+.live-tweet-card,
+.track-card,
+.stock-row,
+.method-card {
+  border-color: var(--line);
+  background: #fff;
+}
+
+.stock-row {
+  grid-template-columns: 112px minmax(220px, 1fr) 110px 112px;
+  min-height: 64px;
+  padding: 12px;
+}
+
+.stock-row .metric:last-child {
+  display: none;
+}
+
+.stock-id strong,
+.report-title strong {
+  font-size: 18px;
+}
+
+.stock-id i,
+.decision-pill,
+.live-head strong,
+.scenario-card span {
+  border-radius: 8px;
+  background: #f1f3f7;
+  color: var(--ink);
+}
+
+.metric b {
+  font-size: 16px;
+}
+
+.simple-grid {
+  grid-template-columns: minmax(0, 1fr) 300px;
+}
+
+.analysis-panel {
+  display: block;
+}
+
+.analysis-form,
+.quick-tickers {
+  width: min(560px, 100%);
+}
+
+.quick-tickers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.quick-tickers button {
+  width: auto;
+  min-width: 64px;
+}
+
+.report-output {
+  min-height: 300px;
+  margin-top: 16px;
+  padding: 16px;
+  border-color: var(--line);
+  background: #fff;
+}
+
+.report-score,
+.decision-score,
+.beginner-score {
+  border-radius: 8px;
+  background: #20232a;
+  box-shadow: none;
+}
+
+.decision-card {
+  grid-template-columns: 92px minmax(0, 1fr);
+  padding: 14px;
+  border-color: var(--line);
+}
+
+.decision-score {
+  min-height: 92px;
+}
+
+.decision-score strong {
+  font-size: 34px;
+}
+
+.decision-next {
+  display: none;
+}
+
+.execution-panel,
+.beginner-guard,
+.report-section {
+  margin-top: 14px;
+}
+
+.execution-grid,
+.data-card-grid,
+.scenario-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.data-confidence,
+.score-line,
+.report-metric,
+.execution-card,
+.data-card,
+.scenario-card,
+.check-grid span,
+.evidence-list a,
+.beginner-grid article,
+.beginner-plan > div,
+.paper-trades-panel {
+  border-color: var(--line);
+  background: #fff;
+}
+
+@media (max-width: 1160px) {
+  main {
+    width: min(100% - 32px, 1180px);
+  }
+
+  .monitor-grid,
+  .simple-grid,
+  .analysis-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .stock-row {
+    grid-template-columns: 104px minmax(0, 1fr) 104px;
+  }
+
+  .stock-row .metric:nth-of-type(2) {
+    display: none;
+  }
+}
+
+@media (max-width: 760px) {
+  main,
+  .footer {
+    width: min(100% - 24px, 1180px);
+  }
+
+  .topbar {
+    min-height: 54px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  .hero {
+    padding: 28px 0 18px;
+  }
+
+  .hero-subtitle {
+    font-size: 14px;
+  }
+
+  .opportunity-card,
+  .stock-row,
+  .decision-card,
+  .execution-grid,
+  .data-card-grid,
+  .scenario-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .opportunity-rank {
+    display: none;
+  }
+
+  .decision-next,
+  .stock-thesis {
+    display: none;
+  }
+}
+
 * {
   box-sizing: border-box;
 }
@@ -2650,5 +3133,385 @@ h2 {
 
   .live-rank-list > p {
     margin-left: 0;
+  }
+}
+
+/* Final minimal overrides: keep this block last. */
+:root {
+  --bg: #f7f8fb;
+  --surface: #fff;
+  --surface-strong: #fff;
+  --ink: #20232a;
+  --muted: #6f7582;
+  --line: #e4e7ee;
+  --pink: #d63384;
+  --pink-soft: #fce7f2;
+  --purple: #5965d8;
+  --shadow: 0 10px 28px rgba(28, 32, 40, 0.06);
+}
+
+body {
+  background: var(--bg);
+}
+
+.brand-mark,
+button,
+.report-score,
+.decision-score,
+.beginner-score {
+  background: #20232a;
+  box-shadow: none;
+}
+
+.brand-mark,
+input,
+select,
+button,
+.source-link,
+.panel,
+.opportunity-card,
+.stock-row,
+.method-card,
+.live-tweet-card,
+.track-card,
+.report-output,
+.decision-card,
+.report-summary,
+.report-metric,
+.execution-card,
+.data-card,
+.scenario-card,
+.check-grid span,
+.evidence-list a {
+  border-radius: 8px;
+}
+
+.brand-mark {
+  width: 30px;
+  height: 30px;
+}
+
+.brand strong {
+  font-size: 18px;
+}
+
+.brand small,
+.hero > img,
+.hero::after,
+.workflow-strip,
+#webPushControls,
+#monitorHealth,
+#dailyTradeReport,
+#priceAlertPanel,
+.opportunity-meta,
+.decision-next {
+  display: none;
+}
+
+.topbar {
+  min-height: 58px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.topbar nav {
+  gap: 24px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+main {
+  width: min(1180px, calc(100% - 40px));
+}
+
+.hero {
+  min-height: auto;
+  padding: 42px 0 24px;
+}
+
+.eyebrow {
+  min-height: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--muted);
+}
+
+h1 {
+  background: none;
+  color: var(--ink);
+  font-size: clamp(36px, 4.4vw, 56px);
+}
+
+h2 {
+  font-size: clamp(21px, 1.7vw, 26px);
+}
+
+.hero-subtitle {
+  max-width: 620px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+button {
+  min-height: 42px;
+}
+
+button.secondary,
+.quick-tickers button {
+  color: var(--ink);
+  border-color: var(--line);
+  background: #fff;
+}
+
+input,
+select,
+.panel,
+.opportunity-card,
+.stock-row,
+.method-card,
+.live-tweet-card,
+.track-card,
+.report-output,
+.decision-card,
+.report-summary,
+.report-metric,
+.execution-card,
+.data-card,
+.scenario-card,
+.check-grid span,
+.evidence-list a {
+  border-color: var(--line);
+  background: #fff;
+}
+
+.panel {
+  box-shadow: var(--shadow);
+  backdrop-filter: none;
+}
+
+.opportunity-list {
+  grid-template-columns: 1fr;
+  gap: 8px;
+}
+
+.opportunity-card {
+  min-height: 0;
+  grid-template-columns: 32px minmax(0, 1fr) auto;
+  grid-template-rows: auto;
+  align-items: center;
+  padding: 12px;
+}
+
+.opportunity-rank,
+.stock-id i,
+.decision-pill,
+.decision-pill.pursue,
+.decision-pill.watch,
+.decision-pill.verify,
+.decision-pill.avoid,
+.live-head strong,
+.scenario-card span {
+  border-radius: 8px;
+  color: var(--ink);
+  background: #f1f3f7;
+}
+
+.opportunity-rank {
+  grid-row: auto;
+  width: 28px;
+  height: 28px;
+}
+
+.opportunity-fit b {
+  color: var(--ink);
+  font-size: 22px;
+}
+
+.monitor-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.65fr);
+}
+
+.simple-grid {
+  grid-template-columns: minmax(0, 1fr) 300px;
+}
+
+.stock-row {
+  grid-template-columns: 112px minmax(220px, 1fr) 110px 112px;
+  min-height: 64px;
+}
+
+.stock-row .metric:last-child {
+  display: none;
+}
+
+.analysis-panel {
+  display: block;
+}
+
+.report-output {
+  margin-top: 16px;
+}
+
+.decision-card {
+  grid-template-columns: 92px minmax(0, 1fr);
+  padding: 14px;
+}
+
+@media (max-width: 1160px) {
+  .monitor-grid,
+  .simple-grid,
+  .analysis-panel {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 760px) {
+  main,
+  .footer {
+    width: min(100% - 24px, 1180px);
+  }
+
+  .opportunity-card,
+  .stock-row,
+  .decision-card {
+    grid-template-columns: 1fr;
+  }
+
+  .opportunity-rank,
+  .stock-thesis {
+    display: none;
+  }
+
+  .quick-tickers button {
+    width: auto;
+    flex: 0 0 auto;
+  }
+}
+
+/* Page routing overrides: keep this block last. */
+.app-page:not(.active) {
+  display: none;
+}
+
+.app-page.active {
+  display: block;
+}
+
+.hero.app-page.active {
+  display: flex;
+}
+
+body.page-routing main {
+  min-height: calc(100vh - 128px);
+}
+
+.topbar nav {
+  min-width: 0;
+  display: flex;
+  justify-content: flex-start;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.topbar nav::-webkit-scrollbar {
+  display: none;
+}
+
+.topbar nav a {
+  flex: 0 0 auto;
+  white-space: nowrap;
+}
+
+.topbar nav a.active {
+  color: var(--ink);
+}
+
+.topbar nav a.active::after {
+  width: 100%;
+  height: 2px;
+  display: block;
+  margin-top: 4px;
+  border-radius: 999px;
+  background: var(--ink);
+  content: "";
+}
+
+.home-actions {
+  width: min(760px, 100%);
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.home-actions a {
+  min-height: 74px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.home-actions a:hover,
+.home-actions a.active {
+  border-color: var(--ink);
+  color: var(--ink);
+}
+
+.home-actions strong,
+.home-actions small {
+  display: block;
+}
+
+.home-actions strong {
+  font-size: 14px;
+}
+
+.home-actions small {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+#webPushControls:not(:empty),
+#monitorHealth:not(:empty) {
+  display: grid;
+}
+
+#dailyTradeReport:not(:empty),
+#priceAlertPanel:not(:empty) {
+  display: block;
+}
+
+.opportunity-meta {
+  display: flex;
+}
+
+.decision-next {
+  display: grid;
+}
+
+@media (max-width: 920px) {
+  .topbar {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .source-link {
+    display: none;
+  }
+
+  .home-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 560px) {
+  .home-actions {
+    grid-template-columns: 1fr;
   }
 }

@@ -21,17 +21,19 @@ const execFileAsync = promisify(execFile);
 const MARKET_UA =
   "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/126 Safari/537.36";
 const YAHOO_UA = "Mozilla/5.0";
-const MARKET_SYMBOL_ALIASES = {
+const FALLBACK_MARKET_SYMBOL_ALIASES = {
   ALRIB: "ALRIB.PA",
   IQE: "IQE.L",
   LPK: "LPK.DE",
+  LPKFF: "LPK.DE",
   SOI: "SOI.PA",
   XFAB: "XFAB.PA",
   "XFAB.PA": "XFAB.PA",
-  SIVE: "SIVE.ST",
-  "SIVE.ST": "SIVE.ST",
-  SIVERS: "SIVE.ST",
+  SIVE: "SIVEF",
+  "SIVE.ST": "SIVEF",
+  SIVERS: "SIVEF",
 };
+const MARKET_SYMBOL_ALIASES = { ...FALLBACK_MARKET_SYMBOL_ALIASES, ...loadMarketSymbolAliases() };
 const symbolSearchCache = new Map();
 const TICKER_STOPLIST = new Set(["L1", "L2", "L3", "L4", "L5", "L6", "L7", "L8", "L9", "L14", "TICKER"]);
 const CRYPTO_ONLY_SYMBOLS = new Set(["BTC", "ETH", "SOL", "DOGE", "XRP"]);
@@ -45,6 +47,29 @@ const MIME = {
   ".png": "image/png",
   ".svg": "image/svg+xml",
 };
+
+function normalizeAliasToken(value = "") {
+  return String(value || "").trim().replace(/^\$+/, "").toUpperCase();
+}
+
+function loadMarketSymbolAliases() {
+  try {
+    const file = path.join(ROOT, "data", "symbol-aliases.json");
+    const data = JSON.parse(fs.readFileSync(file, "utf8"));
+    const aliases = {};
+    for (const identity of data.identities || []) {
+      const marketSymbol = normalizeAliasToken(identity.marketSymbol || identity.canonical);
+      if (!marketSymbol) continue;
+      for (const alias of [identity.canonical, identity.marketSymbol, ...(identity.aliases || [])]) {
+        const normalized = normalizeAliasToken(alias);
+        if (normalized) aliases[normalized] = marketSymbol;
+      }
+    }
+    return aliases;
+  } catch {
+    return {};
+  }
+}
 
 function send(res, status, body, type = "application/json; charset=utf-8", cacheControl = status === 200 ? "no-store" : "no-cache") {
   res.writeHead(status, {

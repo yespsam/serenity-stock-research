@@ -291,6 +291,8 @@ const state = {
   paperTrades: [],
   priceAlerts: [],
   activeReport: null,
+  symbolIdentities: [],
+  symbolIdentityByAlias: new Map(),
   quoteFetchedAt: new Map(),
   lastPriceAlertQuoteAt: 0,
   lastPriceAlertTriggeredAt: null,
@@ -301,6 +303,64 @@ const state = {
   pwaInstallPrompt: null,
   pwaInstalled: window.matchMedia?.("(display-mode: standalone)")?.matches || navigator.standalone === true,
 };
+
+function normalizeIdentity(identity = {}) {
+  const canonical = normalizeSymbol(identity.canonical);
+  const marketSymbol = normalizeSymbol(identity.marketSymbol || canonical);
+  const aliases = uniqueSymbols([canonical, marketSymbol, ...(identity.aliases || [])]);
+  return {
+    canonical,
+    marketSymbol,
+    aliases,
+    companyName: identity.companyName || canonical,
+    exchangeHint: identity.exchangeHint || "",
+  };
+}
+
+function loadSymbolIdentities(identities = []) {
+  const normalized = identities.map(normalizeIdentity).filter((identity) => identity.canonical);
+  const byAlias = new Map();
+  for (const identity of normalized) {
+    for (const alias of uniqueSymbols([identity.canonical, identity.marketSymbol, ...identity.aliases])) {
+      byAlias.set(alias, identity);
+    }
+  }
+  state.symbolIdentities = normalized;
+  state.symbolIdentityByAlias = byAlias;
+}
+
+function identityForSymbol(symbol = "") {
+  return state.symbolIdentityByAlias.get(normalizeSymbol(symbol)) || null;
+}
+
+function canonicalSymbol(symbol = "") {
+  return identityForSymbol(symbol)?.canonical || normalizeSymbol(symbol);
+}
+
+function marketSymbolFor(symbol = "") {
+  const normalized = normalizeSymbol(symbol);
+  return identityForSymbol(normalized)?.marketSymbol || normalized;
+}
+
+function aliasesForSymbol(symbol = "") {
+  const identity = identityForSymbol(symbol);
+  return identity ? uniqueSymbols([identity.canonical, identity.marketSymbol, ...identity.aliases]) : [normalizeSymbol(symbol)].filter(Boolean);
+}
+
+function stockAliases(stock = {}) {
+  return uniqueSymbols([stock.symbol, stock.marketSymbol, ...(stock.aliases || []), ...aliasesForSymbol(stock.symbol)]);
+}
+
+function applySymbolIdentitiesToCalledStocks() {
+  for (const stock of calledStocks) {
+    const identity = identityForSymbol(stock.symbol);
+    if (!identity) continue;
+    stock.symbol = identity.canonical;
+    stock.marketSymbol = identity.marketSymbol;
+    stock.aliases = uniqueSymbols([...(stock.aliases || []), ...identity.aliases, identity.marketSymbol, identity.canonical]);
+    stock.name = stock.name || identity.companyName;
+  }
+}
 
 const pageParams = new URLSearchParams(window.location.search);
 const WEB_PUSH_POLL_MS = clamp(Number(pageParams.get("pushPoll") || 30_000), 10_000, 120_000);
@@ -372,9 +432,56 @@ const tickerInput = document.querySelector("#tickerInput");
 const tickerSuggestions = document.querySelector("#tickerSuggestions");
 const quickTickers = document.querySelector("#quickTickers");
 const reportOutput = document.querySelector("#reportOutput");
+const APP_PAGE_IDS = new Set(["home", "opportunities", "monitor", "watchlist", "analysis", "track-record", "method"]);
+const APP_PAGE_ALIASES = new Map([["home-view", "home"]]);
 
 const usd = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 });
 const compact = new Intl.NumberFormat("zh-CN", { notation: "compact", maximumFractionDigits: 1 });
+
+function normalizePageId(value = "") {
+  const raw = String(value || "").replace(/^#/, "").trim() || "home";
+  const page = APP_PAGE_ALIASES.get(raw) || raw;
+  return APP_PAGE_IDS.has(page) ? page : "home";
+}
+
+function pageFromHash() {
+  try {
+    return normalizePageId(decodeURIComponent(window.location.hash.replace(/^#/, "")));
+  } catch {
+    return "home";
+  }
+}
+
+function setActivePage(page = pageFromHash(), options = {}) {
+  const activePage = normalizePageId(page);
+  document.body.classList.add("page-routing");
+  document.body.dataset.page = activePage;
+  document.querySelectorAll(".app-page").forEach((section) => {
+    section.classList.toggle("active", section.dataset.page === activePage);
+  });
+  document.querySelectorAll('.topbar a[href^="#"], .home-actions a[href^="#"]').forEach((link) => {
+    const target = normalizePageId(link.getAttribute("href"));
+    link.classList.toggle("active", target === activePage);
+    if (target === activePage) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  });
+  if (options.updateHash && window.location.hash !== `#${activePage}`) {
+    window.history.pushState(null, "", `#${activePage}`);
+  }
+  if (options.scroll !== false) {
+    window.scrollTo({ top: 0, behavior: options.instant ? "auto" : "smooth" });
+  }
+}
+
+function initPageRouting() {
+  setActivePage(pageFromHash(), { scroll: false });
+  window.addEventListener("hashchange", () => {
+    setActivePage(pageFromHash());
+  });
+  document.addEventListener("click", (event) => {
+    if (event.target.closest('a[href="#"]')) event.preventDefault();
+  });
+}
 
 function escapeHtml(value = "") {
   return String(value)
@@ -397,6 +504,10 @@ async function fetchJson(url) {
 
 function normalizeSymbol(value = "") {
   return String(value).trim().replace(/^\$+/, "").toUpperCase();
+}
+
+function uniqueSymbols(values = []) {
+  return [...new Set(values.map(normalizeSymbol).filter(Boolean))];
 }
 
 function formatMarketCap(value) {
@@ -591,12 +702,16 @@ function healthLabel() {
 
 function metricForStock(stock) {
   const symbols = state.distillation?.symbols || [];
-  const aliases = new Set([stock.symbol, ...(stock.aliases || [])].map(normalizeSymbol));
-  return symbols.find((item) => aliases.has(normalizeSymbol(item.symbol))) || null;
+  const aliases = new Set(stockAliases(stock));
+  return symbols.find((item) => aliases.has(normalizeSymbol(item.symbol)) || aliases.has(canonicalSymbol(item.symbol))) || null;
 }
 
 function quoteForStock(stock) {
-  return state.quotes.get(stock.symbol) || {};
+  for (const symbol of stockAliases(stock)) {
+    const quote = state.quotes.get(symbol);
+    if (quote) return quote;
+  }
+  return {};
 }
 
 function stockMarketCap(stock) {
@@ -605,9 +720,9 @@ function stockMarketCap(stock) {
 }
 
 function getCalledEvidence(stock, limit = 4) {
-  const aliases = new Set([stock.symbol, ...(stock.aliases || [])].map(normalizeSymbol));
+  const aliases = new Set(stockAliases(stock));
   return (state.tweets?.items || [])
-    .filter((item) => (item.symbols || []).some((symbol) => aliases.has(normalizeSymbol(symbol))))
+    .filter((item) => (item.symbols || []).some((symbol) => aliases.has(normalizeSymbol(symbol)) || aliases.has(canonicalSymbol(symbol))))
     .sort((a, b) => {
       const materiality = Number(b.materiality || 0) - Number(a.materiality || 0);
       if (materiality) return materiality;
@@ -1898,17 +2013,17 @@ function isWebTradableSymbol(symbol = "") {
 }
 
 function liveTradableSymbols(item = {}) {
-  return [...new Set((item.symbols || []).map(normalizeSymbol).filter(isWebTradableSymbol))].slice(0, 12);
+  return uniqueSymbols((item.symbols || []).map(canonicalSymbol)).filter(isWebTradableSymbol).slice(0, 12);
 }
 
 function liveSymbolTokens(item = {}) {
   const symbols = new Set();
   for (const symbol of (item.symbols || []).map(normalizeSymbol).filter(Boolean)) {
-    symbols.add(symbol);
+    for (const alias of aliasesForSymbol(symbol)) symbols.add(alias);
+    symbols.add(canonicalSymbol(symbol));
     const stock = findStock(symbol);
     if (stock) {
-      symbols.add(normalizeSymbol(stock.symbol));
-      for (const alias of stock.aliases || []) symbols.add(normalizeSymbol(alias));
+      for (const alias of stockAliases(stock)) symbols.add(alias);
     }
   }
   return symbols;
@@ -1978,6 +2093,7 @@ function sendBrowserNotification(item = {}, match = {}) {
     });
     notification.onclick = () => {
       window.focus();
+      setActivePage("monitor", { updateHash: true, scroll: false });
       document.querySelector("#monitor")?.scrollIntoView({ behavior: "smooth", block: "start" });
       notification.close();
     };
@@ -2076,7 +2192,7 @@ function liveRowDetails(stock = {}, quote = {}, decision = {}, beginner = {}, pl
 }
 
 async function fetchQuotesForSymbols(symbols = []) {
-  const normalized = [...new Set(symbols.map(normalizeSymbol).filter(Boolean))].slice(0, 12);
+  const normalized = uniqueSymbols(symbols.map(canonicalSymbol)).slice(0, 12);
   if (!normalized.length) return new Map();
   const map = new Map();
   const missing = [];
@@ -2094,10 +2210,16 @@ async function fetchQuotesForSymbols(symbols = []) {
   for (const quote of data.quotes || []) {
     const requested = normalizeSymbol(quote.requestedSymbol || quote.symbol);
     const actual = normalizeSymbol(quote.symbol);
+    const canonical = canonicalSymbol(requested || actual);
     if (requested) {
       state.quotes.set(requested, quote);
       state.quoteFetchedAt.set(requested, Date.now());
       map.set(requested, quote);
+    }
+    if (canonical) {
+      state.quotes.set(canonical, quote);
+      state.quoteFetchedAt.set(canonical, Date.now());
+      map.set(canonical, quote);
     }
     if (actual) {
       state.quotes.set(actual, quote);
@@ -2725,15 +2847,22 @@ async function loadLiveMonitor() {
 
 function findStock(symbol) {
   const normalized = normalizeSymbol(symbol);
-  return calledStocks.find((stock) => [stock.symbol, ...(stock.aliases || [])].map(normalizeSymbol).includes(normalized));
+  const canonical = canonicalSymbol(normalized);
+  return calledStocks.find((stock) => stockAliases(stock).includes(normalized) || stockAliases(stock).includes(canonical));
 }
 
 function fallbackStock(symbol) {
-  const metric = (state.distillation?.symbols || []).find((item) => normalizeSymbol(item.symbol) === normalizeSymbol(symbol)) || {};
+  const normalized = normalizeSymbol(symbol);
+  const canonical = canonicalSymbol(normalized);
+  const aliases = aliasesForSymbol(canonical);
+  const identity = identityForSymbol(canonical);
+  const metric =
+    (state.distillation?.symbols || []).find((item) => aliases.includes(normalizeSymbol(item.symbol)) || canonicalSymbol(item.symbol) === canonical) || {};
   return {
-    symbol: normalizeSymbol(symbol),
-    aliases: [normalizeSymbol(symbol)],
-    name: normalizeSymbol(symbol),
+    symbol: canonical,
+    marketSymbol: identity?.marketSymbol || canonical,
+    aliases,
+    name: identity?.companyName || canonical,
     theme: metric.dominantTheme || "general",
     themeLabel: themeNames[metric.dominantTheme] || "通用美股研究",
     thesis: "这支股票不在 Serenity 核心覆盖名单里，系统会先用公开行情、行业、财务和新闻做通用初筛。",
@@ -2771,16 +2900,22 @@ function hydrateUniversalStock(stock, quote = {}) {
 }
 
 async function ensureQuote(symbol, options = {}) {
-  const normalized = normalizeSymbol(symbol);
+  const normalized = canonicalSymbol(symbol);
+  const requestSymbol = normalized;
   const cached = state.quotes.get(normalized);
   const fetchedAt = state.quoteFetchedAt.get(normalized) || 0;
   const cacheMs = options.detail ? DETAIL_QUOTE_CACHE_MS : QUOTE_CACHE_MS;
   if (cached && Date.now() - fetchedAt < cacheMs && (!options.detail || cached.profile || cached.news || cached.financials)) return cached;
   const detail = options.detail ? "&detail=1" : "";
-  const data = await fetchJson(`/api/quotes?symbols=${encodeURIComponent(normalized)}${detail}`);
+  const data = await fetchJson(`/api/quotes?symbols=${encodeURIComponent(requestSymbol)}${detail}`);
   const quote = data.quotes?.[0] || { requestedSymbol: normalized };
   state.quotes.set(normalized, quote);
   state.quoteFetchedAt.set(normalized, Date.now());
+  const marketSymbol = marketSymbolFor(normalized);
+  if (marketSymbol) {
+    state.quotes.set(marketSymbol, quote);
+    state.quoteFetchedAt.set(marketSymbol, Date.now());
+  }
   if (quote.symbol) {
     state.quotes.set(normalizeSymbol(quote.symbol), quote);
     state.quoteFetchedAt.set(normalizeSymbol(quote.symbol), Date.now());
@@ -3402,8 +3537,9 @@ function buildReport(stock, quote) {
 }
 
 async function analyzeSymbol(symbol, options = {}) {
-  const normalized = normalizeSymbol(symbol);
+  const normalized = canonicalSymbol(symbol);
   if (!normalized) return;
+  if (options.route !== false) setActivePage("analysis", { updateHash: true, scroll: false });
   tickerInput.value = normalized;
   heroTickerInput.value = normalized;
   state.activeSymbol = normalized;
@@ -3414,6 +3550,7 @@ async function analyzeSymbol(symbol, options = {}) {
   const quote = await ensureQuote(quoteSymbol, { detail: true });
   stock = hydrateUniversalStock(stock, quote);
   state.quotes.set(stock.symbol, quote);
+  if (stock.marketSymbol) state.quotes.set(stock.marketSymbol, quote);
   state.activeSymbol = stock.symbol;
   buildReport(stock, quote);
   renderStockList();
@@ -3425,8 +3562,18 @@ async function loadQuotes() {
   const data = await fetchJson(`/api/quotes?symbols=${encodeURIComponent(symbols)}`);
   for (const quote of data.quotes || []) {
     const requested = normalizeSymbol(quote.requestedSymbol || quote.symbol);
+    const canonical = canonicalSymbol(requested || quote.symbol);
     state.quotes.set(requested, quote);
     state.quoteFetchedAt.set(requested, Date.now());
+    if (canonical) {
+      state.quotes.set(canonical, quote);
+      state.quoteFetchedAt.set(canonical, Date.now());
+    }
+    const marketSymbol = marketSymbolFor(canonical);
+    if (marketSymbol) {
+      state.quotes.set(marketSymbol, quote);
+      state.quoteFetchedAt.set(marketSymbol, Date.now());
+    }
     if (quote.symbol) {
       state.quotes.set(normalizeSymbol(quote.symbol), quote);
       state.quoteFetchedAt.set(normalizeSymbol(quote.symbol), Date.now());
@@ -3435,13 +3582,19 @@ async function loadQuotes() {
 }
 
 async function init() {
+  initPageRouting();
   initPushPreferences();
   initBeginnerProfile();
   initServiceWorker().then(renderLiveMonitor);
   reportOutput.innerHTML = `<div class="empty-report">输入 ticker 或点击左侧名单，生成一份 Serenity 风格投研报告。</div>`;
-  renderTickerSuggestions();
   renderQuickTickers();
-  const publicData = await fetchJson("./data/serenity-public.json");
+  const [publicData, symbolAliasData] = await Promise.all([
+    fetchJson("./data/serenity-public.json"),
+    fetchJson("./data/symbol-aliases.json").catch(() => ({ identities: [] })),
+  ]);
+  loadSymbolIdentities(symbolAliasData.identities || []);
+  applySymbolIdentitiesToCalledStocks();
+  renderTickerSuggestions();
   state.research = { profile: publicData.profile || {} };
   state.tweets = {
     commentCount: publicData.stats?.commentCount || 0,
@@ -3467,7 +3620,7 @@ async function init() {
   checkPriceAlerts();
   renderStockList();
   renderOpportunityList();
-  await analyzeSymbol("AAOI", { scroll: false });
+  await analyzeSymbol("AAOI", { route: false, scroll: false });
   loadPerformance();
 }
 

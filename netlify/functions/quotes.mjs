@@ -1,6 +1,14 @@
 const MARKET_SYMBOL_ALIASES = {
   SIVE: "SIVEF",
   "SIVE.ST": "SIVEF",
+  SIVERS: "SIVEF",
+  SOI: "SOI.PA",
+  IQE: "IQE.L",
+  XFAB: "XFAB.PA",
+  LPK: "LPK.DE",
+  LPKFF: "LPK.DE",
+  ALRIB: "ALRIB.PA",
+  RIBER: "ALRIB.PA",
 };
 
 function json(data, status = 200, cacheControl = "public, max-age=60, s-maxage=120, stale-while-revalidate=600") {

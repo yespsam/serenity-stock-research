@@ -4,32 +4,10 @@ const path = require("node:path");
 const ROOT = path.resolve(__dirname, "..");
 const OUT = path.join(ROOT, "netlify-dist");
 
-const aliasGroups = [
-  ["SIVEF", "SIVE", "SIVE.ST", "SIVEF"],
-  ["AAOI"],
-  ["AXTI"],
-  ["LITE"],
-  ["MRVL"],
-  ["AEHR"],
-  ["NBIS"],
-  ["IREN"],
-  ["COHR"],
-  ["NVDA"],
-  ["MSFT"],
-  ["AMZN"],
-  ["META"],
-  ["MU"],
-  ["TSM"],
-  ["CIFR"],
-  ["HOOD"],
-  ["CRWV"],
-  ["AVGO"],
-  ["AMD"],
-  ["JBL"],
-  ["POET"],
-  ["ALAB"],
-  ["RKLB"],
-];
+const symbolIdentityData = readJsonIfExists("data/symbol-aliases.json") || { identities: [] };
+const symbolIdentities = normalizeIdentities(symbolIdentityData.identities || []);
+const aliasGroups = symbolIdentities.map((identity) => [identity.canonical, ...identity.aliases]);
+const identityByAlias = buildIdentityByAlias(symbolIdentities);
 
 function readJson(file) {
   return JSON.parse(fs.readFileSync(path.join(ROOT, file), "utf8"));
@@ -46,13 +24,61 @@ function copyFile(from, to) {
   fs.copyFileSync(path.join(ROOT, from), to);
 }
 
+function normalizeSymbol(value = "") {
+  return String(value || "").trim().replace(/^\$+/, "").toUpperCase();
+}
+
+function uniqueSymbols(values = []) {
+  return [...new Set(values.map(normalizeSymbol).filter(Boolean))];
+}
+
+function normalizeIdentities(identities = []) {
+  return identities
+    .map((identity) => {
+      const canonical = normalizeSymbol(identity.canonical);
+      const marketSymbol = normalizeSymbol(identity.marketSymbol || canonical);
+      const aliases = uniqueSymbols([canonical, marketSymbol, ...(identity.aliases || [])]);
+      return {
+        canonical,
+        marketSymbol,
+        companyName: identity.companyName || canonical,
+        aliases,
+        exchangeHint: identity.exchangeHint || "",
+      };
+    })
+    .filter((identity) => identity.canonical);
+}
+
+function buildIdentityByAlias(identities = []) {
+  const map = new Map();
+  for (const identity of identities) {
+    for (const alias of uniqueSymbols([identity.canonical, identity.marketSymbol, ...identity.aliases])) {
+      map.set(alias, identity);
+    }
+  }
+  return map;
+}
+
+function identityForSymbol(symbol = "") {
+  return identityByAlias.get(normalizeSymbol(symbol));
+}
+
+function canonicalSymbol(symbol = "") {
+  return identityForSymbol(symbol)?.canonical || normalizeSymbol(symbol);
+}
+
+function aliasesForSymbol(symbol = "") {
+  const identity = identityForSymbol(symbol);
+  return identity ? uniqueSymbols([identity.canonical, identity.marketSymbol, ...identity.aliases]) : [normalizeSymbol(symbol)].filter(Boolean);
+}
+
 function compactItem(item) {
   return {
     id: item.id,
     date: item.date,
     title: item.title || "",
     body: item.body || "",
-    symbols: (item.symbols || []).slice(0, 12),
+    symbols: uniqueSymbols((item.symbols || []).map(canonicalSymbol)).slice(0, 12),
     theme: item.theme || "general",
     materiality: item.materiality || 0,
     sentiment: item.sentiment || "neutral",
@@ -94,7 +120,7 @@ function archiveItems(archive = {}) {
 function historyCandidate(item, symbol) {
   return {
     id: item.id || item.url || `${symbol}-${item.date}`,
-    symbol,
+    symbol: canonicalSymbol(symbol),
     date: item.date,
     title: item.title || "",
     body: item.body || "",
@@ -108,11 +134,11 @@ function historyCandidate(item, symbol) {
 function buildHistoryCandidates(items = []) {
   const candidates = [];
   for (const group of aliasGroups) {
-    const canonical = group[0];
-    const aliases = new Set(group.map((symbol) => symbol.toUpperCase()));
+    const canonical = canonicalSymbol(group[0]);
+    const aliases = new Set(uniqueSymbols(group.flatMap(aliasesForSymbol)));
     const hits = items
       .filter((item) => validDate(item.date))
-      .filter((item) => (item.symbols || []).some((symbol) => aliases.has(String(symbol).toUpperCase())))
+      .filter((item) => (item.symbols || []).some((symbol) => aliases.has(normalizeSymbol(symbol))))
       .filter((item) => item.sentiment !== "bear")
       .sort((a, b) => {
         const materiality = Number(b.materiality || 0) - Number(a.materiality || 0);
@@ -154,6 +180,44 @@ function buildMonitorSnapshot(tweets = {}, archive = null) {
   };
 }
 
+function buildPublicSymbols(symbols = []) {
+  const merged = new Map();
+  for (const item of symbols) {
+    const canonical = canonicalSymbol(item.symbol);
+    if (!canonical) continue;
+    const identity = identityForSymbol(canonical);
+    const previous = merged.get(canonical) || {
+      symbol: canonical,
+      aliases: aliasesForSymbol(canonical).filter((alias) => alias !== canonical),
+      marketSymbol: identity?.marketSymbol || canonical,
+      mentions: 0,
+      bull: 0,
+      bear: 0,
+      neutral: 0,
+      materiality: 0,
+      latest: "",
+      dominantTheme: item.dominantTheme || "general",
+      sentimentScore: 0,
+      themeVotes: {},
+    };
+    previous.mentions += Number(item.mentions || 0);
+    previous.bull += Number(item.bull || 0);
+    previous.bear += Number(item.bear || 0);
+    previous.neutral += Number(item.neutral || 0);
+    previous.sentimentScore += Number(item.sentimentScore || 0);
+    previous.materiality = Math.max(previous.materiality, Number(item.materiality || 0));
+    if (parsedTime(item.latest) > parsedTime(previous.latest)) previous.latest = item.latest || "";
+    const theme = item.dominantTheme || "general";
+    previous.themeVotes[theme] = (previous.themeVotes[theme] || 0) + Number(item.mentions || 1);
+    previous.dominantTheme = Object.entries(previous.themeVotes).sort((a, b) => b[1] - a[1])[0]?.[0] || previous.dominantTheme;
+    merged.set(canonical, previous);
+  }
+  return [...merged.values()]
+    .map(({ themeVotes, ...item }) => item)
+    .sort((a, b) => Number(b.sentimentScore || 0) - Number(a.sentimentScore || 0) || Number(b.mentions || 0) - Number(a.mentions || 0))
+    .slice(0, 220);
+}
+
 function buildPublicData() {
   const existingPublic = path.join(ROOT, "data/serenity-public.json");
   const requiredRaw = ["data/serenity-research.json", "data/serenity-tweets.json", "data/serenity-distillation.json"].every((file) =>
@@ -171,9 +235,9 @@ function buildPublicData() {
   const picked = new Map();
 
   for (const group of aliasGroups) {
-    const aliases = new Set(group.map((symbol) => symbol.toUpperCase()));
+    const aliases = new Set(uniqueSymbols(group.flatMap(aliasesForSymbol)));
     const hits = (tweets.items || [])
-      .filter((item) => (item.symbols || []).some((symbol) => aliases.has(String(symbol).toUpperCase())))
+      .filter((item) => (item.symbols || []).some((symbol) => aliases.has(normalizeSymbol(symbol))))
       .sort((a, b) => Number(b.materiality || 0) - Number(a.materiality || 0) || Date.parse(b.date || 0) - Date.parse(a.date || 0))
       .slice(0, 6);
     for (const item of hits) picked.set(String(item.id || item.url), compactItem(item));
@@ -191,17 +255,7 @@ function buildPublicData() {
         .sort((a, b) => Date.parse(b.date || 0) - Date.parse(a.date || 0))[0]?.date || "",
     },
     rules: (distillation.rules || []).slice(0, 9),
-    symbols: (distillation.symbols || []).slice(0, 220).map((item) => ({
-      symbol: item.symbol,
-      mentions: item.mentions || 0,
-      bull: item.bull || 0,
-      bear: item.bear || 0,
-      neutral: item.neutral || 0,
-      materiality: item.materiality || 0,
-      latest: item.latest || "",
-      dominantTheme: item.dominantTheme || "general",
-      sentimentScore: item.sentimentScore || 0,
-    })),
+    symbols: buildPublicSymbols(distillation.symbols || []),
     items: [...picked.values()],
     history: buildHistoryCandidates(tweets.items || []),
     monitor: buildMonitorSnapshot(tweets, fxTwitterArchive),
@@ -234,6 +288,7 @@ for (const file of ["index.html", "styles.css", "app.js", "manifest.webmanifest"
 }
 copyFile("assets/serenity-ai-strategist.png", path.join(OUT, "assets/serenity-ai-strategist.png"));
 copyFile("assets/serenity-icon.svg", path.join(OUT, "assets/serenity-icon.svg"));
+copyFile("data/symbol-aliases.json", path.join(OUT, "data/symbol-aliases.json"));
 
 const publicData = buildPublicData();
 fs.writeFileSync(path.join(ROOT, "data/serenity-public.json"), `${JSON.stringify(publicData, null, 2)}\n`);

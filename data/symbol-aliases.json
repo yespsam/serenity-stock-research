@@ -1,0 +1,186 @@
+{
+  "version": 1,
+  "updatedAt": "2026-06-18",
+  "identities": [
+    {
+      "canonical": "SIVEF",
+      "marketSymbol": "SIVEF",
+      "companyName": "Sivers Semiconductors",
+      "aliases": ["SIVE", "SIVE.ST", "SIVERS"],
+      "exchangeHint": "OTC / Stockholm"
+    },
+    {
+      "canonical": "AAOI",
+      "marketSymbol": "AAOI",
+      "companyName": "Applied Optoelectronics",
+      "aliases": ["AAOI"]
+    },
+    {
+      "canonical": "AXTI",
+      "marketSymbol": "AXTI",
+      "companyName": "AXT Inc.",
+      "aliases": ["AXTI"]
+    },
+    {
+      "canonical": "LITE",
+      "marketSymbol": "LITE",
+      "companyName": "Lumentum",
+      "aliases": ["LITE"]
+    },
+    {
+      "canonical": "MRVL",
+      "marketSymbol": "MRVL",
+      "companyName": "Marvell Technology",
+      "aliases": ["MRVL"]
+    },
+    {
+      "canonical": "AEHR",
+      "marketSymbol": "AEHR",
+      "companyName": "Aehr Test Systems",
+      "aliases": ["AEHR"]
+    },
+    {
+      "canonical": "NBIS",
+      "marketSymbol": "NBIS",
+      "companyName": "Nebius",
+      "aliases": ["NBIS"]
+    },
+    {
+      "canonical": "IREN",
+      "marketSymbol": "IREN",
+      "companyName": "IREN",
+      "aliases": ["IREN"]
+    },
+    {
+      "canonical": "COHR",
+      "marketSymbol": "COHR",
+      "companyName": "Coherent",
+      "aliases": ["COHR"]
+    },
+    {
+      "canonical": "NVDA",
+      "marketSymbol": "NVDA",
+      "companyName": "NVIDIA",
+      "aliases": ["NVDA"]
+    },
+    {
+      "canonical": "MSFT",
+      "marketSymbol": "MSFT",
+      "companyName": "Microsoft",
+      "aliases": ["MSFT"]
+    },
+    {
+      "canonical": "AMZN",
+      "marketSymbol": "AMZN",
+      "companyName": "Amazon",
+      "aliases": ["AMZN"]
+    },
+    {
+      "canonical": "META",
+      "marketSymbol": "META",
+      "companyName": "Meta Platforms",
+      "aliases": ["META"]
+    },
+    {
+      "canonical": "MU",
+      "marketSymbol": "MU",
+      "companyName": "Micron",
+      "aliases": ["MU"]
+    },
+    {
+      "canonical": "TSM",
+      "marketSymbol": "TSM",
+      "companyName": "Taiwan Semiconductor",
+      "aliases": ["TSM"]
+    },
+    {
+      "canonical": "CIFR",
+      "marketSymbol": "CIFR",
+      "companyName": "Cipher Mining",
+      "aliases": ["CIFR"]
+    },
+    {
+      "canonical": "HOOD",
+      "marketSymbol": "HOOD",
+      "companyName": "Robinhood",
+      "aliases": ["HOOD"]
+    },
+    {
+      "canonical": "CRWV",
+      "marketSymbol": "CRWV",
+      "companyName": "CoreWeave",
+      "aliases": ["CRWV"]
+    },
+    {
+      "canonical": "AVGO",
+      "marketSymbol": "AVGO",
+      "companyName": "Broadcom",
+      "aliases": ["AVGO"]
+    },
+    {
+      "canonical": "AMD",
+      "marketSymbol": "AMD",
+      "companyName": "Advanced Micro Devices",
+      "aliases": ["AMD"]
+    },
+    {
+      "canonical": "JBL",
+      "marketSymbol": "JBL",
+      "companyName": "Jabil",
+      "aliases": ["JBL"]
+    },
+    {
+      "canonical": "POET",
+      "marketSymbol": "POET",
+      "companyName": "POET Technologies",
+      "aliases": ["POET"]
+    },
+    {
+      "canonical": "ALAB",
+      "marketSymbol": "ALAB",
+      "companyName": "Astera Labs",
+      "aliases": ["ALAB"]
+    },
+    {
+      "canonical": "RKLB",
+      "marketSymbol": "RKLB",
+      "companyName": "Rocket Lab",
+      "aliases": ["RKLB"]
+    },
+    {
+      "canonical": "SOI",
+      "marketSymbol": "SOI.PA",
+      "companyName": "Soitec",
+      "aliases": ["SOI", "SOI.PA"],
+      "exchangeHint": "Euronext Paris"
+    },
+    {
+      "canonical": "IQE",
+      "marketSymbol": "IQE.L",
+      "companyName": "IQE",
+      "aliases": ["IQE", "IQE.L"],
+      "exchangeHint": "London Stock Exchange"
+    },
+    {
+      "canonical": "XFAB",
+      "marketSymbol": "XFAB.PA",
+      "companyName": "X-FAB",
+      "aliases": ["XFAB", "XFAB.PA"],
+      "exchangeHint": "Euronext Paris"
+    },
+    {
+      "canonical": "LPK",
+      "marketSymbol": "LPK.DE",
+      "companyName": "LPKF Laser & Electronics",
+      "aliases": ["LPK", "LPK.DE", "LPKFF"],
+      "exchangeHint": "Xetra / OTC"
+    },
+    {
+      "canonical": "ALRIB",
+      "marketSymbol": "ALRIB.PA",
+      "companyName": "Riber",
+      "aliases": ["ALRIB", "ALRIB.PA", "RIBER"],
+      "exchangeHint": "Euronext Paris"
+    }
+  ]
+}
