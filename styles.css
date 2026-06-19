@@ -16,16 +16,18 @@
 
 /* Simplified product shell */
 :root {
-  --bg: #f7f8fb;
-  --surface: #fff;
-  --surface-strong: #fff;
-  --ink: #20232a;
-  --muted: #6f7582;
-  --line: #e4e7ee;
-  --pink: #d63384;
-  --pink-soft: #fce7f2;
-  --purple: #5965d8;
-  --shadow: 0 10px 28px rgba(28, 32, 40, 0.06);
+  --bg: #0b0e11;
+  --surface: #181a20;
+  --surface-strong: #1e2329;
+  --ink: #eaecef;
+  --muted: #b7bdc6;
+  --line: #2b3139;
+  --pink: #f0b90b;
+  --pink-soft: #2a2514;
+  --mint: #0ecb81;
+  --red: #f6465d;
+  --purple: #fcd535;
+  --shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
 }
 
 body {
@@ -3138,16 +3140,19 @@ h2 {
 
 /* Final minimal overrides: keep this block last. */
 :root {
-  --bg: #f7f8fb;
-  --surface: #fff;
-  --surface-strong: #fff;
-  --ink: #20232a;
-  --muted: #6f7582;
-  --line: #e4e7ee;
-  --pink: #d63384;
-  --pink-soft: #fce7f2;
-  --purple: #5965d8;
-  --shadow: 0 10px 28px rgba(28, 32, 40, 0.06);
+  color-scheme: dark;
+  --bg: #0b0e11;
+  --surface: #181a20;
+  --surface-strong: #1e2329;
+  --ink: #eaecef;
+  --muted: #b7bdc6;
+  --line: #2b3139;
+  --pink: #f0b90b;
+  --pink-soft: #2a2514;
+  --mint: #0ecb81;
+  --red: #f6465d;
+  --purple: #fcd535;
+  --shadow: 0 14px 40px rgba(0, 0, 0, 0.28);
 }
 
 body {
@@ -3159,7 +3164,8 @@ button,
 .report-score,
 .decision-score,
 .beginner-score {
-  background: #20232a;
+  background: var(--pink);
+  color: #0b0e11;
   box-shadow: none;
 }
 
@@ -3210,8 +3216,9 @@ button,
 
 .topbar {
   min-height: 58px;
+  grid-template-columns: auto minmax(0, 1fr) auto auto;
   border-bottom: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.94);
+  background: rgba(11, 14, 17, 0.94);
 }
 
 .topbar nav {
@@ -3260,7 +3267,7 @@ button.secondary,
 .quick-tickers button {
   color: var(--ink);
   border-color: var(--line);
-  background: #fff;
+  background: var(--surface-strong);
 }
 
 input,
@@ -3281,7 +3288,7 @@ select,
 .check-grid span,
 .evidence-list a {
   border-color: var(--line);
-  background: #fff;
+  background: var(--surface);
 }
 
 .panel {
@@ -3313,7 +3320,7 @@ select,
 .scenario-card span {
   border-radius: 8px;
   color: var(--ink);
-  background: #f1f3f7;
+  background: var(--surface-strong);
 }
 
 .opportunity-rank {
@@ -3420,7 +3427,7 @@ select,
   padding: 10px 12px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: #fff;
+  background: var(--surface);
 }
 
 .screener-factor-summary b,
@@ -3453,14 +3460,14 @@ select,
   padding: 13px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: #fff;
+  background: var(--surface);
   color: var(--ink);
   box-shadow: none;
   text-align: left;
 }
 
 .screener-row:hover {
-  border-color: var(--ink);
+  border-color: var(--pink);
 }
 
 .screener-score {
@@ -3468,8 +3475,8 @@ select,
   display: grid;
   place-items: center;
   border-radius: 8px;
-  color: #fff;
-  background: var(--ink);
+  color: #0b0e11;
+  background: var(--pink);
 }
 
 .screener-score b {
@@ -3524,7 +3531,7 @@ select,
   min-height: 6px;
   display: block;
   border-radius: 999px 999px 3px 3px;
-  background: #20232a;
+  background: var(--pink);
 }
 
 .factor-bars small {
@@ -3572,7 +3579,7 @@ select,
   padding: 12px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: #fff;
+  background: var(--surface);
 }
 
 .monitor-signal strong {
@@ -3631,6 +3638,95 @@ select,
   }
 }
 
+/* Binance wallet theme */
+input,
+select {
+  color: var(--ink);
+}
+
+input::placeholder {
+  color: #848e9c;
+}
+
+.source-link {
+  border-color: var(--line);
+  background: var(--surface-strong);
+  color: var(--ink);
+}
+
+.source-link.binance-link,
+.binance-order-link,
+.home-actions a.binance-action {
+  min-height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--pink);
+  background: var(--pink);
+  color: #0b0e11;
+  font-weight: 850;
+}
+
+.binance-order-link {
+  padding: 0 14px;
+  border-radius: 8px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.home-actions a.binance-action {
+  align-items: flex-start;
+}
+
+.home-actions a.binance-action small {
+  color: rgba(11, 14, 17, 0.72);
+}
+
+.hero-stats span,
+.beginner-grid article,
+.beginner-plan > div,
+.beginner-plan span,
+.risk-metrics span,
+.buy-alert-builder,
+.inline-alerts > small,
+.inline-alerts span,
+.paper-empty,
+.paper-trade-row,
+.paper-trade-row.active,
+.paper-title,
+.live-research-pack,
+.live-review-pack {
+  border-color: var(--line);
+  background: var(--surface-strong);
+  color: var(--ink);
+}
+
+.beginner-plan span,
+.inline-alerts small,
+.paper-empty {
+  color: var(--muted);
+}
+
+.report-action-row,
+.beginner-actions {
+  flex-wrap: wrap;
+}
+
+.copy-report {
+  color: var(--ink);
+  background: var(--surface-strong);
+}
+
+.report-score b,
+.report-score small,
+.decision-score span,
+.decision-score strong,
+.decision-score small,
+.beginner-score b,
+.beginner-score small {
+  color: #0b0e11;
+}
+
 /* Page routing overrides: keep this block last. */
 .app-page:not(.active) {
   display: none;
@@ -3666,7 +3762,7 @@ body.page-routing main {
 }
 
 .topbar nav a.active {
-  color: var(--ink);
+  color: var(--pink);
 }
 
 .topbar nav a.active::after {
@@ -3675,7 +3771,7 @@ body.page-routing main {
   display: block;
   margin-top: 4px;
   border-radius: 999px;
-  background: var(--ink);
+  background: var(--pink);
   content: "";
 }
 
@@ -3696,12 +3792,12 @@ body.page-routing main {
   padding: 14px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  background: #fff;
+  background: var(--surface);
 }
 
 .home-actions a:hover,
 .home-actions a.active {
-  border-color: var(--ink);
+  border-color: var(--pink);
   color: var(--ink);
 }
 

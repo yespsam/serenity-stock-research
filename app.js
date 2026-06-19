@@ -387,6 +387,7 @@ const BEGINNER_PROFILE_KEY = "serenityBeginnerProfile";
 const BEGINNER_PAPER_TRADES_KEY = "serenityPaperTrades";
 const BEGINNER_PRICE_ALERTS_KEY = "serenityPriceAlerts";
 const PRICE_ALERT_QUOTE_MS = 30_000;
+const BINANCE_WALLET_REFERRAL_URL = "https://web3.binance.com/referral?ref=DB7KNQGJ";
 const WATCH_THEME_TOKENS = {
   CPO: "cpo-silicon-photonics",
   PHOTONICS: "cpo-silicon-photonics",
@@ -1745,6 +1746,10 @@ async function copyText(value) {
   } finally {
     textarea.remove();
   }
+}
+
+function binanceWalletLink(label = "去 Binance 钱包下单") {
+  return `<a class="secondary binance-order-link" href="${BINANCE_WALLET_REFERRAL_URL}" target="_blank" rel="noreferrer">${escapeHtml(label)}</a>`;
 }
 
 function enrichStock(stock) {
@@ -3728,6 +3733,7 @@ function renderBeginnerMode(stock, quote, assessment, plan) {
       </div>
       <div class="beginner-actions">
         <button type="button" data-paper-trade="${escapeHtml(stock.symbol)}">加入模拟观察</button>
+        ${binanceWalletLink()}
         <small>${plan.allowRealTrade ? "记录入场、止损与目标价，用于事后复盘。" : "当前仅建议观察，不建议建立实盘仓位。"}</small>
       </div>
       <div class="buy-alert-builder">
@@ -3817,6 +3823,7 @@ function buildReport(stock, quote) {
     </header>
     <div class="report-action-row">
       <span>${stock.isUniversal ? "公开行情 / 财务 / 新闻初筛" : "公开样本 / 行情 / 风险收益框架"}</span>
+      ${binanceWalletLink("打开 Binance 钱包")}
       <button class="secondary copy-report" type="button" data-copy-report>复制研报摘要</button>
     </div>
     <section class="decision-card ${escapeHtml(decision.actionClass)}">
