@@ -265,6 +265,7 @@ const state = {
   bstockLoading: false,
   bstockError: "",
   bstockUpdatedAt: null,
+  analysisRequestId: 0,
   renderedStocks: [],
   activeSymbol: "AAOI",
   latestReportText: "",
@@ -785,6 +786,19 @@ function quoteForStock(stock) {
     if (quote) return quote;
   }
   return {};
+}
+
+function quickQuoteForSymbol(stock, symbol) {
+  const cached = quoteForStock(stock);
+  if (cached && (cached.symbol || cached.requestedSymbol || Number.isFinite(Number(cached.price)))) return cached;
+  const normalized = canonicalSymbol(symbol || stock.symbol);
+  return {
+    symbol: normalized,
+    requestedSymbol: normalized,
+    currency: "USD",
+    provider: "快速框架 · 详细数据加载中",
+    updatedAt: Date.now(),
+  };
 }
 
 function stockMarketCap(stock) {
@@ -4181,22 +4195,44 @@ function buildReport(stock, quote) {
 async function analyzeSymbol(symbol, options = {}) {
   const normalized = canonicalSymbol(symbol);
   if (!normalized) return;
+  const requestId = state.analysisRequestId + 1;
+  state.analysisRequestId = requestId;
   if (options.route !== false) setActivePage("analysis", { updateHash: true, scroll: false });
   tickerInput.value = normalized;
   heroTickerInput.value = normalized;
   state.activeSymbol = normalized;
   renderStockList();
-  reportOutput.innerHTML = `<div class="empty-report">正在读取 ${escapeHtml(normalized)} 的价格、市值、财务摘要、新闻和 Serenity 样本...</div>`;
   let stock = findStock(normalized) || fallbackStock(normalized);
   const quoteSymbol = stock.symbol || normalized;
-  const quote = await ensureQuote(quoteSymbol, { detail: true });
-  stock = hydrateUniversalStock(stock, quote);
-  state.quotes.set(stock.symbol, quote);
-  if (stock.marketSymbol) state.quotes.set(stock.marketSymbol, quote);
-  state.activeSymbol = stock.symbol;
-  buildReport(stock, quote);
+  const quickQuote = quickQuoteForSymbol(stock, quoteSymbol);
+  const quickStock = hydrateUniversalStock(stock, quickQuote);
+  state.activeSymbol = quickStock.symbol;
+  buildReport(quickStock, quickQuote);
   renderStockList();
   if (options.scroll !== false) document.querySelector("#analysis")?.scrollIntoView({ behavior: "smooth", block: "start" });
+
+  const detailPromise = ensureQuote(quoteSymbol, { detail: true })
+    .then((quote) => {
+      if (state.analysisRequestId !== requestId) return null;
+      const detailedStock = hydrateUniversalStock(stock, quote);
+      state.quotes.set(detailedStock.symbol, quote);
+      if (detailedStock.marketSymbol) state.quotes.set(detailedStock.marketSymbol, quote);
+      state.activeSymbol = detailedStock.symbol;
+      buildReport(detailedStock, quote);
+      renderStockList();
+      return quote;
+    })
+    .catch((error) => {
+      if (state.analysisRequestId === requestId) {
+        reportOutput.insertAdjacentHTML(
+          "afterbegin",
+          `<p class="report-note">详细数据接口暂缓：${escapeHtml(error.message)}。当前先展示快速框架。</p>`
+        );
+      }
+      return null;
+    });
+
+  if (options.awaitDetail) await detailPromise;
 }
 
 function storeQuote(quote = {}) {
@@ -4270,14 +4306,14 @@ async function init() {
   renderHeroStats();
   renderMethodList();
   renderTrackRecordList();
+  renderBStocks();
+  loadBStocks().catch(() => false);
   renderLiveMonitor();
   loadLiveMonitor();
   setInterval(loadLiveMonitor, WEB_PUSH_POLL_MS);
   renderStockList();
   renderOpportunityList();
   renderScreener();
-  renderBStocks();
-  loadBStocks().catch(() => false);
   loadQuotes({ social: false })
     .then(() => {
       renderTickerSuggestions();
@@ -4296,7 +4332,7 @@ async function init() {
   refreshPriceAlertQuotes(true)
     .then(() => checkPriceAlerts())
     .catch(() => false);
-  await analyzeSymbol("AAOI", { route: false, scroll: false });
+  if (pageFromHash() === "analysis") analyzeSymbol("AAOI", { route: false, scroll: false });
   loadPerformance();
 }
 
