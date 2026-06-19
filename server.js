@@ -146,13 +146,31 @@ function normalizeBinanceBstockTickers(tickers = []) {
 }
 
 async function fetchBinanceBstockTickers() {
+  const cacheKey = "binance-bstocks:ticker24hr";
+  const hit = cache.get(cacheKey);
+  if (hit && Date.now() - hit.time < 20_000) return hit.data;
+
   const symbols = JSON.stringify(BINANCE_BSTOCKS.map((item) => item.pair));
   let lastError;
   for (const baseUrl of BINANCE_API_BASES) {
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 10_000);
     try {
-      return await fetchJson(`${baseUrl}/api/v3/ticker/24hr?symbols=${encodeURIComponent(symbols)}`, { cacheMs: 20_000 });
+      const response = await fetch(`${baseUrl}/api/v3/ticker/24hr?symbols=${encodeURIComponent(symbols)}`, {
+        headers: {
+          "user-agent": MARKET_UA,
+          accept: "application/json,text/plain,*/*",
+        },
+        signal: controller.signal,
+      });
+      if (!response.ok) throw new Error(`${response.status} ${response.statusText}`);
+      const data = await response.json();
+      cache.set(cacheKey, { data, time: Date.now() });
+      return data;
     } catch (error) {
       lastError = error;
+    } finally {
+      clearTimeout(timer);
     }
   }
   throw lastError || new Error("Binance ticker unavailable");
