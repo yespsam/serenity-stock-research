@@ -20,6 +20,7 @@
       </a>
       <nav aria-label="页面导航">
         <a href="#screener">筛选器</a>
+        <a href="#bstocks">bStocks</a>
         <a href="#opportunities">机会榜</a>
         <a href="#monitor">实时监控</a>
         <a href="#watchlist">覆盖名单</a>
@@ -49,6 +50,10 @@
             <a href="#screener">
               <strong>美股筛选器</strong>
               <small>按 Serenity 因子筛全市场</small>
+            </a>
+            <a href="#bstocks" class="binance-action">
+              <strong>Binance bStocks</strong>
+              <small>股票代币行情与研报入口</small>
             </a>
             <a href="#opportunities">
               <strong>机会榜</strong>
@@ -131,6 +136,25 @@
         </div>
         <div id="screenerFactorSummary" class="screener-factor-summary"></div>
         <div id="screenerList" class="screener-list"></div>
+      </section>
+
+      <section id="bstocks" class="panel bstock-panel app-page" data-page="bstocks">
+        <div class="panel-head">
+          <div>
+            <span>Binance bStocks</span>
+            <h2>股票代币观察台</h2>
+          </div>
+          <p id="bstockStatus" class="muted-line">正在同步 Binance bStock 行情...</p>
+        </div>
+        <div class="bstock-toolbar">
+          <button id="bstockRefresh" class="secondary" type="button">刷新行情</button>
+          <a class="source-link binance-link" href="https://web3.binance.com/referral?ref=DB7KNQGJ" target="_blank" rel="noreferrer">打开 Binance 钱包</a>
+        </div>
+        <div id="bstockSummary" class="bstock-summary"></div>
+        <div id="bstockList" class="bstock-list"></div>
+        <p class="bstock-disclaimer">
+          bStocks 属于股票代币化证券观察层，不等同于直接持有底层美股；可用性、交易权限和风险以 Binance 当地合规页面为准。
+        </p>
       </section>
 
       <section id="monitor" class="panel monitor-panel app-page" data-page="monitor">

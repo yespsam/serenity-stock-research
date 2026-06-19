@@ -261,6 +261,10 @@ const state = {
   tweets: null,
   distillation: null,
   quotes: new Map(),
+  bstocks: [],
+  bstockLoading: false,
+  bstockError: "",
+  bstockUpdatedAt: null,
   renderedStocks: [],
   activeSymbol: "AAOI",
   latestReportText: "",
@@ -388,6 +392,54 @@ const BEGINNER_PAPER_TRADES_KEY = "serenityPaperTrades";
 const BEGINNER_PRICE_ALERTS_KEY = "serenityPriceAlerts";
 const PRICE_ALERT_QUOTE_MS = 30_000;
 const BINANCE_WALLET_REFERRAL_URL = "https://web3.binance.com/referral?ref=DB7KNQGJ";
+const BSTOCK_API_PATH = "/api/binance-bstocks";
+const BSTOCK_SYMBOLS = [
+  {
+    symbol: "NVDAB",
+    pair: "NVDABUSDT",
+    displayPair: "NVDAB/USDT",
+    equity: "NVDA",
+    name: "NVIDIA bStock",
+    themeLabel: "AI GPU",
+    thesis: "AI 算力龙头的股票代币化表达，用于观察 crypto venue 对 AI 权重股的风险偏好。",
+  },
+  {
+    symbol: "TSLAB",
+    pair: "TSLABUSDT",
+    displayPair: "TSLAB/USDT",
+    equity: "TSLA",
+    name: "Tesla bStock",
+    themeLabel: "EV / Robotics",
+    thesis: "高波动成长股的 24/7 代币化盘口，适合观察非美时段资金情绪。",
+  },
+  {
+    symbol: "CRCLB",
+    pair: "CRCLBUSDT",
+    displayPair: "CRCLB/USDT",
+    equity: "CRCL",
+    name: "Circle bStock",
+    themeLabel: "Stablecoin infra",
+    thesis: "稳定币基础设施主题的代币化美股表达，和 crypto beta 联动更强。",
+  },
+  {
+    symbol: "MUB",
+    pair: "MUBUSDT",
+    displayPair: "MUB/USDT",
+    equity: "MU",
+    name: "Micron bStock",
+    themeLabel: "HBM / memory",
+    thesis: "HBM 与存储周期的 bStock 盘口，用来观察 AI memory 轮动热度。",
+  },
+  {
+    symbol: "SNDKB",
+    pair: "SNDKBUSDT",
+    displayPair: "SNDKB/USDT",
+    equity: "SNDK",
+    name: "SanDisk bStock",
+    themeLabel: "Storage",
+    thesis: "存储链中更高弹性的股票代币化标的，适合对比 MU 的资金强弱。",
+  },
+];
 const WATCH_THEME_TOKENS = {
   CPO: "cpo-silicon-photonics",
   PHOTONICS: "cpo-silicon-photonics",
@@ -430,6 +482,10 @@ const screenerSort = document.querySelector("#screenerSort");
 const screenerStatus = document.querySelector("#screenerStatus");
 const screenerFactorSummary = document.querySelector("#screenerFactorSummary");
 const screenerList = document.querySelector("#screenerList");
+const bstockStatus = document.querySelector("#bstockStatus");
+const bstockSummary = document.querySelector("#bstockSummary");
+const bstockList = document.querySelector("#bstockList");
+const bstockRefresh = document.querySelector("#bstockRefresh");
 const monitorStatus = document.querySelector("#monitorStatus");
 const webPushBanner = document.querySelector("#webPushBanner");
 const webPushControls = document.querySelector("#webPushControls");
@@ -449,7 +505,7 @@ const tickerInput = document.querySelector("#tickerInput");
 const tickerSuggestions = document.querySelector("#tickerSuggestions");
 const quickTickers = document.querySelector("#quickTickers");
 const reportOutput = document.querySelector("#reportOutput");
-const APP_PAGE_IDS = new Set(["home", "screener", "opportunities", "monitor", "watchlist", "analysis", "track-record", "method"]);
+const APP_PAGE_IDS = new Set(["home", "screener", "bstocks", "opportunities", "monitor", "watchlist", "analysis", "track-record", "method"]);
 const APP_PAGE_ALIASES = new Map([["home-view", "home"]]);
 
 const usd = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 });
@@ -1750,6 +1806,116 @@ async function copyText(value) {
 
 function binanceWalletLink(label = "去 Binance 钱包下单") {
   return `<a class="secondary binance-order-link" href="${BINANCE_WALLET_REFERRAL_URL}" target="_blank" rel="noreferrer">${escapeHtml(label)}</a>`;
+}
+
+function formatBstockPrice(value) {
+  const num = Number(value);
+  if (!Number.isFinite(num) || num <= 0) return "--";
+  return usd.format(num);
+}
+
+function formatBstockVolume(value) {
+  const num = Number(value);
+  if (!Number.isFinite(num) || num <= 0) return "--";
+  return `$${compact.format(num)}`;
+}
+
+function bstockRows() {
+  const byPair = new Map((state.bstocks || []).map((item) => [normalizeSymbol(item.pair || item.symbol), item]));
+  return BSTOCK_SYMBOLS.map((meta) => {
+    const live = byPair.get(meta.pair) || {};
+    return {
+      ...meta,
+      ...live,
+      symbol: meta.symbol,
+      pair: meta.pair,
+      displayPair: meta.displayPair,
+      equity: meta.equity,
+      name: live.name || meta.name,
+      themeLabel: live.themeLabel || meta.themeLabel,
+      thesis: live.thesis || meta.thesis,
+    };
+  });
+}
+
+function renderBStocks() {
+  if (!bstockList) return;
+  const rows = bstockRows();
+  const liveRows = rows.filter((item) => Number.isFinite(Number(item.price)) && Number(item.price) > 0);
+  const topMover = liveRows
+    .slice()
+    .sort((a, b) => Math.abs(Number(b.changePercent || 0)) - Math.abs(Number(a.changePercent || 0)))[0];
+  const totalQuoteVolume = liveRows.reduce((sum, item) => sum + (Number(item.quoteVolume) || 0), 0);
+  const updatedAt = state.bstockUpdatedAt || liveRows.map((item) => Number(item.updatedAt || 0)).filter(Boolean).sort((a, b) => b - a)[0];
+
+  if (bstockStatus) {
+    const prefix = state.bstockLoading ? "同步中" : liveRows.length ? "Binance Spot 实时盘口" : "等待 Binance 行情";
+    const suffix = state.bstockError ? ` · ${state.bstockError}` : updatedAt ? ` · ${dateTimeLabel(updatedAt)}` : "";
+    bstockStatus.textContent = `${prefix} · ${liveRows.length}/${BSTOCK_SYMBOLS.length} 个 bStock 交易对${suffix}`;
+  }
+
+  if (bstockSummary) {
+    bstockSummary.innerHTML = [
+      ["覆盖交易对", `${liveRows.length || BSTOCK_SYMBOLS.length}/${BSTOCK_SYMBOLS.length}`],
+      ["24h 最活跃", topMover ? `${topMover.symbol} ${formatPercent(topMover.changePercent)}` : "--"],
+      ["24h 成交额", formatBstockVolume(totalQuoteVolume)],
+      ["执行路径", "研报先行 / 钱包确认"],
+    ]
+      .map(([label, value]) => `<span><b>${escapeHtml(value)}</b><small>${escapeHtml(label)}</small></span>`)
+      .join("");
+  }
+
+  bstockList.innerHTML = rows
+    .map((item) => {
+      const change = Number(item.changePercent);
+      const changeClass = Number.isFinite(change) && change >= 0 ? "up" : "down";
+      const liveOk = Number.isFinite(Number(item.price)) && Number(item.price) > 0;
+      const rangeText =
+        Number.isFinite(Number(item.lowPrice)) && Number.isFinite(Number(item.highPrice))
+          ? `${formatBstockPrice(item.lowPrice)} - ${formatBstockPrice(item.highPrice)}`
+          : "--";
+      return `
+        <article class="bstock-card ${changeClass}">
+          <div class="bstock-token">
+            <span>BINANCE bSTOCK</span>
+            <strong>${escapeHtml(item.displayPair)}</strong>
+            <small>${escapeHtml(item.name)} · ${escapeHtml(item.themeLabel)}</small>
+          </div>
+          <div class="bstock-price">
+            <b>${formatBstockPrice(item.price)}</b>
+            <em class="${changeClass}">${formatPercent(item.changePercent)}</em>
+          </div>
+          <div class="bstock-metrics">
+            <span><small>24h 成交额</small><b>${formatBstockVolume(item.quoteVolume)}</b></span>
+            <span><small>24h 区间</small><b>${escapeHtml(rangeText)}</b></span>
+            <span><small>交易笔数</small><b>${Number.isFinite(Number(item.trades)) ? compact.format(Number(item.trades)) : "--"}</b></span>
+          </div>
+          <p>${escapeHtml(liveOk ? item.thesis : "Binance 行情暂未回填，保留 bStock 观察入口。")}</p>
+          <div class="bstock-actions">
+            <button class="secondary" type="button" data-symbol="${escapeHtml(item.equity)}">看 ${escapeHtml(item.equity)} 研报</button>
+            <a class="binance-order-link" href="${BINANCE_WALLET_REFERRAL_URL}" target="_blank" rel="noreferrer">打开 Binance 钱包</a>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
+}
+
+async function loadBStocks() {
+  state.bstockLoading = true;
+  state.bstockError = "";
+  renderBStocks();
+  try {
+    const data = await fetchJson(BSTOCK_API_PATH);
+    state.bstocks = Array.isArray(data.items) ? data.items : [];
+    state.bstockUpdatedAt = data.updatedAt || Date.now();
+    state.bstockError = data.error || "";
+  } catch (error) {
+    state.bstockError = error.message || "行情接口暂不可用";
+  } finally {
+    state.bstockLoading = false;
+    renderBStocks();
+  }
 }
 
 function enrichStock(stock) {
@@ -4110,6 +4276,8 @@ async function init() {
   renderStockList();
   renderOpportunityList();
   renderScreener();
+  renderBStocks();
+  loadBStocks().catch(() => false);
   loadQuotes({ social: false })
     .then(() => {
       renderTickerSuggestions();
@@ -4139,6 +4307,9 @@ screenerSearch.addEventListener("input", renderScreener);
 screenerTheme.addEventListener("change", renderScreener);
 screenerSignal.addEventListener("change", renderScreener);
 screenerSort.addEventListener("change", renderScreener);
+bstockRefresh.addEventListener("click", () => {
+  loadBStocks().catch(() => false);
+});
 
 stockList.addEventListener("click", (event) => {
   const row = event.target.closest("[data-symbol]");
@@ -4153,6 +4324,11 @@ opportunityList.addEventListener("click", (event) => {
 screenerList.addEventListener("click", (event) => {
   const row = event.target.closest("[data-symbol]");
   if (row) analyzeSymbol(row.dataset.symbol);
+});
+
+bstockList.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-symbol]");
+  if (button) analyzeSymbol(button.dataset.symbol);
 });
 
 liveTweetList.addEventListener("click", (event) => {

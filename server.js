@@ -38,6 +38,21 @@ const symbolSearchCache = new Map();
 const TICKER_STOPLIST = new Set(["L1", "L2", "L3", "L4", "L5", "L6", "L7", "L8", "L9", "L14", "TICKER"]);
 const CRYPTO_ONLY_SYMBOLS = new Set(["BTC", "ETH", "SOL", "DOGE", "XRP"]);
 const STATUS_REF_RE = /https?:\/\/[^\s"'<>]*(?:status|statuses|conversation)\/(\d{15,22})[^\s"'<>]*|\b(\d{15,22})\b/gi;
+const BINANCE_BSTOCKS = [
+  { symbol: "NVDAB", pair: "NVDABUSDT", displayPair: "NVDAB/USDT", equity: "NVDA", name: "NVIDIA bStock", themeLabel: "AI GPU" },
+  { symbol: "TSLAB", pair: "TSLABUSDT", displayPair: "TSLAB/USDT", equity: "TSLA", name: "Tesla bStock", themeLabel: "EV / Robotics" },
+  { symbol: "CRCLB", pair: "CRCLBUSDT", displayPair: "CRCLB/USDT", equity: "CRCL", name: "Circle bStock", themeLabel: "Stablecoin infra" },
+  { symbol: "MUB", pair: "MUBUSDT", displayPair: "MUB/USDT", equity: "MU", name: "Micron bStock", themeLabel: "HBM / memory" },
+  { symbol: "SNDKB", pair: "SNDKBUSDT", displayPair: "SNDKB/USDT", equity: "SNDK", name: "SanDisk bStock", themeLabel: "Storage" },
+];
+const BINANCE_API_BASES = [
+  "https://api2.binance.com",
+  "https://api.binance.com",
+  "https://api1.binance.com",
+  "https://api3.binance.com",
+  "https://api4.binance.com",
+  "https://data-api.binance.vision",
+];
 
 const MIME = {
   ".html": "text/html; charset=utf-8",
@@ -103,6 +118,44 @@ function normalizeMarketSymbol(symbol = "") {
 function resolveStaticMarketSymbol(symbol = "") {
   const normalized = normalizeMarketSymbol(symbol);
   return MARKET_SYMBOL_ALIASES[normalized] || normalized;
+}
+
+function numberOrNull(value) {
+  const num = Number(value);
+  return Number.isFinite(num) ? num : null;
+}
+
+function normalizeBinanceBstockTickers(tickers = []) {
+  const byPair = new Map((Array.isArray(tickers) ? tickers : []).map((item) => [normalizeMarketSymbol(item.symbol), item]));
+  return BINANCE_BSTOCKS.map((meta) => {
+    const ticker = byPair.get(meta.pair) || {};
+    return {
+      ...meta,
+      price: numberOrNull(ticker.lastPrice),
+      change: numberOrNull(ticker.priceChange),
+      changePercent: numberOrNull(ticker.priceChangePercent),
+      volume: numberOrNull(ticker.volume),
+      quoteVolume: numberOrNull(ticker.quoteVolume),
+      highPrice: numberOrNull(ticker.highPrice),
+      lowPrice: numberOrNull(ticker.lowPrice),
+      openPrice: numberOrNull(ticker.openPrice),
+      trades: numberOrNull(ticker.count),
+      updatedAt: numberOrNull(ticker.closeTime),
+    };
+  });
+}
+
+async function fetchBinanceBstockTickers() {
+  const symbols = JSON.stringify(BINANCE_BSTOCKS.map((item) => item.pair));
+  let lastError;
+  for (const baseUrl of BINANCE_API_BASES) {
+    try {
+      return await fetchJson(`${baseUrl}/api/v3/ticker/24hr?symbols=${encodeURIComponent(symbols)}`, { cacheMs: 20_000 });
+    } catch (error) {
+      lastError = error;
+    }
+  }
+  throw lastError || new Error("Binance ticker unavailable");
 }
 
 function yahooSearchScore(query, quote = {}) {
@@ -760,6 +813,36 @@ async function handleQuotes(reqUrl, res) {
     ? "public, max-age=300, s-maxage=900, stale-while-revalidate=3600"
     : "public, max-age=60, s-maxage=120, stale-while-revalidate=600";
   send(res, 200, JSON.stringify({ provider: "Yahoo Finance", updatedAt: Date.now(), quotes }), "application/json; charset=utf-8", cacheControl);
+}
+
+async function handleBinanceBStocks(_reqUrl, res) {
+  try {
+    const tickers = await fetchBinanceBstockTickers();
+    send(
+      res,
+      200,
+      JSON.stringify({
+        provider: "Binance Spot 24hr ticker",
+        updatedAt: Date.now(),
+        items: normalizeBinanceBstockTickers(tickers),
+      }),
+      "application/json; charset=utf-8",
+      "public, max-age=20, s-maxage=30, stale-while-revalidate=120"
+    );
+  } catch (error) {
+    send(
+      res,
+      200,
+      JSON.stringify({
+        provider: "Binance Spot 24hr ticker",
+        updatedAt: Date.now(),
+        error: error.message,
+        items: normalizeBinanceBstockTickers([]),
+      }),
+      "application/json; charset=utf-8",
+      "public, max-age=20, s-maxage=30, stale-while-revalidate=120"
+    );
+  }
 }
 
 function normalizeLiveStatus(status = {}) {
@@ -2699,6 +2782,11 @@ const server = http.createServer(async (req, res) => {
 
     if (reqUrl.pathname === "/api/quotes") {
       await handleQuotes(reqUrl, res);
+      return;
+    }
+
+    if (reqUrl.pathname === "/api/binance-bstocks") {
+      await handleBinanceBStocks(reqUrl, res);
       return;
     }
 
