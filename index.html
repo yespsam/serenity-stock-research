@@ -19,6 +19,7 @@
         </span>
       </a>
       <nav aria-label="页面导航">
+        <a href="#screener">筛选器</a>
         <a href="#opportunities">机会榜</a>
         <a href="#monitor">实时监控</a>
         <a href="#watchlist">覆盖名单</a>
@@ -44,6 +45,10 @@
           </form>
           <div id="heroStats" class="hero-stats" aria-label="数据覆盖"></div>
           <div class="home-actions" aria-label="功能入口">
+            <a href="#screener">
+              <strong>美股筛选器</strong>
+              <small>按 Serenity 因子筛全市场</small>
+            </a>
             <a href="#opportunities">
               <strong>机会榜</strong>
               <small>先看最值得研究的标的</small>
@@ -83,6 +88,44 @@
         <div id="opportunityList" class="opportunity-list"></div>
       </section>
 
+      <section id="screener" class="panel screener-panel app-page" data-page="screener">
+        <div class="panel-head">
+          <div>
+            <span>Serenity Screener</span>
+            <h2>美股筛选器</h2>
+          </div>
+          <p id="screenerStatus" class="muted-line">按终端需求、瓶颈位置、客户验证、市值赔率和资本结构风险排序。</p>
+        </div>
+        <div class="screener-tools">
+          <input id="screenerSearch" type="search" placeholder="搜索 ticker、公司或产业链关键词" />
+          <select id="screenerTheme" aria-label="筛选主题">
+            <option value="all">全部主题</option>
+            <option value="cpo-silicon-photonics">CPO / 光子链</option>
+            <option value="substrate-materials">上游材料</option>
+            <option value="neocloud">NeoCloud</option>
+            <option value="memory-rotation">Memory</option>
+            <option value="ai-infrastructure">AI 基建</option>
+            <option value="capital-structure-veto">资本结构风险</option>
+          </select>
+          <select id="screenerSignal" aria-label="筛选信号">
+            <option value="all">全部评级</option>
+            <option value="priority">高优先级</option>
+            <option value="confirm">等待确认</option>
+            <option value="verify">补证据</option>
+            <option value="veto">资本结构否决</option>
+          </select>
+          <select id="screenerSort" aria-label="排序方式">
+            <option value="score">按综合分</option>
+            <option value="customer">按客户验证</option>
+            <option value="bottleneck">按瓶颈位置</option>
+            <option value="valuation">按市值赔率</option>
+            <option value="price">按价格确认</option>
+          </select>
+        </div>
+        <div id="screenerFactorSummary" class="screener-factor-summary"></div>
+        <div id="screenerList" class="screener-list"></div>
+      </section>
+
       <section id="monitor" class="panel monitor-panel app-page" data-page="monitor">
         <div class="panel-head">
           <div>
@@ -94,6 +137,7 @@
         <div id="webPushBanner" class="web-push-banner" aria-live="polite"></div>
         <div id="webPushControls" class="web-push-controls"></div>
         <div id="monitorHealth" class="monitor-health"></div>
+        <div id="monitorSignalBoard" class="monitor-signal-board"></div>
         <div id="dailyTradeReport" class="daily-trade-report"></div>
         <div id="priceAlertPanel" class="price-alert-panel"></div>
         <div id="liveTweetList" class="live-tweet-list"></div>

@@ -414,10 +414,18 @@ const stockSearch = document.querySelector("#stockSearch");
 const themeFilter = document.querySelector("#themeFilter");
 const sortMode = document.querySelector("#sortMode");
 const opportunityList = document.querySelector("#opportunityList");
+const screenerSearch = document.querySelector("#screenerSearch");
+const screenerTheme = document.querySelector("#screenerTheme");
+const screenerSignal = document.querySelector("#screenerSignal");
+const screenerSort = document.querySelector("#screenerSort");
+const screenerStatus = document.querySelector("#screenerStatus");
+const screenerFactorSummary = document.querySelector("#screenerFactorSummary");
+const screenerList = document.querySelector("#screenerList");
 const monitorStatus = document.querySelector("#monitorStatus");
 const webPushBanner = document.querySelector("#webPushBanner");
 const webPushControls = document.querySelector("#webPushControls");
 const monitorHealth = document.querySelector("#monitorHealth");
+const monitorSignalBoard = document.querySelector("#monitorSignalBoard");
 const dailyTradeReport = document.querySelector("#dailyTradeReport");
 const priceAlertPanel = document.querySelector("#priceAlertPanel");
 const liveTweetList = document.querySelector("#liveTweetList");
@@ -432,7 +440,7 @@ const tickerInput = document.querySelector("#tickerInput");
 const tickerSuggestions = document.querySelector("#tickerSuggestions");
 const quickTickers = document.querySelector("#quickTickers");
 const reportOutput = document.querySelector("#reportOutput");
-const APP_PAGE_IDS = new Set(["home", "opportunities", "monitor", "watchlist", "analysis", "track-record", "method"]);
+const APP_PAGE_IDS = new Set(["home", "screener", "opportunities", "monitor", "watchlist", "analysis", "track-record", "method"]);
 const APP_PAGE_ALIASES = new Map([["home-view", "home"]]);
 
 const usd = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 });
@@ -963,6 +971,212 @@ function decisionFor(stock, quote = quoteForStock(stock)) {
     rangePct,
     topDriver: breakdown.slice().sort((a, b) => b.score - a.score)[0]?.label || "框架匹配",
   };
+}
+
+function factorTone(score) {
+  if (score >= 82) return "pursue";
+  if (score >= 68) return "watch";
+  if (score >= 52) return "verify";
+  return "avoid";
+}
+
+function capOddsScore(marketCap = 0) {
+  if (!marketCap) return 46;
+  if (marketCap < 3e9) return 94;
+  if (marketCap < 20e9) return 84;
+  if (marketCap < 80e9) return 70;
+  if (marketCap < 400e9) return 54;
+  return 36;
+}
+
+function themeScore(stock = {}, bucket = "demand") {
+  const scores = {
+    demand: {
+      "ai-infrastructure": 90,
+      "cpo-silicon-photonics": 88,
+      "substrate-materials": 84,
+      neocloud: 82,
+      "memory-rotation": 76,
+      "capital-structure-veto": 45,
+      general: 58,
+    },
+    bottleneck: {
+      "cpo-silicon-photonics": 94,
+      "substrate-materials": 92,
+      neocloud: 78,
+      "memory-rotation": 68,
+      "ai-infrastructure": 62,
+      "capital-structure-veto": 35,
+      general: 52,
+    },
+  };
+  return scores[bucket]?.[stock.theme] || scores[bucket]?.general || 50;
+}
+
+function serenityScreenerModel(stock = {}, quote = quoteForStock(stock)) {
+  const metric = metricForStock(stock) || {};
+  const evidence = getCalledEvidence(stock, 3);
+  const marketCap = Number(quote.marketCap) || stock.fallbackMarketCap || 0;
+  const rangePct = priceRangePercent(quote);
+  const changePercent = Number(quote.changePercent);
+  const mentions = Number(metric.mentions || 0);
+  const bull = Number(metric.bull || 0);
+  const bear = Number(metric.bear || 0);
+  const neutral = Number(metric.neutral || 0);
+  const total = Math.max(1, bull + bear + neutral);
+  const highMateriality = evidence.filter((item) => Number(item.materiality || 0) >= 70).length;
+
+  const terminalDemand = clamp(themeScore(stock, "demand") + clamp(mentions / 70, 0, 14) + clamp(((bull - bear * 1.4) / total) * 12, -12, 12), 12, 98);
+  const bottleneck = clamp(themeScore(stock, "bottleneck") + (highMateriality ? 4 : 0), 10, 98);
+  const customerEvidence = clamp(38 + evidence.length * 10 + highMateriality * 6 + clamp(mentions / 45, 0, 18) + clamp(((bull - bear) / total) * 16, -12, 16), 12, 96);
+  const valuationOdds = clamp(capOddsScore(marketCap) + (rangePct !== null && rangePct < 38 ? 7 : 0) - (rangePct !== null && rangePct > 86 ? 12 : 0), 8, 96);
+  const capitalStructure = clamp(
+    stock.riskFlag || stock.theme === "capital-structure-veto" ? 24 : 90 - clamp((bear / total) * 34, 0, 24) - (/atm|dilution|debt|convertible|融资|稀释|债务/i.test(stock.risk || "") ? 12 : 0),
+    6,
+    95
+  );
+  const priceConfirmation = clamp(
+    (rangePct === null ? 54 : rangePct > 88 ? 38 : rangePct > 70 ? 55 : rangePct < 35 ? 72 : 66) +
+      (Number.isFinite(changePercent) && changePercent > 12 ? -14 : 0) +
+      (Number.isFinite(changePercent) && changePercent > -4 && changePercent < 6 ? 5 : 0),
+    10,
+    92
+  );
+
+  let score = Math.round(
+    terminalDemand * 0.18 +
+      bottleneck * 0.2 +
+      customerEvidence * 0.2 +
+      valuationOdds * 0.16 +
+      capitalStructure * 0.16 +
+      priceConfirmation * 0.1
+  );
+  if (capitalStructure < 45) score = Math.min(score, 52);
+  if (stock.isUniversal) score = Math.max(8, score - 14);
+  score = Math.round(clamp(score, 5, 98));
+
+  const factors = [
+    { key: "demand", label: "终端需求", score: Math.round(terminalDemand), note: "AI capex、云厂商需求或产业周期扩张" },
+    { key: "bottleneck", label: "瓶颈位置", score: Math.round(bottleneck), note: "客户必须采购、短期难替代的供应链节点" },
+    { key: "customer", label: "客户验证", score: Math.round(customerEvidence), note: "订单、认证、量产、财报措辞与公开样本" },
+    { key: "valuation", label: "市值赔率", score: Math.round(valuationOdds), note: "市值越小、证据越早，重估弹性越高" },
+    { key: "capital", label: "资本结构", score: Math.round(capitalStructure), note: "ATM、可转债、债务和稀释风险" },
+    { key: "price", label: "价格确认", score: Math.round(priceConfirmation), note: "52 周位置、涨跌幅和追价风险" },
+  ];
+  const vetoes = [
+    capitalStructure < 45 ? "资本结构否决" : "",
+    rangePct !== null && rangePct > 88 ? "价格接近 52 周高位" : "",
+    evidence.length < 2 && !stock.isUniversal ? "样本不足" : "",
+    stock.isUniversal ? "非核心样本" : "",
+  ].filter(Boolean);
+  const primaryFactor = factors.slice().sort((a, b) => b.score - a.score)[0];
+  let actionLabel = "过滤";
+  let actionClass = "avoid";
+  if (capitalStructure < 45) {
+    actionLabel = "资本结构否决";
+    actionClass = "avoid";
+  } else if (score >= 82) {
+    actionLabel = "高优先级";
+    actionClass = "pursue";
+  } else if (score >= 70) {
+    actionLabel = "等待确认";
+    actionClass = "watch";
+  } else if (score >= 58) {
+    actionLabel = "补证据";
+    actionClass = "verify";
+  }
+
+  return {
+    score,
+    factors,
+    actionLabel,
+    actionClass,
+    vetoes,
+    primaryFactor,
+    evidenceCount: evidence.length,
+    factorMap: Object.fromEntries(factors.map((factor) => [factor.key, factor.score])),
+  };
+}
+
+function screenerRows() {
+  const query = normalizeSymbol(screenerSearch?.value || "");
+  const theme = screenerTheme?.value || "all";
+  const signal = screenerSignal?.value || "all";
+  const sort = screenerSort?.value || "score";
+  return calledStocks
+    .map(enrichStock)
+    .map((stock) => ({ stock, model: serenityScreenerModel(stock, stock.quote || {}) }))
+    .filter(({ stock, model }) => {
+      const haystack = `${stock.symbol} ${stock.aliases.join(" ")} ${stock.name} ${stock.themeLabel} ${stock.thesis}`.toUpperCase();
+      const queryOk = !query || haystack.includes(query);
+      const themeOk = theme === "all" || stock.theme === theme;
+      const signalOk =
+        signal === "all" ||
+        (signal === "priority" && model.actionClass === "pursue") ||
+        (signal === "confirm" && model.actionClass === "watch") ||
+        (signal === "verify" && model.actionClass === "verify") ||
+        (signal === "veto" && model.vetoes.includes("资本结构否决"));
+      return queryOk && themeOk && signalOk;
+    })
+    .sort((a, b) => {
+      if (sort === "customer") return b.model.factorMap.customer - a.model.factorMap.customer;
+      if (sort === "bottleneck") return b.model.factorMap.bottleneck - a.model.factorMap.bottleneck;
+      if (sort === "valuation") return b.model.factorMap.valuation - a.model.factorMap.valuation;
+      if (sort === "price") return b.model.factorMap.price - a.model.factorMap.price;
+      return b.model.score - a.model.score;
+    });
+}
+
+function renderScreener() {
+  if (!screenerList) return;
+  const rows = screenerRows();
+  const priorityCount = rows.filter((row) => row.model.actionClass === "pursue").length;
+  const confirmCount = rows.filter((row) => row.model.actionClass === "watch").length;
+  const vetoCount = rows.filter((row) => row.model.vetoes.includes("资本结构否决")).length;
+  const averageScore = rows.length ? Math.round(rows.reduce((sum, row) => sum + row.model.score, 0) / rows.length) : 0;
+  screenerStatus.textContent = `${rows.length} 支标的 · 高优先级 ${priorityCount} · 等待确认 ${confirmCount} · 资本结构否决 ${vetoCount}`;
+  screenerFactorSummary.innerHTML = [
+    ["平均综合分", averageScore || "--"],
+    ["高优先级", priorityCount],
+    ["等待确认", confirmCount],
+    ["资本结构否决", vetoCount],
+  ]
+    .map(([label, value]) => `<span><b>${escapeHtml(value)}</b><small>${escapeHtml(label)}</small></span>`)
+    .join("");
+
+  screenerList.innerHTML = rows
+    .slice(0, 24)
+    .map(({ stock, model }) => {
+      const quote = stock.quote || {};
+      const changeClass = Number(quote.changePercent) >= 0 ? "up" : "down";
+      return `
+        <button class="screener-row ${escapeHtml(model.actionClass)}" type="button" data-symbol="${escapeHtml(stock.symbol)}">
+          <span class="screener-score">
+            <b>${model.score}</b>
+            <small>综合分</small>
+          </span>
+          <span class="screener-main">
+            <strong>${escapeHtml(stock.symbol)} · ${escapeHtml(stock.name)}</strong>
+            <small>${escapeHtml(model.primaryFactor.label)} ${model.primaryFactor.score}/100 · ${escapeHtml(stock.themeLabel)} · ${formatMarketCap(stock.marketCap)} · <em class="${changeClass}">${formatPercent(quote.changePercent)}</em></small>
+            <i>${escapeHtml(model.vetoes.length ? model.vetoes.join(" / ") : stock.thesis)}</i>
+          </span>
+          <span class="decision-pill ${escapeHtml(model.actionClass)}">${escapeHtml(model.actionLabel)}</span>
+          <span class="factor-bars">
+            ${model.factors
+              .map(
+                (factor) => `
+                  <i title="${escapeHtml(factor.label)} ${factor.score}/100">
+                    <b style="height:${factor.score}%"></b>
+                    <small>${escapeHtml(factor.label.slice(0, 2))}</small>
+                  </i>
+                `
+              )
+              .join("")}
+          </span>
+        </button>
+      `;
+    })
+    .join("");
 }
 
 function beginnerTradeAssessment(stock, quote = {}, decision = decisionFor(stock, quote), space = upsideSpace(decision.baseScore || 60, stock)) {
@@ -2566,6 +2780,118 @@ function renderPriceAlertPanel() {
   `;
 }
 
+function classifyLiveSignal(item = {}) {
+  const text = `${item.title || ""} ${item.body || ""} ${(item.symbols || []).join(" ")}`.toLowerCase();
+  const symbols = liveTradableSymbols(item).slice(0, 5);
+  const has = (pattern) => pattern.test(text);
+  if (has(/atm|offering|dilution|convertible|debt|financing|稀释|融资|债务|可转债/i) || item.theme === "capital-structure-veto") {
+    return {
+      label: "资本结构风险",
+      tone: "avoid",
+      priority: 92,
+      thesis: "融资、稀释或债务信息优先作为否决项处理。",
+      symbols,
+    };
+  }
+  if (item.sentiment === "bear" || has(/delay|miss|downgrade|short|risk|lawsuit|probe|下调|推迟|风险|做空/i)) {
+    return {
+      label: "反证风险",
+      tone: "avoid",
+      priority: 82,
+      thesis: "先排除客户延期、业绩下修、监管或做空反证。",
+      symbols,
+    };
+  }
+  if (has(/customer|order|booking|backlog|validation|qualification|production|ramp|客户|订单|认证|量产|爬坡/i)) {
+    return {
+      label: "客户验证",
+      tone: "pursue",
+      priority: 88,
+      thesis: "客户、订单、认证或量产信息可直接提高证据权重。",
+      symbols,
+    };
+  }
+  if (has(/breakout|volume|52-week|high|target|upgrade|放量|突破|目标价|上调/i)) {
+    return {
+      label: "价格确认",
+      tone: "watch",
+      priority: 70,
+      thesis: "价格或量能变化只能作为确认项，不能替代基本面证据。",
+      symbols,
+    };
+  }
+  if (has(/cpo|silicon photonics|photonics|inph|hbm|dram|neocloud|datacenter|asic|gpu|ai capex|硅光|光子|数据中心|算力|存储/i)) {
+    return {
+      label: "主题催化",
+      tone: "verify",
+      priority: 66,
+      thesis: "主题命中后继续追踪终端需求和瓶颈位置。",
+      symbols,
+    };
+  }
+  return {
+    label: "待归因",
+    tone: "verify",
+    priority: 48,
+    thesis: "信息尚未形成明确催化或反证，先纳入观察。",
+    symbols,
+  };
+}
+
+function renderMonitorSignalBoard() {
+  if (!monitorSignalBoard) return;
+  const sourceItems = state.liveItems.length ? state.liveItems : state.monitor?.latestCaptured ? [state.monitor.latestCaptured] : [];
+  const rows = sourceItems.slice(0, 8).map((item) => ({ item, signal: classifyLiveSignal(item) }));
+  const counts = rows.reduce((acc, row) => {
+    acc[row.signal.label] = (acc[row.signal.label] || 0) + 1;
+    return acc;
+  }, {});
+  monitorSignalBoard.innerHTML = `
+    <section class="monitor-intel">
+      <div class="monitor-intel-head">
+        <div>
+          <span>Signal Attribution</span>
+          <strong>监控信号归因</strong>
+        </div>
+        <small>${rows.length ? `${rows.length} 条最新信号` : "等待实时信号"}</small>
+      </div>
+      <div class="monitor-intel-summary">
+        ${["客户验证", "主题催化", "价格确认", "资本结构风险", "反证风险"]
+          .map((label) => `<span><b>${counts[label] || 0}</b><small>${label}</small></span>`)
+          .join("")}
+      </div>
+      <div class="monitor-intel-list">
+        ${
+          rows.length
+            ? rows
+                .map(({ item, signal }) => {
+                  const title = shortTitle(item.title || item.body || "Serenity signal", 120);
+                  return `
+                    <article class="monitor-signal ${escapeHtml(signal.tone)}">
+                      <div>
+                        <strong>${escapeHtml(signal.label)}</strong>
+                        <small>${dateTimeLabel(item.date)} · ${escapeHtml(liveThemeLabel(item.theme || "general"))}</small>
+                      </div>
+                      <p>${escapeHtml(title)}</p>
+                      <em>${escapeHtml(signal.thesis)}</em>
+                      <span>
+                        ${
+                          signal.symbols.length
+                            ? signal.symbols.map((symbol) => `<button class="secondary" type="button" data-symbol="${escapeHtml(symbol)}">${escapeHtml(symbol)}</button>`).join("")
+                            : "<small>暂无 ticker</small>"
+                        }
+                      </span>
+                    </article>
+                  `;
+                })
+                .join("")
+            : `<p class="muted-line">实时接口返回后会自动按 Serenity 因子归因。</p>`
+        }
+      </div>
+    </section>
+  `;
+}
+
 function renderWebPushControls() {
   const notifyClass = state.notificationEnabled && notificationPermission() === "granted" ? "active" : "";
   const soundClass = state.soundEnabled ? "active" : "";
@@ -2756,6 +3082,7 @@ function renderLiveMonitor() {
   renderWebPushBanner();
   renderWebPushControls();
   renderMonitorHealth();
+  renderMonitorSignalBoard();
   renderDailyTradeReport();
   renderPriceAlertPanel();
   monitorStatus.textContent = latestLive
@@ -3611,6 +3938,7 @@ async function init() {
   checkPriceAlerts();
   renderStockList();
   renderOpportunityList();
+  renderScreener();
   await analyzeSymbol("AAOI", { route: false, scroll: false });
   loadPerformance();
 }
@@ -3618,6 +3946,10 @@ async function init() {
 stockSearch.addEventListener("input", renderStockList);
 themeFilter.addEventListener("change", renderStockList);
 sortMode.addEventListener("change", renderStockList);
+screenerSearch.addEventListener("input", renderScreener);
+screenerTheme.addEventListener("change", renderScreener);
+screenerSignal.addEventListener("change", renderScreener);
+screenerSort.addEventListener("change", renderScreener);
 
 stockList.addEventListener("click", (event) => {
   const row = event.target.closest("[data-symbol]");
@@ -3629,7 +3961,17 @@ opportunityList.addEventListener("click", (event) => {
   if (row) analyzeSymbol(row.dataset.symbol);
 });
 
+screenerList.addEventListener("click", (event) => {
+  const row = event.target.closest("[data-symbol]");
+  if (row) analyzeSymbol(row.dataset.symbol);
+});
+
 liveTweetList.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-symbol]");
+  if (button) analyzeSymbol(button.dataset.symbol);
+});
+
+monitorSignalBoard.addEventListener("click", (event) => {
   const button = event.target.closest("[data-symbol]");
   if (button) analyzeSymbol(button.dataset.symbol);
 });

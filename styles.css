@@ -3388,6 +3388,249 @@ select,
   }
 }
 
+.screener-panel {
+  display: grid;
+  gap: 16px;
+}
+
+.screener-tools {
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) repeat(3, minmax(140px, 0.42fr));
+  gap: 10px;
+}
+
+.screener-factor-summary,
+.monitor-intel-summary {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.monitor-intel-summary {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.screener-factor-summary span,
+.monitor-intel-summary span {
+  min-height: 58px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3px;
+  padding: 10px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.screener-factor-summary b,
+.monitor-intel-summary b {
+  color: var(--ink);
+  font-size: 22px;
+  line-height: 1;
+}
+
+.screener-factor-summary small,
+.monitor-intel-summary small {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.screener-list,
+.monitor-intel-list {
+  display: grid;
+  gap: 9px;
+}
+
+.screener-row {
+  width: 100%;
+  min-height: 98px;
+  display: grid;
+  grid-template-columns: 74px minmax(0, 1fr) 112px 132px;
+  gap: 14px;
+  align-items: center;
+  padding: 13px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  box-shadow: none;
+  text-align: left;
+}
+
+.screener-row:hover {
+  border-color: var(--ink);
+}
+
+.screener-score {
+  min-height: 70px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: #fff;
+  background: var(--ink);
+}
+
+.screener-score b {
+  font-size: 28px;
+  line-height: 1;
+}
+
+.screener-score small,
+.screener-main small,
+.screener-main i {
+  font-size: 12px;
+}
+
+.screener-main {
+  min-width: 0;
+  display: grid;
+  gap: 5px;
+}
+
+.screener-main strong {
+  font-size: 16px;
+}
+
+.screener-main small,
+.screener-main i {
+  color: var(--muted);
+  font-style: normal;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.factor-bars {
+  height: 70px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 5px;
+  align-items: end;
+}
+
+.factor-bars i {
+  min-width: 0;
+  height: 100%;
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 4px;
+  font-style: normal;
+}
+
+.factor-bars b {
+  width: 100%;
+  min-height: 6px;
+  display: block;
+  border-radius: 999px 999px 3px 3px;
+  background: #20232a;
+}
+
+.factor-bars small {
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 850;
+  text-align: center;
+}
+
+.monitor-intel {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.monitor-intel-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  align-items: end;
+}
+
+.monitor-intel-head span {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.monitor-intel-head strong {
+  font-size: 18px;
+}
+
+.monitor-intel-head small {
+  color: var(--muted);
+  font-weight: 750;
+}
+
+.monitor-signal {
+  display: grid;
+  grid-template-columns: 132px minmax(0, 1fr) 190px minmax(120px, auto);
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.monitor-signal strong {
+  display: block;
+  margin-bottom: 3px;
+}
+
+.monitor-signal small,
+.monitor-signal em,
+.monitor-signal p {
+  color: var(--muted);
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 750;
+  line-height: 1.45;
+}
+
+.monitor-signal p {
+  margin: 0;
+  color: var(--ink);
+}
+
+.monitor-signal span {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.monitor-signal button {
+  min-height: 32px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+@media (max-width: 1040px) {
+  .screener-tools,
+  .screener-row,
+  .monitor-signal {
+    grid-template-columns: 1fr;
+  }
+
+  .factor-bars {
+    width: min(260px, 100%);
+  }
+
+  .monitor-signal span {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 760px) {
+  .screener-factor-summary,
+  .monitor-intel-summary {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 /* Page routing overrides: keep this block last. */
 .app-page:not(.active) {
   display: none;
