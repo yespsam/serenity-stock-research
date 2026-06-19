@@ -3447,7 +3447,7 @@ select,
   width: 100%;
   min-height: 98px;
   display: grid;
-  grid-template-columns: 74px minmax(0, 1fr) 112px 132px;
+  grid-template-columns: 74px minmax(0, 1fr) 112px 154px;
   gap: 14px;
   align-items: center;
   padding: 13px;
@@ -3504,7 +3504,7 @@ select,
 .factor-bars {
   height: 70px;
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   gap: 5px;
   align-items: end;
 }

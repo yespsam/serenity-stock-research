@@ -148,6 +148,144 @@
       "aliases": ["RKLB"]
     },
     {
+      "canonical": "GOOGL",
+      "marketSymbol": "GOOGL",
+      "companyName": "Alphabet",
+      "aliases": ["GOOG", "GOOGL"]
+    },
+    {
+      "canonical": "SNDK",
+      "marketSymbol": "SNDK",
+      "companyName": "SanDisk",
+      "aliases": ["SNDK"]
+    },
+    {
+      "canonical": "HIMS",
+      "marketSymbol": "HIMS",
+      "companyName": "Hims & Hers Health",
+      "aliases": ["HIMS"]
+    },
+    {
+      "canonical": "INTC",
+      "marketSymbol": "INTC",
+      "companyName": "Intel",
+      "aliases": ["INTC"]
+    },
+    {
+      "canonical": "RDDT",
+      "marketSymbol": "RDDT",
+      "companyName": "Reddit",
+      "aliases": ["RDDT"]
+    },
+    {
+      "canonical": "TSEM",
+      "marketSymbol": "TSEM",
+      "companyName": "Tower Semiconductor",
+      "aliases": ["TSEM"]
+    },
+    {
+      "canonical": "ORCL",
+      "marketSymbol": "ORCL",
+      "companyName": "Oracle",
+      "aliases": ["ORCL"]
+    },
+    {
+      "canonical": "TSLA",
+      "marketSymbol": "TSLA",
+      "companyName": "Tesla",
+      "aliases": ["TSLA"]
+    },
+    {
+      "canonical": "CRCL",
+      "marketSymbol": "CRCL",
+      "companyName": "Circle Internet Group",
+      "aliases": ["CRCL"]
+    },
+    {
+      "canonical": "WULF",
+      "marketSymbol": "WULF",
+      "companyName": "TeraWulf",
+      "aliases": ["WULF"]
+    },
+    {
+      "canonical": "CRDO",
+      "marketSymbol": "CRDO",
+      "companyName": "Credo Technology Group",
+      "aliases": ["CRDO"]
+    },
+    {
+      "canonical": "MTSI",
+      "marketSymbol": "MTSI",
+      "companyName": "MACOM Technology Solutions",
+      "aliases": ["MTSI"]
+    },
+    {
+      "canonical": "VLN",
+      "marketSymbol": "VLN",
+      "companyName": "Valens Semiconductor",
+      "aliases": ["VLN"]
+    },
+    {
+      "canonical": "FLNC",
+      "marketSymbol": "FLNC",
+      "companyName": "Fluence Energy",
+      "aliases": ["FLNC"]
+    },
+    {
+      "canonical": "GFS",
+      "marketSymbol": "GFS",
+      "companyName": "GlobalFoundries",
+      "aliases": ["GFS"]
+    },
+    {
+      "canonical": "SMCI",
+      "marketSymbol": "SMCI",
+      "companyName": "Super Micro Computer",
+      "aliases": ["SMCI"]
+    },
+    {
+      "canonical": "AAPL",
+      "marketSymbol": "AAPL",
+      "companyName": "Apple",
+      "aliases": ["AAPL"]
+    },
+    {
+      "canonical": "NOK",
+      "marketSymbol": "NOK",
+      "companyName": "Nokia",
+      "aliases": ["NOK"]
+    },
+    {
+      "canonical": "IBKR",
+      "marketSymbol": "IBKR",
+      "companyName": "Interactive Brokers",
+      "aliases": ["IBKR"]
+    },
+    {
+      "canonical": "AMKR",
+      "marketSymbol": "AMKR",
+      "companyName": "Amkor Technology",
+      "aliases": ["AMKR"]
+    },
+    {
+      "canonical": "ARM",
+      "marketSymbol": "ARM",
+      "companyName": "Arm Holdings",
+      "aliases": ["ARM"]
+    },
+    {
+      "canonical": "LWLG",
+      "marketSymbol": "LWLG",
+      "companyName": "Lightwave Logic",
+      "aliases": ["LWLG"]
+    },
+    {
+      "canonical": "CIEN",
+      "marketSymbol": "CIEN",
+      "companyName": "Ciena",
+      "aliases": ["CIEN"]
+    },
+    {
       "canonical": "SOI",
       "marketSymbol": "SOI.PA",
       "companyName": "Soitec",

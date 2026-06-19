@@ -249,6 +249,10 @@ const themeNames = {
   "ai-infrastructure": "AI 基建",
   "capital-structure-veto": "稀释否决",
   "substrate-materials": "衬底材料",
+  "robotics-physical-ai": "机器人 / 实体 AI",
+  "power-architecture": "电力架构",
+  "crypto-rotation": "Crypto beta",
+  "macro-hedge": "宏观对冲",
   general: "通用",
 };
 
@@ -371,6 +375,10 @@ const IS_GITHUB_PAGES_STATIC = window.location.hostname.endsWith("github.io");
 const WEB_CRYPTO_SYMBOLS = new Set(["BTC", "ETH", "SOL", "DOGE", "XRP"]);
 const QUOTE_CACHE_MS = 60_000;
 const DETAIL_QUOTE_CACHE_MS = 10 * 60_000;
+const SOCIAL_CANDIDATE_LIMIT = 22;
+const SOCIAL_PREFETCH_LIMIT = 18;
+const SOCIAL_MIN_MENTIONS = 40;
+const SOCIAL_SYMBOL_BLOCKLIST = new Set(["BTC", "ETH", "SOL", "DOGE", "XRP", "IBIT", "EWY", "XLU", "SPY", "QQQ", "IWM", "TLT", "GLD", "LPKF", "RPI"]);
 const PUSH_NOTIFY_KEY = "serenityWebPushNotify";
 const PUSH_SOUND_KEY = "serenityWebPushSound";
 const PUSH_TRANSLATION_KEY = "serenityWebPushTranslation";
@@ -989,6 +997,96 @@ function capOddsScore(marketCap = 0) {
   return 36;
 }
 
+function daysSince(value) {
+  const time = Date.parse(value || "");
+  if (!Number.isFinite(time)) return null;
+  return Math.max(0, (Date.now() - time) / 86_400_000);
+}
+
+function socialRecencyBonus(value) {
+  const age = daysSince(value);
+  if (age === null) return 0;
+  if (age <= 14) return 10;
+  if (age <= 45) return 6;
+  if (age <= 90) return 2;
+  return -4;
+}
+
+function socialMetricScore(metric = {}) {
+  const mentions = Number(metric.mentions || 0);
+  const materiality = Number(metric.materiality || 0);
+  const sentiment = Math.max(0, Number(metric.sentimentScore || 0));
+  return mentions * 1.35 + materiality * 2.8 + sentiment * 0.08 + socialRecencyBonus(metric.latest) * 18;
+}
+
+function socialHeatScore(metric = {}, stock = {}) {
+  const mentions = Number(metric.mentions || 0);
+  const bull = Number(metric.bull || 0);
+  const bear = Number(metric.bear || 0);
+  const neutral = Number(metric.neutral || 0);
+  const total = Math.max(1, bull + bear + neutral);
+  const materiality = Number(metric.materiality || 0);
+  const sentiment = clamp(((bull - bear * 1.5) / total) * 38, -14, 18);
+  return clamp((mentions / 260) * 52 + materiality * 0.3 + sentiment + socialRecencyBonus(metric.latest) + (stock.isSocialCandidate ? 5 : 0), 8, 98);
+}
+
+function isLikelyUsEquityCandidate(symbol = "", metric = {}) {
+  const canonical = canonicalSymbol(symbol);
+  if (!/^[A-Z]{1,5}F?$/.test(canonical)) return false;
+  if (SOCIAL_SYMBOL_BLOCKLIST.has(canonical)) return false;
+  const identity = identityForSymbol(canonical);
+  const marketSymbol = normalizeSymbol(identity?.marketSymbol || metric.marketSymbol || canonical);
+  if (marketSymbol.includes(".") && !canonical.endsWith("F")) return false;
+  return true;
+}
+
+function topSocialMetrics(limit = SOCIAL_CANDIDATE_LIMIT) {
+  const seen = new Set();
+  const rows = [];
+  const symbols = state.distillation?.symbols || [];
+  for (const metric of symbols.slice().sort((a, b) => socialMetricScore(b) - socialMetricScore(a))) {
+    const canonical = canonicalSymbol(metric.symbol);
+    if (!canonical || seen.has(canonical)) continue;
+    if (Number(metric.mentions || 0) < SOCIAL_MIN_MENTIONS) continue;
+    if (!isLikelyUsEquityCandidate(canonical, metric)) continue;
+    seen.add(canonical);
+    rows.push({ ...metric, symbol: canonical, marketSymbol: metric.marketSymbol || marketSymbolFor(canonical) });
+    if (rows.length >= limit) break;
+  }
+  return rows;
+}
+
+function topSocialSymbols(limit = SOCIAL_PREFETCH_LIMIT) {
+  return topSocialMetrics(limit).map((metric) => metric.symbol);
+}
+
+function socialCandidateStocks(seenAliases = new Set(), limit = SOCIAL_CANDIDATE_LIMIT) {
+  const rows = [];
+  for (const metric of topSocialMetrics(limit * 2)) {
+    const aliases = uniqueSymbols([metric.symbol, metric.marketSymbol, ...(metric.aliases || []), ...aliasesForSymbol(metric.symbol)]);
+    if (aliases.some((alias) => seenAliases.has(alias))) continue;
+    const stock = fallbackStock(metric.symbol);
+    const latest = metric.latest ? `，最新样本 ${dateLabel(metric.latest)}` : "";
+    rows.push({
+      ...stock,
+      source: "social",
+      sourceLabel: "Twitter 热度",
+      aliases: uniqueSymbols([...(stock.aliases || []), ...aliases]),
+      marketSymbol: marketSymbolFor(metric.symbol) || metric.marketSymbol || stock.marketSymbol,
+      theme: metric.dominantTheme || stock.theme || "general",
+      themeLabel: themeNames[metric.dominantTheme] || stock.themeLabel || "社媒高热度",
+      thesis: `X/Twitter 讨论度进入前列：${compact.format(Number(metric.mentions || 0))} 次提及，materiality ${Math.round(Number(metric.materiality || 0))}${latest}。先纳入候选池，再用客户验证、资本结构和价格确认做二次筛选。`,
+      risk: "社媒热度只说明资金和叙事正在聚焦，不等于基本面确认；需补财报、公告、客户证据、估值和流动性核查。",
+      isUniversal: true,
+      isSocialCandidate: true,
+      socialMetric: metric,
+    });
+    for (const alias of aliases) seenAliases.add(alias);
+    if (rows.length >= limit) break;
+  }
+  return rows;
+}
+
 function themeScore(stock = {}, bucket = "demand") {
   const scores = {
     demand: {
@@ -997,6 +1095,10 @@ function themeScore(stock = {}, bucket = "demand") {
       "substrate-materials": 84,
       neocloud: 82,
       "memory-rotation": 76,
+      "power-architecture": 78,
+      "robotics-physical-ai": 74,
+      "crypto-rotation": 58,
+      "macro-hedge": 44,
       "capital-structure-veto": 45,
       general: 58,
     },
@@ -1005,6 +1107,10 @@ function themeScore(stock = {}, bucket = "demand") {
       "substrate-materials": 92,
       neocloud: 78,
       "memory-rotation": 68,
+      "power-architecture": 74,
+      "robotics-physical-ai": 60,
+      "crypto-rotation": 44,
+      "macro-hedge": 38,
       "ai-infrastructure": 62,
       "capital-structure-veto": 35,
       general: 52,
@@ -1014,7 +1120,7 @@ function themeScore(stock = {}, bucket = "demand") {
 }
 
 function serenityScreenerModel(stock = {}, quote = quoteForStock(stock)) {
-  const metric = metricForStock(stock) || {};
+  const metric = stock.socialMetric || metricForStock(stock) || {};
   const evidence = getCalledEvidence(stock, 3);
   const marketCap = Number(quote.marketCap) || stock.fallbackMarketCap || 0;
   const rangePct = priceRangePercent(quote);
@@ -1025,10 +1131,15 @@ function serenityScreenerModel(stock = {}, quote = quoteForStock(stock)) {
   const neutral = Number(metric.neutral || 0);
   const total = Math.max(1, bull + bear + neutral);
   const highMateriality = evidence.filter((item) => Number(item.materiality || 0) >= 70).length;
+  const metricMateriality = Number(metric.materiality || 0);
 
   const terminalDemand = clamp(themeScore(stock, "demand") + clamp(mentions / 70, 0, 14) + clamp(((bull - bear * 1.4) / total) * 12, -12, 12), 12, 98);
-  const bottleneck = clamp(themeScore(stock, "bottleneck") + (highMateriality ? 4 : 0), 10, 98);
-  const customerEvidence = clamp(38 + evidence.length * 10 + highMateriality * 6 + clamp(mentions / 45, 0, 18) + clamp(((bull - bear) / total) * 16, -12, 16), 12, 96);
+  const bottleneck = clamp(themeScore(stock, "bottleneck") + (highMateriality ? 4 : 0) + (metricMateriality >= 80 ? 3 : 0), 10, 98);
+  const customerEvidence = clamp(
+    34 + evidence.length * 10 + highMateriality * 6 + clamp(mentions / 50, 0, 16) + clamp(metricMateriality / 10, 0, 9) + clamp(((bull - bear) / total) * 14, -12, 14),
+    12,
+    96
+  );
   const valuationOdds = clamp(capOddsScore(marketCap) + (rangePct !== null && rangePct < 38 ? 7 : 0) - (rangePct !== null && rangePct > 86 ? 12 : 0), 8, 96);
   const capitalStructure = clamp(
     stock.riskFlag || stock.theme === "capital-structure-veto" ? 24 : 90 - clamp((bear / total) * 34, 0, 24) - (/atm|dilution|debt|convertible|融资|稀释|债务/i.test(stock.risk || "") ? 12 : 0),
@@ -1042,17 +1153,20 @@ function serenityScreenerModel(stock = {}, quote = quoteForStock(stock)) {
     10,
     92
   );
+  const socialHeat = socialHeatScore(metric, stock);
 
   let score = Math.round(
-    terminalDemand * 0.18 +
-      bottleneck * 0.2 +
-      customerEvidence * 0.2 +
-      valuationOdds * 0.16 +
-      capitalStructure * 0.16 +
-      priceConfirmation * 0.1
+    terminalDemand * 0.16 +
+      bottleneck * 0.18 +
+      customerEvidence * 0.18 +
+      valuationOdds * 0.14 +
+      capitalStructure * 0.14 +
+      priceConfirmation * 0.08 +
+      socialHeat * 0.12
   );
   if (capitalStructure < 45) score = Math.min(score, 52);
-  if (stock.isUniversal) score = Math.max(8, score - 14);
+  if (stock.isUniversal && !stock.isSocialCandidate) score = Math.max(8, score - 14);
+  if (stock.isSocialCandidate && evidence.length < 1) score = Math.max(8, score - 5);
   score = Math.round(clamp(score, 5, 98));
 
   const factors = [
@@ -1062,12 +1176,13 @@ function serenityScreenerModel(stock = {}, quote = quoteForStock(stock)) {
     { key: "valuation", label: "市值赔率", score: Math.round(valuationOdds), note: "市值越小、证据越早，重估弹性越高" },
     { key: "capital", label: "资本结构", score: Math.round(capitalStructure), note: "ATM、可转债、债务和稀释风险" },
     { key: "price", label: "价格确认", score: Math.round(priceConfirmation), note: "52 周位置、涨跌幅和追价风险" },
+    { key: "social", label: "社媒热度", score: Math.round(socialHeat), note: "X/Twitter 提及量、材料性、情绪和样本新鲜度" },
   ];
   const vetoes = [
     capitalStructure < 45 ? "资本结构否决" : "",
     rangePct !== null && rangePct > 88 ? "价格接近 52 周高位" : "",
-    evidence.length < 2 && !stock.isUniversal ? "样本不足" : "",
-    stock.isUniversal ? "非核心样本" : "",
+    evidence.length < 2 && !stock.isUniversal && !stock.isSocialCandidate ? "样本不足" : "",
+    stock.isSocialCandidate ? "社媒热度待验证" : stock.isUniversal ? "非核心样本" : "",
   ].filter(Boolean);
   const primaryFactor = factors.slice().sort((a, b) => b.score - a.score)[0];
   let actionLabel = "过滤";
@@ -1098,16 +1213,26 @@ function serenityScreenerModel(stock = {}, quote = quoteForStock(stock)) {
   };
 }
 
+function screenerUniverse() {
+  const seenAliases = new Set();
+  const core = calledStocks.map((stock) => {
+    const enriched = enrichStock({ ...stock, source: "core", sourceLabel: "核心池" });
+    for (const alias of stockAliases(enriched)) seenAliases.add(alias);
+    return enriched;
+  });
+  const social = socialCandidateStocks(seenAliases).map((stock) => enrichStock(stock));
+  return [...core, ...social];
+}
+
 function screenerRows() {
   const query = normalizeSymbol(screenerSearch?.value || "");
   const theme = screenerTheme?.value || "all";
   const signal = screenerSignal?.value || "all";
   const sort = screenerSort?.value || "score";
-  return calledStocks
-    .map(enrichStock)
+  return screenerUniverse()
     .map((stock) => ({ stock, model: serenityScreenerModel(stock, stock.quote || {}) }))
     .filter(({ stock, model }) => {
-      const haystack = `${stock.symbol} ${stock.aliases.join(" ")} ${stock.name} ${stock.themeLabel} ${stock.thesis}`.toUpperCase();
+      const haystack = `${stock.symbol} ${stock.aliases.join(" ")} ${stock.name} ${stock.themeLabel} ${stock.sourceLabel || ""} ${stock.thesis}`.toUpperCase();
       const queryOk = !query || haystack.includes(query);
       const themeOk = theme === "all" || stock.theme === theme;
       const signalOk =
@@ -1115,6 +1240,7 @@ function screenerRows() {
         (signal === "priority" && model.actionClass === "pursue") ||
         (signal === "confirm" && model.actionClass === "watch") ||
         (signal === "verify" && model.actionClass === "verify") ||
+        (signal === "social" && stock.isSocialCandidate) ||
         (signal === "veto" && model.vetoes.includes("资本结构否决"));
       return queryOk && themeOk && signalOk;
     })
@@ -1122,6 +1248,7 @@ function screenerRows() {
       if (sort === "customer") return b.model.factorMap.customer - a.model.factorMap.customer;
       if (sort === "bottleneck") return b.model.factorMap.bottleneck - a.model.factorMap.bottleneck;
       if (sort === "valuation") return b.model.factorMap.valuation - a.model.factorMap.valuation;
+      if (sort === "social") return b.model.factorMap.social - a.model.factorMap.social;
       if (sort === "price") return b.model.factorMap.price - a.model.factorMap.price;
       return b.model.score - a.model.score;
     });
@@ -1133,31 +1260,35 @@ function renderScreener() {
   const priorityCount = rows.filter((row) => row.model.actionClass === "pursue").length;
   const confirmCount = rows.filter((row) => row.model.actionClass === "watch").length;
   const vetoCount = rows.filter((row) => row.model.vetoes.includes("资本结构否决")).length;
+  const socialCount = rows.filter((row) => row.stock.isSocialCandidate).length;
   const averageScore = rows.length ? Math.round(rows.reduce((sum, row) => sum + row.model.score, 0) / rows.length) : 0;
-  screenerStatus.textContent = `${rows.length} 支标的 · 高优先级 ${priorityCount} · 等待确认 ${confirmCount} · 资本结构否决 ${vetoCount}`;
+  screenerStatus.textContent = `${rows.length} 支标的 · 高优先级 ${priorityCount} · 等待确认 ${confirmCount} · Twitter 热度 ${socialCount} · 资本结构否决 ${vetoCount}`;
   screenerFactorSummary.innerHTML = [
     ["平均综合分", averageScore || "--"],
     ["高优先级", priorityCount],
-    ["等待确认", confirmCount],
+    ["Twitter 热度", socialCount],
     ["资本结构否决", vetoCount],
   ]
     .map(([label, value]) => `<span><b>${escapeHtml(value)}</b><small>${escapeHtml(label)}</small></span>`)
     .join("");
 
   screenerList.innerHTML = rows
-    .slice(0, 24)
+    .slice(0, 30)
     .map(({ stock, model }) => {
       const quote = stock.quote || {};
       const changeClass = Number(quote.changePercent) >= 0 ? "up" : "down";
+      const metric = stock.socialMetric || stock.metric || {};
+      const sourceLabel = stock.sourceLabel || "核心池";
+      const socialMeta = Number(metric.mentions || 0) ? ` · X ${compact.format(Number(metric.mentions || 0))} 提及` : "";
       return `
-        <button class="screener-row ${escapeHtml(model.actionClass)}" type="button" data-symbol="${escapeHtml(stock.symbol)}">
+        <button class="screener-row ${escapeHtml(model.actionClass)} ${stock.isSocialCandidate ? "social" : "core"}" type="button" data-symbol="${escapeHtml(stock.symbol)}" data-source="${stock.isSocialCandidate ? "social" : "core"}">
           <span class="screener-score">
             <b>${model.score}</b>
             <small>综合分</small>
           </span>
           <span class="screener-main">
             <strong>${escapeHtml(stock.symbol)} · ${escapeHtml(stock.name)}</strong>
-            <small>${escapeHtml(model.primaryFactor.label)} ${model.primaryFactor.score}/100 · ${escapeHtml(stock.themeLabel)} · ${formatMarketCap(stock.marketCap)} · <em class="${changeClass}">${formatPercent(quote.changePercent)}</em></small>
+            <small>${escapeHtml(sourceLabel)} · ${escapeHtml(model.primaryFactor.label)} ${model.primaryFactor.score}/100 · ${escapeHtml(stock.themeLabel)} · ${formatMarketCap(stock.marketCap)} · <em class="${changeClass}">${formatPercent(quote.changePercent)}</em>${escapeHtml(socialMeta)}</small>
             <i>${escapeHtml(model.vetoes.length ? model.vetoes.join(" / ") : stock.thesis)}</i>
           </span>
           <span class="decision-pill ${escapeHtml(model.actionClass)}">${escapeHtml(model.actionLabel)}</span>
@@ -1666,7 +1797,14 @@ function renderQuickTickers() {
 }
 
 function renderTickerSuggestions() {
-  tickerSuggestions.innerHTML = calledStocks.map((stock) => `<option value="${escapeHtml(stock.symbol)}">${escapeHtml(stock.name)}</option>`).join("");
+  const seen = new Set();
+  const options = [];
+  for (const stock of [...calledStocks.map(enrichStock), ...socialCandidateStocks(new Set(), 12).map(enrichStock)]) {
+    if (seen.has(stock.symbol)) continue;
+    seen.add(stock.symbol);
+    options.push(`<option value="${escapeHtml(stock.symbol)}">${escapeHtml(stock.name)}</option>`);
+  }
+  tickerSuggestions.innerHTML = options.join("");
 }
 
 function renderStockList() {
@@ -3167,7 +3305,9 @@ async function loadLiveMonitor() {
 function findStock(symbol) {
   const normalized = normalizeSymbol(symbol);
   const canonical = canonicalSymbol(normalized);
-  return calledStocks.find((stock) => stockAliases(stock).includes(normalized) || stockAliases(stock).includes(canonical));
+  const core = calledStocks.find((stock) => stockAliases(stock).includes(normalized) || stockAliases(stock).includes(canonical));
+  if (core) return core;
+  return socialCandidateStocks(new Set(), SOCIAL_CANDIDATE_LIMIT).find((stock) => stockAliases(stock).includes(normalized) || stockAliases(stock).includes(canonical));
 }
 
 function fallbackStock(symbol) {
@@ -3209,6 +3349,17 @@ function hydrateUniversalStock(stock, quote = {}) {
   const companyName = profile.companyName || quote.longName || quote.shortName || stock.name;
   const industry = profile.industry || profile.sector || "通用美股研究";
   const sectorText = profile.sector ? `${profile.sector} / ${industry}` : industry;
+  if (stock.isSocialCandidate) {
+    const metric = stock.socialMetric || metricForStock(stock) || {};
+    const latest = metric.latest ? `，最新样本 ${dateLabel(metric.latest)}` : "";
+    return {
+      ...stock,
+      name: companyName || stock.symbol,
+      themeLabel: stock.themeLabel || industry,
+      thesis: `X/Twitter 讨论度进入候选池：${compact.format(Number(metric.mentions || 0))} 次提及，materiality ${Math.round(Number(metric.materiality || 0))}${latest}。报告会先判断热度是否有基本面锚点，再核查价格、估值、新闻和财务质量。`,
+      risk: `社媒热度不等于可交易结论；优先核查 ${industry} 的收入质量、估值拥挤、公告证据、客户验证和异常成交是否能支持行情延续。`,
+    };
+  }
   return {
     ...stock,
     name: companyName || stock.symbol,
@@ -3875,26 +4026,41 @@ async function analyzeSymbol(symbol, options = {}) {
   if (options.scroll !== false) document.querySelector("#analysis")?.scrollIntoView({ behavior: "smooth", block: "start" });
 }
 
-async function loadQuotes() {
-  const symbols = calledStocks.map((stock) => stock.symbol).join(",");
-  const data = await fetchJson(`/api/quotes?symbols=${encodeURIComponent(symbols)}`);
-  for (const quote of data.quotes || []) {
-    const requested = normalizeSymbol(quote.requestedSymbol || quote.symbol);
-    const canonical = canonicalSymbol(requested || quote.symbol);
-    state.quotes.set(requested, quote);
-    state.quoteFetchedAt.set(requested, Date.now());
-    if (canonical) {
-      state.quotes.set(canonical, quote);
-      state.quoteFetchedAt.set(canonical, Date.now());
-    }
-    const marketSymbol = marketSymbolFor(canonical);
-    if (marketSymbol) {
-      state.quotes.set(marketSymbol, quote);
-      state.quoteFetchedAt.set(marketSymbol, Date.now());
-    }
-    if (quote.symbol) {
-      state.quotes.set(normalizeSymbol(quote.symbol), quote);
-      state.quoteFetchedAt.set(normalizeSymbol(quote.symbol), Date.now());
+function storeQuote(quote = {}) {
+  const requested = normalizeSymbol(quote.requestedSymbol || quote.symbol);
+  const canonical = canonicalSymbol(requested || quote.symbol);
+  state.quotes.set(requested, quote);
+  state.quoteFetchedAt.set(requested, Date.now());
+  if (canonical) {
+    state.quotes.set(canonical, quote);
+    state.quoteFetchedAt.set(canonical, Date.now());
+  }
+  const marketSymbol = marketSymbolFor(canonical);
+  if (marketSymbol) {
+    state.quotes.set(marketSymbol, quote);
+    state.quoteFetchedAt.set(marketSymbol, Date.now());
+  }
+  if (quote.symbol) {
+    state.quotes.set(normalizeSymbol(quote.symbol), quote);
+    state.quoteFetchedAt.set(normalizeSymbol(quote.symbol), Date.now());
+  }
+}
+
+async function loadQuotes(options = {}) {
+  const includeCore = options.core !== false;
+  const includeSocial = options.social !== false;
+  const coreAliases = new Set();
+  for (const stock of calledStocks) {
+    for (const alias of stockAliases(stock)) coreAliases.add(alias);
+  }
+  const coreSymbols = includeCore ? calledStocks.map((stock) => stock.symbol) : [];
+  const socialSymbols = includeSocial ? socialCandidateStocks(coreAliases, SOCIAL_PREFETCH_LIMIT).map((stock) => stock.symbol) : [];
+  const symbols = uniqueSymbols([...coreSymbols, ...socialSymbols]);
+  for (let index = 0; index < symbols.length; index += 32) {
+    const batch = symbols.slice(index, index + 32).join(",");
+    const data = await fetchJson(`/api/quotes?symbols=${encodeURIComponent(batch)}`);
+    for (const quote of data.quotes || []) {
+      storeQuote(quote);
     }
   }
 }
@@ -3925,6 +4091,7 @@ async function init() {
     rules: publicData.rules || [],
     symbols: publicData.symbols || [],
   };
+  renderTickerSuggestions();
   state.history = publicData.history || [];
   state.monitor = publicData.monitor || null;
   renderHeroStats();
@@ -3933,12 +4100,27 @@ async function init() {
   renderLiveMonitor();
   loadLiveMonitor();
   setInterval(loadLiveMonitor, WEB_PUSH_POLL_MS);
-  await loadQuotes();
-  await refreshPriceAlertQuotes(true).catch(() => false);
-  checkPriceAlerts();
   renderStockList();
   renderOpportunityList();
   renderScreener();
+  loadQuotes({ social: false })
+    .then(() => {
+      renderTickerSuggestions();
+      renderStockList();
+      renderOpportunityList();
+      renderScreener();
+      return loadQuotes({ core: false, social: true });
+    })
+    .then(() => {
+      renderTickerSuggestions();
+      renderStockList();
+      renderOpportunityList();
+      renderScreener();
+    })
+    .catch(() => false);
+  refreshPriceAlertQuotes(true)
+    .then(() => checkPriceAlerts())
+    .catch(() => false);
   await analyzeSymbol("AAOI", { route: false, scroll: false });
   loadPerformance();
 }

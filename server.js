@@ -111,7 +111,7 @@ function yahooSearchScore(query, quote = {}) {
   const exchange = String(quote.exchange || "").toUpperCase();
   if (!symbol || quoteType !== "EQUITY") return -1000;
   let score = 0;
-  if (symbol === query) score += 40;
+  if (symbol === query) score += 130;
   if (symbol.startsWith(`${query}.`)) score += 70;
   if (symbol.startsWith(query)) score += 18;
   if (["PAR", "LSE", "GER", "STO", "FRA", "MIL", "AMS", "BRU", "SWX", "OSL"].includes(exchange)) score += 12;
