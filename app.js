@@ -394,6 +394,7 @@ const BEGINNER_PRICE_ALERTS_KEY = "serenityPriceAlerts";
 const PRICE_ALERT_QUOTE_MS = 30_000;
 const BINANCE_WALLET_REFERRAL_URL = "https://web3.binance.com/referral?ref=DB7KNQGJ";
 const BSTOCK_API_PATH = "/api/binance-bstocks";
+const APP_SHELL_VERSION = "v15";
 const BSTOCK_SYMBOLS = [
   {
     symbol: "NVDAB",
@@ -747,14 +748,23 @@ function initPushPreferences() {
 async function initServiceWorker() {
   if (!("serviceWorker" in navigator)) return;
   try {
+    const hadController = Boolean(navigator.serviceWorker.controller);
     const registration = await navigator.serviceWorker.register(new URL("./sw.js", window.location.href));
     state.swRegistration = registration;
     state.swReady = true;
-    state.swControlled = Boolean(navigator.serviceWorker.controller);
+    state.swControlled = hadController;
+    const reloadKey = `serenitySwReloaded:${APP_SHELL_VERSION}`;
     navigator.serviceWorker.addEventListener("controllerchange", () => {
       state.swControlled = true;
+      if (hadController && !sessionStorage.getItem(reloadKey)) {
+        sessionStorage.setItem(reloadKey, "1");
+        window.location.reload();
+        return;
+      }
       renderLiveMonitor();
     });
+    if (registration.waiting && hadController) registration.waiting.postMessage({ type: "SKIP_WAITING" });
+    registration.update?.().catch(() => {});
   } catch (error) {
     state.swReady = false;
     state.lastLiveError = `Service Worker 注册失败：${error.message}`;

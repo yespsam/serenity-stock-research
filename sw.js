@@ -1,4 +1,4 @@
-const CACHE_NAME = "serenity-shell-v14";
+const CACHE_NAME = "serenity-shell-v15";
 const BASE_PATH = new URL(self.registration.scope).pathname.replace(/\/$/, "");
 const shellPath = (path) => `${BASE_PATH}${path}`;
 const SHELL_ASSETS = [
@@ -43,6 +43,10 @@ self.addEventListener("fetch", (event) => {
 
 self.addEventListener("message", (event) => {
   const data = event.data || {};
+  if (data.type === "SKIP_WAITING") {
+    event.waitUntil(self.skipWaiting());
+    return;
+  }
   if (data.type !== "SERENITY_NOTIFY") return;
   event.waitUntil(
     self.registration.showNotification(data.title || "Serenity 新推文", {
