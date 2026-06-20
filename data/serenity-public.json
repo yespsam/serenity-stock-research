@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-19T15:57:06.557Z",
+  "generatedAt": "2026-06-20T07:14:36.235Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6792,
+    "parsedItems": 6794,
     "commentCount": 51400,
     "profileTweets": 7222,
-    "latestItemDate": "2026-06-19T14:27:24.000Z"
+    "latestItemDate": "2026-06-20T04:01:01.000Z"
   },
   "rules": [
     {
@@ -69,14 +69,14 @@
         "SIVERS"
       ],
       "marketSymbol": "SIVEF",
-      "mentions": 1109,
+      "mentions": 1110,
       "bull": 494,
       "bear": 16,
-      "neutral": 599,
+      "neutral": 600,
       "materiality": 100,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 10355
+      "sentimentScore": 10358
     },
     {
       "symbol": "NBIS",
@@ -811,14 +811,14 @@
       "symbol": "WYFI",
       "aliases": [],
       "marketSymbol": "WYFI",
-      "mentions": 53,
+      "mentions": 54,
       "bull": 27,
       "bear": 2,
-      "neutral": 24,
+      "neutral": 25,
       "materiality": 86,
       "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 514
+      "sentimentScore": 517
     },
     {
       "symbol": "TRT",
@@ -1921,7 +1921,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 99,
-      "latest": "2026-06-15T14:02:20.000Z",
+      "latest": "2026-06-15T22:05:16.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 186
     },
@@ -2433,6 +2433,19 @@
       "sentimentScore": 132
     },
     {
+      "symbol": "CAMT",
+      "aliases": [],
+      "marketSymbol": "CAMT",
+      "mentions": 14,
+      "bull": 6,
+      "bear": 0,
+      "neutral": 8,
+      "materiality": 85,
+      "latest": "2026-04-29T21:40:20.000Z",
+      "dominantTheme": "memory-rotation",
+      "sentimentScore": 132
+    },
+    {
       "symbol": "TSEM.TA",
       "aliases": [],
       "marketSymbol": "TSEM.TA",
@@ -2454,7 +2467,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 100,
-      "latest": "2026-06-15T14:02:20.000Z",
+      "latest": "2026-06-15T22:05:16.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 130
     },
@@ -2482,19 +2495,6 @@
       "materiality": 94,
       "latest": "2026-05-24T04:51:04.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 129
-    },
-    {
-      "symbol": "CAMT",
-      "aliases": [],
-      "marketSymbol": "CAMT",
-      "mentions": 13,
-      "bull": 6,
-      "bear": 0,
-      "neutral": 7,
-      "materiality": 85,
-      "latest": "2026-04-29T21:40:20.000Z",
-      "dominantTheme": "memory-rotation",
       "sentimentScore": 129
     },
     {
@@ -5600,17 +5600,17 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-19T15:56:48.675Z",
+    "staticUpdatedAt": "2026-06-20T07:12:41.788Z",
     "latestCaptured": {
-      "id": "2067964557491122389",
-      "date": "2026-06-19T13:35:46.000Z",
-      "title": "I don't look at moving averages. ",
-      "body": "I don't look at moving averages. \n\nI just derive what marketcap I think a company should be worth in my head. \n\nCompare it to the current MC, and see if it's worth the opportunity + est. time for that to play out. Given their customers, revenue, theme, growth, etc. \n\nThen if it's compelling enough risk/reward, I take positions.",
+      "id": "2068182306100330848",
+      "date": "2026-06-20T04:01:01.000Z",
+      "title": "Yep will look into Mirae soon. ",
+      "body": "Yep will look into Mirae soon. Forgot to add in:\n\nDaeduck: ~28–30% of 353200, underlying assets ~3.8x of MC. FC-BGA and MLB related, also KR. \n\nDB, ~3.7x of underlying assets (DB HiTek), also KR. Foundry related. \n\nHyosung, ~3.6x underlying assets, transformers. Also KR. \n\nProbably not a good idea to go long on Korean governance lol.",
       "symbols": [],
-      "theme": "general",
-      "materiality": 46,
-      "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2067964557491122389"
+      "theme": "power-architecture",
+      "materiality": 66,
+      "sentiment": "bull",
+      "url": "https://x.com/aleabitoreddit/status/2068182306100330848"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
