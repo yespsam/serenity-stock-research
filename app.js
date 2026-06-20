@@ -492,6 +492,7 @@ const webPushBanner = document.querySelector("#webPushBanner");
 const webPushControls = document.querySelector("#webPushControls");
 const monitorHealth = document.querySelector("#monitorHealth");
 const monitorSignalBoard = document.querySelector("#monitorSignalBoard");
+const monitorHistoryList = document.querySelector("#monitorHistoryList");
 const dailyTradeReport = document.querySelector("#dailyTradeReport");
 const priceAlertPanel = document.querySelector("#priceAlertPanel");
 const liveTweetList = document.querySelector("#liveTweetList");
@@ -3296,6 +3297,98 @@ function renderMonitorSignalBoard() {
   `;
 }
 
+function monitorHistorySymbols(item = {}) {
+  return uniqueSymbols([item.symbol, ...(item.symbols || []), ...liveTradableSymbols(item)]).slice(0, 5);
+}
+
+function monitorHistoryStatus(item = {}, source = "") {
+  if (source === "历史样本") {
+    const result = state.performance.get(historyKey(item));
+    if (Number.isFinite(Number(result?.currentReturnPercent))) return `已回填 ${formatPercent(result.currentReturnPercent)}`;
+    return "待价格回填";
+  }
+  const key = liveItemKey(item);
+  if (state.livePending.has(key)) return "研究包生成中";
+  if (state.liveResearchPacks.has(key)) return "已有研究包";
+  if (liveItemIsNew(item)) return "新推文";
+  return "已入库";
+}
+
+function monitorHistoryRecords() {
+  const seen = new Set();
+  const records = [];
+  const addRecord = (item = {}, source = "") => {
+    const title = shortTitle(item.title || item.body || "Serenity monitor record", 180);
+    const date = item.date || item.createdAt || item.timestamp || "";
+    const key = String(item.id || item.url || `${source}:${date}:${item.symbol || ""}:${title}`);
+    if (seen.has(key) || !title) return;
+    seen.add(key);
+    const symbols = monitorHistorySymbols(item);
+    records.push({
+      item,
+      source,
+      key,
+      title,
+      date,
+      time: Date.parse(date) || 0,
+      symbols,
+      theme: liveThemeLabel(item.theme || "general"),
+      status: monitorHistoryStatus(item, source),
+      url: item.url || "",
+    });
+  };
+
+  state.liveItems.forEach((item) => addRecord(item, "实时接口"));
+  if (state.monitor?.latestCaptured) addRecord(state.monitor.latestCaptured, "静态快照");
+  state.history.slice(0, 24).forEach((item) => addRecord(item, "历史样本"));
+  return records.sort((a, b) => b.time - a.time).slice(0, 12);
+}
+
+function renderMonitorHistoryList() {
+  if (!monitorHistoryList) return;
+  const rows = monitorHistoryRecords();
+  monitorHistoryList.innerHTML = `
+    <section class="monitor-history-board">
+      <div class="monitor-intel-head">
+        <div>
+          <span>Twitter History</span>
+          <strong>X/Twitter 监控历史</strong>
+        </div>
+        <small>${rows.length ? `${rows.length} 条记录 · 实时 + 历史样本` : "等待历史记录"}</small>
+      </div>
+      ${
+        rows.length
+          ? `<div class="monitor-history-rows">
+              ${rows
+                .map(
+                  (row) => `
+                    <article class="monitor-history-row">
+                      <div class="history-record-meta">
+                        <span>${escapeHtml(row.source)}</span>
+                        <strong>${escapeHtml(row.date ? dateTimeLabel(row.date) : "时间待补")}</strong>
+                        <small>${escapeHtml(row.theme)} · ${escapeHtml(row.status)}</small>
+                      </div>
+                      <p>${escapeHtml(row.title)}</p>
+                      <div class="history-record-actions">
+                        ${
+                          row.symbols.length
+                            ? row.symbols.map((symbol) => `<button class="secondary" type="button" data-symbol="${escapeHtml(symbol)}">${escapeHtml(symbol)}</button>`).join("")
+                            : `<small>暂无 ticker</small>`
+                        }
+                        ${row.url ? `<a href="${escapeHtml(row.url)}" target="_blank" rel="noreferrer">打开 X 原文</a>` : ""}
+                      </div>
+                    </article>
+                  `
+                )
+                .join("")}
+            </div>`
+          : `<p class="monitor-history-empty">实时接口或静态样本返回后，这里会保留最近的推文监控记录。</p>`
+      }
+      <a class="monitor-history-more" href="#track-record">查看完整历史验证</a>
+    </section>
+  `;
+}
+
 function renderWebPushControls() {
   const notifyClass = state.notificationEnabled && notificationPermission() === "granted" ? "active" : "";
   const soundClass = state.soundEnabled ? "active" : "";
@@ -3487,6 +3580,7 @@ function renderLiveMonitor() {
   renderWebPushControls();
   renderMonitorHealth();
   renderMonitorSignalBoard();
+  renderMonitorHistoryList();
   renderDailyTradeReport();
   renderPriceAlertPanel();
   monitorStatus.textContent = latestLive
@@ -4529,6 +4623,11 @@ liveTweetList.addEventListener("click", (event) => {
 });
 
 monitorSignalBoard.addEventListener("click", (event) => {
+  const button = event.target.closest("[data-symbol]");
+  if (button) analyzeSymbol(button.dataset.symbol);
+});
+
+monitorHistoryList.addEventListener("click", (event) => {
   const button = event.target.closest("[data-symbol]");
   if (button) analyzeSymbol(button.dataset.symbol);
 });

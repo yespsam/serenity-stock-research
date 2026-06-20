@@ -4265,7 +4265,9 @@ button,
 .research-brief-card,
 .data-source-strip,
 .monitor-watch-board,
-.monitor-watch-card {
+.monitor-watch-card,
+.monitor-history-board,
+.monitor-history-row {
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 8px;
   background:
@@ -4378,6 +4380,89 @@ button,
   padding: 14px;
 }
 
+.monitor-history-board {
+  display: grid;
+  gap: 12px;
+  margin-bottom: 14px;
+  padding: 14px;
+}
+
+.monitor-history-rows {
+  display: grid;
+  gap: 9px;
+}
+
+.monitor-history-row {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr) minmax(170px, auto);
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+}
+
+.history-record-meta {
+  display: grid;
+  gap: 4px;
+}
+
+.history-record-meta span {
+  width: fit-content;
+  padding: 4px 7px;
+  border: 1px solid rgba(240, 185, 11, 0.34);
+  border-radius: 999px;
+  background: rgba(240, 185, 11, 0.1);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.history-record-meta strong,
+.history-record-meta small,
+.monitor-history-row p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.history-record-meta small,
+.monitor-history-row p,
+.monitor-history-empty {
+  font-size: 12px;
+  font-weight: 760;
+  line-height: 1.45;
+}
+
+.monitor-history-row p {
+  margin: 0;
+}
+
+.history-record-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 7px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.history-record-actions button,
+.history-record-actions a {
+  min-height: 32px;
+  padding: 0 10px;
+  font-size: 12px;
+}
+
+.monitor-history-more {
+  min-height: 36px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: stretch;
+  border: 1px solid rgba(240, 185, 11, 0.42);
+  border-radius: 8px;
+  background: rgba(240, 185, 11, 0.08);
+  font-size: 12px;
+  font-weight: 900;
+}
+
 .monitor-watch-list {
   display: grid;
   gap: 9px;
@@ -4431,9 +4516,30 @@ button,
     grid-template-columns: 1fr;
   }
 
+  .monitor-history-row {
+    grid-template-columns: 1fr;
+  }
+
   .monitor-watch-card strong,
   .monitor-watch-card small,
-  .monitor-watch-card em {
+  .monitor-watch-card em,
+  .history-record-meta strong,
+  .history-record-meta small,
+  .monitor-history-row p {
     white-space: normal;
   }
+
+  .history-record-actions {
+    justify-content: flex-start;
+  }
+}
+
+input,
+textarea,
+select,
+option {
+  background: #000 !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  caret-color: #fff;
 }
