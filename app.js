@@ -2575,6 +2575,55 @@ function liveWatchMatch(item = {}) {
   return { matched: false, reason: "" };
 }
 
+function watchTokenMatchesItem(token = "", item = {}) {
+  const normalized = normalizeWatchToken(token);
+  if (!normalized) return false;
+  const tokenTheme = WATCH_THEME_TOKENS[normalized];
+  const symbols = liveSymbolTokens(item);
+  const text = `${item.title || ""} ${item.body || ""}`.toUpperCase();
+  const theme = item.theme || "general";
+  const themeText = `${theme} ${liveThemeLabel(theme)}`.toUpperCase();
+  if (symbols.has(normalized)) return true;
+  if (tokenTheme && tokenTheme === theme) return true;
+  if (themeText.includes(normalized)) return true;
+  return normalized.length >= 3 && text.includes(`$${normalized}`);
+}
+
+function stockForWatchToken(token = "") {
+  const normalized = normalizeWatchToken(token);
+  const theme = WATCH_THEME_TOKENS[normalized];
+  if (theme) return calledStocks.find((stock) => stock.theme === theme && !stock.riskFlag) || null;
+  return findStock(normalized) || null;
+}
+
+function monitorWatchRows(sourceItems = []) {
+  const tokens = (state.watchlist.length ? state.watchlist : ["SIVE", "AAOI", "NVDA", "CPO", "NEOCLOUD"]).slice(0, 8);
+  return tokens.map((token) => {
+    const normalized = normalizeWatchToken(token);
+    const theme = WATCH_THEME_TOKENS[normalized];
+    const stock = stockForWatchToken(normalized);
+    const quote = stock ? quoteForStock(stock) : {};
+    const decision = stock ? decisionFor(stock, quote) : null;
+    const matches = sourceItems.filter((item) => watchTokenMatchesItem(normalized, item)).length;
+    const bstock = stock ? BSTOCK_SYMBOLS.find((item) => item.equity === stock.symbol) : null;
+    return {
+      token: normalized,
+      symbol: stock?.symbol || "",
+      title: stock ? `${stock.symbol} · ${stock.name}` : theme ? themeNames[theme] || normalized : normalized,
+      status: matches ? `${matches} 条命中` : state.watchlist.length ? "等待命中" : "示例监听",
+      action: decision?.actionLabel || (theme ? "主题监听" : "等待信号"),
+      price: stock ? formatPrice(quote) : "--",
+      meta: bstock
+        ? `${bstock.displayPair} 已接 Binance bStock`
+        : stock
+          ? `${stock.themeLabel} · ${themeNames[stock.theme] || "覆盖池"}`
+          : theme
+            ? "按主题聚合推文与候选股"
+            : "添加 ticker 后自动聚合",
+    };
+  });
+}
+
 async function unlockPushSound() {
   if (!state.pushAudioContext) {
     const AudioContextClass = window.AudioContext || window.webkitAudioContext;
@@ -3165,11 +3214,43 @@ function renderMonitorSignalBoard() {
   if (!monitorSignalBoard) return;
   const sourceItems = state.liveItems.length ? state.liveItems : state.monitor?.latestCaptured ? [state.monitor.latestCaptured] : [];
   const rows = sourceItems.slice(0, 8).map((item) => ({ item, signal: classifyLiveSignal(item) }));
+  const watchRows = monitorWatchRows(sourceItems);
   const counts = rows.reduce((acc, row) => {
     acc[row.signal.label] = (acc[row.signal.label] || 0) + 1;
     return acc;
   }, {});
   monitorSignalBoard.innerHTML = `
+    <section class="monitor-watch-board">
+      <div class="monitor-intel-head">
+        <div>
+          <span>My Monitor</span>
+          <strong>我的监控闭环</strong>
+        </div>
+        <small>${state.watchlist.length ? `${state.watchlist.length} 个监听项` : "先用示例监听，可在下方添加"}</small>
+      </div>
+      <div class="monitor-watch-list">
+        ${watchRows
+          .map(
+            (row) => `
+              <article class="monitor-watch-card">
+                <div>
+                  <span>${escapeHtml(row.token)}</span>
+                  <strong>${escapeHtml(row.title)}</strong>
+                  <small>${escapeHtml(row.meta)}</small>
+                </div>
+                <b>${escapeHtml(row.price)}</b>
+                <em>${escapeHtml(row.status)} · ${escapeHtml(row.action)}</em>
+                ${
+                  row.symbol
+                    ? `<button class="secondary" type="button" data-symbol="${escapeHtml(row.symbol)}">看研报</button>`
+                    : `<small>添加具体 ticker 后可生成研报</small>`
+                }
+              </article>
+            `
+          )
+          .join("")}
+      </div>
+    </section>
     <section class="monitor-intel">
       <div class="monitor-intel-head">
         <div>
@@ -3724,6 +3805,47 @@ function dataConfidence(stock = {}, quote = {}, metric = {}, evidence = []) {
   return { score, label, items };
 }
 
+function quoteFreshnessLabel(quote = {}) {
+  if (String(quote.provider || "").includes("快速框架")) return "即时生成 · 等待接口";
+  if (!quote.updatedAt) return "等待详细数据";
+  return `${dateTimeLabel(quote.updatedAt)} · ${agoLabel(quote.updatedAt)}`;
+}
+
+function quoteSourceLabel(quote = {}) {
+  if (quote.provider) return quote.provider;
+  if (Number.isFinite(Number(quote.price))) return "公开行情接口";
+  return "快速框架";
+}
+
+function dataSourceRows(stock = {}, quote = {}, confidence = {}, evidence = []) {
+  const newsCount = (quote.news || []).length;
+  return [
+    { label: "行情", value: quoteSourceLabel(quote), meta: quoteFreshnessLabel(quote) },
+    { label: "财务", value: quote.financials && Object.keys(quote.financials).length ? "Nasdaq 财务摘要" : "待补财报摘要", meta: quote.financials?.period || "后台补全" },
+    { label: "样本", value: stock.isUniversal ? "通用美股初筛" : "Serenity 公开样本", meta: `${evidence.length} 条命中样本` },
+    { label: "新闻", value: newsCount ? "Yahoo / 公开新闻" : "待补新闻", meta: newsCount ? `${newsCount} 条` : "后台补全" },
+    { label: "置信", value: confidence.label || "待评估", meta: `${confidence.score || "--"}/100` },
+  ];
+}
+
+function decisionBriefRows(stock = {}, quote = {}, decision = {}, beginner = {}, plan = {}, checklist = {}, confidence = {}) {
+  const reason = decision.reasons?.[0] || decision.oneLine || compactReason(stock.thesis);
+  const trigger = entryGuideText(quote, beginner, plan);
+  const invalidation = checklist.invalidation?.[0] || decision.blockers?.[0] || stock.risk || "价格、成交量或基本面证伪。";
+  const verification = [
+    checklist.confirmation?.[0],
+    confidence.items?.find((item) => /财务|新闻|样本|价格/.test(item)),
+    quote.provider ? `行情源：${quoteSourceLabel(quote)}` : "等待详细行情回填",
+  ].filter(Boolean);
+  return [
+    { label: "结论", value: decision.actionLabel || "观察", body: decision.stance || decision.oneLine || "等待确认" },
+    { label: "核心原因", value: decision.topDriver || "框架匹配", body: reason },
+    { label: "触发价", value: plan.watchEntry ? formatMoney(plan.watchEntry) : "待价格回填", body: trigger },
+    { label: "失效条件", value: stock.riskFlag ? "风险优先" : "反证优先", body: invalidation },
+    { label: "待验证数据", value: confidence.label || "数据待补", body: verification.slice(0, 3).join("；") || "补财报、公告、新闻和成交量。" },
+  ];
+}
+
 function entryGuideText(quote = {}, assessment = {}, plan = {}) {
   const price = Number(quote.price);
   if (!Number.isFinite(price) || price <= 0) return "缺少可用价格，暂不生成入场区间。";
@@ -3971,6 +4093,8 @@ function buildReport(stock, quote) {
   const execution = executionCards(enriched, quote, decision, beginner, positionPlan, playbook, evidence, metric);
   const confidence = dataConfidence(enriched, quote, metric, evidence);
   const checklist = researchChecklist(enriched, quote, decision, playbook, evidence, metric);
+  const sourceRows = dataSourceRows(enriched, quote, confidence, evidence);
+  const briefRows = decisionBriefRows(enriched, quote, decision, beginner, positionPlan, checklist, confidence);
   const topDrivers = breakdown
     .slice()
     .sort((a, b) => b.score - a.score)
@@ -4006,6 +4130,38 @@ function buildReport(stock, quote) {
       ${binanceWalletLink("打开 Binance 钱包")}
       <button class="secondary copy-report" type="button" data-copy-report>复制研报摘要</button>
     </div>
+    <section class="research-brief-card">
+      <div class="brief-head">
+        <span>Decision Card</span>
+        <strong>投研决策卡</strong>
+      </div>
+      <div class="brief-grid">
+        ${briefRows
+          .map(
+            (item) => `
+              <article>
+                <span>${escapeHtml(item.label)}</span>
+                <strong>${escapeHtml(item.value)}</strong>
+                <p>${escapeHtml(item.body)}</p>
+              </article>
+            `
+          )
+          .join("")}
+      </div>
+    </section>
+    <section class="data-source-strip">
+      ${sourceRows
+        .map(
+          (item) => `
+            <span>
+              <small>${escapeHtml(item.label)}</small>
+              <b>${escapeHtml(item.value)}</b>
+              <em>${escapeHtml(item.meta)}</em>
+            </span>
+          `
+        )
+        .join("")}
+    </section>
     <section class="decision-card ${escapeHtml(decision.actionClass)}">
       <div class="decision-score">
         <span>框架匹配</span>
