@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-20T07:14:36.235Z",
+  "generatedAt": "2026-06-20T11:25:33.167Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6794,
+    "parsedItems": 6797,
     "commentCount": 51400,
     "profileTweets": 7222,
-    "latestItemDate": "2026-06-20T04:01:01.000Z"
+    "latestItemDate": "2026-06-20T10:10:47.000Z"
   },
   "rules": [
     {
@@ -82,14 +82,14 @@
       "symbol": "NBIS",
       "aliases": [],
       "marketSymbol": "NBIS",
-      "mentions": 775,
+      "mentions": 776,
       "bull": 221,
       "bear": 10,
-      "neutral": 544,
+      "neutral": 545,
       "materiality": 77,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 5407
+      "sentimentScore": 5410
     },
     {
       "symbol": "LITE",
@@ -138,23 +138,23 @@
       "bull": 155,
       "bear": 9,
       "neutral": 411,
-      "materiality": 73,
+      "materiality": 74,
       "latest": "2026-06-12T04:26:43.000Z",
-      "dominantTheme": "general",
+      "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 3837
     },
     {
       "symbol": "IREN",
       "aliases": [],
       "marketSymbol": "IREN",
-      "mentions": 492,
+      "mentions": 493,
       "bull": 145,
       "bear": 28,
-      "neutral": 319,
+      "neutral": 320,
       "materiality": 78,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 2938
+      "sentimentScore": 2941
     },
     {
       "symbol": "COHR",
@@ -213,6 +213,19 @@
       "sentimentScore": 2177
     },
     {
+      "symbol": "MSFT",
+      "aliases": [],
+      "marketSymbol": "MSFT",
+      "mentions": 296,
+      "bull": 88,
+      "bear": 3,
+      "neutral": 205,
+      "materiality": 83,
+      "latest": "2026-06-01T01:05:01.000Z",
+      "dominantTheme": "ai-infrastructure",
+      "sentimentScore": 2138
+    },
+    {
       "symbol": "GOOGL",
       "aliases": [
         "GOOG"
@@ -225,19 +238,6 @@
       "materiality": 88,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 2117
-    },
-    {
-      "symbol": "MSFT",
-      "aliases": [],
-      "marketSymbol": "MSFT",
-      "mentions": 294,
-      "bull": 87,
-      "bear": 3,
-      "neutral": 204,
-      "materiality": 83,
-      "latest": "2026-06-01T01:05:01.000Z",
-      "dominantTheme": "ai-infrastructure",
       "sentimentScore": 2117
     },
     {
@@ -283,27 +283,27 @@
       "symbol": "META",
       "aliases": [],
       "marketSymbol": "META",
-      "mentions": 253,
+      "mentions": 254,
       "bull": 85,
       "bear": 5,
-      "neutral": 163,
+      "neutral": 164,
       "materiality": 79,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1910
+      "sentimentScore": 1913
     },
     {
       "symbol": "CIFR",
       "aliases": [],
       "marketSymbol": "CIFR",
-      "mentions": 209,
+      "mentions": 210,
       "bull": 79,
       "bear": 4,
-      "neutral": 126,
+      "neutral": 127,
       "materiality": 83,
       "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 1717
+      "sentimentScore": 1720
     },
     {
       "symbol": "HOOD",
@@ -325,14 +325,14 @@
         "LPKFF"
       ],
       "marketSymbol": "LPK.DE",
-      "mentions": 151,
-      "bull": 80,
+      "mentions": 152,
+      "bull": 82,
       "bear": 2,
-      "neutral": 69,
+      "neutral": 68,
       "materiality": 87,
       "latest": "2026-06-01T14:33:55.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1603
+      "sentimentScore": 1636
     },
     {
       "symbol": "POET",
@@ -364,14 +364,14 @@
       "symbol": "CRWV",
       "aliases": [],
       "marketSymbol": "CRWV",
-      "mentions": 203,
+      "mentions": 204,
       "bull": 73,
       "bear": 5,
-      "neutral": 125,
+      "neutral": 126,
       "materiality": 82,
       "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 1582
+      "sentimentScore": 1585
     },
     {
       "symbol": "AVGO",
@@ -442,14 +442,14 @@
       "symbol": "RDDT",
       "aliases": [],
       "marketSymbol": "RDDT",
-      "mentions": 162,
+      "mentions": 163,
       "bull": 63,
       "bear": 1,
-      "neutral": 98,
+      "neutral": 99,
       "materiality": 74,
       "latest": "2026-04-29T21:40:20.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1431
+      "sentimentScore": 1434
     },
     {
       "symbol": "TSEM",
@@ -516,7 +516,7 @@
       "bull": 53,
       "bear": 4,
       "neutral": 57,
-      "materiality": 74,
+      "materiality": 75,
       "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 1046
@@ -538,14 +538,14 @@
       "symbol": "ORCL",
       "aliases": [],
       "marketSymbol": "ORCL",
-      "mentions": 123,
+      "mentions": 124,
       "bull": 41,
       "bear": 2,
-      "neutral": 80,
+      "neutral": 81,
       "materiality": 82,
       "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 937
+      "sentimentScore": 940
     },
     {
       "symbol": "CRDO",
@@ -594,7 +594,7 @@
       "bull": 37,
       "bear": 2,
       "neutral": 55,
-      "materiality": 70,
+      "materiality": 71,
       "latest": "2026-05-12T10:09:16.000Z",
       "dominantTheme": "general",
       "sentimentScore": 787
@@ -626,6 +626,19 @@
       "sentimentScore": 774
     },
     {
+      "symbol": "WULF",
+      "aliases": [],
+      "marketSymbol": "WULF",
+      "mentions": 96,
+      "bull": 35,
+      "bear": 3,
+      "neutral": 58,
+      "materiality": 83,
+      "latest": "2026-06-15T22:07:05.000Z",
+      "dominantTheme": "neocloud",
+      "sentimentScore": 747
+    },
+    {
       "symbol": "ALAB",
       "aliases": [],
       "marketSymbol": "ALAB",
@@ -633,23 +646,10 @@
       "bull": 34,
       "bear": 0,
       "neutral": 45,
-      "materiality": 84,
+      "materiality": 85,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 747
-    },
-    {
-      "symbol": "WULF",
-      "aliases": [],
-      "marketSymbol": "WULF",
-      "mentions": 95,
-      "bull": 35,
-      "bear": 3,
-      "neutral": 57,
-      "materiality": 83,
-      "latest": "2026-06-15T22:07:05.000Z",
-      "dominantTheme": "neocloud",
-      "sentimentScore": 744
     },
     {
       "symbol": "SMCI",
@@ -811,14 +811,14 @@
       "symbol": "WYFI",
       "aliases": [],
       "marketSymbol": "WYFI",
-      "mentions": 54,
+      "mentions": 55,
       "bull": 27,
       "bear": 2,
-      "neutral": 25,
-      "materiality": 86,
+      "neutral": 26,
+      "materiality": 87,
       "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 517
+      "sentimentScore": 520
     },
     {
       "symbol": "TRT",
@@ -1146,6 +1146,19 @@
       "sentimentScore": 322
     },
     {
+      "symbol": "SLNH",
+      "aliases": [],
+      "marketSymbol": "SLNH",
+      "mentions": 41,
+      "bull": 19,
+      "bear": 3,
+      "neutral": 19,
+      "materiality": 88,
+      "latest": "2026-05-19T14:36:19.000Z",
+      "dominantTheme": "capital-structure-veto",
+      "sentimentScore": 321
+    },
+    {
       "symbol": "ASML",
       "aliases": [],
       "marketSymbol": "ASML",
@@ -1153,23 +1166,10 @@
       "bull": 14,
       "bear": 0,
       "neutral": 22,
-      "materiality": 81,
+      "materiality": 82,
       "latest": "2026-05-17T01:28:37.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 320
-    },
-    {
-      "symbol": "SLNH",
-      "aliases": [],
-      "marketSymbol": "SLNH",
-      "mentions": 40,
-      "bull": 19,
-      "bear": 3,
-      "neutral": 18,
-      "materiality": 88,
-      "latest": "2026-05-19T14:36:19.000Z",
-      "dominantTheme": "capital-structure-veto",
-      "sentimentScore": 318
     },
     {
       "symbol": "TE",
@@ -1244,7 +1244,7 @@
       "bull": 15,
       "bear": 0,
       "neutral": 10,
-      "materiality": 87,
+      "materiality": 88,
       "latest": "2026-04-24T15:55:06.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 307
@@ -1387,7 +1387,7 @@
       "bull": 15,
       "bear": 1,
       "neutral": 2,
-      "materiality": 80,
+      "materiality": 81,
       "latest": "2026-04-25T21:42:54.000Z",
       "dominantTheme": "general",
       "sentimentScore": 254
@@ -1510,6 +1510,19 @@
       "sentimentScore": 242
     },
     {
+      "symbol": "CLSK",
+      "aliases": [],
+      "marketSymbol": "CLSK",
+      "mentions": 25,
+      "bull": 12,
+      "bear": 1,
+      "neutral": 12,
+      "materiality": 88,
+      "latest": "2026-05-19T14:36:19.000Z",
+      "dominantTheme": "neocloud",
+      "sentimentScore": 239
+    },
+    {
       "symbol": "BULL",
       "aliases": [],
       "marketSymbol": "BULL",
@@ -1549,19 +1562,6 @@
       "sentimentScore": 237
     },
     {
-      "symbol": "CLSK",
-      "aliases": [],
-      "marketSymbol": "CLSK",
-      "mentions": 24,
-      "bull": 12,
-      "bear": 1,
-      "neutral": 11,
-      "materiality": 88,
-      "latest": "2026-05-19T14:36:19.000Z",
-      "dominantTheme": "neocloud",
-      "sentimentScore": 236
-    },
-    {
       "symbol": "BTC",
       "aliases": [],
       "marketSymbol": "BTC",
@@ -1599,6 +1599,19 @@
       "latest": "2026-05-01T06:02:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 231
+    },
+    {
+      "symbol": "VECO",
+      "aliases": [],
+      "marketSymbol": "VECO",
+      "mentions": 26,
+      "bull": 10,
+      "bear": 0,
+      "neutral": 16,
+      "materiality": 87,
+      "latest": "2026-05-13T04:06:41.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 228
     },
     {
       "symbol": "RGTI",
@@ -1666,19 +1679,6 @@
       "sentimentScore": 213
     },
     {
-      "symbol": "VECO",
-      "aliases": [],
-      "marketSymbol": "VECO",
-      "mentions": 25,
-      "bull": 9,
-      "bear": 0,
-      "neutral": 16,
-      "materiality": 86,
-      "latest": "2026-05-13T04:06:41.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 210
-    },
-    {
       "symbol": "SOFI",
       "aliases": [],
       "marketSymbol": "SOFI",
@@ -1705,6 +1705,19 @@
       "sentimentScore": 205
     },
     {
+      "symbol": "APLD",
+      "aliases": [],
+      "marketSymbol": "APLD",
+      "mentions": 33,
+      "bull": 7,
+      "bear": 0,
+      "neutral": 26,
+      "materiality": 86,
+      "latest": "2026-04-29T10:37:41.000Z",
+      "dominantTheme": "neocloud",
+      "sentimentScore": 204
+    },
+    {
       "symbol": "INFQ",
       "aliases": [],
       "marketSymbol": "INFQ",
@@ -1716,19 +1729,6 @@
       "latest": "2026-06-01T17:22:45.000Z",
       "dominantTheme": "general",
       "sentimentScore": 204
-    },
-    {
-      "symbol": "APLD",
-      "aliases": [],
-      "marketSymbol": "APLD",
-      "mentions": 32,
-      "bull": 7,
-      "bear": 0,
-      "neutral": 25,
-      "materiality": 86,
-      "latest": "2026-04-29T10:37:41.000Z",
-      "dominantTheme": "neocloud",
-      "sentimentScore": 201
     },
     {
       "symbol": "GME",
@@ -1855,7 +1855,7 @@
       "bull": 10,
       "bear": 0,
       "neutral": 2,
-      "materiality": 88,
+      "materiality": 89,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 189
@@ -1926,6 +1926,19 @@
       "sentimentScore": 186
     },
     {
+      "symbol": "BITF",
+      "aliases": [],
+      "marketSymbol": "BITF",
+      "mentions": 25,
+      "bull": 9,
+      "bear": 1,
+      "neutral": 15,
+      "materiality": 85,
+      "latest": "2025-10-19T18:21:35.000Z",
+      "dominantTheme": "neocloud",
+      "sentimentScore": 185
+    },
+    {
       "symbol": "SOXX",
       "aliases": [],
       "marketSymbol": "SOXX",
@@ -1950,19 +1963,6 @@
       "latest": "2026-02-02T04:49:49.000Z",
       "dominantTheme": "general",
       "sentimentScore": 183
-    },
-    {
-      "symbol": "BITF",
-      "aliases": [],
-      "marketSymbol": "BITF",
-      "mentions": 24,
-      "bull": 9,
-      "bear": 1,
-      "neutral": 14,
-      "materiality": 85,
-      "latest": "2025-10-19T18:21:35.000Z",
-      "dominantTheme": "neocloud",
-      "sentimentScore": 182
     },
     {
       "symbol": "IPWR",
@@ -2186,6 +2186,19 @@
       "sentimentScore": 150
     },
     {
+      "symbol": "AIXA",
+      "aliases": [],
+      "marketSymbol": "AIXA",
+      "mentions": 19,
+      "bull": 6,
+      "bear": 0,
+      "neutral": 13,
+      "materiality": 85,
+      "latest": "2026-06-19T13:29:30.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 147
+    },
+    {
       "symbol": "SLOIF",
       "aliases": [],
       "marketSymbol": "SLOIF",
@@ -2206,7 +2219,7 @@
       "bull": 10,
       "bear": 3,
       "neutral": 8,
-      "materiality": 88,
+      "materiality": 89,
       "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "ai-infrastructure",
       "sentimentScore": 144
@@ -2349,7 +2362,7 @@
       "bull": 9,
       "bear": 3,
       "neutral": 12,
-      "materiality": 79,
+      "materiality": 80,
       "latest": "2026-06-16T02:23:29.000Z",
       "dominantTheme": "general",
       "sentimentScore": 135
@@ -2362,7 +2375,7 @@
       "bull": 6,
       "bear": 0,
       "neutral": 7,
-      "materiality": 86,
+      "materiality": 87,
       "latest": "2026-06-15T22:07:05.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 135
@@ -2375,7 +2388,7 @@
       "bull": 7,
       "bear": 0,
       "neutral": 2,
-      "materiality": 86,
+      "materiality": 87,
       "latest": "2026-05-06T20:40:43.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 135
@@ -2440,7 +2453,7 @@
       "bull": 6,
       "bear": 0,
       "neutral": 8,
-      "materiality": 85,
+      "materiality": 86,
       "latest": "2026-04-29T21:40:20.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 132
@@ -2470,19 +2483,6 @@
       "latest": "2026-06-15T22:05:16.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 130
-    },
-    {
-      "symbol": "AIXA",
-      "aliases": [],
-      "marketSymbol": "AIXA",
-      "mentions": 18,
-      "bull": 5,
-      "bear": 0,
-      "neutral": 13,
-      "materiality": 83,
-      "latest": "2026-04-23T00:29:10.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 129
     },
     {
       "symbol": "FOCI",
@@ -2843,8 +2843,8 @@
       "bull": 6,
       "bear": 1,
       "neutral": 5,
-      "materiality": 78,
-      "latest": "2026-01-16T00:00:00.000Z",
+      "materiality": 79,
+      "latest": "2026-01-16T07:57:59.000Z",
       "dominantTheme": "robotics-physical-ai",
       "sentimentScore": 101
     },
@@ -5047,7 +5047,7 @@
     },
     {
       "id": "2066535221554733278",
-      "date": "2026-06-15T18:43:06.000Z",
+      "date": "2026-06-15T14:56:05.000Z",
       "title": "Just as a recap, these were all my core European longs: 1. $SIVE 2. $LPK 3. $SOI 4. $RPI 5. $IQE 6. $ALRIB 7. $XFAB Sivers: As you know by now, core laser chokepoint over next gene",
       "body": "Just as a recap, these were all my core European longs:\n\n1. $SIVE\n2. $LPK\n3. $SOI\n4. $RPI \n5. $IQE\n6. $ALRIB\n7. $XFAB\n\nSivers: As you know by now, core laser chokepoint over next generation photonics, from 1.6T pluggables to CPO.\n\nEmbedded in many hyperscaler suppliers from Jabil to Ayar. Should go brrr 2027 but markets are forward looking, so ramps + qualifications should get priced in now. \n\nLPK Laser - Glass core substrate \"monopoly\" with LIDE. \n\n\"More than 80% of major global players have selected our equipment for process validation, learning and scaling to mass production\"\n\nSoitec - Silicon photonics SoI substrate pure monopoly while coming out of legacy drag segments.  \n\nRaspberry Pi - Was my fun idea around Raspberry Pis being used for AI hardware deployments. \n\nPreviously this thing was mainly educational or hobby boards, but now used for edge/local AI. Just thought revenue increase would be extremely material and it played out well. \n\nIQE - Critical epiwafer player for your Western photonics like Macom, Tower, Lumentum, and others. \n\nWas kinda going under, but thought their latent capacity relative to Landmark was undervalued. \n\nAlso given how important it was, I thought that your downstream players + Govs wouldn't let it go under, so it was more of a moonshot idea earlier in the year. \n\nLot more derisked now, very important.\n\nRiber - Kinda monopoly in the MBE space, exposure to Quantum / quantum dot + silicon photonics. \n\nFound out from OSINT help from a friend latentvalue that Microsoft Quantum was buying their machines, so this was direct hyperscaler validation + kinda de-risked at current MCs.\n\nXFab - SiC foundry backed by EU/US CHIPS Act with power semi upside. (152% Y/Y growth for their sic vertical). \n\nMain growth was their silicon photonics foundry past 2027 that's getting evaled by nvidia. And that they're leading Europe's value chain efforts in photonics, kinda like an early tower semi. \n\nWe'll see how this plays out, thought power semi exposure + low P/B would derisk the company until they scale their photbunchonics efforts. \n\nFrom my own personal thoughts:\n\nOut of the  maybe $SOI has already been re-rated the most? But I'm holding anyway. \n\n$LPK and $ALRIB I think are still undervalued despite their monopolies. \n\n$RPI is just kinda seeing how things go at this point, would be hilarious if they ended up like a mini nvidia for low end edge ai. \n\n$IQE probably has a long way to go given new tower long term agreement, alongside macom. And if they convert latent capacity, I still think it has a chance of rerating like landmark. \n\n$XFAB idk if im missing something or are markets missing something. you have nvidia as a direct eval of their silicon photonics foundry, and it's trading below replacement P/B. i think im right though. \n\n$SIVE I see has the highest upside out of all of them given laser company ability to vertically integrate, acquire companies downstream to make their lasers more valuable, etc. Just like coherent/lumentum. \n\nThere's like 1-2 more random ones that aren't really material, but just in general.\n\nThese are the ones I've liked the most.",
       "symbols": [
@@ -5095,9 +5095,9 @@
     },
     {
       "id": "2013895541277762034",
-      "date": "2026-01-21T08:44:48.000Z",
-      "title": "$VPG is one of the least known robotic supply chain stocks. ",
-      "body": "$VPG is one of the least known robotic supply chain stocks.\n\nHowever, it's likely the single best asymmetrical exposure to robotics Humanoid ramp for\n\n- $TSLA Optimus\n\n~ Figure AI\n\nas this $580m company makes:\n\nest. ~3-9% BOM cost of every humanoid.\n\n$8.5B revenue may come from $TSLA alone ($850 midpoint * 10M) every year if Elon hits his 10M Giga Texas production target in 2027.\n\nThis is based on $VPG CEO's quote on value capture of $500–$1,200 per robot ($850 midpoint) and Elon's ambitious projections on production targets.\n\nAgain this math is extremely speculative, but Elon quotes $20-30k/humanoid at scale and you can derive an est. ~3%-9%+ of BOM from each Tesla Robot produced (if this does ever happen) for $VPG.\n\nIf you consider Elon Musk saying \"About 80% of Tesla's Value Could Eventually Come From Optimus Robots\": This looks like great exposure for robotics ramp for such a small company that's critical in the robotics supply chain.\n\nWhat I believe markets also missed is factoring in low end corporate margins to for blended margin estimates: ~40%\n\nHowever, the humanoid-specific gross margin at scale is projected to be 50% to 55% (and with current robotics ramp, blended margins would likely increase significantly).\n\nTheir integrated actuator/sensor Modules (sensor + housing + electronics) is likely directly tethered to humanoid exposure, (measurement systems segment which houses these complex assemblies), which the CEO said on their earnings call achieves margins of \"55% or so\".\n\nIn a bull case scenario where Elon hits his 10M humanoid projections in 2028 (single customer, not including Figure, OpenAI, or other potential customers)\n\n55% margin off $8.5B revenue at :\n\n- 20x P/E would be $47.6 Billion\n-30x P/E $83.3 Billion\n\nfrom $580m MC.\n\nIt sounds stupid, but when I look at $SMCI pre-server rack rally ($3 -> $113) or $SNDK's rally ($30 -> $453), it looks possible.\n\nAgain this is speculative best case possible scenario, but the operating leverage is the real story here.\n\nSo I think it's likely for this small $580m company to be strongly re-rated if the stars align for robotics ramp.\n\nNow downside risk:\n\n- The other humanoid provider is likely to be Figure due to timeline mapping. But this is not confirmed. (not taking credit for either mapping research, they were done by other analysts). These figures are hypothetical modeling based on third-party estimates like Citron, gross margins might be compressed if there's competitors or revenue ramp might not play out.\n\n- $TSLA has likely been using $VPG since 2022 and is starting to ramp up. There is always a risk they figure out the patented technology/materials in-house and drop a customer. This bull-case scenario is tethered to Tesla Optimus ramp and there's always a risk they get dropped that markets might price in.\n\n- Again this is a humanoid scale play. If Elon's projections are too ambitious and face delays, this might be stagnant like 2025 (which was still ~85% return).\n\nBut TLDR:\n\nMy opinion was that institutional analysts like Citron were way too early.\n\nHowever, given OpenAI's push into robotics last week:\n\nI believe 2026 to be the inflection point for robotics and $VPG likely captures the best exposure to Tesla and Humanoid robotics ramp.\n\nEspecially when a small company likely has high % BOM cost of each robot deployed and high gross margins:\n\nI've taken long positions to see where this ends up. Of course DYOR on this, I just wanted to share how I came to develop my own conviction on this long.",
+      "date": "Tue, 03 Feb 2026 21:39:28 +0000",
+      "title": "Vishay Precision Group Inc (VPG)",
+      "body": "@aleabitoreddit presents a bullish, high-conviction thesis on Vishay Precision Group as a leveraged supplier to the emerging humanoid robotics supply chain, particularly Tesla’s Optimus program. The core argument is that VPG captures a meaningful percentage of bill-of-materials value per robot through integrated actuator and sensor modules, creating significant operating leverage if humanoid production scales. The author models aggressive upside scenarios based on Tesla’s stated production targets and management commentary on per-robot revenue capture, framing the opportunity as asymmetrical given VPG’s small market capitalization. Margins are highlighted as a key inflection, with humanoid-specific gross margins potentially exceeding the corporate average. Risks include customer concentration, speculative assumptions around production volumes, and the possibility of Tesla insourcing critical components. Overall, the pitch is a long-duration bet on a robotics adoption inflection rather than near-term earnings visibility. BSD Analysis: Vishay Precision Group occupies a niche but defensible position in precision measurement and sensing, where reliability, materials science, and manufacturing know-how create barriers to entry. If humanoid robotics transitions from prototyping to scaled production, suppliers with embedded components and qualification history could see nonlinear revenue and margin expansion. That said, the investment case hinges on external execution by OEMs rather than VPG alone, making timing and customer concentration the primary risks. Large customers like Tesla possess bargaining power and may seek dual sourcing or internal alternatives over time. From a buy-side perspective, the stock should be underwritten as a call option on humanoid scale-up layered on top of a stable industrial base business. Evidence of recurring robotics revenue, backlog disclosure, or segment margin expansion would be required to justify a sustained multiple re-rating. Actual Post Content: $VPG is one of the least known robotic supply chain stocks. However, it’s likely the single best asymmetrical exposure to robotics Humanoid ramp for $TSLA Optimus Figure AI as this $580m company makes est. 3-9% BOM cost of every humanoid. $8.5B revenue may come from $TSLA alone every year if Elon hits his 10M Giga Texas production target in 2027. This is based on $VPG CEO’s quote on value capture of $500 to $1,200 per robot and Elon’s ambitious projections on production targets. Again this math is extremely speculative, but Elon quotes $20-30k per humanoid at scale and you can derive an estimated 3-9 percent of BOM from each Tesla Robot produced for $VPG. If you consider Elon Musk saying About 80 percent of Tesla’s value could eventually come from Optimus Robots this looks like great exposure for robotics ramp for such a small company that’s critical in the robotics supply chain. What I believe markets also missed is factoring in low end corporate margins to for blended margin estimates around 40 percent. However the humanoid specific gross margin at scale is projected to be 50 to 55 percent and with current robotics ramp blended margins would likely increase significantly. Their integrated actuator and sensor modules which sit in the measurement systems segment achieve margins of around 55 percent per the CEO. In a bull case scenario where Elon hits his 10M humanoid projections in 2028 55 percent margin off $8.5B revenue at 20x P/E would be $47.6B and at 30x P/E would be $83.3B from a $580m market cap. This is speculative but the operating leverage is the real story. Downside risks include reliance on Tesla Optimus ramp, potential competition from Figure, margin compression, or Tesla internalizing the technology. However given OpenAI’s push into robotics I believe 2026 is the inflection point for robotics and $VPG likely captures the best exposure to Tesla and humanoid robotics ramp. I’ve taken long positions to see where this ends up. This is my actual main robotics sector exposure going forward tethered to Tesla Optimus. URL: https://x.com/aleabitoreddit/status/2013895541277762034 The post Vishay Precision Group Inc (VPG) – Serenity appeared first on Buyside Digest .",
       "symbols": [
         "VPG",
         "TSLA",
@@ -5600,17 +5600,17 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-20T07:12:41.788Z",
+    "staticUpdatedAt": "2026-06-20T11:24:57.234Z",
     "latestCaptured": {
-      "id": "2068182306100330848",
-      "date": "2026-06-20T04:01:01.000Z",
-      "title": "Yep will look into Mirae soon. ",
-      "body": "Yep will look into Mirae soon. Forgot to add in:\n\nDaeduck: ~28–30% of 353200, underlying assets ~3.8x of MC. FC-BGA and MLB related, also KR. \n\nDB, ~3.7x of underlying assets (DB HiTek), also KR. Foundry related. \n\nHyosung, ~3.6x underlying assets, transformers. Also KR. \n\nProbably not a good idea to go long on Korean governance lol.",
+      "id": "2068275360735822088",
+      "date": "2026-06-20T10:10:47.000Z",
+      "title": "The goal was never to make money! ",
+      "body": "The goal was never to make money! Just sharing ideas for free to the people who care.\n\nI’m just grateful this came as a byproduct of doing that. \n\nSame with subscribers, I set it to the bare minimum amount just so my random thoughts didn’t spam the main timeline, and didn’t expect this amount of people to subscribe.",
       "symbols": [],
-      "theme": "power-architecture",
-      "materiality": 66,
-      "sentiment": "bull",
-      "url": "https://x.com/aleabitoreddit/status/2068182306100330848"
+      "theme": "general",
+      "materiality": 46,
+      "sentiment": "neutral",
+      "url": "https://x.com/aleabitoreddit/status/2068275360735822088"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
