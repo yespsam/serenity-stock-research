@@ -394,7 +394,7 @@ const BEGINNER_PRICE_ALERTS_KEY = "serenityPriceAlerts";
 const PRICE_ALERT_QUOTE_MS = 30_000;
 const BINANCE_WALLET_REFERRAL_URL = "https://web3.binance.com/referral?ref=DB7KNQGJ";
 const BSTOCK_API_PATH = "/api/binance-bstocks";
-const APP_SHELL_VERSION = "v15";
+const APP_SHELL_VERSION = "v16";
 const BSTOCK_SYMBOLS = [
   {
     symbol: "NVDAB",

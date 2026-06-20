@@ -1,4 +1,4 @@
-const CACHE_NAME = "serenity-shell-v15";
+const CACHE_NAME = "serenity-shell-v16";
 const BASE_PATH = new URL(self.registration.scope).pathname.replace(/\/$/, "");
 const shellPath = (path) => `${BASE_PATH}${path}`;
 const SHELL_ASSETS = [

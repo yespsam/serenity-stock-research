@@ -4543,3 +4543,65 @@ option {
   -webkit-text-fill-color: #fff !important;
   caret-color: #fff;
 }
+
+.web-push-banner,
+.web-push-controls,
+.monitor-health,
+.health-head,
+.health-grid span,
+.push-live-metrics span,
+.push-control-actions span,
+.push-watch-form,
+.push-preset-row,
+.live-pack-pending,
+.live-research-pack,
+.live-review-pack,
+.live-review-list span,
+.live-frame,
+.live-rank-card,
+.live-rank-detail span,
+.live-review-checks small,
+.tweet-translation,
+.translation-grid article {
+  border-color: rgba(255, 255, 255, 0.14) !important;
+  background: #000 !important;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.web-push-banner *,
+.web-push-controls *,
+.monitor-health *,
+.live-pack-pending *,
+.live-research-pack *,
+.live-review-pack *,
+.tweet-translation * {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.push-live-metrics span,
+.push-control-actions span,
+.live-pack-pending,
+.live-review-list span,
+.live-rank-detail span,
+.translation-grid article {
+  box-shadow: inset 0 0 0 1px rgba(240, 185, 11, 0.12) !important;
+}
+
+.push-live-metrics b,
+.push-live-indicator strong,
+.live-pack-head strong,
+.live-pack-pending b,
+.translation-head strong {
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+.push-control-actions button.active,
+.push-preset-row .watch-chip {
+  border-color: rgba(240, 185, 11, 0.62) !important;
+  background:
+    linear-gradient(135deg, rgba(240, 185, 11, 0.28), rgba(255, 255, 255, 0.04)),
+    #000 !important;
+}
