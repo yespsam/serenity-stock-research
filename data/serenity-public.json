@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-22T02:09:39.885Z",
+  "generatedAt": "2026-06-22T03:10:09.884Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6821,
+    "parsedItems": 6822,
     "commentCount": 51400,
     "profileTweets": 7222,
-    "latestItemDate": "2026-06-22T01:35:14.000Z"
+    "latestItemDate": "2026-06-22T02:14:41.000Z"
   },
   "rules": [
     {
@@ -69,14 +69,14 @@
         "SIVERS"
       ],
       "marketSymbol": "SIVEF",
-      "mentions": 1115,
+      "mentions": 1116,
       "bull": 494,
       "bear": 16,
-      "neutral": 605,
+      "neutral": 606,
       "materiality": 100,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 10373
+      "sentimentScore": 10376
     },
     {
       "symbol": "NBIS",
@@ -2363,7 +2363,7 @@
       "bear": 3,
       "neutral": 12,
       "materiality": 80,
-      "latest": "2026-06-16T02:23:29.000Z",
+      "latest": "2026-06-16T02:20:57.000Z",
       "dominantTheme": "general",
       "sentimentScore": 135
     },
@@ -5600,17 +5600,19 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-22T02:08:16.482Z",
+    "staticUpdatedAt": "2026-06-22T03:09:58.178Z",
     "latestCaptured": {
-      "id": "2068866709667406286",
-      "date": "2026-06-22T01:20:35.000Z",
-      "title": "Wow, 3 limit ups in a row with WUS TW. ",
-      "body": "Wow, 3 limit ups in a row with WUS TW. Pretty sad I didn't take larger positions. \n\nWUS TW is 1 my 2 NAV arbitrage + independent growth trades. \n\nIf you want context: WUS TW is a ~$1.12B PCB player with AI DC growth. \n\nTheir stake in WUS Kunshan is $4.79B (11.4% of 42.04 billion)\n\nSo basically they're a $1.1B PCB player growing independently, sitting on ~$4.79B worth of another company that looks to IPOed on Hong Kong markets soon. \n\nAnd a successful activist investor in Palliser (with Ajinomoto and Toto), is pressuring them to trim some holdings along with a few others. \n\nSeems like a pretty insane disconnect, and I think there's a lot of potential here.",
-      "symbols": [],
+      "id": "2068880324202008964",
+      "date": "2026-06-22T02:14:41.000Z",
+      "title": "I expect Japan to mog Sweden in the World Cup tomorrow. ",
+      "body": "I expect Japan to mog Sweden in the World Cup tomorrow. \n\nProbably another 4-0 after Japan's soccer players saw how Swedish media treated $SIVE.",
+      "symbols": [
+        "SIVEF"
+      ],
       "theme": "general",
-      "materiality": 56,
-      "sentiment": "bull",
-      "url": "https://x.com/aleabitoreddit/status/2068866709667406286"
+      "materiality": 51,
+      "sentiment": "neutral",
+      "url": "https://x.com/aleabitoreddit/status/2068880324202008964"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
