@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-21T11:50:12.683Z",
+  "generatedAt": "2026-06-22T02:09:39.885Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6815,
+    "parsedItems": 6821,
     "commentCount": 51400,
     "profileTweets": 7222,
-    "latestItemDate": "2026-06-21T11:30:47.000Z"
+    "latestItemDate": "2026-06-22T01:35:14.000Z"
   },
   "rules": [
     {
@@ -121,14 +121,14 @@
       "symbol": "NVDA",
       "aliases": [],
       "marketSymbol": "NVDA",
-      "mentions": 527,
+      "mentions": 528,
       "bull": 216,
       "bear": 18,
-      "neutral": 293,
+      "neutral": 294,
       "materiality": 82,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4376
+      "sentimentScore": 4379
     },
     {
       "symbol": "AXTI",
@@ -270,14 +270,14 @@
       "symbol": "TSM",
       "aliases": [],
       "marketSymbol": "TSM",
-      "mentions": 222,
+      "mentions": 223,
       "bull": 88,
       "bear": 2,
-      "neutral": 132,
+      "neutral": 133,
       "materiality": 82,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 1940
+      "sentimentScore": 1943
     },
     {
       "symbol": "META",
@@ -634,7 +634,7 @@
       "bear": 3,
       "neutral": 58,
       "materiality": 83,
-      "latest": "2026-06-11T17:54:35.000Z",
+      "latest": "2026-06-15T22:07:05.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 747
     },
@@ -1484,6 +1484,19 @@
       "sentimentScore": 246
     },
     {
+      "symbol": "SPY",
+      "aliases": [],
+      "marketSymbol": "SPY",
+      "mentions": 29,
+      "bull": 10,
+      "bear": 0,
+      "neutral": 19,
+      "materiality": 70,
+      "latest": "2025-11-23T20:23:27.000Z",
+      "dominantTheme": "general",
+      "sentimentScore": 245
+    },
+    {
       "symbol": "GLXY",
       "aliases": [],
       "marketSymbol": "GLXY",
@@ -1495,19 +1508,6 @@
       "latest": "2026-04-25T16:54:25.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 243
-    },
-    {
-      "symbol": "SPY",
-      "aliases": [],
-      "marketSymbol": "SPY",
-      "mentions": 28,
-      "bull": 10,
-      "bear": 0,
-      "neutral": 18,
-      "materiality": 71,
-      "latest": "2025-11-23T20:23:27.000Z",
-      "dominantTheme": "general",
-      "sentimentScore": 242
     },
     {
       "symbol": "CLSK",
@@ -2376,7 +2376,7 @@
       "bear": 0,
       "neutral": 7,
       "materiality": 87,
-      "latest": "2026-06-11T17:54:35.000Z",
+      "latest": "2026-06-15T22:07:05.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 135
     },
@@ -3737,7 +3737,7 @@
     },
     {
       "id": "2065130589204992048",
-      "date": "2026-06-11T17:54:35.000Z",
+      "date": "2026-06-15T22:07:05.000Z",
       "title": "Anthropic’s first data-center leasing push could benefit neocloud colocation operators",
       "body": "New Anthropic news looks like a potential tailwind for the Neocloud colo sector.\n\nSuch as $WULF, $CIFR, $WYFI, $HUT and others (not named yet). \n\nAs Anthropic is pursuing its first DC leases. \n\n\"The AI company has signed more than a dozen letters of intent with U.S. developers\" per The Information.",
       "symbols": [
@@ -5047,7 +5047,7 @@
     },
     {
       "id": "2066535221554733278",
-      "date": "2026-06-15T18:43:06.000Z",
+      "date": "2026-06-15T14:56:05.000Z",
       "title": "Just as a recap, these were all my core European longs: 1. $SIVE 2. $LPK 3. $SOI 4. $RPI 5. $IQE 6. $ALRIB 7. $XFAB Sivers: As you know by now, core laser chokepoint over next gene",
       "body": "Just as a recap, these were all my core European longs:\n\n1. $SIVE\n2. $LPK\n3. $SOI\n4. $RPI \n5. $IQE\n6. $ALRIB\n7. $XFAB\n\nSivers: As you know by now, core laser chokepoint over next generation photonics, from 1.6T pluggables to CPO.\n\nEmbedded in many hyperscaler suppliers from Jabil to Ayar. Should go brrr 2027 but markets are forward looking, so ramps + qualifications should get priced in now. \n\nLPK Laser - Glass core substrate \"monopoly\" with LIDE. \n\n\"More than 80% of major global players have selected our equipment for process validation, learning and scaling to mass production\"\n\nSoitec - Silicon photonics SoI substrate pure monopoly while coming out of legacy drag segments.  \n\nRaspberry Pi - Was my fun idea around Raspberry Pis being used for AI hardware deployments. \n\nPreviously this thing was mainly educational or hobby boards, but now used for edge/local AI. Just thought revenue increase would be extremely material and it played out well. \n\nIQE - Critical epiwafer player for your Western photonics like Macom, Tower, Lumentum, and others. \n\nWas kinda going under, but thought their latent capacity relative to Landmark was undervalued. \n\nAlso given how important it was, I thought that your downstream players + Govs wouldn't let it go under, so it was more of a moonshot idea earlier in the year. \n\nLot more derisked now, very important.\n\nRiber - Kinda monopoly in the MBE space, exposure to Quantum / quantum dot + silicon photonics. \n\nFound out from OSINT help from a friend latentvalue that Microsoft Quantum was buying their machines, so this was direct hyperscaler validation + kinda de-risked at current MCs.\n\nXFab - SiC foundry backed by EU/US CHIPS Act with power semi upside. (152% Y/Y growth for their sic vertical). \n\nMain growth was their silicon photonics foundry past 2027 that's getting evaled by nvidia. And that they're leading Europe's value chain efforts in photonics, kinda like an early tower semi. \n\nWe'll see how this plays out, thought power semi exposure + low P/B would derisk the company until they scale their photbunchonics efforts. \n\nFrom my own personal thoughts:\n\nOut of the  maybe $SOI has already been re-rated the most? But I'm holding anyway. \n\n$LPK and $ALRIB I think are still undervalued despite their monopolies. \n\n$RPI is just kinda seeing how things go at this point, would be hilarious if they ended up like a mini nvidia for low end edge ai. \n\n$IQE probably has a long way to go given new tower long term agreement, alongside macom. And if they convert latent capacity, I still think it has a chance of rerating like landmark. \n\n$XFAB idk if im missing something or are markets missing something. you have nvidia as a direct eval of their silicon photonics foundry, and it's trading below replacement P/B. i think im right though. \n\n$SIVE I see has the highest upside out of all of them given laser company ability to vertically integrate, acquire companies downstream to make their lasers more valuable, etc. Just like coherent/lumentum. \n\nThere's like 1-2 more random ones that aren't really material, but just in general.\n\nThese are the ones I've liked the most.",
       "symbols": [
@@ -5094,21 +5094,20 @@
       "url": "https://x.com/aleabitoreddit/status/2053205192980721797"
     },
     {
-      "id": "2008910857003221451",
-      "date": "Tue, 03 Feb 2026 20:30:01 +0000",
-      "title": "One Stop Systems, Inc. (OSS)",
-      "body": "@aleabitoreddit argues that One Stop Systems is a deeply misunderstood small-cap defense contractor that the market is still treating like a low-margin commodity hardware vendor. The core thesis is that OSS has become a pure-play defense and military AI company following the sale of its lower-margin distribution business, revealing true gross margins near 45%. The catalyst is real-world combat validation, with OSS hardware reportedly used in U.S. military operations involving maritime drones, surveillance aircraft, and special operations. The author highlights OSS’s role in edge AI systems supporting drone swarms, unmanned surface vessels, and classified naval operations, positioning it as critical infrastructure rather than optional tech. Financially, the company is framed as low-risk on the downside due to a large cash balance relative to market cap and a demand backlog exceeding supply. Valuation upside comes from a potential re-rating as investors recognize OSS as a high-margin defense AI contractor rather than a reseller. Risks include reliance on defense procurement cycles, execution at small scale, and uncertainty around contract timing despite strong demand signals. BSD Analysis: OSS sits in an increasingly strategic niche at the intersection of defense electronics, edge computing, and autonomous systems, where reliability, ruggedization, and form factor matter more than raw compute specs. If OSS truly maintains 40%+ gross margins on proprietary defense platforms, it would place the company closer to specialized defense primes than to commercial server vendors. Combat validation, if sustained, can materially shorten sales cycles and raise switching costs within classified and NATO-aligned programs. However, OSS remains a subscale contractor, and earnings power will depend on its ability to convert backlog into repeatable, programmatic revenue rather than episodic urgent orders. Competitive risk exists from larger defense integrators vertically integrating edge compute capabilities or pressuring pricing over time. The valuation case hinges on whether OSS can demonstrate operating leverage and recurring program wins that justify a defense-tech multiple rather than a hardware multiple. Investors should monitor customer concentration, margin durability, and evidence of long-term contracts to confirm that this is a platform business and not a one-off surge. Actual Post Content: I’ve initiated a position in $OSS. I usually never say this but, this one is exciting. Markets completely missed this 155M MC Drone Swarm, Ghost Fleet, USVs, Edge AI deploying US DoD contractor. And they especially missed OSS’s involvement in the Venezuela’s invasion, that gave premiums to $AVAV and others. This looks like an unholy long to me: $41M cash (pro forma ets.) / $155M MC (low downside risk). Pure play Kinetic Defense 1 : 2.4x supply/demand. (backlogged from high demand) 45% gross margins. The main interest was Venezuela as proof they’re actively being used in the US military: $OSS P-8 Poseidon in Venezuela: Flight tracking data confirmed that P-8A Poseidon aircraft from Patrol Squadron 40 (VP-40) were off the coast of Venezuela during the raid to monitor Venezuelan naval movements. OSS Link: On July 1 2025, OSS announced a $5M urgent order specifically to deliver 61 Rugged Data Units for the P-8A Poseidon. SOCOM Capture Team: The raid to capture leadership was executed by US Special Operations Command (USSOCOM), specifically using maritime insertion teams (likely SEALs/SWCC) and the 160th SOAR (helicopters). OSS Link: On May 29, 2025, OSS signed a (CRADA) directly with USSOCOM to build edge computers for Maritime Environments. OSS built the battle-tracking servers for the stealth boats used to slip into the Venezuelan coast. Ghost Fleet Blockade: Operation Southern Spear is currently using unmanned surface vessels (drone boats) to block oil tankers. OSS Link: The Navy’s Task Force 59 (and the newer 4th Fleet equivalent) uses the $OSS Rigel Edge Supercomputer for these drones because it is one of the few AI servers small enough to fit on a 40-foot robot boat. This is literally combat validation in Venezuela. Of a small $155M stock. Before everyone treated this company as a commodity like $SMCI (myself included), but I completely missed that their defense vertical (which is pure-play now after the Bressner sale) has 45.6% gross margins. Only after I looked into it again after did I realize their other division was completely messing up margin calculations because of blended margins (from just re-selling defense gear). So now we have a ~45% margins, AI military contractor valued at $155M business with $41m cash, with demand outstripping supply 2.4 to 1. I did an analysis later last year, which looked like $OSS was a supplier for Andruil or $PLTR, and was beginning their ramp up. Looking at it again post-sale, the 45% margin puts them into extremely stellar territory compared to eg. Lockheed Martin, 12-14% or commodity sellers eg. $SMCI, $DELL 8-14%. This is a specialized war-validated defense AI pure-play for drone swarms, ghost fleets, USVs, and others, with extremely high margins, at $155M MC. I’ve found this to be an exciting re-discovery, so I’ve taken a position. URL: https://x.com/aleabitoreddit/status/2008910857003221451 The post One Stop Systems, Inc. (OSS) – Serenity appeared first on Buyside Digest .",
+      "id": "2013895541277762034",
+      "date": "2026-01-21T08:44:48.000Z",
+      "title": "$VPG is one of the least known robotic supply chain stocks. ",
+      "body": "$VPG is one of the least known robotic supply chain stocks.\n\nHowever, it's likely the single best asymmetrical exposure to robotics Humanoid ramp for\n\n- $TSLA Optimus\n\n~ Figure AI\n\nas this $580m company makes:\n\nest. ~3-9% BOM cost of every humanoid.\n\n$8.5B revenue may come from $TSLA alone ($850 midpoint * 10M) every year if Elon hits his 10M Giga Texas production target in 2027.\n\nThis is based on $VPG CEO's quote on value capture of $500–$1,200 per robot ($850 midpoint) and Elon's ambitious projections on production targets.\n\nAgain this math is extremely speculative, but Elon quotes $20-30k/humanoid at scale and you can derive an est. ~3%-9%+ of BOM from each Tesla Robot produced (if this does ever happen) for $VPG.\n\nIf you consider Elon Musk saying \"About 80% of Tesla's Value Could Eventually Come From Optimus Robots\": This looks like great exposure for robotics ramp for such a small company that's critical in the robotics supply chain.\n\nWhat I believe markets also missed is factoring in low end corporate margins to for blended margin estimates: ~40%\n\nHowever, the humanoid-specific gross margin at scale is projected to be 50% to 55% (and with current robotics ramp, blended margins would likely increase significantly).\n\nTheir integrated actuator/sensor Modules (sensor + housing + electronics) is likely directly tethered to humanoid exposure, (measurement systems segment which houses these complex assemblies), which the CEO said on their earnings call achieves margins of \"55% or so\".\n\nIn a bull case scenario where Elon hits his 10M humanoid projections in 2028 (single customer, not including Figure, OpenAI, or other potential customers)\n\n55% margin off $8.5B revenue at :\n\n- 20x P/E would be $47.6 Billion\n-30x P/E $83.3 Billion\n\nfrom $580m MC.\n\nIt sounds stupid, but when I look at $SMCI pre-server rack rally ($3 -> $113) or $SNDK's rally ($30 -> $453), it looks possible.\n\nAgain this is speculative best case possible scenario, but the operating leverage is the real story here.\n\nSo I think it's likely for this small $580m company to be strongly re-rated if the stars align for robotics ramp.\n\nNow downside risk:\n\n- The other humanoid provider is likely to be Figure due to timeline mapping. But this is not confirmed. (not taking credit for either mapping research, they were done by other analysts). These figures are hypothetical modeling based on third-party estimates like Citron, gross margins might be compressed if there's competitors or revenue ramp might not play out.\n\n- $TSLA has likely been using $VPG since 2022 and is starting to ramp up. There is always a risk they figure out the patented technology/materials in-house and drop a customer. This bull-case scenario is tethered to Tesla Optimus ramp and there's always a risk they get dropped that markets might price in.\n\n- Again this is a humanoid scale play. If Elon's projections are too ambitious and face delays, this might be stagnant like 2025 (which was still ~85% return).\n\nBut TLDR:\n\nMy opinion was that institutional analysts like Citron were way too early.\n\nHowever, given OpenAI's push into robotics last week:\n\nI believe 2026 to be the inflection point for robotics and $VPG likely captures the best exposure to Tesla and Humanoid robotics ramp.\n\nEspecially when a small company likely has high % BOM cost of each robot deployed and high gross margins:\n\nI've taken long positions to see where this ends up. Of course DYOR on this, I just wanted to share how I came to develop my own conviction on this long.",
       "symbols": [
-        "OSS",
-        "AVAV",
+        "VPG",
+        "TSLA",
         "SMCI",
-        "PLTR",
-        "DELL"
+        "SNDK"
       ],
-      "theme": "ai-infrastructure",
+      "theme": "robotics-physical-ai",
       "materiality": 100,
       "sentiment": "bull",
-      "url": "https://x.com/aleabitoreddit/status/2008910857003221451"
+      "url": "https://x.com/aleabitoreddit/status/2013895541277762034"
     },
     {
       "id": "2054868760629272850",
@@ -5601,20 +5600,17 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-21T11:49:40.780Z",
+    "staticUpdatedAt": "2026-06-22T02:08:16.482Z",
     "latestCaptured": {
-      "id": "2068654378198925505",
-      "date": "2026-06-21T11:16:52.000Z",
-      "title": "Mapping like - JP Morgan fireside conference for Jabil timelines + Quotes around 1.6T LRO - Sivers 2025 annual around $POET various press releases with $GFS and others. ",
-      "body": "Mapping like\n\n- JP Morgan fireside conference for Jabil timelines + Quotes around 1.6T LRO\n\n- Sivers 2025 annual around $POET various press releases with $GFS and others.\n\n- Old investor customers decks mapped with different investment rounds of cpo startups at the time\n\nAll merged together into a thesis.",
-      "symbols": [
-        "POET",
-        "GFS"
-      ],
-      "theme": "cpo-silicon-photonics",
-      "materiality": 66,
-      "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2068654378198925505"
+      "id": "2068866709667406286",
+      "date": "2026-06-22T01:20:35.000Z",
+      "title": "Wow, 3 limit ups in a row with WUS TW. ",
+      "body": "Wow, 3 limit ups in a row with WUS TW. Pretty sad I didn't take larger positions. \n\nWUS TW is 1 my 2 NAV arbitrage + independent growth trades. \n\nIf you want context: WUS TW is a ~$1.12B PCB player with AI DC growth. \n\nTheir stake in WUS Kunshan is $4.79B (11.4% of 42.04 billion)\n\nSo basically they're a $1.1B PCB player growing independently, sitting on ~$4.79B worth of another company that looks to IPOed on Hong Kong markets soon. \n\nAnd a successful activist investor in Palliser (with Ajinomoto and Toto), is pressuring them to trim some holdings along with a few others. \n\nSeems like a pretty insane disconnect, and I think there's a lot of potential here.",
+      "symbols": [],
+      "theme": "general",
+      "materiality": 56,
+      "sentiment": "bull",
+      "url": "https://x.com/aleabitoreddit/status/2068866709667406286"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
