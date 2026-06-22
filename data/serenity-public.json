@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-22T03:10:09.884Z",
+  "generatedAt": "2026-06-22T12:21:58.262Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6822,
+    "parsedItems": 6823,
     "commentCount": 51400,
     "profileTweets": 7222,
-    "latestItemDate": "2026-06-22T02:14:41.000Z"
+    "latestItemDate": "2026-06-22T10:33:46.000Z"
   },
   "rules": [
     {
@@ -325,14 +325,14 @@
         "LPKFF"
       ],
       "marketSymbol": "LPK.DE",
-      "mentions": 153,
+      "mentions": 154,
       "bull": 82,
       "bear": 2,
-      "neutral": 69,
+      "neutral": 70,
       "materiality": 87,
       "latest": "2026-06-01T14:33:55.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1639
+      "sentimentScore": 1642
     },
     {
       "symbol": "POET",
@@ -403,14 +403,14 @@
       "symbol": "AEHR",
       "aliases": [],
       "marketSymbol": "AEHR",
-      "mentions": 168,
+      "mentions": 169,
       "bull": 64,
       "bear": 0,
-      "neutral": 104,
+      "neutral": 105,
       "materiality": 79,
       "latest": "2026-06-01T01:05:01.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1476
+      "sentimentScore": 1479
     },
     {
       "symbol": "SNDK",
@@ -1921,7 +1921,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 99,
-      "latest": "2026-06-15T14:02:20.000Z",
+      "latest": "2026-06-15T22:05:16.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 186
     },
@@ -2480,7 +2480,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 100,
-      "latest": "2026-06-15T14:02:20.000Z",
+      "latest": "2026-06-15T22:05:16.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 130
     },
@@ -5047,7 +5047,7 @@
     },
     {
       "id": "2066535221554733278",
-      "date": "2026-06-15T14:56:05.000Z",
+      "date": "2026-06-15T18:43:06.000Z",
       "title": "Just as a recap, these were all my core European longs: 1. $SIVE 2. $LPK 3. $SOI 4. $RPI 5. $IQE 6. $ALRIB 7. $XFAB Sivers: As you know by now, core laser chokepoint over next gene",
       "body": "Just as a recap, these were all my core European longs:\n\n1. $SIVE\n2. $LPK\n3. $SOI\n4. $RPI \n5. $IQE\n6. $ALRIB\n7. $XFAB\n\nSivers: As you know by now, core laser chokepoint over next generation photonics, from 1.6T pluggables to CPO.\n\nEmbedded in many hyperscaler suppliers from Jabil to Ayar. Should go brrr 2027 but markets are forward looking, so ramps + qualifications should get priced in now. \n\nLPK Laser - Glass core substrate \"monopoly\" with LIDE. \n\n\"More than 80% of major global players have selected our equipment for process validation, learning and scaling to mass production\"\n\nSoitec - Silicon photonics SoI substrate pure monopoly while coming out of legacy drag segments.  \n\nRaspberry Pi - Was my fun idea around Raspberry Pis being used for AI hardware deployments. \n\nPreviously this thing was mainly educational or hobby boards, but now used for edge/local AI. Just thought revenue increase would be extremely material and it played out well. \n\nIQE - Critical epiwafer player for your Western photonics like Macom, Tower, Lumentum, and others. \n\nWas kinda going under, but thought their latent capacity relative to Landmark was undervalued. \n\nAlso given how important it was, I thought that your downstream players + Govs wouldn't let it go under, so it was more of a moonshot idea earlier in the year. \n\nLot more derisked now, very important.\n\nRiber - Kinda monopoly in the MBE space, exposure to Quantum / quantum dot + silicon photonics. \n\nFound out from OSINT help from a friend latentvalue that Microsoft Quantum was buying their machines, so this was direct hyperscaler validation + kinda de-risked at current MCs.\n\nXFab - SiC foundry backed by EU/US CHIPS Act with power semi upside. (152% Y/Y growth for their sic vertical). \n\nMain growth was their silicon photonics foundry past 2027 that's getting evaled by nvidia. And that they're leading Europe's value chain efforts in photonics, kinda like an early tower semi. \n\nWe'll see how this plays out, thought power semi exposure + low P/B would derisk the company until they scale their photbunchonics efforts. \n\nFrom my own personal thoughts:\n\nOut of the  maybe $SOI has already been re-rated the most? But I'm holding anyway. \n\n$LPK and $ALRIB I think are still undervalued despite their monopolies. \n\n$RPI is just kinda seeing how things go at this point, would be hilarious if they ended up like a mini nvidia for low end edge ai. \n\n$IQE probably has a long way to go given new tower long term agreement, alongside macom. And if they convert latent capacity, I still think it has a chance of rerating like landmark. \n\n$XFAB idk if im missing something or are markets missing something. you have nvidia as a direct eval of their silicon photonics foundry, and it's trading below replacement P/B. i think im right though. \n\n$SIVE I see has the highest upside out of all of them given laser company ability to vertically integrate, acquire companies downstream to make their lasers more valuable, etc. Just like coherent/lumentum. \n\nThere's like 1-2 more random ones that aren't really material, but just in general.\n\nThese are the ones I've liked the most.",
       "symbols": [
@@ -5600,19 +5600,20 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-22T03:09:58.178Z",
+    "staticUpdatedAt": "2026-06-22T12:21:06.534Z",
     "latestCaptured": {
-      "id": "2068880324202008964",
-      "date": "2026-06-22T02:14:41.000Z",
-      "title": "I expect Japan to mog Sweden in the World Cup tomorrow. ",
-      "body": "I expect Japan to mog Sweden in the World Cup tomorrow. \n\nProbably another 4-0 after Japan's soccer players saw how Swedish media treated $SIVE.",
+      "id": "2069005921318281566",
+      "date": "2026-06-22T10:33:46.000Z",
+      "title": "As for $LPK: Maybe $3B-$5B seems reasonable when they fully volume ramp if I had to guess. ",
+      "body": "As for $LPK: Maybe $3B-$5B seems reasonable when they fully volume ramp if I had to guess. \n\nFeels more asymmetrical to me personally since it's just a waiting game and they have the customers for glass substrates. \n\nSmall machine supplier chokepoints usually cap out from TAM though and don't go to $20B+ unless you're ASML or hold many chokepoints like KLAC. \n\nNot many dominant \"monopolies\" like these out there right before volume ramp this small: \n\nMaybe you have stuff like: \n- Aixtron (MOCVD) ~$8B\n- Towa (compression bonding) ~$2B \n- Techwing (memory handler/cube probes) ~$1.5B\n- MSScorps (CPO inspection), but pre-ramp. $850M\n- Riber (quantum MBE), very pre-ramp ~$350M \n\nThen LPK Laser for glass core substrates (about to ramp) at ~$730M, which thematically should have more premiums than memory. (eg. major advanced packaging shift, CPO adjacent, etc). \n\nLot of obscure chemical monopolies I know of, but those don't get as much attention cause BOM is much lower than equipment. \n\nBut for lpk you have:\n\neg. “80% of customers among major global players have selected LPKF equipment”.  \n\n70% of LIDE market share target for TGV in the glass-core ramp, should be very material. (disclosure: own, the listed names above aside from techwing/aixtron, NFI).\n\nJust kinda the path they go if you follow $AEHR at ~$3.5B now:\n\n- <$500m: \"Oh they have no customers!\" \n---> (probably somewhere in the middle here).\n- < $1.5B: \"Maybe volume comes soon!\" \n- $3B+ onward: \"Looks like they're starting to volume ramp. \n\nJust a lesson for the cycle of the chokepoint machine suppliers from my personal experiences.",
       "symbols": [
-        "SIVEF"
+        "LPK",
+        "AEHR"
       ],
-      "theme": "general",
-      "materiality": 51,
+      "theme": "memory-rotation",
+      "materiality": 82,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2068880324202008964"
+      "url": "https://x.com/aleabitoreddit/status/2069005921318281566"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
