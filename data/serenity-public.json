@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-23T11:51:45.898Z",
+  "generatedAt": "2026-06-23T14:08:05.035Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -5602,17 +5602,18 @@
   "monitor": {
     "staticUpdatedAt": "2026-06-23T11:47:26.408Z",
     "latestCaptured": {
-      "id": "2069373894398743000",
-      "date": "2026-06-23T10:55:58.000Z",
-      "title": "$XFAB upgraded to outperform with a PT of €12.8 by Bernstein, up from €5. ",
-      "body": "$XFAB upgraded to outperform with a PT of €12.8 by Bernstein, up from €5.\n\nOkay I forgive you Bernstein for Kioxia and Intel.\n\nI still think that’s just reactive PTs off automotive recovery, SiC/power semi ramp up.\n\nAnd undershooting potential a lot… If markets price in the possibility of xfab moving to HVM.\n\nOn their silicon photonics foundry w/ photonixfab / Nvidia + LIGENTEC for TFLN on SOI.\n\nRegardless I’m bullish too on XFAB and curious where it heads.",
+      "id": "2069399639154213281",
+      "date": "2026-06-23T12:38:16.000Z",
+      "title": "Nothing is more stupid than Bloomberg copying BofA playbook with KOSPI back in March. ",
+      "body": "Nothing is more stupid than Bloomberg copying BofA playbook with KOSPI back in March.\n\nAnd framing Taiwan’s $TSM ~23.6x forward p/e and $NVDA upstream supply chain as a “bubble”.\n\nThen using the words going into “debt” instead of “margin” + comparing Taiwan’s market to the .com bubble. \n\nCrap like this is why retail trust in media has dropped off a cliff in the past few years.",
       "symbols": [
-        "XFAB"
+        "TSM",
+        "NVDA"
       ],
-      "theme": "cpo-silicon-photonics",
-      "materiality": 87,
-      "sentiment": "bull",
-      "url": "https://x.com/aleabitoreddit/status/2069373894398743000"
+      "theme": "general",
+      "materiality": 56,
+      "sentiment": "neutral",
+      "url": "https://x.com/aleabitoreddit/status/2069399639154213281"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
