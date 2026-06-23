@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-23T05:56:17.291Z",
+  "generatedAt": "2026-06-23T08:48:09.794Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6842,
+    "parsedItems": 6844,
     "commentCount": 51400,
     "profileTweets": 7222,
-    "latestItemDate": "2026-06-23T04:50:21.000Z"
+    "latestItemDate": "2026-06-23T06:29:08.000Z"
   },
   "rules": [
     {
@@ -1921,7 +1921,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 99,
-      "latest": "2026-06-15T14:02:20.000Z",
+      "latest": "2026-06-15T22:05:16.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 186
     },
@@ -2155,7 +2155,7 @@
       "bear": 3,
       "neutral": 12,
       "materiality": 79,
-      "latest": "2026-06-16T02:23:29.000Z",
+      "latest": "2026-06-16T02:20:57.000Z",
       "dominantTheme": "general",
       "sentimentScore": 153
     },
@@ -2480,7 +2480,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 100,
-      "latest": "2026-06-15T14:02:20.000Z",
+      "latest": "2026-06-15T22:05:16.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 130
     },
@@ -5600,17 +5600,17 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-23T05:46:21.920Z",
+    "staticUpdatedAt": "2026-06-23T08:46:20.309Z",
     "latestCaptured": {
-      "id": "2069281885893849255",
-      "date": "2026-06-23T04:50:21.000Z",
-      "title": "Yeah you just pointed out exactly how malicious Bank of America is comparing KOSPI to the next Financial bubble, .COM bubble, and global financial crisis. ",
-      "body": "Yeah you just pointed out exactly how malicious Bank of America is comparing KOSPI to the next Financial bubble, .COM bubble, and global financial crisis.\n\nNot only that, the gold/silver crash too and blamed individual retail + ETFs.\n\nThen only after it hits ATHs and retail sells, they flip bullish. \n\nBoA makes extreme bearish calls to retail investors and then do/say the opposite when markets hit ATHs",
+      "id": "2069302402147360946",
+      "date": "2026-06-23T06:11:53.000Z",
+      "title": "There’s nothing like BoFA giving BS extreme bear predictions. ",
+      "body": "There’s nothing like BoFA giving BS extreme bear predictions.\n\nTo clear all the Korean leveraged traders a 2nd time this year.\n\nKorean markets are less resilient when it’s built on Aespa, Salmon skincare, and SK Hynix/Samsung memory names ig.",
       "symbols": [],
-      "theme": "general",
+      "theme": "memory-rotation",
       "materiality": 56,
-      "sentiment": "bear",
-      "url": "https://x.com/aleabitoreddit/status/2069281885893849255"
+      "sentiment": "neutral",
+      "url": "https://x.com/aleabitoreddit/status/2069302402147360946"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
