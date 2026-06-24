@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-24T05:11:18.395Z",
+  "generatedAt": "2026-06-24T06:29:53.384Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6856,
+    "parsedItems": 6858,
     "commentCount": 51400,
     "profileTweets": 7222,
-    "latestItemDate": "2026-06-24T04:07:20.000Z"
+    "latestItemDate": "2026-06-24T05:36:52.000Z"
   },
   "rules": [
     {
@@ -231,27 +231,27 @@
         "GOOG"
       ],
       "marketSymbol": "GOOGL",
-      "mentions": 300,
+      "mentions": 301,
       "bull": 96,
       "bear": 9,
-      "neutral": 195,
+      "neutral": 196,
       "materiality": 88,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 2117
+      "sentimentScore": 2120
     },
     {
       "symbol": "AMZN",
       "aliases": [],
       "marketSymbol": "AMZN",
-      "mentions": 220,
+      "mentions": 221,
       "bull": 91,
       "bear": 1,
-      "neutral": 128,
+      "neutral": 129,
       "materiality": 86,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2006
+      "sentimentScore": 2009
     },
     {
       "symbol": "MU",
@@ -694,14 +694,14 @@
       "symbol": "TSLA",
       "aliases": [],
       "marketSymbol": "TSLA",
-      "mentions": 107,
+      "mentions": 108,
       "bull": 33,
       "bear": 6,
-      "neutral": 68,
+      "neutral": 69,
       "materiality": 81,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "robotics-physical-ai",
-      "sentimentScore": 672
+      "sentimentScore": 675
     },
     {
       "symbol": "MTSI",
@@ -5600,20 +5600,21 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-24T05:10:29.172Z",
+    "staticUpdatedAt": "2026-06-24T06:25:27.682Z",
     "latestCaptured": {
-      "id": "2069633445903675865",
-      "date": "2026-06-24T04:07:20.000Z",
-      "title": "I find it interesting that the degens on $RDDT are starting a viral campaign to save Wendy’s ( $WEN ). ",
-      "body": "I find it interesting that the degens on $RDDT are starting a viral campaign to save Wendy’s ( $WEN ).\n\nThe US fast food burger chain.\n\nAnd the stock price is now up 20% overnight. \n\nJust for background: Wendy’s is a popular community meme, where people work behind the dumpsters after their portfolios go to 0 from 0DTE options.\n\n(No positions, just found it amusing) \n\nI wonder if it’s going to work?",
+      "id": "2069655980456149142",
+      "date": "2026-06-24T05:36:52.000Z",
+      "title": "Don’t quite think “siphoned off” is the correct term. ",
+      "body": "Don’t quite think “siphoned off” is the correct term. \n\nIt’s capex for massive revenue increase or margin increase down the line.\n\n$AMZN is probably my favorite hyperscaler right now and example to give.\n\nAmazon’s headcount is absurd, like ~1.57M. If the capex goes into automating their workforce with LLMs.\n\nThen transitioning into physical AI:\n\n- things from self driving (deliveries)\n- robotics (Amazon warehouses, shipping automation).\n\n+ revenue increase from building out AWS compute with Trainium and possibly selling chips too with the Neocloud strat.\n\nIt’s probably the clearest path forward compared to every hyperscaler out there. \n\n$TSLA optimus use case targets is extremely broad as a pitch, but Amazon already has a specific reason to scale robotics for internal opex optimization.\n\nAs for $GOOGL, probably 2nd right now, AI capex was necessary for defending its Google Search moat Gemini from ChatGPT\n\nThey also have Google Cloud revenue with efficient TPUs + can sell TPUs like Nvidia GPUs.\n\nGemini user volumes keep going up (despite the lack of contention in frontier benchmarks); and AI strategy to be working for ad optimization too.\n\nBut there’s less clear paths with physical AI stuff ig?\n\nMicrosoft and Meta are still trying to convince the market why capex is necessary, (we’re kinda seeing that in effect with Meta’s 30%+ Y/Y revenue growth), but doesn’t look like they’re convinced. \n\nAs for market narratives, Microsoft Maia seems to be behind, their AI development was stunted from OpenAi investments, so sentiment is kinda in the ground. \n\nBut think that will change down the road like the 180 with Google.\n\nI’m sure all the hyperscalers are seeing the leader effect right now:\n\nIf you have the leading LLM, people will keep using it. That LLM gets smarter from all the training data; and that gap might be structural.\n\nWhich is why everyone is kinda rushing the buildout right now, but for some the immediate incentives seem obvious.",
       "symbols": [
-        "RDDT",
-        "WEN"
+        "AMZN",
+        "TSLA",
+        "GOOGL"
       ],
-      "theme": "general",
-      "materiality": 72,
+      "theme": "robotics-physical-ai",
+      "materiality": 87,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2069633445903675865"
+      "url": "https://x.com/aleabitoreddit/status/2069655980456149142"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
