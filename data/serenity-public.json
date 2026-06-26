@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-26T16:23:24.912Z",
+  "generatedAt": "2026-06-26T18:10:30.210Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6896,
+    "parsedItems": 6908,
     "commentCount": 51400,
     "profileTweets": 7222,
-    "latestItemDate": "2026-06-26T07:47:43.000Z"
+    "latestItemDate": "2026-06-26T17:25:46.000Z"
   },
   "rules": [
     {
@@ -69,66 +69,66 @@
         "SIVERS"
       ],
       "marketSymbol": "SIVEF",
-      "mentions": 1132,
+      "mentions": 1136,
       "bull": 502,
-      "bear": 16,
-      "neutral": 614,
+      "bear": 17,
+      "neutral": 617,
       "materiality": 100,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 10544
+      "sentimentScore": 10531
     },
     {
       "symbol": "NBIS",
       "aliases": [],
       "marketSymbol": "NBIS",
-      "mentions": 782,
+      "mentions": 784,
       "bull": 223,
-      "bear": 10,
-      "neutral": 549,
+      "bear": 11,
+      "neutral": 550,
       "materiality": 77,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 5458
+      "sentimentScore": 5439
     },
     {
       "symbol": "LITE",
       "aliases": [],
       "marketSymbol": "LITE",
-      "mentions": 581,
+      "mentions": 582,
       "bull": 225,
-      "bear": 8,
+      "bear": 9,
       "neutral": 348,
       "materiality": 84,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4923
+      "sentimentScore": 4901
     },
     {
       "symbol": "AAOI",
       "aliases": [],
       "marketSymbol": "AAOI",
-      "mentions": 557,
+      "mentions": 558,
       "bull": 211,
       "bear": 14,
-      "neutral": 332,
+      "neutral": 333,
       "materiality": 80,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4495
+      "sentimentScore": 4498
     },
     {
       "symbol": "NVDA",
       "aliases": [],
       "marketSymbol": "NVDA",
-      "mentions": 531,
+      "mentions": 532,
       "bull": 217,
       "bear": 18,
-      "neutral": 296,
+      "neutral": 297,
       "materiality": 82,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4403
+      "sentimentScore": 4406
     },
     {
       "symbol": "AXTI",
@@ -147,14 +147,14 @@
       "symbol": "IREN",
       "aliases": [],
       "marketSymbol": "IREN",
-      "mentions": 497,
+      "mentions": 498,
       "bull": 146,
-      "bear": 28,
+      "bear": 29,
       "neutral": 323,
       "materiality": 78,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 2968
+      "sentimentScore": 2946
     },
     {
       "symbol": "COHR",
@@ -173,14 +173,14 @@
       "symbol": "MRVL",
       "aliases": [],
       "marketSymbol": "MRVL",
-      "mentions": 310,
+      "mentions": 311,
       "bull": 125,
       "bear": 1,
-      "neutral": 184,
+      "neutral": 185,
       "materiality": 84,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2787
+      "sentimentScore": 2790
     },
     {
       "symbol": "SOI",
@@ -244,12 +244,12 @@
       "symbol": "MU",
       "aliases": [],
       "marketSymbol": "MU",
-      "mentions": 224,
+      "mentions": 223,
       "bull": 99,
       "bear": 5,
-      "neutral": 120,
-      "materiality": 81,
-      "latest": "2026-06-26T07:47:43.000Z",
+      "neutral": 119,
+      "materiality": 80,
+      "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 2036
     },
@@ -322,14 +322,14 @@
       "symbol": "POET",
       "aliases": [],
       "marketSymbol": "POET",
-      "mentions": 211,
+      "mentions": 212,
       "bull": 75,
       "bear": 4,
-      "neutral": 132,
+      "neutral": 133,
       "materiality": 85,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1664
+      "sentimentScore": 1667
     },
     {
       "symbol": "LPK",
@@ -364,14 +364,14 @@
       "symbol": "AMD",
       "aliases": [],
       "marketSymbol": "AMD",
-      "mentions": 168,
+      "mentions": 169,
       "bull": 77,
       "bear": 2,
-      "neutral": 89,
+      "neutral": 90,
       "materiality": 85,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1612
+      "sentimentScore": 1615
     },
     {
       "symbol": "CRWV",
@@ -468,14 +468,14 @@
       "symbol": "JBL",
       "aliases": [],
       "marketSymbol": "JBL",
-      "mentions": 152,
+      "mentions": 153,
       "bull": 63,
       "bear": 2,
-      "neutral": 87,
+      "neutral": 88,
       "materiality": 87,
       "latest": "2026-06-01T20:01:50.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1356
+      "sentimentScore": 1359
     },
     {
       "symbol": "ALRIB",
@@ -512,14 +512,14 @@
       "symbol": "EWY",
       "aliases": [],
       "marketSymbol": "EWY",
-      "mentions": 117,
+      "mentions": 118,
       "bull": 55,
-      "bear": 4,
+      "bear": 5,
       "neutral": 58,
       "materiality": 75,
       "latest": "2026-04-26T17:09:03.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 1085
+      "sentimentScore": 1063
     },
     {
       "symbol": "HIMS",
@@ -551,14 +551,14 @@
       "symbol": "GFS",
       "aliases": [],
       "marketSymbol": "GFS",
-      "mentions": 85,
+      "mentions": 86,
       "bull": 45,
       "bear": 2,
-      "neutral": 38,
+      "neutral": 39,
       "materiality": 90,
       "latest": "2026-06-01T20:01:50.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 883
+      "sentimentScore": 886
     },
     {
       "symbol": "FLNC",
@@ -1076,7 +1076,7 @@
       "bear": 1,
       "neutral": 22,
       "materiality": 74,
-      "latest": "2026-01-24T00:00:00.000Z",
+      "latest": "2026-01-06T08:24:04.000Z",
       "dominantTheme": "general",
       "sentimentScore": 350
     },
@@ -1393,6 +1393,19 @@
       "sentimentScore": 254
     },
     {
+      "symbol": "AEVA",
+      "aliases": [],
+      "marketSymbol": "AEVA",
+      "mentions": 27,
+      "bull": 11,
+      "bear": 0,
+      "neutral": 16,
+      "materiality": 85,
+      "latest": "2026-05-14T10:17:44.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 252
+    },
+    {
       "symbol": "TOWA",
       "aliases": [],
       "marketSymbol": "TOWA",
@@ -1430,19 +1443,6 @@
       "latest": "2026-05-06T16:16:34.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 252
-    },
-    {
-      "symbol": "AEVA",
-      "aliases": [],
-      "marketSymbol": "AEVA",
-      "mentions": 26,
-      "bull": 11,
-      "bear": 0,
-      "neutral": 15,
-      "materiality": 85,
-      "latest": "2026-05-14T10:17:44.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 249
     },
     {
       "symbol": "KLAC",
@@ -2155,7 +2155,7 @@
       "bear": 3,
       "neutral": 12,
       "materiality": 79,
-      "latest": "2026-06-16T02:23:29.000Z",
+      "latest": "2026-06-16T02:20:57.000Z",
       "dominantTheme": "general",
       "sentimentScore": 153
     },
@@ -5044,7 +5044,7 @@
     },
     {
       "id": "2066535221554733278",
-      "date": "2026-06-15T18:43:06.000Z",
+      "date": "2026-06-15T14:56:05.000Z",
       "title": "Just as a recap, these were all my core European longs: 1. $SIVE 2. $LPK 3. $SOI 4. $RPI 5. $IQE 6. $ALRIB 7. $XFAB Sivers: As you know by now, core laser chokepoint over next gene",
       "body": "Just as a recap, these were all my core European longs:\n\n1. $SIVE\n2. $LPK\n3. $SOI\n4. $RPI \n5. $IQE\n6. $ALRIB\n7. $XFAB\n\nSivers: As you know by now, core laser chokepoint over next generation photonics, from 1.6T pluggables to CPO.\n\nEmbedded in many hyperscaler suppliers from Jabil to Ayar. Should go brrr 2027 but markets are forward looking, so ramps + qualifications should get priced in now. \n\nLPK Laser - Glass core substrate \"monopoly\" with LIDE. \n\n\"More than 80% of major global players have selected our equipment for process validation, learning and scaling to mass production\"\n\nSoitec - Silicon photonics SoI substrate pure monopoly while coming out of legacy drag segments.  \n\nRaspberry Pi - Was my fun idea around Raspberry Pis being used for AI hardware deployments. \n\nPreviously this thing was mainly educational or hobby boards, but now used for edge/local AI. Just thought revenue increase would be extremely material and it played out well. \n\nIQE - Critical epiwafer player for your Western photonics like Macom, Tower, Lumentum, and others. \n\nWas kinda going under, but thought their latent capacity relative to Landmark was undervalued. \n\nAlso given how important it was, I thought that your downstream players + Govs wouldn't let it go under, so it was more of a moonshot idea earlier in the year. \n\nLot more derisked now, very important.\n\nRiber - Kinda monopoly in the MBE space, exposure to Quantum / quantum dot + silicon photonics. \n\nFound out from OSINT help from a friend latentvalue that Microsoft Quantum was buying their machines, so this was direct hyperscaler validation + kinda de-risked at current MCs.\n\nXFab - SiC foundry backed by EU/US CHIPS Act with power semi upside. (152% Y/Y growth for their sic vertical). \n\nMain growth was their silicon photonics foundry past 2027 that's getting evaled by nvidia. And that they're leading Europe's value chain efforts in photonics, kinda like an early tower semi. \n\nWe'll see how this plays out, thought power semi exposure + low P/B would derisk the company until they scale their photbunchonics efforts. \n\nFrom my own personal thoughts:\n\nOut of the  maybe $SOI has already been re-rated the most? But I'm holding anyway. \n\n$LPK and $ALRIB I think are still undervalued despite their monopolies. \n\n$RPI is just kinda seeing how things go at this point, would be hilarious if they ended up like a mini nvidia for low end edge ai. \n\n$IQE probably has a long way to go given new tower long term agreement, alongside macom. And if they convert latent capacity, I still think it has a chance of rerating like landmark. \n\n$XFAB idk if im missing something or are markets missing something. you have nvidia as a direct eval of their silicon photonics foundry, and it's trading below replacement P/B. i think im right though. \n\n$SIVE I see has the highest upside out of all of them given laser company ability to vertically integrate, acquire companies downstream to make their lasers more valuable, etc. Just like coherent/lumentum. \n\nThere's like 1-2 more random ones that aren't really material, but just in general.\n\nThese are the ones I've liked the most.",
       "symbols": [
@@ -5597,17 +5597,17 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-26T08:05:39.605Z",
+    "staticUpdatedAt": "2026-06-26T18:09:59.686Z",
     "latestCaptured": {
-      "id": "2070536700519178493",
-      "date": "2026-06-26T15:56:32.000Z",
-      "title": "Morgan Stanley: Retained its forecast for the Federal Reserve to hold interest rates through year-end (no rate hikes). ",
-      "body": "Morgan Stanley: Retained its forecast for the Federal Reserve to hold interest rates through year-end (no rate hikes). \n\nMichael Gapen said incoming data since the June FOMC meeting has made it \"marginally more comfortable\" in its no-hike baseline.",
+      "id": "2070559154352353724",
+      "date": "2026-06-26T17:25:46.000Z",
+      "title": "Brooo, OpenAI is back and they're releasing their new model GPT-5.6 Sol. ",
+      "body": "Brooo, OpenAI is back and they're releasing their new model GPT-5.6 Sol. \n\nWith their benchmarks, OpenAI claims: \n\n- Sol Ultra beats Mythos 5 and mogs it for coding/workflow. \n\n- And is better for bio/cybersecurity too.  \n\nPretty bullish on OpenAI again if they leapfrogged Anthropic.",
       "symbols": [],
       "theme": "general",
-      "materiality": 46,
-      "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2070536700519178493"
+      "materiality": 72,
+      "sentiment": "bull",
+      "url": "https://x.com/aleabitoreddit/status/2070559154352353724"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
