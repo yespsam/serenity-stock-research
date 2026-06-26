@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-26T08:05:44.982Z",
+  "generatedAt": "2026-06-26T10:10:34.323Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -5599,17 +5599,17 @@
   "monitor": {
     "staticUpdatedAt": "2026-06-26T08:05:39.605Z",
     "latestCaptured": {
-      "id": "2070413682996347069",
-      "date": "2026-06-26T07:47:43.000Z",
-      "title": "Just Elon Musk casually sounding the alarm. On the massive demand + price hikes for $MU / SK Hynix / Samsung memory relative to supply. He probably has higher visibility into the m",
-      "body": "Just Elon Musk casually sounding the alarm.\n\nOn the massive demand + price hikes for $MU / SK Hynix / Samsung memory relative to supply.\n\nHe probably has higher visibility into the memory bottleneck than others…",
+      "id": "2070448555672928277",
+      "date": "2026-06-26T10:06:17.000Z",
+      "title": "You've been supporting me from the very start, thank you so much! ",
+      "body": "You've been supporting me from the very start, thank you so much! \n\nI still remember your first translation post helped me get popular. \n\nBefore I was just able to wait for my thesis to play out like $NBIS even in the drops, since I didn't have so many followers. \n\nNow everyone's monitoring day-to-day price volatility and commenting about it so it's harder to ignore.",
       "symbols": [
-        "MU"
+        "NBIS"
       ],
-      "theme": "memory-rotation",
-      "materiality": 54,
+      "theme": "neocloud",
+      "materiality": 61,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2070413682996347069"
+      "url": "https://x.com/aleabitoreddit/status/2070448555672928277"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
