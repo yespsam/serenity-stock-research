@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-26T10:10:34.323Z",
+  "generatedAt": "2026-06-26T16:23:24.912Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -5599,17 +5599,15 @@
   "monitor": {
     "staticUpdatedAt": "2026-06-26T08:05:39.605Z",
     "latestCaptured": {
-      "id": "2070448555672928277",
-      "date": "2026-06-26T10:06:17.000Z",
-      "title": "You've been supporting me from the very start, thank you so much! ",
-      "body": "You've been supporting me from the very start, thank you so much! \n\nI still remember your first translation post helped me get popular. \n\nBefore I was just able to wait for my thesis to play out like $NBIS even in the drops, since I didn't have so many followers. \n\nNow everyone's monitoring day-to-day price volatility and commenting about it so it's harder to ignore.",
-      "symbols": [
-        "NBIS"
-      ],
-      "theme": "neocloud",
-      "materiality": 61,
+      "id": "2070536700519178493",
+      "date": "2026-06-26T15:56:32.000Z",
+      "title": "Morgan Stanley: Retained its forecast for the Federal Reserve to hold interest rates through year-end (no rate hikes). ",
+      "body": "Morgan Stanley: Retained its forecast for the Federal Reserve to hold interest rates through year-end (no rate hikes). \n\nMichael Gapen said incoming data since the June FOMC meeting has made it \"marginally more comfortable\" in its no-hike baseline.",
+      "symbols": [],
+      "theme": "general",
+      "materiality": 46,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2070448555672928277"
+      "url": "https://x.com/aleabitoreddit/status/2070536700519178493"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
