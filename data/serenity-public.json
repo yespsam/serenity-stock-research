@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-27T02:25:29.869Z",
+  "generatedAt": "2026-06-27T07:28:01.001Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6909,
+    "parsedItems": 6910,
     "commentCount": 51400,
     "profileTweets": 7222,
-    "latestItemDate": "2026-06-27T02:11:30.000Z"
+    "latestItemDate": "2026-06-27T06:22:38.000Z"
   },
   "rules": [
     {
@@ -452,6 +452,19 @@
       "sentimentScore": 1458
     },
     {
+      "symbol": "JBL",
+      "aliases": [],
+      "marketSymbol": "JBL",
+      "mentions": 154,
+      "bull": 64,
+      "bear": 2,
+      "neutral": 88,
+      "materiality": 88,
+      "latest": "2026-06-27T06:22:38.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 1447
+    },
+    {
       "symbol": "TSEM",
       "aliases": [],
       "marketSymbol": "TSEM",
@@ -463,19 +476,6 @@
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 1407
-    },
-    {
-      "symbol": "JBL",
-      "aliases": [],
-      "marketSymbol": "JBL",
-      "mentions": 153,
-      "bull": 63,
-      "bear": 2,
-      "neutral": 88,
-      "materiality": 87,
-      "latest": "2026-06-01T20:01:50.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1359
     },
     {
       "symbol": "ALRIB",
@@ -1887,6 +1887,19 @@
       "sentimentScore": 188
     },
     {
+      "symbol": "CBRS",
+      "aliases": [],
+      "marketSymbol": "CBRS",
+      "mentions": 9,
+      "bull": 6,
+      "bear": 0,
+      "neutral": 3,
+      "materiality": 88,
+      "latest": "2026-06-27T06:22:38.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 187
+    },
+    {
       "symbol": "NVO",
       "aliases": [],
       "marketSymbol": "NVO",
@@ -2884,19 +2897,6 @@
       "neutral": 3,
       "materiality": 92,
       "latest": "2026-04-30T19:56:56.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 99
-    },
-    {
-      "symbol": "CBRS",
-      "aliases": [],
-      "marketSymbol": "CBRS",
-      "mentions": 8,
-      "bull": 5,
-      "bear": 0,
-      "neutral": 3,
-      "materiality": 88,
-      "latest": "2026-05-13T11:31:13.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 99
     },
@@ -5597,23 +5597,20 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-27T02:24:38.502Z",
+    "staticUpdatedAt": "2026-06-27T07:29:34.181Z",
     "latestCaptured": {
-      "id": "2070691462354993543",
-      "date": "2026-06-27T02:11:30.000Z",
-      "title": "$SPCX / Elon Musk acquires Mesh, an optical networking startup. ",
-      "body": "$SPCX / Elon Musk acquires Mesh, an optical networking startup.\n\nWhich is working on 1.6T OSFP (pluggable).\n\nIt’s seems they own the optical engine/packaging side of things, but likely sources CW DFB lasers off merchant companies. \n\n$SIVE is one of the more startup friendly plausible merchant suppliers as seen with Ayar to $POET?\n\nMaybe $LITE and $MTSI that were have a little history too, but less so.\n\nRegardless it’s very positive a lot of startups recently like Celestial have been acquired by Marvell.\n\nFor both merchant laser supplier revenue (working with startups -> having hyperscalers like SpaceX drive revenue after being designed in already).\n\nAs well as valuations from M&A desirability.\n\nGoes to show how optical interconnects is the right direction if Elon Musk is directly buying these companies.",
+      "id": "2070754658868687086",
+      "date": "2026-06-27T06:22:38.000Z",
+      "title": "Kinda nutty OpenAI’s is launching its heavyweight 5.6 Sol frontier model on $CBRS. At up to 750 tokens/sec, which is obscene performance. American inference go brrr. I actually pic",
+      "body": "Kinda nutty OpenAI’s is launching its heavyweight 5.6 Sol frontier model on $CBRS.\n\nAt up to 750 tokens/sec, which is obscene performance.\n\nAmerican inference go brrr.\n\nI actually picked up starter positions on Cerebras for the first time in the ~170s (below $185 IPO price) after seeing this news yesterday.\n\nFeels like validation of its tech. IMO a bit overvalued compared to profitable companies like $JBL at the same valuation.\n\nBut there’s likely premiums for OpenAI exposure, as long as they stay the leader.",
       "symbols": [
-        "SPCX",
-        "SIVEF",
-        "POET",
-        "LITE",
-        "MTSI"
+        "CBRS",
+        "JBL"
       ],
-      "theme": "optical-components",
-      "materiality": 97,
-      "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2070691462354993543"
+      "theme": "general",
+      "materiality": 88,
+      "sentiment": "bull",
+      "url": "https://x.com/aleabitoreddit/status/2070754658868687086"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
