@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-27T07:28:01.001Z",
+  "generatedAt": "2026-06-27T09:29:22.473Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -5597,20 +5597,20 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-27T07:29:34.181Z",
+    "staticUpdatedAt": "2026-06-27T07:26:51.427Z",
     "latestCaptured": {
-      "id": "2070754658868687086",
-      "date": "2026-06-27T06:22:38.000Z",
-      "title": "Kinda nutty OpenAI’s is launching its heavyweight 5.6 Sol frontier model on $CBRS. At up to 750 tokens/sec, which is obscene performance. American inference go brrr. I actually pic",
-      "body": "Kinda nutty OpenAI’s is launching its heavyweight 5.6 Sol frontier model on $CBRS.\n\nAt up to 750 tokens/sec, which is obscene performance.\n\nAmerican inference go brrr.\n\nI actually picked up starter positions on Cerebras for the first time in the ~170s (below $185 IPO price) after seeing this news yesterday.\n\nFeels like validation of its tech. IMO a bit overvalued compared to profitable companies like $JBL at the same valuation.\n\nBut there’s likely premiums for OpenAI exposure, as long as they stay the leader.",
+      "id": "2070793664599863682",
+      "date": "2026-06-27T08:57:37.000Z",
+      "title": "$SIVE is has a decent chance to be in Boston Dynamics humanoid programs through $AEVA and LG Innotek. ",
+      "body": "$SIVE is has a decent chance to be in Boston Dynamics humanoid programs through $AEVA and LG Innotek. \n\nI don’t see it being too material to revenue near term since the leading humanoid companies have only made ~10K so far.\n\nBut if you get to the millions in past 2028, it’s probably material to revenue",
       "symbols": [
-        "CBRS",
-        "JBL"
+        "SIVEF",
+        "AEVA"
       ],
-      "theme": "general",
-      "materiality": 88,
-      "sentiment": "bull",
-      "url": "https://x.com/aleabitoreddit/status/2070754658868687086"
+      "theme": "robotics-physical-ai",
+      "materiality": 66,
+      "sentiment": "neutral",
+      "url": "https://x.com/aleabitoreddit/status/2070793664599863682"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
