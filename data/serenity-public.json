@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-27T09:29:22.473Z",
+  "generatedAt": "2026-06-28T05:48:06.612Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -5599,18 +5599,15 @@
   "monitor": {
     "staticUpdatedAt": "2026-06-27T07:26:51.427Z",
     "latestCaptured": {
-      "id": "2070793664599863682",
-      "date": "2026-06-27T08:57:37.000Z",
-      "title": "$SIVE is has a decent chance to be in Boston Dynamics humanoid programs through $AEVA and LG Innotek. ",
-      "body": "$SIVE is has a decent chance to be in Boston Dynamics humanoid programs through $AEVA and LG Innotek. \n\nI don’t see it being too material to revenue near term since the leading humanoid companies have only made ~10K so far.\n\nBut if you get to the millions in past 2028, it’s probably material to revenue",
-      "symbols": [
-        "SIVEF",
-        "AEVA"
-      ],
-      "theme": "robotics-physical-ai",
-      "materiality": 66,
+      "id": "2071074680253911267",
+      "date": "2026-06-28T03:34:17.000Z",
+      "title": "WSJ: “China Has Matched Anthropic in Cybersecurity, Resetting AI Race” China’s Zhipu AI, has matched Anthropic’s Mythos in certain benchmarks, such as exploiting cybersecurity bug…",
+      "body": "WSJ: “China Has Matched Anthropic in Cybersecurity, Resetting AI Race”\n\nChina’s Zhipu AI, has matched \nAnthropic’s Mythos in certain benchmarks, such as exploiting cybersecurity bugs. \n\nWell, that’s not good.\n\nInstead of blaming the administration which did the correct thing… \n\nAnthropic’s clearly at fault for not setting enough guardrails to prevent distillation.\nEven before Fable release there were a lot of rumors that China had backdoors to distill it.\n\nPart of it is the trillions of capex to accelerate the AI moat. \n\nAnd the second part is not handing that work over on a silver platter for millions in API calls.",
+      "symbols": [],
+      "theme": "general",
+      "materiality": 46,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2070793664599863682"
+      "url": "https://x.com/aleabitoreddit/status/2071074680253911267"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
