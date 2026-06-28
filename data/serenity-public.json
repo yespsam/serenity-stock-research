@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T05:48:06.612Z",
+  "generatedAt": "2026-06-28T08:51:03.635Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -5599,15 +5599,19 @@
   "monitor": {
     "staticUpdatedAt": "2026-06-27T07:26:51.427Z",
     "latestCaptured": {
-      "id": "2071074680253911267",
-      "date": "2026-06-28T03:34:17.000Z",
-      "title": "WSJ: “China Has Matched Anthropic in Cybersecurity, Resetting AI Race” China’s Zhipu AI, has matched Anthropic’s Mythos in certain benchmarks, such as exploiting cybersecurity bug…",
-      "body": "WSJ: “China Has Matched Anthropic in Cybersecurity, Resetting AI Race”\n\nChina’s Zhipu AI, has matched \nAnthropic’s Mythos in certain benchmarks, such as exploiting cybersecurity bugs. \n\nWell, that’s not good.\n\nInstead of blaming the administration which did the correct thing… \n\nAnthropic’s clearly at fault for not setting enough guardrails to prevent distillation.\nEven before Fable release there were a lot of rumors that China had backdoors to distill it.\n\nPart of it is the trillions of capex to accelerate the AI moat. \n\nAnd the second part is not handing that work over on a silver platter for millions in API calls.",
-      "symbols": [],
-      "theme": "general",
-      "materiality": 46,
+      "id": "2071135874100990438",
+      "date": "2026-06-28T07:37:26.000Z",
+      "title": "Guess we finally found why $META signed massive agreements with Neoclouds like $NBIS back in March... ",
+      "body": "Guess we finally found why $META signed massive agreements with Neoclouds like $NBIS back in March...\n\nAnd why Gemini got super nerfed. \n\n$GOOGL reportedly restricted Meta's capacity in March 2026 because of compute restraints. \n\nGoogle's CEO said from last earnings computing power restrictions prevented Google Cloud from taking on more customer needs and made the department's backlog nearly double the previous quarter.\n\nThis is probably positive for the AI DC capex buildout since hyperscalers capacity is way below what is needed, and especially so if they can't rely on one another.",
+      "symbols": [
+        "META",
+        "NBIS",
+        "GOOGL"
+      ],
+      "theme": "ai-infrastructure",
+      "materiality": 71,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2071074680253911267"
+      "url": "https://x.com/aleabitoreddit/status/2071135874100990438"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
