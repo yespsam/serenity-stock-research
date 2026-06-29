@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-29T06:21:53.973Z",
+  "generatedAt": "2026-06-29T08:16:08.483Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -5599,22 +5599,17 @@
   "monitor": {
     "staticUpdatedAt": "2026-06-29T06:18:10.464Z",
     "latestCaptured": {
-      "id": "2071465314794233905",
-      "date": "2026-06-29T05:26:31.000Z",
-      "title": "Honestly this decade from 2020-2030 might be the most goated in human history. ",
-      "body": "Honestly this decade from 2020-2030 might be the most goated in human history.\n\n- Scaling massive reusable rockets for orbital compute with $RKLB to $SPCX.\n\n- on the cusp of ASI and recursive learning with Anthropic and OpenAI \n\n- Backflipping Boston Dynamics and Unitree humanoids to replace the human workforce\n\n- Star Wars laser beams from $EOS.ASX to AI DC lasers like $LITE.\n\n- Waymo and $TSLA self driving cars everywhere in urban cities\n\n- and we get industry Quantum commercialization end of decade\n\nThis is kinda crazy to be an investor in this timeframe. Feels like every movie from the Star Wars Death Star to Skynet is coming to life.\n\nWhat’s next?",
+      "id": "2071505730243551264",
+      "date": "2026-06-29T08:07:07.000Z",
+      "title": "Nah, I actually read the whole $POET AGM transcript in the shower. ",
+      "body": "Nah, I actually read the whole $POET AGM transcript in the shower. And then compared what they said, compared to what markets might have known already.\n\nThis was manual since it’s on some random GitHub page rather than officially published yet afaik. \n\nThen I just learn interesting insights from statements like $POET confidently saying laser players are completely sold out next two years.\n\nSince it’s signal for laser bottleneck likely extending into 2029 thematically.",
       "symbols": [
-        "RKLB",
-        "SPCX",
-        "EOS",
-        "LITE",
-        "TSLA",
-        "EOS.ASX"
+        "POET"
       ],
-      "theme": "robotics-physical-ai",
-      "materiality": 81,
+      "theme": "optical-components",
+      "materiality": 77,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2071465314794233905"
+      "url": "https://x.com/aleabitoreddit/status/2071505730243551264"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
