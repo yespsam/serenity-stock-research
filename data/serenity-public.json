@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-29T08:16:08.483Z",
+  "generatedAt": "2026-06-29T10:09:38.374Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6923,
-    "commentCount": 51546,
+    "parsedItems": 6926,
+    "commentCount": 32949,
     "profileTweets": 7222,
-    "latestItemDate": "2026-06-29T05:26:31.000Z"
+    "latestItemDate": "2026-06-29T09:54:58.000Z"
   },
   "rules": [
     {
@@ -69,14 +69,14 @@
         "SIVERS"
       ],
       "marketSymbol": "SIVEF",
-      "mentions": 1140,
+      "mentions": 1141,
       "bull": 503,
       "bear": 17,
-      "neutral": 620,
+      "neutral": 621,
       "materiality": 100,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 10558
+      "sentimentScore": 10561
     },
     {
       "symbol": "NBIS",
@@ -95,40 +95,40 @@
       "symbol": "LITE",
       "aliases": [],
       "marketSymbol": "LITE",
-      "mentions": 584,
+      "mentions": 585,
       "bull": 225,
       "bear": 9,
-      "neutral": 350,
+      "neutral": 351,
       "materiality": 84,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4907
+      "sentimentScore": 4910
     },
     {
       "symbol": "AAOI",
       "aliases": [],
       "marketSymbol": "AAOI",
-      "mentions": 558,
+      "mentions": 559,
       "bull": 211,
       "bear": 14,
-      "neutral": 333,
+      "neutral": 334,
       "materiality": 80,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4498
+      "sentimentScore": 4501
     },
     {
       "symbol": "NVDA",
       "aliases": [],
       "marketSymbol": "NVDA",
-      "mentions": 532,
+      "mentions": 533,
       "bull": 217,
       "bear": 18,
-      "neutral": 297,
+      "neutral": 298,
       "materiality": 82,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4406
+      "sentimentScore": 4409
     },
     {
       "symbol": "AXTI",
@@ -257,14 +257,14 @@
       "symbol": "AMZN",
       "aliases": [],
       "marketSymbol": "AMZN",
-      "mentions": 222,
+      "mentions": 223,
       "bull": 91,
       "bear": 1,
-      "neutral": 130,
+      "neutral": 131,
       "materiality": 85,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2012
+      "sentimentScore": 2015
     },
     {
       "symbol": "TSM",
@@ -306,6 +306,19 @@
       "sentimentScore": 1720
     },
     {
+      "symbol": "POET",
+      "aliases": [],
+      "marketSymbol": "POET",
+      "mentions": 215,
+      "bull": 75,
+      "bear": 4,
+      "neutral": 136,
+      "materiality": 85,
+      "latest": "2026-06-01T23:51:46.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 1676
+    },
+    {
       "symbol": "HOOD",
       "aliases": [],
       "marketSymbol": "HOOD",
@@ -317,19 +330,6 @@
       "latest": "2026-04-30T19:56:56.000Z",
       "dominantTheme": "general",
       "sentimentScore": 1676
-    },
-    {
-      "symbol": "POET",
-      "aliases": [],
-      "marketSymbol": "POET",
-      "mentions": 213,
-      "bull": 75,
-      "bear": 4,
-      "neutral": 134,
-      "materiality": 85,
-      "latest": "2026-06-01T23:51:46.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1670
     },
     {
       "symbol": "LPK",
@@ -5597,19 +5597,21 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-29T06:18:10.464Z",
+    "staticUpdatedAt": "2026-06-29T10:08:18.731Z",
     "latestCaptured": {
-      "id": "2071505730243551264",
-      "date": "2026-06-29T08:07:07.000Z",
-      "title": "Nah, I actually read the whole $POET AGM transcript in the shower. ",
-      "body": "Nah, I actually read the whole $POET AGM transcript in the shower. And then compared what they said, compared to what markets might have known already.\n\nThis was manual since it’s on some random GitHub page rather than officially published yet afaik. \n\nThen I just learn interesting insights from statements like $POET confidently saying laser players are completely sold out next two years.\n\nSince it’s signal for laser bottleneck likely extending into 2029 thematically.",
+      "id": "2071532870859149617",
+      "date": "2026-06-29T09:54:58.000Z",
+      "title": "$GM cuts 1,000 workers and replaces them with 50 robots (Jun 22nd report) Reports also show GM is working on a deal with $NVDA on factory robotics. ",
+      "body": "$GM cuts 1,000 workers and replaces them with 50 robots (Jun 22nd report)\n\nReports also show GM is working on a deal with $NVDA on factory robotics.\n\nThis is industry validation for robotics, since it likely demonstrates increased opex margins + efficiency from employee automation. \n\nEspecially from companies like $AMZN to General Motors with assembly/warehouse lines that have high headcount.\n\nI think the technology is already here and use cases are already proven. Robotics/Humanoids are just pre-scale right now. \n\nThe wording from large companies is “assistive robotics”… But in all honesty, it’s here to automate away the human workforce and increase profitability.\n\nI don’t think companies want to be paying insurance, salaries, etc. when robots can do a better job, and 24/7, so very sad to see potential job losses in the future from robotics automation.\n\nWhether people like it or not; seems like the inflection point for robotics is here.",
       "symbols": [
-        "POET"
+        "GM",
+        "NVDA",
+        "AMZN"
       ],
-      "theme": "optical-components",
-      "materiality": 77,
+      "theme": "robotics-physical-ai",
+      "materiality": 71,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2071505730243551264"
+      "url": "https://x.com/aleabitoreddit/status/2071532870859149617"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
