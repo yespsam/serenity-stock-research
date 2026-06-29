@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-29T10:09:38.374Z",
+  "generatedAt": "2026-06-29T11:17:25.065Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -10,8 +10,8 @@
   "stats": {
     "parsedItems": 6926,
     "commentCount": 32949,
-    "profileTweets": 7222,
-    "latestItemDate": "2026-06-29T09:54:58.000Z"
+    "profileTweets": 7225,
+    "latestItemDate": "2026-06-29T10:43:13.000Z"
   },
   "rules": [
     {
@@ -5597,23 +5597,22 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-29T10:08:18.731Z",
+    "staticUpdatedAt": "2026-06-29T11:13:25.703Z",
     "latestCaptured": {
-      "id": "2071532870859149617",
-      "date": "2026-06-29T09:54:58.000Z",
-      "title": "$GM cuts 1,000 workers and replaces them with 50 robots (Jun 22nd report) Reports also show GM is working on a deal with $NVDA on factory robotics. ",
-      "body": "$GM cuts 1,000 workers and replaces them with 50 robots (Jun 22nd report)\n\nReports also show GM is working on a deal with $NVDA on factory robotics.\n\nThis is industry validation for robotics, since it likely demonstrates increased opex margins + efficiency from employee automation. \n\nEspecially from companies like $AMZN to General Motors with assembly/warehouse lines that have high headcount.\n\nI think the technology is already here and use cases are already proven. Robotics/Humanoids are just pre-scale right now. \n\nThe wording from large companies is “assistive robotics”… But in all honesty, it’s here to automate away the human workforce and increase profitability.\n\nI don’t think companies want to be paying insurance, salaries, etc. when robots can do a better job, and 24/7, so very sad to see potential job losses in the future from robotics automation.\n\nWhether people like it or not; seems like the inflection point for robotics is here.",
+      "id": "2071545016007467486",
+      "date": "2026-06-29T10:43:13.000Z",
+      "title": "Japan's Rakuten to establish joint venture with $ASTS to build out LEO satellite networks for Japan per Digitimes/Nikkei. \"The move is widely viewed as a strategic response to the ",
+      "body": "Japan's Rakuten to establish joint venture with $ASTS to build out LEO satellite networks for Japan per Digitimes/Nikkei. \n\n\"The move is widely viewed as a strategic response to the growing influence of $SPCX Starlink in Japan\"",
       "symbols": [
-        "GM",
-        "NVDA",
-        "AMZN"
+        "ASTS",
+        "SPCX"
       ],
-      "theme": "robotics-physical-ai",
-      "materiality": 71,
+      "theme": "satellite-connectivity",
+      "materiality": 69,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2071532870859149617"
+      "url": "https://x.com/aleabitoreddit/status/2071545016007467486"
     },
-    "profileTweets": 7222,
+    "profileTweets": 7225,
     "source": "FxTwitter / SerenitySaid / public mirrors",
     "pollIntervalSeconds": 1
   }
