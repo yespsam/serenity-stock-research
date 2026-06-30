@@ -4,7 +4,7 @@ const http = require("node:http");
 const path = require("node:path");
 const { execFile } = require("node:child_process");
 const { promisify } = require("node:util");
-const { URL } = require("node:url");
+const { URL, pathToFileURL } = require("node:url");
 
 const PORT = Number(process.env.PORT || 4180);
 const ROOT = __dirname;
@@ -2769,6 +2769,14 @@ async function handleAutoBackfill(reqUrl, res) {
   }
 }
 
+async function handleMacroNews(reqUrl, res) {
+  const moduleUrl = pathToFileURL(path.join(ROOT, "netlify", "functions", "macro-news.mjs")).href;
+  const macroFunction = await import(moduleUrl);
+  const response = await macroFunction.default({ url: reqUrl.toString() });
+  const body = await response.text();
+  send(res, response.status || 200, body, response.headers.get("content-type") || "application/json; charset=utf-8", response.headers.get("cache-control") || "no-store");
+}
+
 function serveStatic(reqUrl, res) {
   const pathname = decodeURIComponent(reqUrl.pathname === "/" ? "/index.html" : reqUrl.pathname);
   const resolved = path.normalize(path.join(ROOT, pathname));
@@ -2810,6 +2818,11 @@ const server = http.createServer(async (req, res) => {
 
     if (reqUrl.pathname === "/api/serenity-live") {
       await handleSerenityLive(reqUrl, res);
+      return;
+    }
+
+    if (reqUrl.pathname === "/api/macro-news") {
+      await handleMacroNews(reqUrl, res);
       return;
     }
 

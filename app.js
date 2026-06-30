@@ -265,6 +265,13 @@ const state = {
   bstockLoading: false,
   bstockError: "",
   bstockUpdatedAt: null,
+  macro: null,
+  macroLoading: false,
+  macroError: "",
+  macroUpdatedAt: null,
+  dailyDetailsLoading: false,
+  dailyDetailsKey: "",
+  dailyDetailsAt: 0,
   analysisRequestId: 0,
   renderedStocks: [],
   activeSymbol: "AAOI",
@@ -383,6 +390,7 @@ const DETAIL_QUOTE_CACHE_MS = 10 * 60_000;
 const SOCIAL_CANDIDATE_LIMIT = 22;
 const SOCIAL_PREFETCH_LIMIT = 18;
 const SOCIAL_MIN_MENTIONS = 40;
+const DAILY_READY_LIMIT = 2;
 const SOCIAL_SYMBOL_BLOCKLIST = new Set(["BTC", "ETH", "SOL", "DOGE", "XRP", "IBIT", "EWY", "XLU", "SPY", "QQQ", "IWM", "TLT", "GLD", "LPKF", "RPI"]);
 const PUSH_NOTIFY_KEY = "serenityWebPushNotify";
 const PUSH_SOUND_KEY = "serenityWebPushSound";
@@ -394,7 +402,8 @@ const BEGINNER_PRICE_ALERTS_KEY = "serenityPriceAlerts";
 const PRICE_ALERT_QUOTE_MS = 30_000;
 const BINANCE_WALLET_REFERRAL_URL = "https://web3.binance.com/referral?ref=DB7KNQGJ";
 const BSTOCK_API_PATH = "/api/binance-bstocks";
-const APP_SHELL_VERSION = "v17";
+const MACRO_API_PATH = "/api/macro-news";
+const APP_SHELL_VERSION = "v18";
 const BSTOCK_SYMBOLS = [
   {
     symbol: "NVDAB",
@@ -485,6 +494,7 @@ const screenerStatus = document.querySelector("#screenerStatus");
 const screenerFactorSummary = document.querySelector("#screenerFactorSummary");
 const screenerList = document.querySelector("#screenerList");
 const dailyPickStatus = document.querySelector("#dailyPickStatus");
+const dailyMacroPanel = document.querySelector("#dailyMacroPanel");
 const dailyPickList = document.querySelector("#dailyPickList");
 const bstockStatus = document.querySelector("#bstockStatus");
 const bstockSummary = document.querySelector("#bstockSummary");
@@ -1783,8 +1793,11 @@ function plainReportText(stock, quote, score, space, playbook, breakdown, scenar
     lines.push("", "执行清单：");
     for (const item of extras.execution) lines.push(`- ${item.label}｜${item.value}：${item.body}`);
   }
+  if (extras.macro) {
+    lines.push("", `宏观约束：${extras.macro.label}｜${extras.macro.detail}`);
+  }
   if (extras.dataConfidence) {
-      lines.push("", `数据完整度：${extras.dataConfidence.label} · ${extras.dataConfidence.score}/100`);
+    lines.push("", `数据完整度：${extras.dataConfidence.label} · ${extras.dataConfidence.score}/100`);
     for (const item of (extras.dataConfidence.items || []).slice(0, 4)) lines.push(`- ${item}`);
   }
   lines.push(
@@ -1946,6 +1959,51 @@ async function loadBStocks() {
   }
 }
 
+async function loadMacroNews() {
+  if (state.macroLoading) return;
+  if (IS_GITHUB_PAGES_STATIC) {
+    state.macroError = "GitHub Pages 静态备用站暂不运行宏观接口";
+    renderDailyPicks();
+    return;
+  }
+  state.macroLoading = true;
+  state.macroError = "";
+  renderDailyPicks();
+  try {
+    const data = await fetchJson(MACRO_API_PATH);
+    state.macro = data;
+    state.macroUpdatedAt = data.updatedAt || Date.now();
+    state.macroError = (data.errors || []).slice(0, 2).join("；");
+  } catch (error) {
+    state.macroError = error.message || "宏观接口暂不可用";
+  } finally {
+    state.macroLoading = false;
+    renderDailyPicks();
+  }
+}
+
+async function loadDailyCandidateDetails() {
+  if (state.dailyDetailsLoading) return;
+  const rows = dailyPickRows();
+  const symbols = uniqueSymbols(rows.map((row) => row.stock.symbol)).slice(0, 8);
+  if (!symbols.length) return;
+  const key = symbols.join(",");
+  if (key === state.dailyDetailsKey && Date.now() - state.dailyDetailsAt < DETAIL_QUOTE_CACHE_MS) return;
+  state.dailyDetailsLoading = true;
+  renderDailyPicks();
+  try {
+    const data = await fetchJson(`/api/quotes?symbols=${encodeURIComponent(key)}&detail=1`);
+    for (const quote of data.quotes || []) storeQuote(quote);
+    state.dailyDetailsKey = key;
+    state.dailyDetailsAt = Date.now();
+  } catch {
+    // Detailed news/financials are additive; keep the fast candidate list usable if this layer fails.
+  } finally {
+    state.dailyDetailsLoading = false;
+    renderDailyPicks();
+  }
+}
+
 function enrichStock(stock) {
   const quote = quoteForStock(stock);
   const metric = metricForStock(stock) || {};
@@ -2100,6 +2158,108 @@ function renderOpportunityList() {
     .join("");
 }
 
+function currentMacroRisk() {
+  return (
+    state.macro?.risk || {
+      score: state.macroLoading ? 50 : 60,
+      level: state.macroLoading ? "loading" : "unknown",
+      label: state.macroLoading ? "宏观同步中" : "宏观待补",
+      reason: state.macroLoading ? "正在读取 Fed 与宏观新闻。" : "Fed 新闻、收益率、VIX 与指数代理数据未完成同步。",
+      riskOff: false,
+      riskOn: false,
+      sourceCount: 0,
+      signalCount: 0,
+    }
+  );
+}
+
+function macroSensitivityForStock(stock = {}) {
+  const theme = stock.theme || "general";
+  const cap = stockMarketCap(stock);
+  const base =
+    {
+      neocloud: 1.08,
+      "crypto-rotation": 1.05,
+      "robotics-physical-ai": 0.96,
+      "ai-infrastructure": 0.92,
+      "cpo-silicon-photonics": 0.9,
+      "substrate-materials": 0.86,
+      "memory-rotation": 0.82,
+      "power-architecture": 0.78,
+      "macro-hedge": 0.46,
+      "capital-structure-veto": 1,
+      general: 0.74,
+    }[theme] || 0.74;
+  if (cap > 500e9) return Math.max(0.62, base - 0.14);
+  if (cap > 100e9) return Math.max(0.66, base - 0.08);
+  if (cap > 0 && cap < 5e9) return Math.min(1.12, base + 0.08);
+  return base;
+}
+
+function macroSignalForStock(stock = {}) {
+  const risk = currentMacroRisk();
+  const sensitivity = macroSensitivityForStock(stock);
+  const score = Number(risk.score || 50);
+  let adjustment = 0;
+  if (risk.level === "unknown") adjustment -= 8;
+  else if (risk.level === "loading") adjustment -= 4;
+  else if (score >= 62) adjustment -= Math.round((score - 56) * sensitivity * 0.55);
+  else if (score <= 35) adjustment += Math.round((38 - score) * sensitivity * 0.22);
+  const blocks = risk.level === "unknown" || (score >= 78 && sensitivity >= 0.82);
+  const caution = score >= 62 && sensitivity >= 0.78;
+  const label = blocks ? "宏观压制" : caution ? "宏观谨慎" : risk.riskOn ? "宏观顺风" : risk.label || "宏观中性";
+  const detail = blocks
+    ? `${risk.label || "宏观待补"}：不允许直接进入今日买入候选，先等 Fed/收益率/波动率风险明确。`
+    : caution
+      ? `${risk.label}：高 beta/成长标的需等价格确认，降低追价权重。`
+      : `${risk.label || "宏观中性"}：宏观层暂未触发强否决。`;
+  return {
+    score,
+    label,
+    detail,
+    adjustment,
+    blocks,
+    caution,
+    risk,
+    sensitivity,
+  };
+}
+
+function topMacroItems(limit = 3) {
+  return (state.macro?.items || [])
+    .slice()
+    .sort((a, b) => Math.abs(Number(b.impactScore || 0)) - Math.abs(Number(a.impactScore || 0)) || Number(b.date || 0) - Number(a.date || 0))
+    .slice(0, limit);
+}
+
+function renderDailyMacroPanel() {
+  if (!dailyMacroPanel) return;
+  const risk = currentMacroRisk();
+  const items = topMacroItems(3);
+  const signals = (state.macro?.signals || []).slice(0, 4);
+  const updatedAt = state.macroUpdatedAt || state.macro?.updatedAt;
+  const status = state.macroLoading ? "同步中" : state.macroError ? "接口降级" : updatedAt ? dateTimeLabel(updatedAt) : "等待同步";
+  dailyMacroPanel.innerHTML = `
+    <div class="daily-macro-score">
+      <span>${escapeHtml(risk.label || "宏观待补")}</span>
+      <b>${escapeHtml(risk.score ?? "--")}</b>
+      <small>宏观风险分 · ${escapeHtml(status)}</small>
+    </div>
+    <div class="daily-macro-copy">
+      <strong>${escapeHtml(risk.reason || "Fed 新闻、收益率、VIX 与指数代理指标用于约束今日候选。")}</strong>
+      <p>${escapeHtml(state.macroError ? `宏观接口暂不可用：${state.macroError}` : `覆盖 Fed/宏观新闻 ${risk.sourceCount || 0} 条、市场代理 ${risk.signalCount || 0} 个；高风险时高 beta 标的自动降级。`)}</p>
+    </div>
+    <div class="daily-macro-items">
+      ${
+        items.length
+          ? items.map((item) => `<a href="${escapeHtml(item.url || "#")}" target="_blank" rel="noreferrer">${escapeHtml(item.source || item.publisher || "Macro")} · ${escapeHtml(shortTitle(item.title, 72))}</a>`).join("")
+          : `<span>等待 Fed/FOMC、通胀、收益率与指数新闻回填</span>`
+      }
+      ${signals.map((item) => `<span>${escapeHtml(item.label)} ${formatPercent(item.changePercent)}</span>`).join("")}
+    </div>
+  `;
+}
+
 function bstockForEquity(symbol = "") {
   const normalized = normalizeSymbol(symbol);
   return BSTOCK_SYMBOLS.find((item) => normalizeSymbol(item.equity) === normalized) || null;
@@ -2119,21 +2279,27 @@ function liveMatchesStock(stock = {}) {
   });
 }
 
-function dailyPickScore(stock = {}, model = {}, decision = {}, assessment = {}, quote = {}) {
+function dailyPickScore(stock = {}, model = {}, decision = {}, assessment = {}, quote = {}, confidence = {}, macro = macroSignalForStock(stock)) {
   const metric = stock.socialMetric || stock.metric || metricForStock(stock) || {};
   const liveHits = liveMatchesStock(stock).length;
   const historyHits = historyMatchesStock(stock).length;
   const bstock = bstockForEquity(stock.symbol);
   const changePercent = Number(quote.changePercent);
   const rangePct = decision.rangePct ?? priceRangePercent(quote);
+  const newsCount = (quote.news || []).length;
   let score = Number(model.score || decision.fit || 0);
   score += Math.min(10, liveHits * 4);
   score += Math.min(8, historyHits * 2);
   score += Math.min(8, Number(metric.materiality || 0) / 16);
+  score += Math.min(5, newsCount * 1.5);
   score += bstock ? 4 : 0;
+  score += Number(macro.adjustment || 0);
   if (assessment.verdict === "ready") score += 8;
   if (assessment.verdict === "wait") score += 2;
   if (assessment.verdict === "blocked") score -= 28;
+  if (Number(confidence.score || 0) >= 78) score += 4;
+  if (Number(confidence.score || 0) < 64) score -= 12;
+  if (macro.blocks) score -= 18;
   if (!Number.isFinite(Number(quote.price)) || Number(quote.price) <= 0) score -= 12;
   if (stock.riskFlag || stock.theme === "capital-structure-veto") score -= 30;
   if (Number.isFinite(changePercent) && changePercent > 10) score -= 8;
@@ -2151,23 +2317,34 @@ function dailyPickRows() {
       const assessment = beginnerTradeAssessment(stock, quote, decision, space);
       const plan = beginnerPositionPlan(quote, state.beginnerProfile, assessment, space);
       const metric = stock.socialMetric || stock.metric || metricForStock(stock) || {};
+      const evidence = getCalledEvidence(stock, 5);
+      const macro = macroSignalForStock(stock);
+      const confidence = dataConfidence(stock, quote, metric, evidence, macro.risk);
       const liveHits = liveMatchesStock(stock).length;
       const historyHits = historyMatchesStock(stock).length;
       const bstock = bstockForEquity(stock.symbol);
-      const score = dailyPickScore(stock, model, decision, assessment, quote);
+      const score = dailyPickScore(stock, model, decision, assessment, quote, confidence, macro);
       const hasActionablePrice = Number.isFinite(Number(quote.price)) && Number(quote.price) > 0 && plan.allowRealTrade;
+      const dataReady = confidence.score >= 70 && macro.risk.level !== "unknown" && macro.risk.level !== "loading";
       const label =
-        hasActionablePrice && assessment.verdict === "ready" && score >= 78
+        hasActionablePrice && assessment.verdict === "ready" && score >= 82 && dataReady && !macro.blocks
           ? "今日买入候选"
-          : !Number.isFinite(Number(quote.price)) || Number(quote.price) <= 0
-            ? "待补行情"
-            : assessment.verdict === "wait" || score >= 70
-              ? "等待触发"
-              : "研究观察";
-      const tone = hasActionablePrice && assessment.verdict === "ready" && score >= 78 ? "ready" : assessment.verdict === "blocked" ? "blocked" : "wait";
+          : macro.blocks
+            ? "宏观压制"
+            : !Number.isFinite(Number(quote.price)) || Number(quote.price) <= 0
+              ? "待补行情"
+              : !dataReady
+                ? "新闻待核"
+                : assessment.verdict === "wait" || score >= 70
+                  ? "等待触发"
+                  : "研究观察";
+      const tone = label === "今日买入候选" ? "ready" : assessment.verdict === "blocked" || macro.blocks ? "blocked" : "wait";
       const sources = [
         `${model.primaryFactor.label} ${model.primaryFactor.score}/100`,
+        `数据 ${confidence.score}/100`,
+        macro.label,
         Number(metric.mentions || 0) ? `X ${compact.format(Number(metric.mentions))} 提及` : "",
+        (quote.news || []).length ? `新闻 ${(quote.news || []).length}` : "",
         historyHits ? `历史样本 ${historyHits}` : "",
         liveHits ? `实时命中 ${liveHits}` : "",
         bstock ? `${bstock.displayPair}` : "",
@@ -2183,27 +2360,41 @@ function dailyPickRows() {
         label,
         tone,
         sources,
+        confidence,
+        macro,
         bstock,
       };
     })
     .filter((row) => row.model.actionClass !== "avoid" && row.assessment.verdict !== "blocked")
     .sort((a, b) => b.score - a.score || b.decision.fit - a.decision.fit)
-    .slice(0, 6);
+    .slice(0, 6)
+    .map((row, index) =>
+      row.label === "今日买入候选" && index >= DAILY_READY_LIMIT
+        ? {
+            ...row,
+            label: "等待触发",
+            tone: "wait",
+            sources: [...row.sources, "每日上限保护"],
+          }
+        : row
+    );
 }
 
 function renderDailyPicks() {
   if (!dailyPickList) return;
+  renderDailyMacroPanel();
   const rows = dailyPickRows();
   const readyCount = rows.filter((row) => row.label === "今日买入候选").length;
   const waitCount = rows.length - readyCount;
-  const updatedAt = state.lastLiveSuccessAt || state.bstockUpdatedAt || Date.now();
+  const updatedAt = state.macroUpdatedAt || state.lastLiveSuccessAt || state.bstockUpdatedAt || Date.now();
+  const detailText = state.dailyDetailsLoading ? " · 个股新闻/财务补全中" : "";
   dailyPickStatus.textContent = rows.length
-    ? `${dateLabel(updatedAt)} · ${rows.length} 个候选 · 今日买入候选 ${readyCount}${waitCount ? ` · ${waitCount} 个等待触发价或新增证据` : " · 全部已有执行框架"}`
+    ? `${dateLabel(updatedAt)} · ${rows.length} 个候选 · 今日买入候选 ${readyCount}${waitCount ? ` · ${waitCount} 个等待触发价、宏观确认或新增证据` : " · 全部已有执行框架"}${detailText}`
     : "暂无达到风控门槛的候选，等待行情、推文或历史样本更新。";
   dailyPickList.innerHTML = rows
     .map((row, index) => {
       const changeClass = Number(row.quote.changePercent) >= 0 ? "up" : "down";
-      const invalidation = row.assessment.invalidations?.[0] || row.decision.blockers?.[0] || "价格、成交量或基本面证伪。";
+      const invalidation = row.macro.blocks ? row.macro.detail : row.assessment.invalidations?.[0] || row.decision.blockers?.[0] || "价格、成交量或基本面证伪。";
       return `
         <article class="daily-pick-card ${escapeHtml(row.tone)}">
           <div class="daily-pick-rank">
@@ -2229,7 +2420,7 @@ function renderDailyPicks() {
           <div class="daily-pick-risk">
             <strong>执行口径</strong>
             <p>${escapeHtml(entryGuideText(row.quote, row.assessment, row.plan))}</p>
-            <small>${escapeHtml(invalidation)}</small>
+            <small>${escapeHtml(invalidation)} · ${escapeHtml(row.confidence.label)} ${row.confidence.score}/100</small>
           </div>
           <div class="daily-pick-actions">
             <button class="secondary" type="button" data-symbol="${escapeHtml(row.stock.symbol)}">看研报</button>
@@ -4033,13 +4224,15 @@ function financialQualitySummary(financials = {}) {
   return fragments.length ? fragments.join("；") : "财务摘要不足，需要补 10-K/10-Q、电话会和公司公告。";
 }
 
-function dataConfidence(stock = {}, quote = {}, metric = {}, evidence = []) {
+function dataConfidence(stock = {}, quote = {}, metric = {}, evidence = [], macroRisk = currentMacroRisk()) {
   const newsCount = (quote.news || []).length;
+  const hasMacro = macroRisk && macroRisk.level !== "unknown" && macroRisk.level !== "loading";
   let score = 38;
   if (Number.isFinite(Number(quote.price))) score += 14;
   if (Number.isFinite(Number(quote.marketCap)) || stock.fallbackMarketCap) score += 12;
   if (quote.financials && Object.keys(quote.financials).length) score += 12;
   if (newsCount) score += 8;
+  if (hasMacro) score += 8;
   if (evidence.length) score += Math.min(14, evidence.length * 3);
   if (stock.isUniversal) score -= 18;
   score = Math.round(clamp(score, 15, 96));
@@ -4049,6 +4242,7 @@ function dataConfidence(stock = {}, quote = {}, metric = {}, evidence = []) {
     Number.isFinite(Number(quote.marketCap)) || stock.fallbackMarketCap ? "市值可用" : "缺市值",
     quote.financials && Object.keys(quote.financials).length ? "财务摘要可用" : "财务摘要待补",
     newsCount ? `${newsCount} 条公开新闻` : "新闻待补",
+    hasMacro ? `宏观：${macroRisk.label}` : "Fed/宏观新闻待补",
     stock.isUniversal ? "非 Serenity 核心喊单" : `${evidence.length} 条 Serenity 样本`,
     metric.mentions ? `${compact.format(metric.mentions)} 次历史提及` : "历史提及较少",
   ];
@@ -4067,18 +4261,19 @@ function quoteSourceLabel(quote = {}) {
   return "快速框架";
 }
 
-function dataSourceRows(stock = {}, quote = {}, confidence = {}, evidence = []) {
+function dataSourceRows(stock = {}, quote = {}, confidence = {}, evidence = [], macroRisk = currentMacroRisk()) {
   const newsCount = (quote.news || []).length;
   return [
     { label: "行情", value: quoteSourceLabel(quote), meta: quoteFreshnessLabel(quote) },
     { label: "财务", value: quote.financials && Object.keys(quote.financials).length ? "Nasdaq 财务摘要" : "待补财报摘要", meta: quote.financials?.period || "后台补全" },
     { label: "样本", value: stock.isUniversal ? "通用美股初筛" : "Serenity 公开样本", meta: `${evidence.length} 条命中样本` },
     { label: "新闻", value: newsCount ? "Yahoo / 公开新闻" : "待补新闻", meta: newsCount ? `${newsCount} 条` : "后台补全" },
+    { label: "宏观", value: macroRisk.label || "宏观待补", meta: `${macroRisk.score ?? "--"}/100 · Fed/收益率/VIX` },
     { label: "置信", value: confidence.label || "待评估", meta: `${confidence.score || "--"}/100` },
   ];
 }
 
-function decisionBriefRows(stock = {}, quote = {}, decision = {}, beginner = {}, plan = {}, checklist = {}, confidence = {}) {
+function decisionBriefRows(stock = {}, quote = {}, decision = {}, beginner = {}, plan = {}, checklist = {}, confidence = {}, macro = macroSignalForStock(stock)) {
   const reason = decision.reasons?.[0] || decision.oneLine || compactReason(stock.thesis);
   const trigger = entryGuideText(quote, beginner, plan);
   const invalidation = checklist.invalidation?.[0] || decision.blockers?.[0] || stock.risk || "价格、成交量或基本面证伪。";
@@ -4091,6 +4286,7 @@ function decisionBriefRows(stock = {}, quote = {}, decision = {}, beginner = {},
     { label: "结论", value: decision.actionLabel || "观察", body: decision.stance || decision.oneLine || "等待确认" },
     { label: "核心原因", value: decision.topDriver || "框架匹配", body: reason },
     { label: "触发价", value: plan.watchEntry ? formatMoney(plan.watchEntry) : "待价格回填", body: trigger },
+    { label: "宏观约束", value: macro.label || "宏观中性", body: macro.detail || "Fed 新闻、收益率、VIX 与指数代理指标未触发强否决。" },
     { label: "失效条件", value: stock.riskFlag ? "风险优先" : "反证优先", body: invalidation },
     { label: "待验证数据", value: confidence.label || "数据待补", body: verification.slice(0, 3).join("；") || "补财报、公告、新闻和成交量。" },
   ];
@@ -4341,10 +4537,11 @@ function buildReport(stock, quote) {
   const beginner = beginnerTradeAssessment(enriched, quote, decision, space);
   const positionPlan = beginnerPositionPlan(quote, state.beginnerProfile, beginner, space);
   const execution = executionCards(enriched, quote, decision, beginner, positionPlan, playbook, evidence, metric);
-  const confidence = dataConfidence(enriched, quote, metric, evidence);
+  const macro = macroSignalForStock(enriched);
+  const confidence = dataConfidence(enriched, quote, metric, evidence, macro.risk);
   const checklist = researchChecklist(enriched, quote, decision, playbook, evidence, metric);
-  const sourceRows = dataSourceRows(enriched, quote, confidence, evidence);
-  const briefRows = decisionBriefRows(enriched, quote, decision, beginner, positionPlan, checklist, confidence);
+  const sourceRows = dataSourceRows(enriched, quote, confidence, evidence, macro.risk);
+  const briefRows = decisionBriefRows(enriched, quote, decision, beginner, positionPlan, checklist, confidence, macro);
   const topDrivers = breakdown
     .slice()
     .sort((a, b) => b.score - a.score)
@@ -4364,6 +4561,7 @@ function buildReport(stock, quote) {
     beginner,
     positionPlan,
     execution,
+    macro,
     dataConfidence: confidence,
   });
 
@@ -4714,6 +4912,10 @@ async function init() {
   renderTrackRecordList();
   renderBStocks();
   loadBStocks().catch(() => false);
+  renderDailyMacroPanel();
+  loadMacroNews()
+    .then(() => loadDailyCandidateDetails())
+    .catch(() => false);
   renderLiveMonitor();
   loadLiveMonitor();
   setInterval(loadLiveMonitor, WEB_PUSH_POLL_MS);
@@ -4728,6 +4930,7 @@ async function init() {
       renderOpportunityList();
       renderScreener();
       renderDailyPicks();
+      loadDailyCandidateDetails().catch(() => false);
       return loadQuotes({ core: false, social: true });
     })
     .then(() => {
@@ -4736,6 +4939,7 @@ async function init() {
       renderOpportunityList();
       renderScreener();
       renderDailyPicks();
+      loadDailyCandidateDetails().catch(() => false);
     })
     .catch(() => false);
   refreshPriceAlertQuotes(true)
