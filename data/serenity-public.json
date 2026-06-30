@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T01:24:53.332Z",
+  "generatedAt": "2026-06-30T11:34:45.509Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6927,
+    "parsedItems": 6933,
     "commentCount": 33187,
-    "profileTweets": 7228,
-    "latestItemDate": "2026-06-30T01:10:57.000Z"
+    "profileTweets": 7222,
+    "latestItemDate": "2026-06-30T10:27:55.000Z"
   },
   "rules": [
     {
@@ -69,27 +69,27 @@
         "SIVERS"
       ],
       "marketSymbol": "SIVEF",
-      "mentions": 1141,
-      "bull": 503,
+      "mentions": 1143,
+      "bull": 505,
       "bear": 17,
       "neutral": 621,
       "materiality": 100,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 10561
+      "sentimentScore": 10597
     },
     {
       "symbol": "NBIS",
       "aliases": [],
       "marketSymbol": "NBIS",
-      "mentions": 785,
-      "bull": 223,
+      "mentions": 787,
+      "bull": 225,
       "bear": 11,
       "neutral": 551,
       "materiality": 77,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 5442
+      "sentimentScore": 5478
     },
     {
       "symbol": "LITE",
@@ -108,14 +108,14 @@
       "symbol": "AAOI",
       "aliases": [],
       "marketSymbol": "AAOI",
-      "mentions": 559,
+      "mentions": 560,
       "bull": 211,
       "bear": 14,
-      "neutral": 334,
+      "neutral": 335,
       "materiality": 80,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4501
+      "sentimentScore": 4504
     },
     {
       "symbol": "NVDA",
@@ -134,14 +134,14 @@
       "symbol": "AXTI",
       "aliases": [],
       "marketSymbol": "AXTI",
-      "mentions": 580,
-      "bull": 158,
+      "mentions": 581,
+      "bull": 159,
       "bear": 9,
       "neutral": 413,
       "materiality": 74,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 3897
+      "sentimentScore": 3915
     },
     {
       "symbol": "IREN",
@@ -231,27 +231,27 @@
         "GOOG"
       ],
       "marketSymbol": "GOOGL",
-      "mentions": 302,
+      "mentions": 303,
       "bull": 96,
       "bear": 9,
-      "neutral": 197,
+      "neutral": 198,
       "materiality": 88,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 2123
+      "sentimentScore": 2126
     },
     {
       "symbol": "MU",
       "aliases": [],
       "marketSymbol": "MU",
-      "mentions": 223,
+      "mentions": 224,
       "bull": 99,
       "bear": 5,
-      "neutral": 119,
-      "materiality": 80,
+      "neutral": 120,
+      "materiality": 81,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 2036
+      "sentimentScore": 2039
     },
     {
       "symbol": "AMZN",
@@ -283,14 +283,14 @@
       "symbol": "META",
       "aliases": [],
       "marketSymbol": "META",
-      "mentions": 256,
+      "mentions": 257,
       "bull": 85,
       "bear": 6,
-      "neutral": 165,
+      "neutral": 166,
       "materiality": 79,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1894
+      "sentimentScore": 1897
     },
     {
       "symbol": "CIFR",
@@ -426,30 +426,30 @@
       "sentimentScore": 1478
     },
     {
-      "symbol": "SNDK",
-      "aliases": [],
-      "marketSymbol": "SNDK",
-      "mentions": 184,
-      "bull": 67,
-      "bear": 4,
-      "neutral": 113,
-      "materiality": 76,
-      "latest": "2026-05-24T02:28:23.000Z",
-      "dominantTheme": "memory-rotation",
-      "sentimentScore": 1463
-    },
-    {
       "symbol": "RDDT",
       "aliases": [],
       "marketSymbol": "RDDT",
-      "mentions": 166,
-      "bull": 64,
+      "mentions": 167,
+      "bull": 65,
       "bear": 1,
       "neutral": 101,
-      "materiality": 74,
+      "materiality": 75,
       "latest": "2026-04-29T21:40:20.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1458
+      "sentimentScore": 1476
+    },
+    {
+      "symbol": "SNDK",
+      "aliases": [],
+      "marketSymbol": "SNDK",
+      "mentions": 185,
+      "bull": 67,
+      "bear": 4,
+      "neutral": 114,
+      "materiality": 76,
+      "latest": "2026-05-24T02:28:23.000Z",
+      "dominantTheme": "memory-rotation",
+      "sentimentScore": 1466
     },
     {
       "symbol": "TSEM",
@@ -468,14 +468,14 @@
       "symbol": "JBL",
       "aliases": [],
       "marketSymbol": "JBL",
-      "mentions": 154,
-      "bull": 64,
+      "mentions": 155,
+      "bull": 65,
       "bear": 2,
       "neutral": 88,
       "materiality": 87,
       "latest": "2026-06-01T20:01:50.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1377
+      "sentimentScore": 1395
     },
     {
       "symbol": "ALRIB",
@@ -499,14 +499,14 @@
         "XFAB.PA"
       ],
       "marketSymbol": "XFAB.PA",
-      "mentions": 113,
-      "bull": 64,
+      "mentions": 114,
+      "bull": 65,
       "bear": 6,
       "neutral": 43,
       "materiality": 96,
       "latest": "2026-06-01T14:33:55.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1165
+      "sentimentScore": 1183
     },
     {
       "symbol": "EWY",
@@ -551,14 +551,14 @@
       "symbol": "GFS",
       "aliases": [],
       "marketSymbol": "GFS",
-      "mentions": 86,
-      "bull": 45,
+      "mentions": 87,
+      "bull": 46,
       "bear": 2,
       "neutral": 39,
       "materiality": 90,
       "latest": "2026-06-01T20:01:50.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 886
+      "sentimentScore": 904
     },
     {
       "symbol": "FLNC",
@@ -587,6 +587,19 @@
       "sentimentScore": 855
     },
     {
+      "symbol": "RPI",
+      "aliases": [],
+      "marketSymbol": "RPI",
+      "mentions": 96,
+      "bull": 39,
+      "bear": 2,
+      "neutral": 55,
+      "materiality": 71,
+      "latest": "2026-05-12T10:09:16.000Z",
+      "dominantTheme": "general",
+      "sentimentScore": 823
+    },
+    {
       "symbol": "CRCL",
       "aliases": [],
       "marketSymbol": "CRCL",
@@ -600,17 +613,17 @@
       "sentimentScore": 813
     },
     {
-      "symbol": "RPI",
+      "symbol": "ALAB",
       "aliases": [],
-      "marketSymbol": "RPI",
-      "mentions": 95,
-      "bull": 38,
-      "bear": 2,
-      "neutral": 55,
-      "materiality": 71,
-      "latest": "2026-05-12T10:09:16.000Z",
-      "dominantTheme": "general",
-      "sentimentScore": 805
+      "marketSymbol": "ALAB",
+      "mentions": 81,
+      "bull": 36,
+      "bear": 0,
+      "neutral": 45,
+      "materiality": 85,
+      "latest": "2026-06-12T04:26:43.000Z",
+      "dominantTheme": "neocloud",
+      "sentimentScore": 783
     },
     {
       "symbol": "NOK",
@@ -626,19 +639,6 @@
       "sentimentScore": 774
     },
     {
-      "symbol": "ALAB",
-      "aliases": [],
-      "marketSymbol": "ALAB",
-      "mentions": 80,
-      "bull": 35,
-      "bear": 0,
-      "neutral": 45,
-      "materiality": 84,
-      "latest": "2026-06-12T04:26:43.000Z",
-      "dominantTheme": "neocloud",
-      "sentimentScore": 765
-    },
-    {
       "symbol": "WULF",
       "aliases": [],
       "marketSymbol": "WULF",
@@ -647,7 +647,7 @@
       "bear": 3,
       "neutral": 58,
       "materiality": 83,
-      "latest": "2026-06-15T22:07:05.000Z",
+      "latest": "2026-06-11T17:54:35.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 747
     },
@@ -673,7 +673,7 @@
       "bear": 1,
       "neutral": 42,
       "materiality": 79,
-      "latest": "2026-06-15T15:08:36.000Z",
+      "latest": "2026-06-15T14:56:05.000Z",
       "dominantTheme": "general",
       "sentimentScore": 702
     },
@@ -1149,14 +1149,14 @@
       "symbol": "ASML",
       "aliases": [],
       "marketSymbol": "ASML",
-      "mentions": 37,
+      "mentions": 38,
       "bull": 14,
       "bear": 0,
-      "neutral": 23,
+      "neutral": 24,
       "materiality": 81,
       "latest": "2026-05-17T01:28:37.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 323
+      "sentimentScore": 326
     },
     {
       "symbol": "WOLF",
@@ -1401,7 +1401,7 @@
       "bear": 0,
       "neutral": 13,
       "materiality": 85,
-      "latest": "2026-06-15T14:41:57.000Z",
+      "latest": "2026-06-15T14:02:20.000Z",
       "dominantTheme": "power-architecture",
       "sentimentScore": 255
     },
@@ -1492,7 +1492,7 @@
       "bear": 0,
       "neutral": 19,
       "materiality": 70,
-      "latest": "2026-06-15T23:33:51.000Z",
+      "latest": "2026-06-15T03:21:12.000Z",
       "dominantTheme": "general",
       "sentimentScore": 245
     },
@@ -1700,7 +1700,7 @@
       "bear": 1,
       "neutral": 22,
       "materiality": 75,
-      "latest": "2026-06-15T14:41:57.000Z",
+      "latest": "2026-06-15T14:02:20.000Z",
       "dominantTheme": "general",
       "sentimentScore": 206
     },
@@ -1934,7 +1934,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 99,
-      "latest": "2026-06-15T14:41:57.000Z",
+      "latest": "2026-06-15T14:02:20.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 186
     },
@@ -2103,7 +2103,7 @@
       "bear": 3,
       "neutral": 16,
       "materiality": 79,
-      "latest": "2026-06-16T02:23:29.000Z",
+      "latest": "2026-06-16T02:20:57.000Z",
       "dominantTheme": "general",
       "sentimentScore": 165
     },
@@ -2329,6 +2329,19 @@
       "sentimentScore": 138
     },
     {
+      "symbol": "CBRS",
+      "aliases": [],
+      "marketSymbol": "CBRS",
+      "mentions": 11,
+      "bull": 7,
+      "bear": 0,
+      "neutral": 4,
+      "materiality": 86,
+      "latest": "2026-05-13T11:31:13.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 138
+    },
+    {
       "symbol": "SG",
       "aliases": [],
       "marketSymbol": "SG",
@@ -2389,7 +2402,7 @@
       "bear": 0,
       "neutral": 7,
       "materiality": 87,
-      "latest": "2026-06-15T22:07:05.000Z",
+      "latest": "2026-06-11T17:54:35.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 135
     },
@@ -2480,7 +2493,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 100,
-      "latest": "2026-06-15T14:41:57.000Z",
+      "latest": "2026-06-15T14:02:20.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 130
     },
@@ -2600,19 +2613,6 @@
       "latest": "2026-05-27T07:29:00.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 121
-    },
-    {
-      "symbol": "CBRS",
-      "aliases": [],
-      "marketSymbol": "CBRS",
-      "mentions": 10,
-      "bull": 6,
-      "bear": 0,
-      "neutral": 4,
-      "materiality": 85,
-      "latest": "2026-05-13T11:31:13.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 120
     },
     {
       "symbol": "UBER",
@@ -3737,7 +3737,7 @@
     },
     {
       "id": "2065130589204992048",
-      "date": "2026-06-15T22:07:05.000Z",
+      "date": "2026-06-11T17:54:35.000Z",
       "title": "Anthropic’s first data-center leasing push could benefit neocloud colocation operators",
       "body": "New Anthropic news looks like a potential tailwind for the Neocloud colo sector.\n\nSuch as $WULF, $CIFR, $WYFI, $HUT and others (not named yet). \n\nAs Anthropic is pursuing its first DC leases. \n\n\"The AI company has signed more than a dozen letters of intent with U.S. developers\" per The Information.",
       "symbols": [
@@ -4036,6 +4036,28 @@
       "url": "https://x.com/aleabitoreddit/status/2050762148545216899"
     },
     {
+      "id": "2071763387948859506",
+      "date": "2026-06-30T01:10:57.000Z",
+      "title": "I've reached 900k followers, thank you everyone! ",
+      "body": "I've reached 900k followers, thank you everyone!\n\nJust some reflection, it's actually a nightmare at higher counts...\n\nWhich is new to me, since I started at almost nothing earlier this year.\n\n1. Threats of safety, which I don't enjoy.\n\n- Random new accounts sending personal threats\n- Mysterious foreign accounts, sending coercive messages the moment I mention a foreign ticker\n\nIf I hold an opinion about a stock, I'd prefer not to have anyone show up on the street with a knife at night since it's safety risk at this point...\n\nNever felt like I'd have to take that into consideration for holding an opinion.\n\n2. Egregious media narratives\n\n- Lot of outlets try to dismiss my ideas like $RPI or $SIVE as \"meme stocks\" or me as \"meme trader\" when I talk about supply chain chokepoints or fundamental catalysts to revenue due to AI.\n\nWithout ever covering the core ideas or hyperscaler mapping I've done.\n\nI let success validate my ideas, but it's annoying when they can just pretend their claims like \"___ will imminently crash as a fact\" which ends up not happening.\n\nOr that \"___\" is just a retail meme stock without mentioning $JBL, Ayar, $GFS or others for CPO scale up or pluggables.\n\nI'm grateful to some outlets, like in Belgium for $XFAB coverage, but many others try and paint their own narrative rather than covering a very nuanced thesis objectively.\n\n- When I mention a ticker in a foreign market, some try to frame me as some \"adversarial account\"!\n\nI'm just sharing ideas, and I'll always disclose positions/financial interest if I have them.\n\nIf I say I have none, they just make up some narrative that I'm some foreign institution or random group inside their country that does.\n\nSome have even tried hilariously forging screenshots of me to harm my reputation, which was annoying to deal with. Since it's easier to textedit a photo and spread it around than it is to dispel disinformation.\n\nLot of institutions know me personally by now.\n\nI just don't go broadcasting my identity to random people in the media/public, since personal security gets expensive and I just want to live about my day.\n\n3. Endless X bot spam\n\n- I have endless hundreds of comments a day trying to link external communities pretending they're me.\n\nI manually delete, and block thousands of these accounts, sometimes hit regular people by accident.\n\nAnd it's extremely exhausting to the point my fingers cramp certain days. \n\nEven if I give the most blatant warnings in bio, people still get scammed and think it's me. Then I get blamed for it too.\n\nI actually had a conversation where someone asked if a scammer was me.\n\nI said no verbatim, then they double checked like 2-3 more times because they didn't believe I said no because someone had the same username on another scam platform.\n\nIn another world, maybe we'll get automod type tools. But until then,  it's mentally exhausting dealing with all of this. But I do so anyways since I don't want my followers to get scammed. \n\n4. Endless engagement baiting\n\n- I have tons of people making up fake stuff about me, tagging me in posts, randomly bashing my ideas while missing any technical nuance in order to get me to comment or farm views.\n\nIt's a catch 22 since the moment I reply, they get a lot of views, which was their goal. And if I don't reply it just looks like I'm avoiding something (which is not true).\n\nI'm very transparent, I always try and entertain people who disagree first. But when it gets into personal attacks or leading questions/disinformation rather than substance then I don't engage.\n\nIt's a little sad though when people I've interacted with end up caring more about engagement over relationships down the road. \n\n5. People missing the nuance\n\n- I share ideas pretty often and I always maintain I don't want people to copytrade or blindly follow, which is why I haven't set up any copytrading apps.\n\nBefore it was just posting with a few $RDDT friends on ideas like $AXTI, $NBIS, or $ALAB, and people were more knowledgeable traders. \n\nThen seeing if markets validate my guesses like with InP substrate bottlenecks. \n\nBut because many turned out directionally right, to the point it became a central talking point between China/US trade relations, lot of random folks started to follow my account last few months.\n\nBut many of them miss nuances with float dilution, or material updates along the way such as rate hikes, and I get blamed if a thesis changes.\n\nNow since there's so many random people, even if I share an idea about $CBRS last Friday.\n\nAt market open I had people panicking over a 2% drop, asking me if I did something to a $44B+ company, even if it went up 20%+ today.\n\nNow I have compliance review for posts, which delays things a lot but makes sure people don't get the wrong idea. And I have to be careful about my timing, so I post new ideas when markets close.\n\nBefore, it was just sharing ideas the moment I had them during lunch or in the shower, so this is becoming a headache.\n\n6. I post my core ideas for free. And I've always said this from the start.\n\nI actually made my subscribers chat literally by accident, and set the bare minimum amount on purpose since I didn't want to take people's money. But kept it so I could avoid the bots and not spam the main timeline with random thoughts/scrapped research.\n\nI think me becoming the #1 most subscribed to person on X was literally by accident.\n\nBut lot of weird narratives out there when media or others don't believe that I just genuinely want to share my ideas for free.\n\nAnd that people shouldn't need to pay $300 in a paywalled community to see them.\n\n_\n\nNot sure if people want to read it all, but just some things I've gone through.\n\nIt's not as much fun at higher numbers and it would be nice to go back to when I was smaller.\n\nRegardless, I'd rather not turn this into a job, or make it feel like one.\n\nWill probably take a break when I hit 1M as a milestone and do something else that will help out the community like sharing my research pipelines and such.\n\nThink a lot of my friends at 10-50K follower counts, seem to experience some of these issues too. But problems get magnified a lot at this level.\n\nI never needed the X creator fees or anything, just wanted to share ideas for fun if people wanted to listen.\n\nAnd didn't expect any popularity, but it's nice to see that people find my ideas compelling.",
+      "symbols": [
+        "RPI",
+        "SIVEF",
+        "JBL",
+        "GFS",
+        "XFAB",
+        "RDDT",
+        "AXTI",
+        "NBIS",
+        "ALAB",
+        "CBRS"
+      ],
+      "theme": "capital-structure-veto",
+      "materiality": 100,
+      "sentiment": "bull",
+      "url": "https://x.com/aleabitoreddit/status/2071763387948859506"
+    },
+    {
       "id": "2047520460884353096",
       "date": "2026-04-24T03:38:13.000Z",
       "title": "Serenity X 回复样本 2047520460884353096",
@@ -4082,30 +4104,6 @@
       "materiality": 100,
       "sentiment": "bull",
       "url": "https://x.com/aleabitoreddit/status/2034978307062845936"
-    },
-    {
-      "id": "2027839956765515961",
-      "date": "2026-02-28T20:14:55.000Z",
-      "title": "$AAOI feels like must-have photonics exposure to me. ",
-      "body": "$AAOI feels like must-have photonics exposure to me. \n\nTheir earnings report is genuinely black magic.\n\n$LITE ($50B MC): FY 2026 est. ~$2.91B\n$AAOI ($5.6B MC) H2 2027: $4.35B ARR. \n\nTheir growth projections literally leapfrogged $LITE for 2026. \n\nNot even kidding. \n\nGross margins are ~40% for $AAOI, maybe 45% for $LITE with OCS monopoly. \n\n\"-term objective of gross margins to around 40%,\"\n\nDon't get me wrong, $LITE is an amazing long due to 8-12% BOM of $GOOGL TPU and Google capex spend... \n\nBut $AAOI top line growth for revenue is close to 10X revenue growth from last year's revenue, which is just insane. \n\nAnd if you go off napkin math modeling:\n\n\"By Q2 2027, management forecasts monthly transceiver revenue potential of $378 million\"\n\n~ $4.30B target, 40% margin (in-house), $1.72B gross profit, maybe ~$600m capex/opex:\n\nNet income ~$896M.\n\nForward P/E (on 2027 NI): ~6.4x forward p/e off ~900%-ish Y/Y growth. \n\nAnd if you look at photonics ramp, it's expected to increase exponentially toward 2030. \n\nFrom their management call hyperscalers likely ( $GOOGL, $MSFT, $AMZN ) are buying out all available capacity for transceivers. \n\nReminds me of a early $ALAB or $CRDO where all the hyperscalers are their customers. \n\nAnd if you get to likely price hikes like NAND for $SNDK:\n\n+15% ASP Price Hike: $1.41B net income \n- (4.1x forward p/e)\n+30% ASP Price Hike: $1.92B net income  \n- (3.0x forward p/e)\n\nThis is why I got so excited about $AAOI post-earnings. \n\nNot even including $AAOI \"Made in America\" transceiver supply chains that would give them a premium where $FN, Innolight, Eptolink, and others do theirs abroad.\n\nKinda like $INTC to $TSM or $MU to SK Hynix premiums. \n\nThe ROI for this is just astronomical if they hit their projections and price hikes give them a 3 p/e rate off 800%+ growth in photonics segments. \n\nAgain, these are management projections, execution is the biggest the name of the game.\n\nRegardless, I'm making $AAOI one of my largest photonics positions because this looks like black magic and the beginning of the next $SNDK. \n\nThere's a nonzero chance we might see this at a $50B $LITE valuation one and a half year from now if they can execute on their projections.",
-      "symbols": [
-        "AAOI",
-        "LITE",
-        "GOOGL",
-        "MSFT",
-        "AMZN",
-        "ALAB",
-        "CRDO",
-        "SNDK",
-        "FN",
-        "INTC",
-        "TSM",
-        "MU"
-      ],
-      "theme": "memory-rotation",
-      "materiality": 100,
-      "sentiment": "bull",
-      "url": "https://x.com/aleabitoreddit/status/2027839956765515961"
     },
     {
       "id": "2058968617681899915",
@@ -4464,30 +4462,6 @@
       "url": "https://x.com/aleabitoreddit/status/2062829471519101173"
     },
     {
-      "id": "2059634164912226613",
-      "date": "2026-05-27T13:53:45.000Z",
-      "title": "Interesting photonics selloff today on no news? ",
-      "body": "Interesting photonics selloff today on no news?\n\n$LITE down -4.95%\n$AAOI down -4.85%\n$SIVE down -14.8%\n$SOI down -5.73%\n$AXTI down -8.13%\n$IQE down -12.13%\n\nI think it’s probably the most compelling theme going forward (even more than power semis). \n\nJust tends to be very volatile on the way up. \n\nSurprised about $AAOI though given there’s some institutional notes apparently about long term $AMD or $NVDA agreements. (Rosenblatt). Maybe $600m ATM caps some near term upside.\n\n$SIVE as well, given EU Chips Act 2 is next week around photonics, and they’re listed on the blueprint. Same with MSCI/NASDAQ omx inflow next week. \n\nI’ve been personally adding to positions since I have high conviction in the photonics theme (CPO especially) given TAM expansion overall next 2 years.",
-      "symbols": [
-        "LITE",
-        "AAOI",
-        "SIVEF",
-        "SOI",
-        "AXTI",
-        "IQE",
-        "AMD",
-        "NVDA",
-        "ABCL",
-        "LPK",
-        "XFAB",
-        "TSLA"
-      ],
-      "theme": "capital-structure-veto",
-      "materiality": 100,
-      "sentiment": "bull",
-      "url": "https://x.com/aleabitoreddit/status/2059634164912226613"
-    },
-    {
       "id": "2060359822076477876",
       "date": "2026-05-29T13:57:15.000Z",
       "title": "To be fair Trump did tell everyone to buy $DELL, multiple times this year. ",
@@ -4607,6 +4581,30 @@
       "materiality": 100,
       "sentiment": "bull",
       "url": "https://x.com/aleabitoreddit/status/2063851425462173726"
+    },
+    {
+      "id": "2059634164912226613",
+      "date": "2026-05-27T13:53:45.000Z",
+      "title": "Interesting photonics selloff today on no news? ",
+      "body": "Interesting photonics selloff today on no news?\n\n$LITE down -4.95%\n$AAOI down -4.85%\n$SIVE down -14.8%\n$SOI down -5.73%\n$AXTI down -8.13%\n$IQE down -12.13%\n\nI think it’s probably the most compelling theme going forward (even more than power semis). \n\nJust tends to be very volatile on the way up. \n\nSurprised about $AAOI though given there’s some institutional notes apparently about long term $AMD or $NVDA agreements. (Rosenblatt). Maybe $600m ATM caps some near term upside.\n\n$SIVE as well, given EU Chips Act 2 is next week around photonics, and they’re listed on the blueprint. Same with MSCI/NASDAQ omx inflow next week. \n\nI’ve been personally adding to positions since I have high conviction in the photonics theme (CPO especially) given TAM expansion overall next 2 years.",
+      "symbols": [
+        "LITE",
+        "AAOI",
+        "SIVEF",
+        "SOI",
+        "AXTI",
+        "IQE",
+        "AMD",
+        "NVDA",
+        "ABCL",
+        "LPK",
+        "XFAB",
+        "TSLA"
+      ],
+      "theme": "capital-structure-veto",
+      "materiality": 100,
+      "sentiment": "bull",
+      "url": "https://x.com/aleabitoreddit/status/2059634164912226613"
     },
     {
       "id": "2062353660928278820",
@@ -5044,7 +5042,7 @@
     },
     {
       "id": "2066535221554733278",
-      "date": "2026-06-15T15:08:36.000Z",
+      "date": "2026-06-15T14:56:05.000Z",
       "title": "Just as a recap, these were all my core European longs: 1. $SIVE 2. $LPK 3. $SOI 4. $RPI 5. $IQE 6. $ALRIB 7. $XFAB Sivers: As you know by now, core laser chokepoint over next gene",
       "body": "Just as a recap, these were all my core European longs:\n\n1. $SIVE\n2. $LPK\n3. $SOI\n4. $RPI \n5. $IQE\n6. $ALRIB\n7. $XFAB\n\nSivers: As you know by now, core laser chokepoint over next generation photonics, from 1.6T pluggables to CPO.\n\nEmbedded in many hyperscaler suppliers from Jabil to Ayar. Should go brrr 2027 but markets are forward looking, so ramps + qualifications should get priced in now. \n\nLPK Laser - Glass core substrate \"monopoly\" with LIDE. \n\n\"More than 80% of major global players have selected our equipment for process validation, learning and scaling to mass production\"\n\nSoitec - Silicon photonics SoI substrate pure monopoly while coming out of legacy drag segments.  \n\nRaspberry Pi - Was my fun idea around Raspberry Pis being used for AI hardware deployments. \n\nPreviously this thing was mainly educational or hobby boards, but now used for edge/local AI. Just thought revenue increase would be extremely material and it played out well. \n\nIQE - Critical epiwafer player for your Western photonics like Macom, Tower, Lumentum, and others. \n\nWas kinda going under, but thought their latent capacity relative to Landmark was undervalued. \n\nAlso given how important it was, I thought that your downstream players + Govs wouldn't let it go under, so it was more of a moonshot idea earlier in the year. \n\nLot more derisked now, very important.\n\nRiber - Kinda monopoly in the MBE space, exposure to Quantum / quantum dot + silicon photonics. \n\nFound out from OSINT help from a friend latentvalue that Microsoft Quantum was buying their machines, so this was direct hyperscaler validation + kinda de-risked at current MCs.\n\nXFab - SiC foundry backed by EU/US CHIPS Act with power semi upside. (152% Y/Y growth for their sic vertical). \n\nMain growth was their silicon photonics foundry past 2027 that's getting evaled by nvidia. And that they're leading Europe's value chain efforts in photonics, kinda like an early tower semi. \n\nWe'll see how this plays out, thought power semi exposure + low P/B would derisk the company until they scale their photbunchonics efforts. \n\nFrom my own personal thoughts:\n\nOut of the  maybe $SOI has already been re-rated the most? But I'm holding anyway. \n\n$LPK and $ALRIB I think are still undervalued despite their monopolies. \n\n$RPI is just kinda seeing how things go at this point, would be hilarious if they ended up like a mini nvidia for low end edge ai. \n\n$IQE probably has a long way to go given new tower long term agreement, alongside macom. And if they convert latent capacity, I still think it has a chance of rerating like landmark. \n\n$XFAB idk if im missing something or are markets missing something. you have nvidia as a direct eval of their silicon photonics foundry, and it's trading below replacement P/B. i think im right though. \n\n$SIVE I see has the highest upside out of all of them given laser company ability to vertically integrate, acquire companies downstream to make their lasers more valuable, etc. Just like coherent/lumentum. \n\nThere's like 1-2 more random ones that aren't really material, but just in general.\n\nThese are the ones I've liked the most.",
       "symbols": [
@@ -5597,30 +5595,23 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-30T01:23:40.055Z",
+    "staticUpdatedAt": "2026-06-30T11:31:55.518Z",
     "latestCaptured": {
-      "id": "2071763387948859506",
-      "date": "2026-06-30T01:10:57.000Z",
-      "title": "I've reached 900k followers, thank you everyone!",
-      "body": "I've reached 900k followers, thank you everyone!\n\nJust some reflection, it's actually a nightmare at higher counts...\n\nWhich is new to me, since I started at almost nothing earlier this year.\n\n1. Threats of safety, which I don't enjoy.\n\n- Random new accounts sending personal threats\n- Mysterious foreign accounts, sending coercive messages the moment I mention a foreign ticker\n\nIf I hold an opinion about a stock, I'd prefer not to have anyone show up on the street with a knife at night since it's safety risk at this point...\n\nNever felt like I'd have to take that into consideration for holding an opinion.\n\n2. Egregious media narratives\n\n- Lot of outlets try to dismiss my ideas like $RPI or $SIVE as \"meme stocks\" or me as \"meme trader\" when I talk about supply chain chokepoints or fundamental catalysts to revenue due to AI.\n\nWithout ever covering the core ideas or hyperscaler mapping I've done.\n\nI let success validate my ideas, but it's annoying when they can just pretend their claims like \"___ will imminently crash as a fact\" which ends up not happening.\n\nOr that \"___\" is just a retail meme stock without mentioning $JBL, Ayar, $GFS or others for CPO scale up or pluggables.\n\nI'm grateful to some outlets, like in Belgium for $XFAB coverage, but many others try and paint their own narrative rather than covering a very nuanced thesis objectively.\n\n- When I mention a ticker in a foreign market, some try to frame me as some \"adversarial account\"!\n\nI'm just sharing ideas, and I'll always disclose positions/financial interest if I have them.\n\nIf I say I have none, they just make up some narrative that I'm some foreign institution or random group inside their country that does.\n\nSome have even tried hilariously forging screenshots of me to harm my reputation, which was annoying to deal with. Since it's easier to textedit a photo and spread it around than it is to dispel disinformation.\n\nLot of institutions know me personally by now.\n\nI just don't go broadcasting my identity to random people in the media/public, since personal security gets expensive and I just want to live about my day.\n\n3. Endless X bot spam\n\n- I have endless hundreds of comments a day trying to link external communities pretending they're me.\n\nI manually delete, and block thousands of these accounts, sometimes hit regular people by accident.\n\nAnd it's extremely exhausting to the point my fingers cramp certain days. \n\nEven if I give the most blatant warnings in bio, people still get scammed and think it's me. Then I get blamed for it too.\n\nI actually had a conversation where someone asked if a scammer was me.\n\nI said no verbatim, then they double checked like 2-3 more times because they didn't believe I said no because someone had the same username on another scam platform.\n\nIn another world, maybe we'll get automod type tools. But until then,  it's mentally exhausting dealing with all of this. But I do so anyways since I don't want my followers to get scammed. \n\n4. Endless engagement baiting\n\n- I have tons of people making up fake stuff about me, tagging me in posts, randomly bashing my ideas while missing any technical nuance in order to get me to comment or farm views.\n\nIt's a catch 22 since the moment I reply, they get a lot of views, which was their goal. And if I don't reply it just looks like I'm avoiding something (which is not true).\n\nI'm very transparent, I always try and entertain people who disagree first. But when it gets into personal attacks or leading questions/disinformation rather than substance then I don't engage.\n\nIt's a little sad though when people I've interacted with end up caring more about engagement over relationships down the road. \n\n5. People missing the nuance\n\n- I share ideas pretty often and I always maintain I don't want people to copytrade or blindly follow, which is why I haven't set up any copytrading apps.\n\nBefore it was just posting with a few $RDDT friends on ideas like $AXTI, $NBIS, or $ALAB, and people were more knowledgeable traders. \n\nThen seeing if markets validate my guesses like with InP substrate bottlenecks. \n\nBut because many turned out directionally right, to the point it became a central talking point between China/US trade relations, lot of random folks started to follow my account last few months.\n\nBut many of them miss nuances with float dilution, or material updates along the way such as rate hikes, and I get blamed if a thesis changes.\n\nNow since there's so many random people, even if I share an idea about $CBRS last Friday.\n\nAt market open I had people panicking over a 2% drop, asking me if I did something to a $44B+ company, even if it went up 20%+ today.\n\nNow I have compliance review for posts, which delays things a lot but makes sure people don't get the wrong idea. And I have to be careful about my timing, so I post new ideas when markets close.\n\nBefore, it was just sharing ideas the moment I had them during lunch or in the shower, so this is becoming a headache.\n\n6. I post my core ideas for free. And I've always said this from the start.\n\nI actually made my subscribers chat literally by accident, and set the bare minimum amount on purpose since I didn't want to take people's money. But kept it so I could avoid the bots and not spam the main timeline with random thoughts/scrapped research.\n\nI think me becoming the #1 most subscribed to person on X was literally by accident.\n\nBut lot of weird narratives out there when media or others don't believe that I just genuinely want to share my ideas for free.\n\nAnd that people shouldn't need to pay $300 in a paywalled community to see them.\n\n_\n\nNot sure if people want to read it all, but just some things I've gone through.\n\nIt's not as much fun at higher numbers and it would be nice to go back to when I was smaller.\n\nRegardless, I'd rather not turn this into a job, or make it feel like one.\n\nWill probably take a break when I hit 1M as a milestone and do something else that will help out the community like sharing my research pipelines and such.\n\nThink a lot of my friends at 10-50K follower counts, seem to experience some of these issues too. But problems get magnified a lot at this level.\n\nI never needed the X creator fees or anything, just wanted to share ideas for fun if people wanted to listen.\n\nAnd didn't expect any popularity, but it's nice to see that people find my ideas compelling.",
+      "id": "2071903552608362500",
+      "date": "2026-06-30T10:27:55.000Z",
+      "title": "Hard to see a world where US AI hyperscaler capex drops dramatically from $GOOGL to $META. ",
+      "body": "Hard to see a world where US AI hyperscaler capex drops dramatically from $GOOGL to $META.\n\nWhen China entities like 360 go and claim:\n\nThey now have a \"AI cyber nuclear weapon\" that can hack Western companies and governments.\n\n(Zhou claimed Mythos was like an AI era cyber nuclear weapon, then claimed they built a Chinese equivalent).\n\nWe're probably witnessing the modern cold war.\n\nBut instead of nuclear stockpiles, it's racing to build superintelligence both offensively and defensively.\n\nWith many different \"battles\" happening concurrently like supply chain export controls between China -> Japan -> US hyperscalers.\n\nThe funny thing is that everyone still depends on one another:\n\n- US with things like rare earths and feedstock from China.\n- China with EUV to EDA and engineered substrates.\n\nSo there's still give or takes trades to build up capabilities like Nvidia/AMD AI chips access for rare-earth/magnets access.\n\nWhich is exactly why it's important for the US to build up rare earths supply chains ASAP.\n\nAnd not piss off allied supply chain chokepoints like European EUV partners with $ASML to Japanese vacuum/furnace makers like Ulvac with things like tariffs, if the US wants to use it as leverage for negotiations.\n\nBut we're getting dangerously closer to a point where supply chain interdependence is not a deterrent against escalation.\n\nEspecially as China grows closer to becoming self-reliant. And that might be the tipping point.",
       "symbols": [
-        "RPI",
-        "SIVEF",
-        "JBL",
-        "GFS",
-        "XFAB",
-        "RDDT",
-        "AXTI",
-        "NBIS",
-        "ALAB",
-        "CBRS"
+        "GOOGL",
+        "META",
+        "ASML"
       ],
-      "theme": "general",
-      "materiality": 82,
+      "theme": "memory-rotation",
+      "materiality": 71,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2071763387948859506"
+      "url": "https://x.com/aleabitoreddit/status/2071903552608362500"
     },
-    "profileTweets": 7228,
+    "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
     "pollIntervalSeconds": 1
   }
