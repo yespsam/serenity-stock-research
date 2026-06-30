@@ -4605,3 +4605,192 @@ option {
     linear-gradient(135deg, rgba(240, 185, 11, 0.28), rgba(255, 255, 255, 0.04)),
     #000 !important;
 }
+
+.daily-picks-panel {
+  display: grid;
+  gap: 14px;
+}
+
+.daily-pick-list {
+  display: grid;
+  gap: 10px;
+}
+
+.daily-pick-card {
+  display: grid;
+  grid-template-columns: 86px minmax(0, 1.35fr) minmax(210px, 0.85fr) minmax(220px, 0.9fr) auto;
+  gap: 12px;
+  align-items: stretch;
+  padding: 13px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.015)),
+    #000;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.035), 0 16px 42px rgba(0, 0, 0, 0.3);
+}
+
+.daily-pick-card.ready {
+  border-color: rgba(240, 185, 11, 0.46);
+}
+
+.daily-pick-rank,
+.daily-pick-plan span,
+.daily-pick-risk,
+.daily-pick-tags span {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 8px;
+  background: #000;
+}
+
+.daily-pick-rank {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 2px;
+  min-height: 112px;
+}
+
+.daily-pick-rank span,
+.daily-pick-rank small,
+.daily-pick-title em,
+.daily-pick-plan small,
+.daily-pick-risk strong,
+.daily-pick-risk small,
+.daily-pick-disclaimer {
+  font-size: 11px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.daily-pick-rank b {
+  font-size: 30px;
+  line-height: 1;
+}
+
+.daily-pick-main {
+  min-width: 0;
+  display: grid;
+  gap: 8px;
+  align-content: center;
+}
+
+.daily-pick-title {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.daily-pick-title strong {
+  font-size: 17px;
+}
+
+.daily-pick-title em {
+  padding: 5px 8px;
+  border: 1px solid rgba(240, 185, 11, 0.4);
+  border-radius: 999px;
+  background: rgba(240, 185, 11, 0.1);
+  font-style: normal;
+}
+
+.daily-pick-main p,
+.daily-pick-risk p {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 760;
+  line-height: 1.55;
+}
+
+.daily-pick-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.daily-pick-tags span {
+  min-height: 28px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 8px;
+}
+
+.daily-pick-plan {
+  display: grid;
+  gap: 7px;
+}
+
+.daily-pick-plan span,
+.daily-pick-risk {
+  display: grid;
+  gap: 4px;
+  padding: 9px;
+}
+
+.daily-pick-plan b {
+  font-size: 15px;
+}
+
+.daily-pick-plan i {
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.daily-pick-risk {
+  align-content: center;
+}
+
+.daily-pick-risk small {
+  line-height: 1.45;
+  text-transform: none;
+}
+
+.daily-pick-actions {
+  display: grid;
+  gap: 8px;
+  align-content: center;
+  min-width: 128px;
+}
+
+.daily-pick-actions button,
+.daily-pick-actions a {
+  min-height: 36px;
+  padding: 0 12px;
+  font-size: 12px;
+}
+
+.daily-pick-disclaimer {
+  margin: 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 1180px) {
+  .daily-pick-card {
+    grid-template-columns: 76px minmax(0, 1fr);
+  }
+
+  .daily-pick-plan,
+  .daily-pick-risk,
+  .daily-pick-actions {
+    grid-column: 1 / -1;
+  }
+
+  .daily-pick-actions {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .daily-pick-card,
+  .daily-pick-actions {
+    grid-template-columns: 1fr;
+  }
+
+  .daily-pick-rank {
+    min-height: auto;
+    grid-template-columns: auto auto 1fr;
+    justify-items: start;
+    padding: 10px;
+  }
+}

@@ -394,7 +394,7 @@ const BEGINNER_PRICE_ALERTS_KEY = "serenityPriceAlerts";
 const PRICE_ALERT_QUOTE_MS = 30_000;
 const BINANCE_WALLET_REFERRAL_URL = "https://web3.binance.com/referral?ref=DB7KNQGJ";
 const BSTOCK_API_PATH = "/api/binance-bstocks";
-const APP_SHELL_VERSION = "v16";
+const APP_SHELL_VERSION = "v17";
 const BSTOCK_SYMBOLS = [
   {
     symbol: "NVDAB",
@@ -484,6 +484,8 @@ const screenerSort = document.querySelector("#screenerSort");
 const screenerStatus = document.querySelector("#screenerStatus");
 const screenerFactorSummary = document.querySelector("#screenerFactorSummary");
 const screenerList = document.querySelector("#screenerList");
+const dailyPickStatus = document.querySelector("#dailyPickStatus");
+const dailyPickList = document.querySelector("#dailyPickList");
 const bstockStatus = document.querySelector("#bstockStatus");
 const bstockSummary = document.querySelector("#bstockSummary");
 const bstockList = document.querySelector("#bstockList");
@@ -508,7 +510,7 @@ const tickerInput = document.querySelector("#tickerInput");
 const tickerSuggestions = document.querySelector("#tickerSuggestions");
 const quickTickers = document.querySelector("#quickTickers");
 const reportOutput = document.querySelector("#reportOutput");
-const APP_PAGE_IDS = new Set(["home", "screener", "bstocks", "opportunities", "monitor", "watchlist", "analysis", "track-record", "method"]);
+const APP_PAGE_IDS = new Set(["home", "screener", "bstocks", "opportunities", "daily-picks", "monitor", "watchlist", "analysis", "track-record", "method"]);
 const APP_PAGE_ALIASES = new Map([["home-view", "home"]]);
 
 const usd = new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", maximumFractionDigits: 2 });
@@ -1940,6 +1942,7 @@ async function loadBStocks() {
   } finally {
     state.bstockLoading = false;
     renderBStocks();
+    renderDailyPicks();
   }
 }
 
@@ -2092,6 +2095,147 @@ function renderOpportunityList() {
             <i class="${changeClass}">${formatPercent(quote.changePercent)}</i>
           </span>
         </button>
+      `;
+    })
+    .join("");
+}
+
+function bstockForEquity(symbol = "") {
+  const normalized = normalizeSymbol(symbol);
+  return BSTOCK_SYMBOLS.find((item) => normalizeSymbol(item.equity) === normalized) || null;
+}
+
+function historyMatchesStock(stock = {}) {
+  const aliases = new Set(stockAliases(stock));
+  return state.history.filter((item) => monitorHistorySymbols(item).some((symbol) => aliases.has(symbol)));
+}
+
+function liveMatchesStock(stock = {}) {
+  const aliases = new Set(stockAliases(stock));
+  return state.liveItems.filter((item) => {
+    const symbols = liveTradableSymbols(item);
+    if (symbols.some((symbol) => aliases.has(symbol))) return true;
+    return stock.theme && item.theme === stock.theme;
+  });
+}
+
+function dailyPickScore(stock = {}, model = {}, decision = {}, assessment = {}, quote = {}) {
+  const metric = stock.socialMetric || stock.metric || metricForStock(stock) || {};
+  const liveHits = liveMatchesStock(stock).length;
+  const historyHits = historyMatchesStock(stock).length;
+  const bstock = bstockForEquity(stock.symbol);
+  const changePercent = Number(quote.changePercent);
+  const rangePct = decision.rangePct ?? priceRangePercent(quote);
+  let score = Number(model.score || decision.fit || 0);
+  score += Math.min(10, liveHits * 4);
+  score += Math.min(8, historyHits * 2);
+  score += Math.min(8, Number(metric.materiality || 0) / 16);
+  score += bstock ? 4 : 0;
+  if (assessment.verdict === "ready") score += 8;
+  if (assessment.verdict === "wait") score += 2;
+  if (assessment.verdict === "blocked") score -= 28;
+  if (!Number.isFinite(Number(quote.price)) || Number(quote.price) <= 0) score -= 12;
+  if (stock.riskFlag || stock.theme === "capital-structure-veto") score -= 30;
+  if (Number.isFinite(changePercent) && changePercent > 10) score -= 8;
+  if (Number.isFinite(rangePct) && rangePct > 88) score -= 10;
+  return Math.round(clamp(score, 1, 100));
+}
+
+function dailyPickRows() {
+  return screenerUniverse()
+    .map((stock) => {
+      const quote = stock.quote || quoteForStock(stock);
+      const model = serenityScreenerModel(stock, quote);
+      const decision = decisionFor(stock, quote);
+      const space = upsideSpace(decision.baseScore || model.score || 60, stock);
+      const assessment = beginnerTradeAssessment(stock, quote, decision, space);
+      const plan = beginnerPositionPlan(quote, state.beginnerProfile, assessment, space);
+      const metric = stock.socialMetric || stock.metric || metricForStock(stock) || {};
+      const liveHits = liveMatchesStock(stock).length;
+      const historyHits = historyMatchesStock(stock).length;
+      const bstock = bstockForEquity(stock.symbol);
+      const score = dailyPickScore(stock, model, decision, assessment, quote);
+      const hasActionablePrice = Number.isFinite(Number(quote.price)) && Number(quote.price) > 0 && plan.allowRealTrade;
+      const label =
+        hasActionablePrice && assessment.verdict === "ready" && score >= 78
+          ? "今日买入候选"
+          : !Number.isFinite(Number(quote.price)) || Number(quote.price) <= 0
+            ? "待补行情"
+            : assessment.verdict === "wait" || score >= 70
+              ? "等待触发"
+              : "研究观察";
+      const tone = hasActionablePrice && assessment.verdict === "ready" && score >= 78 ? "ready" : assessment.verdict === "blocked" ? "blocked" : "wait";
+      const sources = [
+        `${model.primaryFactor.label} ${model.primaryFactor.score}/100`,
+        Number(metric.mentions || 0) ? `X ${compact.format(Number(metric.mentions))} 提及` : "",
+        historyHits ? `历史样本 ${historyHits}` : "",
+        liveHits ? `实时命中 ${liveHits}` : "",
+        bstock ? `${bstock.displayPair}` : "",
+      ].filter(Boolean);
+      return {
+        stock,
+        quote,
+        model,
+        decision,
+        assessment,
+        plan,
+        score,
+        label,
+        tone,
+        sources,
+        bstock,
+      };
+    })
+    .filter((row) => row.model.actionClass !== "avoid" && row.assessment.verdict !== "blocked")
+    .sort((a, b) => b.score - a.score || b.decision.fit - a.decision.fit)
+    .slice(0, 6);
+}
+
+function renderDailyPicks() {
+  if (!dailyPickList) return;
+  const rows = dailyPickRows();
+  const readyCount = rows.filter((row) => row.label === "今日买入候选").length;
+  const waitCount = rows.length - readyCount;
+  const updatedAt = state.lastLiveSuccessAt || state.bstockUpdatedAt || Date.now();
+  dailyPickStatus.textContent = rows.length
+    ? `${dateLabel(updatedAt)} · ${rows.length} 个候选 · 今日买入候选 ${readyCount}${waitCount ? ` · ${waitCount} 个等待触发价或新增证据` : " · 全部已有执行框架"}`
+    : "暂无达到风控门槛的候选，等待行情、推文或历史样本更新。";
+  dailyPickList.innerHTML = rows
+    .map((row, index) => {
+      const changeClass = Number(row.quote.changePercent) >= 0 ? "up" : "down";
+      const invalidation = row.assessment.invalidations?.[0] || row.decision.blockers?.[0] || "价格、成交量或基本面证伪。";
+      return `
+        <article class="daily-pick-card ${escapeHtml(row.tone)}">
+          <div class="daily-pick-rank">
+            <span>${String(index + 1).padStart(2, "0")}</span>
+            <b>${row.score}</b>
+            <small>每日分</small>
+          </div>
+          <div class="daily-pick-main">
+            <div class="daily-pick-title">
+              <strong>${escapeHtml(row.stock.symbol)} · ${escapeHtml(row.stock.name)}</strong>
+              <em>${escapeHtml(row.label)}</em>
+            </div>
+            <p>${escapeHtml(row.decision.reasons?.[0] || compactReason(row.stock.thesis, 150))}</p>
+            <div class="daily-pick-tags">
+              ${row.sources.map((item) => `<span>${escapeHtml(item)}</span>`).join("")}
+            </div>
+          </div>
+          <div class="daily-pick-plan">
+            <span><small>现价</small><b>${formatPrice(row.quote)}</b><i class="${changeClass}">${formatPercent(row.quote.changePercent)}</i></span>
+            <span><small>触发价</small><b>${row.plan.watchEntry ? formatMoney(row.plan.watchEntry) : "待回填"}</b></span>
+            <span><small>止损/失效</small><b>${row.plan.stopPrice ? formatMoney(row.plan.stopPrice) : "先观察"}</b></span>
+          </div>
+          <div class="daily-pick-risk">
+            <strong>执行口径</strong>
+            <p>${escapeHtml(entryGuideText(row.quote, row.assessment, row.plan))}</p>
+            <small>${escapeHtml(invalidation)}</small>
+          </div>
+          <div class="daily-pick-actions">
+            <button class="secondary" type="button" data-symbol="${escapeHtml(row.stock.symbol)}">看研报</button>
+            ${row.bstock ? binanceWalletLink("Binance 钱包") : ""}
+          </div>
+        </article>
       `;
     })
     .join("");
@@ -3658,6 +3802,7 @@ async function loadLiveMonitor() {
     syncLivePushItems(state.liveItems);
     await refreshPriceAlertQuotes().catch(() => false);
     renderLiveMonitor();
+    renderDailyPicks();
   } catch (error) {
     state.liveLatencyMs = performance.now() - startedAt;
     state.liveFetchCount += 1;
@@ -3667,6 +3812,7 @@ async function loadLiveMonitor() {
     state.lastLiveFetchAt = Date.now();
     monitorStatus.textContent = `实时监控暂不可用：${error.message}`;
     renderLiveMonitor();
+    renderDailyPicks();
   } finally {
     state.liveLoading = false;
   }
@@ -4574,12 +4720,14 @@ async function init() {
   renderStockList();
   renderOpportunityList();
   renderScreener();
+  renderDailyPicks();
   loadQuotes({ social: false })
     .then(() => {
       renderTickerSuggestions();
       renderStockList();
       renderOpportunityList();
       renderScreener();
+      renderDailyPicks();
       return loadQuotes({ core: false, social: true });
     })
     .then(() => {
@@ -4587,6 +4735,7 @@ async function init() {
       renderStockList();
       renderOpportunityList();
       renderScreener();
+      renderDailyPicks();
     })
     .catch(() => false);
   refreshPriceAlertQuotes(true)
@@ -4613,6 +4762,11 @@ stockList.addEventListener("click", (event) => {
 });
 
 opportunityList.addEventListener("click", (event) => {
+  const row = event.target.closest("[data-symbol]");
+  if (row) analyzeSymbol(row.dataset.symbol);
+});
+
+dailyPickList.addEventListener("click", (event) => {
   const row = event.target.closest("[data-symbol]");
   if (row) analyzeSymbol(row.dataset.symbol);
 });
