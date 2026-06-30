@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T14:26:49.653Z",
+  "generatedAt": "2026-06-30T16:28:29.890Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -11,7 +11,7 @@
     "parsedItems": 6934,
     "commentCount": 33187,
     "profileTweets": 7222,
-    "latestItemDate": "2026-06-30T14:17:18.000Z"
+    "latestItemDate": "2026-06-30T15:20:39.000Z"
   },
   "rules": [
     {
@@ -5595,20 +5595,19 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-30T14:24:30.579Z",
+    "staticUpdatedAt": "2026-06-30T16:26:18.926Z",
     "latestCaptured": {
-      "id": "2071961279380791729",
-      "date": "2026-06-30T14:17:18.000Z",
-      "title": "There was a pretty funny anecdotal complaint from the Machine Learning $RDDT subreddit. ",
-      "body": "There was a pretty funny anecdotal complaint from the Machine Learning $RDDT subreddit.\n\nOn $CBRS + OpenAI:\n\n- Needs 1-2K tokens/sec so tries to use Cerebras.\n\n- Claims OpenAI reserved all capacity, making waitlist infinite for everyone else not a hyperscaler.\n\n- Stated alternatives with Groq’s API not accessible to them\n\nFeels bad. But it does show how few players / limited capacity there is for fast inference.",
+      "id": "2071977219002613768",
+      "date": "2026-06-30T15:20:39.000Z",
+      "title": "I wonder if humanoids is going to spark a new bottleneck/industry for robot cosmetics. Like a skin bottleneck. Or Aespa KPOP robot makeover as a service. So if $TSLA Optimus makes ",
+      "body": "I wonder if humanoids is going to spark a new bottleneck/industry for robot cosmetics.\n\nLike a skin bottleneck. Or Aespa KPOP robot makeover as a service.\n\nSo if $TSLA Optimus makes tens of millions of humanoids:\n\nWho’s going to make them all look hot?",
       "symbols": [
-        "RDDT",
-        "CBRS"
+        "TSLA"
       ],
-      "theme": "ai-infrastructure",
-      "materiality": 66,
+      "theme": "general",
+      "materiality": 55,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2071961279380791729"
+      "url": "https://x.com/aleabitoreddit/status/2071977219002613768"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
