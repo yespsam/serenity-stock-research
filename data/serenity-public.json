@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-30T16:28:29.890Z",
+  "generatedAt": "2026-07-01T03:32:31.275Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6934,
+    "parsedItems": 6941,
     "commentCount": 33187,
     "profileTweets": 7222,
-    "latestItemDate": "2026-06-30T15:20:39.000Z"
+    "latestItemDate": "2026-07-01T02:56:04.000Z"
   },
   "rules": [
     {
@@ -69,14 +69,14 @@
         "SIVERS"
       ],
       "marketSymbol": "SIVEF",
-      "mentions": 1143,
-      "bull": 505,
+      "mentions": 1145,
+      "bull": 506,
       "bear": 17,
-      "neutral": 621,
+      "neutral": 622,
       "materiality": 100,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 10597
+      "sentimentScore": 10618
     },
     {
       "symbol": "NBIS",
@@ -121,14 +121,14 @@
       "symbol": "NVDA",
       "aliases": [],
       "marketSymbol": "NVDA",
-      "mentions": 533,
+      "mentions": 534,
       "bull": 217,
       "bear": 18,
-      "neutral": 298,
+      "neutral": 299,
       "materiality": 82,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4409
+      "sentimentScore": 4412
     },
     {
       "symbol": "AXTI",
@@ -257,14 +257,14 @@
       "symbol": "AMZN",
       "aliases": [],
       "marketSymbol": "AMZN",
-      "mentions": 223,
+      "mentions": 224,
       "bull": 91,
       "bear": 1,
-      "neutral": 131,
+      "neutral": 132,
       "materiality": 85,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2015
+      "sentimentScore": 2018
     },
     {
       "symbol": "TSM",
@@ -551,14 +551,14 @@
       "symbol": "GFS",
       "aliases": [],
       "marketSymbol": "GFS",
-      "mentions": 87,
-      "bull": 46,
+      "mentions": 88,
+      "bull": 47,
       "bear": 2,
       "neutral": 39,
       "materiality": 90,
       "latest": "2026-06-01T20:01:50.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 904
+      "sentimentScore": 922
     },
     {
       "symbol": "FLNC",
@@ -647,7 +647,7 @@
       "bear": 3,
       "neutral": 58,
       "materiality": 83,
-      "latest": "2026-06-15T22:07:05.000Z",
+      "latest": "2026-06-11T17:54:35.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 747
     },
@@ -694,14 +694,14 @@
       "symbol": "TSLA",
       "aliases": [],
       "marketSymbol": "TSLA",
-      "mentions": 112,
+      "mentions": 113,
       "bull": 33,
       "bear": 7,
-      "neutral": 72,
+      "neutral": 73,
       "materiality": 81,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "robotics-physical-ai",
-      "sentimentScore": 662
+      "sentimentScore": 665
     },
     {
       "symbol": "MTSI",
@@ -1401,7 +1401,7 @@
       "bear": 0,
       "neutral": 13,
       "materiality": 85,
-      "latest": "2026-06-15T14:41:57.000Z",
+      "latest": "2026-06-15T14:02:20.000Z",
       "dominantTheme": "power-architecture",
       "sentimentScore": 255
     },
@@ -1492,7 +1492,7 @@
       "bear": 0,
       "neutral": 19,
       "materiality": 70,
-      "latest": "2026-06-15T23:33:51.000Z",
+      "latest": "2026-06-15T03:21:12.000Z",
       "dominantTheme": "general",
       "sentimentScore": 245
     },
@@ -1700,7 +1700,7 @@
       "bear": 1,
       "neutral": 22,
       "materiality": 75,
-      "latest": "2026-06-15T14:41:57.000Z",
+      "latest": "2026-06-15T14:02:20.000Z",
       "dominantTheme": "general",
       "sentimentScore": 206
     },
@@ -1934,7 +1934,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 99,
-      "latest": "2026-06-15T14:41:57.000Z",
+      "latest": "2026-06-15T14:02:20.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 186
     },
@@ -2103,7 +2103,7 @@
       "bear": 3,
       "neutral": 16,
       "materiality": 79,
-      "latest": "2026-06-16T02:23:29.000Z",
+      "latest": "2026-06-16T02:20:57.000Z",
       "dominantTheme": "general",
       "sentimentScore": 165
     },
@@ -2402,7 +2402,7 @@
       "bear": 0,
       "neutral": 7,
       "materiality": 87,
-      "latest": "2026-06-15T22:07:05.000Z",
+      "latest": "2026-06-11T17:54:35.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 135
     },
@@ -2493,7 +2493,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 100,
-      "latest": "2026-06-15T14:41:57.000Z",
+      "latest": "2026-06-15T14:02:20.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 130
     },
@@ -3737,7 +3737,7 @@
     },
     {
       "id": "2065130589204992048",
-      "date": "2026-06-15T22:07:05.000Z",
+      "date": "2026-06-11T17:54:35.000Z",
       "title": "Anthropic’s first data-center leasing push could benefit neocloud colocation operators",
       "body": "New Anthropic news looks like a potential tailwind for the Neocloud colo sector.\n\nSuch as $WULF, $CIFR, $WYFI, $HUT and others (not named yet). \n\nAs Anthropic is pursuing its first DC leases. \n\n\"The AI company has signed more than a dozen letters of intent with U.S. developers\" per The Information.",
       "symbols": [
@@ -5595,19 +5595,19 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-06-30T16:26:18.926Z",
+    "staticUpdatedAt": "2026-07-01T03:31:53.994Z",
     "latestCaptured": {
-      "id": "2071977219002613768",
-      "date": "2026-06-30T15:20:39.000Z",
-      "title": "I wonder if humanoids is going to spark a new bottleneck/industry for robot cosmetics. Like a skin bottleneck. Or Aespa KPOP robot makeover as a service. So if $TSLA Optimus makes ",
-      "body": "I wonder if humanoids is going to spark a new bottleneck/industry for robot cosmetics.\n\nLike a skin bottleneck. Or Aespa KPOP robot makeover as a service.\n\nSo if $TSLA Optimus makes tens of millions of humanoids:\n\nWho’s going to make them all look hot?",
+      "id": "2072152226169331776",
+      "date": "2026-07-01T02:56:04.000Z",
+      "title": "Congrats to $SIVE, they have now raised an upside round of 700m SEK from institutional investors. ",
+      "body": "Congrats to $SIVE, they have now raised an upside round of 700m SEK from institutional investors.\n\nThe round was “Multiple Times Oversubscribed” and slightly upsided.\n\nValidating immense institutional demand around current market prices.\n\nThis raise was specifically for \"expanding manufacturing capacity for InP lasers and optical amplifiers\" (volume ramping with fab-light model). \n\nHinting Sivers has reached the inflection point for scale. \n\nThe round was at 57 SEK (current prices are 63 SEK), which I’m personally very happy about as it’s around current market prices, which typically sets a floor.\n\nInstituional money has now de-risked the balance sheet, and funded Sivers transition to HVM.",
       "symbols": [
-        "TSLA"
+        "SIVEF"
       ],
-      "theme": "general",
-      "materiality": 55,
+      "theme": "substrate-materials",
+      "materiality": 77,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2071977219002613768"
+      "url": "https://x.com/aleabitoreddit/status/2072152226169331776"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
