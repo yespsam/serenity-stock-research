@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T13:37:18.186Z",
+  "generatedAt": "2026-07-01T14:37:29.756Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6951,
+    "parsedItems": 6952,
     "commentCount": 33187,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-01T11:19:22.000Z"
+    "latestItemDate": "2026-07-01T13:42:30.000Z"
   },
   "rules": [
     {
@@ -82,14 +82,14 @@
       "symbol": "NBIS",
       "aliases": [],
       "marketSymbol": "NBIS",
-      "mentions": 787,
+      "mentions": 788,
       "bull": 225,
-      "bear": 11,
+      "bear": 12,
       "neutral": 551,
       "materiality": 77,
-      "latest": "2026-06-12T04:26:43.000Z",
+      "latest": "2026-07-01T13:42:30.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 5478
+      "sentimentScore": 5403
     },
     {
       "symbol": "LITE",
@@ -231,14 +231,14 @@
         "GOOG"
       ],
       "marketSymbol": "GOOGL",
-      "mentions": 304,
+      "mentions": 305,
       "bull": 96,
-      "bear": 9,
+      "bear": 10,
       "neutral": 199,
       "materiality": 88,
-      "latest": "2026-06-01T23:51:46.000Z",
+      "latest": "2026-07-01T13:42:30.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 2129
+      "sentimentScore": 2054
     },
     {
       "symbol": "MU",
@@ -283,14 +283,14 @@
       "symbol": "META",
       "aliases": [],
       "marketSymbol": "META",
-      "mentions": 258,
+      "mentions": 259,
       "bull": 85,
-      "bear": 6,
+      "bear": 7,
       "neutral": 167,
       "materiality": 79,
-      "latest": "2026-06-03T23:56:25.000Z",
+      "latest": "2026-07-01T13:42:30.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1900
+      "sentimentScore": 1825
     },
     {
       "symbol": "CIFR",
@@ -374,19 +374,6 @@
       "sentimentScore": 1593
     },
     {
-      "symbol": "CRWV",
-      "aliases": [],
-      "marketSymbol": "CRWV",
-      "mentions": 204,
-      "bull": 73,
-      "bear": 5,
-      "neutral": 126,
-      "materiality": 82,
-      "latest": "2026-05-19T14:36:19.000Z",
-      "dominantTheme": "neocloud",
-      "sentimentScore": 1585
-    },
-    {
       "symbol": "AVGO",
       "aliases": [],
       "marketSymbol": "AVGO",
@@ -398,6 +385,19 @@
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 1566
+    },
+    {
+      "symbol": "CRWV",
+      "aliases": [],
+      "marketSymbol": "CRWV",
+      "mentions": 205,
+      "bull": 73,
+      "bear": 6,
+      "neutral": 126,
+      "materiality": 82,
+      "latest": "2026-07-01T13:42:30.000Z",
+      "dominantTheme": "neocloud",
+      "sentimentScore": 1510
     },
     {
       "symbol": "AEHR",
@@ -5595,19 +5595,22 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-01T11:37:12.074Z",
+    "staticUpdatedAt": "2026-07-01T14:37:07.852Z",
     "latestCaptured": {
-      "id": "2072307910223532245",
-      "date": "2026-07-01T13:14:42.000Z",
-      "title": "Basically pre-market right now with the Neoclouds like $NBIS in simpler terms. ",
-      "body": "Basically pre-market right now with the Neoclouds like $NBIS in simpler terms.\n\nCostco: sells $5 chickens.\n\nWalmart: mass buys those rotisserie chickens and sells excess as “Walmart Chickens”.\n\nStock Market: sells off Costco.",
+      "id": "2072314906729455876",
+      "date": "2026-07-01T13:42:30.000Z",
+      "title": "There’s a lot of disinformation going around about $META “cutting capex” because they “overbuilt”. This is an “if” they have excess capacity. And it looks like the opposite right n",
+      "body": "There’s a lot of disinformation going around about $META “cutting capex” because they “overbuilt”.\n\nThis is an “if” they have excess capacity.\n\nAnd it looks like the opposite right now:\n\nHyperscalers like $GOOGL are so compute constrained that they had to cut allocations to Meta back in March.\n\nSince Meta was using too much for internal projects. \n\nMeta was immediately constrained so it looks like they were forced to immediately sign massive $48B+ contracts with Neoclouds like $CRWV and $NBIS.\n\nMeta is selling excess capacity if there’s any, especially since their large contracts are take or pay from the Neoclouds. \n\nIf anything, I’m expecting their guided capex to go up as they build out more independent capacity.",
       "symbols": [
+        "META",
+        "GOOGL",
+        "CRWV",
         "NBIS"
       ],
       "theme": "neocloud",
-      "materiality": 61,
-      "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2072307910223532245"
+      "materiality": 75,
+      "sentiment": "bear",
+      "url": "https://x.com/aleabitoreddit/status/2072314906729455876"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
