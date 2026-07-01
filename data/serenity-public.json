@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T07:30:06.459Z",
+  "generatedAt": "2026-07-01T09:29:31.088Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6945,
+    "parsedItems": 6948,
     "commentCount": 33187,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-01T07:22:39.000Z"
+    "latestItemDate": "2026-07-01T08:54:04.000Z"
   },
   "rules": [
     {
@@ -69,14 +69,14 @@
         "SIVERS"
       ],
       "marketSymbol": "SIVEF",
-      "mentions": 1146,
-      "bull": 506,
+      "mentions": 1147,
+      "bull": 507,
       "bear": 17,
       "neutral": 623,
       "materiality": 100,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 10621
+      "sentimentScore": 10639
     },
     {
       "symbol": "NBIS",
@@ -5595,19 +5595,17 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-01T07:29:04.081Z",
+    "staticUpdatedAt": "2026-07-01T09:28:35.142Z",
     "latestCaptured": {
-      "id": "2072219315760488615",
-      "date": "2026-07-01T07:22:39.000Z",
-      "title": "$SIVE: \"Intent to complete the [NASDAQ] listing process over the next few quarters\" This statement was largely missed by many screeners. ",
-      "body": "$SIVE: \"Intent to complete the [NASDAQ] listing process over the next few quarters\"\n\nThis statement was largely missed by many screeners.\n\nVery material improvement from evaluation, to formal confirmation of timelines.",
-      "symbols": [
-        "SIVEF"
-      ],
-      "theme": "general",
-      "materiality": 51,
+      "id": "2072242322688057579",
+      "date": "2026-07-01T08:54:04.000Z",
+      "title": "This market feels like an ADHD goldfish with a 5 second attention span, trading popular themes. ",
+      "body": "This market feels like an ADHD goldfish with a 5 second attention span, trading popular themes. \n\nIt's like markets only care about physical AI and energy right now?\n\nAnd sold off memory and photonics that are bottlenecked past 2028?",
+      "symbols": [],
+      "theme": "robotics-physical-ai",
+      "materiality": 56,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2072219315760488615"
+      "url": "https://x.com/aleabitoreddit/status/2072242322688057579"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
