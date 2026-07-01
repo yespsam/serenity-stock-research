@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T11:38:14.890Z",
+  "generatedAt": "2026-07-01T13:37:18.186Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -5597,15 +5597,17 @@
   "monitor": {
     "staticUpdatedAt": "2026-07-01T11:37:12.074Z",
     "latestCaptured": {
-      "id": "2072278885526565214",
-      "date": "2026-07-01T11:19:22.000Z",
-      "title": "I think they’re still the same as they were before, with just some like memory getting worse. ",
-      "body": "I think they’re still the same as they were before, with just some like memory getting worse.\n\nThen you have new ones pop up like MLCC or WF6 recently. \n\nJust attention span is extremely short with markets nowaday, and they need to get reminded that a bottleneck is still a bottleneck with earnings.",
-      "symbols": [],
-      "theme": "memory-rotation",
-      "materiality": 56,
+      "id": "2072307910223532245",
+      "date": "2026-07-01T13:14:42.000Z",
+      "title": "Basically pre-market right now with the Neoclouds like $NBIS in simpler terms. ",
+      "body": "Basically pre-market right now with the Neoclouds like $NBIS in simpler terms.\n\nCostco: sells $5 chickens.\n\nWalmart: mass buys those rotisserie chickens and sells excess as “Walmart Chickens”.\n\nStock Market: sells off Costco.",
+      "symbols": [
+        "NBIS"
+      ],
+      "theme": "neocloud",
+      "materiality": 61,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2072278885526565214"
+      "url": "https://x.com/aleabitoreddit/status/2072307910223532245"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
