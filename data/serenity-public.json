@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T14:37:29.756Z",
+  "generatedAt": "2026-07-01T17:34:22.710Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6952,
+    "parsedItems": 6958,
     "commentCount": 33187,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-01T13:42:30.000Z"
+    "latestItemDate": "2026-07-01T17:28:12.000Z"
   },
   "rules": [
     {
@@ -69,27 +69,27 @@
         "SIVERS"
       ],
       "marketSymbol": "SIVEF",
-      "mentions": 1147,
+      "mentions": 1148,
       "bull": 507,
       "bear": 17,
-      "neutral": 623,
+      "neutral": 624,
       "materiality": 100,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 10639
+      "sentimentScore": 10642
     },
     {
       "symbol": "NBIS",
       "aliases": [],
       "marketSymbol": "NBIS",
-      "mentions": 788,
+      "mentions": 790,
       "bull": 225,
       "bear": 12,
-      "neutral": 551,
+      "neutral": 553,
       "materiality": 77,
-      "latest": "2026-07-01T13:42:30.000Z",
+      "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 5403
+      "sentimentScore": 5462
     },
     {
       "symbol": "LITE",
@@ -108,27 +108,27 @@
       "symbol": "AAOI",
       "aliases": [],
       "marketSymbol": "AAOI",
-      "mentions": 560,
+      "mentions": 561,
       "bull": 211,
       "bear": 14,
-      "neutral": 335,
+      "neutral": 336,
       "materiality": 80,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4504
+      "sentimentScore": 4507
     },
     {
       "symbol": "NVDA",
       "aliases": [],
       "marketSymbol": "NVDA",
-      "mentions": 535,
+      "mentions": 536,
       "bull": 217,
       "bear": 18,
-      "neutral": 300,
+      "neutral": 301,
       "materiality": 82,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4415
+      "sentimentScore": 4418
     },
     {
       "symbol": "AXTI",
@@ -236,9 +236,9 @@
       "bear": 10,
       "neutral": 199,
       "materiality": 88,
-      "latest": "2026-07-01T13:42:30.000Z",
+      "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 2054
+      "sentimentScore": 2107
     },
     {
       "symbol": "MU",
@@ -257,14 +257,14 @@
       "symbol": "AMZN",
       "aliases": [],
       "marketSymbol": "AMZN",
-      "mentions": 225,
+      "mentions": 226,
       "bull": 91,
       "bear": 1,
-      "neutral": 133,
+      "neutral": 134,
       "materiality": 85,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2021
+      "sentimentScore": 2024
     },
     {
       "symbol": "TSM",
@@ -283,14 +283,14 @@
       "symbol": "META",
       "aliases": [],
       "marketSymbol": "META",
-      "mentions": 259,
+      "mentions": 260,
       "bull": 85,
       "bear": 7,
-      "neutral": 167,
+      "neutral": 168,
       "materiality": 79,
-      "latest": "2026-07-01T13:42:30.000Z",
+      "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1825
+      "sentimentScore": 1881
     },
     {
       "symbol": "CIFR",
@@ -395,9 +395,9 @@
       "bear": 6,
       "neutral": 126,
       "materiality": 82,
-      "latest": "2026-07-01T13:42:30.000Z",
+      "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 1510
+      "sentimentScore": 1563
     },
     {
       "symbol": "AEHR",
@@ -694,14 +694,14 @@
       "symbol": "TSLA",
       "aliases": [],
       "marketSymbol": "TSLA",
-      "mentions": 113,
+      "mentions": 114,
       "bull": 33,
       "bear": 7,
-      "neutral": 73,
+      "neutral": 74,
       "materiality": 81,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "robotics-physical-ai",
-      "sentimentScore": 665
+      "sentimentScore": 668
     },
     {
       "symbol": "MTSI",
@@ -5595,22 +5595,20 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-01T14:37:07.852Z",
+    "staticUpdatedAt": "2026-07-01T17:33:49.877Z",
     "latestCaptured": {
-      "id": "2072314906729455876",
-      "date": "2026-07-01T13:42:30.000Z",
-      "title": "There’s a lot of disinformation going around about $META “cutting capex” because they “overbuilt”. This is an “if” they have excess capacity. And it looks like the opposite right n",
-      "body": "There’s a lot of disinformation going around about $META “cutting capex” because they “overbuilt”.\n\nThis is an “if” they have excess capacity.\n\nAnd it looks like the opposite right now:\n\nHyperscalers like $GOOGL are so compute constrained that they had to cut allocations to Meta back in March.\n\nSince Meta was using too much for internal projects. \n\nMeta was immediately constrained so it looks like they were forced to immediately sign massive $48B+ contracts with Neoclouds like $CRWV and $NBIS.\n\nMeta is selling excess capacity if there’s any, especially since their large contracts are take or pay from the Neoclouds. \n\nIf anything, I’m expecting their guided capex to go up as they build out more independent capacity.",
+      "id": "2072371706568806595",
+      "date": "2026-07-01T17:28:12.000Z",
+      "title": "Where did I ever say that? ",
+      "body": "Where did I ever say that? Majority of my portfolio is concentrated in photonics with names like $SIVE and $AAOI.\n\nHowever, I’m allowed to talk about other exciting developments as well… Such as the first listed US humanoid player?\n\nI still think CPO/optics has the fastest TAM ramp out of any industry, just a bit early since I’m projecting revenue inflection really hits ~H2 2027. \n\nI’m personally down a lot past few weeks, but I’m convinced my thesis with laser chokepoints and others plays out.",
       "symbols": [
-        "META",
-        "GOOGL",
-        "CRWV",
-        "NBIS"
+        "SIVEF",
+        "AAOI"
       ],
-      "theme": "neocloud",
-      "materiality": 75,
-      "sentiment": "bear",
-      "url": "https://x.com/aleabitoreddit/status/2072314906729455876"
+      "theme": "robotics-physical-ai",
+      "materiality": 82,
+      "sentiment": "neutral",
+      "url": "https://x.com/aleabitoreddit/status/2072371706568806595"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
