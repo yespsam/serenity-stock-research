@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T17:34:22.710Z",
+  "generatedAt": "2026-07-02T06:45:33.474Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6958,
+    "parsedItems": 6960,
     "commentCount": 33187,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-01T17:28:12.000Z"
+    "latestItemDate": "2026-07-02T06:38:51.000Z"
   },
   "rules": [
     {
@@ -351,14 +351,14 @@
       "symbol": "INTC",
       "aliases": [],
       "marketSymbol": "INTC",
-      "mentions": 171,
+      "mentions": 172,
       "bull": 77,
       "bear": 2,
-      "neutral": 92,
+      "neutral": 93,
       "materiality": 82,
       "latest": "2026-05-01T06:02:46.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1626
+      "sentimentScore": 1629
     },
     {
       "symbol": "AMD",
@@ -5595,20 +5595,19 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-01T17:33:49.877Z",
+    "staticUpdatedAt": "2026-07-02T06:44:41.230Z",
     "latestCaptured": {
-      "id": "2072371706568806595",
-      "date": "2026-07-01T17:28:12.000Z",
-      "title": "Where did I ever say that? ",
-      "body": "Where did I ever say that? Majority of my portfolio is concentrated in photonics with names like $SIVE and $AAOI.\n\nHowever, I’m allowed to talk about other exciting developments as well… Such as the first listed US humanoid player?\n\nI still think CPO/optics has the fastest TAM ramp out of any industry, just a bit early since I’m projecting revenue inflection really hits ~H2 2027. \n\nI’m personally down a lot past few weeks, but I’m convinced my thesis with laser chokepoints and others plays out.",
+      "id": "2072570681586553112",
+      "date": "2026-07-02T06:38:51.000Z",
+      "title": "I feel like Trump is probably going to like this idea: OpenAI discussed giving the US gov a 5% stake in its company per FT. ",
+      "body": "I feel like Trump is probably going to like this idea:\n\nOpenAI discussed giving the US gov a 5% stake in its company per FT.\n\nIf this turns into an $INTC type situation, would be interesting if the US government becomes a soft backstop for their $1T+ in future capex/obligations.",
       "symbols": [
-        "SIVEF",
-        "AAOI"
+        "INTC"
       ],
-      "theme": "robotics-physical-ai",
-      "materiality": 82,
+      "theme": "general",
+      "materiality": 51,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2072371706568806595"
+      "url": "https://x.com/aleabitoreddit/status/2072570681586553112"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
