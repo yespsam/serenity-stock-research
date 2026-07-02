@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T08:58:33.226Z",
+  "generatedAt": "2026-07-02T10:59:34.179Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6963,
+    "parsedItems": 6968,
     "commentCount": 33224,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-02T07:06:03.000Z"
+    "latestItemDate": "2026-07-02T10:34:42.000Z"
   },
   "rules": [
     {
@@ -5595,19 +5595,20 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-02T08:58:06.182Z",
+    "staticUpdatedAt": "2026-07-02T10:59:34.179Z",
     "latestCaptured": {
-      "id": "2072574465763111166",
-      "date": "2026-07-02T06:53:53.000Z",
-      "title": "Wells Fargo: $META intent to sell excess compute is a positive signal around underlying demand and unit economics of AI. ",
-      "body": "Wells Fargo: $META intent to sell excess compute is a positive signal around underlying demand and unit economics of AI.\n\n“Despite this shift, we don’t expect a pullback in Meta’s capex or that overall compute needs are lower”\n\nRegarding Neoclouds: WF thinks it validated the massive AI infra opportunity as well as acquisition opportunities. Despite any potential competition for Neoclouds. \n\nI’m inclined to agree with Wells Fargo here and say markets completely misunderstood Meta’s excess compute comment.",
+      "id": "2072630036600103340",
+      "date": "2026-07-02T10:34:42.000Z",
+      "title": "I just realized Boston Dynamics CEO shared the same sentiment: “Robotics is next. America’s next 250 years will be built by robots”. However, currently China accounts for 54%+ of a",
+      "body": "I just realized Boston Dynamics CEO shared the same sentiment:\n\n“Robotics is next. America’s next 250 years will be built by robots”.\n\nHowever, currently China accounts for 54%+ of all global robotics deployments.\n\n- calls for Internet scaleable database of physical world (kinda got reminded of Niantic that has a huge dataset from Pokemon Go)\n\n- dedicated National robotics strategy to compete against China’s leadership in this space\n\n-  ISO + regulation for robotics safety \n\nThis is all high level:\n\nBut my prioritize thought process is how do we support and scale a Made in USA supply chain for robotics/humanoids?\n\nI’ve been hammering home rare earths for the longest time, that the US isn’t doing enough to subsidize or scale this industry.\n\nBut another thing to take note is subsidies for components, forcing $TSLA and others to use Chinese suppliers over Western ones, even if assembly is done in USA… to keep costs down.\n\nWhich is why I’ve liked Agility Robotics $CCXI since they source 75% of parts from the US, despite higher BOM to start out with.\n\nRegardless it’s pretty clear this Robotics is coming and becoming a national security priority:\n\nFrom the days of backflipping humanoid YT videos.",
       "symbols": [
-        "META"
+        "TSLA",
+        "CCXI"
       ],
-      "theme": "ai-infrastructure",
-      "materiality": 63,
-      "sentiment": "bear",
-      "url": "https://x.com/aleabitoreddit/status/2072574465763111166"
+      "theme": "general",
+      "materiality": 75,
+      "sentiment": "bull",
+      "url": "https://x.com/aleabitoreddit/status/2072630036600103340"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
