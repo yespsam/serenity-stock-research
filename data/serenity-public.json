@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T22:04:33.670Z",
+  "generatedAt": "2026-07-03T05:05:40.972Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6987,
+    "parsedItems": 6990,
     "commentCount": 33224,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-02T21:30:57.000Z"
+    "latestItemDate": "2026-07-03T04:54:11.000Z"
   },
   "rules": [
     {
@@ -283,14 +283,14 @@
       "symbol": "META",
       "aliases": [],
       "marketSymbol": "META",
-      "mentions": 265,
+      "mentions": 267,
       "bull": 85,
       "bear": 8,
-      "neutral": 172,
+      "neutral": 174,
       "materiality": 79,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1871
+      "sentimentScore": 1877
     },
     {
       "symbol": "CIFR",
@@ -647,7 +647,7 @@
       "bear": 3,
       "neutral": 58,
       "materiality": 83,
-      "latest": "2026-06-15T22:07:05.000Z",
+      "latest": "2026-06-11T17:54:35.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 747
     },
@@ -686,7 +686,7 @@
       "bear": 1,
       "neutral": 42,
       "materiality": 79,
-      "latest": "2026-06-15T15:08:36.000Z",
+      "latest": "2026-06-15T14:56:05.000Z",
       "dominantTheme": "general",
       "sentimentScore": 702
     },
@@ -1401,7 +1401,7 @@
       "bear": 0,
       "neutral": 15,
       "materiality": 85,
-      "latest": "2026-06-15T14:41:57.000Z",
+      "latest": "2026-06-15T14:02:20.000Z",
       "dominantTheme": "power-architecture",
       "sentimentScore": 261
     },
@@ -1492,7 +1492,7 @@
       "bear": 0,
       "neutral": 19,
       "materiality": 70,
-      "latest": "2026-06-15T23:33:51.000Z",
+      "latest": "2026-06-15T03:21:12.000Z",
       "dominantTheme": "general",
       "sentimentScore": 245
     },
@@ -1700,7 +1700,7 @@
       "bear": 1,
       "neutral": 22,
       "materiality": 75,
-      "latest": "2026-06-15T14:41:57.000Z",
+      "latest": "2026-06-15T14:02:20.000Z",
       "dominantTheme": "general",
       "sentimentScore": 206
     },
@@ -1934,7 +1934,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 99,
-      "latest": "2026-06-15T14:41:57.000Z",
+      "latest": "2026-06-15T14:02:20.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 186
     },
@@ -2064,7 +2064,7 @@
       "bear": 3,
       "neutral": 17,
       "materiality": 78,
-      "latest": "2026-06-16T02:23:29.000Z",
+      "latest": "2026-06-16T02:20:57.000Z",
       "dominantTheme": "general",
       "sentimentScore": 168
     },
@@ -2402,7 +2402,7 @@
       "bear": 0,
       "neutral": 7,
       "materiality": 87,
-      "latest": "2026-06-15T22:07:05.000Z",
+      "latest": "2026-06-11T17:54:35.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 135
     },
@@ -2493,7 +2493,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 100,
-      "latest": "2026-06-15T14:41:57.000Z",
+      "latest": "2026-06-15T14:02:20.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 130
     },
@@ -3737,7 +3737,7 @@
     },
     {
       "id": "2065130589204992048",
-      "date": "2026-06-15T22:07:05.000Z",
+      "date": "2026-06-11T17:54:35.000Z",
       "title": "Anthropic’s first data-center leasing push could benefit neocloud colocation operators",
       "body": "New Anthropic news looks like a potential tailwind for the Neocloud colo sector.\n\nSuch as $WULF, $CIFR, $WYFI, $HUT and others (not named yet). \n\nAs Anthropic is pursuing its first DC leases. \n\n\"The AI company has signed more than a dozen letters of intent with U.S. developers\" per The Information.",
       "symbols": [
@@ -5042,7 +5042,7 @@
     },
     {
       "id": "2066535221554733278",
-      "date": "2026-06-15T15:08:36.000Z",
+      "date": "2026-06-15T14:56:05.000Z",
       "title": "Just as a recap, these were all my core European longs: 1. $SIVE 2. $LPK 3. $SOI 4. $RPI 5. $IQE 6. $ALRIB 7. $XFAB Sivers: As you know by now, core laser chokepoint over next gene",
       "body": "Just as a recap, these were all my core European longs:\n\n1. $SIVE\n2. $LPK\n3. $SOI\n4. $RPI \n5. $IQE\n6. $ALRIB\n7. $XFAB\n\nSivers: As you know by now, core laser chokepoint over next generation photonics, from 1.6T pluggables to CPO.\n\nEmbedded in many hyperscaler suppliers from Jabil to Ayar. Should go brrr 2027 but markets are forward looking, so ramps + qualifications should get priced in now. \n\nLPK Laser - Glass core substrate \"monopoly\" with LIDE. \n\n\"More than 80% of major global players have selected our equipment for process validation, learning and scaling to mass production\"\n\nSoitec - Silicon photonics SoI substrate pure monopoly while coming out of legacy drag segments.  \n\nRaspberry Pi - Was my fun idea around Raspberry Pis being used for AI hardware deployments. \n\nPreviously this thing was mainly educational or hobby boards, but now used for edge/local AI. Just thought revenue increase would be extremely material and it played out well. \n\nIQE - Critical epiwafer player for your Western photonics like Macom, Tower, Lumentum, and others. \n\nWas kinda going under, but thought their latent capacity relative to Landmark was undervalued. \n\nAlso given how important it was, I thought that your downstream players + Govs wouldn't let it go under, so it was more of a moonshot idea earlier in the year. \n\nLot more derisked now, very important.\n\nRiber - Kinda monopoly in the MBE space, exposure to Quantum / quantum dot + silicon photonics. \n\nFound out from OSINT help from a friend latentvalue that Microsoft Quantum was buying their machines, so this was direct hyperscaler validation + kinda de-risked at current MCs.\n\nXFab - SiC foundry backed by EU/US CHIPS Act with power semi upside. (152% Y/Y growth for their sic vertical). \n\nMain growth was their silicon photonics foundry past 2027 that's getting evaled by nvidia. And that they're leading Europe's value chain efforts in photonics, kinda like an early tower semi. \n\nWe'll see how this plays out, thought power semi exposure + low P/B would derisk the company until they scale their photbunchonics efforts. \n\nFrom my own personal thoughts:\n\nOut of the  maybe $SOI has already been re-rated the most? But I'm holding anyway. \n\n$LPK and $ALRIB I think are still undervalued despite their monopolies. \n\n$RPI is just kinda seeing how things go at this point, would be hilarious if they ended up like a mini nvidia for low end edge ai. \n\n$IQE probably has a long way to go given new tower long term agreement, alongside macom. And if they convert latent capacity, I still think it has a chance of rerating like landmark. \n\n$XFAB idk if im missing something or are markets missing something. you have nvidia as a direct eval of their silicon photonics foundry, and it's trading below replacement P/B. i think im right though. \n\n$SIVE I see has the highest upside out of all of them given laser company ability to vertically integrate, acquire companies downstream to make their lasers more valuable, etc. Just like coherent/lumentum. \n\nThere's like 1-2 more random ones that aren't really material, but just in general.\n\nThese are the ones I've liked the most.",
       "symbols": [
@@ -5595,20 +5595,19 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-02T22:04:07.186Z",
+    "staticUpdatedAt": "2026-07-03T05:04:51.544Z",
     "latestCaptured": {
-      "id": "2072795186263187831",
-      "date": "2026-07-02T21:30:57.000Z",
-      "title": "$AXTI signs 3-year wafer deal with $COHR. \"Coherent will make a prepayment of $22,288,500 to AXT-Tongmei in exchange for a committed supply capacity.\"",
-      "body": "$AXTI signs 3-year wafer deal with $COHR.\n\n\"Coherent will make a prepayment of $22,288,500 to AXT-Tongmei in exchange for a committed supply capacity.\"",
+      "id": "2072906728853881251",
+      "date": "2026-07-03T04:54:11.000Z",
+      "title": "Lot of misinformation recently about $META. ",
+      "body": "Lot of misinformation recently about $META.\n\nRecently major journals have been stating \n\n“AI AGENT DEVELOPMENT OVER THE LAST FOUR MONTHS HASN'T 'ACCELERATED IN THE WAY WE EXPECTED”\n\nTo push some narrative about Meta dropping out of the race or lowered capex:\n\nAs Wang clarified: Zuckerberg was talking about the industry as a whole.",
       "symbols": [
-        "AXTI",
-        "COHR"
+        "META"
       ],
       "theme": "general",
-      "materiality": 58,
+      "materiality": 51,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2072795186263187831"
+      "url": "https://x.com/aleabitoreddit/status/2072906728853881251"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
