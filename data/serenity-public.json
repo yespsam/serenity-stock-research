@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T05:05:40.972Z",
+  "generatedAt": "2026-07-03T10:56:42.741Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 6990,
+    "parsedItems": 6994,
     "commentCount": 33224,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-03T04:54:11.000Z"
+    "latestItemDate": "2026-07-03T10:09:16.000Z"
   },
   "rules": [
     {
@@ -82,14 +82,14 @@
       "symbol": "NBIS",
       "aliases": [],
       "marketSymbol": "NBIS",
-      "mentions": 792,
+      "mentions": 793,
       "bull": 225,
-      "bear": 12,
+      "bear": 13,
       "neutral": 555,
       "materiality": 77,
-      "latest": "2026-06-12T04:26:43.000Z",
+      "latest": "2026-07-03T05:58:44.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 5468
+      "sentimentScore": 5467
     },
     {
       "symbol": "LITE",
@@ -121,12 +121,12 @@
       "symbol": "NVDA",
       "aliases": [],
       "marketSymbol": "NVDA",
-      "mentions": 540,
+      "mentions": 541,
       "bull": 217,
       "bear": 18,
-      "neutral": 305,
+      "neutral": 306,
       "materiality": 82,
-      "latest": "2026-06-03T23:56:25.000Z",
+      "latest": "2026-07-03T06:53:07.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 4430
     },
@@ -283,14 +283,14 @@
       "symbol": "META",
       "aliases": [],
       "marketSymbol": "META",
-      "mentions": 267,
+      "mentions": 268,
       "bull": 85,
-      "bear": 8,
+      "bear": 9,
       "neutral": 174,
       "materiality": 79,
-      "latest": "2026-06-03T23:56:25.000Z",
-      "dominantTheme": "general",
-      "sentimentScore": 1877
+      "latest": "2026-07-03T05:58:44.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 1876
     },
     {
       "symbol": "CIFR",
@@ -338,12 +338,12 @@
         "LPKFF"
       ],
       "marketSymbol": "LPK.DE",
-      "mentions": 154,
+      "mentions": 155,
       "bull": 83,
       "bear": 2,
-      "neutral": 69,
+      "neutral": 70,
       "materiality": 87,
-      "latest": "2026-06-01T14:33:55.000Z",
+      "latest": "2026-07-03T10:09:16.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 1657
     },
@@ -5595,19 +5595,19 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-03T05:04:51.544Z",
+    "staticUpdatedAt": "2026-07-03T10:55:24.783Z",
     "latestCaptured": {
-      "id": "2072906728853881251",
-      "date": "2026-07-03T04:54:11.000Z",
-      "title": "Lot of misinformation recently about $META. ",
-      "body": "Lot of misinformation recently about $META.\n\nRecently major journals have been stating \n\n“AI AGENT DEVELOPMENT OVER THE LAST FOUR MONTHS HASN'T 'ACCELERATED IN THE WAY WE EXPECTED”\n\nTo push some narrative about Meta dropping out of the race or lowered capex:\n\nAs Wang clarified: Zuckerberg was talking about the industry as a whole.",
+      "id": "2072986020640076052",
+      "date": "2026-07-03T10:09:16.000Z",
+      "title": "So positive readthrough on the upstream glass substrate supply chain: - Sumitomo Chemical and Samsung Electro-Mechanics formally establish JV in Korea within the year to handle the",
+      "body": "So positive readthrough on the upstream glass substrate supply chain:\n\n- Sumitomo Chemical and Samsung Electro-Mechanics formally establish JV in Korea within the year to handle the glass core substrate business (GlaSSEM).\n\nMain thing was timeline/funding was finalized:  \"full scale commercialization targeted H2 2027\" for the Samsung/Dongwoo JV / KRW 482.1B planned capital.\n\nThink the \"full scale commercialization\" is the word to highlight, since that would imply timeline moving faster than expected than starting ramp or early production H2 2027.\n\nSo... TGV/LIDE with $LPK (that I own)/E&R  and Onto in terms of yields are just some examples of possible sector beneficiaries. \n\nSince companies like LPK stated in the past: “80% of customers among major global players have selected LPKF equipment” and targeted \"70% of LIDE market share target for TGV in the glass-core ramp\".  \n\nThese players also typically have revenue pulled forward, since equipment orders during capex cycle hit before actual ramp. \n\nRegardless, just an update on developments.",
       "symbols": [
-        "META"
+        "LPK"
       ],
       "theme": "general",
-      "materiality": 51,
+      "materiality": 55,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2072906728853881251"
+      "url": "https://x.com/aleabitoreddit/status/2072986020640076052"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
