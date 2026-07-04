@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-04T19:43:26.250Z",
+  "generatedAt": "2026-07-04T22:44:50.775Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -11,7 +11,7 @@
     "parsedItems": 7009,
     "commentCount": 26783,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-04T19:19:28.000Z"
+    "latestItemDate": "2026-07-04T21:44:39.000Z"
   },
   "rules": [
     {
@@ -5595,17 +5595,19 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-04T19:42:34.153Z",
+    "staticUpdatedAt": "2026-07-04T22:44:05.851Z",
     "latestCaptured": {
-      "id": "2073486870315745406",
-      "date": "2026-07-04T19:19:28.000Z",
-      "title": "an apple a day keeps the bottleneck away",
-      "body": "an apple a day keeps the bottleneck away",
-      "symbols": [],
-      "theme": "general",
-      "materiality": 38,
+      "id": "2073536758604771517",
+      "date": "2026-07-04T22:37:42.000Z",
+      "title": "No, it’s the same if not higher. ",
+      "body": "No, it’s the same if not higher. Markets are closed and if there’s no new developments, then I have nothing new to add.\n\n$SIVE is personally one of my largest holdings and I’ve posted all my thoughts on their hyperscaler supplier relationships. So I’m just waiting for volume ramps and company execution and ignoring a lot of noise. \n\nThe convertible notes is not new information and was likely priced in for awhile. Having it executed now is not a positive thing like others are framing, since Bootstrap Europe is a venture debt fund.\n\nThere’s likely instituonal swaps happening given oversubscribed instituonal demand around these levels. $140m is not a big amount in terms of institutional flows.",
+      "symbols": [
+        "SIVEF"
+      ],
+      "theme": "ai-infrastructure",
+      "materiality": 61,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2073486870315745406"
+      "url": "https://x.com/aleabitoreddit/status/2073536758604771517"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
