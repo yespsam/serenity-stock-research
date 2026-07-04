@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T14:32:11.458Z",
+  "generatedAt": "2026-07-04T00:41:10.257Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 7001,
-    "commentCount": 33224,
+    "parsedItems": 7003,
+    "commentCount": 26475,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-03T14:00:07.000Z"
+    "latestItemDate": "2026-07-04T00:07:23.000Z"
   },
   "rules": [
     {
@@ -95,14 +95,14 @@
       "symbol": "LITE",
       "aliases": [],
       "marketSymbol": "LITE",
-      "mentions": 589,
+      "mentions": 590,
       "bull": 225,
-      "bear": 9,
+      "bear": 10,
       "neutral": 355,
       "materiality": 84,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4922
+      "sentimentScore": 4900
     },
     {
       "symbol": "AAOI",
@@ -686,7 +686,7 @@
       "bear": 1,
       "neutral": 42,
       "materiality": 79,
-      "latest": "2026-06-15T14:56:05.000Z",
+      "latest": "2026-06-15T15:08:36.000Z",
       "dominantTheme": "general",
       "sentimentScore": 702
     },
@@ -1401,7 +1401,7 @@
       "bear": 0,
       "neutral": 15,
       "materiality": 85,
-      "latest": "2026-06-15T14:02:20.000Z",
+      "latest": "2026-06-15T14:41:57.000Z",
       "dominantTheme": "power-architecture",
       "sentimentScore": 261
     },
@@ -1492,7 +1492,7 @@
       "bear": 0,
       "neutral": 19,
       "materiality": 70,
-      "latest": "2026-06-15T03:21:12.000Z",
+      "latest": "2026-06-15T23:33:51.000Z",
       "dominantTheme": "general",
       "sentimentScore": 245
     },
@@ -1666,19 +1666,6 @@
       "sentimentScore": 224
     },
     {
-      "symbol": "HIMX",
-      "aliases": [],
-      "marketSymbol": "HIMX",
-      "mentions": 28,
-      "bull": 14,
-      "bear": 3,
-      "neutral": 11,
-      "materiality": 87,
-      "latest": "2026-05-19T02:11:14.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 219
-    },
-    {
       "symbol": "SOFI",
       "aliases": [],
       "marketSymbol": "SOFI",
@@ -1700,7 +1687,7 @@
       "bear": 1,
       "neutral": 22,
       "materiality": 75,
-      "latest": "2026-06-15T14:02:20.000Z",
+      "latest": "2026-06-15T14:41:57.000Z",
       "dominantTheme": "general",
       "sentimentScore": 206
     },
@@ -1807,6 +1794,19 @@
       "latest": "2026-05-14T10:17:44.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 198
+    },
+    {
+      "symbol": "HIMX",
+      "aliases": [],
+      "marketSymbol": "HIMX",
+      "mentions": 29,
+      "bull": 14,
+      "bear": 4,
+      "neutral": 11,
+      "materiality": 86,
+      "latest": "2026-05-19T02:11:14.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 197
     },
     {
       "symbol": "VIRT",
@@ -1934,7 +1934,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 99,
-      "latest": "2026-06-15T14:02:20.000Z",
+      "latest": "2026-06-15T14:41:57.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 186
     },
@@ -2064,7 +2064,7 @@
       "bear": 3,
       "neutral": 17,
       "materiality": 78,
-      "latest": "2026-06-16T02:20:57.000Z",
+      "latest": "2026-06-16T02:23:29.000Z",
       "dominantTheme": "general",
       "sentimentScore": 168
     },
@@ -2493,7 +2493,7 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 100,
-      "latest": "2026-06-15T14:02:20.000Z",
+      "latest": "2026-06-15T14:41:57.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 130
     },
@@ -5042,7 +5042,7 @@
     },
     {
       "id": "2066535221554733278",
-      "date": "2026-06-15T14:56:05.000Z",
+      "date": "2026-06-15T15:08:36.000Z",
       "title": "Just as a recap, these were all my core European longs: 1. $SIVE 2. $LPK 3. $SOI 4. $RPI 5. $IQE 6. $ALRIB 7. $XFAB Sivers: As you know by now, core laser chokepoint over next gene",
       "body": "Just as a recap, these were all my core European longs:\n\n1. $SIVE\n2. $LPK\n3. $SOI\n4. $RPI \n5. $IQE\n6. $ALRIB\n7. $XFAB\n\nSivers: As you know by now, core laser chokepoint over next generation photonics, from 1.6T pluggables to CPO.\n\nEmbedded in many hyperscaler suppliers from Jabil to Ayar. Should go brrr 2027 but markets are forward looking, so ramps + qualifications should get priced in now. \n\nLPK Laser - Glass core substrate \"monopoly\" with LIDE. \n\n\"More than 80% of major global players have selected our equipment for process validation, learning and scaling to mass production\"\n\nSoitec - Silicon photonics SoI substrate pure monopoly while coming out of legacy drag segments.  \n\nRaspberry Pi - Was my fun idea around Raspberry Pis being used for AI hardware deployments. \n\nPreviously this thing was mainly educational or hobby boards, but now used for edge/local AI. Just thought revenue increase would be extremely material and it played out well. \n\nIQE - Critical epiwafer player for your Western photonics like Macom, Tower, Lumentum, and others. \n\nWas kinda going under, but thought their latent capacity relative to Landmark was undervalued. \n\nAlso given how important it was, I thought that your downstream players + Govs wouldn't let it go under, so it was more of a moonshot idea earlier in the year. \n\nLot more derisked now, very important.\n\nRiber - Kinda monopoly in the MBE space, exposure to Quantum / quantum dot + silicon photonics. \n\nFound out from OSINT help from a friend latentvalue that Microsoft Quantum was buying their machines, so this was direct hyperscaler validation + kinda de-risked at current MCs.\n\nXFab - SiC foundry backed by EU/US CHIPS Act with power semi upside. (152% Y/Y growth for their sic vertical). \n\nMain growth was their silicon photonics foundry past 2027 that's getting evaled by nvidia. And that they're leading Europe's value chain efforts in photonics, kinda like an early tower semi. \n\nWe'll see how this plays out, thought power semi exposure + low P/B would derisk the company until they scale their photbunchonics efforts. \n\nFrom my own personal thoughts:\n\nOut of the  maybe $SOI has already been re-rated the most? But I'm holding anyway. \n\n$LPK and $ALRIB I think are still undervalued despite their monopolies. \n\n$RPI is just kinda seeing how things go at this point, would be hilarious if they ended up like a mini nvidia for low end edge ai. \n\n$IQE probably has a long way to go given new tower long term agreement, alongside macom. And if they convert latent capacity, I still think it has a chance of rerating like landmark. \n\n$XFAB idk if im missing something or are markets missing something. you have nvidia as a direct eval of their silicon photonics foundry, and it's trading below replacement P/B. i think im right though. \n\n$SIVE I see has the highest upside out of all of them given laser company ability to vertically integrate, acquire companies downstream to make their lasers more valuable, etc. Just like coherent/lumentum. \n\nThere's like 1-2 more random ones that aren't really material, but just in general.\n\nThese are the ones I've liked the most.",
       "symbols": [
@@ -5595,19 +5595,17 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-03T14:31:21.673Z",
+    "staticUpdatedAt": "2026-07-04T00:40:14.675Z",
     "latestCaptured": {
-      "id": "2073044119287722024",
-      "date": "2026-07-03T14:00:07.000Z",
-      "title": "Just some public market read through from Chinese private VC markets: Institutions are pouring funds into physical AI and world models. ",
-      "body": "Just some public market read through from Chinese private VC markets:\n\nInstitutions are pouring funds into physical AI and world models. \n\n1. Large models / LLMs: ~$23.56B\n2. AI infrastructure + technical layer: ~$15.74B\n3. Embodied intelligence / physical AI: ~$13.36B\n4. AIGC applications: ~$8.79B\n5. Autonomous driving + other Top-20 cluster: ~$3.82B, but not apples-to-apples with the above.\n\nSome notes: \n- \"Early-stage pure foundation-model funding is basically closed\".  \nLooks like more funding is just being put into existing leaders and going into World Model companies. My guess is that we'll likely see the same in the US with Anthorpic/OpenAI consolidation. \n\n- \"World models have become the biggest consensus in early-stage investment.\"\n\nI said months ago 4D AI/World Models would be the most interesting moving forward, and called out $AEVA as potential exposure. But there's not exactly any pure play exposure.  But probably next we'll wait for the next IPOs here in this sector maybe H1 next year. \n\n- AIGC application sector is the most mature for AI technology commercialization\n\n\"Artificial Intelligence Generated Content commercialization is mature but no clear winner yet\". \n\nMakes sense. in the US there's stuff like Grok Imagine, Google Nano Banana, etc. no clear winner too. especially for video. \n\n_\n\nTLDR: Continued funding into AI infrastructure/semiconductor supply chains. Huge capital rotation influx into physical AI / embodied brain / humanoids + world models from capital inflow. \n\nConsolidation around leading frontier model companies. \n\nPersonally just validated what I've been focusing on with Agility Robotics and physical AI players (eg. leaderdrive, harmonic, etc) in public markets...\n\nAs new potential opportunities in terms of capital rotation. But sadly no world model pure play exposure yet.",
-      "symbols": [
-        "AEVA"
-      ],
+      "id": "2073196939785711796",
+      "date": "2026-07-04T00:07:23.000Z",
+      "title": "I'm bearish on humans. Hard to see people still having a job if humanoids come out at <$15K mass production. ",
+      "body": "I'm bearish on humans.\n\nHard to see people still having a job if humanoids come out at <$15K mass production.\n\nNo insurance, no JP Morgan HR cannon scandals. \n\nAnd can do everything a person can, but better + 24/7.",
+      "symbols": [],
       "theme": "robotics-physical-ai",
-      "materiality": 61,
-      "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2073044119287722024"
+      "materiality": 66,
+      "sentiment": "bear",
+      "url": "https://x.com/aleabitoreddit/status/2073196939785711796"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
