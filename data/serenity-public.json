@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T14:01:26.868Z",
+  "generatedAt": "2026-07-05T19:23:40.869Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 7014,
+    "parsedItems": 7015,
     "commentCount": 26783,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-05T13:38:44.000Z"
+    "latestItemDate": "2026-07-05T15:36:44.000Z"
   },
   "rules": [
     {
@@ -241,6 +241,19 @@
       "sentimentScore": 2107
     },
     {
+      "symbol": "MU",
+      "aliases": [],
+      "marketSymbol": "MU",
+      "mentions": 225,
+      "bull": 100,
+      "bear": 5,
+      "neutral": 120,
+      "materiality": 81,
+      "latest": "2026-06-01T23:51:46.000Z",
+      "dominantTheme": "memory-rotation",
+      "sentimentScore": 2057
+    },
+    {
       "symbol": "AMZN",
       "aliases": [],
       "marketSymbol": "AMZN",
@@ -252,19 +265,6 @@
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 2042
-    },
-    {
-      "symbol": "MU",
-      "aliases": [],
-      "marketSymbol": "MU",
-      "mentions": 224,
-      "bull": 99,
-      "bear": 5,
-      "neutral": 120,
-      "materiality": 81,
-      "latest": "2026-06-01T23:51:46.000Z",
-      "dominantTheme": "memory-rotation",
-      "sentimentScore": 2039
     },
     {
       "symbol": "TSM",
@@ -416,14 +416,14 @@
       "symbol": "SNDK",
       "aliases": [],
       "marketSymbol": "SNDK",
-      "mentions": 187,
-      "bull": 68,
+      "mentions": 188,
+      "bull": 69,
       "bear": 4,
       "neutral": 115,
       "materiality": 76,
       "latest": "2026-05-24T02:28:23.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 1487
+      "sentimentScore": 1505
     },
     {
       "symbol": "RKLB",
@@ -1666,6 +1666,19 @@
       "sentimentScore": 224
     },
     {
+      "symbol": "SIMO",
+      "aliases": [],
+      "marketSymbol": "SIMO",
+      "mentions": 23,
+      "bull": 10,
+      "bear": 0,
+      "neutral": 13,
+      "materiality": 84,
+      "latest": "2026-05-06T16:16:34.000Z",
+      "dominantTheme": "memory-rotation",
+      "sentimentScore": 223
+    },
+    {
       "symbol": "SOFI",
       "aliases": [],
       "marketSymbol": "SOFI",
@@ -1690,19 +1703,6 @@
       "latest": "2026-06-15T14:02:20.000Z",
       "dominantTheme": "general",
       "sentimentScore": 206
-    },
-    {
-      "symbol": "SIMO",
-      "aliases": [],
-      "marketSymbol": "SIMO",
-      "mentions": 22,
-      "bull": 9,
-      "bear": 0,
-      "neutral": 13,
-      "materiality": 83,
-      "latest": "2026-05-06T16:16:34.000Z",
-      "dominantTheme": "memory-rotation",
-      "sentimentScore": 205
     },
     {
       "symbol": "APLD",
@@ -5595,24 +5595,21 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-05T13:59:50.320Z",
+    "staticUpdatedAt": "2026-07-05T19:22:48.391Z",
     "latestCaptured": {
-      "id": "2073763512216899825",
-      "date": "2026-07-05T13:38:44.000Z",
-      "title": "Looks like there's a high power cylindrical cell / BBU cell shortage (aka: bottleneck): - Samsung SDI supplies the cells to Simplo, which assembles them into BBUs for $META to $AM…",
-      "body": "Looks like there's a high power cylindrical cell / BBU cell shortage (aka: bottleneck):\n\n- Samsung SDI supplies the cells to Simplo, which assembles them into BBUs for $META to $AMZN. \n- As demand from data centers has increased, production of Samsung SDI's cylindrical cells has also risen sharply.\n- Industry sources said Panasonic, Samsung are experiencing supply shortages for BBU cells.\n\nSo main beneficiaries imo look like:\n\n- Samsung SDI (KRX: 006400) / Panasonic Energy  as cleaneset winners\n- Murata (6981) / this keeps showing up everywhere with MLCC and others lol\n- LG Energy (KRX: 373220) / incoming\n\nThere's not really much direct US players? But adjacent read through like $VRT, $ETN or $BWA / $ENS. Not quite in my domain emphasis cup of tea though. \n\nI wouldn't conflate this as all shortages having a massive TAM, but there could be opportunities...",
+      "id": "2073793206408667392",
+      "date": "2026-07-05T15:36:44.000Z",
+      "title": "Just some consolidated updates on memory: - $MU leads new 1.5T Yen investment in Hiroshima ~$9.3B. ",
+      "body": "Just some consolidated updates on memory: \n\n-  $MU leads new 1.5T Yen investment in Hiroshima ~$9.3B. (bullish read through for Disco, Advantest, Resonac, Towa) since capex is localized.\n\n- Morgan Stanley pointed out NAND will continue to be in short supply into 2027 so $SNDK / Kioxia type players are happy alongisde $SIMO and upstream.\n\n- MS remains especially positive on Macronix/Winbond\n\n- UBS expects the average price of DDR contracts in the Q3 2026 to increase 32% | 18% Q4, vs. 17% and 12% est. \n\n- UBS expects NAND flash to be raised 30% from prev quarter. \n\n- Samsung reportedly plans 20% DRAM hike Q3. TrendForce recently forecast DRAM contract prices to rise 13 to 18 percent in the third quarter from the previous quarter, so this hike beats expectations.\n\nSomething to note:\n\nLot people see 20%... and don't think it's a lot compared to the 70-80% from previous quarters. \n\nBut if you hike something by 100%, then hike something by 100%, then hike something by 30%, it's a lot more than people estimate since it's compounded. Similar to tracking inflation. \n\nI've already made projections going into 2028 from the start of the year on my memory names... \n\nI'm just sitting back and watching things play out through all the \"memory optimization\" and \"they can't keep price hiking like this!\" noise.",
       "symbols": [
-        "META",
-        "AMZN",
-        "VRT",
-        "ETN",
-        "BWA",
-        "ENS"
+        "MU",
+        "SNDK",
+        "SIMO"
       ],
-      "theme": "power-architecture",
-      "materiality": 81,
-      "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2073763512216899825"
+      "theme": "memory-rotation",
+      "materiality": 97,
+      "sentiment": "bull",
+      "url": "https://x.com/aleabitoreddit/status/2073793206408667392"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
