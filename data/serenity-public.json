@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-04T22:44:50.775Z",
+  "generatedAt": "2026-07-05T09:58:58.057Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 7009,
+    "parsedItems": 7013,
     "commentCount": 26783,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-04T21:44:39.000Z"
+    "latestItemDate": "2026-07-05T09:45:22.000Z"
   },
   "rules": [
     {
@@ -69,14 +69,14 @@
         "SIVERS"
       ],
       "marketSymbol": "SIVEF",
-      "mentions": 1155,
+      "mentions": 1156,
       "bull": 508,
       "bear": 17,
-      "neutral": 630,
+      "neutral": 631,
       "materiality": 100,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 10678
+      "sentimentScore": 10681
     },
     {
       "symbol": "NBIS",
@@ -147,14 +147,14 @@
       "symbol": "IREN",
       "aliases": [],
       "marketSymbol": "IREN",
-      "mentions": 500,
+      "mentions": 501,
       "bull": 147,
       "bear": 29,
-      "neutral": 324,
+      "neutral": 325,
       "materiality": 78,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 2967
+      "sentimentScore": 2970
     },
     {
       "symbol": "COHR",
@@ -241,6 +241,19 @@
       "sentimentScore": 2107
     },
     {
+      "symbol": "AMZN",
+      "aliases": [],
+      "marketSymbol": "AMZN",
+      "mentions": 231,
+      "bull": 91,
+      "bear": 1,
+      "neutral": 139,
+      "materiality": 85,
+      "latest": "2026-06-01T23:51:46.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 2039
+    },
+    {
       "symbol": "MU",
       "aliases": [],
       "marketSymbol": "MU",
@@ -252,19 +265,6 @@
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 2039
-    },
-    {
-      "symbol": "AMZN",
-      "aliases": [],
-      "marketSymbol": "AMZN",
-      "mentions": 229,
-      "bull": 91,
-      "bear": 1,
-      "neutral": 137,
-      "materiality": 85,
-      "latest": "2026-06-01T23:51:46.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2033
     },
     {
       "symbol": "TSM",
@@ -283,14 +283,14 @@
       "symbol": "META",
       "aliases": [],
       "marketSymbol": "META",
-      "mentions": 270,
+      "mentions": 271,
       "bull": 86,
       "bear": 9,
-      "neutral": 175,
+      "neutral": 176,
       "materiality": 79,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1876
+      "sentimentScore": 1879
     },
     {
       "symbol": "CIFR",
@@ -647,7 +647,7 @@
       "bear": 3,
       "neutral": 58,
       "materiality": 83,
-      "latest": "2026-06-15T22:07:05.000Z",
+      "latest": "2026-06-11T17:54:35.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 747
     },
@@ -2402,7 +2402,7 @@
       "bear": 0,
       "neutral": 7,
       "materiality": 87,
-      "latest": "2026-06-15T22:07:05.000Z",
+      "latest": "2026-06-11T17:54:35.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 135
     },
@@ -2589,6 +2589,19 @@
       "sentimentScore": 123
     },
     {
+      "symbol": "UBER",
+      "aliases": [],
+      "marketSymbol": "UBER",
+      "mentions": 34,
+      "bull": 3,
+      "bear": 1,
+      "neutral": 30,
+      "materiality": 77,
+      "latest": "2026-06-04T02:00:04.000Z",
+      "dominantTheme": "neocloud",
+      "sentimentScore": 122
+    },
+    {
       "symbol": "RTX",
       "aliases": [],
       "marketSymbol": "RTX",
@@ -2613,19 +2626,6 @@
       "latest": "2026-05-27T07:29:00.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 121
-    },
-    {
-      "symbol": "UBER",
-      "aliases": [],
-      "marketSymbol": "UBER",
-      "mentions": 33,
-      "bull": 3,
-      "bear": 1,
-      "neutral": 29,
-      "materiality": 77,
-      "latest": "2026-06-04T02:00:04.000Z",
-      "dominantTheme": "neocloud",
-      "sentimentScore": 119
     },
     {
       "symbol": "TGT",
@@ -3737,7 +3737,7 @@
     },
     {
       "id": "2065130589204992048",
-      "date": "2026-06-15T22:07:05.000Z",
+      "date": "2026-06-11T17:54:35.000Z",
       "title": "Anthropic’s first data-center leasing push could benefit neocloud colocation operators",
       "body": "New Anthropic news looks like a potential tailwind for the Neocloud colo sector.\n\nSuch as $WULF, $CIFR, $WYFI, $HUT and others (not named yet). \n\nAs Anthropic is pursuing its first DC leases. \n\n\"The AI company has signed more than a dozen letters of intent with U.S. developers\" per The Information.",
       "symbols": [
@@ -5595,19 +5595,20 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-04T22:44:05.851Z",
+    "staticUpdatedAt": "2026-07-05T09:58:24.221Z",
     "latestCaptured": {
-      "id": "2073536758604771517",
-      "date": "2026-07-04T22:37:42.000Z",
-      "title": "No, it’s the same if not higher. ",
-      "body": "No, it’s the same if not higher. Markets are closed and if there’s no new developments, then I have nothing new to add.\n\n$SIVE is personally one of my largest holdings and I’ve posted all my thoughts on their hyperscaler supplier relationships. So I’m just waiting for volume ramps and company execution and ignoring a lot of noise. \n\nThe convertible notes is not new information and was likely priced in for awhile. Having it executed now is not a positive thing like others are framing, since Bootstrap Europe is a venture debt fund.\n\nThere’s likely instituonal swaps happening given oversubscribed instituonal demand around these levels. $140m is not a big amount in terms of institutional flows.",
+      "id": "2073704784398528599",
+      "date": "2026-07-05T09:45:22.000Z",
+      "title": "Leaked Anthropic docs show plans to secure 1.4GW capacity from Australia, amounting to ~$21.6B. ",
+      "body": "Leaked Anthropic docs show plans to secure 1.4GW capacity from Australia, amounting to ~$21.6B.\n\nRecently $IREN, $SHAZ, and other Neoclouds have been building sovereign DCs in Australia.\n\nGuess like a lot of things are stating to make more sense connection wise?\n\n(disclosure: no open positions in any of the above).",
       "symbols": [
-        "SIVEF"
+        "IREN",
+        "SHAZ"
       ],
-      "theme": "ai-infrastructure",
-      "materiality": 61,
+      "theme": "neocloud",
+      "materiality": 66,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2073536758604771517"
+      "url": "https://x.com/aleabitoreddit/status/2073704784398528599"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
