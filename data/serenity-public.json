@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T19:23:40.869Z",
+  "generatedAt": "2026-07-05T21:22:19.731Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 7015,
+    "parsedItems": 7017,
     "commentCount": 26783,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-05T15:36:44.000Z"
+    "latestItemDate": "2026-07-05T20:53:58.000Z"
   },
   "rules": [
     {
@@ -95,14 +95,14 @@
       "symbol": "LITE",
       "aliases": [],
       "marketSymbol": "LITE",
-      "mentions": 591,
+      "mentions": 592,
       "bull": 225,
       "bear": 10,
-      "neutral": 356,
+      "neutral": 357,
       "materiality": 84,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4903
+      "sentimentScore": 4906
     },
     {
       "symbol": "AAOI",
@@ -231,14 +231,14 @@
         "GOOG"
       ],
       "marketSymbol": "GOOGL",
-      "mentions": 305,
+      "mentions": 306,
       "bull": 96,
       "bear": 10,
-      "neutral": 199,
+      "neutral": 200,
       "materiality": 88,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 2107
+      "sentimentScore": 2110
     },
     {
       "symbol": "MU",
@@ -257,14 +257,14 @@
       "symbol": "AMZN",
       "aliases": [],
       "marketSymbol": "AMZN",
-      "mentions": 232,
+      "mentions": 234,
       "bull": 91,
       "bear": 1,
-      "neutral": 140,
+      "neutral": 142,
       "materiality": 85,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2042
+      "sentimentScore": 2048
     },
     {
       "symbol": "TSM",
@@ -655,14 +655,14 @@
       "symbol": "TSLA",
       "aliases": [],
       "marketSymbol": "TSLA",
-      "mentions": 117,
+      "mentions": 118,
       "bull": 35,
       "bear": 7,
-      "neutral": 75,
+      "neutral": 76,
       "materiality": 81,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "robotics-physical-ai",
-      "sentimentScore": 707
+      "sentimentScore": 710
     },
     {
       "symbol": "AAPL",
@@ -1492,7 +1492,7 @@
       "bear": 0,
       "neutral": 19,
       "materiality": 70,
-      "latest": "2026-06-15T03:21:12.000Z",
+      "latest": "2026-06-15T23:33:51.000Z",
       "dominantTheme": "general",
       "sentimentScore": 245
     },
@@ -5595,21 +5595,21 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-05T19:22:48.391Z",
+    "staticUpdatedAt": "2026-07-05T21:21:06.941Z",
     "latestCaptured": {
-      "id": "2073793206408667392",
-      "date": "2026-07-05T15:36:44.000Z",
-      "title": "Just some consolidated updates on memory: - $MU leads new 1.5T Yen investment in Hiroshima ~$9.3B. ",
-      "body": "Just some consolidated updates on memory: \n\n-  $MU leads new 1.5T Yen investment in Hiroshima ~$9.3B. (bullish read through for Disco, Advantest, Resonac, Towa) since capex is localized.\n\n- Morgan Stanley pointed out NAND will continue to be in short supply into 2027 so $SNDK / Kioxia type players are happy alongisde $SIMO and upstream.\n\n- MS remains especially positive on Macronix/Winbond\n\n- UBS expects the average price of DDR contracts in the Q3 2026 to increase 32% | 18% Q4, vs. 17% and 12% est. \n\n- UBS expects NAND flash to be raised 30% from prev quarter. \n\n- Samsung reportedly plans 20% DRAM hike Q3. TrendForce recently forecast DRAM contract prices to rise 13 to 18 percent in the third quarter from the previous quarter, so this hike beats expectations.\n\nSomething to note:\n\nLot people see 20%... and don't think it's a lot compared to the 70-80% from previous quarters. \n\nBut if you hike something by 100%, then hike something by 100%, then hike something by 30%, it's a lot more than people estimate since it's compounded. Similar to tracking inflation. \n\nI've already made projections going into 2028 from the start of the year on my memory names... \n\nI'm just sitting back and watching things play out through all the \"memory optimization\" and \"they can't keep price hiking like this!\" noise.",
+      "id": "2073873043672420517",
+      "date": "2026-07-05T20:53:58.000Z",
+      "title": "Yep, $AMZN looks like the clear winner in physical AI shift. ",
+      "body": "Yep, $AMZN looks like the clear winner in physical AI shift. \n\nI think the Amazon ecosystem... is probably going to the catalyst for robotics players compared to others in the Google/Meta ecosystems. \n\nI kinda see parallels to the $GOOGL TPU effect on suppliers like $LITE or Mediatek, but for robotics... like Agility. Still early though.",
       "symbols": [
-        "MU",
-        "SNDK",
-        "SIMO"
+        "AMZN",
+        "GOOGL",
+        "LITE"
       ],
-      "theme": "memory-rotation",
-      "materiality": 97,
-      "sentiment": "bull",
-      "url": "https://x.com/aleabitoreddit/status/2073793206408667392"
+      "theme": "robotics-physical-ai",
+      "materiality": 71,
+      "sentiment": "neutral",
+      "url": "https://x.com/aleabitoreddit/status/2073873043672420517"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
