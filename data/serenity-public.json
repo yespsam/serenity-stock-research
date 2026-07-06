@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T20:17:50.555Z",
+  "generatedAt": "2026-07-06T22:17:32.307Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -11,7 +11,7 @@
     "parsedItems": 7032,
     "commentCount": 26783,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-06T16:34:45.000Z"
+    "latestItemDate": "2026-07-06T21:14:10.000Z"
   },
   "rules": [
     {
@@ -5595,21 +5595,23 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-06T17:02:40.674Z",
+    "staticUpdatedAt": "2026-07-06T22:17:07.409Z",
     "latestCaptured": {
-      "id": "2074223485921243237",
-      "date": "2026-07-06T20:06:30.000Z",
-      "title": "1. I don't think they're in a dire need for financing. ",
-      "body": "1. I don't think they're in a dire need for financing. \n\nMy take is half geopolitical, half valuation scarcity as the first pure play humanoid player. The latter is likely more valuable than private funding in my view for momentum. \n\nUnitree was going public in China and there's no pure play US humanoid exposure. SPAC structure is used for faster listing to give investors exposure, and they're both going public around the same timeframe. \n\nOtherwise a ton of Western capital inflow would have went over to China if there's no US humanoid exposure. \nI don't quite think it's coincidence in timing. \n\n2. I'm citing last private valuations for Figure. I personally don't believe it's worth $39B. \n\nBut if it goes public, I do believe it would remain around that valuation in US markets, looking at what $SPCX did at $1.75T, just due to valuation anchoring psychology. \n\nEven so, investors are still paying 4x+ NAV to access Figure with CEFs and I'm amused by the logic behind that. \n\nI personally wouldn't assign it that value comparing it to Unitree at at $6B. (But I do think Unitree is undervaluing itself, probably ends up $12B+). But if you look at how $TSLA got their $1T+ valuation, a lot of it is anchored to the humanoid mission, so hard to value the sector. \n\n3. Same point as #1. Not exactly just to raise funds. \n\nRegardless, I'd encourage more companies to go public early on like $CCXI. Than waiting on when they already get big like Anthropic/OpenAI/SpaceX and letting retail be the last to invest.",
+      "id": "2074240512593481955",
+      "date": "2026-07-06T21:14:10.000Z",
+      "title": "Was a sad few months for $RDDT. But glad it's finally back above $200. Reddit was doing: - $663M revenue w/ 91.5% gross margins - $204M GAAP net income - 45%+ fwd Y/Y growth after",
+      "body": "Was a sad few months for $RDDT. But glad it's finally back above $200. \n\nReddit was doing:\n- $663M revenue w/ 91.5% gross margins\n- $204M GAAP net income\n- 45%+ fwd Y/Y growth after 69%+ growth.\n- Net profit is ~30.7% of revenue\n\nFelt very weird to see a profitable company get dragged down after earnings. \n\nBut in hindsight, given the increase hyperscaler capex, the drop felt more like it's more relative opportunity cost more than fundamentals?\n\nSince a lot of inflow poured into $MU / Sk Hynix that are bottlenecked into 2029. Or with laser bottlenecks like $LITE that last into 2029 as well. \n\nSame thing happens in reverse after selloffs ig, even if fundamentals didn't change. \n\nBeen seeing a lot of noise with memory optimization or Chinese players... but don't quite think you sign 16T+ LTAs if memory was getting flooded or not used anytime soon. \n\nSame with optical players... if in earnings, they state anything they make gets bought, I don't quite think a lot of the noise has material effect on their fundamentals. \n\nRegardless, nice to see some recovery with familiar faces like $HOOD, $HIMS, and $RDDT though.",
       "symbols": [
-        "SPCX",
-        "TSLA",
-        "CCXI"
+        "RDDT",
+        "MU",
+        "LITE",
+        "HOOD",
+        "HIMS"
       ],
-      "theme": "robotics-physical-ai",
-      "materiality": 71,
-      "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2074223485921243237"
+      "theme": "cpo-silicon-photonics",
+      "materiality": 0,
+      "sentiment": "bear",
+      "url": "https://x.com/aleabitoreddit/status/2074240512593481955"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
