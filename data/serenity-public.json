@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T17:03:28.203Z",
+  "generatedAt": "2026-07-06T20:17:50.555Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -5597,17 +5597,19 @@
   "monitor": {
     "staticUpdatedAt": "2026-07-06T17:02:40.674Z",
     "latestCaptured": {
-      "id": "2074170197486039524",
-      "date": "2026-07-06T16:34:45.000Z",
-      "title": "$NVDA refuting recent Kyber delay claims: “Our roadmap is intact”. ",
-      "body": "$NVDA refuting recent Kyber delay claims:\n\n“Our roadmap is intact”.\n\nlol, damage has already been done with stocks in many markets (esp. in Taiwan/Japan/Soutj Korea) crashing after the “report”",
+      "id": "2074223485921243237",
+      "date": "2026-07-06T20:06:30.000Z",
+      "title": "1. I don't think they're in a dire need for financing. ",
+      "body": "1. I don't think they're in a dire need for financing. \n\nMy take is half geopolitical, half valuation scarcity as the first pure play humanoid player. The latter is likely more valuable than private funding in my view for momentum. \n\nUnitree was going public in China and there's no pure play US humanoid exposure. SPAC structure is used for faster listing to give investors exposure, and they're both going public around the same timeframe. \n\nOtherwise a ton of Western capital inflow would have went over to China if there's no US humanoid exposure. \nI don't quite think it's coincidence in timing. \n\n2. I'm citing last private valuations for Figure. I personally don't believe it's worth $39B. \n\nBut if it goes public, I do believe it would remain around that valuation in US markets, looking at what $SPCX did at $1.75T, just due to valuation anchoring psychology. \n\nEven so, investors are still paying 4x+ NAV to access Figure with CEFs and I'm amused by the logic behind that. \n\nI personally wouldn't assign it that value comparing it to Unitree at at $6B. (But I do think Unitree is undervaluing itself, probably ends up $12B+). But if you look at how $TSLA got their $1T+ valuation, a lot of it is anchored to the humanoid mission, so hard to value the sector. \n\n3. Same point as #1. Not exactly just to raise funds. \n\nRegardless, I'd encourage more companies to go public early on like $CCXI. Than waiting on when they already get big like Anthropic/OpenAI/SpaceX and letting retail be the last to invest.",
       "symbols": [
-        "NVDA"
+        "SPCX",
+        "TSLA",
+        "CCXI"
       ],
-      "theme": "general",
-      "materiality": 51,
+      "theme": "robotics-physical-ai",
+      "materiality": 71,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2074170197486039524"
+      "url": "https://x.com/aleabitoreddit/status/2074223485921243237"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
