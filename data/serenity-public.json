@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T22:17:32.307Z",
+  "generatedAt": "2026-07-07T11:02:01.153Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 7032,
+    "parsedItems": 7043,
     "commentCount": 26783,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-06T21:14:10.000Z"
+    "latestItemDate": "2026-07-07T08:54:13.000Z"
   },
   "rules": [
     {
@@ -74,35 +74,35 @@
       "bear": 17,
       "neutral": 633,
       "materiality": 100,
-      "latest": "2026-06-12T04:26:43.000Z",
+      "latest": "2026-07-06T15:25:41.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 10705
+      "sentimentScore": 10687
     },
     {
       "symbol": "NBIS",
       "aliases": [],
       "marketSymbol": "NBIS",
-      "mentions": 795,
+      "mentions": 796,
       "bull": 225,
       "bear": 13,
-      "neutral": 557,
+      "neutral": 558,
       "materiality": 77,
-      "latest": "2026-06-12T04:26:43.000Z",
+      "latest": "2026-07-06T21:25:20.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 5452
+      "sentimentScore": 5438
     },
     {
       "symbol": "LITE",
       "aliases": [],
       "marketSymbol": "LITE",
-      "mentions": 593,
+      "mentions": 594,
       "bull": 226,
-      "bear": 10,
+      "bear": 11,
       "neutral": 357,
       "materiality": 84,
-      "latest": "2026-06-12T04:26:43.000Z",
+      "latest": "2026-07-06T21:14:10.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4924
+      "sentimentScore": 4897
     },
     {
       "symbol": "AAOI",
@@ -113,22 +113,22 @@
       "bear": 14,
       "neutral": 342,
       "materiality": 81,
-      "latest": "2026-06-12T04:26:43.000Z",
+      "latest": "2026-07-06T15:25:41.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4561
+      "sentimentScore": 4552
     },
     {
       "symbol": "NVDA",
       "aliases": [],
       "marketSymbol": "NVDA",
-      "mentions": 546,
-      "bull": 220,
-      "bear": 18,
-      "neutral": 308,
+      "mentions": 549,
+      "bull": 221,
+      "bear": 19,
+      "neutral": 309,
       "materiality": 82,
-      "latest": "2026-06-03T23:56:25.000Z",
+      "latest": "2026-07-07T08:54:13.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4493
+      "sentimentScore": 4487
     },
     {
       "symbol": "AXTI",
@@ -139,9 +139,9 @@
       "bear": 9,
       "neutral": 415,
       "materiality": 74,
-      "latest": "2026-06-12T04:26:43.000Z",
+      "latest": "2026-07-06T05:48:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 3939
+      "sentimentScore": 3927
     },
     {
       "symbol": "IREN",
@@ -152,9 +152,9 @@
       "bear": 29,
       "neutral": 325,
       "materiality": 78,
-      "latest": "2026-06-01T23:51:46.000Z",
+      "latest": "2026-07-05T09:45:22.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 2970
+      "sentimentScore": 2983
     },
     {
       "symbol": "COHR",
@@ -165,9 +165,9 @@
       "bear": 3,
       "neutral": 167,
       "materiality": 88,
-      "latest": "2026-06-01T14:33:55.000Z",
+      "latest": "2026-07-02T21:30:57.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2869
+      "sentimentScore": 2865
     },
     {
       "symbol": "MRVL",
@@ -178,9 +178,9 @@
       "bear": 1,
       "neutral": 188,
       "materiality": 84,
-      "latest": "2026-06-03T23:56:25.000Z",
+      "latest": "2026-07-06T08:25:00.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2817
+      "sentimentScore": 2810
     },
     {
       "symbol": "SOI",
@@ -193,9 +193,9 @@
       "bear": 5,
       "neutral": 157,
       "materiality": 94,
-      "latest": "2026-05-24T02:28:23.000Z",
+      "latest": "2026-06-26T03:51:47.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2674
+      "sentimentScore": 2665
     },
     {
       "symbol": "IQE",
@@ -208,9 +208,9 @@
       "bear": 2,
       "neutral": 155,
       "materiality": 94,
-      "latest": "2026-06-11T16:13:28.000Z",
+      "latest": "2026-07-06T05:48:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2204
+      "sentimentScore": 2203
     },
     {
       "symbol": "MSFT",
@@ -221,9 +221,9 @@
       "bear": 3,
       "neutral": 206,
       "materiality": 83,
-      "latest": "2026-06-01T01:05:01.000Z",
+      "latest": "2026-07-04T07:24:47.000Z",
       "dominantTheme": "ai-infrastructure",
-      "sentimentScore": 2141
+      "sentimentScore": 2136
     },
     {
       "symbol": "GOOGL",
@@ -236,35 +236,35 @@
       "bear": 10,
       "neutral": 200,
       "materiality": 88,
-      "latest": "2026-06-01T23:51:46.000Z",
+      "latest": "2026-07-05T20:53:58.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 2110
-    },
-    {
-      "symbol": "MU",
-      "aliases": [],
-      "marketSymbol": "MU",
-      "mentions": 227,
-      "bull": 100,
-      "bear": 5,
-      "neutral": 122,
-      "materiality": 80,
-      "latest": "2026-06-01T23:51:46.000Z",
-      "dominantTheme": "memory-rotation",
-      "sentimentScore": 2063
+      "sentimentScore": 2108
     },
     {
       "symbol": "AMZN",
       "aliases": [],
       "marketSymbol": "AMZN",
-      "mentions": 234,
+      "mentions": 235,
       "bull": 91,
       "bear": 1,
-      "neutral": 142,
+      "neutral": 143,
       "materiality": 85,
-      "latest": "2026-06-01T23:51:46.000Z",
+      "latest": "2026-07-06T19:31:28.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2048
+      "sentimentScore": 2045
+    },
+    {
+      "symbol": "MU",
+      "aliases": [],
+      "marketSymbol": "MU",
+      "mentions": 228,
+      "bull": 100,
+      "bear": 6,
+      "neutral": 122,
+      "materiality": 81,
+      "latest": "2026-07-06T21:14:10.000Z",
+      "dominantTheme": "memory-rotation",
+      "sentimentScore": 2034
     },
     {
       "symbol": "TSM",
@@ -275,22 +275,22 @@
       "bear": 2,
       "neutral": 139,
       "materiality": 82,
-      "latest": "2026-06-12T04:26:43.000Z",
+      "latest": "2026-07-01T04:59:20.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 1979
+      "sentimentScore": 1975
     },
     {
       "symbol": "META",
       "aliases": [],
       "marketSymbol": "META",
-      "mentions": 273,
-      "bull": 87,
+      "mentions": 274,
+      "bull": 88,
       "bear": 9,
       "neutral": 177,
       "materiality": 79,
-      "latest": "2026-06-03T23:56:25.000Z",
+      "latest": "2026-07-07T08:10:39.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1900
+      "sentimentScore": 1917
     },
     {
       "symbol": "CIFR",
@@ -301,9 +301,9 @@
       "bear": 4,
       "neutral": 127,
       "materiality": 83,
-      "latest": "2026-05-19T14:36:19.000Z",
+      "latest": "2026-06-11T17:54:35.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 1720
+      "sentimentScore": 1715
     },
     {
       "symbol": "POET",
@@ -314,22 +314,9 @@
       "bear": 4,
       "neutral": 139,
       "materiality": 85,
-      "latest": "2026-06-01T23:51:46.000Z",
+      "latest": "2026-07-06T08:25:00.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1703
-    },
-    {
-      "symbol": "HOOD",
-      "aliases": [],
-      "marketSymbol": "HOOD",
-      "mentions": 196,
-      "bull": 74,
-      "bear": 1,
-      "neutral": 121,
-      "materiality": 79,
-      "latest": "2026-04-30T19:56:56.000Z",
-      "dominantTheme": "general",
-      "sentimentScore": 1676
+      "sentimentScore": 1697
     },
     {
       "symbol": "LPK",
@@ -343,9 +330,22 @@
       "bear": 2,
       "neutral": 70,
       "materiality": 87,
-      "latest": "2026-06-01T14:33:55.000Z",
+      "latest": "2026-07-03T10:09:16.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 1660
+    },
+    {
+      "symbol": "HOOD",
+      "aliases": [],
+      "marketSymbol": "HOOD",
+      "mentions": 197,
+      "bull": 74,
+      "bear": 2,
+      "neutral": 121,
+      "materiality": 79,
+      "latest": "2026-07-06T21:14:10.000Z",
+      "dominantTheme": "general",
+      "sentimentScore": 1651
     },
     {
       "symbol": "INTC",
@@ -356,9 +356,9 @@
       "bear": 2,
       "neutral": 93,
       "materiality": 82,
-      "latest": "2026-05-01T06:02:46.000Z",
+      "latest": "2026-07-02T06:38:51.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1629
+      "sentimentScore": 1621
     },
     {
       "symbol": "AMD",
@@ -369,9 +369,9 @@
       "bear": 3,
       "neutral": 92,
       "materiality": 85,
-      "latest": "2026-06-01T23:51:46.000Z",
+      "latest": "2026-07-06T08:25:00.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1617
+      "sentimentScore": 1614
     },
     {
       "symbol": "AVGO",
@@ -382,9 +382,9 @@
       "bear": 2,
       "neutral": 79,
       "materiality": 86,
-      "latest": "2026-06-03T23:56:25.000Z",
+      "latest": "2026-06-16T13:00:15.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1566
+      "sentimentScore": 1561
     },
     {
       "symbol": "CRWV",
@@ -395,22 +395,9 @@
       "bear": 6,
       "neutral": 126,
       "materiality": 82,
-      "latest": "2026-05-19T14:36:19.000Z",
+      "latest": "2026-07-01T13:42:30.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 1563
-    },
-    {
-      "symbol": "AEHR",
-      "aliases": [],
-      "marketSymbol": "AEHR",
-      "mentions": 170,
-      "bull": 66,
-      "bear": 0,
-      "neutral": 104,
-      "materiality": 79,
-      "latest": "2026-06-01T01:05:01.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1512
+      "sentimentScore": 1560
     },
     {
       "symbol": "SNDK",
@@ -421,9 +408,22 @@
       "bear": 4,
       "neutral": 116,
       "materiality": 76,
-      "latest": "2026-05-24T02:28:23.000Z",
+      "latest": "2026-07-06T05:48:43.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 1508
+      "sentimentScore": 1502
+    },
+    {
+      "symbol": "AEHR",
+      "aliases": [],
+      "marketSymbol": "AEHR",
+      "mentions": 170,
+      "bull": 66,
+      "bear": 0,
+      "neutral": 104,
+      "materiality": 79,
+      "latest": "2026-07-02T19:12:55.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 1500
     },
     {
       "symbol": "RKLB",
@@ -434,22 +434,22 @@
       "bear": 1,
       "neutral": 109,
       "materiality": 78,
-      "latest": "2026-06-12T04:26:43.000Z",
+      "latest": "2026-07-02T18:40:39.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1487
+      "sentimentScore": 1475
     },
     {
       "symbol": "RDDT",
       "aliases": [],
       "marketSymbol": "RDDT",
-      "mentions": 168,
+      "mentions": 170,
       "bull": 65,
-      "bear": 1,
-      "neutral": 102,
+      "bear": 2,
+      "neutral": 103,
       "materiality": 75,
-      "latest": "2026-04-29T21:40:20.000Z",
+      "latest": "2026-07-06T21:18:37.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1479
+      "sentimentScore": 1435
     },
     {
       "symbol": "JBL",
@@ -460,9 +460,9 @@
       "bear": 2,
       "neutral": 90,
       "materiality": 87,
-      "latest": "2026-06-01T20:01:50.000Z",
+      "latest": "2026-07-06T08:25:00.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1419
+      "sentimentScore": 1414
     },
     {
       "symbol": "TSEM",
@@ -473,9 +473,9 @@
       "bear": 1,
       "neutral": 91,
       "materiality": 83,
-      "latest": "2026-06-03T23:56:25.000Z",
+      "latest": "2026-06-26T03:06:15.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1407
+      "sentimentScore": 1403
     },
     {
       "symbol": "ALRIB",
@@ -489,9 +489,9 @@
       "bear": 2,
       "neutral": 55,
       "materiality": 99,
-      "latest": "2026-05-27T13:53:45.000Z",
+      "latest": "2026-06-19T12:19:38.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1242
+      "sentimentScore": 1237
     },
     {
       "symbol": "XFAB",
@@ -504,9 +504,9 @@
       "bear": 6,
       "neutral": 43,
       "materiality": 96,
-      "latest": "2026-06-01T14:33:55.000Z",
+      "latest": "2026-07-06T09:29:29.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1201
+      "sentimentScore": 1185
     },
     {
       "symbol": "EWY",
@@ -517,22 +517,22 @@
       "bear": 5,
       "neutral": 58,
       "materiality": 75,
-      "latest": "2026-04-26T17:09:03.000Z",
+      "latest": "2026-06-26T09:50:52.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 1063
+      "sentimentScore": 1054
     },
     {
       "symbol": "HIMS",
       "aliases": [],
       "marketSymbol": "HIMS",
-      "mentions": 165,
+      "mentions": 166,
       "bull": 45,
-      "bear": 5,
+      "bear": 6,
       "neutral": 115,
-      "materiality": 71,
-      "latest": "2026-05-19T14:36:19.000Z",
+      "materiality": 72,
+      "latest": "2026-07-06T21:14:10.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1045
+      "sentimentScore": 1023
     },
     {
       "symbol": "GFS",
@@ -543,9 +543,9 @@
       "bear": 2,
       "neutral": 41,
       "materiality": 90,
-      "latest": "2026-06-01T20:01:50.000Z",
+      "latest": "2026-07-06T08:25:00.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 964
+      "sentimentScore": 961
     },
     {
       "symbol": "ORCL",
@@ -556,9 +556,9 @@
       "bear": 2,
       "neutral": 81,
       "materiality": 82,
-      "latest": "2026-05-19T14:36:19.000Z",
+      "latest": "2026-06-16T13:00:15.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 940
+      "sentimentScore": 937
     },
     {
       "symbol": "FLNC",
@@ -569,9 +569,9 @@
       "bear": 1,
       "neutral": 36,
       "materiality": 85,
-      "latest": "2026-06-01T10:32:06.000Z",
+      "latest": "2026-06-23T15:42:09.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 875
+      "sentimentScore": 860
     },
     {
       "symbol": "CRDO",
@@ -582,7 +582,7 @@
       "bear": 0,
       "neutral": 45,
       "materiality": 83,
-      "latest": "2026-06-03T23:56:25.000Z",
+      "latest": "2026-06-04T03:39:54.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 855
     },
@@ -595,7 +595,7 @@
       "bear": 2,
       "neutral": 55,
       "materiality": 71,
-      "latest": "2026-05-12T10:09:16.000Z",
+      "latest": "2026-06-30T01:10:57.000Z",
       "dominantTheme": "general",
       "sentimentScore": 823
     },
@@ -608,9 +608,9 @@
       "bear": 6,
       "neutral": 55,
       "materiality": 77,
-      "latest": "2026-06-04T02:00:04.000Z",
+      "latest": "2026-06-23T14:16:46.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 813
+      "sentimentScore": 807
     },
     {
       "symbol": "ALAB",
@@ -621,7 +621,7 @@
       "bear": 0,
       "neutral": 45,
       "materiality": 85,
-      "latest": "2026-06-12T04:26:43.000Z",
+      "latest": "2026-06-30T01:10:57.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 783
     },
@@ -634,9 +634,9 @@
       "bear": 2,
       "neutral": 32,
       "materiality": 89,
-      "latest": "2026-06-01T10:32:06.000Z",
+      "latest": "2026-06-09T11:52:27.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 774
+      "sentimentScore": 772
     },
     {
       "symbol": "WULF",
@@ -647,35 +647,22 @@
       "bear": 3,
       "neutral": 59,
       "materiality": 83,
-      "latest": "2026-06-11T17:54:35.000Z",
+      "latest": "2026-07-06T12:35:33.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 750
+      "sentimentScore": 741
     },
     {
       "symbol": "TSLA",
       "aliases": [],
       "marketSymbol": "TSLA",
-      "mentions": 118,
+      "mentions": 119,
       "bull": 35,
       "bear": 7,
-      "neutral": 76,
+      "neutral": 77,
       "materiality": 81,
-      "latest": "2026-06-01T23:51:46.000Z",
+      "latest": "2026-07-06T20:06:30.000Z",
       "dominantTheme": "robotics-physical-ai",
-      "sentimentScore": 710
-    },
-    {
-      "symbol": "AAPL",
-      "aliases": [],
-      "marketSymbol": "AAPL",
-      "mentions": 76,
-      "bull": 33,
-      "bear": 1,
-      "neutral": 42,
-      "materiality": 80,
-      "latest": "2026-06-01T14:33:55.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 704
+      "sentimentScore": 707
     },
     {
       "symbol": "SMCI",
@@ -688,7 +675,20 @@
       "materiality": 79,
       "latest": "2026-06-15T14:56:05.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 702
+      "sentimentScore": 698
+    },
+    {
+      "symbol": "AAPL",
+      "aliases": [],
+      "marketSymbol": "AAPL",
+      "mentions": 77,
+      "bull": 33,
+      "bear": 2,
+      "neutral": 42,
+      "materiality": 80,
+      "latest": "2026-07-07T08:54:13.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 676
     },
     {
       "symbol": "IBKR",
@@ -699,9 +699,9 @@
       "bear": 0,
       "neutral": 44,
       "materiality": 73,
-      "latest": "2026-05-28T14:15:25.000Z",
+      "latest": "2026-06-16T23:57:48.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 688
+      "sentimentScore": 672
     },
     {
       "symbol": "MTSI",
@@ -712,9 +712,9 @@
       "bear": 2,
       "neutral": 55,
       "materiality": 84,
-      "latest": "2026-05-28T14:15:25.000Z",
+      "latest": "2026-06-27T02:11:30.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 647
+      "sentimentScore": 643
     },
     {
       "symbol": "LPTH",
@@ -725,7 +725,7 @@
       "bear": 1,
       "neutral": 28,
       "materiality": 87,
-      "latest": "2026-06-01T10:32:06.000Z",
+      "latest": "2026-06-02T07:00:32.000Z",
       "dominantTheme": "general",
       "sentimentScore": 638
     },
@@ -738,9 +738,9 @@
       "bear": 0,
       "neutral": 18,
       "materiality": 90,
-      "latest": "2026-04-30T08:27:54.000Z",
+      "latest": "2026-06-09T11:52:27.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 615
+      "sentimentScore": 612
     },
     {
       "symbol": "OSS",
@@ -751,22 +751,9 @@
       "bear": 2,
       "neutral": 40,
       "materiality": 74,
-      "latest": "2026-05-05T07:54:32.000Z",
+      "latest": "2026-06-01T16:07:06.000Z",
       "dominantTheme": "general",
       "sentimentScore": 598
-    },
-    {
-      "symbol": "ARM",
-      "aliases": [],
-      "marketSymbol": "ARM",
-      "mentions": 65,
-      "bull": 26,
-      "bear": 1,
-      "neutral": 38,
-      "materiality": 74,
-      "latest": "2026-04-26T17:09:03.000Z",
-      "dominantTheme": "general",
-      "sentimentScore": 576
     },
     {
       "symbol": "LPKF",
@@ -777,9 +764,22 @@
       "bear": 1,
       "neutral": 19,
       "materiality": 91,
-      "latest": "2026-06-01T01:05:01.000Z",
+      "latest": "2026-06-03T14:14:28.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 575
+    },
+    {
+      "symbol": "ARM",
+      "aliases": [],
+      "marketSymbol": "ARM",
+      "mentions": 65,
+      "bull": 26,
+      "bear": 1,
+      "neutral": 38,
+      "materiality": 74,
+      "latest": "2026-06-19T12:19:38.000Z",
+      "dominantTheme": "general",
+      "sentimentScore": 560
     },
     {
       "symbol": "XLU",
@@ -803,9 +803,9 @@
       "bear": 3,
       "neutral": 29,
       "materiality": 84,
-      "latest": "2026-05-12T05:47:56.000Z",
+      "latest": "2026-06-02T20:54:26.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 526
+      "sentimentScore": 525
     },
     {
       "symbol": "WYFI",
@@ -816,7 +816,7 @@
       "bear": 2,
       "neutral": 26,
       "materiality": 87,
-      "latest": "2026-05-19T14:36:19.000Z",
+      "latest": "2026-06-20T03:52:23.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 520
     },
@@ -829,7 +829,7 @@
       "bear": 1,
       "neutral": 24,
       "materiality": 89,
-      "latest": "2026-06-01T01:05:01.000Z",
+      "latest": "2026-06-02T23:51:15.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 500
     },
@@ -855,9 +855,9 @@
       "bear": 0,
       "neutral": 18,
       "materiality": 84,
-      "latest": "2026-06-04T02:00:04.000Z",
+      "latest": "2026-06-08T14:21:03.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 473
+      "sentimentScore": 468
     },
     {
       "symbol": "VPG",
@@ -868,7 +868,7 @@
       "bear": 2,
       "neutral": 38,
       "materiality": 77,
-      "latest": "2026-05-24T20:21:08.000Z",
+      "latest": "2026-06-08T05:11:38.000Z",
       "dominantTheme": "robotics-physical-ai",
       "sentimentScore": 466
     },
@@ -881,9 +881,9 @@
       "bear": 0,
       "neutral": 8,
       "materiality": 92,
-      "latest": "2026-05-06T16:16:34.000Z",
+      "latest": "2026-06-16T23:57:48.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 459
+      "sentimentScore": 456
     },
     {
       "symbol": "VLN",
@@ -894,7 +894,7 @@
       "bear": 1,
       "neutral": 69,
       "materiality": 64,
-      "latest": "2026-05-13T12:01:06.000Z",
+      "latest": "2026-06-03T14:14:28.000Z",
       "dominantTheme": "general",
       "sentimentScore": 455
     },
@@ -907,7 +907,7 @@
       "bear": 1,
       "neutral": 32,
       "materiality": 78,
-      "latest": "2026-05-11T15:20:48.000Z",
+      "latest": "2026-05-15T21:34:26.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 452
     },
@@ -920,7 +920,7 @@
       "bear": 0,
       "neutral": 10,
       "materiality": 90,
-      "latest": "2026-05-28T02:52:25.000Z",
+      "latest": "2026-05-31T14:30:59.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 444
     },
@@ -933,9 +933,9 @@
       "bear": 2,
       "neutral": 27,
       "materiality": 76,
-      "latest": "2026-04-29T07:11:19.000Z",
+      "latest": "2026-05-31T14:30:59.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 435
+      "sentimentScore": 433
     },
     {
       "symbol": "FN",
@@ -946,9 +946,9 @@
       "bear": 0,
       "neutral": 18,
       "materiality": 95,
-      "latest": "2026-04-29T21:40:20.000Z",
+      "latest": "2026-07-06T08:25:00.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 435
+      "sentimentScore": 432
     },
     {
       "symbol": "PLTR",
@@ -959,7 +959,7 @@
       "bear": 2,
       "neutral": 36,
       "materiality": 70,
-      "latest": "2026-05-08T16:14:03.000Z",
+      "latest": "2026-06-25T14:51:04.000Z",
       "dominantTheme": "general",
       "sentimentScore": 424
     },
@@ -972,7 +972,7 @@
       "bear": 1,
       "neutral": 28,
       "materiality": 84,
-      "latest": "2026-05-11T20:02:10.000Z",
+      "latest": "2026-06-29T10:43:13.000Z",
       "dominantTheme": "general",
       "sentimentScore": 422
     },
@@ -985,7 +985,7 @@
       "bear": 0,
       "neutral": 28,
       "materiality": 74,
-      "latest": "2026-03-22T03:02:15.000Z",
+      "latest": "2026-04-30T15:46:45.000Z",
       "dominantTheme": "general",
       "sentimentScore": 390
     },
@@ -998,9 +998,9 @@
       "bear": 0,
       "neutral": 29,
       "materiality": 70,
-      "latest": "2026-05-03T19:02:22.000Z",
+      "latest": "2026-06-01T15:13:41.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 381
+      "sentimentScore": 375
     },
     {
       "symbol": "MSTR",
@@ -1013,7 +1013,7 @@
       "materiality": 78,
       "latest": "2026-06-04T02:00:04.000Z",
       "dominantTheme": "crypto-rotation",
-      "sentimentScore": 378
+      "sentimentScore": 372
     },
     {
       "symbol": "GLW",
@@ -1024,7 +1024,7 @@
       "bear": 0,
       "neutral": 16,
       "materiality": 89,
-      "latest": "2026-06-01T10:32:06.000Z",
+      "latest": "2026-07-02T19:12:55.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 372
     },
@@ -1037,7 +1037,7 @@
       "bear": 1,
       "neutral": 20,
       "materiality": 81,
-      "latest": "2026-05-29T08:13:34.000Z",
+      "latest": "2026-05-31T14:30:59.000Z",
       "dominantTheme": "general",
       "sentimentScore": 362
     },
@@ -1050,9 +1050,9 @@
       "bear": 1,
       "neutral": 18,
       "materiality": 87,
-      "latest": "2026-06-01T14:33:55.000Z",
+      "latest": "2026-06-15T01:31:49.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 359
+      "sentimentScore": 356
     },
     {
       "symbol": "ONTO",
@@ -1063,9 +1063,9 @@
       "bear": 0,
       "neutral": 10,
       "materiality": 87,
-      "latest": "2026-04-29T21:40:20.000Z",
+      "latest": "2026-06-01T17:22:45.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 358
+      "sentimentScore": 354
     },
     {
       "symbol": "AIRO",
@@ -1076,7 +1076,7 @@
       "bear": 1,
       "neutral": 22,
       "materiality": 74,
-      "latest": "2026-01-06T08:24:04.000Z",
+      "latest": "2026-05-12T12:53:09.000Z",
       "dominantTheme": "general",
       "sentimentScore": 350
     },
@@ -1089,9 +1089,9 @@
       "bear": 3,
       "neutral": 9,
       "materiality": 82,
-      "latest": "2026-06-04T02:00:04.000Z",
+      "latest": "2026-06-04T02:12:50.000Z",
       "dominantTheme": "crypto-rotation",
-      "sentimentScore": 342
+      "sentimentScore": 339
     },
     {
       "symbol": "TE",
@@ -1102,7 +1102,7 @@
       "bear": 0,
       "neutral": 16,
       "materiality": 79,
-      "latest": "2026-05-24T04:51:04.000Z",
+      "latest": "2026-06-15T14:02:20.000Z",
       "dominantTheme": "general",
       "sentimentScore": 336
     },
@@ -1115,9 +1115,22 @@
       "bear": 1,
       "neutral": 17,
       "materiality": 82,
-      "latest": "2026-05-13T22:53:50.000Z",
+      "latest": "2026-05-20T03:25:34.000Z",
       "dominantTheme": "robotics-physical-ai",
       "sentimentScore": 335
+    },
+    {
+      "symbol": "SLNH",
+      "aliases": [],
+      "marketSymbol": "SLNH",
+      "mentions": 41,
+      "bull": 19,
+      "bear": 3,
+      "neutral": 19,
+      "materiality": 88,
+      "latest": "2026-06-07T10:48:34.000Z",
+      "dominantTheme": "capital-structure-veto",
+      "sentimentScore": 333
     },
     {
       "symbol": "M7U",
@@ -1128,7 +1141,7 @@
       "bear": 0,
       "neutral": 20,
       "materiality": 90,
-      "latest": "2026-05-12T05:47:56.000Z",
+      "latest": "2026-06-03T14:14:28.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 330
     },
@@ -1141,7 +1154,7 @@
       "bear": 0,
       "neutral": 19,
       "materiality": 85,
-      "latest": "2026-05-01T06:02:46.000Z",
+      "latest": "2026-05-27T07:29:00.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 327
     },
@@ -1154,9 +1167,9 @@
       "bear": 0,
       "neutral": 24,
       "materiality": 81,
-      "latest": "2026-05-17T01:28:37.000Z",
+      "latest": "2026-06-30T10:27:55.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 326
+      "sentimentScore": 324
     },
     {
       "symbol": "WOLF",
@@ -1167,22 +1180,9 @@
       "bear": 2,
       "neutral": 19,
       "materiality": 86,
-      "latest": "2026-04-26T17:09:03.000Z",
+      "latest": "2026-06-15T03:53:00.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 322
-    },
-    {
-      "symbol": "SLNH",
-      "aliases": [],
-      "marketSymbol": "SLNH",
-      "mentions": 41,
-      "bull": 19,
-      "bear": 3,
-      "neutral": 19,
-      "materiality": 88,
-      "latest": "2026-05-19T14:36:19.000Z",
-      "dominantTheme": "capital-structure-veto",
-      "sentimentScore": 321
+      "sentimentScore": 319
     },
     {
       "symbol": "ETH",
@@ -1193,7 +1193,7 @@
       "bear": 4,
       "neutral": 21,
       "materiality": 76,
-      "latest": "2026-05-02T08:32:58.000Z",
+      "latest": "2026-06-04T02:12:50.000Z",
       "dominantTheme": "crypto-rotation",
       "sentimentScore": 317
     },
@@ -1206,22 +1206,9 @@
       "bear": 0,
       "neutral": 9,
       "materiality": 90,
-      "latest": "2026-04-26T17:09:03.000Z",
+      "latest": "2026-06-25T00:26:11.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 315
-    },
-    {
-      "symbol": "MXL",
-      "aliases": [],
-      "marketSymbol": "MXL",
-      "mentions": 26,
-      "bull": 15,
-      "bear": 0,
-      "neutral": 11,
-      "materiality": 88,
-      "latest": "2026-04-24T15:55:06.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 310
     },
     {
       "symbol": "BMNR",
@@ -1237,6 +1224,19 @@
       "sentimentScore": 307
     },
     {
+      "symbol": "MXL",
+      "aliases": [],
+      "marketSymbol": "MXL",
+      "mentions": 26,
+      "bull": 15,
+      "bear": 0,
+      "neutral": 11,
+      "materiality": 88,
+      "latest": "2026-06-24T06:52:41.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 303
+    },
+    {
       "symbol": "FLY",
       "aliases": [],
       "marketSymbol": "FLY",
@@ -1245,7 +1245,7 @@
       "bear": 0,
       "neutral": 22,
       "materiality": 75,
-      "latest": "2025-12-12T03:57:31.000Z",
+      "latest": "2026-05-31T14:30:59.000Z",
       "dominantTheme": "general",
       "sentimentScore": 300
     },
@@ -1258,7 +1258,7 @@
       "bear": 0,
       "neutral": 10,
       "materiality": 85,
-      "latest": "2026-05-26T11:57:46.000Z",
+      "latest": "2026-06-03T05:37:07.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 300
     },
@@ -1271,7 +1271,7 @@
       "bear": 0,
       "neutral": 10,
       "materiality": 85,
-      "latest": "2026-05-03T20:18:21.000Z",
+      "latest": "2026-05-24T15:56:29.000Z",
       "dominantTheme": "general",
       "sentimentScore": 300
     },
@@ -1284,7 +1284,7 @@
       "bear": 1,
       "neutral": 21,
       "materiality": 80,
-      "latest": "2026-04-26T17:09:03.000Z",
+      "latest": "2026-06-19T12:19:38.000Z",
       "dominantTheme": "power-architecture",
       "sentimentScore": 293
     },
@@ -1297,7 +1297,7 @@
       "bear": 0,
       "neutral": 19,
       "materiality": 80,
-      "latest": "2026-05-28T02:52:25.000Z",
+      "latest": "2026-06-07T02:07:23.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 291
     },
@@ -1310,7 +1310,7 @@
       "bear": 1,
       "neutral": 18,
       "materiality": 73,
-      "latest": "2026-04-24T03:38:13.000Z",
+      "latest": "2026-05-01T13:04:20.000Z",
       "dominantTheme": "macro-hedge",
       "sentimentScore": 284
     },
@@ -1323,9 +1323,9 @@
       "bear": 0,
       "neutral": 20,
       "materiality": 84,
-      "latest": "2026-05-14T10:17:44.000Z",
+      "latest": "2026-07-06T08:25:00.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 282
+      "sentimentScore": 276
     },
     {
       "symbol": "LTC",
@@ -1349,21 +1349,8 @@
       "bear": 3,
       "neutral": 14,
       "materiality": 87,
-      "latest": "2026-05-08T17:15:47.000Z",
+      "latest": "2026-07-01T10:14:10.000Z",
       "dominantTheme": "robotics-physical-ai",
-      "sentimentScore": 264
-    },
-    {
-      "symbol": "FORM",
-      "aliases": [],
-      "marketSymbol": "FORM",
-      "mentions": 26,
-      "bull": 12,
-      "bear": 0,
-      "neutral": 14,
-      "materiality": 83,
-      "latest": "2026-04-29T21:40:20.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 264
     },
     {
@@ -1375,7 +1362,7 @@
       "bear": 1,
       "neutral": 5,
       "materiality": 96,
-      "latest": "2026-05-24T02:28:23.000Z",
+      "latest": "2026-06-04T03:39:54.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 263
     },
@@ -1388,7 +1375,7 @@
       "bear": 0,
       "neutral": 21,
       "materiality": 77,
-      "latest": "2025-12-14T14:16:58.000Z",
+      "latest": "2026-05-30T14:04:36.000Z",
       "dominantTheme": "general",
       "sentimentScore": 261
     },
@@ -1401,22 +1388,22 @@
       "bear": 0,
       "neutral": 15,
       "materiality": 85,
-      "latest": "2026-06-15T14:02:20.000Z",
+      "latest": "2026-07-01T10:14:10.000Z",
       "dominantTheme": "power-architecture",
       "sentimentScore": 261
     },
     {
-      "symbol": "ASX",
+      "symbol": "FORM",
       "aliases": [],
-      "marketSymbol": "ASX",
-      "mentions": 24,
+      "marketSymbol": "FORM",
+      "mentions": 26,
       "bull": 12,
       "bear": 0,
-      "neutral": 12,
-      "materiality": 87,
-      "latest": "2026-05-12T05:47:56.000Z",
+      "neutral": 14,
+      "materiality": 83,
+      "latest": "2026-06-03T06:51:12.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 255
+      "sentimentScore": 258
     },
     {
       "symbol": "TTD",
@@ -1432,6 +1419,19 @@
       "sentimentScore": 254
     },
     {
+      "symbol": "ASX",
+      "aliases": [],
+      "marketSymbol": "ASX",
+      "mentions": 24,
+      "bull": 12,
+      "bear": 0,
+      "neutral": 12,
+      "materiality": 87,
+      "latest": "2026-07-01T04:40:02.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 252
+    },
+    {
       "symbol": "TOWA",
       "aliases": [],
       "marketSymbol": "TOWA",
@@ -1440,7 +1440,7 @@
       "bear": 0,
       "neutral": 12,
       "materiality": 86,
-      "latest": "2026-04-29T21:40:20.000Z",
+      "latest": "2026-06-21T03:32:21.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 252
     },
@@ -1453,7 +1453,7 @@
       "bear": 0,
       "neutral": 6,
       "materiality": 90,
-      "latest": "2026-05-06T16:16:34.000Z",
+      "latest": "2026-05-12T23:00:30.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 252
     },
@@ -1466,35 +1466,9 @@
       "bear": 0,
       "neutral": 4,
       "materiality": 93,
-      "latest": "2026-04-26T17:09:03.000Z",
+      "latest": "2026-06-09T12:01:06.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 249
-    },
-    {
-      "symbol": "6451.TW",
-      "aliases": [],
-      "marketSymbol": "6451.TW",
-      "mentions": 13,
-      "bull": 13,
-      "bear": 0,
-      "neutral": 0,
-      "materiality": 99,
-      "latest": "2026-05-13T04:06:41.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 246
-    },
-    {
-      "symbol": "SPY",
-      "aliases": [],
-      "marketSymbol": "SPY",
-      "mentions": 29,
-      "bull": 10,
-      "bear": 0,
-      "neutral": 19,
-      "materiality": 70,
-      "latest": "2026-06-15T03:21:12.000Z",
-      "dominantTheme": "general",
-      "sentimentScore": 245
     },
     {
       "symbol": "GLXY",
@@ -1505,22 +1479,9 @@
       "bear": 0,
       "neutral": 9,
       "materiality": 84,
-      "latest": "2026-04-25T16:54:25.000Z",
+      "latest": "2026-06-04T02:00:04.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 243
-    },
-    {
-      "symbol": "CLSK",
-      "aliases": [],
-      "marketSymbol": "CLSK",
-      "mentions": 25,
-      "bull": 12,
-      "bear": 1,
-      "neutral": 12,
-      "materiality": 88,
-      "latest": "2026-05-19T14:36:19.000Z",
-      "dominantTheme": "neocloud",
-      "sentimentScore": 239
     },
     {
       "symbol": "BULL",
@@ -1531,20 +1492,20 @@
       "bear": 0,
       "neutral": 19,
       "materiality": 72,
-      "latest": "2025-11-20T10:23:51.000Z",
+      "latest": "2026-05-14T23:32:35.000Z",
       "dominantTheme": "general",
       "sentimentScore": 237
     },
     {
-      "symbol": "DELL",
+      "symbol": "SPY",
       "aliases": [],
-      "marketSymbol": "DELL",
-      "mentions": 26,
+      "marketSymbol": "SPY",
+      "mentions": 29,
       "bull": 10,
       "bear": 0,
-      "neutral": 16,
-      "materiality": 80,
-      "latest": "2026-05-29T13:57:15.000Z",
+      "neutral": 19,
+      "materiality": 70,
+      "latest": "2026-06-22T01:00:17.000Z",
       "dominantTheme": "general",
       "sentimentScore": 237
     },
@@ -1557,20 +1518,20 @@
       "bear": 3,
       "neutral": 16,
       "materiality": 83,
-      "latest": "2026-04-28T19:39:50.000Z",
+      "latest": "2026-06-04T02:00:04.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 234
     },
     {
-      "symbol": "AMAT",
+      "symbol": "6451.TW",
       "aliases": [],
-      "marketSymbol": "AMAT",
-      "mentions": 17,
-      "bull": 12,
+      "marketSymbol": "6451.TW",
+      "mentions": 13,
+      "bull": 13,
       "bear": 0,
-      "neutral": 5,
-      "materiality": 89,
-      "latest": "2026-05-01T06:02:46.000Z",
+      "neutral": 0,
+      "materiality": 99,
+      "latest": "2026-06-03T01:18:54.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 234
     },
@@ -1583,9 +1544,35 @@
       "bear": 1,
       "neutral": 25,
       "materiality": 70,
-      "latest": "2025-10-04T01:22:20.000Z",
+      "latest": "2026-03-20T13:22:03.000Z",
       "dominantTheme": "general",
       "sentimentScore": 233
+    },
+    {
+      "symbol": "AMAT",
+      "aliases": [],
+      "marketSymbol": "AMAT",
+      "mentions": 17,
+      "bull": 12,
+      "bear": 0,
+      "neutral": 5,
+      "materiality": 89,
+      "latest": "2026-07-02T06:58:02.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 231
+    },
+    {
+      "symbol": "CLSK",
+      "aliases": [],
+      "marketSymbol": "CLSK",
+      "mentions": 25,
+      "bull": 12,
+      "bear": 1,
+      "neutral": 12,
+      "materiality": 88,
+      "latest": "2026-05-19T14:36:19.000Z",
+      "dominantTheme": "neocloud",
+      "sentimentScore": 230
     },
     {
       "symbol": "VECO",
@@ -1596,21 +1583,21 @@
       "bear": 0,
       "neutral": 16,
       "materiality": 87,
-      "latest": "2026-05-13T04:06:41.000Z",
+      "latest": "2026-06-18T07:43:15.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 228
     },
     {
-      "symbol": "VRT",
+      "symbol": "DELL",
       "aliases": [],
-      "marketSymbol": "VRT",
-      "mentions": 23,
-      "bull": 12,
-      "bear": 1,
-      "neutral": 10,
-      "materiality": 88,
-      "latest": "2026-05-08T16:14:03.000Z",
-      "dominantTheme": "memory-rotation",
+      "marketSymbol": "DELL",
+      "mentions": 26,
+      "bull": 10,
+      "bear": 0,
+      "neutral": 16,
+      "materiality": 80,
+      "latest": "2026-06-03T06:51:12.000Z",
+      "dominantTheme": "general",
       "sentimentScore": 228
     },
     {
@@ -1622,22 +1609,9 @@
       "bear": 2,
       "neutral": 18,
       "materiality": 78,
-      "latest": "2026-02-02T04:49:49.000Z",
+      "latest": "2026-05-24T15:56:29.000Z",
       "dominantTheme": "general",
       "sentimentScore": 226
-    },
-    {
-      "symbol": "RPI.L",
-      "aliases": [],
-      "marketSymbol": "RPI.L",
-      "mentions": 13,
-      "bull": 12,
-      "bear": 0,
-      "neutral": 1,
-      "materiality": 80,
-      "latest": "2026-05-12T10:09:16.000Z",
-      "dominantTheme": "general",
-      "sentimentScore": 225
     },
     {
       "symbol": "DGXX",
@@ -1648,8 +1622,21 @@
       "bear": 1,
       "neutral": 10,
       "materiality": 88,
-      "latest": "2026-05-19T14:36:19.000Z",
+      "latest": "2026-05-31T14:30:59.000Z",
       "dominantTheme": "capital-structure-veto",
+      "sentimentScore": 224
+    },
+    {
+      "symbol": "VRT",
+      "aliases": [],
+      "marketSymbol": "VRT",
+      "mentions": 23,
+      "bull": 12,
+      "bear": 1,
+      "neutral": 10,
+      "materiality": 88,
+      "latest": "2026-07-05T13:38:44.000Z",
+      "dominantTheme": "memory-rotation",
       "sentimentScore": 224
     },
     {
@@ -1661,9 +1648,9 @@
       "bear": 0,
       "neutral": 8,
       "materiality": 87,
-      "latest": "2026-05-03T05:01:19.000Z",
+      "latest": "2026-05-08T14:42:14.000Z",
       "dominantTheme": "capital-structure-veto",
-      "sentimentScore": 224
+      "sentimentScore": 222
     },
     {
       "symbol": "SIMO",
@@ -1674,9 +1661,22 @@
       "bear": 0,
       "neutral": 13,
       "materiality": 84,
-      "latest": "2026-05-06T16:16:34.000Z",
+      "latest": "2026-07-05T15:36:44.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 223
+      "sentimentScore": 219
+    },
+    {
+      "symbol": "RPI.L",
+      "aliases": [],
+      "marketSymbol": "RPI.L",
+      "mentions": 13,
+      "bull": 12,
+      "bear": 0,
+      "neutral": 1,
+      "materiality": 80,
+      "latest": "2026-06-05T09:10:16.000Z",
+      "dominantTheme": "general",
+      "sentimentScore": 219
     },
     {
       "symbol": "SOFI",
@@ -1687,7 +1687,7 @@
       "bear": 3,
       "neutral": 13,
       "materiality": 81,
-      "latest": "2026-05-19T14:36:19.000Z",
+      "latest": "2026-06-04T02:00:04.000Z",
       "dominantTheme": "general",
       "sentimentScore": 207
     },
@@ -1700,7 +1700,7 @@
       "bear": 1,
       "neutral": 22,
       "materiality": 75,
-      "latest": "2026-06-15T14:02:20.000Z",
+      "latest": "2026-06-15T16:21:08.000Z",
       "dominantTheme": "general",
       "sentimentScore": 206
     },
@@ -1713,7 +1713,7 @@
       "bear": 0,
       "neutral": 26,
       "materiality": 86,
-      "latest": "2026-04-29T10:37:41.000Z",
+      "latest": "2026-05-22T06:35:51.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 204
     },
@@ -1739,20 +1739,7 @@
       "bear": 0,
       "neutral": 13,
       "materiality": 80,
-      "latest": "2026-05-11T20:02:10.000Z",
-      "dominantTheme": "general",
-      "sentimentScore": 201
-    },
-    {
-      "symbol": "PL",
-      "aliases": [],
-      "marketSymbol": "PL",
-      "mentions": 15,
-      "bull": 10,
-      "bear": 0,
-      "neutral": 5,
-      "materiality": 83,
-      "latest": "2026-05-01T06:02:46.000Z",
+      "latest": "2026-05-20T07:58:49.000Z",
       "dominantTheme": "general",
       "sentimentScore": 201
     },
@@ -1765,7 +1752,7 @@
       "bear": 4,
       "neutral": 12,
       "materiality": 86,
-      "latest": "2026-05-19T02:11:14.000Z",
+      "latest": "2026-07-04T18:02:28.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 200
     },
@@ -1778,22 +1765,9 @@
       "bear": 1,
       "neutral": 2,
       "materiality": 100,
-      "latest": "2026-05-26T11:57:46.000Z",
+      "latest": "2026-06-03T10:17:16.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 200
-    },
-    {
-      "symbol": "RIOT",
-      "aliases": [],
-      "marketSymbol": "RIOT",
-      "mentions": 23,
-      "bull": 10,
-      "bear": 1,
-      "neutral": 12,
-      "materiality": 86,
-      "latest": "2026-05-03T05:01:19.000Z",
-      "dominantTheme": "neocloud",
-      "sentimentScore": 199
     },
     {
       "symbol": "SHT",
@@ -1804,7 +1778,7 @@
       "bear": 0,
       "neutral": 12,
       "materiality": 89,
-      "latest": "2026-05-14T10:17:44.000Z",
+      "latest": "2026-06-02T14:19:41.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 198
     },
@@ -1817,9 +1791,35 @@
       "bear": 0,
       "neutral": 11,
       "materiality": 76,
-      "latest": "2025-10-18T23:07:47.000Z",
+      "latest": "2026-04-22 19:33 UTC",
       "dominantTheme": "general",
       "sentimentScore": 195
+    },
+    {
+      "symbol": "PL",
+      "aliases": [],
+      "marketSymbol": "PL",
+      "mentions": 15,
+      "bull": 10,
+      "bear": 0,
+      "neutral": 5,
+      "materiality": 83,
+      "latest": "2026-06-05T15:58:58.000Z",
+      "dominantTheme": "general",
+      "sentimentScore": 195
+    },
+    {
+      "symbol": "RIOT",
+      "aliases": [],
+      "marketSymbol": "RIOT",
+      "mentions": 23,
+      "bull": 10,
+      "bear": 1,
+      "neutral": 12,
+      "materiality": 86,
+      "latest": "2026-05-03T05:01:19.000Z",
+      "dominantTheme": "neocloud",
+      "sentimentScore": 194
     },
     {
       "symbol": "TER",
@@ -1830,9 +1830,9 @@
       "bear": 0,
       "neutral": 10,
       "materiality": 83,
-      "latest": "2026-04-29T21:40:20.000Z",
+      "latest": "2026-07-02T19:12:55.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 195
+      "sentimentScore": 192
     },
     {
       "symbol": "VICR",
@@ -1843,9 +1843,9 @@
       "bear": 0,
       "neutral": 9,
       "materiality": 84,
-      "latest": "2026-04-26T17:09:03.000Z",
+      "latest": "2026-06-09T11:52:27.000Z",
       "dominantTheme": "power-architecture",
-      "sentimentScore": 191
+      "sentimentScore": 189
     },
     {
       "symbol": "EOSE",
@@ -1856,7 +1856,7 @@
       "bear": 0,
       "neutral": 9,
       "materiality": 82,
-      "latest": "2026-04-26T17:09:03.000Z",
+      "latest": "2026-06-15T22:06:54.000Z",
       "dominantTheme": "general",
       "sentimentScore": 189
     },
@@ -1870,19 +1870,6 @@
       "neutral": 9,
       "materiality": 80,
       "latest": "2026-05-30T14:58:42.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 189
-    },
-    {
-      "symbol": "CLS",
-      "aliases": [],
-      "marketSymbol": "CLS",
-      "mentions": 12,
-      "bull": 10,
-      "bear": 0,
-      "neutral": 2,
-      "materiality": 89,
-      "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 189
     },
@@ -1908,7 +1895,7 @@
       "bear": 3,
       "neutral": 18,
       "materiality": 76,
-      "latest": "2025-10-04T01:22:20.000Z",
+      "latest": "2026-05-09T04:51:32.000Z",
       "dominantTheme": "general",
       "sentimentScore": 186
     },
@@ -1921,21 +1908,21 @@
       "bear": 0,
       "neutral": 2,
       "materiality": 95,
-      "latest": "2026-05-07T07:57:57.000Z",
+      "latest": "2026-06-02T20:54:26.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 186
     },
     {
-      "symbol": "000660.KO",
+      "symbol": "CLS",
       "aliases": [],
-      "marketSymbol": "000660.KO",
-      "mentions": 10,
+      "marketSymbol": "CLS",
+      "mentions": 12,
       "bull": 10,
       "bear": 0,
-      "neutral": 0,
-      "materiality": 99,
-      "latest": "2026-06-15T14:02:20.000Z",
-      "dominantTheme": "memory-rotation",
+      "neutral": 2,
+      "materiality": 89,
+      "latest": "2026-06-09T11:52:27.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 186
     },
     {
@@ -1947,22 +1934,9 @@
       "bear": 1,
       "neutral": 15,
       "materiality": 85,
-      "latest": "2025-10-19T18:21:35.000Z",
+      "latest": "2026-05-17T04:16:29.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 185
-    },
-    {
-      "symbol": "SOXX",
-      "aliases": [],
-      "marketSymbol": "SOXX",
-      "mentions": 10,
-      "bull": 10,
-      "bear": 0,
-      "neutral": 0,
-      "materiality": 98,
-      "latest": "2026-05-06T16:16:34.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 184
     },
     {
       "symbol": "QBTS",
@@ -1973,7 +1947,7 @@
       "bear": 0,
       "neutral": 7,
       "materiality": 85,
-      "latest": "2026-02-02T04:49:49.000Z",
+      "latest": "2026-04-15T23:15:53.000Z",
       "dominantTheme": "general",
       "sentimentScore": 183
     },
@@ -1986,7 +1960,33 @@
       "bear": 0,
       "neutral": 6,
       "materiality": 87,
-      "latest": "2026-05-28T14:15:25.000Z",
+      "latest": "2026-06-08T06:22:58.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 180
+    },
+    {
+      "symbol": "000660.KO",
+      "aliases": [],
+      "marketSymbol": "000660.KO",
+      "mentions": 10,
+      "bull": 10,
+      "bear": 0,
+      "neutral": 0,
+      "materiality": 99,
+      "latest": "2026-06-16T13:00:15.000Z",
+      "dominantTheme": "memory-rotation",
+      "sentimentScore": 180
+    },
+    {
+      "symbol": "SOXX",
+      "aliases": [],
+      "marketSymbol": "SOXX",
+      "mentions": 10,
+      "bull": 10,
+      "bear": 0,
+      "neutral": 0,
+      "materiality": 98,
+      "latest": "2026-05-07T00:51:10.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 180
     },
@@ -2012,22 +2012,22 @@
       "bear": 1,
       "neutral": 7,
       "materiality": 85,
-      "latest": "2026-05-13T22:53:50.000Z",
+      "latest": "2026-05-20T00:14:37.000Z",
       "dominantTheme": "robotics-physical-ai",
       "sentimentScore": 179
     },
     {
-      "symbol": "688017.SHG",
+      "symbol": "SPCX",
       "aliases": [],
-      "marketSymbol": "688017.SHG",
-      "mentions": 13,
-      "bull": 9,
-      "bear": 1,
-      "neutral": 3,
-      "materiality": 85,
-      "latest": "2026-06-08T05:11:38.000Z",
-      "dominantTheme": "robotics-physical-ai",
-      "sentimentScore": 174
+      "marketSymbol": "SPCX",
+      "mentions": 32,
+      "bull": 10,
+      "bear": 3,
+      "neutral": 19,
+      "materiality": 78,
+      "latest": "2026-07-06T20:06:30.000Z",
+      "dominantTheme": "general",
+      "sentimentScore": 171
     },
     {
       "symbol": "VIAV",
@@ -2038,9 +2038,9 @@
       "bear": 0,
       "neutral": 8,
       "materiality": 88,
-      "latest": "2026-05-20T13:00:30.000Z",
+      "latest": "2026-05-26T17:09:35.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 171
+      "sentimentScore": 168
     },
     {
       "symbol": "QCOM",
@@ -2051,33 +2051,7 @@
       "bear": 0,
       "neutral": 8,
       "materiality": 80,
-      "latest": "2026-06-03T23:56:25.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 171
-    },
-    {
-      "symbol": "SPCX",
-      "aliases": [],
-      "marketSymbol": "SPCX",
-      "mentions": 30,
-      "bull": 10,
-      "bear": 3,
-      "neutral": 17,
-      "materiality": 78,
-      "latest": "2026-06-16T02:20:57.000Z",
-      "dominantTheme": "general",
-      "sentimentScore": 168
-    },
-    {
-      "symbol": "3363.TWO",
-      "aliases": [],
-      "marketSymbol": "3363.TWO",
-      "mentions": 11,
-      "bull": 10,
-      "bear": 1,
-      "neutral": 0,
-      "materiality": 100,
-      "latest": "2026-05-13T04:06:41.000Z",
+      "latest": "2026-06-15T18:05:48.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 168
     },
@@ -2090,22 +2064,9 @@
       "bear": 1,
       "neutral": 3,
       "materiality": 89,
-      "latest": "2026-05-15T07:04:50.000Z",
+      "latest": "2026-06-03T06:51:12.000Z",
       "dominantTheme": "general",
       "sentimentScore": 167
-    },
-    {
-      "symbol": "TSM.BA",
-      "aliases": [],
-      "marketSymbol": "TSM.BA",
-      "mentions": 9,
-      "bull": 9,
-      "bear": 0,
-      "neutral": 0,
-      "materiality": 100,
-      "latest": "2026-04-30T08:27:54.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 166
     },
     {
       "symbol": "SMTC",
@@ -2134,17 +2095,30 @@
       "sentimentScore": 162
     },
     {
-      "symbol": "ANET",
+      "symbol": "TSM.BA",
       "aliases": [],
-      "marketSymbol": "ANET",
-      "mentions": 12,
-      "bull": 8,
+      "marketSymbol": "TSM.BA",
+      "mentions": 9,
+      "bull": 9,
       "bear": 0,
-      "neutral": 4,
-      "materiality": 87,
-      "latest": "2026-05-04T07:12:36.000Z",
-      "dominantTheme": "general",
-      "sentimentScore": 159
+      "neutral": 0,
+      "materiality": 100,
+      "latest": "2026-05-09T20:07:19.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 162
+    },
+    {
+      "symbol": "3363.TWO",
+      "aliases": [],
+      "marketSymbol": "3363.TWO",
+      "mentions": 11,
+      "bull": 10,
+      "bear": 1,
+      "neutral": 0,
+      "materiality": 100,
+      "latest": "2026-06-11T01:38:21.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 158
     },
     {
       "symbol": "GRRR",
@@ -2155,8 +2129,21 @@
       "bear": 0,
       "neutral": 10,
       "materiality": 76,
-      "latest": "2025-10-18T23:07:47.000Z",
+      "latest": "2026-05-24T15:56:29.000Z",
       "dominantTheme": "neocloud",
+      "sentimentScore": 156
+    },
+    {
+      "symbol": "ANET",
+      "aliases": [],
+      "marketSymbol": "ANET",
+      "mentions": 12,
+      "bull": 8,
+      "bear": 0,
+      "neutral": 4,
+      "materiality": 87,
+      "latest": "2026-06-01T16:34:42.000Z",
+      "dominantTheme": "general",
       "sentimentScore": 156
     },
     {
@@ -2181,7 +2168,7 @@
       "bear": 0,
       "neutral": 3,
       "materiality": 95,
-      "latest": "2026-05-06T16:16:34.000Z",
+      "latest": "2026-06-04T03:56:05.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 153
     },
@@ -2194,7 +2181,7 @@
       "bear": 0,
       "neutral": 14,
       "materiality": 85,
-      "latest": "2026-06-01T01:05:01.000Z",
+      "latest": "2026-06-26T00:34:45.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 150
     },
@@ -2207,9 +2194,22 @@
       "bear": 0,
       "neutral": 2,
       "materiality": 94,
-      "latest": "2026-06-02T14:19:41.000Z",
+      "latest": "2026-06-04T03:39:54.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 150
+    },
+    {
+      "symbol": "688017.SHG",
+      "aliases": [],
+      "marketSymbol": "688017.SHG",
+      "mentions": 13,
+      "bull": 9,
+      "bear": 1,
+      "neutral": 3,
+      "materiality": 85,
+      "latest": "2026-06-08T05:11:38.000Z",
+      "dominantTheme": "robotics-physical-ai",
+      "sentimentScore": 149
     },
     {
       "symbol": "AIXA",
@@ -2238,19 +2238,6 @@
       "sentimentScore": 147
     },
     {
-      "symbol": "MARA",
-      "aliases": [],
-      "marketSymbol": "MARA",
-      "mentions": 21,
-      "bull": 10,
-      "bear": 3,
-      "neutral": 8,
-      "materiality": 89,
-      "latest": "2026-05-19T14:36:19.000Z",
-      "dominantTheme": "ai-infrastructure",
-      "sentimentScore": 144
-    },
-    {
       "symbol": "CBRS",
       "aliases": [],
       "marketSymbol": "CBRS",
@@ -2259,7 +2246,7 @@
       "bear": 0,
       "neutral": 6,
       "materiality": 83,
-      "latest": "2026-05-13T11:31:13.000Z",
+      "latest": "2026-07-02T18:13:50.000Z",
       "dominantTheme": "general",
       "sentimentScore": 144
     },
@@ -2272,61 +2259,9 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 96,
-      "latest": "2026-05-07T07:57:57.000Z",
+      "latest": "2026-07-06T09:29:29.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 144
-    },
-    {
-      "symbol": "UNH",
-      "aliases": [],
-      "marketSymbol": "UNH",
-      "mentions": 21,
-      "bull": 7,
-      "bear": 1,
-      "neutral": 13,
-      "materiality": 75,
-      "latest": "2025-10-19T18:21:35.000Z",
-      "dominantTheme": "general",
-      "sentimentScore": 143
-    },
-    {
-      "symbol": "ETN",
-      "aliases": [],
-      "marketSymbol": "ETN",
-      "mentions": 11,
-      "bull": 7,
-      "bear": 0,
-      "neutral": 4,
-      "materiality": 93,
-      "latest": "2026-04-26T17:09:03.000Z",
-      "dominantTheme": "memory-rotation",
-      "sentimentScore": 142
-    },
-    {
-      "symbol": "PYPL",
-      "aliases": [],
-      "marketSymbol": "PYPL",
-      "mentions": 25,
-      "bull": 6,
-      "bear": 1,
-      "neutral": 18,
-      "materiality": 71,
-      "latest": "2026-03-13T05:53:16.000Z",
-      "dominantTheme": "general",
-      "sentimentScore": 140
-    },
-    {
-      "symbol": "8147.TWO",
-      "aliases": [],
-      "marketSymbol": "8147.TWO",
-      "mentions": 7,
-      "bull": 7,
-      "bear": 0,
-      "neutral": 0,
-      "materiality": 100,
-      "latest": "2026-05-13T04:06:41.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 139
     },
     {
       "symbol": "BKKT",
@@ -2337,8 +2272,60 @@
       "bear": 4,
       "neutral": 23,
       "materiality": 81,
-      "latest": "2026-05-19T14:36:19.000Z",
+      "latest": "2026-06-09T10:00:16.000Z",
       "dominantTheme": "capital-structure-veto",
+      "sentimentScore": 143
+    },
+    {
+      "symbol": "UNH",
+      "aliases": [],
+      "marketSymbol": "UNH",
+      "mentions": 21,
+      "bull": 7,
+      "bear": 1,
+      "neutral": 13,
+      "materiality": 75,
+      "latest": "2026-05-30T08:04:27.000Z",
+      "dominantTheme": "general",
+      "sentimentScore": 143
+    },
+    {
+      "symbol": "PYPL",
+      "aliases": [],
+      "marketSymbol": "PYPL",
+      "mentions": 25,
+      "bull": 6,
+      "bear": 1,
+      "neutral": 18,
+      "materiality": 71,
+      "latest": "2026-05-30T08:04:27.000Z",
+      "dominantTheme": "general",
+      "sentimentScore": 140
+    },
+    {
+      "symbol": "MARA",
+      "aliases": [],
+      "marketSymbol": "MARA",
+      "mentions": 21,
+      "bull": 10,
+      "bear": 3,
+      "neutral": 8,
+      "materiality": 89,
+      "latest": "2026-05-19T14:36:19.000Z",
+      "dominantTheme": "ai-infrastructure",
+      "sentimentScore": 138
+    },
+    {
+      "symbol": "ETN",
+      "aliases": [],
+      "marketSymbol": "ETN",
+      "mentions": 11,
+      "bull": 7,
+      "bear": 0,
+      "neutral": 4,
+      "materiality": 93,
+      "latest": "2026-07-05T13:38:44.000Z",
+      "dominantTheme": "memory-rotation",
       "sentimentScore": 138
     },
     {
@@ -2350,7 +2337,7 @@
       "bear": 0,
       "neutral": 4,
       "materiality": 92,
-      "latest": "2026-04-26T17:09:03.000Z",
+      "latest": "2026-05-29T13:57:15.000Z",
       "dominantTheme": "robotics-physical-ai",
       "sentimentScore": 138
     },
@@ -2376,9 +2363,9 @@
       "bear": 0,
       "neutral": 3,
       "materiality": 87,
-      "latest": "2026-05-08T17:15:47.000Z",
+      "latest": "2026-05-30T01:52:20.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 137
+      "sentimentScore": 135
     },
     {
       "symbol": "LRCX",
@@ -2389,74 +2376,9 @@
       "bear": 0,
       "neutral": 3,
       "materiality": 85,
-      "latest": "2026-05-02T09:14:10.000Z",
+      "latest": "2026-06-09T12:01:06.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 137
-    },
-    {
-      "symbol": "6830.TW",
-      "aliases": [],
-      "marketSymbol": "6830.TW",
-      "mentions": 7,
-      "bull": 7,
-      "bear": 0,
-      "neutral": 0,
-      "materiality": 100,
-      "latest": "2026-05-01T06:02:46.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 136
-    },
-    {
-      "symbol": "HUT",
-      "aliases": [],
-      "marketSymbol": "HUT",
-      "mentions": 13,
-      "bull": 6,
-      "bear": 0,
-      "neutral": 7,
-      "materiality": 87,
-      "latest": "2026-06-11T17:54:35.000Z",
-      "dominantTheme": "neocloud",
       "sentimentScore": 135
-    },
-    {
-      "symbol": "MPWR",
-      "aliases": [],
-      "marketSymbol": "MPWR",
-      "mentions": 9,
-      "bull": 7,
-      "bear": 0,
-      "neutral": 2,
-      "materiality": 87,
-      "latest": "2026-05-06T20:40:43.000Z",
-      "dominantTheme": "memory-rotation",
-      "sentimentScore": 135
-    },
-    {
-      "symbol": "POWL",
-      "aliases": [],
-      "marketSymbol": "POWL",
-      "mentions": 8,
-      "bull": 7,
-      "bear": 0,
-      "neutral": 1,
-      "materiality": 96,
-      "latest": "2026-04-26T17:09:03.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 133
-    },
-    {
-      "symbol": "3105.TWO",
-      "aliases": [],
-      "marketSymbol": "3105.TWO",
-      "mentions": 7,
-      "bull": 7,
-      "bear": 0,
-      "neutral": 0,
-      "materiality": 99,
-      "latest": "2026-05-30T06:52:25.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 133
     },
     {
       "symbol": "APPL",
@@ -2480,35 +2402,22 @@
       "bear": 0,
       "neutral": 8,
       "materiality": 86,
-      "latest": "2026-04-29T21:40:20.000Z",
+      "latest": "2026-06-20T03:52:23.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 132
     },
     {
-      "symbol": "TSEM.TA",
+      "symbol": "MPWR",
       "aliases": [],
-      "marketSymbol": "TSEM.TA",
-      "mentions": 7,
+      "marketSymbol": "MPWR",
+      "mentions": 9,
       "bull": 7,
       "bear": 0,
-      "neutral": 0,
-      "materiality": 100,
-      "latest": "2026-05-12T05:47:56.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 132
-    },
-    {
-      "symbol": "005930.KO",
-      "aliases": [],
-      "marketSymbol": "005930.KO",
-      "mentions": 7,
-      "bull": 7,
-      "bear": 0,
-      "neutral": 0,
-      "materiality": 100,
-      "latest": "2026-06-15T14:02:20.000Z",
+      "neutral": 2,
+      "materiality": 87,
+      "latest": "2026-05-27T02:24:10.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 130
+      "sentimentScore": 132
     },
     {
       "symbol": "FOCI",
@@ -2519,7 +2428,33 @@
       "bear": 0,
       "neutral": 7,
       "materiality": 94,
-      "latest": "2026-05-24T04:51:04.000Z",
+      "latest": "2026-06-16T10:46:27.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 129
+    },
+    {
+      "symbol": "HUT",
+      "aliases": [],
+      "marketSymbol": "HUT",
+      "mentions": 13,
+      "bull": 6,
+      "bear": 0,
+      "neutral": 7,
+      "materiality": 87,
+      "latest": "2026-06-11T17:54:35.000Z",
+      "dominantTheme": "neocloud",
+      "sentimentScore": 129
+    },
+    {
+      "symbol": "POWL",
+      "aliases": [],
+      "marketSymbol": "POWL",
+      "mentions": 8,
+      "bull": 7,
+      "bear": 0,
+      "neutral": 1,
+      "materiality": 96,
+      "latest": "2026-04-28T18:41:15.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 129
     },
@@ -2532,7 +2467,7 @@
       "bear": 1,
       "neutral": 2,
       "materiality": 96,
-      "latest": "2026-06-01T01:05:01.000Z",
+      "latest": "2026-06-03T05:37:07.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 128
     },
@@ -2545,7 +2480,7 @@
       "bear": 0,
       "neutral": 6,
       "materiality": 89,
-      "latest": "2026-04-25T16:54:25.000Z",
+      "latest": "2026-05-27T02:24:10.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 126
     },
@@ -2558,7 +2493,7 @@
       "bear": 0,
       "neutral": 6,
       "materiality": 82,
-      "latest": "2026-01-29T17:09:02.000Z",
+      "latest": "2026-05-31T14:30:59.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 126
     },
@@ -2571,7 +2506,72 @@
       "bear": 0,
       "neutral": 0,
       "materiality": 100,
-      "latest": "2026-05-23T05:41:35.000Z",
+      "latest": "2026-05-28T12:53:24.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 126
+    },
+    {
+      "symbol": "8147.TWO",
+      "aliases": [],
+      "marketSymbol": "8147.TWO",
+      "mentions": 7,
+      "bull": 7,
+      "bear": 0,
+      "neutral": 0,
+      "materiality": 100,
+      "latest": "2026-05-26T01:11:30.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 126
+    },
+    {
+      "symbol": "TSEM.TA",
+      "aliases": [],
+      "marketSymbol": "TSEM.TA",
+      "mentions": 7,
+      "bull": 7,
+      "bear": 0,
+      "neutral": 0,
+      "materiality": 100,
+      "latest": "2026-05-13T22:17:27.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 126
+    },
+    {
+      "symbol": "6830.TW",
+      "aliases": [],
+      "marketSymbol": "6830.TW",
+      "mentions": 7,
+      "bull": 7,
+      "bear": 0,
+      "neutral": 0,
+      "materiality": 100,
+      "latest": "2026-05-26T01:11:30.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 126
+    },
+    {
+      "symbol": "005930.KO",
+      "aliases": [],
+      "marketSymbol": "005930.KO",
+      "mentions": 7,
+      "bull": 7,
+      "bear": 0,
+      "neutral": 0,
+      "materiality": 100,
+      "latest": "2026-06-16T07:54:44.000Z",
+      "dominantTheme": "memory-rotation",
+      "sentimentScore": 126
+    },
+    {
+      "symbol": "3105.TWO",
+      "aliases": [],
+      "marketSymbol": "3105.TWO",
+      "mentions": 7,
+      "bull": 7,
+      "bear": 0,
+      "neutral": 0,
+      "materiality": 99,
+      "latest": "2026-06-03T01:18:54.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 126
     },
@@ -2584,7 +2584,7 @@
       "bear": 0,
       "neutral": 5,
       "materiality": 84,
-      "latest": "2026-05-28T14:15:25.000Z",
+      "latest": "2026-06-09T07:21:45.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 123
     },
@@ -2597,22 +2597,9 @@
       "bear": 1,
       "neutral": 30,
       "materiality": 77,
-      "latest": "2026-06-04T02:00:04.000Z",
+      "latest": "2026-07-04T21:44:39.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 122
-    },
-    {
-      "symbol": "RTX",
-      "aliases": [],
-      "marketSymbol": "RTX",
-      "mentions": 14,
-      "bull": 5,
-      "bear": 0,
-      "neutral": 9,
-      "materiality": 81,
-      "latest": "2026-05-01T06:02:46.000Z",
-      "dominantTheme": "general",
-      "sentimentScore": 121
     },
     {
       "symbol": "POWI",
@@ -2623,9 +2610,22 @@
       "bear": 1,
       "neutral": 5,
       "materiality": 87,
-      "latest": "2026-05-27T07:29:00.000Z",
+      "latest": "2026-06-26T00:34:45.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 121
+      "sentimentScore": 119
+    },
+    {
+      "symbol": "RTX",
+      "aliases": [],
+      "marketSymbol": "RTX",
+      "mentions": 14,
+      "bull": 5,
+      "bear": 0,
+      "neutral": 9,
+      "materiality": 81,
+      "latest": "2026-05-24T20:42:39.000Z",
+      "dominantTheme": "general",
+      "sentimentScore": 117
     },
     {
       "symbol": "TGT",
@@ -2636,7 +2636,7 @@
       "bear": 0,
       "neutral": 9,
       "materiality": 75,
-      "latest": "2025-10-19T18:21:35.000Z",
+      "latest": "2026-01-11T19:45:54.000Z",
       "dominantTheme": "general",
       "sentimentScore": 117
     },
@@ -2649,7 +2649,7 @@
       "bear": 0,
       "neutral": 3,
       "materiality": 88,
-      "latest": "2026-04-28T07:45:54.000Z",
+      "latest": "2026-06-01T15:13:41.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 117
     },
@@ -2675,9 +2675,22 @@
       "bear": 0,
       "neutral": 2,
       "materiality": 90,
-      "latest": "2026-05-27T07:29:00.000Z",
+      "latest": "2026-06-03T14:14:28.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 114
+    },
+    {
+      "symbol": "LULU",
+      "aliases": [],
+      "marketSymbol": "LULU",
+      "mentions": 16,
+      "bull": 6,
+      "bear": 1,
+      "neutral": 9,
+      "materiality": 75,
+      "latest": "2026-05-15T20:28:01.000Z",
+      "dominantTheme": "general",
+      "sentimentScore": 113
     },
     {
       "symbol": "KEYS",
@@ -2688,7 +2701,7 @@
       "bear": 0,
       "neutral": 7,
       "materiality": 90,
-      "latest": "2026-04-29T21:40:20.000Z",
+      "latest": "2026-05-26T17:09:35.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 111
     },
@@ -2701,7 +2714,7 @@
       "bear": 0,
       "neutral": 7,
       "materiality": 76,
-      "latest": "2026-04-26T07:20:39.000Z",
+      "latest": "2026-05-27T02:24:10.000Z",
       "dominantTheme": "general",
       "sentimentScore": 111
     },
@@ -2714,7 +2727,7 @@
       "bear": 0,
       "neutral": 6,
       "materiality": 84,
-      "latest": "2026-05-06T19:18:52.000Z",
+      "latest": "2026-05-24T18:39:04.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 108
     },
@@ -2727,22 +2740,9 @@
       "bear": 0,
       "neutral": 6,
       "materiality": 79,
-      "latest": "2026-04-25T16:54:25.000Z",
+      "latest": "2026-06-01T13:41:21.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 108
-    },
-    {
-      "symbol": "FLKR",
-      "aliases": [],
-      "marketSymbol": "FLKR",
-      "mentions": 9,
-      "bull": 5,
-      "bear": 0,
-      "neutral": 4,
-      "materiality": 76,
-      "latest": "2026-05-01T17:24:21.000Z",
-      "dominantTheme": "memory-rotation",
-      "sentimentScore": 107
     },
     {
       "symbol": "RR",
@@ -2753,7 +2753,7 @@
       "bear": 0,
       "neutral": 5,
       "materiality": 83,
-      "latest": "2026-05-30T21:35:12.000Z",
+      "latest": "2026-06-27T09:07:10.000Z",
       "dominantTheme": "robotics-physical-ai",
       "sentimentScore": 105
     },
@@ -2766,7 +2766,7 @@
       "bear": 0,
       "neutral": 5,
       "materiality": 83,
-      "latest": "2026-04-18T18:10:59.000Z",
+      "latest": "2026-05-31T14:30:59.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 105
     },
@@ -2779,7 +2779,7 @@
       "bear": 0,
       "neutral": 5,
       "materiality": 83,
-      "latest": "2025-10-15T07:42:21.000Z",
+      "latest": "2026-06-15T22:06:54.000Z",
       "dominantTheme": "robotics-physical-ai",
       "sentimentScore": 105
     },
@@ -2797,6 +2797,19 @@
       "sentimentScore": 105
     },
     {
+      "symbol": "QCLS",
+      "aliases": [],
+      "marketSymbol": "QCLS",
+      "mentions": 9,
+      "bull": 5,
+      "bear": 0,
+      "neutral": 4,
+      "materiality": 93,
+      "latest": "2026-05-31T14:30:59.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 102
+    },
+    {
       "symbol": "STM",
       "aliases": [],
       "marketSymbol": "STM",
@@ -2807,19 +2820,6 @@
       "materiality": 84,
       "latest": "2026-05-30T21:19:37.000Z",
       "dominantTheme": "power-architecture",
-      "sentimentScore": 105
-    },
-    {
-      "symbol": "QCLS",
-      "aliases": [],
-      "marketSymbol": "QCLS",
-      "mentions": 9,
-      "bull": 5,
-      "bear": 0,
-      "neutral": 4,
-      "materiality": 93,
-      "latest": "2026-05-14T10:17:44.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 102
     },
     {
@@ -2831,8 +2831,21 @@
       "bear": 0,
       "neutral": 4,
       "materiality": 83,
-      "latest": "2026-04-17T19:52:35.000Z",
+      "latest": "2026-05-23T16:55:31.000Z",
       "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 102
+    },
+    {
+      "symbol": "FLKR",
+      "aliases": [],
+      "marketSymbol": "FLKR",
+      "mentions": 9,
+      "bull": 5,
+      "bear": 0,
+      "neutral": 4,
+      "materiality": 76,
+      "latest": "2026-05-01T17:24:21.000Z",
+      "dominantTheme": "memory-rotation",
       "sentimentScore": 102
     },
     {
@@ -2844,21 +2857,8 @@
       "bear": 0,
       "neutral": 4,
       "materiality": 67,
-      "latest": "2025-11-19T12:09:58.000Z",
+      "latest": "2026-02-09T00:00:00.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 102
-    },
-    {
-      "symbol": "ON",
-      "aliases": [],
-      "marketSymbol": "ON",
-      "mentions": 8,
-      "bull": 5,
-      "bear": 0,
-      "neutral": 3,
-      "materiality": 85,
-      "latest": "2026-06-15T01:31:49.000Z",
-      "dominantTheme": "power-architecture",
       "sentimentScore": 102
     },
     {
@@ -2870,7 +2870,7 @@
       "bear": 1,
       "neutral": 5,
       "materiality": 79,
-      "latest": "2026-01-16T00:00:00.000Z",
+      "latest": "2026-06-09T01:58:57.000Z",
       "dominantTheme": "robotics-physical-ai",
       "sentimentScore": 101
     },
@@ -2883,7 +2883,7 @@
       "bear": 0,
       "neutral": 9,
       "materiality": 85,
-      "latest": "2026-05-13T12:01:06.000Z",
+      "latest": "2026-07-01T10:14:10.000Z",
       "dominantTheme": "power-architecture",
       "sentimentScore": 99
     },
@@ -2896,8 +2896,21 @@
       "bear": 0,
       "neutral": 3,
       "materiality": 92,
-      "latest": "2026-04-30T19:56:56.000Z",
+      "latest": "2026-06-02T14:19:41.000Z",
       "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 99
+    },
+    {
+      "symbol": "ON",
+      "aliases": [],
+      "marketSymbol": "ON",
+      "mentions": 8,
+      "bull": 5,
+      "bear": 0,
+      "neutral": 3,
+      "materiality": 85,
+      "latest": "2026-06-15T01:31:49.000Z",
+      "dominantTheme": "power-architecture",
       "sentimentScore": 99
     },
     {
@@ -2909,21 +2922,8 @@
       "bear": 0,
       "neutral": 3,
       "materiality": 79,
-      "latest": "2026-05-06T16:16:34.000Z",
+      "latest": "2026-06-23T15:42:09.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 99
-    },
-    {
-      "symbol": "IPGP",
-      "aliases": [],
-      "marketSymbol": "IPGP",
-      "mentions": 7,
-      "bull": 5,
-      "bear": 0,
-      "neutral": 2,
-      "materiality": 94,
-      "latest": "2026-04-24T15:55:06.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 99
     },
     {
@@ -2935,7 +2935,7 @@
       "bear": 0,
       "neutral": 8,
       "materiality": 82,
-      "latest": "2025-11-19T12:09:58.000Z",
+      "latest": "2026-02-07T00:00:00.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 96
     }
@@ -3577,6 +3577,20 @@
       "url": "https://x.com/aleabitoreddit/status/2059830121117446415"
     },
     {
+      "id": "2074405723816304743",
+      "date": "2026-07-07T08:10:39.000Z",
+      "title": "One of the dumbest thematic selloffs I’ve seen to to date off: - $META compute news that’s not new - CPO delay report 1, that got refuted by $NVDA - CPO delay report 2, that got r…",
+      "body": "One of the dumbest thematic selloffs I’ve seen to to date off:\n\n- $META compute news that’s not new\n- CPO delay report 1, that got refuted by $NVDA\n- CPO delay report 2, that got refuted by $NVDA\n\nHigh confidence, institutions will end up going long on the same names they’re bearposting after retail capitulates.",
+      "symbols": [
+        "META",
+        "NVDA"
+      ],
+      "theme": "cpo-silicon-photonics",
+      "materiality": 100,
+      "sentiment": "bull",
+      "url": "https://x.com/aleabitoreddit/status/2074405723816304743"
+    },
+    {
       "id": "2067945397923037693",
       "date": "2026-06-19T12:19:38.000Z",
       "title": "I think something to highlight also is not all my ideas are green, especially on short term timeframes! ",
@@ -3645,30 +3659,6 @@
       "materiality": 100,
       "sentiment": "bull",
       "url": "https://x.com/aleabitoreddit/status/2061233888454988260"
-    },
-    {
-      "id": "2057826212257685733",
-      "date": "2026-05-22T14:09:36.000Z",
-      "title": "People keep asking: Hey why do have new longs with Taiwan/EU stocks recently like $LPK or Foci? ",
-      "body": "People keep asking:\n\nHey why do have new longs with Taiwan/EU stocks recently like $LPK or Foci?\n\nAnd not much with new US ones?\n\nIt's partly because the list of US stocks I've liked from $INTC to $NBIS hasn't changed. \n\nYou can always just let the ones you like grow. https://t.co/ostZWjOAAm https://t.co/1mkk0NG6Ao",
-      "symbols": [
-        "LPK",
-        "INTC",
-        "NBIS",
-        "MRVL",
-        "TSM",
-        "AVGO",
-        "COHR",
-        "GOOGL",
-        "AMKR",
-        "SPCX",
-        "KEEL",
-        "AMPG"
-      ],
-      "theme": "cpo-silicon-photonics",
-      "materiality": 100,
-      "sentiment": "bull",
-      "url": "https://x.com/aleabitoreddit/status/2057826212257685733"
     },
     {
       "id": "2050093551313469467",
@@ -3899,6 +3889,30 @@
       "materiality": 100,
       "sentiment": "bull",
       "url": "https://x.com/aleabitoreddit/status/2063571485739106593"
+    },
+    {
+      "id": "2057826212257685733",
+      "date": "2026-05-22T14:09:36.000Z",
+      "title": "People keep asking: Hey why do have new longs with Taiwan/EU stocks recently like $LPK or Foci? ",
+      "body": "People keep asking:\n\nHey why do have new longs with Taiwan/EU stocks recently like $LPK or Foci?\n\nAnd not much with new US ones?\n\nIt's partly because the list of US stocks I've liked from $INTC to $NBIS hasn't changed. \n\nYou can always just let the ones you like grow. https://t.co/ostZWjOAAm https://t.co/1mkk0NG6Ao",
+      "symbols": [
+        "LPK",
+        "INTC",
+        "NBIS",
+        "MRVL",
+        "TSM",
+        "AVGO",
+        "COHR",
+        "GOOGL",
+        "AMKR",
+        "SPCX",
+        "KEEL",
+        "AMPG"
+      ],
+      "theme": "cpo-silicon-photonics",
+      "materiality": 100,
+      "sentiment": "bull",
+      "url": "https://x.com/aleabitoreddit/status/2057826212257685733"
     },
     {
       "id": "2052494142765441301",
@@ -5595,23 +5609,20 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-06T22:17:07.409Z",
+    "staticUpdatedAt": "2026-07-07T10:59:29.238Z",
     "latestCaptured": {
-      "id": "2074240512593481955",
-      "date": "2026-07-06T21:14:10.000Z",
-      "title": "Was a sad few months for $RDDT. But glad it's finally back above $200. Reddit was doing: - $663M revenue w/ 91.5% gross margins - $204M GAAP net income - 45%+ fwd Y/Y growth after",
-      "body": "Was a sad few months for $RDDT. But glad it's finally back above $200. \n\nReddit was doing:\n- $663M revenue w/ 91.5% gross margins\n- $204M GAAP net income\n- 45%+ fwd Y/Y growth after 69%+ growth.\n- Net profit is ~30.7% of revenue\n\nFelt very weird to see a profitable company get dragged down after earnings. \n\nBut in hindsight, given the increase hyperscaler capex, the drop felt more like it's more relative opportunity cost more than fundamentals?\n\nSince a lot of inflow poured into $MU / Sk Hynix that are bottlenecked into 2029. Or with laser bottlenecks like $LITE that last into 2029 as well. \n\nSame thing happens in reverse after selloffs ig, even if fundamentals didn't change. \n\nBeen seeing a lot of noise with memory optimization or Chinese players... but don't quite think you sign 16T+ LTAs if memory was getting flooded or not used anytime soon. \n\nSame with optical players... if in earnings, they state anything they make gets bought, I don't quite think a lot of the noise has material effect on their fundamentals. \n\nRegardless, nice to see some recovery with familiar faces like $HOOD, $HIMS, and $RDDT though.",
+      "id": "2074416685843612031",
+      "date": "2026-07-07T08:54:13.000Z",
+      "title": "Be Samsung at $1.24T: > market: we don’t think you can keep hiking memory prices > proceeds to hikes dram by 20% > releases earnings > most profitable company in the world beating…",
+      "body": "Be Samsung at $1.24T:\n\n> market: we don’t think you can keep hiking memory prices\n> proceeds to hikes dram by 20%\n> releases earnings\n> most profitable company in the world beating $NVDA and $AAPL\n> operating profits growing 1803% Y/Y  \n\nmarket: sells off Samsung -7%",
       "symbols": [
-        "RDDT",
-        "MU",
-        "LITE",
-        "HOOD",
-        "HIMS"
+        "NVDA",
+        "AAPL"
       ],
-      "theme": "cpo-silicon-photonics",
-      "materiality": 0,
+      "theme": "memory-rotation",
+      "materiality": 92,
       "sentiment": "bear",
-      "url": "https://x.com/aleabitoreddit/status/2074240512593481955"
+      "url": "https://x.com/aleabitoreddit/status/2074416685843612031"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
