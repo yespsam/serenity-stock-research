@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T19:26:45.160Z",
+  "generatedAt": "2026-07-09T20:27:57.223Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -5611,18 +5611,18 @@
   "monitor": {
     "staticUpdatedAt": "2026-07-09T05:16:02.011Z",
     "latestCaptured": {
-      "id": "2075294412377358828",
-      "date": "2026-07-09T19:01:59.000Z",
-      "title": "$SIVE US NASDAQ listing is more for: - Fundraising (most important thing) to acquire IP + TAM expansion and make each laser they sell more valuable. ",
-      "body": "$SIVE US NASDAQ listing is more for:\n\n- Fundraising (most important thing) to acquire IP + TAM expansion and make each laser they sell more valuable. Following what  $LITE did (eg. Cloud Light acquisition) from just selling lasers. \n\n- Also it helps bridge valuation gaps, since I see it as  undervalued relative to laser peers that are all in the tens of billions. \n\nRather than near term revenue/partnerships.",
+      "id": "2075306506585813108",
+      "date": "2026-07-09T19:50:03.000Z",
+      "title": "It's nuanced, IMO: - $TSLA has the clearest path to close the gap between US/China in mass production. ",
+      "body": "It's nuanced, IMO: \n\n- $TSLA has the clearest path to close the gap between US/China in mass production. But to get this done, majority of components seem sourced from China? \n\n- $CCXI right now has a RoboFab for 10K+ units/year, and 75%+ of components sourced from the US. \n\nSo they're probably the leader in terms of Made in America supply chains + commercialization. But can't get to China scale yet through just US supply chains. \n\nFigure is probably the other one with 12,000 target capacity, but can't comment much since their supply chain visibility isn't very public. I don't consider Hyundai/Boston Dynamics to be very American anymore so didn't include them.",
       "symbols": [
-        "SIVEF",
-        "LITE"
+        "TSLA",
+        "CCXI"
       ],
-      "theme": "optical-components",
-      "materiality": 66,
+      "theme": "general",
+      "materiality": 72,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2075294412377358828"
+      "url": "https://x.com/aleabitoreddit/status/2075306506585813108"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
