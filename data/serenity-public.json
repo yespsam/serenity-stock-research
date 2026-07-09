@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T13:26:54.880Z",
+  "generatedAt": "2026-07-09T19:26:45.160Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -5611,18 +5611,18 @@
   "monitor": {
     "staticUpdatedAt": "2026-07-09T05:16:02.011Z",
     "latestCaptured": {
-      "id": "2075199849507762279",
-      "date": "2026-07-09T12:46:14.000Z",
-      "title": "Nothing like an internal $META memo getting published. ",
-      "body": "Nothing like an internal $META memo getting published.\n\nShowing AI ramping as usual:\n\n- LTAs signed with Samsung and $SNDK for memory\n- LTAs signed with Sumitomo Electric for fiber optics\n- Expected to deploy 7GW compute infra this year, and doubling in 2027. \n- as much as $145B capex spend this year \n\n“It plans to launch a chip about every six months through 2027”",
+      "id": "2075294412377358828",
+      "date": "2026-07-09T19:01:59.000Z",
+      "title": "$SIVE US NASDAQ listing is more for: - Fundraising (most important thing) to acquire IP + TAM expansion and make each laser they sell more valuable. ",
+      "body": "$SIVE US NASDAQ listing is more for:\n\n- Fundraising (most important thing) to acquire IP + TAM expansion and make each laser they sell more valuable. Following what  $LITE did (eg. Cloud Light acquisition) from just selling lasers. \n\n- Also it helps bridge valuation gaps, since I see it as  undervalued relative to laser peers that are all in the tens of billions. \n\nRather than near term revenue/partnerships.",
       "symbols": [
-        "META",
-        "SNDK"
+        "SIVEF",
+        "LITE"
       ],
-      "theme": "memory-rotation",
-      "materiality": 82,
+      "theme": "optical-components",
+      "materiality": 66,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2075199849507762279"
+      "url": "https://x.com/aleabitoreddit/status/2075294412377358828"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
