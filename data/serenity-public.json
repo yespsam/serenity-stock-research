@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T17:45:49.228Z",
+  "generatedAt": "2026-07-10T18:48:54.869Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 7090,
+    "parsedItems": 7095,
     "commentCount": 26783,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-10T17:31:39.000Z"
+    "latestItemDate": "2026-07-10T18:17:16.000Z"
   },
   "rules": [
     {
@@ -69,14 +69,14 @@
         "SIVERS"
       ],
       "marketSymbol": "SIVEF",
-      "mentions": 1173,
+      "mentions": 1176,
       "bull": 513,
-      "bear": 17,
-      "neutral": 643,
+      "bear": 18,
+      "neutral": 645,
       "materiality": 100,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 10807
+      "sentimentScore": 10791
     },
     {
       "symbol": "NBIS",
@@ -95,27 +95,27 @@
       "symbol": "LITE",
       "aliases": [],
       "marketSymbol": "LITE",
-      "mentions": 599,
+      "mentions": 600,
       "bull": 228,
-      "bear": 11,
+      "bear": 12,
       "neutral": 360,
       "materiality": 84,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4947
+      "sentimentScore": 4925
     },
     {
       "symbol": "AAOI",
       "aliases": [],
       "marketSymbol": "AAOI",
-      "mentions": 571,
+      "mentions": 573,
       "bull": 214,
-      "bear": 14,
-      "neutral": 343,
-      "materiality": 80,
+      "bear": 15,
+      "neutral": 344,
+      "materiality": 81,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4582
+      "sentimentScore": 4563
     },
     {
       "symbol": "NVDA",
@@ -160,14 +160,14 @@
       "symbol": "COHR",
       "aliases": [],
       "marketSymbol": "COHR",
-      "mentions": 305,
+      "mentions": 306,
       "bull": 135,
-      "bear": 3,
+      "bear": 4,
       "neutral": 167,
       "materiality": 88,
       "latest": "2026-06-01T14:33:55.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2869
+      "sentimentScore": 2847
     },
     {
       "symbol": "MRVL",
@@ -244,14 +244,14 @@
       "symbol": "AMZN",
       "aliases": [],
       "marketSymbol": "AMZN",
-      "mentions": 236,
+      "mentions": 237,
       "bull": 91,
       "bear": 1,
-      "neutral": 144,
+      "neutral": 145,
       "materiality": 85,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2054
+      "sentimentScore": 2057
     },
     {
       "symbol": "MU",
@@ -270,14 +270,14 @@
       "symbol": "TSM",
       "aliases": [],
       "marketSymbol": "TSM",
-      "mentions": 231,
+      "mentions": 232,
       "bull": 90,
       "bear": 2,
-      "neutral": 139,
+      "neutral": 140,
       "materiality": 82,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 1997
+      "sentimentScore": 2000
     },
     {
       "symbol": "META",
@@ -5609,22 +5609,21 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-10T17:45:20.479Z",
+    "staticUpdatedAt": "2026-07-10T18:47:54.872Z",
     "latestCaptured": {
-      "id": "2075634064518955297",
-      "date": "2026-07-10T17:31:39.000Z",
-      "title": "Rosenblatt on recent optical sector weakness from $AAOI to $LITE: \"Stocks in the Optical sector have traded poorly for the last 1-2 months\" due to CPO delay reports and China capac",
-      "body": "Rosenblatt on recent optical sector weakness from $AAOI to $LITE:\n\n\"Stocks in the Optical sector have traded poorly for the last 1-2 months\" due to CPO delay reports and China capacity scares.\n\n\"We think short sellers... do not actually strongly believe in the thesis.\"\n\nMultiple short sellers told them they will likely close their positions... late July and early August. Further, they say they plan to buy Optical stocks in 2027 for the scale up CPO opportunity.\n\nHilarious report on laser weakness, read is very positive for $SIVEF, $COHR, and others moving forward.\n\nI've been long on CPO sector, but seems like institutions want entry points, just a bit later on.",
+      "id": "2075645547978084371",
+      "date": "2026-07-10T18:17:16.000Z",
+      "title": "Regarding $AMZN RNG + OpenAI’s MRC and VCSELs. ",
+      "body": "Regarding $AMZN RNG + OpenAI’s MRC and VCSELs. \n\nIn what appears to be an indirect response on B. Riley's $AAOI sell report regarding optimizations that \"flattens networks and cuts transceiver TAM 40-50%\".\n\nRosenblatt TLDR: They've already modeled for this, even though each XPU may use fewer transceivers.\n\nThe number of XPUs is growing so quickly that total optical demand should still rise. \n\nOn lasers architectures for CPO: VCSELs are useful as a credible bridge for NPO/short reach. \n\nIdeal architecture though for CPO is UHP CW over other lasers, and cites Broadcom for that statements. Which happens to supports my core $SIVE thesis. \n\nI feel like Rosenblatt and I share the same views on a lot of things, I like the way they roll.",
       "symbols": [
+        "AMZN",
         "AAOI",
-        "LITE",
-        "SIVEF",
-        "COHR"
+        "SIVEF"
       ],
       "theme": "cpo-silicon-photonics",
-      "materiality": 91,
-      "sentiment": "bear",
-      "url": "https://x.com/aleabitoreddit/status/2075634064518955297"
+      "materiality": 87,
+      "sentiment": "neutral",
+      "url": "https://x.com/aleabitoreddit/status/2075645547978084371"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
