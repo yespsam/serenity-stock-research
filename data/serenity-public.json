@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T11:44:18.883Z",
+  "generatedAt": "2026-07-10T12:34:36.363Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 7084,
+    "parsedItems": 7088,
     "commentCount": 26783,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-10T08:23:29.000Z"
+    "latestItemDate": "2026-07-10T12:27:45.000Z"
   },
   "rules": [
     {
@@ -69,14 +69,14 @@
         "SIVERS"
       ],
       "marketSymbol": "SIVEF",
-      "mentions": 1171,
+      "mentions": 1173,
       "bull": 513,
       "bear": 17,
-      "neutral": 641,
+      "neutral": 643,
       "materiality": 100,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 10801
+      "sentimentScore": 10807
     },
     {
       "symbol": "NBIS",
@@ -108,14 +108,14 @@
       "symbol": "AAOI",
       "aliases": [],
       "marketSymbol": "AAOI",
-      "mentions": 570,
+      "mentions": 571,
       "bull": 214,
       "bear": 14,
-      "neutral": 342,
-      "materiality": 81,
+      "neutral": 343,
+      "materiality": 80,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4579
+      "sentimentScore": 4582
     },
     {
       "symbol": "NVDA",
@@ -364,14 +364,14 @@
       "symbol": "AMD",
       "aliases": [],
       "marketSymbol": "AMD",
-      "mentions": 174,
+      "mentions": 175,
       "bull": 78,
       "bear": 3,
-      "neutral": 93,
+      "neutral": 94,
       "materiality": 85,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1620
+      "sentimentScore": 1623
     },
     {
       "symbol": "AVGO",
@@ -455,14 +455,14 @@
       "symbol": "JBL",
       "aliases": [],
       "marketSymbol": "JBL",
-      "mentions": 160,
+      "mentions": 161,
       "bull": 67,
       "bear": 2,
-      "neutral": 91,
+      "neutral": 92,
       "materiality": 87,
       "latest": "2026-06-01T20:01:50.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1440
+      "sentimentScore": 1443
     },
     {
       "symbol": "TSEM",
@@ -2459,6 +2459,19 @@
       "sentimentScore": 133
     },
     {
+      "symbol": "CCXI",
+      "aliases": [],
+      "marketSymbol": "CCXI",
+      "mentions": 24,
+      "bull": 4,
+      "bear": 0,
+      "neutral": 20,
+      "materiality": 78,
+      "latest": "2026-07-08T20:18:34.000Z",
+      "dominantTheme": "robotics-physical-ai",
+      "sentimentScore": 132
+    },
+    {
       "symbol": "APPL",
       "aliases": [],
       "marketSymbol": "APPL",
@@ -2509,19 +2522,6 @@
       "latest": "2026-06-15T14:02:20.000Z",
       "dominantTheme": "memory-rotation",
       "sentimentScore": 130
-    },
-    {
-      "symbol": "CCXI",
-      "aliases": [],
-      "marketSymbol": "CCXI",
-      "mentions": 23,
-      "bull": 4,
-      "bear": 0,
-      "neutral": 19,
-      "materiality": 77,
-      "latest": "2026-07-08T20:18:34.000Z",
-      "dominantTheme": "robotics-physical-ai",
-      "sentimentScore": 129
     },
     {
       "symbol": "FOCI",
@@ -5609,19 +5609,20 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-10T08:28:43.354Z",
+    "staticUpdatedAt": "2026-07-10T12:33:38.321Z",
     "latestCaptured": {
-      "id": "2075539824589860866",
-      "date": "2026-07-10T11:17:10.000Z",
-      "title": "The \"Mythical Golden Egg Dragon Candle\" predicted the $SIVE rally today. ",
-      "body": "The \"Mythical Golden Egg Dragon Candle\" predicted the $SIVE rally today. \n\nIf you look at the Golden Egg hatching indicator I drew, you can tell it predicts Sivers CEO buying on the open market a day later. \n\nDo you guys think it's time I should sell courses on TA?",
+      "id": "2075557588159058076",
+      "date": "2026-07-10T12:27:45.000Z",
+      "title": "Mitsubishi Motors joins robotics race to deploy humanoid workers by 2027. ",
+      "body": "Mitsubishi Motors joins robotics race to deploy humanoid workers by 2027. \n\nPairing with Highlanders, a Japanese robotics company.\n\n- Agility $CCXI x Foxconn, Toyota\n- Apptronik x $JBL, Mercedes\n- Highlanders x Mitsubishi\n- Figure × BMW\n- Boston Dynamics x Hyundai (subsidiaries)\n- Optimus x Tesla (Internal)\n- Rainbow Robotics x Samsung (subsidiaries)\n\nIdk if it's just me of there's a lot of patterns with humanoid companies playing buddy-buddy up with a major auto player/manufacturer.  \n\nIf they're not already vertically integrated by one already. \n\nThen the Chinese players like UBTech/AgiBot/Unitree  don't seem to care and work with a wide variety of auto players in China. \n\nCurious how this trend plays out...",
       "symbols": [
-        "SIVEF"
+        "CCXI",
+        "JBL"
       ],
-      "theme": "general",
-      "materiality": 51,
+      "theme": "robotics-physical-ai",
+      "materiality": 82,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2075539824589860866"
+      "url": "https://x.com/aleabitoreddit/status/2075557588159058076"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
