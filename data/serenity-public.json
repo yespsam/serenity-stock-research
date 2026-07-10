@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T20:27:57.223Z",
+  "generatedAt": "2026-07-10T08:29:36.735Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 7074,
+    "parsedItems": 7084,
     "commentCount": 26783,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-08T22:08:52.000Z"
+    "latestItemDate": "2026-07-10T08:23:29.000Z"
   },
   "rules": [
     {
@@ -69,14 +69,14 @@
         "SIVERS"
       ],
       "marketSymbol": "SIVEF",
-      "mentions": 1166,
-      "bull": 512,
+      "mentions": 1171,
+      "bull": 513,
       "bear": 17,
-      "neutral": 637,
+      "neutral": 641,
       "materiality": 100,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 10771
+      "sentimentScore": 10801
     },
     {
       "symbol": "NBIS",
@@ -95,27 +95,27 @@
       "symbol": "LITE",
       "aliases": [],
       "marketSymbol": "LITE",
-      "mentions": 596,
-      "bull": 227,
+      "mentions": 599,
+      "bull": 228,
       "bear": 11,
-      "neutral": 358,
+      "neutral": 360,
       "materiality": 84,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4923
+      "sentimentScore": 4947
     },
     {
       "symbol": "AAOI",
       "aliases": [],
       "marketSymbol": "AAOI",
-      "mentions": 569,
-      "bull": 213,
+      "mentions": 570,
+      "bull": 214,
       "bear": 14,
       "neutral": 342,
       "materiality": 81,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4561
+      "sentimentScore": 4579
     },
     {
       "symbol": "NVDA",
@@ -134,14 +134,14 @@
       "symbol": "AXTI",
       "aliases": [],
       "marketSymbol": "AXTI",
-      "mentions": 587,
-      "bull": 161,
+      "mentions": 588,
+      "bull": 162,
       "bear": 9,
       "neutral": 417,
       "materiality": 74,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 3963
+      "sentimentScore": 3981
     },
     {
       "symbol": "IREN",
@@ -203,14 +203,14 @@
         "IQE.L"
       ],
       "marketSymbol": "IQE.L",
-      "mentions": 256,
-      "bull": 99,
+      "mentions": 257,
+      "bull": 100,
       "bear": 2,
       "neutral": 155,
       "materiality": 94,
       "latest": "2026-06-11T16:13:28.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2204
+      "sentimentScore": 2222
     },
     {
       "symbol": "MSFT",
@@ -270,27 +270,27 @@
       "symbol": "TSM",
       "aliases": [],
       "marketSymbol": "TSM",
-      "mentions": 230,
-      "bull": 89,
+      "mentions": 231,
+      "bull": 90,
       "bear": 2,
       "neutral": 139,
       "materiality": 82,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 1979
+      "sentimentScore": 1997
     },
     {
       "symbol": "META",
       "aliases": [],
       "marketSymbol": "META",
-      "mentions": 276,
+      "mentions": 277,
       "bull": 88,
       "bear": 9,
-      "neutral": 179,
+      "neutral": 180,
       "materiality": 79,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1924
+      "sentimentScore": 1927
     },
     {
       "symbol": "POET",
@@ -416,14 +416,14 @@
       "symbol": "SNDK",
       "aliases": [],
       "marketSymbol": "SNDK",
-      "mentions": 190,
+      "mentions": 191,
       "bull": 69,
       "bear": 4,
-      "neutral": 117,
+      "neutral": 118,
       "materiality": 76,
       "latest": "2026-05-24T02:28:23.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 1511
+      "sentimentScore": 1514
     },
     {
       "symbol": "RKLB",
@@ -455,14 +455,14 @@
       "symbol": "JBL",
       "aliases": [],
       "marketSymbol": "JBL",
-      "mentions": 159,
+      "mentions": 160,
       "bull": 67,
       "bear": 2,
-      "neutral": 90,
+      "neutral": 91,
       "materiality": 87,
       "latest": "2026-06-01T20:01:50.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1437
+      "sentimentScore": 1440
     },
     {
       "symbol": "TSEM",
@@ -538,14 +538,14 @@
       "symbol": "GFS",
       "aliases": [],
       "marketSymbol": "GFS",
-      "mentions": 93,
+      "mentions": 94,
       "bull": 50,
       "bear": 2,
-      "neutral": 41,
+      "neutral": 42,
       "materiality": 90,
       "latest": "2026-06-01T20:01:50.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 982
+      "sentimentScore": 985
     },
     {
       "symbol": "ORCL",
@@ -655,14 +655,14 @@
       "symbol": "TSLA",
       "aliases": [],
       "marketSymbol": "TSLA",
-      "mentions": 121,
-      "bull": 35,
+      "mentions": 123,
+      "bull": 36,
       "bear": 7,
-      "neutral": 79,
+      "neutral": 80,
       "materiality": 81,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "robotics-physical-ai",
-      "sentimentScore": 719
+      "sentimentScore": 740
     },
     {
       "symbol": "SMCI",
@@ -2511,6 +2511,19 @@
       "sentimentScore": 130
     },
     {
+      "symbol": "CCXI",
+      "aliases": [],
+      "marketSymbol": "CCXI",
+      "mentions": 23,
+      "bull": 4,
+      "bear": 0,
+      "neutral": 19,
+      "materiality": 77,
+      "latest": "2026-07-08T20:18:34.000Z",
+      "dominantTheme": "robotics-physical-ai",
+      "sentimentScore": 129
+    },
+    {
       "symbol": "FOCI",
       "aliases": [],
       "marketSymbol": "FOCI",
@@ -2704,19 +2717,6 @@
       "latest": "2026-04-26T07:20:39.000Z",
       "dominantTheme": "general",
       "sentimentScore": 111
-    },
-    {
-      "symbol": "CCXI",
-      "aliases": [],
-      "marketSymbol": "CCXI",
-      "mentions": 21,
-      "bull": 3,
-      "bear": 0,
-      "neutral": 18,
-      "materiality": 77,
-      "latest": "2026-07-08T20:18:34.000Z",
-      "dominantTheme": "robotics-physical-ai",
-      "sentimentScore": 108
     },
     {
       "symbol": "SMTOY",
@@ -5609,20 +5609,24 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-09T05:16:02.011Z",
+    "staticUpdatedAt": "2026-07-10T08:28:43.354Z",
     "latestCaptured": {
-      "id": "2075306506585813108",
-      "date": "2026-07-09T19:50:03.000Z",
-      "title": "It's nuanced, IMO: - $TSLA has the clearest path to close the gap between US/China in mass production. ",
-      "body": "It's nuanced, IMO: \n\n- $TSLA has the clearest path to close the gap between US/China in mass production. But to get this done, majority of components seem sourced from China? \n\n- $CCXI right now has a RoboFab for 10K+ units/year, and 75%+ of components sourced from the US. \n\nSo they're probably the leader in terms of Made in America supply chains + commercialization. But can't get to China scale yet through just US supply chains. \n\nFigure is probably the other one with 12,000 target capacity, but can't comment much since their supply chain visibility isn't very public. I don't consider Hyundai/Boston Dynamics to be very American anymore so didn't include them.",
+      "id": "2075496116481884524",
+      "date": "2026-07-10T08:23:29.000Z",
+      "title": "Yep, it’s interesting to witness retail capitulation. ",
+      "body": "Yep, it’s interesting to witness retail capitulation.\n\nAfter we got Bloomberg Meta compute article cleared up by their internal memo. \n\nAnd the 2 reports on delays were denied by Nvidia. \n\nBoth of which caused the selloff in the first place...\n\nSo Photonics / Nvidia’s roadmap hasn’t fundamentally changed:\n\n$LITE is still completely sold out for the next 2 years and likely into 2029.\n\n$SIVE is about to volume ramp with  GlobalFoundries, Jabil, Poet, Ayar, and other hyperscaler suppliers.\n\n$TSM COUPE and their TW suppliers from Shunsin to Foci aren’t randomly disappearing into the void.\n\n$AAOI and their $471m/month h2 2027 revenue projections haven’t changed.\n\n$IQE and their epiwafer contracts with Macom and Tower Semi haven’t disappeared.\n\n$AXTI ownership of 40% of the InP substrate supply chains haven’t suddenly disappeared.\n\nAs with any theme from Rocketlab + Space sector 50% drop back in 2025. \n\nOr Nebius + Neocloud 50% drop entering 2026.\n\nOr the Samsung/SK Hynix crash from Iran War LNG/Helium/Oil fears few months ago.\n\nVolatility from indiscriminate thematic selloffs isn’t typically representative of individual company fundamentals.\n\nRetail tends to build conviction over price movements and imaginary charts, then lose that when a stock drops.\n\nAnd institutions are probably placing limit orders to capitalize on that.\n\nConviction shouldn’t be tied to the quote of a stock on a certain day, but long term revenue or operating income growth.",
       "symbols": [
-        "TSLA",
-        "CCXI"
+        "LITE",
+        "SIVEF",
+        "TSM",
+        "AAOI",
+        "IQE",
+        "AXTI"
       ],
-      "theme": "general",
-      "materiality": 72,
-      "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2075306506585813108"
+      "theme": "memory-rotation",
+      "materiality": 91,
+      "sentiment": "bull",
+      "url": "https://x.com/aleabitoreddit/status/2075496116481884524"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
