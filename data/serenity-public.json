@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T15:39:53.386Z",
+  "generatedAt": "2026-07-10T16:45:22.765Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -5611,15 +5611,17 @@
   "monitor": {
     "staticUpdatedAt": "2026-07-10T15:38:59.927Z",
     "latestCaptured": {
-      "id": "2075590371531493729",
-      "date": "2026-07-10T14:38:01.000Z",
-      "title": "Why do I have this weird feeling the main reason retail is excited SK Hynix NASDAQ listing. ",
-      "body": "Why do I have this weird feeling the main reason retail is excited SK Hynix NASDAQ listing.\n\nIs because they can do degen option calls instead of individual stock purchases.",
-      "symbols": [],
+      "id": "2075611260771852590",
+      "date": "2026-07-10T16:01:02.000Z",
+      "title": "Sk Hynix is now trading under $SKHYV! ",
+      "body": "Sk Hynix is now trading under $SKHYV!\n\nIt's now up an insane 16%.\n\nI wonder how Sk Hynix over in Korea is going to react on Monday.",
+      "symbols": [
+        "SKHYV"
+      ],
       "theme": "memory-rotation",
-      "materiality": 72,
+      "materiality": 53,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2075590371531493729"
+      "url": "https://x.com/aleabitoreddit/status/2075611260771852590"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
