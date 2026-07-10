@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T16:45:22.765Z",
+  "generatedAt": "2026-07-10T17:45:49.228Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -11,7 +11,7 @@
     "parsedItems": 7090,
     "commentCount": 26783,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-10T14:38:01.000Z"
+    "latestItemDate": "2026-07-10T17:31:39.000Z"
   },
   "rules": [
     {
@@ -5609,19 +5609,22 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-10T15:38:59.927Z",
+    "staticUpdatedAt": "2026-07-10T17:45:20.479Z",
     "latestCaptured": {
-      "id": "2075611260771852590",
-      "date": "2026-07-10T16:01:02.000Z",
-      "title": "Sk Hynix is now trading under $SKHYV! ",
-      "body": "Sk Hynix is now trading under $SKHYV!\n\nIt's now up an insane 16%.\n\nI wonder how Sk Hynix over in Korea is going to react on Monday.",
+      "id": "2075634064518955297",
+      "date": "2026-07-10T17:31:39.000Z",
+      "title": "Rosenblatt on recent optical sector weakness from $AAOI to $LITE: \"Stocks in the Optical sector have traded poorly for the last 1-2 months\" due to CPO delay reports and China capac",
+      "body": "Rosenblatt on recent optical sector weakness from $AAOI to $LITE:\n\n\"Stocks in the Optical sector have traded poorly for the last 1-2 months\" due to CPO delay reports and China capacity scares.\n\n\"We think short sellers... do not actually strongly believe in the thesis.\"\n\nMultiple short sellers told them they will likely close their positions... late July and early August. Further, they say they plan to buy Optical stocks in 2027 for the scale up CPO opportunity.\n\nHilarious report on laser weakness, read is very positive for $SIVEF, $COHR, and others moving forward.\n\nI've been long on CPO sector, but seems like institutions want entry points, just a bit later on.",
       "symbols": [
-        "SKHYV"
+        "AAOI",
+        "LITE",
+        "SIVEF",
+        "COHR"
       ],
-      "theme": "memory-rotation",
-      "materiality": 53,
-      "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2075611260771852590"
+      "theme": "cpo-silicon-photonics",
+      "materiality": 91,
+      "sentiment": "bear",
+      "url": "https://x.com/aleabitoreddit/status/2075634064518955297"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
