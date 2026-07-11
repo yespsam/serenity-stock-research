@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T11:03:50.442Z",
+  "generatedAt": "2026-07-11T20:16:55.363Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -5611,20 +5611,18 @@
   "monitor": {
     "staticUpdatedAt": "2026-07-11T11:03:20.714Z",
     "latestCaptured": {
-      "id": "2075896028323254679",
-      "date": "2026-07-11T10:52:36.000Z",
-      "title": "He wouldn't have build a $1T company without pulling off all those moves. ",
-      "body": "He wouldn't have build a $1T company without pulling off all those moves.\n\n- Gets funding from Elon -> Pisses off $TSLA going independent\n- Gets funding from $MSFT -> Pisses of Microsoft by diluting them with other hyperscaler funding\n- Gets funding from $NVDA -> Builds their competing chip and funds Cerebras competitors for inference\n- Works with $AAPL on Apple Intelligence? -> Create their competing devices. \n- Potential lack of funding? -> Sign a lot of LTAs so the entire industry lives or dies off OpenAI succeeding.\n\nWhatever he's doing is working lol.",
+      "id": "2076030743655109063",
+      "date": "2026-07-11T19:47:54.000Z",
+      "title": "Apparently, Korean Beauty was where all the alpha is. ",
+      "body": "Apparently, Korean Beauty was where all the alpha is.\n\nAPR (278470.KS) is up 529% over the past 2Y, wildly outperforming both $NVDA and $INTC.\n\nEvery female I know talks about their \"Medicube\" stick, then buying products... where you put a whole salmon's family tree on your face for better skin. \n\nThe world's female population creates a bigger structural demand than hyperscalers for memory or lasers? Should have known...",
       "symbols": [
-        "TSLA",
-        "MSFT",
         "NVDA",
-        "AAPL"
+        "INTC"
       ],
-      "theme": "ai-infrastructure",
-      "materiality": 76,
+      "theme": "memory-rotation",
+      "materiality": 66,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2075896028323254679"
+      "url": "https://x.com/aleabitoreddit/status/2076030743655109063"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
