@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T19:43:30.977Z",
+  "generatedAt": "2026-07-13T23:45:35.435Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 7110,
+    "parsedItems": 7114,
     "commentCount": 26818,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-13T00:45:13.000Z"
+    "latestItemDate": "2026-07-13T23:17:46.000Z"
   },
   "rules": [
     {
@@ -69,14 +69,14 @@
         "SIVERS"
       ],
       "marketSymbol": "SIVEF",
-      "mentions": 1177,
-      "bull": 513,
+      "mentions": 1180,
+      "bull": 514,
       "bear": 18,
-      "neutral": 646,
+      "neutral": 648,
       "materiality": 100,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 10794
+      "sentimentScore": 10818
     },
     {
       "symbol": "NBIS",
@@ -95,27 +95,27 @@
       "symbol": "LITE",
       "aliases": [],
       "marketSymbol": "LITE",
-      "mentions": 600,
-      "bull": 228,
+      "mentions": 603,
+      "bull": 229,
       "bear": 12,
-      "neutral": 360,
+      "neutral": 362,
       "materiality": 84,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4925
+      "sentimentScore": 4949
     },
     {
       "symbol": "AAOI",
       "aliases": [],
       "marketSymbol": "AAOI",
-      "mentions": 573,
-      "bull": 214,
+      "mentions": 575,
+      "bull": 215,
       "bear": 15,
-      "neutral": 344,
+      "neutral": 345,
       "materiality": 81,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4563
+      "sentimentScore": 4584
     },
     {
       "symbol": "NVDA",
@@ -160,14 +160,14 @@
       "symbol": "COHR",
       "aliases": [],
       "marketSymbol": "COHR",
-      "mentions": 306,
-      "bull": 135,
+      "mentions": 309,
+      "bull": 136,
       "bear": 4,
-      "neutral": 167,
+      "neutral": 169,
       "materiality": 88,
       "latest": "2026-06-01T14:33:55.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2847
+      "sentimentScore": 2871
     },
     {
       "symbol": "MRVL",
@@ -270,14 +270,14 @@
       "symbol": "TSM",
       "aliases": [],
       "marketSymbol": "TSM",
-      "mentions": 234,
+      "mentions": 235,
       "bull": 90,
       "bear": 3,
-      "neutral": 141,
+      "neutral": 142,
       "materiality": 82,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 1981
+      "sentimentScore": 1984
     },
     {
       "symbol": "META",
@@ -351,14 +351,14 @@
       "symbol": "INTC",
       "aliases": [],
       "marketSymbol": "INTC",
-      "mentions": 175,
+      "mentions": 176,
       "bull": 77,
       "bear": 2,
-      "neutral": 96,
+      "neutral": 97,
       "materiality": 82,
       "latest": "2026-05-01T06:02:46.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1638
+      "sentimentScore": 1641
     },
     {
       "symbol": "AMD",
@@ -439,6 +439,19 @@
       "sentimentScore": 1490
     },
     {
+      "symbol": "JBL",
+      "aliases": [],
+      "marketSymbol": "JBL",
+      "mentions": 162,
+      "bull": 68,
+      "bear": 2,
+      "neutral": 92,
+      "materiality": 87,
+      "latest": "2026-06-01T20:01:50.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 1461
+    },
+    {
       "symbol": "RDDT",
       "aliases": [],
       "marketSymbol": "RDDT",
@@ -452,30 +465,17 @@
       "sentimentScore": 1460
     },
     {
-      "symbol": "JBL",
-      "aliases": [],
-      "marketSymbol": "JBL",
-      "mentions": 161,
-      "bull": 67,
-      "bear": 2,
-      "neutral": 92,
-      "materiality": 87,
-      "latest": "2026-06-01T20:01:50.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1443
-    },
-    {
       "symbol": "TSEM",
       "aliases": [],
       "marketSymbol": "TSEM",
-      "mentions": 156,
+      "mentions": 157,
       "bull": 64,
       "bear": 1,
-      "neutral": 91,
+      "neutral": 92,
       "materiality": 83,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1407
+      "sentimentScore": 1410
     },
     {
       "symbol": "ALRIB",
@@ -538,14 +538,14 @@
       "symbol": "GFS",
       "aliases": [],
       "marketSymbol": "GFS",
-      "mentions": 94,
+      "mentions": 95,
       "bull": 50,
       "bear": 2,
-      "neutral": 42,
+      "neutral": 43,
       "materiality": 90,
       "latest": "2026-06-01T20:01:50.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 985
+      "sentimentScore": 988
     },
     {
       "symbol": "ORCL",
@@ -707,14 +707,14 @@
       "symbol": "MTSI",
       "aliases": [],
       "marketSymbol": "MTSI",
-      "mentions": 86,
+      "mentions": 87,
       "bull": 29,
       "bear": 2,
-      "neutral": 55,
+      "neutral": 56,
       "materiality": 84,
       "latest": "2026-05-28T14:15:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 647
+      "sentimentScore": 650
     },
     {
       "symbol": "LPTH",
@@ -5609,24 +5609,23 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-13T01:23:22.189Z",
+    "staticUpdatedAt": "2026-07-13T23:44:38.116Z",
     "latestCaptured": {
-      "id": "2076748688559587338",
-      "date": "2026-07-13T19:20:46.000Z",
-      "title": "Morgan Stanley note on CPO today. ",
-      "body": "Morgan Stanley note on CPO today. Key participants include:\n\n- $SIVE, $COHR, and $LITE in laser supply\n- Broadcom and Nvidia in switch platforms\n- Lightmatter, Ayar Labs, Marvell/Celestial, and POET in optical engines and photonics, \n- $TSM, $GFS, and $TSEM in silicon photonics foundry capacity\n\nI’ve covered all of these before, like Tower Semi. \n\nBut I’m especially happy that Morgan Stanley validated my research that $SIVE is one of the critical global players in CPO.\n\nA small $1.5B laser company next to your two leading $60B+ companies…\n\nIf you also synthesize Rosenblatt Securities recent note that China laser suppliers were quite far from having CPO lasers.\n\nThis kinda magnifies importance of the three Western leaders of that laser chokepoint.",
+      "id": "2076808331453415674",
+      "date": "2026-07-13T23:17:46.000Z",
+      "title": "TLDR of Innolight investor relations takeaways: 1. ",
+      "body": "TLDR of Innolight investor relations takeaways:\n\n1. \"Overall, 1.6T market demand has not contracted; instead, 800G demand has increased significantly compared with previous expectations\"\n\nProb most important takeaway as a whole was 800G demand revision (also longer tail demand). Which is a bullish read through on US transceiver makers like $AAOI, $COHR, $LITE. \n\nLot of new customers like neoclouds, AI model companies, contributing to overall demand rather than just hyperscalers, diversification always a bonus. \n\n2. Innolight said the shortage covers the module supply chain broadly including:\n\n- Optical chips.\n- Electrical chips.\n- PCBs.\n- Other module materials\n\nFrom last ER, I think they singled out EMLs and CW optical chips as the most constrained. So Innolight's bottleneck list mention broadened since then. \n\nThey expect some of the component availability to improve gradually from the second half of 2026 through the first half of 2027. \n\nThink a lot of this is already known from earlier though. \n\nBut just some confirmation + easing timelines (EML is extremely bottlenecked, same with CW, this is probably talking about other components). \n\n3.  Innolight said module-production equipment is not the constraint. Equipment lead times remain relatively short. \n\nSo this isn't really a bottleneck compared to others. \n\n4. The overall proportion of silicon photonics continues to trend upward. Last year it was mainly 800G. This year, some 800G customers are further increasing their silicon-photonics proportion. 1.6T also added some new customers\n\nPositive for SiPH penetration eg. $SIVE / $JBL, since this shifts away from EML toward CW. \n\nBasically: main surprising takeaway is just 800g demand go brrr. \n\nApart from that just reaffirming bottlenecks/timelines/market speculation.",
       "symbols": [
-        "SIVEF",
+        "AAOI",
         "COHR",
         "LITE",
-        "TSM",
-        "GFS",
-        "TSEM"
+        "SIVEF",
+        "JBL"
       ],
       "theme": "cpo-silicon-photonics",
-      "materiality": 97,
-      "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2076748688559587338"
+      "materiality": 100,
+      "sentiment": "bull",
+      "url": "https://x.com/aleabitoreddit/status/2076808331453415674"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
