@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-12T19:28:05.722Z",
+  "generatedAt": "2026-07-13T01:24:11.379Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 7109,
+    "parsedItems": 7110,
     "commentCount": 26818,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-12T18:27:32.000Z"
+    "latestItemDate": "2026-07-13T00:45:13.000Z"
   },
   "rules": [
     {
@@ -121,14 +121,14 @@
       "symbol": "NVDA",
       "aliases": [],
       "marketSymbol": "NVDA",
-      "mentions": 553,
+      "mentions": 554,
       "bull": 222,
       "bear": 20,
-      "neutral": 311,
+      "neutral": 312,
       "materiality": 82,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4494
+      "sentimentScore": 4497
     },
     {
       "symbol": "AXTI",
@@ -257,40 +257,40 @@
       "symbol": "MU",
       "aliases": [],
       "marketSymbol": "MU",
-      "mentions": 229,
+      "mentions": 230,
       "bull": 100,
       "bear": 6,
-      "neutral": 123,
+      "neutral": 124,
       "materiality": 81,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 2044
+      "sentimentScore": 2047
     },
     {
       "symbol": "TSM",
       "aliases": [],
       "marketSymbol": "TSM",
-      "mentions": 233,
+      "mentions": 234,
       "bull": 90,
       "bear": 3,
-      "neutral": 140,
+      "neutral": 141,
       "materiality": 82,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 1978
+      "sentimentScore": 1981
     },
     {
       "symbol": "META",
       "aliases": [],
       "marketSymbol": "META",
-      "mentions": 277,
+      "mentions": 278,
       "bull": 88,
       "bear": 9,
-      "neutral": 180,
+      "neutral": 181,
       "materiality": 79,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1927
+      "sentimentScore": 1930
     },
     {
       "symbol": "POET",
@@ -351,14 +351,14 @@
       "symbol": "INTC",
       "aliases": [],
       "marketSymbol": "INTC",
-      "mentions": 174,
+      "mentions": 175,
       "bull": 77,
       "bear": 2,
-      "neutral": 95,
+      "neutral": 96,
       "materiality": 82,
       "latest": "2026-05-01T06:02:46.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1635
+      "sentimentScore": 1638
     },
     {
       "symbol": "AMD",
@@ -377,14 +377,14 @@
       "symbol": "AVGO",
       "aliases": [],
       "marketSymbol": "AVGO",
-      "mentions": 157,
+      "mentions": 158,
       "bull": 76,
       "bear": 2,
-      "neutral": 79,
+      "neutral": 80,
       "materiality": 86,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1566
+      "sentimentScore": 1569
     },
     {
       "symbol": "CRWV",
@@ -655,27 +655,27 @@
       "symbol": "TSLA",
       "aliases": [],
       "marketSymbol": "TSLA",
-      "mentions": 125,
+      "mentions": 126,
       "bull": 36,
       "bear": 7,
-      "neutral": 82,
+      "neutral": 83,
       "materiality": 81,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "robotics-physical-ai",
-      "sentimentScore": 746
+      "sentimentScore": 749
     },
     {
       "symbol": "AAPL",
       "aliases": [],
       "marketSymbol": "AAPL",
-      "mentions": 80,
+      "mentions": 81,
       "bull": 34,
       "bear": 2,
-      "neutral": 44,
+      "neutral": 45,
       "materiality": 80,
       "latest": "2026-06-01T14:33:55.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 706
+      "sentimentScore": 709
     },
     {
       "symbol": "SMCI",
@@ -733,14 +733,14 @@
       "symbol": "AMKR",
       "aliases": [],
       "marketSymbol": "AMKR",
-      "mentions": 49,
+      "mentions": 50,
       "bull": 31,
       "bear": 0,
-      "neutral": 18,
+      "neutral": 19,
       "materiality": 90,
       "latest": "2026-04-30T08:27:54.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 615
+      "sentimentScore": 618
     },
     {
       "symbol": "OSS",
@@ -1019,14 +1019,14 @@
       "symbol": "GLW",
       "aliases": [],
       "marketSymbol": "GLW",
-      "mentions": 34,
+      "mentions": 35,
       "bull": 18,
       "bear": 0,
-      "neutral": 16,
+      "neutral": 17,
       "materiality": 89,
       "latest": "2026-06-01T10:32:06.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 372
+      "sentimentScore": 375
     },
     {
       "symbol": "ONDS",
@@ -1900,6 +1900,19 @@
       "sentimentScore": 189
     },
     {
+      "symbol": "SPCX",
+      "aliases": [],
+      "marketSymbol": "SPCX",
+      "mentions": 36,
+      "bull": 10,
+      "bear": 3,
+      "neutral": 23,
+      "materiality": 78,
+      "latest": "2026-06-16T02:20:57.000Z",
+      "dominantTheme": "general",
+      "sentimentScore": 186
+    },
+    {
       "symbol": "NVO",
       "aliases": [],
       "marketSymbol": "NVO",
@@ -1963,19 +1976,6 @@
       "latest": "2026-05-06T16:16:34.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 184
-    },
-    {
-      "symbol": "SPCX",
-      "aliases": [],
-      "marketSymbol": "SPCX",
-      "mentions": 35,
-      "bull": 10,
-      "bear": 3,
-      "neutral": 22,
-      "materiality": 77,
-      "latest": "2026-06-16T02:20:57.000Z",
-      "dominantTheme": "general",
-      "sentimentScore": 183
     },
     {
       "symbol": "QBTS",
@@ -5609,17 +5609,29 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-12T19:27:38.673Z",
+    "staticUpdatedAt": "2026-07-13T01:23:22.189Z",
     "latestCaptured": {
-      "id": "2076372905450188998",
-      "date": "2026-07-12T18:27:32.000Z",
-      "title": "Looks like the Strait of Hormuz is open for the 50th time this year per Trump. ",
-      "body": "Looks like the Strait of Hormuz is open for the 50th time this year per Trump.\n\nI’m getting tired looking at macro.",
-      "symbols": [],
-      "theme": "macro-hedge",
-      "materiality": 48,
+      "id": "2076467953995071881",
+      "date": "2026-07-13T00:45:13.000Z",
+      "title": "Just a semi recap TLDR: - $GLW glass bridge per Morgan Stanley has potential, but hard to displace FAU (like FOCI) in short term - $SPCX Starlink Gen 3 is scaling to 100,000 units…",
+      "body": "Just a semi recap TLDR:\n\n- $GLW glass bridge per Morgan Stanley has potential, but hard to displace FAU (like FOCI) in short term\n\n- $SPCX Starlink Gen 3 is scaling to 100,000 units (10x prev gen) creating possible capacity constraints for suppliers of switches to CCL.\n\n- PCB supply shortages are projected to persist until 2028, and component shortages/price hikes are already forcing ODMs like Inventec to issue  conservative H2 shipment\n\n- DeepSeek and Zhipu are developing custom ASICs to bypass $NVDA (kinda expected by now). \n\n- Anthropic has achieved a $30B ARR and is projected to hit >$1B in Q3 profit. Turns out these frontier labs are more profitable than people think. \n\n- US admin pressured $AAPL to source from $INTC, in exchange for tariff exception. Kinda pressuring alignment away from TSM.  \n\n- $TSM plans a 30x expansion of its Photonic Integrated Circuit (PIC)  capacity by 2028, growing from 500 to 25,000 wafers per month\n\n- Hanmi Semiconductor is entering the CoWoS packaging equipment market\n\n- $NVDA and NTT hosting a conference July 24th to discuss CPO strategies. \n\n- 5x general NAND flash price hike this year, market size $489B by next year triggered by RAG/inference. Samsung and SK Hynix make emergency fab investments, NAND equipment suppliers go brrrr.  \n\n- Gas turbine bottleneck, 40% supply gap accompanied by staggering 5-year delivery cycles (mega-fabs need them for mass production).\n\n- AI probe card assembly has hit a severe bottleneck apparently. Which is attempted to by solved with things like Innovation Service's machines. \n\n- Nanya, 79.5% gross margins reported, memory go brr. 4x capex for capacity/advanced packaging. \n\n- CXMT's STAR Market IPO on July 16, so should bring a lot of attention to memory players in that supply chain. \n\n- KYEC $1.4B investment into US for $TSM Arizona output test facilities. Lot of these players like $AMKR and others should go brr in 2028.\n\n- $INTC CEO warned last month that helium could hinder the manufacturing costs and delivery times of AI chips\n\n- 3D NAND word lines are shifting from Tungsten to Molybdenum starting at the 375-layer node\n\n- SambaNova secured JPM for AI inference and raised $1B at an $11B valuation.\n\n- HBM prices projections to double in 2027 as $NVDA Rubin platform drives demand.\n\n- $MU provides $500 million in funding to support GlobalWafers' US manufacturing capacity \n\n- $META 'Iris' will enter mass production in September  via $AVGO and TSMC and Meta aims to double computing power to 14GW by 2027.\n\n- Largan Precision has secured its first CPO FAU order, mass production slated for middle of next year (kinda indication around Foci and others). \n\n- Samsung and SK Hynix have delayed the implementation of hybrid bonding packaging technology for HBM4 apparently \n\n- Memory costs (DRAM/NAND) have reached 60% of the BOM for sub-$400 smartphones, causing a severe volume contraction.\n\n- SK Hynix successfully rasied $26.5 billion through a Nasdaq ADR\n\n- $TSLA issued procurement guidelines requiring suppliers to reach weekly production of 1,000 units by September and double to 2,000-2,500 by year end for its 3rd gen Optimus robot. Apparently Alliance Technology and A-Link may be in this supply chain harmonic reducers and vision lenses?\n\nKinda go through all this stuff every day, but don't wanna be a news reporter so just consolidated stuff I found interesting.",
+      "symbols": [
+        "GLW",
+        "SPCX",
+        "NVDA",
+        "AAPL",
+        "INTC",
+        "TSM",
+        "AMKR",
+        "MU",
+        "META",
+        "AVGO",
+        "TSLA"
+      ],
+      "theme": "memory-rotation",
+      "materiality": 97,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2076372905450188998"
+      "url": "https://x.com/aleabitoreddit/status/2076467953995071881"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
