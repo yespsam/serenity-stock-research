@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-13T23:45:35.435Z",
+  "generatedAt": "2026-07-14T02:53:22.905Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -11,7 +11,7 @@
     "parsedItems": 7114,
     "commentCount": 26818,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-13T23:17:46.000Z"
+    "latestItemDate": "2026-07-14T01:51:24.000Z"
   },
   "rules": [
     {
@@ -5609,23 +5609,19 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-13T23:44:38.116Z",
+    "staticUpdatedAt": "2026-07-14T02:52:07.570Z",
     "latestCaptured": {
-      "id": "2076808331453415674",
-      "date": "2026-07-13T23:17:46.000Z",
-      "title": "TLDR of Innolight investor relations takeaways: 1. ",
-      "body": "TLDR of Innolight investor relations takeaways:\n\n1. \"Overall, 1.6T market demand has not contracted; instead, 800G demand has increased significantly compared with previous expectations\"\n\nProb most important takeaway as a whole was 800G demand revision (also longer tail demand). Which is a bullish read through on US transceiver makers like $AAOI, $COHR, $LITE. \n\nLot of new customers like neoclouds, AI model companies, contributing to overall demand rather than just hyperscalers, diversification always a bonus. \n\n2. Innolight said the shortage covers the module supply chain broadly including:\n\n- Optical chips.\n- Electrical chips.\n- PCBs.\n- Other module materials\n\nFrom last ER, I think they singled out EMLs and CW optical chips as the most constrained. So Innolight's bottleneck list mention broadened since then. \n\nThey expect some of the component availability to improve gradually from the second half of 2026 through the first half of 2027. \n\nThink a lot of this is already known from earlier though. \n\nBut just some confirmation + easing timelines (EML is extremely bottlenecked, same with CW, this is probably talking about other components). \n\n3.  Innolight said module-production equipment is not the constraint. Equipment lead times remain relatively short. \n\nSo this isn't really a bottleneck compared to others. \n\n4. The overall proportion of silicon photonics continues to trend upward. Last year it was mainly 800G. This year, some 800G customers are further increasing their silicon-photonics proportion. 1.6T also added some new customers\n\nPositive for SiPH penetration eg. $SIVE / $JBL, since this shifts away from EML toward CW. \n\nBasically: main surprising takeaway is just 800g demand go brrr. \n\nApart from that just reaffirming bottlenecks/timelines/market speculation.",
+      "id": "2076846994614792663",
+      "date": "2026-07-14T01:51:24.000Z",
+      "title": "So Jensen himself went out to do damage control with $NVDA delays reports apparently: 1. Jensen Huang said no delays: - 800V and rack-to-rack optical interconnects is progressing f",
+      "body": "So Jensen himself went out to do damage control with $NVDA delays reports apparently:\n\n1. Jensen Huang said no delays: \n\n- 800V and rack-to-rack optical interconnects is progressing fully in line with the original plan with no material delay. \n\n- Debunked the rumor that the next-generation flagship, Rubin Ultra, would be delayed until 2028 and said it would be on track to ship next year\n\n- Rack system optimizations, like replacing Kyber with a new design are architectural optimizations, not impacting delivery timelines.\n\n2. On ASIC competition: no loss of market share.\n\n- Talked about how a leading frontier lab that previously relied heavily on internal ASICs has shifted nearly 50% of its compute load to Nvidia\n\n3. On over-reliance on hyperscalers.\n\n- AI frontier labs currently contributing to ~20% of demand.\n- Traditional cloud providers, Nvidia provides Vera CPUs and high-speed networking\n- Sovereign AI",
       "symbols": [
-        "AAOI",
-        "COHR",
-        "LITE",
-        "SIVEF",
-        "JBL"
+        "NVDA"
       ],
       "theme": "cpo-silicon-photonics",
-      "materiality": 100,
-      "sentiment": "bull",
-      "url": "https://x.com/aleabitoreddit/status/2076808331453415674"
+      "materiality": 70,
+      "sentiment": "neutral",
+      "url": "https://x.com/aleabitoreddit/status/2076846994614792663"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
