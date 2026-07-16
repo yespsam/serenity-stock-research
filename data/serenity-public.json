@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-16T13:35:51.280Z",
+  "generatedAt": "2026-07-16T14:36:42.482Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 7180,
+    "parsedItems": 7182,
     "commentCount": 26818,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-16T13:10:53.000Z"
+    "latestItemDate": "2026-07-16T14:06:19.000Z"
   },
   "rules": [
     {
@@ -69,14 +69,14 @@
         "SIVERS"
       ],
       "marketSymbol": "SIVEF",
-      "mentions": 1197,
+      "mentions": 1198,
       "bull": 545,
       "bear": 18,
-      "neutral": 634,
+      "neutral": 635,
       "materiality": 100,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 11333
+      "sentimentScore": 11336
     },
     {
       "symbol": "NBIS",
@@ -121,14 +121,14 @@
       "symbol": "AAOI",
       "aliases": [],
       "marketSymbol": "AAOI",
-      "mentions": 580,
+      "mentions": 581,
       "bull": 224,
       "bear": 16,
-      "neutral": 340,
+      "neutral": 341,
       "materiality": 81,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4709
+      "sentimentScore": 4712
     },
     {
       "symbol": "AXTI",
@@ -257,14 +257,14 @@
       "symbol": "MU",
       "aliases": [],
       "marketSymbol": "MU",
-      "mentions": 235,
+      "mentions": 236,
       "bull": 108,
       "bear": 6,
-      "neutral": 121,
+      "neutral": 122,
       "materiality": 81,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 2182
+      "sentimentScore": 2185
     },
     {
       "symbol": "META",
@@ -2082,6 +2082,19 @@
       "sentimentScore": 179
     },
     {
+      "symbol": "QCOM",
+      "aliases": [],
+      "marketSymbol": "QCOM",
+      "mentions": 17,
+      "bull": 8,
+      "bear": 0,
+      "neutral": 9,
+      "materiality": 80,
+      "latest": "2026-06-03T23:56:25.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 174
+    },
+    {
       "symbol": "VIAV",
       "aliases": [],
       "marketSymbol": "VIAV",
@@ -2091,19 +2104,6 @@
       "neutral": 8,
       "materiality": 88,
       "latest": "2026-05-20T13:00:30.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 171
-    },
-    {
-      "symbol": "QCOM",
-      "aliases": [],
-      "marketSymbol": "QCOM",
-      "mentions": 16,
-      "bull": 8,
-      "bear": 0,
-      "neutral": 8,
-      "materiality": 81,
-      "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 171
     },
@@ -5650,17 +5650,20 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-16T13:35:13.782Z",
+    "staticUpdatedAt": "2026-07-16T14:35:39.404Z",
     "latestCaptured": {
-      "id": "2077741631135191234",
-      "date": "2026-07-16T13:06:22.000Z",
-      "title": "I hope there's someone at X can fix this subscription bug. ",
-      "body": "I hope there's someone at X can fix this subscription bug. \n\nMany people are reporting that subscriptions don't renew anymore.",
-      "symbols": [],
+      "id": "2077756721293037626",
+      "date": "2026-07-16T14:06:19.000Z",
+      "title": "I personally think valuations are extremely stupid now on $AAOI and $SIVE. ",
+      "body": "I personally think valuations are extremely stupid now on $AAOI and $SIVE.\n\nWith AAOI you're doing $5.62B annualized revenue (probably higher), by midpoint next year. And it's a $8B MC.\n\nWith Sivers, I would est. it's close to ~5 forward 2028 P/E off 10% win allocation, 65% yield, and $75 ASP.",
+      "symbols": [
+        "AAOI",
+        "SIVEF"
+      ],
       "theme": "general",
-      "materiality": 54,
+      "materiality": 56,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2077741631135191234"
+      "url": "https://x.com/aleabitoreddit/status/2077756721293037626"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
