@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T15:51:44.910Z",
+  "generatedAt": "2026-07-17T17:53:15.035Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 7193,
+    "parsedItems": 7195,
     "commentCount": 26820,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-17T15:27:41.000Z"
+    "latestItemDate": "2026-07-17T16:54:04.000Z"
   },
   "rules": [
     {
@@ -69,14 +69,14 @@
         "SIVERS"
       ],
       "marketSymbol": "SIVEF",
-      "mentions": 1203,
-      "bull": 545,
+      "mentions": 1205,
+      "bull": 548,
       "bear": 18,
-      "neutral": 640,
+      "neutral": 639,
       "materiality": 100,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 11351
+      "sentimentScore": 11402
     },
     {
       "symbol": "NBIS",
@@ -96,39 +96,39 @@
       "aliases": [],
       "marketSymbol": "LITE",
       "mentions": 611,
-      "bull": 238,
+      "bull": 239,
       "bear": 14,
-      "neutral": 359,
+      "neutral": 358,
       "materiality": 85,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 5058
+      "sentimentScore": 5073
     },
     {
       "symbol": "NVDA",
       "aliases": [],
       "marketSymbol": "NVDA",
-      "mentions": 569,
-      "bull": 242,
+      "mentions": 570,
+      "bull": 244,
       "bear": 21,
-      "neutral": 306,
+      "neutral": 305,
       "materiality": 83,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4818
+      "sentimentScore": 4851
     },
     {
       "symbol": "AAOI",
       "aliases": [],
       "marketSymbol": "AAOI",
-      "mentions": 583,
-      "bull": 224,
+      "mentions": 584,
+      "bull": 226,
       "bear": 16,
-      "neutral": 343,
+      "neutral": 342,
       "materiality": 81,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4718
+      "sentimentScore": 4751
     },
     {
       "symbol": "AXTI",
@@ -226,6 +226,19 @@
       "sentimentScore": 2256
     },
     {
+      "symbol": "MU",
+      "aliases": [],
+      "marketSymbol": "MU",
+      "mentions": 238,
+      "bull": 110,
+      "bear": 6,
+      "neutral": 122,
+      "materiality": 82,
+      "latest": "2026-06-01T23:51:46.000Z",
+      "dominantTheme": "memory-rotation",
+      "sentimentScore": 2221
+    },
+    {
       "symbol": "GOOGL",
       "aliases": [
         "GOOG"
@@ -252,19 +265,6 @@
       "latest": "2026-06-01T01:05:01.000Z",
       "dominantTheme": "ai-infrastructure",
       "sentimentScore": 2196
-    },
-    {
-      "symbol": "MU",
-      "aliases": [],
-      "marketSymbol": "MU",
-      "mentions": 237,
-      "bull": 108,
-      "bear": 6,
-      "neutral": 123,
-      "materiality": 81,
-      "latest": "2026-06-01T23:51:46.000Z",
-      "dominantTheme": "memory-rotation",
-      "sentimentScore": 2188
     },
     {
       "symbol": "META",
@@ -319,6 +319,19 @@
       "sentimentScore": 1720
     },
     {
+      "symbol": "INTC",
+      "aliases": [],
+      "marketSymbol": "INTC",
+      "mentions": 178,
+      "bull": 81,
+      "bear": 2,
+      "neutral": 95,
+      "materiality": 82,
+      "latest": "2026-05-01T06:02:46.000Z",
+      "dominantTheme": "general",
+      "sentimentScore": 1707
+    },
+    {
       "symbol": "AMD",
       "aliases": [],
       "marketSymbol": "AMD",
@@ -329,19 +342,6 @@
       "materiality": 85,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1692
-    },
-    {
-      "symbol": "INTC",
-      "aliases": [],
-      "marketSymbol": "INTC",
-      "mentions": 178,
-      "bull": 80,
-      "bear": 2,
-      "neutral": 96,
-      "materiality": 82,
-      "latest": "2026-05-01T06:02:46.000Z",
-      "dominantTheme": "general",
       "sentimentScore": 1692
     },
     {
@@ -456,13 +456,13 @@
       "aliases": [],
       "marketSymbol": "RDDT",
       "mentions": 171,
-      "bull": 66,
+      "bull": 67,
       "bear": 2,
-      "neutral": 103,
+      "neutral": 102,
       "materiality": 75,
       "latest": "2026-04-29T21:40:20.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1475
+      "sentimentScore": 1490
     },
     {
       "symbol": "TSEM",
@@ -686,7 +686,7 @@
       "bear": 1,
       "neutral": 42,
       "materiality": 80,
-      "latest": "2026-06-15T15:08:36.000Z",
+      "latest": "2026-06-15T14:56:05.000Z",
       "dominantTheme": "general",
       "sentimentScore": 720
     },
@@ -1089,7 +1089,7 @@
       "bear": 1,
       "neutral": 22,
       "materiality": 74,
-      "latest": "2026-01-06T08:24:04.000Z",
+      "latest": "2026-01-24T00:00:00.000Z",
       "dominantTheme": "general",
       "sentimentScore": 350
     },
@@ -1731,6 +1731,19 @@
       "sentimentScore": 206
     },
     {
+      "symbol": "TER",
+      "aliases": [],
+      "marketSymbol": "TER",
+      "mentions": 21,
+      "bull": 11,
+      "bear": 1,
+      "neutral": 9,
+      "materiality": 85,
+      "latest": "2026-04-29T21:40:20.000Z",
+      "dominantTheme": "robotics-physical-ai",
+      "sentimentScore": 206
+    },
+    {
       "symbol": "APLD",
       "aliases": [],
       "marketSymbol": "APLD",
@@ -1755,6 +1768,19 @@
       "latest": "2026-06-01T17:22:45.000Z",
       "dominantTheme": "general",
       "sentimentScore": 204
+    },
+    {
+      "symbol": "SOXX",
+      "aliases": [],
+      "marketSymbol": "SOXX",
+      "mentions": 11,
+      "bull": 11,
+      "bear": 0,
+      "neutral": 0,
+      "materiality": 98,
+      "latest": "2026-05-06T16:16:34.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 202
     },
     {
       "symbol": "GME",
@@ -1913,6 +1939,19 @@
       "sentimentScore": 191
     },
     {
+      "symbol": "QCOM",
+      "aliases": [],
+      "marketSymbol": "QCOM",
+      "mentions": 17,
+      "bull": 9,
+      "bear": 0,
+      "neutral": 8,
+      "materiality": 82,
+      "latest": "2026-06-03T23:56:25.000Z",
+      "dominantTheme": "cpo-silicon-photonics",
+      "sentimentScore": 190
+    },
+    {
       "symbol": "EOSE",
       "aliases": [],
       "marketSymbol": "EOSE",
@@ -1952,19 +1991,6 @@
       "sentimentScore": 189
     },
     {
-      "symbol": "TER",
-      "aliases": [],
-      "marketSymbol": "TER",
-      "mentions": 20,
-      "bull": 10,
-      "bear": 1,
-      "neutral": 9,
-      "materiality": 84,
-      "latest": "2026-04-29T21:40:20.000Z",
-      "dominantTheme": "robotics-physical-ai",
-      "sentimentScore": 188
-    },
-    {
       "symbol": "NVO",
       "aliases": [],
       "marketSymbol": "NVO",
@@ -2002,19 +2028,6 @@
       "latest": "2025-10-19T18:21:35.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 185
-    },
-    {
-      "symbol": "SOXX",
-      "aliases": [],
-      "marketSymbol": "SOXX",
-      "mentions": 10,
-      "bull": 10,
-      "bear": 0,
-      "neutral": 0,
-      "materiality": 98,
-      "latest": "2026-05-06T16:16:34.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 184
     },
     {
       "symbol": "QBTS",
@@ -2080,19 +2093,6 @@
       "latest": "2026-05-13T22:53:50.000Z",
       "dominantTheme": "robotics-physical-ai",
       "sentimentScore": 179
-    },
-    {
-      "symbol": "QCOM",
-      "aliases": [],
-      "marketSymbol": "QCOM",
-      "mentions": 17,
-      "bull": 8,
-      "bear": 0,
-      "neutral": 9,
-      "materiality": 80,
-      "latest": "2026-06-03T23:56:25.000Z",
-      "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 174
     },
     {
       "symbol": "VIAV",
@@ -5059,7 +5059,7 @@
     },
     {
       "id": "2066535221554733278",
-      "date": "2026-06-15T15:08:36.000Z",
+      "date": "2026-06-15T14:56:05.000Z",
       "title": "Just as a recap, these were all my core European longs: 1. $SIVE 2. $LPK 3. $SOI 4. $RPI 5. $IQE 6. $ALRIB 7. $XFAB Sivers: As you know by now, core laser chokepoint over next gene",
       "body": "Just as a recap, these were all my core European longs:\n\n1. $SIVE\n2. $LPK\n3. $SOI\n4. $RPI \n5. $IQE\n6. $ALRIB\n7. $XFAB\n\nSivers: As you know by now, core laser chokepoint over next generation photonics, from 1.6T pluggables to CPO.\n\nEmbedded in many hyperscaler suppliers from Jabil to Ayar. Should go brrr 2027 but markets are forward looking, so ramps + qualifications should get priced in now. \n\nLPK Laser - Glass core substrate \"monopoly\" with LIDE. \n\n\"More than 80% of major global players have selected our equipment for process validation, learning and scaling to mass production\"\n\nSoitec - Silicon photonics SoI substrate pure monopoly while coming out of legacy drag segments.  \n\nRaspberry Pi - Was my fun idea around Raspberry Pis being used for AI hardware deployments. \n\nPreviously this thing was mainly educational or hobby boards, but now used for edge/local AI. Just thought revenue increase would be extremely material and it played out well. \n\nIQE - Critical epiwafer player for your Western photonics like Macom, Tower, Lumentum, and others. \n\nWas kinda going under, but thought their latent capacity relative to Landmark was undervalued. \n\nAlso given how important it was, I thought that your downstream players + Govs wouldn't let it go under, so it was more of a moonshot idea earlier in the year. \n\nLot more derisked now, very important.\n\nRiber - Kinda monopoly in the MBE space, exposure to Quantum / quantum dot + silicon photonics. \n\nFound out from OSINT help from a friend latentvalue that Microsoft Quantum was buying their machines, so this was direct hyperscaler validation + kinda de-risked at current MCs.\n\nXFab - SiC foundry backed by EU/US CHIPS Act with power semi upside. (152% Y/Y growth for their sic vertical). \n\nMain growth was their silicon photonics foundry past 2027 that's getting evaled by nvidia. And that they're leading Europe's value chain efforts in photonics, kinda like an early tower semi. \n\nWe'll see how this plays out, thought power semi exposure + low P/B would derisk the company until they scale their photbunchonics efforts. \n\nFrom my own personal thoughts:\n\nOut of the  maybe $SOI has already been re-rated the most? But I'm holding anyway. \n\n$LPK and $ALRIB I think are still undervalued despite their monopolies. \n\n$RPI is just kinda seeing how things go at this point, would be hilarious if they ended up like a mini nvidia for low end edge ai. \n\n$IQE probably has a long way to go given new tower long term agreement, alongside macom. And if they convert latent capacity, I still think it has a chance of rerating like landmark. \n\n$XFAB idk if im missing something or are markets missing something. you have nvidia as a direct eval of their silicon photonics foundry, and it's trading below replacement P/B. i think im right though. \n\n$SIVE I see has the highest upside out of all of them given laser company ability to vertically integrate, acquire companies downstream to make their lasers more valuable, etc. Just like coherent/lumentum. \n\nThere's like 1-2 more random ones that aren't really material, but just in general.\n\nThese are the ones I've liked the most.",
       "symbols": [
@@ -5650,21 +5650,17 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-17T15:50:53.552Z",
+    "staticUpdatedAt": "2026-07-17T17:51:57.890Z",
     "latestCaptured": {
-      "id": "2078130772121399553",
-      "date": "2026-07-17T14:52:40.000Z",
-      "title": "Agreed! It’s nice to remember your thesis during a market crash. ",
-      "body": "Agreed! It’s nice to remember your thesis during a market crash.\n\nFrom my own personal thesis, if $AAOI hits $1.4B quarterly revenue start of Q3 2027. Which is annualized $5.6B off a $8B MC. \n\nIs it “over” for the company if that revenue ramp hasn’t even shown up in the quarterly earnings… when it’s 2026?\n\nSame applies to my CPO sector exposure like $SIVE, an architecture shift led by $NVDA. \n\nIf scale out volume ramps from H2 2026 into 2027, and scale up heavily volume ramps into 2028.\n\nIs it “over” that $0 -> $91B TAM expansion (per GS) hasn’t even hit yet?\n\nWith robotics like Agility, is it over in 2026 if the listing hasn’t even happened yet and humanoids haven’t ramped?\n\nI personally think current market conditions are a reflection of liquidity and leverage, not individual fundamentals.\n\nIt’s brutal for everyone to see KOSPI, TW, Nikkei, and AI, space, robotics sector stocks crash recently. \n\nEspecially when there’s a lot of irrational behavior stemming from those leverage.\n\nIn the end, we can’t tell you what stocks to buy, what timeframe you should sell, how to size your positions, or what you should do. \n\nOnly share personal thoughts or research and track if they get validated over time.\n\nSo it’s extremely important to build your own thesis, since everyone has unique risk tolerance or investing timeframes.\n\nAnd that usually leads to having higher conviction during crashes.",
-      "symbols": [
-        "AAOI",
-        "SIVEF",
-        "NVDA"
-      ],
-      "theme": "robotics-physical-ai",
-      "materiality": 71,
+      "id": "2078161322769068533",
+      "date": "2026-07-17T16:54:04.000Z",
+      "title": "Wow, apparently there’s claims ~3.4% of the adult population in Korea faces liquidation risk? ",
+      "body": "Wow, apparently there’s claims ~3.4% of the adult population in Korea faces liquidation risk?\n\n“As of July 13, over 1.2 million leveraged retail traders' accounts hit margin call lines, with 320,000 to 360,000 accounts force-liquidated by brokers.”\n\n(There were other sources claiming this data came from Goldman Sachs desks rather than SK financial supervisory service data)\n\nRegardless, just evidence recent crash was accelerated by liquidation cascades/deleveraging rather than fundamentals:",
+      "symbols": [],
+      "theme": "general",
+      "materiality": 46,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2078130772121399553"
+      "url": "https://x.com/aleabitoreddit/status/2078161322769068533"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
