@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T18:54:44.029Z",
+  "generatedAt": "2026-07-17T22:09:16.264Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 7196,
+    "parsedItems": 7197,
     "commentCount": 26820,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-17T17:51:55.000Z"
+    "latestItemDate": "2026-07-17T21:19:06.000Z"
   },
   "rules": [
     {
@@ -69,14 +69,14 @@
         "SIVERS"
       ],
       "marketSymbol": "SIVEF",
-      "mentions": 1205,
+      "mentions": 1206,
       "bull": 548,
       "bear": 18,
-      "neutral": 639,
+      "neutral": 640,
       "materiality": 100,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 11402
+      "sentimentScore": 11405
     },
     {
       "symbol": "NBIS",
@@ -95,14 +95,14 @@
       "symbol": "LITE",
       "aliases": [],
       "marketSymbol": "LITE",
-      "mentions": 611,
+      "mentions": 612,
       "bull": 239,
       "bear": 14,
-      "neutral": 358,
+      "neutral": 359,
       "materiality": 85,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 5073
+      "sentimentScore": 5076
     },
     {
       "symbol": "NVDA",
@@ -121,14 +121,14 @@
       "symbol": "AAOI",
       "aliases": [],
       "marketSymbol": "AAOI",
-      "mentions": 584,
+      "mentions": 585,
       "bull": 226,
       "bear": 16,
-      "neutral": 342,
+      "neutral": 343,
       "materiality": 81,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4751
+      "sentimentScore": 4754
     },
     {
       "symbol": "AXTI",
@@ -188,14 +188,14 @@
         "SOI.PA"
       ],
       "marketSymbol": "SOI.PA",
-      "mentions": 291,
+      "mentions": 292,
       "bull": 130,
       "bear": 5,
-      "neutral": 156,
+      "neutral": 157,
       "materiality": 94,
       "latest": "2026-05-24T02:28:23.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2707
+      "sentimentScore": 2710
     },
     {
       "symbol": "AMZN",
@@ -283,14 +283,14 @@
       "symbol": "TSM",
       "aliases": [],
       "marketSymbol": "TSM",
-      "mentions": 236,
+      "mentions": 237,
       "bull": 94,
       "bear": 3,
-      "neutral": 139,
+      "neutral": 140,
       "materiality": 82,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 2048
+      "sentimentScore": 2051
     },
     {
       "symbol": "POET",
@@ -5650,22 +5650,23 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-17T18:53:50.471Z",
+    "staticUpdatedAt": "2026-07-17T22:08:46.406Z",
     "latestCaptured": {
-      "id": "2078175882620059719",
-      "date": "2026-07-17T17:51:55.000Z",
-      "title": "$META in talks to lease compute to Anthropic in a $10B dollar deal. ",
-      "body": "$META in talks to lease compute to Anthropic in a $10B dollar deal.\n\nSeems like they saw how profitable \n$SPCX $45B compute deal was.\n\nBut just goes to validate Neocloud business models like $NBIS, $IREN, and co if hyperscalers are copying their homework.\n\nSource: NYT",
+      "id": "2078228019584668121",
+      "date": "2026-07-17T21:19:06.000Z",
+      "title": "Thanks, love reading the comments! ",
+      "body": "Thanks, love reading the comments!\n\nGoldman Sachs raised Innolight PT to 2581 RMB. Roughly 163.6% upside from current valuations.\n\nBut the largest thing is its 2026–2028 earnings est revision raised by a whopping 65%/108%/119%, based on:\n\n-  Much higher silicon photonics module volumes\n- scale out, scale up, scale across volumes\n- 1.6T/3.2T lifting blended ASP + margins\n- increase in AI capex\n\nThis is typically very material read through on the optical sector since:\n\nI tend to think of Innolight as a $TSM (semi capex) type read on how the photonics landscape is doing.\n\nEg. Higher silicon photonics penetration means more TAM for cw lasers like $SIVE (cw) / SOI wafer demand for $SOI. ASP hikes for future gen is positive for the other optical markers too.\n\nThink my other takeaway outside the report was Innolight stating 800g demand was growing more significantly than expected from their transcript on the 12th. \n\nWhich in turn signals more demand for names like $AAOI to $LITE next earnings.\n\nTLDR: GS gives high earnings projections during a time of massive corrections. \n\nFundamentally, broader photonics ecosystem should be happy when it’s ER time.",
       "symbols": [
-        "META",
-        "SPCX",
-        "NBIS",
-        "IREN"
+        "TSM",
+        "SIVEF",
+        "SOI",
+        "AAOI",
+        "LITE"
       ],
-      "theme": "ai-infrastructure",
-      "materiality": 76,
+      "theme": "cpo-silicon-photonics",
+      "materiality": 97,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2078175882620059719"
+      "url": "https://x.com/aleabitoreddit/status/2078228019584668121"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
