@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-16T16:39:09.266Z",
+  "generatedAt": "2026-07-17T03:51:53.917Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 7187,
-    "commentCount": 26818,
+    "parsedItems": 7188,
+    "commentCount": 26819,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-16T15:57:05.000Z"
+    "latestItemDate": "2026-07-17T03:16:07.000Z"
   },
   "rules": [
     {
@@ -257,14 +257,14 @@
       "symbol": "MU",
       "aliases": [],
       "marketSymbol": "MU",
-      "mentions": 236,
+      "mentions": 237,
       "bull": 108,
       "bear": 6,
-      "neutral": 122,
+      "neutral": 123,
       "materiality": 81,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 2185
+      "sentimentScore": 2188
     },
     {
       "symbol": "META",
@@ -335,14 +335,14 @@
       "symbol": "INTC",
       "aliases": [],
       "marketSymbol": "INTC",
-      "mentions": 177,
+      "mentions": 178,
       "bull": 80,
       "bear": 2,
-      "neutral": 95,
+      "neutral": 96,
       "materiality": 82,
       "latest": "2026-05-01T06:02:46.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 1689
+      "sentimentScore": 1692
     },
     {
       "symbol": "LPK",
@@ -5650,21 +5650,21 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-16T16:38:37.006Z",
+    "staticUpdatedAt": "2026-07-17T03:51:12.449Z",
     "latestCaptured": {
-      "id": "2077784594959725056",
-      "date": "2026-07-16T15:57:05.000Z",
-      "title": "My guess is we’re close to market bottom on semis from $INTC to $LITE. ",
-      "body": "My guess is we’re close to market bottom on semis from $INTC to $LITE.\n\nA good indicator is if everyone on $RDDT blew up their portfolios to $0.",
+      "id": "2077955479742173422",
+      "date": "2026-07-17T03:16:07.000Z",
+      "title": "Kim Sunwoo of Meritz Securities: \"This Is Not the Time to Sell Samsung Electronics and $SKHY\" They claim markets are excessively misunderstanding the situation with semis. ",
+      "body": "Kim Sunwoo of Meritz Securities: \"This Is Not the Time to Sell Samsung Electronics and $SKHY\"\n\nThey claim markets are excessively misunderstanding the situation with semis. And that DRAM shortage will intensify in the second half of this year.  \n\n- H2 2026: \"suppliers can fulfill only 75%–80% of DRAM demand\". \n- 2027: \"fulfillment is expected to fall into the 60% range.\"\n\nIn the article, they attached market forecasts that show SK Hynix with a 2027 3.5x P/E and Samsung a 3.9x P/E. \n\nThink the $INTC CEO said it best around timeframes with his quote \"no relief in memory supply or pricing until at least 2028\". \n\nEspecially after $MU 16 LTAs with favorable take or pay volume contracts... memory demand seems structural.",
       "symbols": [
+        "SKHY",
         "INTC",
-        "LITE",
-        "RDDT"
+        "MU"
       ],
-      "theme": "general",
-      "materiality": 61,
+      "theme": "memory-rotation",
+      "materiality": 71,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2077784594959725056"
+      "url": "https://x.com/aleabitoreddit/status/2077955479742173422"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
