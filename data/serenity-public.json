@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T01:36:08.665Z",
+  "generatedAt": "2026-07-18T04:59:58.785Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -5653,15 +5653,17 @@
   "monitor": {
     "staticUpdatedAt": "2026-07-18T01:35:31.551Z",
     "latestCaptured": {
-      "id": "2078283847612186739",
-      "date": "2026-07-18T01:00:56.000Z",
-      "title": "Thanks! I’ve always shared personal research and core thoughts for free. ",
-      "body": "Thanks! I’ve always shared personal research and core thoughts for free. Not trying to sell anything or tell others what to do.\n\nAnd above all, just being transparent about my own returns (win or loss)\n\nMaybe this information democratization upsets some business models…\n\nWhen others try and pitch their $40 TA subscriptions that are always right and predicted the semis crash.\n\nBut if they really believed it, they would have made 5000%+ buying puts and wouldn’t need to market a paywall.\n\nYes, if I’m on 1.4x leverage, and if a portfolio concentrated in memory/photonics underlying crashes -35% on avg… you get a 49% drawdown.\n\nI’m just sharing what happens. \n\nBut I expect AI names to recover since I see demand from compute to energy to memory to networking to be structural.",
-      "symbols": [],
+      "id": "2078341955411738744",
+      "date": "2026-07-18T04:51:50.000Z",
+      "title": "- Sk Hynix mainly traded in Korea - $SKHY lists in the US with limited shares, ~2.5% of the float (this is called ADR) - Even though SK Hynix are the same company, the shares trad…",
+      "body": "- Sk Hynix mainly traded in Korea\n- $SKHY lists in the US with limited shares, ~2.5% of the float (this is called ADR)\n- Even though SK Hynix are the same company, the shares trade independently. \n- Sk Hynix US traded at a 20-50% premium to SK Hynix Korean listing due to limited supply, but lot of US demand. \n-> ADRs allow for conversion between Korea Shares to US Shares, and conversion will start on the 29th\n- If you convert 22.5% of the Korean supply to the US, that 20-50% premium is likely to go down \n\neg. If there's limited mangos, and someone pays $3 for mangos.\n\nYou buy the same mango for $1. You keep buying those $1 mangos and selling for $3 until the mangos pricing converge. That's called arbitrage and what likely traders would do.",
+      "symbols": [
+        "SKHY"
+      ],
       "theme": "memory-rotation",
-      "materiality": 72,
+      "materiality": 61,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2078283847612186739"
+      "url": "https://x.com/aleabitoreddit/status/2078341955411738744"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
