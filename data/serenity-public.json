@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-17T22:09:16.264Z",
+  "generatedAt": "2026-07-18T01:36:08.665Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 7197,
+    "parsedItems": 7202,
     "commentCount": 26820,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-17T21:19:06.000Z"
+    "latestItemDate": "2026-07-18T01:00:56.000Z"
   },
   "rules": [
     {
@@ -69,40 +69,40 @@
         "SIVERS"
       ],
       "marketSymbol": "SIVEF",
-      "mentions": 1206,
-      "bull": 548,
+      "mentions": 1208,
+      "bull": 550,
       "bear": 18,
       "neutral": 640,
       "materiality": 100,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 11405
+      "sentimentScore": 11441
     },
     {
       "symbol": "NBIS",
       "aliases": [],
       "marketSymbol": "NBIS",
-      "mentions": 800,
-      "bull": 231,
+      "mentions": 801,
+      "bull": 233,
       "bear": 13,
-      "neutral": 556,
+      "neutral": 555,
       "materiality": 77,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 5554
+      "sentimentScore": 5587
     },
     {
       "symbol": "LITE",
       "aliases": [],
       "marketSymbol": "LITE",
-      "mentions": 612,
-      "bull": 239,
+      "mentions": 613,
+      "bull": 240,
       "bear": 14,
       "neutral": 359,
       "materiality": 85,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 5076
+      "sentimentScore": 5094
     },
     {
       "symbol": "NVDA",
@@ -121,14 +121,14 @@
       "symbol": "AAOI",
       "aliases": [],
       "marketSymbol": "AAOI",
-      "mentions": 585,
-      "bull": 226,
+      "mentions": 588,
+      "bull": 228,
       "bear": 16,
-      "neutral": 343,
+      "neutral": 344,
       "materiality": 81,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4754
+      "sentimentScore": 4793
     },
     {
       "symbol": "AXTI",
@@ -148,13 +148,13 @@
       "aliases": [],
       "marketSymbol": "IREN",
       "mentions": 504,
-      "bull": 149,
+      "bull": 150,
       "bear": 30,
-      "neutral": 325,
+      "neutral": 324,
       "materiality": 78,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 2988
+      "sentimentScore": 3005
     },
     {
       "symbol": "COHR",
@@ -173,14 +173,14 @@
       "symbol": "MRVL",
       "aliases": [],
       "marketSymbol": "MRVL",
-      "mentions": 320,
-      "bull": 132,
+      "mentions": 321,
+      "bull": 133,
       "bear": 1,
       "neutral": 187,
       "materiality": 84,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2921
+      "sentimentScore": 2939
     },
     {
       "symbol": "SOI",
@@ -188,14 +188,14 @@
         "SOI.PA"
       ],
       "marketSymbol": "SOI.PA",
-      "mentions": 292,
-      "bull": 130,
+      "mentions": 293,
+      "bull": 132,
       "bear": 5,
-      "neutral": 157,
+      "neutral": 156,
       "materiality": 94,
       "latest": "2026-05-24T02:28:23.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 2710
+      "sentimentScore": 2743
     },
     {
       "symbol": "AMZN",
@@ -271,26 +271,26 @@
       "aliases": [],
       "marketSymbol": "META",
       "mentions": 284,
-      "bull": 99,
+      "bull": 100,
       "bear": 9,
-      "neutral": 176,
+      "neutral": 175,
       "materiality": 80,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 2124
+      "sentimentScore": 2139
     },
     {
       "symbol": "TSM",
       "aliases": [],
       "marketSymbol": "TSM",
       "mentions": 237,
-      "bull": 94,
+      "bull": 95,
       "bear": 3,
-      "neutral": 140,
+      "neutral": 139,
       "materiality": 82,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "memory-rotation",
-      "sentimentScore": 2051
+      "sentimentScore": 2066
     },
     {
       "symbol": "POET",
@@ -306,6 +306,19 @@
       "sentimentScore": 1773
     },
     {
+      "symbol": "INTC",
+      "aliases": [],
+      "marketSymbol": "INTC",
+      "mentions": 179,
+      "bull": 82,
+      "bear": 2,
+      "neutral": 95,
+      "materiality": 82,
+      "latest": "2026-05-01T06:02:46.000Z",
+      "dominantTheme": "general",
+      "sentimentScore": 1725
+    },
+    {
       "symbol": "CIFR",
       "aliases": [],
       "marketSymbol": "CIFR",
@@ -317,19 +330,6 @@
       "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 1720
-    },
-    {
-      "symbol": "INTC",
-      "aliases": [],
-      "marketSymbol": "INTC",
-      "mentions": 178,
-      "bull": 81,
-      "bear": 2,
-      "neutral": 95,
-      "materiality": 82,
-      "latest": "2026-05-01T06:02:46.000Z",
-      "dominantTheme": "general",
-      "sentimentScore": 1707
     },
     {
       "symbol": "AMD",
@@ -620,7 +620,7 @@
       "bull": 43,
       "bear": 6,
       "neutral": 55,
-      "materiality": 77,
+      "materiality": 76,
       "latest": "2026-06-04T02:00:04.000Z",
       "dominantTheme": "general",
       "sentimentScore": 813
@@ -685,7 +685,7 @@
       "bull": 34,
       "bear": 1,
       "neutral": 42,
-      "materiality": 80,
+      "materiality": 79,
       "latest": "2026-06-15T14:56:05.000Z",
       "dominantTheme": "general",
       "sentimentScore": 720
@@ -854,7 +854,7 @@
       "bull": 24,
       "bear": 3,
       "neutral": 40,
-      "materiality": 78,
+      "materiality": 77,
       "latest": "2026-06-19T12:19:38.000Z",
       "dominantTheme": "general",
       "sentimentScore": 486
@@ -932,7 +932,7 @@
       "bull": 23,
       "bear": 0,
       "neutral": 10,
-      "materiality": 91,
+      "materiality": 90,
       "latest": "2026-05-28T02:52:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 444
@@ -1367,6 +1367,32 @@
       "sentimentScore": 279
     },
     {
+      "symbol": "CORZ",
+      "aliases": [],
+      "marketSymbol": "CORZ",
+      "mentions": 22,
+      "bull": 14,
+      "bear": 0,
+      "neutral": 8,
+      "materiality": 88,
+      "latest": "2026-05-03T05:01:19.000Z",
+      "dominantTheme": "neocloud",
+      "sentimentScore": 279
+    },
+    {
+      "symbol": "SPCX",
+      "aliases": [],
+      "marketSymbol": "SPCX",
+      "mentions": 38,
+      "bull": 16,
+      "bear": 3,
+      "neutral": 19,
+      "materiality": 80,
+      "latest": "2026-06-16T02:20:57.000Z",
+      "dominantTheme": "general",
+      "sentimentScore": 278
+    },
+    {
       "symbol": "LTC",
       "aliases": [],
       "marketSymbol": "LTC",
@@ -1406,19 +1432,6 @@
       "sentimentScore": 264
     },
     {
-      "symbol": "SPCX",
-      "aliases": [],
-      "marketSymbol": "SPCX",
-      "mentions": 38,
-      "bull": 15,
-      "bear": 3,
-      "neutral": 20,
-      "materiality": 81,
-      "latest": "2026-06-16T02:20:57.000Z",
-      "dominantTheme": "general",
-      "sentimentScore": 263
-    },
-    {
       "symbol": "KOPN",
       "aliases": [],
       "marketSymbol": "KOPN",
@@ -1455,19 +1468,6 @@
       "materiality": 85,
       "latest": "2026-06-15T14:02:20.000Z",
       "dominantTheme": "power-architecture",
-      "sentimentScore": 261
-    },
-    {
-      "symbol": "CORZ",
-      "aliases": [],
-      "marketSymbol": "CORZ",
-      "mentions": 21,
-      "bull": 13,
-      "bear": 0,
-      "neutral": 8,
-      "materiality": 87,
-      "latest": "2026-05-03T05:01:19.000Z",
-      "dominantTheme": "neocloud",
       "sentimentScore": 261
     },
     {
@@ -1894,7 +1894,7 @@
       "bull": 10,
       "bear": 0,
       "neutral": 4,
-      "materiality": 88,
+      "materiality": 87,
       "latest": "2026-05-04T07:12:36.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 195
@@ -2771,19 +2771,6 @@
       "sentimentScore": 107
     },
     {
-      "symbol": "RR",
-      "aliases": [],
-      "marketSymbol": "RR",
-      "mentions": 10,
-      "bull": 5,
-      "bear": 0,
-      "neutral": 5,
-      "materiality": 83,
-      "latest": "2026-05-30T21:35:12.000Z",
-      "dominantTheme": "robotics-physical-ai",
-      "sentimentScore": 105
-    },
-    {
       "symbol": "ACUVI",
       "aliases": [],
       "marketSymbol": "ACUVI",
@@ -2820,6 +2807,19 @@
       "materiality": 82,
       "latest": "2026-06-25T14:51:04.000Z",
       "dominantTheme": "general",
+      "sentimentScore": 105
+    },
+    {
+      "symbol": "RR",
+      "aliases": [],
+      "marketSymbol": "RR",
+      "mentions": 10,
+      "bull": 5,
+      "bear": 0,
+      "neutral": 5,
+      "materiality": 82,
+      "latest": "2026-05-30T21:35:12.000Z",
+      "dominantTheme": "robotics-physical-ai",
       "sentimentScore": 105
     },
     {
@@ -2882,7 +2882,7 @@
       "bull": 5,
       "bear": 0,
       "neutral": 3,
-      "materiality": 85,
+      "materiality": 84,
       "latest": "2026-06-15T01:31:49.000Z",
       "dominantTheme": "power-architecture",
       "sentimentScore": 102
@@ -2960,24 +2960,6 @@
       "materiality": 118,
       "sentiment": "bull",
       "url": "https://x.com/aleabitoreddit/status/2065289672356745561"
-    },
-    {
-      "id": "2055374511172899247",
-      "date": "2026-06-29T06:57:45.000Z",
-      "title": "Photonics supplier-leverage thesis: own POET and Sivers as picks-and-shovels beneficiaries of AI optics promotion and spending",
-      "body": "$POET is the photonics version of $IREN.\n\n$SIVE is the photonics version of $NVDA.\n\nTHESE GUYS at $POET ALREADY HAVE $430M+ in cash, they don't need any more for execution.\n\n90% of it is a marketing. \n\nBut just like how $NVDA benefits from $IREN's marketing campaign to buy GPUs anyway.\n\n$SIVE benefits from $POET's marketing campaign regardless when they end up buying their lasers.",
-      "symbols": [
-        "POET",
-        "IREN",
-        "SIVEF",
-        "NVDA",
-        "NVD",
-        "MRVL"
-      ],
-      "theme": "cpo-silicon-photonics",
-      "materiality": 117,
-      "sentiment": "bull",
-      "url": "https://x.com/aleabitoreddit/status/2055374511172899247"
     },
     {
       "id": "2062322546809381094",
@@ -3334,6 +3316,24 @@
       "url": "https://x.com/aleabitoreddit/status/2052059960058814800"
     },
     {
+      "id": "2055374511172899247",
+      "date": "2026-05-15T19:47:25.000Z",
+      "title": "Photonics supplier-leverage thesis: own POET and Sivers as picks-and-shovels beneficiaries of AI optics promotion and spending",
+      "body": "$POET is the photonics version of $IREN.\n\n$SIVE is the photonics version of $NVDA.\n\nTHESE GUYS at $POET ALREADY HAVE $430M+ in cash, they don't need any more for execution.\n\n90% of it is a marketing. \n\nBut just like how $NVDA benefits from $IREN's marketing campaign to buy GPUs anyway.\n\n$SIVE benefits from $POET's marketing campaign regardless when they end up buying their lasers.",
+      "symbols": [
+        "POET",
+        "IREN",
+        "SIVEF",
+        "NVDA",
+        "NVD",
+        "MRVL"
+      ],
+      "theme": "cpo-silicon-photonics",
+      "materiality": 117,
+      "sentiment": "bull",
+      "url": "https://x.com/aleabitoreddit/status/2055374511172899247"
+    },
+    {
       "id": "2061425895307608561",
       "date": "2026-06-01T12:33:27.000Z",
       "title": "Nebius remains the favored AI/neocloud winner, with further upside toward a much larger market cap",
@@ -3439,6 +3439,28 @@
       "materiality": 117,
       "sentiment": "bull",
       "url": "https://x.com/aleabitoreddit/status/2058060753933131949"
+    },
+    {
+      "id": "2057084047466414107",
+      "date": "2026-05-20T13:00:30.000Z",
+      "title": "Long Sivers on an M&A-driven optical IP roll-up into the CPO/photonics stack",
+      "body": "If people don’t realize why I’m so interested in $SIVE M&A.\n\nSivers likely customers were:\n\nLightmatter when they were tiny -> became $4B+ company.\n\nLightelligence when they were tiny -> became $10B+ company.\n\nAyar when they were tiny -> now funded by $NVDA, $AMD, and others.\n\nCelestial when they were tiny -> bought by $MRVL and became their growth vector. Probably would be valued $10B+ standalone.\n\nI’m extremely sure Sivers knows what to acquire for optical IP. \n\nThey were just stuck in a catch-22 and lacked the funding to do so originally, despite owning one of the most valuable laser chokepoints.\n\nFuture NASDAQ listing and recent growth unlocked downstream IP acquisition potential now.",
+      "symbols": [
+        "SIVEF",
+        "NVDA",
+        "AMD",
+        "MRVL",
+        "ALRIB",
+        "TSLA",
+        "VIAV",
+        "LPKF",
+        "SOI",
+        "FLNC"
+      ],
+      "theme": "cpo-silicon-photonics",
+      "materiality": 117,
+      "sentiment": "bull",
+      "url": "https://x.com/aleabitoreddit/status/2057084047466414107"
     },
     {
       "id": "2049767690425016780",
@@ -3577,6 +3599,23 @@
       "url": "https://x.com/aleabitoreddit/status/2059830121117446415"
     },
     {
+      "id": "2078175882620059719",
+      "date": "2026-07-17T17:51:55.000Z",
+      "title": "$$META in talks to lease compute to Anthropic in a $10B dollar deal. ",
+      "body": "$$META in talks to lease compute to Anthropic in a $10B dollar deal.\n\nSeems like they saw how profitable \n$SPCX $45B compute deal was.\n\nBut just goes to validate Neocloud business models like $NBIS, $IREN, and co if hyperscalers are copying their homework.\n\nSource: NYT https://t.co/3Mu3UXQtFT\n\nAI 解读：据纽约时报报道，Meta正在与Anthropic就租赁计算资源进行谈判，交易规模可能达100亿美元。这被视为Meta在效仿此前450亿美元的SPCx计算交易模式。此动向进一步验证了Neocloud等新兴云计算商业模式的价值。",
+      "symbols": [
+        "META",
+        "SPCX",
+        "NBIS",
+        "IREN",
+        "CORZ"
+      ],
+      "theme": "ai-infrastructure",
+      "materiality": 100,
+      "sentiment": "bull",
+      "url": "https://x.com/aleabitoreddit/status/2078175882620059719"
+    },
+    {
       "id": "2077421268991926703",
       "date": "2026-07-15T15:53:21.000Z",
       "title": "$$AAPL looks to acquire AI chip companies for running AI (Source: The Information) Right now, $MSFT, $META, Amazon, Google are carrying AI capex spend. ",
@@ -3630,22 +3669,6 @@
       "materiality": 100,
       "sentiment": "bull",
       "url": "https://x.com/aleabitoreddit/status/2077044786402660829"
-    },
-    {
-      "id": "2075199849507762279",
-      "date": "2026-07-09T12:46:14.000Z",
-      "title": "Meta’s disclosed AI buildout reinforces a bullish AI infrastructure supply-chain thesis",
-      "body": "Nothing like an internal $META memo getting published.\n\nShowing AI ramping as usual:\n\n- LTAs signed with Samsung and $SNDK for memory\n- LTAs signed with Sumitomo Electric for fiber optics\n- Expected to deploy 7GW compute infra this year, and doubling in 2027. \n- as much as $145B capex spend this year \n\n“It plans to launch a chip about every six months through 2027”",
-      "symbols": [
-        "META",
-        "SNDK",
-        "005930.KO",
-        "SMTOY.US"
-      ],
-      "theme": "memory-rotation",
-      "materiality": 100,
-      "sentiment": "bull",
-      "url": "https://x.com/aleabitoreddit/status/2075199849507762279"
     },
     {
       "id": "2050093551313469467",
@@ -4012,28 +4035,6 @@
       "materiality": 117,
       "sentiment": "bull",
       "url": "https://x.com/aleabitoreddit/status/2060002002994971046"
-    },
-    {
-      "id": "2057084047466414107",
-      "date": "2026-05-20T13:00:30.000Z",
-      "title": "Long Sivers on an M&A-driven optical IP roll-up into the CPO/photonics stack",
-      "body": "If people don’t realize why I’m so interested in $SIVE M&A.\n\nSivers likely customers were:\n\nLightmatter when they were tiny -> became $4B+ company.\n\nLightelligence when they were tiny -> became $10B+ company.\n\nAyar when they were tiny -> now funded by $NVDA, $AMD, and others.\n\nCelestial when they were tiny -> bought by $MRVL and became their growth vector. Probably would be valued $10B+ standalone.\n\nI’m extremely sure Sivers knows what to acquire for optical IP. \n\nThey were just stuck in a catch-22 and lacked the funding to do so originally, despite owning one of the most valuable laser chokepoints.\n\nFuture NASDAQ listing and recent growth unlocked downstream IP acquisition potential now.",
-      "symbols": [
-        "SIVEF",
-        "NVDA",
-        "AMD",
-        "MRVL",
-        "ALRIB",
-        "TSLA",
-        "VIAV",
-        "LPKF",
-        "SOI",
-        "FLNC"
-      ],
-      "theme": "cpo-silicon-photonics",
-      "materiality": 117,
-      "sentiment": "bull",
-      "url": "https://x.com/aleabitoreddit/status/2057084047466414107"
     },
     {
       "id": "2050762148545216899",
@@ -5650,23 +5651,17 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-17T22:08:46.406Z",
+    "staticUpdatedAt": "2026-07-18T01:35:31.551Z",
     "latestCaptured": {
-      "id": "2078228019584668121",
-      "date": "2026-07-17T21:19:06.000Z",
-      "title": "Thanks, love reading the comments! ",
-      "body": "Thanks, love reading the comments!\n\nGoldman Sachs raised Innolight PT to 2581 RMB. Roughly 163.6% upside from current valuations.\n\nBut the largest thing is its 2026–2028 earnings est revision raised by a whopping 65%/108%/119%, based on:\n\n-  Much higher silicon photonics module volumes\n- scale out, scale up, scale across volumes\n- 1.6T/3.2T lifting blended ASP + margins\n- increase in AI capex\n\nThis is typically very material read through on the optical sector since:\n\nI tend to think of Innolight as a $TSM (semi capex) type read on how the photonics landscape is doing.\n\nEg. Higher silicon photonics penetration means more TAM for cw lasers like $SIVE (cw) / SOI wafer demand for $SOI. ASP hikes for future gen is positive for the other optical markers too.\n\nThink my other takeaway outside the report was Innolight stating 800g demand was growing more significantly than expected from their transcript on the 12th. \n\nWhich in turn signals more demand for names like $AAOI to $LITE next earnings.\n\nTLDR: GS gives high earnings projections during a time of massive corrections. \n\nFundamentally, broader photonics ecosystem should be happy when it’s ER time.",
-      "symbols": [
-        "TSM",
-        "SIVEF",
-        "SOI",
-        "AAOI",
-        "LITE"
-      ],
-      "theme": "cpo-silicon-photonics",
-      "materiality": 97,
+      "id": "2078283847612186739",
+      "date": "2026-07-18T01:00:56.000Z",
+      "title": "Thanks! I’ve always shared personal research and core thoughts for free. ",
+      "body": "Thanks! I’ve always shared personal research and core thoughts for free. Not trying to sell anything or tell others what to do.\n\nAnd above all, just being transparent about my own returns (win or loss)\n\nMaybe this information democratization upsets some business models…\n\nWhen others try and pitch their $40 TA subscriptions that are always right and predicted the semis crash.\n\nBut if they really believed it, they would have made 5000%+ buying puts and wouldn’t need to market a paywall.\n\nYes, if I’m on 1.4x leverage, and if a portfolio concentrated in memory/photonics underlying crashes -35% on avg… you get a 49% drawdown.\n\nI’m just sharing what happens. \n\nBut I expect AI names to recover since I see demand from compute to energy to memory to networking to be structural.",
+      "symbols": [],
+      "theme": "memory-rotation",
+      "materiality": 72,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2078228019584668121"
+      "url": "https://x.com/aleabitoreddit/status/2078283847612186739"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
