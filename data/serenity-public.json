@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T07:22:33.191Z",
+  "generatedAt": "2026-07-20T17:30:01.537Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 7207,
+    "parsedItems": 7208,
     "commentCount": 26821,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-20T06:22:41.000Z"
+    "latestItemDate": "2026-07-20T17:18:38.000Z"
   },
   "rules": [
     {
@@ -82,14 +82,14 @@
       "symbol": "NBIS",
       "aliases": [],
       "marketSymbol": "NBIS",
-      "mentions": 801,
+      "mentions": 802,
       "bull": 233,
       "bear": 13,
-      "neutral": 555,
+      "neutral": 556,
       "materiality": 77,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 5587
+      "sentimentScore": 5590
     },
     {
       "symbol": "LITE",
@@ -147,14 +147,14 @@
       "symbol": "IREN",
       "aliases": [],
       "marketSymbol": "IREN",
-      "mentions": 504,
+      "mentions": 505,
       "bull": 150,
       "bear": 30,
-      "neutral": 324,
+      "neutral": 325,
       "materiality": 78,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 3005
+      "sentimentScore": 3008
     },
     {
       "symbol": "COHR",
@@ -322,14 +322,14 @@
       "symbol": "CIFR",
       "aliases": [],
       "marketSymbol": "CIFR",
-      "mentions": 210,
+      "mentions": 211,
       "bull": 79,
       "bear": 4,
-      "neutral": 127,
+      "neutral": 128,
       "materiality": 83,
       "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 1720
+      "sentimentScore": 1723
     },
     {
       "symbol": "AMD",
@@ -403,14 +403,14 @@
       "symbol": "CRWV",
       "aliases": [],
       "marketSymbol": "CRWV",
-      "mentions": 207,
+      "mentions": 208,
       "bull": 74,
       "bear": 7,
-      "neutral": 126,
+      "neutral": 127,
       "materiality": 82,
       "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 1563
+      "sentimentScore": 1566
     },
     {
       "symbol": "AEHR",
@@ -824,14 +824,14 @@
       "symbol": "WYFI",
       "aliases": [],
       "marketSymbol": "WYFI",
-      "mentions": 55,
+      "mentions": 56,
       "bull": 27,
       "bear": 2,
-      "neutral": 26,
+      "neutral": 27,
       "materiality": 87,
       "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 520
+      "sentimentScore": 523
     },
     {
       "symbol": "TRT",
@@ -1591,14 +1591,14 @@
       "symbol": "CLSK",
       "aliases": [],
       "marketSymbol": "CLSK",
-      "mentions": 25,
+      "mentions": 26,
       "bull": 12,
       "bear": 1,
-      "neutral": 12,
-      "materiality": 88,
+      "neutral": 13,
+      "materiality": 89,
       "latest": "2026-05-19T14:36:19.000Z",
       "dominantTheme": "neocloud",
-      "sentimentScore": 239
+      "sentimentScore": 242
     },
     {
       "symbol": "BULL",
@@ -2394,6 +2394,19 @@
       "sentimentScore": 138
     },
     {
+      "symbol": "HUT",
+      "aliases": [],
+      "marketSymbol": "HUT",
+      "mentions": 14,
+      "bull": 6,
+      "bear": 0,
+      "neutral": 8,
+      "materiality": 88,
+      "latest": "2026-06-11T17:54:35.000Z",
+      "dominantTheme": "neocloud",
+      "sentimentScore": 138
+    },
+    {
       "symbol": "AMBA",
       "aliases": [],
       "marketSymbol": "AMBA",
@@ -2444,19 +2457,6 @@
       "latest": "2026-05-01T06:02:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
       "sentimentScore": 136
-    },
-    {
-      "symbol": "HUT",
-      "aliases": [],
-      "marketSymbol": "HUT",
-      "mentions": 13,
-      "bull": 6,
-      "bear": 0,
-      "neutral": 7,
-      "materiality": 87,
-      "latest": "2026-06-11T17:54:35.000Z",
-      "dominantTheme": "neocloud",
-      "sentimentScore": 135
     },
     {
       "symbol": "MPWR",
@@ -5651,20 +5651,25 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-20T07:21:37.226Z",
+    "staticUpdatedAt": "2026-07-20T17:29:20.412Z",
     "latestCaptured": {
-      "id": "2079089592385610023",
-      "date": "2026-07-20T06:22:41.000Z",
-      "title": "Some updates on bottleneck timelines: - ABF substrates: 1 year / eg. ",
-      "body": "Some updates on bottleneck timelines: \n\n- ABF substrates: 1 year \n/ eg. Ajinomoto (2802) for ABF film, Ibiden, Unimicron, Nan Ya PCB, etc make the substrates \n\n- HDI Boards: Over 6 months \n/ Victory Giant (300476), Zhen Ding (4958), Unimicron, Compeq (2313), Meiko (6787)\n\n- Multilayer boards: ~6 months \n/ Victory Giant, WUS (002463), $TTMI, Gold Circuit Electronics (2368), \n\n- CCL: Over 6 months (severe shortages of materials) \n/ Elite Material (2383), Shengyi (600183), TUC (6274), ITEQ (6213), Nan Ya Plastics (1303), Resonac (4004)\nMitsui Kinzoku (5706) / HVLP copper foil.  Nittobo / glass fiber/cloth\n\n- MLCCs, chip resistors, tantalum capacitors, aluminum electrolytic capacitors: 15-20 weeks to 1 year+\n\nMLCC: Murata (6981), Samsung Electro-Mechanics, TDK (6762), Taiyo Yuden (6976), Yageo (2327), Walsin (2492)\nChip Resistors: Yageo, Walsin, KOA (6999), Rohm (6963) and $VSH\nTantalum capacitors: Kyocera/AVX, Yageo/KEMET, $VSH again\n\nAluminum electrolytic capacitors: Nippon Chemi-Con (6997) Nichicon (6996) | Timelines sourced from Digitimes, did the honors of adding in related companies. \n\nBut it's slightly more nuanced since MLCCs and others mix. in commodity types vs. AI DCs.\n\nRegardless, just some helpful mapping.",
+      "id": "2079254669793316962",
+      "date": "2026-07-20T17:18:38.000Z",
+      "title": "$IREN +19.69% after revising ARR target to $4B+ from new AI cloud contracts. ",
+      "body": "$IREN +19.69% after revising ARR target to $4B+ from new AI cloud contracts. Its customer base now includes Microsoft, Nvidia, Perplexity, and Figure.\n\n$HUT +10.45% off a 15Y $9.8B AI DC lease\n\n$CIFR +16.76%\n$CLSK +13.7%\n$WYFI +9.18%\n\n$NBIS and $CRWV are taking their time in the shower.\n\nBut does look like Neoclouds/Colo players are sharply recovering following new catalysts, such as Kimi compute shortage news and new contracts.",
       "symbols": [
-        "TTMI",
-        "VSH"
+        "IREN",
+        "HUT",
+        "CIFR",
+        "CLSK",
+        "WYFI",
+        "NBIS",
+        "CRWV"
       ],
-      "theme": "substrate-materials",
-      "materiality": 66,
+      "theme": "ai-infrastructure",
+      "materiality": 97,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2079089592385610023"
+      "url": "https://x.com/aleabitoreddit/status/2079254669793316962"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
