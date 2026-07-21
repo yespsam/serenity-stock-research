@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-20T22:33:28.254Z",
+  "generatedAt": "2026-07-21T08:51:52.726Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -5653,18 +5653,24 @@
   "monitor": {
     "staticUpdatedAt": "2026-07-20T22:32:59.479Z",
     "latestCaptured": {
-      "id": "2079319999915925938",
-      "date": "2026-07-20T21:38:14.000Z",
-      "title": "If you’re curious why $NBIS is up after hours. ",
-      "body": "If you’re curious why $NBIS is up after hours.\n\n$NVDA disclosed it owns 9.3% beneficial ownership of Nebius via SEC filings.\n\nNot exactly too new since it dates back to Nvidia’s existing share position of 1.19M shares + $2B prefunded warrant of ~21M shares.\n\nBut great for sentiment having Nvidia be a large shareholder of the Neocloud leader.",
+      "id": "2079479755481776221",
+      "date": "2026-07-21T08:13:03.000Z",
+      "title": "Memory names from Kioxia finished up a whopping +17.18%. ",
+      "body": "Memory names from Kioxia finished up a whopping +17.18%. Samsung up +6.15%. \n\nOptical networking from $SIVE, $LITE, and $AAOI are showing signs of recovery, all up 4%+. \n\nNeoclouds from $NBIS to $IREN all up 4%+ premarket. \n\n$INTC to $AMD to $MRVL all up 4%+. \n\nDoes the Cramer effect work on the entire AI trade?",
       "symbols": [
+        "SIVEF",
+        "LITE",
+        "AAOI",
         "NBIS",
-        "NVDA"
+        "IREN",
+        "INTC",
+        "AMD",
+        "MRVL"
       ],
-      "theme": "neocloud",
-      "materiality": 66,
+      "theme": "memory-rotation",
+      "materiality": 97,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2079319999915925938"
+      "url": "https://x.com/aleabitoreddit/status/2079479755481776221"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
