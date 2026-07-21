@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-21T08:51:52.726Z",
+  "generatedAt": "2026-07-21T09:48:22.580Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -11,7 +11,7 @@
     "parsedItems": 7210,
     "commentCount": 26822,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-20T21:38:14.000Z"
+    "latestItemDate": "2026-07-21T09:14:20.000Z"
   },
   "rules": [
     {
@@ -5651,26 +5651,24 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-20T22:32:59.479Z",
+    "staticUpdatedAt": "2026-07-21T09:47:40.547Z",
     "latestCaptured": {
-      "id": "2079479755481776221",
-      "date": "2026-07-21T08:13:03.000Z",
-      "title": "Memory names from Kioxia finished up a whopping +17.18%. ",
-      "body": "Memory names from Kioxia finished up a whopping +17.18%. Samsung up +6.15%. \n\nOptical networking from $SIVE, $LITE, and $AAOI are showing signs of recovery, all up 4%+. \n\nNeoclouds from $NBIS to $IREN all up 4%+ premarket. \n\n$INTC to $AMD to $MRVL all up 4%+. \n\nDoes the Cramer effect work on the entire AI trade?",
+      "id": "2079495178793201678",
+      "date": "2026-07-21T09:14:20.000Z",
+      "title": "It's slightly more nuanced. Basically, $AMD SF event is tomorrow, Wed/Thurs (July 22, 23). From Jefferies client note, AMD is expected to provide additional disclosures around thei",
+      "body": "It's slightly more nuanced. Basically, $AMD SF event is tomorrow, Wed/Thurs (July 22, 23).\n\nFrom Jefferies client note, AMD is expected to provide additional disclosures around their likely scale-up CPO roadmap + MI500. \n\nIf they confirm CPO route, would positive thematically since it's not just $NVDA forcing the transition. \n\nAs for $SIVE, we'll get a better read if they're directly in AMD supply chains. \n\nSince right now, it's possible to map it through $GFS (reportedly involved in AMD MI500 CPO work) or AYAR (which AMD invested in). But no formal confirmations. \n\nSo if you're turning in: \n\n- CPO thematic positive: MI500 explicitly commits to CPO/optical UALink.\n\n- AMD gives details using Ayar Labs or GF SCALE for MI500 CPO:  That would be extremely positive for $SIVE, given they're the upstream laser supplier / reference laser.  \n\nCurrently, Blayne Curtis from Jefferies expect AMD to work with $ALAB on UAL and $AVGO on ESUN... but juicy details are here: \n\n\"We are looking for whether AMD commits to a CPO based scale up solution and who supplies the optical engine\"\n\nWe'll get a broader read through on the supply chain come Wednesday/Thursday, too early to tell today.",
       "symbols": [
-        "SIVEF",
-        "LITE",
-        "AAOI",
-        "NBIS",
-        "IREN",
-        "INTC",
         "AMD",
-        "MRVL"
+        "NVDA",
+        "SIVEF",
+        "GFS",
+        "ALAB",
+        "AVGO"
       ],
-      "theme": "memory-rotation",
+      "theme": "cpo-silicon-photonics",
       "materiality": 97,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2079479755481776221"
+      "url": "https://x.com/aleabitoreddit/status/2079495178793201678"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
