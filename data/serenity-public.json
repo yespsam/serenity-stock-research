@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-21T19:19:03.171Z",
+  "generatedAt": "2026-07-21T21:52:04.632Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -5653,28 +5653,15 @@
   "monitor": {
     "staticUpdatedAt": "2026-07-21T19:18:48.277Z",
     "latestCaptured": {
-      "id": "2079622706572804368",
-      "date": "2026-07-21T17:41:05.000Z",
-      "title": "Wow, a historic single day recovery. ",
-      "body": "Wow, a historic single day recovery.\n\n$SIVEF +30.89%\n$IQEF +28.6%\n$AEHR +26.53%\n$CIFR +17.82%\n$NBIS +17.3%\n$AAOI +15.6%\n$LPK +14.48%\n$AXTI +14.12%\n$MU +12.54%\n$SNDK +12.8%\n$SOI +11.1%\n$TSEM +10.39%\n$LITE +9.25%\n$INTC +8.22%\n$AMD +8.11%\n$MRVL +7.27%",
-      "symbols": [
-        "SIVEF",
-        "IQEF",
-        "AEHR",
-        "CIFR",
-        "NBIS",
-        "AAOI",
-        "LPK",
-        "AXTI",
-        "MU",
-        "SNDK",
-        "SOI",
-        "TSEM"
-      ],
-      "theme": "neocloud",
-      "materiality": 81,
+      "id": "2079673469567226149",
+      "date": "2026-07-21T21:02:48.000Z",
+      "title": "OpenAI models reportedly escaped from its controlled environment, with no internet access. ",
+      "body": "OpenAI models reportedly escaped from its controlled environment, with no internet access.\n\nExploited zero day vulnerabilities and hacked into Hugging Face to cheat on benchmarks.\n\nHugging face then used China GLM models to carry out its defense. \n\nOpenAI said it was an “an unprecedented cyber incident.”\n\nWe’re getting closer and closer to Skynet. \n\nAnd I’m sure markets will love it.",
+      "symbols": [],
+      "theme": "general",
+      "materiality": 46,
       "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2079622706572804368"
+      "url": "https://x.com/aleabitoreddit/status/2079673469567226149"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
