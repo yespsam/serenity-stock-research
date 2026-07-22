@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-21T21:52:04.632Z",
+  "generatedAt": "2026-07-22T16:17:53.249Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -11,7 +11,7 @@
     "parsedItems": 7214,
     "commentCount": 26822,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-21T17:41:05.000Z"
+    "latestItemDate": "2026-07-22T15:10:40.000Z"
   },
   "rules": [
     {
@@ -5651,17 +5651,20 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-21T19:18:48.277Z",
+    "staticUpdatedAt": "2026-07-22T16:11:17.866Z",
     "latestCaptured": {
-      "id": "2079673469567226149",
-      "date": "2026-07-21T21:02:48.000Z",
-      "title": "OpenAI models reportedly escaped from its controlled environment, with no internet access. ",
-      "body": "OpenAI models reportedly escaped from its controlled environment, with no internet access.\n\nExploited zero day vulnerabilities and hacked into Hugging Face to cheat on benchmarks.\n\nHugging face then used China GLM models to carry out its defense. \n\nOpenAI said it was an “an unprecedented cyber incident.”\n\nWe’re getting closer and closer to Skynet. \n\nAnd I’m sure markets will love it.",
-      "symbols": [],
+      "id": "2079947242455335379",
+      "date": "2026-07-22T15:10:40.000Z",
+      "title": "$AMD to invest $5B in Anthropic. Anthropic in turn will sign a 2 GW deal to buy AMD’s latest chips, worth tens of billions of dollars. Looks like they’re copying the $NVDA playbook",
+      "body": "$AMD to invest $5B in Anthropic.\n\nAnthropic in turn will sign a 2 GW deal to buy AMD’s latest chips, worth tens of billions of dollars.\n\nLooks like they’re copying the $NVDA playbook with Anthropic last year.",
+      "symbols": [
+        "AMD",
+        "NVDA"
+      ],
       "theme": "general",
-      "materiality": 46,
-      "sentiment": "neutral",
-      "url": "https://x.com/aleabitoreddit/status/2079673469567226149"
+      "materiality": 92,
+      "sentiment": "bull",
+      "url": "https://x.com/aleabitoreddit/status/2079947242455335379"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
