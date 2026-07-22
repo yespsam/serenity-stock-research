@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-22T16:17:53.249Z",
+  "generatedAt": "2026-07-22T21:19:54.239Z",
   "profile": {
     "handle": "@aleabitoreddit",
     "name": "Serenity",
@@ -8,10 +8,10 @@
     "scopeNote": "已合并 6536 条公开索引、6089 个唯一公开 X 状态 ID（其中 FxTwitter 归档路线 6054 条，公开镜像账号总量最新口径 7123 条）、5993 条日期切片线索、353 条 feed=top 日期切片交叉线索、45 条 SerenitySaid 结构化推文（最新 2026-06-07T02:17:56Z）、20 条 Twiscan 近期镜像正文（20 条均映射到既有 X 状态）、20 条 Instalker Reader 镜像正文（19 条映射到既有 X 状态，1 条作为策略补源）、Instalker 直连 API 106 条去重翻页状态（12 页，raw 119，均映射到既有状态）、Serenity Tracker 40 条策略论点 / 9 条时间线事件与 50930 条评论样本；主页/含回复/转推评论流已深度补源，当前公开 cursor、latest 细切片、feed=top、Reader 镜像、Instalker 翻页与 SerenitySaid 复查仅新增 2 个可确认本人状态 ID。"
   },
   "stats": {
-    "parsedItems": 7214,
+    "parsedItems": 7222,
     "commentCount": 26822,
     "profileTweets": 7222,
-    "latestItemDate": "2026-07-22T15:10:40.000Z"
+    "latestItemDate": "2026-07-22T21:02:27.000Z"
   },
   "rules": [
     {
@@ -69,14 +69,14 @@
         "SIVERS"
       ],
       "marketSymbol": "SIVEF",
-      "mentions": 1211,
+      "mentions": 1212,
       "bull": 550,
       "bear": 18,
-      "neutral": 643,
+      "neutral": 644,
       "materiality": 100,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 11450
+      "sentimentScore": 11453
     },
     {
       "symbol": "NBIS",
@@ -95,27 +95,27 @@
       "symbol": "LITE",
       "aliases": [],
       "marketSymbol": "LITE",
-      "mentions": 615,
-      "bull": 240,
+      "mentions": 616,
+      "bull": 241,
       "bear": 14,
       "neutral": 361,
       "materiality": 85,
       "latest": "2026-06-12T04:26:43.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 5100
+      "sentimentScore": 5118
     },
     {
       "symbol": "NVDA",
       "aliases": [],
       "marketSymbol": "NVDA",
-      "mentions": 572,
-      "bull": 244,
+      "mentions": 573,
+      "bull": 245,
       "bear": 21,
       "neutral": 307,
       "materiality": 83,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 4857
+      "sentimentScore": 4875
     },
     {
       "symbol": "AAOI",
@@ -211,6 +211,21 @@
       "sentimentScore": 2261
     },
     {
+      "symbol": "GOOGL",
+      "aliases": [
+        "GOOG"
+      ],
+      "marketSymbol": "GOOGL",
+      "mentions": 315,
+      "bull": 104,
+      "bear": 10,
+      "neutral": 201,
+      "materiality": 88,
+      "latest": "2026-06-01T23:51:46.000Z",
+      "dominantTheme": "general",
+      "sentimentScore": 2258
+    },
+    {
       "symbol": "IQE",
       "aliases": [
         "IQE.L"
@@ -239,21 +254,6 @@
       "sentimentScore": 2224
     },
     {
-      "symbol": "GOOGL",
-      "aliases": [
-        "GOOG"
-      ],
-      "marketSymbol": "GOOGL",
-      "mentions": 311,
-      "bull": 102,
-      "bear": 10,
-      "neutral": 199,
-      "materiality": 88,
-      "latest": "2026-06-01T23:51:46.000Z",
-      "dominantTheme": "general",
-      "sentimentScore": 2216
-    },
-    {
       "symbol": "MSFT",
       "aliases": [],
       "marketSymbol": "MSFT",
@@ -270,14 +270,14 @@
       "symbol": "META",
       "aliases": [],
       "marketSymbol": "META",
-      "mentions": 284,
+      "mentions": 285,
       "bull": 100,
       "bear": 9,
-      "neutral": 175,
+      "neutral": 176,
       "materiality": 80,
       "latest": "2026-06-03T23:56:25.000Z",
       "dominantTheme": "general",
-      "sentimentScore": 2139
+      "sentimentScore": 2142
     },
     {
       "symbol": "TSM",
@@ -335,14 +335,14 @@
       "symbol": "AMD",
       "aliases": [],
       "marketSymbol": "AMD",
-      "mentions": 182,
-      "bull": 82,
+      "mentions": 184,
+      "bull": 83,
       "bear": 3,
-      "neutral": 97,
+      "neutral": 98,
       "materiality": 85,
       "latest": "2026-06-01T23:51:46.000Z",
       "dominantTheme": "cpo-silicon-photonics",
-      "sentimentScore": 1704
+      "sentimentScore": 1725
     },
     {
       "symbol": "LPK",
@@ -1302,6 +1302,19 @@
       "sentimentScore": 300
     },
     {
+      "symbol": "SPCX",
+      "aliases": [],
+      "marketSymbol": "SPCX",
+      "mentions": 39,
+      "bull": 17,
+      "bear": 3,
+      "neutral": 19,
+      "materiality": 82,
+      "latest": "2026-06-16T02:20:57.000Z",
+      "dominantTheme": "general",
+      "sentimentScore": 296
+    },
+    {
       "symbol": "HPS.A",
       "aliases": [],
       "marketSymbol": "HPS.A",
@@ -1378,19 +1391,6 @@
       "latest": "2026-07-17T17:51:55.000Z",
       "dominantTheme": "neocloud",
       "sentimentScore": 279
-    },
-    {
-      "symbol": "SPCX",
-      "aliases": [],
-      "marketSymbol": "SPCX",
-      "mentions": 38,
-      "bull": 16,
-      "bear": 3,
-      "neutral": 19,
-      "materiality": 81,
-      "latest": "2026-06-16T02:20:57.000Z",
-      "dominantTheme": "general",
-      "sentimentScore": 278
     },
     {
       "symbol": "LTC",
@@ -5651,20 +5651,19 @@
     }
   ],
   "monitor": {
-    "staticUpdatedAt": "2026-07-22T16:11:17.866Z",
+    "staticUpdatedAt": "2026-07-22T21:17:48.680Z",
     "latestCaptured": {
-      "id": "2079947242455335379",
-      "date": "2026-07-22T15:10:40.000Z",
-      "title": "$AMD to invest $5B in Anthropic. Anthropic in turn will sign a 2 GW deal to buy AMD’s latest chips, worth tens of billions of dollars. Looks like they’re copying the $NVDA playbook",
-      "body": "$AMD to invest $5B in Anthropic.\n\nAnthropic in turn will sign a 2 GW deal to buy AMD’s latest chips, worth tens of billions of dollars.\n\nLooks like they’re copying the $NVDA playbook with Anthropic last year.",
+      "id": "2080035769062916479",
+      "date": "2026-07-22T21:02:27.000Z",
+      "title": "$GOOGL updates FY 2026 capex guidance: To $195B-$205B. ",
+      "body": "$GOOGL updates FY 2026 capex guidance:\n\nTo $195B-$205B. Up from $180B-$190B. \n\nGoogle is also expected to significantly increase capex in 2027.  \n\nThis is perhaps the most bullish read through on upstream semis from a hyperscaler.",
       "symbols": [
-        "AMD",
-        "NVDA"
+        "GOOGL"
       ],
-      "theme": "general",
-      "materiality": 92,
+      "theme": "ai-infrastructure",
+      "materiality": 71,
       "sentiment": "bull",
-      "url": "https://x.com/aleabitoreddit/status/2079947242455335379"
+      "url": "https://x.com/aleabitoreddit/status/2080035769062916479"
     },
     "profileTweets": 7222,
     "source": "FxTwitter / SerenitySaid / public mirrors",
